@@ -3,12 +3,13 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation"; // 1. Imported pathname hook
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 
 const NAV_ITEMS = [
   { label: "Home", href: "/" },
-  { label: "Services", href: "/services" },
+  { label: "Services", href: "/service" },
   { label: "Work", href: "/work" },
   { label: "About", href: "/about" },
   { label: "Blog", href: "/blog" },
@@ -16,7 +17,7 @@ const NAV_ITEMS = [
 ];
 
 export default function Header() {
-  const [activeNav, setActiveNav] = useState("Home");
+  const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => setIsMenuOpen((prev) => !prev);
@@ -41,19 +42,17 @@ export default function Header() {
           />
         </Link>
 
-        {/* Desktop Navigation */}
+
         <nav
           aria-label="Main navigation"
           className="hidden shrink-0 items-center gap-1 md:flex"
         >
           {NAV_ITEMS.map(({ label, href }) => {
-            const isActive = activeNav === label;
-
+            const isActive = pathname === href;
             return (
               <Link
                 key={label}
                 href={href}
-                onClick={() => setActiveNav(label)}
                 className="flex shrink-0 items-center justify-center whitespace-nowrap px-3 py-2.5 transition-colors duration-200"
               >
                 <span
@@ -109,10 +108,8 @@ export default function Header() {
         </button>
       </div>
 
-    
       {isMenuOpen && (
         <>
-          
           <div
             className="fixed inset-0 z-40 bg-black/50 backdrop-blur-sm md:hidden"
             onClick={closeMenu}
@@ -123,16 +120,14 @@ export default function Header() {
             <div className="overflow-hidden rounded-2xl border border-white/10 bg-[#0A0A0A]/95 shadow-[0_20px_60px_rgba(0,0,0,0.6)] backdrop-blur-xl">
               <nav className="flex flex-col p-4">
                 {NAV_ITEMS.map(({ label, href }) => {
-                  const isActive = activeNav === label;
+                  // 4. Mirror active check for mobile view
+                  const isActive = pathname === href;
 
                   return (
                     <Link
                       key={label}
                       href={href}
-                      onClick={() => {
-                        setActiveNav(label);
-                        closeMenu();
-                      }}
+                      onClick={closeMenu}
                       className="rounded-xl px-4 py-3 transition-all duration-200"
                     >
                       <span

@@ -60,7 +60,7 @@ export default function TestimonialsSection() {
   ];
 
   return (
-    <section className="relative w-full overflow-hidden px-3 bg-black py-20 md:py-28 flex flex-col items-center gap-12 md:gap-16">
+    <section className="relative w-full overflow-hidden px-3  py-8 md:py-10 flex flex-col items-center gap-12 md:gap-16">
       <div className="pointer-events-none absolute inset-0 opacity-10  " />
 
       <div className="relative z-10 flex flex-col items-center gap-3 text-center px-6">

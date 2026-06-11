@@ -131,7 +131,7 @@ export default function ServicesSection() {
               className="group flex flex-col rounded-[22px] overflow-hidden border border-transparent hover:border-[rgba(249,10,31,0.4)] transition-colors duration-300 bg-white/4 will-change-transform"
             >
               <Link
-                href="/services"
+                href="/service"
                 className="flex flex-col gap-[7.4px] items-start p-7.25 w-full h-full cursor-pointer"
               >
                 {service.icon}
@@ -157,7 +157,7 @@ export default function ServicesSection() {
 
         <Reveal delay={0.4} className="w-full flex justify-center">
           <motion.a
-            href="/services"
+            href="/service"
             whileHover={{ scale: 1.02 }}
             className="flex items-center justify-center h-13.25 w-full max-w-140 rounded-[55px] border-2 border-[#f90a1f] bg-black/30 hover:bg-[rgba(249,10,31,0.08)] transition-colors duration-300 cursor-pointer px-13.25 py-5 text-white font-bold text-center capitalize whitespace-nowrap text-[20px]"
           >

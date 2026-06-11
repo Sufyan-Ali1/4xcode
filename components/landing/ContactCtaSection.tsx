@@ -67,7 +67,7 @@ export default function CTASection() {
                 transition={{ type: "spring", stiffness: 400, damping: 30 }}
               >
                 <Link
-                  href="/services"
+                  href="/service"
                   className="inline-flex h-13 items-center justify-center rounded-[18px] border border-white/10 bg-black/40 backdrop-blur-sm px-7 text-sm font-semibold text-white hover:border-white/20 hover:bg-white/5 transition-colors duration-300"
                 >
                   See capabilities

@@ -41,7 +41,7 @@ export default function Footer() {
               Studio
             </h3>
             <ul className="flex flex-col gap-1">
-              {["Services", "Work", "Process", "About"].map((item) => (
+              {["Service", "Work", "Process", "About"].map((item) => (
                 <li key={item}>
                   <Link
                     href={`/${item.toLowerCase()}`}

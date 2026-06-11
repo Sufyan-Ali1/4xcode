@@ -40,7 +40,7 @@ export default function ProcessSection() {
   ];
 
   return (
-    <section className="bg-black py-20 px-13 text-white">
+    <section className=" py-20 px-13 text-white">
       <div className="mx-auto max-w-7xl">
         <div className="text-center">
           <Reveal>

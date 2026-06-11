@@ -25,7 +25,7 @@ export default function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 z-100 flex w-full items-center justify-center bg-black/50 px-4 py-4 backdrop-blur-md md:px-10">
       <div className="mx-auto flex w-full max-w-314.5 items-center justify-between gap-6 rounded-[22px] px-5 py-3 lg:gap-20">
-        {/* Logo */}
+
         <Link
           href="/"
           aria-label="4xcode home"

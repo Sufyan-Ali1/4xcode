@@ -53,23 +53,17 @@ export default function ServicePage() {
   const MotionLink = motion(Link);
 
   return (
-    <div
-      className={`bg-[#030303] text-white min-h-screen relative w-full overflow-hidden pb-10 ${inter.className}`}
-    >
-      <section className="relative w-full pt-36 pb-24 flex items-center z-10 px-6 md:px-12 lg:px-24">
-        <div
-          className="absolute top-[10%] left-[20%] w-[60%] h-[80%] rounded-full bg-[#f90a1f]/12 blur-[140px] pointer-events-none z-0"
-          aria-hidden="true"
-        />
-        <div
-          className="absolute top-[20%] right-[20%] w-[60%] h-[80%] rounded-full bg-[#f90a1f]/10 blur-[140px] pointer-events-none z-0"
-          aria-hidden="true"
-        />
-        <div
-          className="absolute bottom-0 left-0 right-0 h-24 bg-linear-to-b from-transparent to-[#030303] pointer-events-none z-1"
-          aria-hidden="true"
-        />
+    <div className={`bg-[#030303] text-white min-h-screen relative w-full overflow-hidden pb-10 ${inter.className}`}>
+      
 
+      <div className="absolute top-0 left-0 right-0 h-[500px] pointer-events-none z-0 overflow-hidden">
+        <div className="absolute top-[-15%] left-[15%] w-[55%] h-[70%] rounded-full bg-[#f90a1f]/10 blur-[120px]" aria-hidden="true" />
+        <div className="absolute top-[-10%] right-[15%] w-[45%] h-[60%] rounded-full bg-[#f90a1f]/8 blur-[120px]" aria-hidden="true" />
+        <div className="absolute inset-0 bg-linear-to-b from-transparent to-[#030303]" aria-hidden="true" />
+      </div>
+
+      {/* ─── HERO SECTION ─── */}
+      <section className="relative w-full pt-36 pb-24 flex items-center z-10 px-6 md:px-12 lg:px-24">
         <div className="max-w-7xl mx-auto w-full flex flex-col items-start space-y-6 relative z-10">
           <Reveal>
             <div className="flex items-center space-x-2 bg-zinc-900/50 border border-white/5 px-3 py-1 rounded-full text-xs font-medium tracking-wider text-zinc-400 uppercase backdrop-blur-sm">
@@ -79,27 +73,20 @@ export default function ServicePage() {
           </Reveal>
 
           <Reveal delay={0.1}>
-            <h1
-              className={`${spaceGrotesk.className} text-4xl sm:text-5xl md:text-[56px] font-bold tracking-tight leading-[1.1] max-w-4xl`}
-            >
-              Every layer of{" "}
-              <span className="text-transparent bg-clip-text bg-linear-to-r from-[#FF8A8C] to-[#EF1F23]">
-                modern
-              </span>{" "}
-              <br className="hidden sm:inline" /> software
-              <span className="text-[#EF1F23]">.</span>
+            <h1 className={`${spaceGrotesk.className} text-4xl sm:text-5xl md:text-[56px] font-bold tracking-tight leading-[1.1] max-w-4xl`}>
+              Every layer of <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF8A8C] to-[#EF1F23]">modern</span> <br className="hidden sm:inline" /> software<span className="text-[#EF1F23]">.</span>
             </h1>
           </Reveal>
 
           <Reveal delay={0.2}>
             <p className="text-[#a7a3a4] text-sm sm:text-base md:text-lg max-w-2xl font-normal leading-relaxed">
-              End-to-end engineering — from AI research to pixel-perfect
-              frontend, from infra to interfaces.
+              End-to-end engineering — from AI research to pixel-perfect frontend, from infra to interfaces.
             </p>
           </Reveal>
         </div>
       </section>
 
+      {/* ─── CAPABILITIES GRID (SOLID BLACK BACKGROUND) ─── */}
       <section className="relative w-full z-10 px-6 md:px-12 lg:px-24">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 w-full">
           {SERVICES_DATA.map((service, index) => (
@@ -161,6 +148,7 @@ export default function ServicePage() {
         </div>
       </section>
 
+      {/* ─── CTA BANNER ─── */}
       <section className="relative w-full z-10 px-4 sm:px-6 md:px-12 lg:px-24 mt-20 md:mt-28">
         <div className="max-w-7xl mx-auto">
           <motion.div
@@ -176,9 +164,7 @@ export default function ServicePage() {
             />
 
             <div className="relative z-10 space-y-2">
-              <h2
-                className={`${spaceGrotesk.className} text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-white`}
-              >
+              <h2 className={`${spaceGrotesk.className} text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-white`}>
                 Have a project in mind?
               </h2>
               <p className="text-[#a7a3a4] text-xs sm:text-sm md:text-base font-normal">

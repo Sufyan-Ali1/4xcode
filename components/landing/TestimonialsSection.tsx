@@ -2,54 +2,7 @@
 
 import { motion, useReducedMotion } from "framer-motion";
 import { Reveal } from "@/utils/AnimationReveal";
-
-interface Testimonial {
-  id: number;
-  stars: number;
-  quote: string;
-  author: string;
-  vehicle: string;
-  initial: string;
-}
-
-const TESTIMONIALS: Testimonial[] = [
-  {
-    id: 1,
-    stars: 5,
-    quote:
-      "Diagnosed my air suspension fault in under an hour. Genuine parts, premium service. The workshop feels like a Formula 1 garage.",
-    author: "Daniel R.",
-    vehicle: "Range Rover Vogue",
-    initial: "D",
-  },
-  {
-    id: 2,
-    stars: 5,
-    quote:
-      "Booked online, got a quote within 30 minutes, car back the next day. They spotted issues my dealer missed. Highly recommend.",
-    author: "Sarah M.",
-    vehicle: "Range Rover Sport",
-    initial: "S",
-  },
-  {
-    id: 3,
-    stars: 5,
-    quote:
-      "Best Range Rover specialist I've used. Transparent pricing, honest advice and the car drives like new. Worth every penny.",
-    author: "Omar K.",
-    vehicle: "Defender 110",
-    initial: "O",
-  },
-  {
-    id: 4,
-    stars: 5,
-    quote:
-      "Brakes, fluids and a full diagnostic done in a day. The booking experience and communication were outstanding.",
-    author: "Priya S.",
-    vehicle: "Velar HSE",
-    initial: "P",
-  },
-];
+import { TESTIMONIALS } from "../../data/index";
 
 export default function TestimonialsSection() {
   const reduced = useReducedMotion();
@@ -80,10 +33,7 @@ export default function TestimonialsSection() {
         </Reveal>
       </div>
 
-      <div
-        className="relative w-full overflow-hidden flex items-center py-4"
-
-      >
+      <div className="relative w-full overflow-hidden flex items-center py-4">
         <div
           className={`flex gap-5 w-max will-change-transform ${
             reduced
@@ -122,7 +72,6 @@ export default function TestimonialsSection() {
                 "{item.quote}"
               </p>
               <div className="flex items-center gap-3.5 pt-4 border-t border-white/6">
-
                 <div className="size-9 rounded-full bg-[#f90a1f]/10 border border-[#f90a1f]/20 flex items-center justify-center font-bold text-xs text-[#f90a1f]">
                   {item.initial}
                 </div>

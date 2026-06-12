@@ -16,3 +16,10 @@ export interface Testimonial {
   vehicle: string;
   initial: string;
 }
+
+
+export interface TeamMember {
+  initials: string;
+  name: string;
+  role: string;
+}

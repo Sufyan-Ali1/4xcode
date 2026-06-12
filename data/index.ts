@@ -1,5 +1,6 @@
 import { CaseStudy } from "@/types";
 import { Testimonial } from "@/types";
+import { TeamMember } from "@/types";
 export const caseStudies: CaseStudy[] = [
   {
     id: "1",
@@ -117,7 +118,6 @@ export const SERVICES_DATA = [
 ];
 
 export const CASE_STUDIES_DATA: CaseStudy[] = [
-
   {
     id: "neura-ops",
     tag: "AI",
@@ -222,7 +222,6 @@ export const CASE_STUDIES_DATA: CaseStudy[] = [
     tags: ["Python", "Temporal", "FastAPI"],
   },
 
-
   // ─── E-COMMERCE CATEGORY (4 PROJECTS) ───
   {
     id: "mercury-shop",
@@ -253,9 +252,7 @@ export const CASE_STUDIES_DATA: CaseStudy[] = [
     image: "/assets/caseStudy.jpeg",
     tags: ["Python", "Postgres", "Docker"],
   },
-
 ];
-
 
 export const TESTIMONIALS: Testimonial[] = [
   {
@@ -294,4 +291,11 @@ export const TESTIMONIALS: Testimonial[] = [
     vehicle: "Velar HSE",
     initial: "P",
   },
+];
+
+export const TEAM: TeamMember[] = [
+  { initials: "AC", name: "Aris Chen", role: "CEO & Engineering" },
+  { initials: "MR", name: "Mateo Rivas", role: "Head of AI" },
+  { initials: "LP", name: "Lena Park", role: "Design Director" },
+  { initials: "YK", name: "Yusuf Khan", role: "Principal Engineer" },
 ];

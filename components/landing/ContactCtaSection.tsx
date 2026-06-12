@@ -10,7 +10,7 @@ export default function CTASection() {
   const reduced = useReducedMotion();
 
   return (
-    <div className="w-full bg-black py-12 md:py-16 px-6 md:px-12 lg:px-24 flex items-center justify-center">
+    <div className="w-full bg-black py-8 md:py-10 px-6 md:px-12 lg:px-24 flex items-center justify-center">
       <section className="relative w-full max-w-7xl min-h-125 md:min-h-145 rounded-3xl md:rounded-4xl overflow-hidden flex flex-col justify-center px-8 md:px-16 lg:px-24 py-20  border border-white/10 shadow-[0_0_30px_0_rgba(239,31,35,0.5)]">
         <div className="absolute inset-0 z-0 pointer-events-none select-none">
           <Image

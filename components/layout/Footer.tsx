@@ -10,7 +10,15 @@ import PublicIcon from "@mui/icons-material/Public";
 
 export default function Footer() {
   return (
-    <footer className="w-full bg-black px-6 py-12 text-white md:px-10 lg:py-16">
+    <footer className="relative w-full bg-black px-6 py-12 text-white md:px-10 lg:py-16">
+   
+      <div 
+        className="absolute top-0 left-0 h-[1px] w-full" 
+        style={{
+          background: "linear-gradient(90deg, transparent 0%, #f63040 40%, transparent 100%)"
+        }}
+      />
+
       <div className="mx-auto max-w-[1258px]">
         {/* Main Grid Layout */}
         <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-12 lg:gap-8">
@@ -137,7 +145,7 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Bottom Bar: Copyright & Legal */}
+      
         <div className="mt-16 flex flex-col items-center justify-between border-t border-white/10 pt-8 font-['Inter',sans-serif] text-xs text-[#a7a3a4] md:flex-row">
           <p>© 2026 4XCODE. Engineering the future with code.</p>
           <div className="mt-4 flex gap-6 md:mt-0">

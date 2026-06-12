@@ -6,11 +6,11 @@ import Link from "next/link";
 import NorthEastIcon from "@mui/icons-material/NorthEast";
 import { CaseStudy } from "../../types/index";
 
-interface CaseStudyCardProps {
+type CaseStudyCardProps = {
   project: CaseStudy;
-  index: number;
-  reduced: boolean | null;
-}
+  index?: number;
+  reduced?: boolean;
+};
 
 export function CaseStudyCard({ project, index, reduced }: CaseStudyCardProps) {
   return (

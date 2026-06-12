@@ -5,12 +5,17 @@ import Image from "next/image";
 import Link from "next/link";
 import NorthEastIcon from "@mui/icons-material/NorthEast";
 import { CaseStudy } from "../../types/index";
+import { Space_Grotesk } from "next/font/google";
 
 type CaseStudyCardProps = {
   project: CaseStudy;
   index?: number;
   reduced?: boolean;
 };
+const spaceGrotesk = Space_Grotesk({
+  subsets: ["latin"],
+  weight: ["400", "500", "700"],
+});
 
 export function CaseStudyCard({ project, index, reduced }: CaseStudyCardProps) {
   return (
@@ -50,7 +55,9 @@ export function CaseStudyCard({ project, index, reduced }: CaseStudyCardProps) {
             />
           </div>
 
-          <h3 className="text-[20px] font-bold leading-tight tracking-[-0.5px] text-white">
+          <h3
+            className={`${spaceGrotesk.className} text-[20px] font-bold leading-tight tracking-[-0.5px] text-white`}
+          >
             {project.title}
           </h3>
 

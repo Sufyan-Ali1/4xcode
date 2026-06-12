@@ -2,10 +2,15 @@
 
 import React from "react";
 import { motion, useReducedMotion } from "framer-motion";
+import { Space_Grotesk } from "next/font/google";
 
 interface NarrativeSectionProps {
   spaceGroteskClassName: string;
 }
+const spaceGrotesk = Space_Grotesk({
+  subsets: ["latin"],
+  weight: ["400", "500", "700"],
+});
 
 const CONTENT_PARAGRAPHS = [
   <>
@@ -86,7 +91,7 @@ export default function NarrativeSection({
                 delay: reduced ? 0 : index * 0.05,
                 ease: [0.22, 1, 0.36, 1],
               }}
-              className="text-white"
+              className={`${spaceGrotesk.className} text-white`}
             >
               {paragraph}
             </motion.p>

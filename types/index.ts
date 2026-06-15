@@ -3,9 +3,9 @@ export interface CaseStudy {
   image: string;
   title: string;
   description: string;
-  tag: string;          
-  metric?: string;      
-  tags?: string[];     
+  tag: string;
+  metric?: string;
+  tags?: string[];
 }
 
 export interface Testimonial {
@@ -17,9 +17,17 @@ export interface Testimonial {
   initial: string;
 }
 
-
 export interface TeamMember {
   initials: string;
   name: string;
   role: string;
+}
+
+export interface BlogPost {
+  slug: string;
+  title: string;
+  description: string;
+  category: string;
+  meta_description: string;
+  created_at: string;
 }

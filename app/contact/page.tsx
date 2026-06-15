@@ -80,7 +80,7 @@ export default function ContactPage() {
 
             <Reveal delay={0.1}>
               <h1
-                className={`${spaceGrotesk.className} text-4xl sm:text-5xl lg:text-[60px] font-light tracking-[-1.2px] leading-[1.05] text-[#f8f8f8]`}
+                className={`${spaceGrotesk.className} text-4xl font-bold sm:text-5xl lg:text-[60px]  tracking-[-1.2px] leading-[1.05] text-[#f8f8f8]`}
               >
                 Start your{" "}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF8A8C] to-[#EF1F23]">

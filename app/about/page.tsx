@@ -50,7 +50,7 @@ export default function AboutPage() {
 
   return (
     <div
-      className={`bg-[#030303] text-white min-h-screen w-full relative overflow-hidden pb-24 ${inter.className}`}
+      className={`bg-[#030303] text-white min-h-screen w-full relative overflow-hidden pb-14 ${inter.className}`}
     >
       <div className="absolute top-0 left-0 right-0 h-[800px] pointer-events-none z-0 overflow-hidden">
         <div
@@ -70,9 +70,11 @@ export default function AboutPage() {
       <section className="relative w-full pt-36 pb-12 px-6 md:px-12 lg:px-24 z-10">
         <div className="max-w-7xl mx-auto flex flex-col space-y-6">
           <Reveal>
-            <div className="flex items-center space-x-2 bg-zinc-900/50 border border-white/5 px-3 py-1 rounded-full text-xs font-medium tracking-wider text-zinc-400 uppercase backdrop-blur-sm w-fit">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#f90a1f] animate-pulse" />
-              <span>About 4XCODE</span>
+            <div className="inline-flex items-center gap-2 rounded-full border border-[rgba(255,255,255,0.08)] bg-gradient-to-b from-[rgba(255,255,255,0.04)] to-[rgba(255,255,255,0.02)] px-[13px] py-[5px]">
+              <div className="w-[6px] h-[6px] rounded-full bg-[#ef1f23] shadow-[0px_0px_40px_-10px_rgba(245,29,49,0.7),0px_0px_80px_-30px_rgba(245,29,49,0.6)] shrink-0" />
+              <span className="text-[12px] font-normal tracking-[2.64px] uppercase text-[rgba(255,255,255,0.7)] leading-[16px]">
+                About 4xcode
+              </span>
             </div>
           </Reveal>
 

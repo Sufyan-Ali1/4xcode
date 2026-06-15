@@ -49,9 +49,11 @@ export default function WorkPage() {
       <section className="relative w-full pt-36 pb-16 px-6 md:px-12 lg:px-24 z-10">
         <div className="max-w-7xl mx-auto flex flex-col space-y-6">
           <Reveal>
-            <div className="flex items-center space-x-2 bg-zinc-900/50 border border-white/5 px-3 py-1 rounded-full text-xs font-medium tracking-wider text-zinc-400 uppercase backdrop-blur-sm w-fit">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#f90a1f] animate-pulse" />
-              <span>work</span>
+            <div className="inline-flex items-center gap-2 rounded-full border border-[rgba(255,255,255,0.08)] bg-gradient-to-b from-[rgba(255,255,255,0.04)] to-[rgba(255,255,255,0.02)] px-[13px] py-[5px]">
+              <div className="w-[6px] h-[6px] rounded-full bg-[#ef1f23] shadow-[0px_0px_40px_-10px_rgba(245,29,49,0.7),0px_0px_80px_-30px_rgba(245,29,49,0.6)] shrink-0" />
+              <span className="text-[12px] font-normal tracking-[2.64px] uppercase text-[rgba(255,255,255,0.7)] leading-[16px]">
+                Work
+              </span>
             </div>
           </Reveal>
 
@@ -118,7 +120,6 @@ export default function WorkPage() {
             ))}
           </div>
 
-    
           <div className="w-full flex justify-center pt-10 ">
             <Link
               href="/contact"
@@ -138,3 +139,14 @@ export default function WorkPage() {
     </div>
   );
 }
+
+<Link
+  href="/contact"
+  className="group inline-flex items-center justify-center px-8 py-4 md:py-3.5 bg-[#f90a1f] hover:bg-[#ef1f23] text-white text-[13px] font-semibold tracking-wide rounded-full shadow-[0_0_15px_0_rgba(249,10,31,0.45)] transition-all duration-300 select-none cursor-pointer gap-2 transform hover:-translate-y-0.5 hover:scale-[1.02]"
+>
+  <span>Become The Next Case Study</span>
+
+  <span className="text-[11px] font-bold tracking-normal transition-transform duration-200 ">
+    <ArrowForwardIcon style={{ fontSize: 18 }} />
+  </span>
+</Link>;

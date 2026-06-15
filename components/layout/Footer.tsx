@@ -11,11 +11,11 @@ import PublicIcon from "@mui/icons-material/Public";
 export default function Footer() {
   return (
     <footer className="relative w-full bg-black px-6 py-12 text-white md:px-10 lg:py-16">
-   
-      <div 
-        className="absolute top-0 left-0 h-[1px] w-full" 
+      <div
+        className="absolute top-0 left-0 h-[1px] w-full"
         style={{
-          background: "linear-gradient(90deg, transparent 0%, #f63040 40%, transparent 100%)"
+          background:
+            "linear-gradient(90deg, transparent 0%, #f63040 40%, transparent 100%)",
         }}
       />
 
@@ -38,8 +38,8 @@ export default function Footer() {
               />
             </Link>
             <p className="mt-2 max-w-sm font-['Inter',sans-serif] text-sm leading-relaxed text-[#a7a3a4]">
-              Premium engineering studio building the <br/> next <br/> generation of
-              software, AI and SaaS.
+              Premium engineering studio building the <br /> next <br />{" "}
+              generation of software, AI and SaaS.
             </p>
           </div>
 
@@ -97,7 +97,7 @@ export default function Footer() {
               />
               <button
                 type="submit"
-                className="shrink-0 rounded-full bg-[#f90a1f] px-[16px] py-2.5 font-['Inter',sans-serif] text-sm font-normal text-white transition-colors shadow-[0_0_18px_rgba(239,31,35,0.5)] hover:bg-red-700"
+                className="group shrink-0 inline-flex items-center justify-center px-4 py-2.5 bg-[#f90a1f] hover:bg-[#ed1c20] text-white text-sm font-semibold rounded-full shadow-[0_0_15px_0_rgba(249,10,31,0.45)] transition-all duration-300 cursor-pointer transform  "
               >
                 Subscribe
               </button>
@@ -145,7 +145,6 @@ export default function Footer() {
           </div>
         </div>
 
-      
         <div className="mt-16 flex flex-col items-center justify-between border-t border-white/10 pt-8 font-['Inter',sans-serif] text-xs text-[#a7a3a4] md:flex-row">
           <p>© 2026 4XCODE. Engineering the future with code.</p>
           <div className="mt-4 flex gap-6 md:mt-0">

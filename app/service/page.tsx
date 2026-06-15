@@ -53,34 +53,53 @@ export default function ServicePage() {
   const MotionLink = motion(Link);
 
   return (
-    <div className={`bg-[#030303] text-white min-h-screen relative w-full overflow-hidden pb-10 ${inter.className}`}>
-      
-
+    <div
+      className={`bg-[#030303] text-white min-h-screen relative w-full overflow-hidden pb-10 ${inter.className}`}
+    >
       <div className="absolute top-0 left-0 right-0 h-[500px] pointer-events-none z-0 overflow-hidden">
-        <div className="absolute top-[-15%] left-[15%] w-[55%] h-[70%] rounded-full bg-[#f90a1f]/10 blur-[120px]" aria-hidden="true" />
-        <div className="absolute top-[-10%] right-[15%] w-[45%] h-[60%] rounded-full bg-[#f90a1f]/8 blur-[120px]" aria-hidden="true" />
-        <div className="absolute inset-0 bg-linear-to-b from-transparent to-[#030303]" aria-hidden="true" />
+        <div
+          className="absolute top-[-15%] left-[15%] w-[55%] h-[70%] rounded-full bg-[#f90a1f]/10 blur-[120px]"
+          aria-hidden="true"
+        />
+        <div
+          className="absolute top-[-10%] right-[15%] w-[45%] h-[60%] rounded-full bg-[#f90a1f]/8 blur-[120px]"
+          aria-hidden="true"
+        />
+        <div
+          className="absolute inset-0 bg-linear-to-b from-transparent to-[#030303]"
+          aria-hidden="true"
+        />
       </div>
 
       {/* ─── HERO SECTION ─── */}
       <section className="relative w-full pt-36 pb-24 flex items-center z-10 px-6 md:px-12 lg:px-24">
         <div className="max-w-7xl mx-auto w-full flex flex-col items-start space-y-6 relative z-10">
           <Reveal>
-            <div className="flex items-center space-x-2 bg-zinc-900/50 border border-white/5 px-3 py-1 rounded-full text-xs font-medium tracking-wider text-zinc-400 uppercase backdrop-blur-sm">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#f90a1f] animate-pulse" />
-              <span>Services</span>
+            <div className="inline-flex items-center gap-2 rounded-full border border-[rgba(255,255,255,0.08)] bg-gradient-to-b from-[rgba(255,255,255,0.04)] to-[rgba(255,255,255,0.02)] px-[13px] py-[5px]">
+              <div className="w-[6px] h-[6px] rounded-full bg-[#ef1f23] shadow-[0px_0px_40px_-10px_rgba(245,29,49,0.7),0px_0px_80px_-30px_rgba(245,29,49,0.6)] shrink-0" />
+              <span className="text-[12px] font-normal tracking-[2.64px] uppercase text-[rgba(255,255,255,0.7)] leading-[16px]">
+                Services
+              </span>
             </div>
           </Reveal>
 
           <Reveal delay={0.1}>
-            <h1 className={`${spaceGrotesk.className} text-4xl sm:text-5xl md:text-[56px] font-bold tracking-tight leading-[1.1] max-w-4xl`}>
-              Every layer of <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF8A8C] to-[#EF1F23]">modern</span> <br className="hidden sm:inline" /> software<span className="text-[#EF1F23]">.</span>
+            <h1
+              className={`${spaceGrotesk.className} text-4xl sm:text-5xl md:text-[56px] font-bold tracking-tight leading-[1.1] max-w-4xl`}
+            >
+              Every layer of{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF8A8C] to-[#EF1F23]">
+                modern
+              </span>{" "}
+              <br className="hidden sm:inline" /> software
+              <span className="text-[#EF1F23]">.</span>
             </h1>
           </Reveal>
 
           <Reveal delay={0.2}>
             <p className="text-[#a7a3a4] text-sm sm:text-base md:text-lg max-w-2xl font-normal leading-relaxed">
-              End-to-end engineering — from AI research to pixel-perfect frontend, from infra to interfaces.
+              End-to-end engineering — from AI research to pixel-perfect
+              frontend, from infra to interfaces.
             </p>
           </Reveal>
         </div>
@@ -164,7 +183,9 @@ export default function ServicePage() {
             />
 
             <div className="relative z-10 space-y-2">
-              <h2 className={`${spaceGrotesk.className} text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-white`}>
+              <h2
+                className={`${spaceGrotesk.className} text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-white`}
+              >
                 Have a project in mind?
               </h2>
               <p className="text-[#a7a3a4] text-xs sm:text-sm md:text-base font-normal">

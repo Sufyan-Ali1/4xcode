@@ -1,6 +1,9 @@
 import { CaseStudy } from "@/types";
 import { Testimonial } from "@/types";
 import { TeamMember } from "@/types";
+import { BlogPost } from "@/types";
+
+// case studies data
 export const caseStudies: CaseStudy[] = [
   {
     id: "1",
@@ -25,7 +28,7 @@ export const caseStudies: CaseStudy[] = [
     image: "/assets/caseStudy.jpeg",
   },
 ];
-
+// services data
 export const SERVICES_DATA = [
   {
     title: "AI Development",
@@ -115,8 +118,32 @@ export const SERVICES_DATA = [
     ],
     tags: ["AWS", "Docker", "Kubernetes", "Terraform"],
   },
+  {
+    title: "SEO & Digital Marketing",
+    iconKey: "marketing",
+    desc: "Data-driven SEO, content strategy, paid campaigns, and growth marketing that drive qualified traffic and measurable business results.",
+    features: [
+      "Technical SEO",
+      "Content strategy",
+      "PPC campaigns",
+      "Conversion optimization",
+    ],
+    tags: ["Google Ads", "SEO", "Analytics", "Meta Ads"],
+  },
+  {
+    title: "E-Commerce Solutions",
+    iconKey: "ecommerce",
+    desc: "High-converting online stores and marketplaces with seamless checkout, inventory management, and scalable commerce infrastructure.",
+    features: [
+      "Online stores",
+      "Payment gateways",
+      "Inventory systems",
+      "Marketplace development",
+    ],
+    tags: ["Shopify", "WooCommerce", "Stripe", "Commerce"],
+  },
 ];
-
+// case studies data
 export const CASE_STUDIES_DATA: CaseStudy[] = [
   {
     id: "neura-ops",
@@ -253,7 +280,7 @@ export const CASE_STUDIES_DATA: CaseStudy[] = [
     tags: ["Python", "Postgres", "Docker"],
   },
 ];
-
+// testimonials data
 export const TESTIMONIALS: Testimonial[] = [
   {
     id: 1,
@@ -292,10 +319,104 @@ export const TESTIMONIALS: Testimonial[] = [
     initial: "P",
   },
 ];
-
+// team data
 export const TEAM: TeamMember[] = [
   { initials: "AC", name: "Aris Chen", role: "CEO & Engineering" },
   { initials: "MR", name: "Mateo Rivas", role: "Head of AI" },
   { initials: "LP", name: "Lena Park", role: "Design Director" },
   { initials: "YK", name: "Yusuf Khan", role: "Principal Engineer" },
 ];
+// blog data
+export const BLOG_DATA: BlogPost[] = [
+  {
+    id: "autonomous-ai-agents",
+    tag: "AI",
+    title: "Designing autonomous AI agents that actually ship",
+    description:
+      "What we learned shipping multi-step agent systems to production at scale.",
+    date: "May 18, 2026",
+  },
+  {
+    id: "saas-architecture-new-product",
+    tag: "SaaS",
+    title: "The SaaS architecture we use for every new product",
+    description:
+      "Multi-tenancy, billing, RBAC — the boring decisions that decide whether you survive year 2.",
+    date: "May 11, 2026",
+  },
+  {
+    id: "rag-fine-tune-decision-framework",
+    tag: "AI",
+    title: "RAG, fine-tune, or both? A decision framework",
+    description:
+      "When to reach for retrieval, when to fine-tune, and when to do nothing.",
+    date: "May 03, 2026",
+  },
+  {
+    id: "coding-standards-ai-teams",
+    tag: "Coding",
+    title: "Coding standards for AI-augmented teams",
+    description:
+      "Conventions that keep human + AI codebases readable as they grow.",
+    date: "Apr 27, 2026",
+  },
+  {
+    id: "automation-systems-collapse",
+    tag: "Automation",
+    title: "Automation systems that don't collapse",
+    description:
+      "Reliable workflows demand reliable primitives. Here's our toolkit.",
+    date: "Apr 19, 2026",
+  },
+  {
+    id: "squeezing-90ms-nextjs-app",
+    tag: "Performance",
+    title: "Squeezing 90ms out of a Next.js app",
+    description: "A real-world performance teardown of a SaaS dashboard.",
+    date: "Apr 12, 2026",
+  },
+  {
+    id: "future-of-ai-everyday-software",
+    tag: "AI",
+    title: "The future of AI in everyday software",
+    description:
+      "The patterns we're betting on for the next wave of intelligent products.",
+    date: "Apr 02, 2026",
+  },
+  {
+    id: "seo-strategy-that-compounds",
+    tag: "SEO",
+    title: "Building an SEO strategy that compounds for years",
+    description:
+      "Why technical SEO, content systems, and authority building outperform growth hacks every time.",
+    date: "Mar 26, 2026",
+  },
+  {
+    id: "ecommerce-conversion-playbook",
+    tag: "E-Commerce",
+    title: "The e-commerce conversion playbook we use",
+    description:
+      "From checkout optimization to trust signals, the changes that consistently increase revenue.",
+    date: "Mar 18, 2026",
+  },
+  {
+    id: "scaling-cloud-infrastructure",
+    tag: "Cloud",
+    title: "Scaling cloud infrastructure without losing control",
+    description:
+      "How observability, automation, and cost governance keep fast-growing systems healthy.",
+    date: "Mar 09, 2026",
+  },
+  {
+    id: "api-design-for-long-term-growth",
+    tag: "Engineering",
+    title: "API design decisions that age well",
+    description:
+      "Versioning, authentication, and developer experience choices that prevent expensive rewrites.",
+    date: "Feb 28, 2026",
+  },
+];
+
+
+
+

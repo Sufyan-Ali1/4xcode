@@ -17,7 +17,7 @@ const LOGO_SLIDES = [
 
 const BAR_HEIGHTS = [16, 26, 20, 32, 24, 36, 30, 40, 34];
 
-const SPRING_TRANSITION = { type: "spring", stiffness: 400, damping: 30 };
+const SPRING_TRANSITION = { type: "spring", stiffness: 400, damping: 30 } as const;
 
 const HERO_BACKGROUND_STYLES = {
   backgroundImage: `

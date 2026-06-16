@@ -9,8 +9,8 @@ import { Space_Grotesk } from "next/font/google";
 
 type CaseStudyCardProps = {
   project: CaseStudy;
-  index?: number;
-  reduced?: boolean;
+  index?: number | null;
+  reduced?: boolean | null;
 };
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -25,7 +25,7 @@ export function CaseStudyCard({ project, index, reduced }: CaseStudyCardProps) {
       viewport={{ once: true, amount: 0.15 }}
       transition={{
         duration: 0.8,
-        delay: 0.08 * index,
+        delay: 0.08 * (index ?? 0),
         ease: [0.22, 1, 0.36, 1],
       }}
       whileHover={{ scale: 1.02, y: -4 }}

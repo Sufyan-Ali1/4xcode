@@ -65,7 +65,7 @@ export default function BlogDetailPage() {
           <div className="inline-flex items-center gap-2 rounded-full border border-white/5 bg-zinc-900/40 px-[14px] py-[6px] w-fit blog-fade-in-node">
             <LocalOfferIcon className="text-[#ef1f23] text-[12px]" />
             <span className="text-[10px] font-bold tracking-[2px] uppercase text-[#ef1f23]">
-              {post.category || post.tag || "Engineering"}
+              {post.category  || "Engineering"}
             </span>
           </div>
 

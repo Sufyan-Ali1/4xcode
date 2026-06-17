@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Space_Grotesk } from "next/font/google";
-import { Reveal } from "@/utils/AnimationReveal";
+import { Reveal } from "../../utils/AnimationReveal";
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],

@@ -2,9 +2,9 @@
 
 import { motion, useReducedMotion } from "framer-motion";
 import { Reveal } from "@/utils/AnimationReveal";
-import { caseStudies } from "@/data/index";
+import { caseStudies } from "../../data/index";
 import { CaseStudyCard } from "../ui/CaseStudyCard";
-import { CaseStudy } from "../../types/index"; 
+import { CaseStudy } from "../../types/index";
 
 export default function CaseStudiesSection() {
   const reduced = useReducedMotion();
@@ -15,7 +15,6 @@ export default function CaseStudiesSection() {
       <div className="pointer-events-none absolute inset-0 opacity-20 " />
 
       <div className="relative mx-auto flex max-w-7xl flex-col items-center gap-16">
-  
         <div className="flex max-w-2xl flex-col items-center gap-4 text-center">
           <Reveal delay={0}>
             <p className="text-[#f90a1f] text-[12px] font-normal uppercase tracking-[3.6px] leading-4">

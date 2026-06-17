@@ -8,7 +8,7 @@ import LayersIcon from "@mui/icons-material/Layers";
 import CodeIcon from "@mui/icons-material/Code";
 import AutoAwesomeIcon from "@mui/icons-material/AutoAwesome";
 import CloudQueueIcon from "@mui/icons-material/CloudQueue";
-import { Reveal } from "@/utils/AnimationReveal";
+import { Reveal } from "../../utils/AnimationReveal";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import Link from "next/dist/client/link";
 
@@ -103,14 +103,14 @@ export default function ServicesSection() {
                 A studio engineered for
               </h2>
               <h2 className="font-bold text-[32px] md:text-[48px] text-center bg-clip-text text-transparent bg-linear-to-br from-[#ff8a8c] to-[#ef1f23] tracking-[-1.2px] leading-[1.1]">
-                ambitious teams
+                ambitious teams.
               </h2>
             </div>
           </Reveal>
 
           <Reveal delay={0.2}>
             <p className="text-[#a7a3a4] text-[16px] font-normal text-center leading-6">
-              Six interlocking capabilities. One obsessive standard of craft.
+              Interlocking capabilities. One obsessive standard of craft.
             </p>
           </Reveal>
         </div>

@@ -3,7 +3,7 @@
 import React from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import { Space_Grotesk } from "next/font/google";
-import { Reveal } from "@/utils/AnimationReveal";
+import { Reveal } from "../../utils/AnimationReveal";
 import GroupsIcon from "@mui/icons-material/Groups";
 import { TeamMember } from "../../types/index";
 import { TEAM } from "../../data/index";

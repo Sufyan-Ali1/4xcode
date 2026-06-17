@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
-import { Reveal } from "@/utils/AnimationReveal";
+import { Reveal } from "../../utils/AnimationReveal";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 
 export default function CTASection() {
@@ -41,7 +41,7 @@ export default function CTASection() {
           </Reveal>
           <Reveal delay={0.2}>
             <p className="max-w-xl text-sm md:text-base lg:text-lg leading-relaxed text-zinc-400 font-light">
-              Tell us about your product. We'll come back within 24 hours with a
+              Tell us about your product. We’ll come back within 24 hours with a
               sharp opinion and a path forward.
             </p>
           </Reveal>

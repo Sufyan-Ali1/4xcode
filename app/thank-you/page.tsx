@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { Space_Grotesk, Inter } from "next/font/google";
 import { motion, useReducedMotion } from "framer-motion";
-import { Reveal } from "@/utils/AnimationReveal";
+import { Reveal } from "../../utils/AnimationReveal";
 import MailOutlineIcon from "@mui/icons-material/MailOutlined";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import Image from "next/image";

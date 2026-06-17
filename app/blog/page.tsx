@@ -2,7 +2,7 @@
 
 import React, { useState, useMemo } from "react";
 import { Space_Grotesk, Inter } from "next/font/google";
-import { Reveal } from "@/utils/AnimationReveal";
+import { Reveal } from "../../utils/AnimationReveal";
 import { BlogCard } from "../../components/ui/BlogCard";
 import BLOG_DATA from "../../data/blogs.json";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";

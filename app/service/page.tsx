@@ -4,8 +4,8 @@ import React from "react";
 import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
 import { Space_Grotesk, Inter } from "next/font/google";
-import { Reveal } from "@/utils/AnimationReveal";
-import { SERVICES_DATA } from "../../data/index";
+import { Reveal } from "../../utils/AnimationReveal";
+import { SERVICES_DATA } from "../../data/serviceData";
 import WebIcon from "@mui/icons-material/Web";
 import PhoneIphoneIcon from "@mui/icons-material/PhoneIphone";
 import CodeIcon from "@mui/icons-material/Code";
@@ -18,9 +18,9 @@ import SettingsInputComponentIcon from "@mui/icons-material/SettingsInputCompone
 import ElectricBoltIcon from "@mui/icons-material/ElectricBolt";
 import PaletteIcon from "@mui/icons-material/Palette";
 import NorthEastIcon from "@mui/icons-material/NorthEast";
-import ProcessSection from "@/components/landing/ProcessSection";
-import TestimonialsSection from "@/components/landing/TestimonialsSection";
-import NarrativeSection from "@/components/landing/NarrativeSection";
+import ProcessSection from "../../components/landing/ProcessSection";
+import TestimonialsSection from "../../components/landing/TestimonialsSection";
+import NarrativeSection from "../../components/landing/NarrativeSection";
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -111,7 +111,7 @@ export default function ServicePage() {
           {SERVICES_DATA.map((service, index) => (
             <MotionLink
               key={service.title}
-              href="/contact"
+              href={`/service/${service.slug}`}
               initial={{ opacity: 0, y: reduced ? 0 : 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.15 }}
@@ -167,7 +167,6 @@ export default function ServicePage() {
         </div>
       </section>
 
-      {/* ─── CTA BANNER ─── */}
       <section className="relative w-full z-10 px-4 sm:px-6 md:px-12 lg:px-24 mt-20 md:mt-28">
         <div className="max-w-7xl mx-auto">
           <motion.div

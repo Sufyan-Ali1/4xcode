@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Space_Grotesk, Inter } from "next/font/google";
-import { Reveal } from "@/utils/AnimationReveal";
+import { Reveal } from "../../utils/AnimationReveal";
 import ContactForm from "../../components/ui/ContactForm";
 
 import {

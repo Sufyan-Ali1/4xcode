@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
-import { Reveal } from "@/utils/AnimationReveal";
+import { Reveal } from "../../utils/AnimationReveal";
 
 export default function AboutSection() {
   const reduced = useReducedMotion();
@@ -10,7 +10,7 @@ export default function AboutSection() {
   const stats = [
     { value: "132+", label: "Products Shipped" },
     { value: "30M", label: "Users Reached" },
-    { value: "71.70%", label: "Uptime Average" },
+    { value: "99.99%", label: "Production Uptime" },
     { value: "9yr", label: "Avg. Team Experience" },
   ];
 
@@ -50,7 +50,6 @@ export default function AboutSection() {
           </div>
         </motion.div>
         <div className="flex flex-col justify-center space-y-4 max-w-130 mx-auto lg:mx-0">
-          
           <Reveal>
             <span className="text-[#f90a1f] text-[12px] font-normal uppercase tracking-[3.6px] leading-4 ">
               About 4xCode
@@ -61,14 +60,14 @@ export default function AboutSection() {
             <h2 className="text-3xl md:text-[44px] font-bold tracking-tight text-white leading-[1.15]">
               A boutique engineering studio with a{" "}
               <span className="bg-linear-to-br from-[#ff8a8c] to-[#ef1f23] bg-clip-text text-transparent">
-                blockbuster output
+                blockbuster output.
               </span>
             </h2>
           </Reveal>
 
           <Reveal delay={0.2}>
             <p className="text-gray-400 text-sm md:text-base leading-relaxed font-light">
-              We’re a senior team of designers, engineers and AI specialists
+              We’re a senior team of designers, engineers, and AI specialists
               obsessed with one thing: turning audacious product ideas into
               category-defining software.
             </p>
@@ -87,7 +86,6 @@ export default function AboutSection() {
                   delay: reduced ? 0 : index * 0.08,
                 }}
                 whileHover={reduced ? {} : { scale: 1.02, y: -4 }}
-            
                 className="group bg-[#0D0D0E] border border-white/4 hover:border-[rgba(249,10,31,0.25)] hover:bg-white/3 rounded-2xl p-5 md:p-6 flex flex-col justify-center min-h-27.5 transition-colors duration-300 will-change-transform cursor-default"
               >
                 <span className="text-2xl md:text-3xl font-bold text-white transition-colors duration-300">
@@ -99,7 +97,6 @@ export default function AboutSection() {
               </motion.div>
             ))}
           </div>
-
         </div>
       </div>
     </section>

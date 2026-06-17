@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
-import { Reveal } from "@/utils/AnimationReveal";
+import { Reveal } from "../../utils/AnimationReveal";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 
 const LOGO_SLIDES = [
@@ -17,7 +17,11 @@ const LOGO_SLIDES = [
 
 const BAR_HEIGHTS = [16, 26, 20, 32, 24, 36, 30, 40, 34];
 
-const SPRING_TRANSITION = { type: "spring", stiffness: 400, damping: 30 } as const;
+const SPRING_TRANSITION = {
+  type: "spring",
+  stiffness: 400,
+  damping: 30,
+} as const;
 
 const HERO_BACKGROUND_STYLES = {
   backgroundImage: `
@@ -48,8 +52,10 @@ function LogoMarquee() {
       <div
         className="relative w-full h-24 overflow-hidden flex items-center"
         style={{
-          maskImage: "linear-gradient(to right, transparent, black 12%, black 88%, transparent)",
-          WebkitMaskImage: "linear-gradient(to right, transparent, black 12%, black 88%, transparent)",
+          maskImage:
+            "linear-gradient(to right, transparent, black 12%, black 88%, transparent)",
+          WebkitMaskImage:
+            "linear-gradient(to right, transparent, black 12%, black 88%, transparent)",
         }}
       >
         <div className="mq-track flex w-max will-change-transform animate-[mq-scroll_28s_linear_infinite]">
@@ -62,13 +68,13 @@ function LogoMarquee() {
               {LOGO_SLIDES.map((src, i) => (
                 <div
                   key={i}
-                  className="shrink-0 w-18 h-9.5 flex items-center justify-center transition-transform duration-300 ease-out hover:scale-110 cursor-pointer"
+                  className="shrink-0 w-22 h-15 flex items-center justify-center transition-transform duration-300 ease-out hover:scale-110 cursor-pointer"
                 >
                   <Image
                     src={src}
                     alt={idx === 0 ? "Partner logo" : ""}
-                    width={72}
-                    height={38}
+                    width={90}
+                    height={60}
                     className="object-contain opacity-65 hover:opacity-100 brightness-0 invert transition-opacity duration-300"
                   />
                 </div>
@@ -200,7 +206,7 @@ export default function HeroSection() {
                 <span className="size-2 rounded-full bg-red-500" />
               </span>
               <span className="text-xs text-neutral-400 whitespace-nowrap">
-                Now booking Q3 — premium SaaS engineering
+                Now booking for upcoming projects
               </span>
             </div>
           </Reveal>
@@ -218,9 +224,8 @@ export default function HeroSection() {
 
           <Reveal delay={0.2}>
             <p className="max-w-xl text-base md:text-lg leading-7 text-neutral-400">
-              We architect cinematic web platforms, intelligent SaaS products
-              and AI systems for ambitious teams who refuse to ship anything
-              ordinary.
+              We build ultra-fast, visually stunning, and high-converting
+              AI-powered SaaS and web applications for modern brands.
             </p>
           </Reveal>
 
@@ -272,7 +277,7 @@ export default function HeroSection() {
 
         <Reveal className="flex w-full flex-col items-center gap-5 overflow-hidden pb-10">
           <p className="text-xs uppercase tracking-[3.6px] text-neutral-400">
-            Trusted by builders shipping at the frontier
+            Trusted by builders shipping at the frontier logo size increase
           </p>
           <LogoMarquee />
         </Reveal>

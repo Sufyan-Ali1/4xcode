@@ -1,7 +1,6 @@
 import { CaseStudy } from "@/types";
 import { Testimonial } from "@/types";
 import { TeamMember } from "@/types";
-import { BlogPost } from "@/types";
 
 // case studies data
 export const caseStudies: CaseStudy[] = [
@@ -29,120 +28,7 @@ export const caseStudies: CaseStudy[] = [
   },
 ];
 // services data
-export const SERVICES_DATA = [
-  {
-    title: "AI Development",
-    iconKey: "ai",
-    desc: "LLM apps, agents, fine-tuning, RAG, computer vision and ML systems.",
-    features: [
-      "Custom LLM agents",
-      "RAG pipelines",
-      "Fine-tuning",
-      "Vector search",
-    ],
-    tags: ["OpenAI", "PyTorch", "LangChain", "Pinecone"],
-  },
-  {
-    title: "Custom Software",
-    iconKey: "software",
-    desc: "Bespoke engineering for ambitious products with serious technical depth.",
-    features: [
-      "Architecture design",
-      "Backend systems",
-      "Data platforms",
-      "Realtime sync",
-    ],
-    tags: ["Go", "Node.js", "Postgres", "Redis"],
-  },
-  {
-    title: "SaaS Engineering",
-    iconKey: "saas",
-    desc: "Multi-tenant SaaS products built to scale from MVP to millions.",
-    features: [
-      "Multi-tenancy",
-      "Billing & RBAC",
-      "Onboarding flows",
-      "Admin tooling",
-    ],
-    tags: ["Next.js", "Stripe", "Postgres", "AWS"],
-  },
-  {
-    title: "Web Development",
-    iconKey: "web",
-    desc: "Blisteringly fast full-stack web platforms built with modern frameworks and edge-first architecture.",
-    features: ["Design systems", "SSR & SEO", "Edge runtime", "Analytics"],
-    tags: ["React", "Next.js", "Tailwind", "Cloudflare"],
-  },
-  {
-    title: "Mobile Apps",
-    iconKey: "mobile",
-    desc: "Native-feeling iOS & Android experiences crafted with React Native and Swift / Kotlin.",
-    features: [
-      "Cross-platform",
-      "Native modules",
-      "Push & deep links",
-      "Offline-first",
-    ],
-    tags: ["React Native", "Expo", "Swift", "Kotlin"],
-  },
-  {
-    title: "API Integration",
-    iconKey: "api",
-    desc: "Connect anything — payments, CRMs, AI APIs, internal systems.",
-    features: ["Webhook infra", "Sync engines", "Auth flows", "SDKs"],
-    tags: ["GraphQL", "REST", "OAuth", "gRPC"],
-  },
-  {
-    title: "Automation Systems",
-    iconKey: "automation",
-    desc: "Workflow engines, AI ops automation, internal tooling that scales.",
-    features: ["Job queues", "Visual workflows", "AI triggers", "Audit logs"],
-    tags: ["Temporal", "Zapier", "n8n", "Lambda"],
-  },
-  {
-    title: "UI / UX Design",
-    iconKey: "ui",
-    desc: "Cinematic, opinionated interfaces that elevate brand and convert with every pixel.",
-    features: ["Design systems", "Prototyping", "Motion", "Research"],
-    tags: ["Figma", "Framer", "Motion", "Storybook"],
-  },
-  {
-    title: "Cloud Systems",
-    iconKey: "cloud",
-    desc: "Resilient cloud infrastructure on AWS, Vercel & Cloudflare — observable, secure, automated.",
-    features: [
-      "IaC pipelines",
-      "Observability",
-      "Cost controls",
-      "Zero-downtime",
-    ],
-    tags: ["AWS", "Docker", "Kubernetes", "Terraform"],
-  },
-  {
-    title: "SEO & Digital Marketing",
-    iconKey: "marketing",
-    desc: "Data-driven SEO, content strategy, paid campaigns, and growth marketing that drive qualified traffic and measurable business results.",
-    features: [
-      "Technical SEO",
-      "Content strategy",
-      "PPC campaigns",
-      "Conversion optimization",
-    ],
-    tags: ["Google Ads", "SEO", "Analytics", "Meta Ads"],
-  },
-  {
-    title: "E-Commerce Solutions",
-    iconKey: "ecommerce",
-    desc: "High-converting online stores and marketplaces with seamless checkout, inventory management, and scalable commerce infrastructure.",
-    features: [
-      "Online stores",
-      "Payment gateways",
-      "Inventory systems",
-      "Marketplace development",
-    ],
-    tags: ["Shopify", "WooCommerce", "Stripe", "Commerce"],
-  },
-];
+
 // case studies data
 export const CASE_STUDIES_DATA: CaseStudy[] = [
   {
@@ -326,4 +212,3 @@ export const TEAM: TeamMember[] = [
   { initials: "LP", name: "Lena Park", role: "Design Director" },
   { initials: "YK", name: "Yusuf Khan", role: "Principal Engineer" },
 ];
-

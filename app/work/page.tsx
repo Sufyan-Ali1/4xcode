@@ -7,8 +7,8 @@ import { CaseStudyCard } from "../../components/ui/CaseStudyCard";
 import { CASE_STUDIES_DATA } from "../../data/index";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import Link from "next/link";
-import NarrativeSection from "@/components/landing/NarrativeSection";
-import ContactCtaSection from "@/components/landing/ContactCtaSection";
+import NarrativeSection from "../../components/landing/NarrativeSection";
+import ContactCtaSection from "../../components/landing/ContactCtaSection";
 
 const inter = Inter({ subsets: ["latin"], weight: ["300", "400", "500"] });
 const spaceGrotesk = Space_Grotesk({

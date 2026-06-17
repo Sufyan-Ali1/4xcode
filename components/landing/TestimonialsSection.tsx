@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
-import { Reveal } from "@/utils/AnimationReveal";
+import { Reveal } from "../../utils/AnimationReveal";
 import { TESTIMONIALS } from "../../data/index";
 
 export default function TestimonialsSection() {

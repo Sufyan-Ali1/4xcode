@@ -177,7 +177,7 @@ function DashboardImage() {
       >
         <img
           src="/assets/container.jpg"
-          alt="Dashboard preview"
+          alt="4xCode AI-powered SaaS dashboard interface preview"
           className="relative z-10 w-full h-auto object-cover rounded-xl"
         />
       </motion.div>
@@ -213,7 +213,7 @@ export default function HeroSection() {
 
           <Reveal delay={0.1}>
             <h1 className="text-5xl md:text-7xl lg:text-[88px] font-bold leading-[1.05] tracking-[-2px] text-white">
-              Engineering The
+              Engineering the
               <br />
               Future With{" "}
               <span className="bg-linear-to-br from-red-300 to-red-600 bg-clip-text text-transparent">
@@ -224,8 +224,8 @@ export default function HeroSection() {
 
           <Reveal delay={0.2}>
             <p className="max-w-xl text-base md:text-lg leading-7 text-neutral-400">
-              We build ultra-fast, visually stunning, and high-converting
-              AI-powered SaaS and web applications for modern brands.
+              A software development company building AI-powered SaaS, web, and
+              mobile products for modern brands.
             </p>
           </Reveal>
 

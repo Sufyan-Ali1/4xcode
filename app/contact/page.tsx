@@ -4,6 +4,7 @@ import React from "react";
 import { Space_Grotesk, Inter } from "next/font/google";
 import { Reveal } from "../../utils/AnimationReveal";
 import ContactForm from "../../components/ui/ContactForm";
+import { useEffect } from "react";
 
 import {
   MailOutlined as MailOutlineIcon,
@@ -27,9 +28,9 @@ interface ContactDetailsItem {
 }
 
 const contactDetails: ContactDetailsItem[] = [
-  { id: "email", label: "Email", value: "hello@4xcode.com" },
-  { id: "phone", label: "Phone", value: "+1 (415) 000-4404" },
-  { id: "studio", label: "Studio", value: "Remote · SF · Berlin" },
+  { id: "email", label: "Email", value: "info@4xcode.com" },
+  { id: "phone", label: "Phone", value: "+44 7578 227223" },
+  { id: "address", label: "ADDRESS", value: "01 Padnal court Romford RM6 5HR" },
 ];
 
 const renderContactIcon = (id: string) => {
@@ -39,7 +40,7 @@ const renderContactIcon = (id: string) => {
       return <MailOutlineIcon {...iconProps} />;
     case "phone":
       return <LocalPhoneOutlinedIcon {...iconProps} />;
-    case "studio":
+    case "address":
       return <PlaceOutlinedIcon {...iconProps} />;
     default:
       return null;
@@ -47,6 +48,21 @@ const renderContactIcon = (id: string) => {
 };
 
 export default function ContactPage() {
+  useEffect(() => {
+    document.title = "Contact 4xCode | Start Your Software Project";
+    let metaDescription = document.querySelector('meta[name="description"]');
+    const descriptionText =
+      "Tell us about your product. 4xCode responds within 24 hours with a sharp opinion and a clear path forward. Remote-first, EU/US.";
+
+    if (metaDescription) {
+      metaDescription.setAttribute("content", descriptionText);
+    } else {
+      metaDescription = document.createElement("meta");
+      metaDescription.setAttribute("name", "description");
+      metaDescription.setAttribute("content", descriptionText);
+      document.head.appendChild(metaDescription);
+    }
+  }, []);
   return (
     <div
       className={`bg-black text-white min-h-screen w-full relative overflow-hidden pb-24 ${inter.className}`}

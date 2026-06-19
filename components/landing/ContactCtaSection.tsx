@@ -42,7 +42,7 @@ export default function CTASection() {
           <Reveal delay={0.2}>
             <p className="max-w-xl text-sm md:text-base lg:text-lg leading-relaxed text-zinc-400 font-light">
               Tell us about your product. We’ll come back within 24 hours with a
-              sharp opinion and a path forward.
+              sharp opinion and a clear path forward.
             </p>
           </Reveal>
           <Reveal delay={0.3}>

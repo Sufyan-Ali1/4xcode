@@ -27,9 +27,11 @@ const services = [
         <WebIcon fontSize="small" />
       </ServiceIcon>
     ),
+
     title: "Web Development",
+    slug: "web-development",
     description:
-      "Blisteringly fast full-stack web platforms built with modern frameworks and edge-first architecture.",
+      "A web development agency building blisteringly fast, full-stack platforms with modern frameworks and edge-first architecture.",
   },
   {
     icon: (
@@ -38,8 +40,9 @@ const services = [
       </ServiceIcon>
     ),
     title: "Mobile Apps",
+    slug: "mobile-apps",
     description:
-      "Native-feeling iOS & Android experiences crafted with React Native and Swift / Kotlin.",
+      "Native-feeling iOS and Android app development using React Native, Swift, and Kotlin.",
   },
   {
     icon: (
@@ -47,9 +50,10 @@ const services = [
         <LayersIcon fontSize="small" />
       </ServiceIcon>
     ),
-    title: "SaaS Platforms",
+    title: "SaaS Engineering",
+    slug: "saas-engineering",
     description:
-      "Multi-tenant SaaS products with billing, auth, analytics and dashboards engineered to scale.",
+      "Multi-tenant SaaS development services with billing, auth, analytics, and dashboards engineered to scale.",
   },
   {
     icon: (
@@ -58,8 +62,9 @@ const services = [
       </ServiceIcon>
     ),
     title: "UI / UX Design",
+    slug: "ui-ux-design",
     description:
-      "Cinematic, opinionated interfaces that elevate brand and convert with every pixel.",
+      "A UI/UX design agency crafting cinematic, conversion-focused interfaces.",
   },
   {
     icon: (
@@ -67,9 +72,10 @@ const services = [
         <AutoAwesomeIcon fontSize="small" />
       </ServiceIcon>
     ),
-    title: "AI Solutions",
+    title: "AI Development",
+    slug: "ai-development",
     description:
-      "Production-grade AI agents, RAG pipelines and LLM-powered workflows that actually ship.",
+      "Production-grade AI agent development, RAG pipelines, and LLM-powered workflows that actually ship.",
   },
   {
     icon: (
@@ -78,8 +84,9 @@ const services = [
       </ServiceIcon>
     ),
     title: "Cloud Systems",
+    slug: "cloud-systems",
     description:
-      "Resilient cloud infrastructure on AWS, Vercel & Cloudflare — observable, secure, automated.",
+      "Resilient cloud infrastructure consulting on AWS, Vercel, and Cloudflare — observable, secure, automated.",
   },
 ];
 
@@ -131,7 +138,7 @@ export default function ServicesSection() {
               className="group flex flex-col rounded-[22px] overflow-hidden border border-transparent hover:border-[rgba(249,10,31,0.4)] transition-colors duration-300 bg-white/4 will-change-transform"
             >
               <Link
-                href="/service"
+                href={`/service/${service.slug}`}
                 className="flex flex-col gap-[7.4px] items-start p-7.25 w-full h-full cursor-pointer"
               >
                 {service.icon}

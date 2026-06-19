@@ -73,10 +73,10 @@ export default function Footer() {
                   href="mailto:hello@4xcode.com"
                   className="transition-colors duration-200 text-white font-[14px] font-normal"
                 >
-                  hello@4xcode.com
+                  info@4xcode.com
                 </Link>
               </li>
-              <li>Remote - EU / US</li>
+              <li>01 Padnal court Romford RM6 5HR</li>
               <li>Mon - Fri</li>
             </ul>
           </div>

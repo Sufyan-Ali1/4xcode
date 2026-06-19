@@ -13,9 +13,6 @@ const spaceGrotesk = Space_Grotesk({
   weight: ["400", "500", "700"],
 });
 
-const CARD_STYLE =
-  "group flex h-full flex-col rounded-[22px] border border-white/5 bg-white/2 p-6 transition-all duration-300 hover:border-[rgba(249,10,31,0.35)] hover:bg-white/4 will-change-transform items-center text-center";
-
 export default function TeamSection() {
   const reduced = useReducedMotion();
 
@@ -33,7 +30,7 @@ export default function TeamSection() {
               >
                 Operators &{" "}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF8A8C] to-[#EF1F23]">
-                  makers
+                  Makers
                 </span>
                 .
               </h2>
@@ -42,30 +39,53 @@ export default function TeamSection() {
           </div>
         </Reveal>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 auto-rows-fr gap-6">
+        {/* Full-width container with clean line breaks */}
+        <div className="w-full divide-y divide-zinc-800/60 border-b border-zinc-800/60">
           {TEAM.map((member: TeamMember, index: number) => (
             <motion.div
               key={member.name}
-              initial={{ opacity: 0, y: reduced ? 0 : 30 }}
+              initial={{ opacity: 0, y: reduced ? 0 : 15 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.15 }}
-              transition={{
-                duration: 0.7,
-                delay: 0.05 * (index % 4), 
-              }}
-              whileHover={{ scale: 1.02, y: -4 }}
-              className="h-full"
+              viewport={{ once: true, amount: 0.1 }}
+              transition={{ duration: 0.5, delay: index * 0.05 }}
+              className="w-full py-10 group transition-colors duration-300 hover:bg-zinc-900/10"
             >
-              <div className={CARD_STYLE}>
-                <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-[#EF1F23] to-[#990a0d] flex items-center justify-center font-bold tracking-wider text-white text-base shadow-lg shadow-[#EF1F23]/10 mb-4 group-hover:scale-105 transition-transform duration-300 flex-shrink-0">
-                  {member.initials}
+              {/* Centered layout box grid across the screen */}
+              <div className="grid grid-cols-1 md:grid-cols-12 gap-y-6 md:gap-x-12 items-center max-w-5xl mx-auto px-4">
+                
+                {/* LEFT: Stacked Profile Metadata Block (Spans 4 columns) */}
+                <div className="md:col-span-4 flex flex-col items-center md:items-start text-center md:text-left space-y-3">
+                  {/* 1. Initials on Top */}
+                  <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-[#EF1F23] to-[#990a0d] flex items-center justify-center font-bold tracking-wider text-white text-sm shadow-md shadow-[#EF1F23]/10 flex-shrink-0 transition-transform duration-300 group-hover:scale-105">
+                    {member.initials}
+                  </div>
+
+                  <div className="space-y-1">
+                    {/* 2. Name in Middle */}
+                    <h4 className={`${spaceGrotesk.className} text-base font-semibold text-white tracking-tight`}>
+                      {member.name}
+                    </h4>
+
+                    {/* 3. Role on Bottom */}
+                    <p className="text-[10px] font-bold uppercase tracking-widest text-[#EF1F23]">
+                      {member.role}
+                    </p>
+                  </div>
                 </div>
-                <h4 className={`${spaceGrotesk.className} text-sm font-semibold text-white`}>
-                  {member.name}
-                </h4>
-                <p className="text-[11px] text-zinc-500 mt-0.5">
-                  {member.role}
-                </p>
+
+                {/* RIGHT: Biography Text Block (Spans 8 columns) */}
+                <div className="md:col-span-8 flex items-center justify-center md:justify-start">
+                  {member.detail ? (
+                    <p className="text-sm text-zinc-400 leading-relaxed font-normal antialiased text-center md:text-left">
+                      {member.detail}
+                    </p>
+                  ) : (
+                    <p className="text-sm text-zinc-600 italic">
+                      Profile content pending.
+                    </p>
+                  )}
+                </div>
+
               </div>
             </motion.div>
           ))}

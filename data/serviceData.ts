@@ -2,10 +2,9 @@ export interface TechCategory {
   name: string;
   items: string[];
 }
-
-export interface TechCategory {
+export interface TagItem {
   name: string;
-  items: string[];
+  description: string;
 }
 
 export interface ArchitecturePhase {
@@ -13,10 +12,18 @@ export interface ArchitecturePhase {
   title: string;
   desc: string;
 }
+export interface ChoiceReason {
+  title: string;
+  desc: string;
+}
 
 export interface Metric {
   value: string;
   label: string;
+}
+export interface FeatureItem {
+  title: string;
+  description: string;
 }
 
 export interface Faq {
@@ -33,14 +40,18 @@ export interface ServiceItem {
   slug: string;
   iconKey: string;
   title: string;
+  titleTag: string;
+  metaDesc: string;
+  intro: string;
   desc: string;
-  features: string[];
-  tags: string[];
+  features: FeatureItem[];
+  tags: TagItem[];
   longTitle: string;
   gradientWord: string;
   longDesc: string;
   techCategories: TechCategory[];
   architecture: ArchitecturePhase[];
+  whyTeamsChoose: ChoiceReason[];
   metrics: Metric[];
   faqs: Faq[];
   pillars: Pillar[];
@@ -52,18 +63,57 @@ export const SERVICES_DATA: ServiceItem[] = [
     slug: "ai-development",
     iconKey: "ai",
     title: "AI Development",
-    desc: "LLM apps, agents, fine-tuning, RAG, computer vision and ML systems.",
+    titleTag: "AI Development Services | LLM Agents, RAG & ML — 4xCode",
+    metaDesc:
+      "Custom AI agent development, RAG pipelines, fine-tuning, and vector search built to ship in production — not just demos. Talk to 4xCode.",
+    desc: "Custom AI agent development, RAG pipelines, fine-tuning, and vector search built to ship in production — not just demos.",
+    intro:
+      "4xCode builds production-grade AI systems — not prototypes. Our AI development services cover custom LLM agents, RAG pipelines, model fine-tuning, and vector search, using OpenAI, PyTorch, and LangChain to ship AI that holds up under real user load. ",
     features: [
-      "Custom LLM agents",
-      "RAG pipelines",
-      "Fine-tuning",
-      "Vector search",
+      {
+        title: "Custom LLM agents",
+        description:
+          "Multi-step reasoning agents that can call tools, query APIs, and complete real workflows, not just answer single-turn questions.",
+      },
+      {
+        title: "RAG pipelines",
+        description:
+          "Retrieval systems that connect your LLM to your actual knowledge base, documents, or product data, with chunking and re-ranking strategies tuned for accuracy.",
+      },
+      {
+        title: "Fine-tuning",
+        description:
+          "Model fine-tuning for domain-specific tone, accuracy, or task performance when prompting alone isn't precise enough.",
+      },
+      {
+        title: "Vector search",
+        description:
+          "Production-grade vector search infrastructure for semantic search, recommendations, and retrieval at scale.",
+      },
     ],
-    tags: ["OpenAI", "PyTorch", "LangChain", "Pinecone"],
-    longTitle: "Intelligence Built directly into ",
-    gradientWord: "Core Infrastructure",
+    tags: [
+      {
+        name: "OpenAI",
+        description:
+          "Foundation models and function-calling agent orchestration.",
+      },
+      {
+        name: "PyTorch",
+        description: "Custom model training and fine-tuning workflows.",
+      },
+      {
+        name: "LangChain",
+        description: "Chaining retrieval, tools, and multi-step agent logic.",
+      },
+      {
+        name: "Pinecone",
+        description: "Vector storage and low-latency semantic search at scale.",
+      },
+    ],
+    longTitle: "AI Development Services Built to Ship, Not Just ",
+    gradientWord: "Demo",
     longDesc:
-      "We strip away the academic overhead to build robust, scalable agentic automation systems. From custom semantic indexing layers to isolated internal inference clusters, your corporate knowledge base remains fully deterministic and locked within your structural enterprise boundaries.",
+      "Custom LLM agents, RAG pipelines, and machine learning systems engineered for production load. Most 'AI features' never make it past a prototype. 4xCode's AI development services are built specifically for production: systems that hold up under real traffic, real edge cases, and real user expectations. We design custom LLM agents that reason through multi-step tasks, retrieval-augmented generation (RAG) pipelines that ground responses in your actual data, and fine-tuned models tailored to your domain — all engineered with the same rigor we bring to traditional software, because an AI feature that breaks in production is worse than no AI feature at all.",
     techCategories: [
       {
         name: "Frameworks & Engine",
@@ -102,26 +152,44 @@ export const SERVICES_DATA: ServiceItem[] = [
     ],
     faqs: [
       {
-        q: "How do you guarantee that corporate data doesn't leak into public LLMs?",
-        a: "We deploy isolated local inference engines via vLLM or secure virtual private clouds using AWS Bedrock, ensuring your weights and enterprise datasets are never processed by public pipelines.",
+        q: "How long does it take to build an AI agent or RAG pipeline?",
+        a: "Most RAG implementations ship in 3–6 weeks depending on data complexity; custom multi-step agents typically take 6–10 weeks including evaluation and hardening.",
       },
       {
-        q: "What strategy is implemented to prevent hallucination in agent structures?",
-        a: "We build strict deterministic RAG guardrails and mathematical fallback thresholds into our routing layers so the model only executes functions backed by verifiable text nodes.",
+        q: "Do you work with our existing tech stack?",
+        a: "Yes — we integrate AI features into existing Next.js, Node, or Python backends rather than requiring a rebuild.",
+      },
+      {
+        q: "Can you fine-tune a model on our proprietary data?",
+        a: "Yes, we handle data preparation, fine-tuning, and evaluation, with strict data privacy controls throughout.",
       },
     ],
     pillars: [
       {
         title: "Reliability by design",
-        desc: "Evals, guardrails and fallback logic ship with the model, not bolted on after the first incident.",
+        desc: "We build deterministic pipelines around LLMs instead of relying on fragile prompt chains, so behavior stays predictable as you scale.",
       },
       {
         title: "Grounded in your data",
-        desc: "Retrieval and fine-tuning tuned to your domain, so answers are specific instead of generic.",
+        desc: "Every agent ships with evaluation and monitoring, so you know when output quality drifts — before your users do.",
       },
       {
         title: "Built to scale",
-        desc: "Architectures that handle ten users and ten million, with queueing and rate limits handled upfront.",
+        desc: "Our AI work is integrated with full-stack engineering, so the AI feature actually connects cleanly to your existing product instead of living in a separate sandbox.",
+      },
+    ],
+    whyTeamsChoose: [
+      {
+        title: "Deterministic Architectures",
+        desc: "We build deterministic pipelines around LLMs instead of relying on fragile prompt chains, so behavior stays predictable as you scale.",
+      },
+      {
+        title: "Evaluation & Monitoring",
+        desc: "Every agent ships with evaluation and monitoring, so you know when output quality drifts — before your users do.",
+      },
+      {
+        title: "Clean Product Integration",
+        desc: "Our AI work is integrated with full-stack engineering, so the AI feature actually connects cleanly to your existing product instead of living in a separate sandbox.",
       },
     ],
     relatedSlugs: ["custom-software", "automation-systems", "cloud-systems"],
@@ -130,18 +198,50 @@ export const SERVICES_DATA: ServiceItem[] = [
     slug: "custom-software",
     iconKey: "software",
     title: "Custom Software",
-    desc: "Bespoke engineering for ambitious products with serious technical depth.",
+    titleTag: "Custom Software Development Services — 4xCode",
+    metaDesc:
+      "Bespoke software architecture, backend systems, and data platforms engineered for ambitious products with serious technical depth.",
+    desc: "Bespoke software architecture, backend systems, and data platforms engineered for ambitious products with serious technical depth.",
+    intro:
+      "When off-the-shelf tools hit their ceiling, 4xCode designs custom software architecture built for your exact problem — backend systems, data platforms, and realtime sync built on Go, Node.js, and Postgres. ",
     features: [
-      "Architecture design",
-      "Backend systems",
-      "Data platforms",
-      "Realtime sync",
+      {
+        title: "Architecture design",
+        description:
+          "Systems design sessions that map your data model, scaling requirements, and failure modes before a line of code is written.",
+      },
+      {
+        title: "Backend systems",
+        description:
+          "Robust, typed backend services built for correctness and maintainability, not just speed to first demo.",
+      },
+      {
+        title: "Data platforms",
+        description:
+          "Custom data pipelines and storage architecture for products where the data model is the product.",
+      },
+      {
+        title: "Realtime sync",
+        description:
+          "Live, multi-user state synchronization for collaborative tools, dashboards, and operational systems.",
+      },
     ],
-    tags: ["Go", "Node.js", "Postgres", "Redis"],
-    longTitle: "High-Performance Applications Tailored for ",
-    gradientWord: "Global Scale",
+    tags: [
+      {
+        name: "Go",
+        description: "High-throughput, low-latency backend services.",
+      },
+      {
+        name: "Node.js",
+        description: "Flexible API layers and rapid backend iteration.",
+      },
+      { name: "Postgres", description: "Relational data integrity at scale." },
+      { name: "Redis", description: "Caching, queues, and realtime pub/sub." },
+    ],
+    longTitle: "Custom Software Development for Problems Off-the-Shelf Tools ",
+    gradientWord: "Can't Solve",
     longDesc:
-      "We construct reliable software platforms focused entirely on concrete performance metrics. By utilizing type-safe compiler boundaries, decoupled modular component stacks, and edge asset routing distributions, we completely avoid processing overhead bottlenecks.",
+      "Bespoke architecture, backend systems, and data platforms built for serious technical depth. Some products outgrow no-code tools and templated SaaS in the first six months. When your business logic is genuinely unique — complex data relationships, custom workflows, real-time requirements — 4xCode designs custom software architecture from the ground up instead of forcing your problem into someone else's framework. We've built backend systems and data platforms for products handling everything from high-frequency transaction processing to multi-step regulatory workflows, always with an eye on what the system needs to look like in three years, not just at launch.",
     techCategories: [
       {
         name: "Core Infrastructure Layers",
@@ -180,22 +280,44 @@ export const SERVICES_DATA: ServiceItem[] = [
     ],
     faqs: [
       {
-        q: "Why do you privilege Go and type-safe systems over generic runtimes?",
-        a: "Go allows us to build compile-time safe software with minimal memory footprints, avoiding the structural performance spikes and garbage collection traps standard in heavy object runtimes.",
+        q: "When does custom software make more sense than a SaaS template?",
+        a: "When your core business logic is differentiated — unique data relationships, compliance requirements, or workflows no off-the-shelf product handles — custom architecture pays for itself quickly.",
+      },
+      {
+        q: "Will our internal team be able to maintain this after launch?",
+        a: "Yes — we build with standard, well-documented patterns and hand off full technical documentation, not a black box.",
+      },
+      {
+        q: "Do you handle data migration from a legacy system?",
+        a: "Yes, including phased migrations that keep the old system running during cutover.",
       },
     ],
     pillars: [
       {
         title: "Architecture first",
-        desc: "Every system starts with a data model and service boundary that won't need a rewrite at scale.",
+        desc: "We design for the failure modes most teams don't think about until they hit production at scale.",
       },
       {
         title: "Built to last",
-        desc: "Typed, tested and documented so the next engineer can extend it without guessing.",
+        desc: "Strict TypeScript and typed backend contracts mean fewer runtime surprises and faster onboarding for your own engineers later.",
       },
       {
         title: "Performance by default",
-        desc: "Profiling and load testing are part of delivery, not an afterthought.",
+        desc: "We document architecture decisions as we make them, so the system is maintainable by your team — not just ours.",
+      },
+    ],
+    whyTeamsChoose: [
+      {
+        title: "Failure Mode Design",
+        desc: "We design for the failure modes most teams don't think about until they hit production at scale.",
+      },
+      {
+        title: "Strict Type Safety",
+        desc: "Strict TypeScript and typed backend contracts mean fewer runtime surprises and faster onboarding for your own engineers later.",
+      },
+      {
+        title: "Transparent Documentation",
+        desc: "We document architecture decisions as we make them, so the system is maintainable by your team — not just ours.",
       },
     ],
     relatedSlugs: ["saas-engineering", "api-integration", "cloud-systems"],
@@ -204,18 +326,57 @@ export const SERVICES_DATA: ServiceItem[] = [
     slug: "saas-engineering",
     iconKey: "saas",
     title: "SaaS Engineering",
-    desc: "Multi-tenant SaaS products built to scale from MVP to millions.",
+    titleTag: "SaaS Development Company | Multi-Tenant Engineering — 4xCode",
+    metaDesc:
+      "Multi-tenant SaaS platforms with billing, RBAC, and onboarding flows built to scale from MVP to millions of users.",
+    desc: "Multi-tenant SaaS platforms with billing, RBAC, and onboarding flows built to scale from MVP to millions of users.",
+    intro:
+      "4xCode is a SaaS development company specializing in multi-tenant architecture, billing and RBAC, and onboarding flows — built on Next.js, Stripe, and AWS to scale from your first ten customers to your millionth. ",
     features: [
-      "Multi-tenancy",
-      "Billing & RBAC",
-      "Onboarding flows",
-      "Admin tooling",
+      {
+        title: "Multi-tenancy",
+        description:
+          "Tenant isolation strategies (shared schema, schema-per-tenant, or database-per-tenant) chosen based on your actual scale and compliance needs.",
+      },
+      {
+        title: "Billing & RBAC",
+        description:
+          "Usage-based and seat-based billing integrations with granular role-based access control baked into the data layer, not bolted on.",
+      },
+      {
+        title: "Onboarding flows",
+        description:
+          "Activation-focused onboarding designed to get users to their 'aha moment' fast, with instrumentation to measure where users drop off.",
+      },
+      {
+        title: "Admin tooling",
+        description:
+          "Internal admin dashboards so your team can support customers, manage tenants, and debug issues without touching the database directly.",
+      },
     ],
-    tags: ["Next.js", "Stripe", "Postgres", "AWS"],
-    longTitle: "Multi-Tenant Architectures Built to ",
-    gradientWord: "Scale Instantly",
+    tags: [
+      {
+        name: "Next.js",
+        description: "Fast, SEO-capable frontend with server-side rendering.",
+      },
+      {
+        name: "Stripe",
+        description: "Subscription billing, metering, and invoicing.",
+      },
+      {
+        name: "Postgres",
+        description: "Relational tenant data with row-level security.",
+      },
+      {
+        name: "AWS",
+        description:
+          "Scalable, compliant infrastructure as your customer base grows.",
+      },
+    ],
+    longTitle: "SaaS Development Built to Scale From ",
+    gradientWord: "MVP to Millions",
     longDesc:
-      "We design cloud-native SaaS systems engineered for isolated customer spaces, unified feature flags, and secure ledger configurations. Maximize infrastructure margins without sacrificing multi-tenant performance thresholds.",
+      "Multi-tenant architecture, billing, and onboarding engineered for real growth, not just a launch demo. Building a SaaS product is different from building a website — the architecture decisions you make in month one determine whether you can support 10 customers or 10,000 without a rewrite. As a SaaS development company, 4xCode specializes in multi-tenant systems engineered correctly from day one: tenant isolation, role-based access control, usage-based billing, and onboarding flows that convert trial users into paying customers. We've taken SaaS products from first customer to seven figures in ARR without the painful architecture rewrite most teams hit at scale.",
     techCategories: [
       {
         name: "Frontend Client",
@@ -254,22 +415,44 @@ export const SERVICES_DATA: ServiceItem[] = [
     ],
     faqs: [
       {
-        q: "How do you enforce multi-tenant separation across API surfaces?",
-        a: "We utilize row-level security (RLS) on database clusters combined with cryptographic tenant tokens checked instantly at our middleware boundary layers.",
+        q: "What tenant isolation model is right for our SaaS?",
+        a: "It depends on your compliance requirements and customer size — we'll walk through shared-schema vs. database-per-tenant trade-offs specific to your product during discovery.",
+      },
+      {
+        q: "Can you integrate with our existing billing provider?",
+        a: "Yes, we work with Stripe, Paddle, and most usage-based billing platforms.",
+      },
+      {
+        q: "How do you handle SaaS security and compliance (SOC 2, GDPR)?",
+        a: "We build with compliance-ready patterns from the start — encrypted data at rest, audit logging, and access controls — and can support your path to SOC 2 or GDPR readiness.",
       },
     ],
     pillars: [
       {
         title: "Multi-tenant from day one",
-        desc: "Isolation, billing and RBAC are architectural decisions, not retrofits.",
+        desc: "We've built multi-tenant systems that scaled without the re-architecture most SaaS teams face at their first growth inflection point.",
       },
       {
         title: "Revenue-ready",
-        desc: "Stripe, plans and usage metering wired in before your first paying customer.",
+        desc: "Billing and RBAC are designed into the schema from day one, avoiding the security and accounting headaches of retrofitting them later.",
       },
       {
         title: "Operable at scale",
-        desc: "Admin tooling and per-tenant observability so support doesn't mean guesswork.",
+        desc: "We instrument onboarding from day one so you have real activation data, not guesses, when deciding what to fix next.",
+      },
+    ],
+    whyTeamsChoose: [
+      {
+        title: "Battle-Tested Scaling",
+        desc: "We've built multi-tenant systems that scaled without the re-architecture most SaaS teams face at their first growth inflection point.",
+      },
+      {
+        title: "Schema-Integrated Security",
+        desc: "Billing and RBAC are designed into the schema from day one, avoiding the security and accounting headaches of retrofitting them later.",
+      },
+      {
+        title: "Data-Driven Activation",
+        desc: "We instrument onboarding from day one so you have real activation data, not guesses, when deciding what to fix next.",
       },
     ],
     relatedSlugs: ["custom-software", "web-development", "api-integration"],
@@ -278,13 +461,57 @@ export const SERVICES_DATA: ServiceItem[] = [
     slug: "web-development",
     iconKey: "web",
     title: "Web Development",
-    desc: "Blisteringly fast full-stack web platforms built with modern frameworks and edge-first architecture.",
-    features: ["Design systems", "SSR & SEO", "Edge runtime", "Analytics"],
-    tags: ["React", "Next.js", "Tailwind", "Cloudflare"],
-    longTitle: "Blisteringly Fast Interfaces Tailored for ",
-    gradientWord: "Conversion",
+    titleTag: "Web Development Agency | Next.js & React — 4xCode",
+    metaDesc:
+      "Full-stack web platforms built with React and Next.js, edge runtime, and SEO-first architecture for blistering speed and conversion.",
+    desc: "Full-stack web platforms built with React and Next.js, edge runtime, and SEO-first architecture for blistering speed and conversion.",
+    intro:
+      "As a web development agency built around React and Next.js, 4xCode ships design systems, SSR-optimized pages, and edge-runtime infrastructure — so your site is fast for users and legible to search engines from day one. ",
+    features: [
+      {
+        title: "Design systems",
+        description:
+          "Reusable, documented component libraries so your site stays visually consistent as it grows, without rebuilding UI from scratch each time.",
+      },
+      {
+        title: "SSR & SEO",
+        description:
+          "Server-side rendering and metadata architecture built specifically for search engine crawlability and rich social previews.",
+      },
+      {
+        title: "Edge runtime",
+        description:
+          "Deployment at the edge for low-latency response times regardless of where your users are.",
+      },
+      {
+        title: "Analytics",
+        description:
+          "Performance and behavior analytics instrumented from launch, so you can see what's working without guessing.",
+      },
+    ],
+    tags: [
+      {
+        name: "React",
+        description: "Component-driven, maintainable frontend architecture.",
+      },
+      {
+        name: "Next.js",
+        description:
+          "SSR, static generation, and built-in performance optimization.",
+      },
+      {
+        name: "Tailwind",
+        description: "Fast, consistent styling without CSS bloat.",
+      },
+      {
+        name: "Cloudflare",
+        description: "Edge delivery, caching, and DDoS protection.",
+      },
+    ],
+    longTitle: "Web Development That's Fast for Users and Legible to ",
+    gradientWord: "Search Engines",
     longDesc:
-      "We craft rich, highly interactive online interfaces focused on sub-second load times and absolute pixel perfection. Utilizing optimized edge distribution layers guarantees absolute zero cold starts.",
+      "Full-stack platforms built on React and Next.js with edge-first architecture. A slow website costs you both rankings and revenue — Core Web Vitals are a ranking factor, and every 100ms of added load time measurably hurts conversion. As a web development agency built around React and Next.js, 4xCode designs sites and web applications with performance and SEO architecture baked in from the first commit: server-side rendering where it helps search visibility, static generation where it helps speed, and edge runtime deployment so your site is fast everywhere, not just near your origin server.",
     techCategories: [
       {
         name: "Application Engineering",
@@ -323,22 +550,44 @@ export const SERVICES_DATA: ServiceItem[] = [
     ],
     faqs: [
       {
-        q: "Do your Next.js builds leverage static generation or dynamic edge execution?",
-        a: "We deploy hybrid architectures using partial prerendering (PPR). Highly structured contents are compiled static, while user interactions execute directly on edge runtimes.",
+        q: "Will my new site be SEO-ready at launch?",
+        a: "Yes — proper meta tags, semantic HTML, sitemap, schema markup, and Core Web Vitals optimization are built in, not added later.",
+      },
+      {
+        q: "Do you build on top of our existing CMS?",
+        a: "We can integrate headless CMS platforms (Contentful, Sanity, etc.) or build custom content management depending on your team's workflow.",
+      },
+      {
+        q: "How fast will the site actually load?",
+        a: "We target sub-second Largest Contentful Paint and pass all Core Web Vitals thresholds before launch — measured, not estimated.",
       },
     ],
     pillars: [
       {
         title: "Speed as a feature",
-        desc: "Edge rendering and aggressive caching so pages feel instant, not just compliant.",
+        desc: "We treat SEO architecture as a first-class requirement, not an afterthought bolted on after launch.",
       },
       {
         title: "Pixel-accurate",
-        desc: "Design systems implemented faithfully down to spacing and motion.",
+        desc: "Performance budgets (load time, Core Web Vitals) are set and tracked from day one, not discovered after a client complains.",
       },
       {
         title: "Built to rank",
-        desc: "SEO and Core Web Vitals considered from the first component, not patched in later.",
+        desc: "Our design systems mean your marketing team can ship new pages without waiting on engineering for every change.",
+      },
+    ],
+    whyTeamsChoose: [
+      {
+        title: "SEO-First Engineering",
+        desc: "We treat SEO architecture as a first-class requirement, not an afterthought bolted on after launch.",
+      },
+      {
+        title: "Monitored Performance Budgets",
+        desc: "Performance budgets (load time, Core Web Vitals) are set and tracked from day one, not discovered after a client complains.",
+      },
+      {
+        title: "Modular Design Frameworks",
+        desc: "Our design systems mean your marketing team can ship new pages without waiting on engineering for every change.",
       },
     ],
     relatedSlugs: ["ui-ux-design", "seo-digital-marketing", "saas-engineering"],
@@ -347,18 +596,57 @@ export const SERVICES_DATA: ServiceItem[] = [
     slug: "mobile-apps",
     iconKey: "mobile",
     title: "Mobile Apps",
-    desc: "Native-feeling iOS & Android experiences crafted with React Native and Swift / Kotlin.",
+    titleTag: "Mobile App Development Company | iOS & Android — 4xCode",
+    metaDesc:
+      "Native-feeling cross-platform apps built with React Native, Swift, and Kotlin — push notifications, deep links, offline-first.",
+    desc: "Native-feeling cross-platform apps built with React Native, Swift, and Kotlin — push notifications, deep links, offline-first.",
+    intro:
+      "4xCode builds mobile apps that feel native, not hybrid. Our mobile app development company uses React Native alongside Swift and Kotlin native modules for performance-critical features, push notifications, and offline-first experiences. ",
     features: [
-      "Cross-platform",
-      "Native modules",
-      "Push & deep links",
-      "Offline-first",
+      {
+        title: "Cross-platform",
+        description:
+          "Shared React Native codebase for business logic and most UI, cutting development time without sacrificing feel.",
+      },
+      {
+        title: "Native modules",
+        description:
+          "Custom Swift and Kotlin modules for performance-critical or platform-specific features that React Native can't handle well alone.",
+      },
+      {
+        title: "Push & deep links",
+        description:
+          "Push notification infrastructure and deep linking so users land exactly where they should, from any entry point.",
+      },
+      {
+        title: "Offline-first",
+        description:
+          "Local-first data architecture so the app stays usable on poor connections and syncs cleanly when connectivity returns.",
+      },
     ],
-    tags: ["React Native", "Expo", "Swift", "Kotlin"],
-    longTitle: "Native Mobile Systems Tuned for ",
-    gradientWord: "Fluid Motion",
+    tags: [
+      {
+        name: "React Native",
+        description: "Shared cross-platform UI and logic.",
+      },
+      {
+        name: "Expo",
+        description:
+          "Faster builds, OTA updates, and simplified native module management.",
+      },
+      {
+        name: "Swift",
+        description: "Native iOS performance and platform integration.",
+      },
+      {
+        name: "Kotlin",
+        description: "Native Android performance and platform integration.",
+      },
+    ],
+    longTitle: "Mobile Apps That Feel Native, Built for Both ",
+    gradientWord: "Platforms at Once",
     longDesc:
-      "We build reliable cross-platform mobile apps configured with true multi-threaded native extensions. Ensure your system loads perfectly offline without disrupting internal database states.",
+      "Cross-platform engineering with native modules where performance actually matters. Cross-platform mobile development gets a bad reputation because most teams use it everywhere, including the places it doesn't belong. 4xCode builds mobile apps as a mobile app development company that uses React Native for shared business logic and UI, then drops into native Swift and Kotlin modules specifically where performance or platform APIs demand it — camera processing, background tasks, biometric auth. The result is an app that ships faster than fully native development, without the janky feel users associate with 'just a web app in a wrapper.'",
     techCategories: [
       {
         name: "Cross Platform Core",
@@ -397,22 +685,44 @@ export const SERVICES_DATA: ServiceItem[] = [
     ],
     faqs: [
       {
-        q: "How are complex UI calculation thread bottlenecks managed?",
-        a: "We map performance critical modules down into JSI native modules written in Swift and Kotlin, completely bypassing standard JSON string bridge lags.",
+        q: "Should we build native or cross-platform?",
+        a: "For most consumer and SaaS mobile products, React Native with targeted native modules gets you to market faster at near-native quality — we'll flag if your specific use case (heavy AR, gaming) needs a fully native approach instead.",
+      },
+      {
+        q: "Can you maintain feature parity between iOS and Android?",
+        a: "Yes — shared business logic in React Native means new features ship to both platforms simultaneously by default.",
+      },
+      {
+        q: "How do you handle app store review and submission?",
+        a: "We manage App Store and Google Play submission, including compliance review, screenshots, and metadata.",
       },
     ],
     pillars: [
       {
         title: "Feels native",
-        desc: "Platform-specific interactions and motion, not a webview wearing an app icon.",
+        desc: "We know exactly where cross-platform breaks down and build native modules there instead of fighting the framework.",
       },
       {
         title: "Works offline",
-        desc: "Local-first data so the app is usable on a flight, not just on a stable connection.",
+        desc: "Offline-first architecture is designed in from the start for apps where connectivity can't be assumed.",
       },
       {
         title: "Ships to both stores",
-        desc: "One codebase, native modules where it counts, and a release pipeline that doesn't stall on review.",
+        desc: "One codebase for iOS and Android means feature parity without double the engineering time.",
+      },
+    ],
+    whyTeamsChoose: [
+      {
+        title: "Targeted Native Extensions",
+        desc: "We know exactly where cross-platform breaks down and build native modules there instead of fighting the framework.",
+      },
+      {
+        title: "Local-First Architecture",
+        desc: "Offline-first architecture is designed in from the start for apps where connectivity can't be assumed.",
+      },
+      {
+        title: "Unified Development Cycle",
+        desc: "One codebase for iOS and Android means feature parity without double the engineering time.",
       },
     ],
     relatedSlugs: ["ui-ux-design", "api-integration", "custom-software"],
@@ -421,13 +731,58 @@ export const SERVICES_DATA: ServiceItem[] = [
     slug: "api-integration",
     iconKey: "api",
     title: "API Integration",
-    desc: "Connect anything — payments, CRMs, AI APIs, internal systems.",
-    features: ["Webhook infra", "Sync engines", "Auth flows", "SDKs"],
-    tags: ["GraphQL", "REST", "OAuth", "gRPC"],
-    longTitle: "Highly Resilient Bridges Between Complex ",
-    gradientWord: "Data Systems",
+    titleTag: "API Integration Services | Payments, CRM, AI — 4xCode",
+    metaDesc:
+      "Connect payment processors, CRMs, AI APIs, and internal systems with secure webhook infrastructure, sync engines, and SDKs.",
+    desc: "Connect payment processors, CRMs, AI APIs, and internal systems with secure webhook infrastructure, sync engines, and SDKs.",
+    intro:
+      "4xCode's API integration services connect the systems your business already runs on — payment processors, CRMs, AI APIs — through resilient webhook infrastructure, OAuth flows, and custom SDKs. ",
+    features: [
+      {
+        title: "Webhook infra",
+        description:
+          "Reliable webhook ingestion with retry logic, deduplication, and dead-letter handling so events never silently disappear.",
+      },
+      {
+        title: "Sync engines",
+        description:
+          "Bidirectional data sync between systems with conflict resolution, not just one-way data dumps.",
+      },
+      {
+        title: "Auth flows",
+        description:
+          "OAuth, API key, and token-based auth flows built securely and maintained as providers change their requirements.",
+      },
+      {
+        title: "SDKs",
+        description:
+          "Custom internal SDKs so your team can integrate with your own APIs as easily as a third party would with theirs.",
+      },
+    ],
+    tags: [
+      {
+        name: "GraphQL",
+        description:
+          "Flexible, efficient data fetching across integrated systems.",
+      },
+      {
+        name: "REST",
+        description: "Straightforward, widely compatible API integration.",
+      },
+      {
+        name: "OAuth",
+        description:
+          "Secure, standards-based authentication and authorization.",
+      },
+      {
+        name: "gRPC",
+        description: "High-performance service-to-service communication.",
+      },
+    ],
+    longTitle: "API Integration Services That Connect What You ",
+    gradientWord: "Already Run",
     longDesc:
-      "We configure hyper-resilient web hook infrastructures and real-time syncing pipelines designed to prevent packet failures. Standardize cross-platform payloads safely with extreme data security layers.",
+      "Webhook infrastructure, sync engines, and auth flows that actually hold up in production. Most businesses don't need one giant platform — they need their existing tools to talk to each other reliably. 4xCode's API integration services connect payment processors, CRMs, AI APIs, and internal systems through resilient webhook infrastructure and sync engines built to handle real-world failure modes: dropped webhooks, rate limits, schema drift, and partial failures. We've integrated everything from Stripe and Salesforce to custom internal APIs, and we build every integration assuming the third-party API will fail eventually — because it will.",
     techCategories: [
       {
         name: "Data Access Protocols",
@@ -466,22 +821,44 @@ export const SERVICES_DATA: ServiceItem[] = [
     ],
     faqs: [
       {
-        q: "What mechanism processes external endpoint downtime events?",
-        a: "We configure asynchronous BullMQ buffer rings backed by Redis memory matrices that track execution traces and perform controlled retries using exponential backoffs.",
+        q: "What happens if a third-party API goes down or changes?",
+        a: "Our integrations include retry logic, monitoring, and alerting so failures are caught immediately — not discovered by your customers.",
+      },
+      {
+        q: "Can you integrate AI APIs like OpenAI or Anthropic into our existing product?",
+        a: "Yes, this is one of our most common integration requests, including rate limit handling and cost monitoring.",
+      },
+      {
+        q: "Do you support real-time data sync between systems?",
+        a: "Yes, including conflict resolution for systems that can both write to the same data.",
       },
     ],
     pillars: [
       {
         title: "Resilient by default",
-        desc: "Retries, backoff and dead-letter queues so a third-party outage doesn't become yours.",
+        desc: "We design every integration assuming failure, with retries, dead-letter queues, and monitoring — not happy-path-only code.",
       },
       {
         title: "Secure at every hop",
-        desc: "OAuth, signed payloads and mTLS handled correctly, not assumed.",
+        desc: "We've worked with most major payment, CRM, and AI provider APIs, so we already know their quirks and rate limits.",
       },
       {
         title: "Observable end to end",
-        desc: "Every webhook and sync job is traceable, so failures are found in minutes, not support tickets.",
+        desc: "Integrations are documented and monitored so issues surface as alerts, not as angry customer emails three weeks later.",
+      },
+    ],
+    whyTeamsChoose: [
+      {
+        title: "Defensive Failure Architecture",
+        desc: "We design every integration assuming failure, with retries, dead-letter queues, and monitoring — not happy-path-only code.",
+      },
+      {
+        title: "Deep Native API Familiarity",
+        desc: "We've worked with most major payment, CRM, and AI provider APIs, so we already know their quirks and rate limits.",
+      },
+      {
+        title: "Active Alert Pipeline",
+        desc: "Integrations are documented and monitored so issues surface as alerts, not as angry customer emails three weeks later.",
       },
     ],
     relatedSlugs: ["automation-systems", "saas-engineering", "cloud-systems"],
@@ -490,13 +867,57 @@ export const SERVICES_DATA: ServiceItem[] = [
     slug: "automation-systems",
     iconKey: "automation",
     title: "Automation Systems",
-    desc: "Workflow engines, AI ops automation, internal tooling that scales.",
-    features: ["Job queues", "Visual workflows", "AI triggers", "Audit logs"],
-    tags: ["Temporal", "Zapier", "n8n", "Lambda"],
-    longTitle: "Eliminate Operational Complexity with Deterministic ",
-    gradientWord: "Workflow Engines",
+    titleTag: "Workflow Automation Systems for Business — 4xCode",
+    metaDesc:
+      "AI-triggered workflow engines, job queues, and internal tooling that scales — built on Temporal, n8n, and AWS Lambda.",
+    desc: "AI-triggered workflow engines, job queues, and internal tooling that scales — built on Temporal, n8n, and AWS Lambda.",
+    intro:
+      "4xCode designs workflow automation systems — visual workflows, job queues, and AI-triggered actions — that take manual ops work off your team's plate, built on Temporal, n8n, and Lambda. ",
+    features: [
+      {
+        title: "Job queues",
+        description:
+          "Durable, retryable background job processing so long-running or critical tasks never silently fail.",
+      },
+      {
+        title: "Visual workflows",
+        description:
+          "Workflow engines your ops team can actually read and adjust, not just engineers.",
+      },
+      {
+        title: "AI triggers",
+        description:
+          "AI-powered decision points in workflows — routing, classification, summarization — where rules-based logic isn't enough.",
+      },
+      {
+        title: "Audit logs",
+        description:
+          "Full audit trails for every automated action, critical for compliance and debugging.",
+      },
+    ],
+    tags: [
+      {
+        name: "Temporal",
+        description: "Durable, fault-tolerant workflow orchestration.",
+      },
+      {
+        name: "Zapier",
+        description: "Fast, no-code integration of common business tools.",
+      },
+      {
+        name: "n8n",
+        description:
+          "Self-hosted, flexible workflow automation with full control.",
+      },
+      {
+        name: "Lambda",
+        description: "Scalable, serverless execution of automation logic.",
+      },
+    ],
+    longTitle: "Workflow Automation That Takes Manual Work Off ",
+    gradientWord: "Your Team's Plate",
     longDesc:
-      "We replace manual business processes with reliable, auto-recovering distributed state machines. Build auditable event processing tracks that remain error-proof across high volume traffic surges.",
+      "Job queues, visual workflows, and AI-triggered automation built to scale. Every fast-growing company eventually hits a wall of manual, repetitive operational work — onboarding steps, data reconciliation, approval chains, alert triage. 4xCode designs workflow automation systems that take that work off your team without turning into another fragile Zapier chain that breaks the moment a field name changes. We build durable, observable job queues and visual workflows, with AI triggers for the steps that need judgment, and full audit logs so you always know what happened and why.",
     techCategories: [
       {
         name: "State Machine Processing",
@@ -539,22 +960,44 @@ export const SERVICES_DATA: ServiceItem[] = [
     ],
     faqs: [
       {
-        q: "How do your orchestration layers recover when third party server connections break mid-workflow?",
-        a: "By managing our state traces inside Temporal.io structures, executions freeze transparently and re-instantiate from the exact checkpoint vector once connections resume.",
+        q: "Will automation replace our existing tools like Zapier?",
+        a: "Not necessarily — we often use Zapier or n8n for simpler integrations and build custom orchestration (Temporal, Lambda) only where reliability or scale demands it.",
+      },
+      {
+        q: "Can automated workflows include AI decision-making?",
+        a: "Yes — classification, routing, and summarization steps can be AI-powered while keeping critical actions auditable.",
+      },
+      {
+        q: "How do you prevent automation failures from going unnoticed?",
+        a: "Every workflow includes monitoring and alerting, plus audit logs, so failures surface immediately rather than silently dropping data.",
       },
     ],
     pillars: [
       {
         title: "Auditable by default",
-        desc: "Every run logged and replayable, so compliance is a query, not an investigation.",
+        desc: "We build automation as durable infrastructure, not brittle no-code chains that fail silently.",
       },
       {
         title: "Self-healing",
-        desc: "Workflows resume from the last checkpoint instead of failing silently.",
+        desc: "AI triggers are added where they add real judgment, not as a buzzword feature.",
       },
       {
         title: "Built for the long tail",
-        desc: "Edge cases and exceptions are first-class paths, not afterthoughts.",
+        desc: "Every workflow includes audit logging, so automated decisions are traceable for compliance and debugging.",
+      },
+    ],
+    whyTeamsChoose: [
+      {
+        title: "Infrastructure vs Brittle Code",
+        desc: "We build automation as durable infrastructure, not brittle no-code chains that fail silently.",
+      },
+      {
+        title: "Contextual Strategic AI",
+        desc: "AI triggers are added where they add real judgment, not as a buzzword feature.",
+      },
+      {
+        title: "Complete Process Trails",
+        desc: "Every workflow includes audit logging, so automated decisions are traceable for compliance and debugging.",
       },
     ],
     relatedSlugs: ["ai-development", "api-integration", "cloud-systems"],
@@ -563,13 +1006,56 @@ export const SERVICES_DATA: ServiceItem[] = [
     slug: "ui-ux-design",
     iconKey: "ui",
     title: "UI / UX Design",
-    desc: "Cinematic, opinionated interfaces that elevate brand and convert with every pixel.",
-    features: ["Design systems", "Prototyping", "Motion", "Research"],
-    tags: ["Figma", "Framer", "Motion", "Storybook"],
-    longTitle: "Cinematic Layout Systems Crafted to Elevate Your ",
-    gradientWord: "Digital Brand",
+    titleTag: "UI/UX Design Agency for SaaS & AI Products — 4xCode",
+    metaDesc:
+      "Cinematic, conversion-focused interface design — design systems, prototyping, and motion that elevates brand at every pixel.",
+    desc: "Cinematic, conversion-focused interface design — design systems, prototyping, and motion that elevates brand at every pixel.",
+    intro:
+      "As a UI/UX design agency embedded inside engineering, 4xCode designs interfaces that convert — design systems, interactive prototypes, and motion design built in Figma and Framer, validated with real user research.",
+    features: [
+      {
+        title: "Design systems",
+        description:
+          "Documented, reusable component libraries that keep your product visually consistent as new features ship.",
+      },
+      {
+        title: "Prototyping",
+        description:
+          "Interactive prototypes for usability testing before a single line of production code is written.",
+      },
+      {
+        title: "Motion",
+        description:
+          "Purposeful motion design that guides attention and communicates state, not just animation for its own sake.",
+      },
+      {
+        title: "Research",
+        description:
+          "User research and usability testing to validate design decisions with real behavior, not opinions in a meeting.",
+      },
+    ],
+    tags: [
+      {
+        name: "Figma",
+        description: "Collaborative interface design and design systems.",
+      },
+      {
+        name: "Framer",
+        description: "High-fidelity, interactive prototyping.",
+      },
+      {
+        name: "Motion",
+        description: "Production-grade animation and interaction design.",
+      },
+      {
+        name: "Storybook",
+        description: "Documenting and testing UI components in isolation.",
+      },
+    ],
+    longTitle: "UI/UX Design That Elevates Brand and ",
+    gradientWord: "Converts",
     longDesc:
-      "We build premium design systems mapped perfectly down to component level token structures. We bridge the structural gap between pure artistic visual design layouts and scalable application development codebases.",
+      "Design systems, prototyping, and motion built into the product, not bolted on after. Good design isn't decoration — it's the difference between a user understanding your product in ten seconds or bouncing in five. As a UI/UX design agency embedded inside engineering (not a separate vendor handing off static mockups), 4xCode designs interfaces validated with real user research, built as reusable design systems, and brought to life with motion that feels intentional rather than decorative. Because our designers and engineers work together from day one, what gets designed is what actually ships — pixel for pixel.",
     techCategories: [
       {
         name: "Visual Composition Space",
@@ -612,22 +1098,44 @@ export const SERVICES_DATA: ServiceItem[] = [
     ],
     faqs: [
       {
-        q: "Are the visual theme tokens natively adaptable into running code environments?",
-        a: "Yes, our designs export directly into automated configuration maps compatible with Tailwind variables and atomic styling layouts.",
+        q: "Do you design and build, or just design?",
+        a: "Both — our designers work directly alongside the engineers who'll build the product, which is why the shipped product matches the design.",
+      },
+      {
+        q: "Can you redesign our existing product without a full rebuild?",
+        a: "Yes, we frequently do incremental design system overhauls applied to existing codebases.",
+      },
+      {
+        q: "How do you validate design decisions before development?",
+        a: "Through interactive prototypes and usability testing with real or representative users before committing engineering time.",
       },
     ],
     pillars: [
       {
         title: "Systems, not screens",
-        desc: "Tokens and components that scale across the whole product, not one-off mockups.",
+        desc: "Designers and engineers work in the same team, so your final product matches the design — not a watered-down approximation of it.",
       },
       {
         title: "Validated, not assumed",
-        desc: "Prototypes tested against real users before a line of code ships.",
+        desc: "We validate design decisions with real usability testing, not just internal opinion.",
       },
       {
         title: "Code-ready handoff",
-        desc: "Specs exported as variables your team can implement directly.",
+        desc: "Design systems are built for the engineering team to actually use, not abandoned in a Figma file no one opens again.",
+      },
+    ],
+    whyTeamsChoose: [
+      {
+        title: "Unified Creative-Engineering Flow",
+        desc: "Designers and engineers work in the same team, so your final product matches the design — not a watered-down approximation of it.",
+      },
+      {
+        title: "Empirical UX Auditing",
+        desc: "We validate design decisions with real usability testing, not just internal opinion.",
+      },
+      {
+        title: "Operationalized Design Systems",
+        desc: "Design systems are built for the engineering team to actually use, not abandoned in a Figma file no one opens again.",
       },
     ],
     relatedSlugs: ["web-development", "mobile-apps", "saas-engineering"],
@@ -636,18 +1144,54 @@ export const SERVICES_DATA: ServiceItem[] = [
     slug: "cloud-systems",
     iconKey: "cloud",
     title: "Cloud Systems",
-    desc: "Resilient cloud infrastructure on AWS, Vercel & Cloudflare — observable, secure, automated.",
+    titleTag: "Cloud Infrastructure Consulting | AWS & Vercel — 4xCode",
+    metaDesc:
+      "Resilient, observable cloud infrastructure on AWS, Vercel, and Cloudflare — IaC pipelines, zero-downtime deploys, cost control.",
+    desc: "Resilient, observable cloud infrastructure on AWS, Vercel, and Cloudflare — IaC pipelines, zero-downtime deploys, cost control.",
+    intro:
+      "4xCode's cloud infrastructure consulting covers infrastructure-as-code, observability, and zero-downtime deployments across AWS, Vercel, and Cloudflare — built so your platform scales without surprise bills or 3am pages.",
     features: [
-      "IaC pipelines",
-      "Observability",
-      "Cost controls",
-      "Zero-downtime",
+      {
+        title: "IaC pipelines",
+        description:
+          "Infrastructure-as-code (Terraform, CDK) so your environments are version-controlled, reproducible, and reviewable like any other code.",
+      },
+      {
+        title: "Observability",
+        description:
+          "Distributed logging, tracing, and alerting so you catch behavioral issues before they hit production users.",
+      },
+      {
+        title: "Cost controls",
+        description:
+          "Resource tagging, budget alerts, and architecture choices that prevent runaway cloud spend.",
+      },
+      {
+        title: "Zero-downtime",
+        description:
+          "Deployment strategies (blue-green, rolling) that mean shipping doesn't mean downtime.",
+      },
     ],
-    tags: ["AWS", "Docker", "Kubernetes", "Terraform"],
-    longTitle: "Immutable Server Frameworks Tailored for Continuous ",
-    gradientWord: "Deployment Highspots",
+    tags: [
+      { name: "AWS", description: "Scalable, compliant core infrastructure." },
+      {
+        name: "Docker",
+        description: "Consistent, portable application packaging.",
+      },
+      {
+        name: "Kubernetes",
+        description:
+          "Orchestration at scale when you've outgrown simpler deployment models.",
+      },
+      {
+        name: "Terraform",
+        description: "Declarative, version-controlled infrastructure as code.",
+      },
+    ],
+    longTitle: "Cloud Infrastructure That Scales Without Surprise Bills or ",
+    gradientWord: "3am Pages",
     longDesc:
-      "We design resilient infrastructure environments defined securely as raw system automation code. Maximize absolute processing security rules while maintaining complete live network logging streams.",
+      "Resilient infrastructure on AWS, Vercel, and Cloudflare — observable, secure, automated. Infrastructure problems rarely show up in a demo — they show up the first time real traffic hits, or the first time a deploy goes wrong at 2am. 4xCode's cloud infrastructure consulting builds systems designed for that moment: infrastructure-as-code so environments are reproducible, observability so you catch issues before customers do, and zero-downtime deployment pipelines so shipping a fix doesn't mean an outage. We also build with cost visibility from day one, because the worst time to discover your cloud bill quadrupled is the month it happens.",
     techCategories: [
       {
         name: "Infrastructure as Code",
@@ -686,22 +1230,44 @@ export const SERVICES_DATA: ServiceItem[] = [
     ],
     faqs: [
       {
-        q: "How do you achieve absolute continuous deployment states without tracking service lags?",
-        a: "We configure automated blue-green delivery clusters or rolling container replacement trees backed by deep health checks inside isolated reverse proxies.",
+        q: "Do we need Kubernetes, or is that overkill for us?",
+        a: "Often it's overkill early on — we'll recommend simpler serverless or container-based architecture unless your scale genuinely needs Kubernetes' complexity.",
+      },
+      {
+        q: "How do you prevent unexpected cloud cost spikes?",
+        a: "Through budget alerts, resource tagging, and architecture reviews that catch inefficient patterns before they compound at scale.",
+      },
+      {
+        q: "Can you migrate us from our current cloud provider?",
+        a: "Yes, including phased migrations designed to avoid downtime during cutover.",
       },
     ],
     pillars: [
       {
         title: "Infrastructure as code",
-        desc: "Every resource defined, versioned and reviewable — no manual console changes.",
+        desc: "We build observability in from the start, so issues are caught by monitoring, not by angry customers.",
       },
       {
         title: "Built to fail safely",
-        desc: "Health checks, rollbacks and blue-green deploys so incidents stay small.",
+        desc: "Cost controls are designed into the architecture, not added reactively after a shocking invoice.",
       },
       {
         title: "Cost-aware",
-        desc: "Right-sized from day one, with budgets and alerts before the bill surprises you.",
+        desc: "Zero-downtime deployment means your team can ship fixes fast without scheduling risky maintenance windows.",
+      },
+    ],
+    whyTeamsChoose: [
+      {
+        title: "Early Telemetry Capture",
+        desc: "We build observability in from the start, so issues are caught by monitoring, not by angry customers.",
+      },
+      {
+        title: "Embedded Expense Hardening",
+        desc: "Cost controls are designed into the architecture, not added reactively after a shocking invoice.",
+      },
+      {
+        title: "Zero-Downtime Releases",
+        desc: "Zero-downtime deployment means your team can ship fixes fast without scheduling risky maintenance windows.",
       },
     ],
     relatedSlugs: ["custom-software", "automation-systems", "api-integration"],
@@ -710,18 +1276,57 @@ export const SERVICES_DATA: ServiceItem[] = [
     slug: "seo-digital-marketing",
     iconKey: "marketing",
     title: "SEO & Digital Marketing",
-    desc: "Data-driven SEO, content strategy, paid campaigns, and growth marketing that drive qualified traffic and measurable business results.",
+    titleTag: "Technical SEO & Growth Marketing Services — 4xCode",
+    metaDesc:
+      "Data-driven technical SEO, content strategy, and paid campaigns that drive qualified traffic and measurable revenue, not vanity metrics.",
+    desc: "Data-driven technical SEO, content strategy, and paid campaigns that drive qualified traffic and measurable revenue, not vanity metrics.",
+    intro:
+      "4xCode pairs technical SEO and content strategy with paid acquisition — Google Ads, Meta Ads, and conversion optimization — to drive traffic that actually converts, backed by the same engineering rigor we bring to product. ",
     features: [
-      "Technical SEO",
-      "Content strategy",
-      "PPC campaigns",
-      "Conversion optimization",
+      {
+        title: "Technical SEO",
+        description:
+          "Site speed, crawlability, schema markup, and Core Web Vitals fixes that remove the technical ceiling on your rankings.",
+      },
+      {
+        title: "Content strategy",
+        description:
+          "Keyword-mapped content plans built around actual search intent and your sales funnel, not just volume metrics.",
+      },
+      {
+        title: "PPC campaigns",
+        description:
+          "Google Ads and Meta Ads campaigns built and optimized against revenue, not vanity click metrics.",
+      },
+      {
+        title: "Conversion optimization",
+        description:
+          "Landing page and funnel testing to make sure traffic you've earned actually converts.",
+      },
     ],
-    tags: ["Google Ads", "SEO", "Analytics", "Meta Ads"],
-    longTitle: "Data-driven Growth Frameworks Engineered to Boost ",
-    gradientWord: "Organic Traffic",
+    tags: [
+      {
+        name: "Google Ads",
+        description: "High-intent paid search acquisition.",
+      },
+      {
+        name: "SEO",
+        description:
+          "Technical audits, keyword research, and rank tracking via elite industry tooling.",
+      },
+      {
+        name: "Analytics",
+        description: "Funnel measurement and attribution back to revenue.",
+      },
+      {
+        name: "Meta Ads",
+        description: "Paid social acquisition and retargeting.",
+      },
+    ],
+    longTitle: "Technical SEO & Growth Marketing That Drives Revenue, Not ",
+    gradientWord: "Vanity Metrics",
     longDesc:
-      "We perform programmatic technical site fine-tunings, structure solid keyword taxonomy configurations, and set complete application visibility layers to maximize real market search value conversion metrics safely.",
+      "Technical SEO, content strategy, and paid campaigns built on the same engineering rigor as our products. Marketing and engineering are usually run as separate disciplines, which is exactly why most SEO work fails to move the needle — content gets published on a site with broken Core Web Vitals, or paid campaigns drive traffic to a page that doesn't convert. 4xCode runs SEO and digital marketing alongside engineering, which means technical SEO fixes (site speed, schema, crawlability) and content strategy are paired with the actual product and conversion path — and paid campaigns (Google Ads, Meta Ads) are optimized against real revenue data, not just click-through rate.",
     techCategories: [
       {
         name: "Performance Audits",
@@ -764,22 +1369,44 @@ export const SERVICES_DATA: ServiceItem[] = [
     ],
     faqs: [
       {
-        q: "What adjustments are applied to prevent search optimization decay over Javascript frameworks?",
-        a: "We transition indexing paths over explicit Edge Server-Side Rendering (SSR) loops and optimize structured schema data blocks natively within layout headers.",
+        q: "How long does SEO take to show results?",
+        a: "Technical fixes can show ranking movement within weeks; competitive keyword rankings through content typically take 3–6 months of consistent publishing.",
+      },
+      {
+        q: "Do you handle both SEO and paid ads, or just one?",
+        a: "Both — and we coordinate them, since paid campaigns and organic content should reinforce the same keyword strategy rather than compete for budget separately.",
+      },
+      {
+        q: "Can you fix technical SEO issues on our existing site without a rebuild?",
+        a: "In most cases yes — schema, speed, and crawlability issues are usually fixable without a full rebuild.",
       },
     ],
     pillars: [
       {
         title: "Technical foundation first",
-        desc: "Crawlability and Core Web Vitals fixed before a single campaign launches.",
+        desc: "We fix the technical SEO ceiling (speed, schema, crawlability) most agencies can't touch because they don't have engineers.",
       },
       {
         title: "Measured, not guessed",
-        desc: "Every channel tracked back to revenue, not just clicks.",
+        desc: "Content strategy is mapped to actual search intent and your funnel, not just keyword volume.",
       },
       {
         title: "Compounding, not rented",
-        desc: "Organic strategy that keeps paying off after the ad budget stops.",
+        desc: "Paid campaigns are measured against revenue and LTV, not just impressions and clicks.",
+      },
+    ],
+    whyTeamsChoose: [
+      {
+        title: "Engineering-Driven Mechanics",
+        desc: "We fix the technical SEO ceiling (speed, schema, crawlability) most agencies can't touch because they don't have engineers.",
+      },
+      {
+        title: "Intentional Pipeline Architecture",
+        desc: "Content strategy is mapped to actual search intent and your funnel, not just keyword volume.",
+      },
+      {
+        title: "Unit Economic Measurement",
+        desc: "Paid campaigns are measured against revenue and LTV, not just impressions and clicks.",
       },
     ],
     relatedSlugs: ["web-development", "ecommerce-solutions", "ui-ux-design"],
@@ -788,18 +1415,56 @@ export const SERVICES_DATA: ServiceItem[] = [
     slug: "ecommerce-solutions",
     iconKey: "ecommerce",
     title: "E-Commerce Solutions",
-    desc: "High-converting online stores and marketplaces with seamless checkout, inventory management, and scalable commerce infrastructure.",
+    titleTag: "E-Commerce Development Agency | Shopify & Custom — 4xCode",
+    metaDesc:
+      "High-converting online stores with seamless checkout, inventory management, and scalable commerce infrastructure.",
+    desc: "High-converting online stores with seamless checkout, inventory management, and scalable commerce infrastructure.",
+    intro:
+      " 4xCode builds e-commerce experiences engineered to convert — custom storefronts and marketplaces on Shopify and Next.js, with payment gateways and inventory systems built to handle real scale.",
     features: [
-      "Online stores",
-      "Payment gateways",
-      "Inventory systems",
-      "Marketplace development",
+      {
+        title: "Online stores",
+        description:
+          "Storefronts built for speed and conversion, on Shopify or fully custom depending on your flexibility needs.",
+      },
+      {
+        title: "Payment gateways",
+        description:
+          "Reliable payment processing integration that handles failures gracefully instead of losing the sale.",
+      },
+      {
+        title: "Inventory systems",
+        description:
+          "Inventory management that stays accurate across channels, preventing overselling and stockout surprises.",
+      },
+      {
+        title: "Marketplace development",
+        description:
+          "Multi-vendor marketplace infrastructure for platforms connecting buyers and sellers, not just single-store commerce.",
+      },
     ],
-    tags: ["Shopify", "Commerce", "Stripe", "Next.js"],
-    longTitle: "Highly Scalable Digital Marketplaces Engineered for Peak ",
-    gradientWord: "Transactional Volume",
+    tags: [
+      {
+        name: "Shopify",
+        description:
+          "Fast-to-market, flexible storefronts with a mature ecosystem.",
+      },
+      {
+        name: "Commerce",
+        description:
+          "Headless commerce APIs for customized structural scaling parameters.",
+      },
+      { name: "Stripe", description: "Reliable, scalable payment processing." },
+      {
+        name: "Next.js",
+        description:
+          "Fully custom, high-performance storefronts when Shopify's limits don't fit.",
+      },
+    ],
+    longTitle: "E-Commerce Development Built to Convert at ",
+    gradientWord: "Scale",
     longDesc:
-      "We engineer flexible modern checkout systems designed to prevent transaction drop-offs. Synchronize real-time enterprise store data sets perfectly across distributed warehousing endpoints.",
+      "Online stores, marketplaces, and checkout flows engineered for real transaction volume. An online store that looks great but has a clunky checkout loses sales every single day it's live. 4xCode builds e-commerce experiences as an e-commerce development agency focused on the parts that actually drive revenue: fast, low-friction checkout, reliable inventory systems that don't oversell, and payment infrastructure that handles real transaction volume without failing during your biggest sales day. Whether you need a Shopify storefront customized beyond template limits or a fully custom marketplace, we build for conversion first.",
     techCategories: [
       {
         name: "Headless Engine Core",
@@ -842,24 +1507,50 @@ export const SERVICES_DATA: ServiceItem[] = [
     ],
     faqs: [
       {
-        q: "How does the system sync catalog updates under high volume flash traffic spikes?",
-        a: "We decouple product discoveries behind a high-speed memory layer powered by Redis and Meilisearch, routing transactional checkout lines through message queues to separate database pressure.",
+        q: "Should we build on Shopify or go fully custom?",
+        a: "Shopify fits most standard storefronts well; fully custom makes sense when you need marketplace functionality, complex pricing logic, or performance Shopify's theme architecture can't deliver.",
+      },
+      {
+        q: "Can you handle high-traffic sales events without the site going down?",
+        a: "Yes — we load-test checkout and inventory systems specifically for peak-traffic scenarios like flash sales and major promotions.",
+      },
+      {
+        q: "Do you support multi-vendor marketplaces, not just single stores?",
+        a: "Yes, including vendor onboarding, split payments, and per-vendor inventory management.",
       },
     ],
     pillars: [
       {
         title: "Checkout that converts",
-        desc: "Every step of the funnel tested against drop-off, not just designed to look good.",
+        desc: "We optimize checkout flow specifically, since even small friction there has an outsized impact on conversion rate.",
       },
       {
         title: "Inventory that's always right",
-        desc: "Real-time stock sync so you never sell what you don't have.",
+        desc: "Inventory accuracy is treated as a first-class requirement, not an afterthought that causes oversells during peak demand.",
       },
       {
         title: "Built for peak traffic",
-        desc: "Load-tested for the Black Friday spike, not just an average Tuesday.",
+        desc: "We build on Shopify when it fits and fully custom when your business model needs more — not a one-size answer.",
       },
     ],
-    relatedSlugs: ["web-development", "seo-digital-marketing", "saas-engineering"],
+    whyTeamsChoose: [
+      {
+        title: "Checkout Flow Optimization",
+        desc: "We optimize checkout flow specifically, since even small friction there has an outsized impact on conversion rate.",
+      },
+      {
+        title: "Strict Real-Time Ledger Controls",
+        desc: "Inventory accuracy is treated as a first-class requirement, not an afterthought that causes oversells during peak demand.",
+      },
+      {
+        title: "Flexible Implementation Vectors",
+        desc: "We build on Shopify when it fits and fully custom when your business model needs more — not a one-size answer.",
+      },
+    ],
+    relatedSlugs: [
+      "web-development",
+      "seo-digital-marketing",
+      "saas-engineering",
+    ],
   },
 ];

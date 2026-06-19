@@ -27,9 +27,7 @@ export const caseStudies: CaseStudy[] = [
     image: "/assets/caseStudy.jpeg",
   },
 ];
-// services data
 
-// case studies data
 export const CASE_STUDIES_DATA: CaseStudy[] = [
   {
     id: "neura-ops",
@@ -207,8 +205,18 @@ export const TESTIMONIALS: Testimonial[] = [
 ];
 // team data
 export const TEAM: TeamMember[] = [
-  { initials: "AC", name: "Aris Chen", role: "CEO & Engineering" },
-  { initials: "MR", name: "Mateo Rivas", role: "Head of AI" },
-  { initials: "LP", name: "Lena Park", role: "Design Director" },
-  { initials: "YK", name: "Yusuf Khan", role: "Principal Engineer" },
+  {
+    initials: "VC",
+    name: "Vic",
+    role: "CEO & Co-Founder",
+    detail:
+      "Holds a Master of Business Administration (MBA) with a specialization in Business Strategy and Management. As CEO & Co-Founder of 4xCode, he leads the company's vision, business strategy, client partnerships, and overall growth. He focuses on building long-term relationships, driving innovation, and ensuring every project aligns with both business objectives and exceptional delivery standards.",
+  },
+  {
+    initials: "MA",
+    name: "Muhammad Ali ",
+    role: "CTO & Co-Founder ",
+    detail:
+      "A Computer Engineer with a Master's degree in Computer Engineering and over 7 years of industry experience in AI and software engineering, Muhammad Ali co-founded 4xCode and leads its technical architecture across SaaS platforms, web applications, and AI systems. He oversees core engineering decisions across the company, ensuring scalable, high-performance solutions while driving innovation in applied AI and modern software development. ",
+  },
 ];

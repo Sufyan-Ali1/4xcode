@@ -21,6 +21,7 @@ export interface TeamMember {
   initials: string;
   name: string;
   role: string;
+  detail?: string;
 }
 
 export interface BlogPost {

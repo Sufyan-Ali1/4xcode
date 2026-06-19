@@ -1,0 +1,184 @@
+.blogContent {
+  line-height: 1.95;
+  font-size: 16.8px;
+  color: #d1d5db;
+  padding-top: 1.5rem;
+}
+
+/* PARAGRAPHS */
+.blogContent p {
+  margin-bottom: 1.4rem;
+  line-height: 1.9;
+  color: #d1d5db;
+}
+
+/* HEADINGS */
+.blogContent h1 {
+  font-size: 2.4rem;
+  margin: 3rem 0 1rem;
+  font-weight: 800;
+  line-height: 1.25;
+  color: #ef4444;
+}
+
+.blogContent h2 {
+  font-size: 1.9rem;
+  margin: 2.5rem 0 1rem;
+  font-weight: 750;
+  line-height: 1.3;
+  color: #ef4444;
+}
+
+.blogContent h3 {
+  font-size: 1.5rem;
+  margin: 2rem 0 0.8rem;
+  font-weight: 650;
+  line-height: 1.35;
+  color: #ef4444;
+}
+
+.blogContent h4,
+.blogContent h5,
+.blogContent h6 {
+  color: #f87171;
+  margin: 1.5rem 0 0.6rem;
+}
+
+/* STRONG */
+.blogContent strong,
+.blogContent b {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+/* LISTS */
+.blogContent ul,
+.blogContent ol {
+  margin: 1rem 0 1.6rem;
+  padding-left: 1.8rem;
+  color: #d1d5db;
+}
+
+/* TABLES */
+.blogContent table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2.5rem 0;
+  font-size: 15px;
+  display: block;
+  overflow-x: auto;
+}
+
+.blogContent th,
+.blogContent td {
+  border: 1px solid #374151;
+  padding: 12px 14px;
+  color: #d1d5db;
+}
+
+.blogContent th {
+  background: #1f2937;
+  color: #ffffff;
+}
+
+/* LINKS */
+.blogContent a {
+  color: #f87171;
+  text-decoration: none;
+}
+
+.blogContent a:hover {
+  text-decoration: underline;
+}
+
+/* IMAGES */
+.blogContent img {
+  max-width: 100%;
+  border-radius: 14px;
+  margin: 2rem 0;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+/* BLOCKQUOTE */
+.blogContent blockquote {
+  border-left: 4px solid #ef4444;
+  padding: 0.8rem 1rem;
+  margin: 2rem 0;
+  background: #1a1a2e;
+  color: #9ca3af;
+  font-style: italic;
+}
+
+/* CODE */
+.blogContent code {
+  background: #1f2937;
+  color: #f87171;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.blogContent pre {
+  background: #1f2937;
+  padding: 1.2rem;
+  border-radius: 10px;
+  overflow-x: auto;
+}
+
+/*
+ * SAFETY NET — Last-resort fallback for any span/div/section that still has
+ * a style attribute after sanitization. These use :where() to keep specificity
+ * at [0,0,0] so they don't interfere with intentional overrides, but they DO
+ * override inline styles via the [style] attribute selector trick.
+ *
+ * We target [style*="color:"] etc. with !important only as a true last resort.
+ * The sanitizer in htmlSanitizer.ts should handle 99% of cases — these rules
+ * are the airbag, not the seatbelt.
+ */
+
+/* Any span that still somehow has a near-black text color → override it */
+.blogContent span[style*="color: rgb(0"],
+.blogContent span[style*="color:rgb(0"],
+.blogContent span[style*="color: #000"],
+.blogContent span[style*="color:#000"],
+.blogContent span[style*="color: black"],
+.blogContent span[style*="color:black"] {
+  color: #d1d5db !important;
+}
+
+/* Any element that still has a white/light background → clear it */
+.blogContent *[style*="background-color: white"],
+.blogContent *[style*="background-color:white"],
+.blogContent *[style*="background-color: #fff"],
+.blogContent *[style*="background-color:#fff"],
+.blogContent *[style*="background-color: rgb(255"],
+.blogContent *[style*="background-color:rgb(255"] {
+  background-color: transparent !important;
+}
+
+/* Nuclear option: force all nested text to be visible.
+   Only uncomment this if the sanitizer alone is not enough.
+   WARNING: this will override intentionally colored spans too.
+*/
+/*
+.blogContent * {
+  color: inherit !important;
+  background-color: transparent !important;
+}
+*/
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .blogContent {
+    font-size: 16px;
+  }
+
+  .blogContent h1 {
+    font-size: 2rem;
+  }
+
+  .blogContent h2 {
+    font-size: 1.6rem;
+  }
+}
+

@@ -51,27 +51,35 @@ export function PillarCard({ data, variants, fontClass }: CardProps<Pillar>) {
   );
 }
 
+interface FeatureObject {
+  title: string;
+  description: string;
+}
+
+interface CapabilityCardProps {
+  data: FeatureObject; // Updated from string to FeatureObject
+  variants: any;
+  fontClass?: string;
+}
+
 export function CapabilityCard({
-  data: feature,
+  data,
   variants,
   fontClass,
-}: CardProps<string>) {
+}: CapabilityCardProps) {
   return (
     <motion.div variants={variants} className={SHARED_CARD_CLASSES}>
-      <div className="flex items-center gap-3">
-        <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-md border border-[#ef1f23]/20 bg-[#ef1f23]/10 text-[#ef1f23] transition-colors duration-300 group-hover:border-[#ef1f23]/40 group-hover:bg-[#ef1f23]/20">
-          <CheckIcon style={{ fontSize: 13 }} aria-hidden="true" />
-        </div>
-        <h4
-          className={`${fontClass} text-sm font-bold tracking-wide text-zinc-100 transition-colors duration-200 group-hover:text-white`}
-        >
-          {feature}
-        </h4>
-      </div>
+      <h4
+        className={`${fontClass} text-base font-bold text-white tracking-wide transition-colors duration-200 group-hover:text-zinc-100`}
+      >
+        {data.title}
+      </h4>
+      <p className="mt-2 text-xs sm:text-sm leading-relaxed text-zinc-400 transition-colors duration-200 group-hover:text-zinc-300">
+        {data.description}
+      </p>
     </motion.div>
   );
 }
-
 export function StackGroup({
   data: category,
   variants,

@@ -111,49 +111,60 @@ export default function ProcessSection() {
           </div>
         </div>
 
-        {/* --- Why This Version Is Better Premium Stack --- */}
-        <div className="mt-36 flex flex-col items-center text-center">
+    
+        <div className="mt-25 flex flex-col items-center">
           <Reveal>
-            <h3 className="text-2xl font-bold md:text-3xl tracking-tight text-white mb-14">
+            <h3 className="text-center text-2xl font-bold md:text-3xl tracking-tight text-white mb-14">
               Why this version is{" "}
-              <span className="bg-linear-to-br from-[#ff8a8c] to-[#ef1f23] bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-[#ff8a8c] to-[#ef1f23] bg-clip-text text-transparent">
                 better:
               </span>
             </h3>
           </Reveal>
 
-          {/* Premium Column Layout Container */}
-          <div className="flex flex-col items-center max-w-3xl w-full px-4">
-            {highlights.map((text, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, y: reduced ? 0 : 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.1 }}
-                transition={{
-                  duration: 0.8,
-                  delay: idx * 0.08,
-                  ease: [0.16, 1, 0.3, 1],
-                }}
-                whileHover={{ scale: 1.015 }}
-                className="w-full relative py-6 flex flex-col items-center justify-center will-change-transform group cursor-default"
-              >
-                {/* Micro Typography Label */}
-                <span className="font-mono text-[10px] uppercase tracking-[2px] text-neutral-600 group-hover:text-[#ff8a8c] transition-colors duration-300 mb-2">
-                  0{idx + 1} &mdash; Benefit
-                </span>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-12 gap-y-4 max-w-5xl w-full px-4">
+            {highlights.map((text, idx) => {
+              const isLastAndOdd =
+                idx === highlights.length - 1 && highlights.length % 2 !== 0;
 
-                {/* Central Sentence Statement */}
-                <p className="text-base md:text-lg font-normal tracking-wide text-gray-400 group-hover:text-white transition-all duration-300 ease-out max-w-2xl leading-relaxed">
-                  {text}
-                </p>
+              return (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, y: reduced ? 0 : 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.1 }}
+                  transition={{
+                    duration: 0.8,
+                    delay: idx * 0.08,
+                    ease: [0.16, 1, 0.3, 1],
+                  }}
+                  whileHover={{ scale: 1.015 }}
+                  // lg:col-span-2 + justify-self-center handles centering the odd item beautifully
+                  className={`w-full relative py-8 flex flex-col items-center justify-center will-change-transform group cursor-default ${
+                    isLastAndOdd
+                      ? "lg:col-span-2 lg:max-w-xl lg:justify-self-center"
+                      : ""
+                  }`}
+                >
+                  {/* Micro Typography Label */}
+                  <span className="font-mono text-[10px] uppercase tracking-[2px] text-neutral-600 group-hover:text-[#ff8a8c] transition-colors duration-300 mb-2">
+                    0{idx + 1} &mdash; Benefit
+                  </span>
 
-                {/* High-End Fading Gradient Border Line */}
-                {idx !== highlights.length - 1 && (
-                  <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-neutral-800 to-transparent opacity-60 group-hover:via-red-900/50 transition-colors duration-500" />
-                )}
-              </motion.div>
-            ))}
+                  {/* Central Sentence Statement */}
+                  <p className="text-center text-base md:text-lg font-normal tracking-wide text-gray-400 group-hover:text-white transition-all duration-300 ease-out max-w-2xl leading-relaxed">
+                    {text}
+                  </p>
+
+                  {/* Premium Bottom Divider Line (Hidden on the single centered item if it's last) */}
+                  <div
+                    className={`absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-neutral-800 to-transparent opacity-60 group-hover:via-red-900/50 transition-colors duration-500 ${
+                      isLastAndOdd ? "lg:hidden" : ""
+                    }`}
+                  />
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </div>

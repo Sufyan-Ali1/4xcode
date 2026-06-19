@@ -17,6 +17,7 @@ export default function AboutSection() {
   return (
     <section className="bg-black w-full text-white flex items-center justify-center px-6 py-16 md:py-24 lg:py-32">
       <div className="grid max-w-7xl grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-10 items-center">
+        {/* Left Column: Interactive Image & Badges */}
         <motion.div
           initial={{ opacity: 0, y: reduced ? 0 : 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -42,16 +43,18 @@ export default function AboutSection() {
               Founded
             </span>
             <span className="text-white text-[19px] font-bold leading-none">
-              2017 ·
+              2021 ·
             </span>
             <span className="text-white text-[19px] font-bold leading-none">
               Remote-first
             </span>
           </div>
         </motion.div>
+
+        {/* Right Column: Copy & Stats */}
         <div className="flex flex-col justify-center space-y-4 max-w-130 mx-auto lg:mx-0">
           <Reveal>
-            <span className="text-[#f90a1f] text-[12px] font-normal uppercase tracking-[3.6px] leading-4 ">
+            <span className="text-[#f90a1f] text-[12px] font-normal uppercase tracking-[3.6px] leading-4">
               About 4xCode
             </span>
           </Reveal>
@@ -66,12 +69,22 @@ export default function AboutSection() {
           </Reveal>
 
           <Reveal delay={0.2}>
-            <p className="text-gray-400 text-sm md:text-base leading-relaxed font-light">
-              We’re a senior team of designers, engineers, and AI specialists
-              obsessed with one thing: turning audacious product ideas into
-              category-defining software.
-            </p>
+            <div className="space-y-4 text-gray-400 text-sm md:text-base leading-relaxed font-light">
+              <p>
+                4xCode is a boutique software development company building
+                ultra-fast, AI-powered SaaS platforms, web applications, and
+                mobile products for startups and scaling brands.
+              </p>
+              <p>
+                From custom software development and AI agent engineering to
+                cloud infrastructure and UI/UX design, our senior team turns
+                ambitious product ideas into category-defining software —
+                shipped in weeks, not quarters.
+              </p>
+            </div>
           </Reveal>
+
+          {/* Grid Layout for Stats */}
           <div className="grid grid-cols-2 gap-4 pt-4">
             {stats.map((stat, index) => (
               <motion.div

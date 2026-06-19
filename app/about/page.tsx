@@ -1,6 +1,8 @@
 "use client";
 
 import React from "react";
+import { useEffect } from "react";
+
 import { motion, useReducedMotion } from "framer-motion";
 import { Space_Grotesk, Inter } from "next/font/google";
 import { Reveal } from "../../utils/AnimationReveal";
@@ -23,22 +25,22 @@ const HIGHLIGHTS = [
   {
     id: "velocity",
     title: "Ship velocity",
-    desc: "Real software, every week.",
+    desc: "Real, working software ships every week — not slide decks promising it next quarter.",
   },
   {
     id: "rigor",
     title: "Engineering rigor",
-    desc: "Tested, observable, documented.",
+    desc: "Every system we build is tested, observable, and documented, so it's maintainable long after handoff — by your team, not just ours.",
   },
   {
     id: "craft",
     title: "Craft & care",
-    desc: "Pixels and code we'd put our names on.",
+    desc: "We sweat the pixels and the architecture equally. This is work we put our names on, not work we hope no one looks at too closely.",
   },
   {
     id: "native",
     title: "AI native",
-    desc: "Modern AI baked into how we build.",
+    desc: "Modern AI isn't a bolt-on feature for us — it's baked into how we design, build, and ship software, from the first architecture conversation onward.",
   },
 ];
 
@@ -47,6 +49,22 @@ const SHARED_CARD_CLASSES =
 
 export default function AboutPage() {
   const reduced = useReducedMotion();
+
+  useEffect(() => {
+    document.title = "About 4xCode | Senior Engineering & AI Studio";
+    let metaDescription = document.querySelector('meta[name="description"]');
+    const descriptionText =
+      "4xCode is a remote-first engineering studio of senior developers, AI researchers, and designers. 120+ products shipped since 2021.";
+
+    if (metaDescription) {
+      metaDescription.setAttribute("content", descriptionText);
+    } else {
+      metaDescription = document.createElement("meta");
+      metaDescription.setAttribute("name", "description");
+      metaDescription.setAttribute("content", descriptionText);
+      document.head.appendChild(metaDescription);
+    }
+  }, []);
 
   return (
     <div
@@ -82,18 +100,21 @@ export default function AboutPage() {
             <h1
               className={`${spaceGrotesk.className} text-4xl sm:text-5xl md:text-[56px] font-bold tracking-tight leading-[1.1] max-w-4xl`}
             >
-              A studio of engineers <br className="hidden sm:inline" />
+              A Software Development Studio <br className="hidden sm:inline" />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF8A8C] to-[#EF1F23]">
-                obsessed
+                Obsessed
               </span>{" "}
-              with what's next<span className="text-[#EF1F23]">.</span>
+              with What's Next<span className="text-[#EF1F23]">.</span>
             </h1>
           </Reveal>
 
           <Reveal delay={0.2}>
-            <p className="text-[#a7a3a4] text-sm sm:text-base md:text-lg max-w-2xl leading-relaxed">
-              We're a senior team of engineers, AI researchers, and designers
-              building software that feels like the future arrived early.
+            <p className="text-[#a7a3a4] text-[12px] sm:text-base md:text-lg max-w-2xl leading-relaxed">
+              4xCode is a senior software development studio — engineers, AI
+              researchers, and designers building products that feel like the
+              future arrived early. Since our founding, we've shipped 120+
+              projects for startups and scaling teams across SaaS, AI, and web,
+              with a remote-first team spanning three time zones.
             </p>
           </Reveal>
         </div>
@@ -115,7 +136,8 @@ export default function AboutPage() {
               </h3>
               <p className="text-[#a7a3a4] text-sm leading-relaxed flex-grow">
                 To engineer the software that defines the next decade —
-                intelligent, fast, and beautifully made.
+                intelligent, fast, and built with genuine craft, not cutting
+                corners.
               </p>
             </div>
           </Reveal>
@@ -131,8 +153,9 @@ export default function AboutPage() {
                 Vision
               </h3>
               <p className="text-[#a7a3a4] text-sm leading-relaxed flex-grow">
-                A world where every ambitious team has elite engineering and AI
-                within reach.
+                A world where every ambitious team has access to elite
+                engineering and applied AI — not just the companies large enough
+                to afford a fifty-person in-house team.
               </p>
             </div>
           </Reveal>

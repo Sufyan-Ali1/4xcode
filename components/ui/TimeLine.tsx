@@ -13,31 +13,31 @@ const TIMELINE = [
   {
     year: "2021",
     title: "Founded",
-    desc: "Started as a 4-person engineering pod.",
+    desc: "Founded by Vic and Muhammad Ali, 4xCode began with a simple mission: to challenge the traditional software development model. We believed businesses deserved a technology partner that moved faster, communicated better, and built products with uncompromising quality. What started as a two-person team has grown into a company trusted by clients to deliver scalable web, mobile, and SaaS solutions",
     side: "left",
   },
   {
     year: "2022",
     title: "First SaaS",
-    desc: "Shipped our first multi-tenant platform for a VC team.",
+    desc: "We shipped our first multi-tenant SaaS platform for an auto garage business in the UK — a platform that's still live and running today. It was the project that taught us how to architect for scale from day one.",
     side: "right",
   },
   {
     year: "2024",
     title: "AI division",
-    desc: "Spun up our applied AI practice — LLMs, RAG, agents.",
+    desc: "As large language models moved from research demos to genuine production tools, we spun up a dedicated applied AI practice — RAG pipelines, custom agents, and fine-tuned models built for real products, not prototypes.",
     side: "left",
   },
   {
     year: "2025",
     title: "Global team",
-    desc: "Engineers across 3 time zones, 120+ projects shipped.",
+    desc: "Our team grew across three time zones and crossed 120+ projects shipped, working with startups, SaaS platforms, and AI products for clients across the US, UK, and EU.",
     side: "right",
   },
   {
     year: "2026",
     title: "Next chapter",
-    desc: "Pushing into autonomous software systems.",
+    desc: "We're pushing further into autonomous software systems — products that don't just respond to users, but act on their behalf.",
     side: "left",
   },
 ];
@@ -54,9 +54,9 @@ export default function TimelineSection() {
             <h2
               className={`${spaceGrotesk.className} text-3xl font-bold tracking-tight`}
             >
-              From pod to{" "}
+              From Pod to{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF8A8C] to-[#EF1F23]">
-                global studio
+                Global Studio
               </span>
               .
             </h2>

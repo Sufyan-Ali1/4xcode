@@ -1,9 +1,10 @@
 "use client";
 
-import React, { useMemo } from "react";
+import React, { useMemo, useState, useEffect } from "react";
 import Link from "next/link";
 import { useParams, notFound } from "next/navigation";
 import { motion, useReducedMotion, type Variants } from "framer-motion";
+import ServiceFaq from "../../../components/ui/ServiceFaq";
 import { Space_Grotesk, Inter } from "next/font/google";
 import { Reveal } from "../../../utils/AnimationReveal";
 import { SERVICES_DATA, type ServiceItem } from "../../../data/serviceData";
@@ -11,7 +12,7 @@ import { SERVICES_DATA, type ServiceItem } from "../../../data/serviceData";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
 
-import ProcessSection from "../../../components/landing/ProcessSection";
+import ServiceWhyChoose from "../../../components/ui/ServiceWhyChoose";
 
 import {
   MetricCard,
@@ -33,9 +34,11 @@ export default function ServiceDetailPage() {
   const reduced = useReducedMotion();
 
   const currentSlug = typeof params?.slug === "string" ? params.slug : "";
-  const service = (SERVICES_DATA as ServiceItem[]).find(
-    (item) => item.slug === currentSlug,
-  );
+  const service = useMemo(() => {
+    return (SERVICES_DATA as ServiceItem[]).find(
+      (item) => item.slug === currentSlug,
+    );
+  }, [currentSlug]);
 
   if (!service) {
     notFound();
@@ -74,10 +77,26 @@ export default function ServiceDetailPage() {
       .slice(0, 3);
   }, [service]);
 
+  useEffect(() => {
+    document.title = `${service?.titleTag} `;
+    let metaDescription = document.querySelector('meta[name="description"]');
+    const descriptionText = service?.metaDesc;
+
+    if (metaDescription) {
+      metaDescription.setAttribute("content", descriptionText);
+    } else {
+      metaDescription = document.createElement("meta");
+      metaDescription.setAttribute("name", "description");
+      metaDescription.setAttribute("content", descriptionText);
+      document.head.appendChild(metaDescription);
+    }
+  }, []);
+
   return (
     <div
       className={`relative min-h-screen w-full overflow-hidden bg-[#030303] pb-12 text-white ${inter.className}`}
     >
+
       <div
         className="pointer-events-none absolute left-0 right-0 top-0 z-0 h-[800px] select-none overflow-hidden"
         aria-hidden="true"
@@ -88,7 +107,6 @@ export default function ServiceDetailPage() {
       </div>
 
       <div className="relative z-10 mx-auto max-w-7xl px-6 pt-32 md:pt-36 md:px-12 lg:px-24">
-        {/* Navigation Breadcrumb */}
         <Reveal>
           <Link
             href="/service"
@@ -97,13 +115,12 @@ export default function ServiceDetailPage() {
             <KeyboardBackspaceIcon
               style={{ fontSize: 13 }}
               aria-hidden="true"
-              className="transform transition-transform duration-300 ease-out"
+              className="transform transition-transform duration-300 ease-out "
             />
             <span>BACK TO CAPABILITIES</span>
           </Link>
         </Reveal>
 
-        {/* Hero Segment */}
         <div className="grid grid-cols-1 items-start gap-10 lg:grid-cols-12 lg:gap-16">
           <div className="space-y-5 lg:col-span-8">
             <Reveal>
@@ -143,7 +160,7 @@ export default function ServiceDetailPage() {
                   <ArrowForwardIcon
                     style={{ fontSize: 15 }}
                     aria-hidden="true"
-                    className="transition-transform duration-200"
+                    className="transition-transform duration-200 "
                   />
                 </Link>
                 <Link
@@ -155,8 +172,6 @@ export default function ServiceDetailPage() {
               </div>
             </Reveal>
           </div>
-
-          {/* Quick Summary Card */}
           <div className="w-full lg:col-span-4">
             <motion.div
               initial={{ opacity: 0, y: reduced ? 0 : 40 }}
@@ -168,19 +183,27 @@ export default function ServiceDetailPage() {
               }}
               className="group/card relative space-y-5 rounded-[22px] border border-white/5 bg-white/2 p-6 md:p-8 shadow-2xl backdrop-blur-xl hover:border-[rgba(249,10,31,0.25)] transition-all duration-300"
             >
-              <h3 className="text-lg font-bold uppercase text-zinc-300">
-                Deployment Summary
+              <h3 className="text-lg font-bold uppercase text-zinc-300 tracking-wide">
+                Deployment Stack
               </h3>
-              <div className="space-y-0.5">
+              <div className="space-y-4">
+                {" "}
+                {/* Increased spacing for better readability with descriptions */}
                 {service.tags.map((tag) => (
                   <div
-                    key={tag}
-                    className="flex items-center gap-3 border-b border-white/5 py-2.5 last:border-none"
+                    key={tag.name} // Uses the unique tag name as the key
+                    className="flex flex-col gap-1 border-b border-white/5 pb-3.5 last:border-none last:pb-0"
                   >
-                    <span className="h-1.5 w-1.5 rounded-full bg-[#ef1f23] shadow-[0_0_8px_#ef1f23]" />
-                    <span className="font-mono text-[13px] text-zinc-400">
-                      {tag}
-                    </span>
+                    <div className="flex items-center gap-3">
+                      <span className="h-1.5 w-1.5 rounded-full bg-[#ef1f23] shadow-[0_0_8px_#ef1f23]" />
+                      <span className="font-mono text-[13px] font-semibold text-white">
+                        {tag.name}
+                      </span>
+                    </div>
+                    {/* Tag Description Layer */}
+                    <p className="pl-4 text-xs leading-relaxed text-zinc-400">
+                      {tag.description}
+                    </p>
                   </div>
                 ))}
               </div>
@@ -188,7 +211,6 @@ export default function ServiceDetailPage() {
           </div>
         </div>
 
-        {/* Metrics Section */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -205,8 +227,6 @@ export default function ServiceDetailPage() {
             />
           ))}
         </motion.div>
-
-        {/* Core Philosophy Section */}
         <div className="mt-16 md:mt-24 lg:mt-28 pt-12">
           <Reveal>
             <div className="space-y-2">
@@ -215,16 +235,11 @@ export default function ServiceDetailPage() {
               </p>
               <h2 className="text-3xl font-bold sm:text-4xl">
                 Engineered for{" "}
-                <span className="bg-linear-to-br from-[#ff8a8c] to-[#ef1f23] bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-[#ff8a8c] to-[#ef1f23] bg-clip-text text-transparent">
                   Production Reality
                 </span>
               </h2>
             </div>
-          </Reveal>
-          <Reveal delay={0.1}>
-            <p className="mt-5 max-w-2xl text-sm sm:text-base leading-relaxed text-[#a7a3a4]">
-              {service.longDesc}
-            </p>
           </Reveal>
           <motion.div
             variants={containerVariants}
@@ -243,8 +258,6 @@ export default function ServiceDetailPage() {
             ))}
           </motion.div>
         </div>
-
-        {/* Capabilities Matrix Section */}
         <div className="mt-16 md:mt-24 lg:mt-28 pt-12">
           <Reveal>
             <div className="space-y-2">
@@ -253,23 +266,24 @@ export default function ServiceDetailPage() {
               </p>
               <h2 className="text-3xl font-bold sm:text-4xl">
                 What's{" "}
-                <span className="bg-linear-to-br from-[#ff8a8c] to-[#ef1f23] bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-[#ff8a8c] to-[#ef1f23] bg-clip-text text-transparent">
                   Included
                 </span>
               </h2>
             </div>
           </Reveal>
+
           <motion.div
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.1 }}
-            className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-4"
+            className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4" // Updated grid layouts for richer text cards
           >
             {service.features.map((feature) => (
               <CapabilityCard
-                key={feature}
-                data={feature}
+                key={feature.title} // Uses the unique title as the React execution key
+                data={feature} // Passes the entire object { title, description } to the card component
                 variants={itemVariants}
                 fontClass={spaceGrotesk.className}
               />
@@ -277,7 +291,7 @@ export default function ServiceDetailPage() {
           </motion.div>
         </div>
 
-        {/* Engineering Stack Section */}
+        {/* Granular Infrastructure Tech Categories Matrix */}
         <div className="mt-16 md:mt-24 lg:mt-28 pt-12">
           <Reveal>
             <div className="space-y-2">
@@ -286,7 +300,7 @@ export default function ServiceDetailPage() {
               </p>
               <h2 className="text-3xl font-bold sm:text-4xl">
                 Tools &{" "}
-                <span className="bg-linear-to-br from-[#ff8a8c] to-[#ef1f23] bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-[#ff8a8c] to-[#ef1f23] bg-clip-text text-transparent">
                   Infrastructure
                 </span>
               </h2>
@@ -309,8 +323,8 @@ export default function ServiceDetailPage() {
           </motion.div>
         </div>
 
-        {/* Delivery Flow Timeline Section */}
-        <div className="relative mt-16 md:mt-24 lg:mt-28 pt-12 mb-15">
+        {/* Operational Flow Architecture Blueprint */}
+        <div className="relative mt-16 md:mt-24 lg:mt-28 pt-12">
           <div className="mb-14 text-center">
             <Reveal>
               <div className="space-y-2 flex flex-col items-center text-center">
@@ -319,7 +333,7 @@ export default function ServiceDetailPage() {
                 </p>
                 <h2 className="text-3xl font-bold sm:text-4xl">
                   Execution Delivery{" "}
-                  <span className="bg-linear-to-br from-[#ff8a8c] to-[#ef1f23] bg-clip-text text-transparent">
+                  <span className="bg-gradient-to-r from-[#ff8a8c] to-[#ef1f23] bg-clip-text text-transparent">
                     Framework
                   </span>
                 </h2>
@@ -343,10 +357,17 @@ export default function ServiceDetailPage() {
             ))}
           </motion.div>
         </div>
+
+        {/* Accordion FAQ Block */}
+
+        <ServiceFaq faqs={service.faqs} />
       </div>
 
-      <ProcessSection />
-
+      <ServiceWhyChoose
+        serviceTitle={service.title}
+        reasons={service.whyTeamsChoose}
+      />
+      {/* Adjacent Dynamic Routing Services Section */}
       <div className="relative z-10 mx-auto max-w-7xl px-6 md:px-12 lg:px-24">
         {relatedServices.length > 0 && (
           <div className="mt-16 md:mt-20 lg:mt-23 pt-5">
@@ -357,7 +378,7 @@ export default function ServiceDetailPage() {
                 </p>
                 <h2 className="text-3xl font-bold sm:text-4xl">
                   Pairs Well{" "}
-                  <span className="bg-linear-to-br from-[#ff8a8c] to-[#ef1f23] bg-clip-text text-transparent">
+                  <span className="bg-gradient-to-r from-[#ff8a8c] to-[#ef1f23] bg-clip-text text-transparent">
                     With
                   </span>
                 </h2>
@@ -383,7 +404,7 @@ export default function ServiceDetailPage() {
         )}
       </div>
 
-      {/* Footer Banner Call To Action */}
+      {/* Conversion Banner Section */}
       <section className="relative w-full py-16 md:py-24 px-6 md:px-12 lg:px-24 z-10">
         <div className="max-w-7xl mx-auto">
           <motion.div
@@ -391,7 +412,7 @@ export default function ServiceDetailPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-            className="relative w-full bg-linear-to-r from-[#070707] to-[#0d0d0d] border border-white/4 rounded-3xl p-6 sm:p-10 md:p-12 flex flex-col md:flex-row items-center justify-between text-center md:text-left gap-6 md:gap-8 overflow-hidden"
+            className="relative w-full bg-gradient-to-r from-[#070707] to-[#0d0d0d] border border-white/4 rounded-3xl p-6 sm:p-10 md:p-12 flex flex-col md:flex-row items-center justify-between text-center md:text-left gap-6 md:gap-8 overflow-hidden"
           >
             <div
               className="absolute -right-20 -bottom-20 w-80 h-80 rounded-full bg-[#f90a1f]/15 blur-[60px] pointer-events-none"
@@ -413,7 +434,10 @@ export default function ServiceDetailPage() {
               className="group relative z-10 inline-flex items-center justify-center w-full md:w-auto px-7 sm:px-8 py-3.5 bg-[#f90a1f] hover:bg-[#d60819] text-white font-bold rounded-full shadow-[0_4px_25px_rgba(249,10,31,0.3)] transition-all duration-200 text-sm whitespace-nowrap shrink-0 gap-2"
             >
               <span>Start Project</span>
-              <ArrowForwardIcon style={{ fontSize: 18 }} />
+              <ArrowForwardIcon
+                style={{ fontSize: 18 }}
+                className="transition-transform duration-200 group-hover:translate-x-1"
+              />
             </Link>
           </motion.div>
         </div>

@@ -24,22 +24,22 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
       suppressHydrationWarning
     >
-      <FormProvider>
-        <body className="min-h-full flex flex-col">
+      <body className="min-h-full flex flex-col">
+        <FormProvider>
           <Header />
           <div className="flex-1">{children}</div>
           <Footer />
-        </body>
-      </FormProvider>
+        </FormProvider>
+      </body>
     </html>
   );
 }

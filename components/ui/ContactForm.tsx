@@ -14,7 +14,11 @@ const spaceGrotesk = Space_Grotesk({
   weight: ["400", "700"],
 });
 
-export default function ContactForm() {
+type ContactFormProps = {
+  variant?: "default" | "sidebar";
+};
+
+export default function ContactForm({ variant = "default" }: ContactFormProps) {
   const router = useRouter();
   const reduced = useReducedMotion();
   const [showErrorPopup, setShowErrorPopup] = useState(false);
@@ -25,6 +29,8 @@ export default function ContactForm() {
     number: "",
     details: "",
   });
+
+  const isSidebar = variant === "sidebar";
 
   const handleInputChange = (e: any) => {
     const { name, value } = e.target;
@@ -66,7 +72,11 @@ export default function ContactForm() {
   };
 
   return (
-    <div className="w-full lg:w-[58%] relative flex flex-col gap-4">
+    <div
+      className={`relative flex flex-col gap-4 ${
+        isSidebar ? "w-full" : "w-full lg:w-[58%]"
+      }`}
+    >
       <div className="w-full relative flex">
         <div className="absolute inset-0 rounded-[32px] bg-[#f90a1f]/20 blur-xl pointer-events-none opacity-40" />
 
@@ -75,24 +85,32 @@ export default function ContactForm() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
-          className="relative w-full rounded-3xl md:rounded-[32px] border border-[rgba(255,255,255,0.1)] bg-[rgba(255,255,255,0.04)] px-8 py-10 md:p-12 shadow-[0_0_30px_0_rgba(239,31,35,0.35)] flex flex-col justify-between"
+          className={`relative w-full rounded-3xl md:rounded-[32px] border border-[rgba(255,255,255,0.1)] bg-[rgba(255,255,255,0.04)] shadow-[0_0_30px_0_rgba(239,31,35,0.35)] flex flex-col justify-between ${
+            isSidebar ? "px-6 py-8" : "px-8 py-10 md:p-12"
+          }`}
         >
-          <form onSubmit={handleSubmit} className="flex flex-col gap-6 h-full">
+          <form onSubmit={handleSubmit} className="flex flex-col gap-5 h-full">
             <div className="space-y-2">
               <h2
-                className={`${spaceGrotesk.className} text-2xl sm:text-[35px] font-bold leading-[1.2] tracking-tight text-white`}
+                className={`${spaceGrotesk.className} font-bold leading-[1.2] tracking-tight text-white ${
+                  isSidebar ? "text-xl sm:text-2xl" : "text-2xl sm:text-[35px]"
+                }`}
               >
                 Let&apos;s build something great together
               </h2>
-              <p className="text-[16px] font-normal leading-[23px] text-white/70 max-w-[400px]">
+              <p
+                className={`font-normal leading-[22px] text-white/70 ${
+                  isSidebar ? "text-[14px]" : "text-[16px] max-w-[400px]"
+                }`}
+              >
                 Whether you have a project in mind or just want to say hi,
                 we&apos;d love to hear from you.
               </p>
             </div>
 
-            <div className="flex flex-col gap-6">
+            <div className="flex flex-col gap-5">
               <div className="flex flex-col gap-2">
-                <label className="block text-[14px] font-medium leading-[20px] text-[rgba(255,255,255,0.56)]">
+                <label className="block text-[13px] font-medium leading-[18px] text-[rgba(255,255,255,0.56)]">
                   Name
                 </label>
                 <input
@@ -102,12 +120,12 @@ export default function ContactForm() {
                   onChange={handleInputChange}
                   placeholder="Name"
                   required
-                  className="w-full rounded-[8px] border border-[rgba(245,29,49,0.15)] bg-[rgba(0,0,0,0.54)] px-[17px] py-[15px] text-[16px] text-[rgba(255,255,255,0.65)] outline-none"
+                  className="w-full min-w-0 rounded-[8px] border border-[rgba(245,29,49,0.15)] bg-[rgba(0,0,0,0.54)] px-4 py-3 text-[15px] text-[rgba(255,255,255,0.65)] outline-none focus:border-[#f51d31]/50 transition-colors"
                 />
               </div>
 
               <div className="flex flex-col gap-2">
-                <label className="block text-[14px] font-medium leading-[20px] text-[rgba(255,255,255,0.56)]">
+                <label className="block text-[13px] font-medium leading-[18px] text-[rgba(255,255,255,0.56)]">
                   Email
                 </label>
                 <input
@@ -117,12 +135,12 @@ export default function ContactForm() {
                   onChange={handleInputChange}
                   placeholder="example@gmail.com"
                   required
-                  className="w-full rounded-[8px] border border-[rgba(245,29,49,0.15)] bg-[rgba(0,0,0,0.54)] px-[17px] py-[15px] text-[16px] text-[rgba(255,255,255,0.65)] outline-none"
+                  className="w-full min-w-0 rounded-[8px] border border-[rgba(245,29,49,0.15)] bg-[rgba(0,0,0,0.54)] px-4 py-3 text-[15px] text-[rgba(255,255,255,0.65)] outline-none focus:border-[#f51d31]/50 transition-colors"
                 />
               </div>
 
               <div className="flex flex-col gap-2">
-                <label className="block text-[14px] font-medium leading-[20px] text-[rgba(255,255,255,0.56)]">
+                <label className="block text-[13px] font-medium leading-[18px] text-[rgba(255,255,255,0.56)]">
                   Number
                 </label>
                 <input
@@ -131,12 +149,12 @@ export default function ContactForm() {
                   value={formData.number}
                   onChange={handleInputChange}
                   placeholder="000-111-2221"
-                  className="w-full rounded-[8px] border border-[rgba(245,29,49,0.15)] bg-[rgba(0,0,0,0.54)] px-[17px] py-[15px] text-[16px] text-[rgba(255,255,255,0.65)] outline-none"
+                  className="w-full min-w-0 rounded-[8px] border border-[rgba(245,29,49,0.15)] bg-[rgba(0,0,0,0.54)] px-4 py-3 text-[15px] text-[rgba(255,255,255,0.65)] outline-none focus:border-[#f51d31]/50 transition-colors"
                 />
               </div>
 
               <div className="flex flex-col gap-2">
-                <label className="block text-[14px] font-medium leading-[20px] text-[rgba(255,255,255,0.56)]">
+                <label className="block text-[13px] font-medium leading-[18px] text-[rgba(255,255,255,0.56)]">
                   Project details
                 </label>
                 <textarea
@@ -145,8 +163,8 @@ export default function ContactForm() {
                   onChange={handleInputChange}
                   placeholder="Tell us what you're building..."
                   required
-                  rows={5}
-                  className="w-full rounded-[8px] border border-[rgba(245,29,49,0.15)] bg-[rgba(0,0,0,0.54)] px-[17px] py-[15px] text-[16px] text-[rgba(255,255,255,0.65)] outline-none resize-none min-h-[140px]"
+                  rows={isSidebar ? 4 : 5}
+                  className="w-full min-w-0 rounded-[8px] border border-[rgba(245,29,49,0.15)] bg-[rgba(0,0,0,0.54)] px-4 py-3 text-[15px] text-[rgba(255,255,255,0.65)] outline-none resize-none focus:border-[#f51d31]/50 transition-colors min-h-[110px]"
                 />
               </div>
             </div>
@@ -158,13 +176,13 @@ export default function ContactForm() {
               >
                 <button
                   type="submit"
-                  className="group inline-flex h-[52px] w-full items-center justify-center gap-2 rounded-[8px] bg-[#f51d31] py-[16px] px-6 text-[16px] font-semibold text-white shadow-[0_0_25px_0_rgba(239,31,35,0.4)] hover:opacity-90 transition-all duration-300 cursor-pointer"
+                  className="group inline-flex h-[48px] w-full items-center justify-center gap-2 rounded-[8px] bg-[#f51d31] py-3 px-6 text-[15px] font-semibold text-white shadow-[0_0_25px_0_rgba(239,31,35,0.4)] hover:opacity-90 transition-all duration-300 cursor-pointer"
                 >
                   <SendIcon style={{ fontSize: 18 }} />
                   <span>Send Message</span>
                 </button>
               </motion.div>
-              <p className="text-[14px] text-white/60 text-center font-normal">
+              <p className="text-[13px] text-white/60 text-center font-normal">
                 We&apos;ll respond within 24 hours during business days.
               </p>
             </div>

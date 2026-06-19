@@ -17,6 +17,15 @@ body {
   min-height: 100%;
 }
 
+/* Hide scrollbar but keep scrolling working */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE/Edge */
+  scrollbar-width: none; /* Firefox */
+}
 
 
 

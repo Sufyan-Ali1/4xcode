@@ -106,7 +106,7 @@ export default function ServiceDetailPage() {
         <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#030303]" />
       </div>
 
-      <div className="relative z-10 mx-auto max-w-7xl px-6 pt-32 md:pt-36 md:px-12 lg:px-24">
+      <div className="relative z-10 mx-auto w-full max-w-300 px-5 pt-32 md:pt-36">
         <Reveal>
           <Link
             href="/service"
@@ -345,7 +345,7 @@ export default function ServiceDetailPage() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.15 }}
-            className="relative mx-auto grid max-w-5xl grid-cols-1 gap-6 md:grid-cols-3 lg:gap-8"
+            className="relative mx-auto grid w-full grid-cols-1 gap-6 md:grid-cols-3 lg:gap-8"
           >
             {service.architecture.map((step) => (
               <ArchitectureStep
@@ -368,7 +368,7 @@ export default function ServiceDetailPage() {
         reasons={service.whyTeamsChoose}
       />
       {/* Adjacent Dynamic Routing Services Section */}
-      <div className="relative z-10 mx-auto max-w-7xl px-6 md:px-12 lg:px-24">
+      <div className="relative z-10 mx-auto w-full max-w-300 px-5">
         {relatedServices.length > 0 && (
           <div className="mt-16 md:mt-20 lg:mt-23 pt-5">
             <Reveal>
@@ -405,8 +405,8 @@ export default function ServiceDetailPage() {
       </div>
 
       {/* Conversion Banner Section */}
-      <section className="relative w-full py-16 md:py-24 px-6 md:px-12 lg:px-24 z-10">
-        <div className="max-w-7xl mx-auto">
+      <section className="relative w-full py-16 md:py-24 px-5 z-10">
+        <div className="mx-auto w-full max-w-300">
           <motion.div
             initial={{ opacity: 0, y: reduced ? 0 : 30 }}
             whileInView={{ opacity: 1, y: 0 }}

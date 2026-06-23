@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { usePathname } from "next/navigation"; // 1. Imported pathname hook
+import { usePathname } from "next/navigation";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 
@@ -25,7 +25,9 @@ export default function Header() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-100 flex w-full items-center justify-center bg-black/50 px-4 py-4 backdrop-blur-md md:px-10">
-      <div className="mx-auto flex w-full max-w-314.5 items-center justify-between gap-6 rounded-[22px] px-5 py-3 lg:gap-20">
+      
+      {/* ✅ Reduced width here */}
+      <div className="mx-auto flex w-full max-w-300 items-center justify-between gap-6 rounded-[22px] px-5 py-3 lg:gap-20">
 
         <Link
           href="/"
@@ -41,7 +43,6 @@ export default function Header() {
             className="h-12 w-[57px] object-contain"
           />
         </Link>
-
 
         <nav
           aria-label="Main navigation"
@@ -91,19 +92,9 @@ export default function Header() {
           className="flex items-center justify-center p-2 md:hidden"
         >
           {isMenuOpen ? (
-            <CloseIcon
-              sx={{
-                fontSize: 30,
-                color: "#fff",
-              }}
-            />
+            <CloseIcon sx={{ fontSize: 30, color: "#fff" }} />
           ) : (
-            <MenuIcon
-              sx={{
-                fontSize: 30,
-                color: "#fff",
-              }}
-            />
+            <MenuIcon sx={{ fontSize: 30, color: "#fff" }} />
           )}
         </button>
       </div>
@@ -120,7 +111,6 @@ export default function Header() {
             <div className="overflow-hidden rounded-2xl border border-white/10 bg-[#0A0A0A]/95 shadow-[0_20px_60px_rgba(0,0,0,0.6)] backdrop-blur-xl">
               <nav className="flex flex-col p-4">
                 {NAV_ITEMS.map(({ label, href }) => {
-                  // 4. Mirror active check for mobile view
                   const isActive = pathname === href;
 
                   return (
@@ -142,16 +132,13 @@ export default function Header() {
                 })}
 
                 <div className="my-4 h-px bg-white/10" />
+
                 <Link
                   href="/contact"
                   onClick={closeMenu}
                   className="group flex items-center justify-center gap-2 rounded-full border-2 border-[#f90a1f] bg-[#f90a1f]/20 px-8 py-3.5 backdrop-blur-md transition-colors duration-200 hover:bg-[#f90a1f]/30"
                 >
-                  <span
-                    className="h-2.5 w-2.5 shrink-0 rounded-full bg-white"
-                    aria-hidden="true"
-                  />
-
+                  <span className="h-2.5 w-2.5 shrink-0 rounded-full bg-white" />
                   <span className="font-['Inter',sans-serif] text-[20px] font-bold text-white">
                     Start Project
                   </span>

@@ -30,7 +30,7 @@ export default function ServiceFaq({ faqs }: ServiceFaqProps) {
   return (
     <div className="mt-16 md:mt-24 lg:mt-28 pt-12">
       <Reveal>
-        <div className="space-y-2 mb-10">
+        <div className="space-y-2 mb-10 text-center">
           <p className="text-[#ef1f23] text-[12px] font-normal uppercase tracking-[3.6px] leading-4">
             Technical Validation
           </p>
@@ -43,7 +43,7 @@ export default function ServiceFaq({ faqs }: ServiceFaqProps) {
         </div>
       </Reveal>
 
-      <div className="max-w-4xl space-y-4">
+      <div className="mx-auto max-w-3xl space-y-4">
         {faqs.map((faq, index) => {
           const isOpen = openFaqIndex === index;
           return (

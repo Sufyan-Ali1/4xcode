@@ -56,9 +56,7 @@ export default function Header() {
                 className="flex shrink-0 items-center justify-center whitespace-nowrap px-3 py-2.5 transition-colors duration-200"
               >
                 <span
-                  className={`font-['Inter',sans-serif] text-base font-medium leading-6 transition-colors duration-200 ${
-                    isActive ? "text-white" : "text-white/50"
-                  }`}
+                  className={`font-['Inter',sans-serif] text-base font-medium leading-6 transition-colors duration-200 ${isActive ? "text-white" : "text-white/50"}`}
                 >
                   {label}
                 </span>
@@ -76,7 +74,6 @@ export default function Header() {
             className="h-2.5 w-2.5 shrink-0 rounded-full bg-white"
             aria-hidden="true"
           />
-
           <span className="font-['Inter',sans-serif] text-[20px] font-bold text-white">
             Start Project
           </span>
@@ -98,20 +95,18 @@ export default function Header() {
         </button>
       </div>
 
+      {/* Mobile Drops */}
       {isMenuOpen && (
         <>
           <div
             className="fixed inset-0 z-40 bg-black/50 backdrop-blur-sm md:hidden"
             onClick={closeMenu}
           />
-
-          {/* Menu Card */}
-          <div className="absolute left-4 right-4 top-[calc(100%+12px)] z-50 md:hidden">
+          <div className="absolute left-6 right-6 top-[calc(100%+12px)] z-50 md:hidden">
             <div className="overflow-hidden rounded-2xl border border-white/10 bg-[#0A0A0A]/95 shadow-[0_20px_60px_rgba(0,0,0,0.6)] backdrop-blur-xl">
               <nav className="flex flex-col p-4">
                 {NAV_ITEMS.map(({ label, href }) => {
                   const isActive = pathname === href;
-
                   return (
                     <Link
                       key={label}
@@ -120,16 +115,13 @@ export default function Header() {
                       className="rounded-xl px-4 py-3 transition-all duration-200"
                     >
                       <span
-                        className={`font-['Inter',sans-serif] text-base font-medium leading-6 ${
-                          isActive ? "text-white" : "text-white/50"
-                        }`}
+                        className={`font-['Inter',sans-serif] text-base font-medium leading-6 ${isActive ? "text-white" : "text-white/50"}`}
                       >
                         {label}
                       </span>
                     </Link>
                   );
                 })}
-
                 <div className="my-4 h-px bg-white/10" />
 
                 <Link

@@ -5,8 +5,15 @@ const nextConfig = {
       {
         protocol: "https",
         hostname: "res.cloudinary.com",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "blogs-tbsmf.ondigitalocean.app",
+        pathname: "/**",
       },
     ],
+    formats: ["image/avif", "image/webp"],
   },
 };
 

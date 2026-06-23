@@ -1,0 +1,124 @@
+/* caseStudy/CaseStudy.module.css */
+
+.htmlRender {
+  color: #a7a3a4 !important;
+  font-size: 15px;
+  line-height: 1.75;
+}
+
+/* Strip hardcoded dark/white layout flags coming from the backend rich editor */
+.htmlRender :global(span),
+.htmlRender :global(p),
+.htmlRender :global(h3) {
+  background-color: transparent !important;
+  color: inherit !important;
+}
+
+/* Structural dynamic paragraph spacing updates */
+.htmlRender :global(p) {
+  margin-bottom: 1.25rem;
+  color: #a7a3a4;
+}
+
+/* Injected Sub-headings Layout Configuration */
+.htmlRender :global(h3) {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #ffffff !important;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Luxury Tech Indicator bullet accent attached to inner subheadings */
+.htmlRender :global(h3)::before {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  background-color: #ef1f23;
+  border-radius: 9999px;
+  box-shadow: 0 0 8px #ef1f23;
+}
+
+/* Layout lists updates */
+.htmlRender :global(ul) {
+  list-style-type: none;
+  padding-left: 0;
+  margin: 1.5rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.htmlRender :global(li) {
+  position: relative;
+  padding-left: 1.5rem;
+  font-size: 14px;
+  color: #a7a3a4;
+}
+
+/* Red target bullet tracking for custom list lines */
+.htmlRender :global(li)::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.6rem;
+  width: 6px;
+  height: 6px;
+  background-color: #ef1f23;
+  border-radius: 9999px;
+  box-shadow: 0 0 8px #ef1f23;
+}
+
+/* Inline rich asset graphics wrappers mapping adjustments */
+.htmlRender :global(figure.image) {
+  margin: 2.5rem 0 !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow: hidden;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  background-color: rgba(255, 255, 255, 0.02);
+}
+
+.htmlRender :global(figure.image img) {
+  width: 100% !important;
+  height: auto !important;
+  object-fit: cover;
+  display: block;
+}
+
+/* Blockquote Testimonials structural configuration styling mapping */
+.htmlRender :global(blockquote) {
+  margin: 2.5rem 0;
+  border-left: 2px solid #ef1f23;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.03), transparent);
+  padding: 1.5rem 1.5rem 1.5rem 2rem;
+  border-top-right-radius: 14px;
+  border-bottom-right-radius: 14px;
+  font-style: italic;
+}
+
+.htmlRender :global(blockquote p) {
+  color: #e4e4e7 !important;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.htmlRender :global(blockquote i) {
+  font-style: normal;
+}
+
+/* Signature & metadata layouts embedded in block elements mapping updates */
+.htmlRender :global(blockquote strong) {
+  display: block;
+  margin-top: 0.75rem;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #71717a !important;
+  font-style: normal;
+}

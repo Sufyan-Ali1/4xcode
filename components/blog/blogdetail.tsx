@@ -16,7 +16,11 @@ export type Blog = {
   excerpt: string;
   content?: string;
   image: string;
-  images: BlogImage[];
+  images: BlogImage[]; 
+  date?: string;
+  category?: string;
+  author?: string;
+
 };
 
 /* ================= PAGE ================= */
@@ -24,10 +28,7 @@ export default function BlogDetailPage({ blog }: { blog: Blog }) {
   const extraImages = blog.images?.slice(1) || [];
   const cleanContent = cleanBlogContent(blog.content || "");
 
-  const bannerImage =
-    blog.image ||
-    blog.images?.[0]?.image ||
-    "";
+  const bannerImage = blog.image || blog.images?.[0]?.image || "";
 
   return (
     <main className="min-h-screen bg-black text-white">

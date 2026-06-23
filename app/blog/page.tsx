@@ -28,32 +28,30 @@ export default async function BlogPage() {
               <Link
                 key={blog.slug || blog.id}
                 href={`/blog/${blog.slug}`}
-                className="group relative bg-[#111] p-5 rounded-xl border border-zinc-800 hover:border-zinc-600 transition duration-300 block"
+                className="group relative bg-[#111] rounded-xl border border-zinc-800 hover:border-zinc-600 transition duration-300 block overflow-hidden"
               >
 
-                {/* SLUG */}
-                <span className="absolute top-3 right-3 text-[10px] text-zinc-500 opacity-0 group-hover:opacity-100 transition">
-                  {blog.slug}
-                </span>
-
-                {/* IMAGE */}
+{/* IMAGE — full width, no padding */}
                 {blog.image && (
                   <img
                     src={blog.image}
                     alt={blog.title}
-                    className="w-full h-40 object-cover rounded-lg mb-4"
+                    className="w-full h-48 object-cover"
                   />
                 )}
 
-                {/* TITLE */}
-                <h2 className="text-lg font-semibold mb-2 group-hover:text-white">
-                  {blog.title}
-                </h2>
+                {/* TEXT CONTENT — padded */}
+                <div className="p-5">
+                  {/* TITLE */}
+                  <h2 className="text-lg font-semibold mb-2 group-hover:text-white">
+                    {blog.title}
+                  </h2>
 
-                {/* EXCERPT */}
-                <p className="text-sm text-zinc-400 leading-relaxed">
-                  {(blog.excerpt || "").slice(0, 120)}
-                </p>
+                  {/* EXCERPT */}
+                  <p className="text-sm text-zinc-400 leading-relaxed">
+                    {(blog.excerpt || "").slice(0, 120)}
+                  </p>
+                </div>
 
               </Link>
             ))}

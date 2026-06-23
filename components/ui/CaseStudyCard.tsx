@@ -6,6 +6,7 @@ import Link from "next/link";
 import NorthEastIcon from "@mui/icons-material/NorthEast";
 import { CaseStudy } from "../../types/index";
 import { Space_Grotesk } from "next/font/google";
+import { useSafeReducedMotion } from "../../utils/useSafeReducedMotion";
 
 type CaseStudyCardProps = {
   project: CaseStudy;
@@ -17,7 +18,8 @@ const spaceGrotesk = Space_Grotesk({
   weight: ["400", "500", "700"],
 });
 
-export function CaseStudyCard({ project, index, reduced }: CaseStudyCardProps) {
+export function CaseStudyCard({ project, index }: CaseStudyCardProps) {
+  const reduced = useSafeReducedMotion();
   return (
     <motion.div
       initial={{ opacity: 0, y: reduced ? 0 : 40 }}
@@ -33,9 +35,9 @@ export function CaseStudyCard({ project, index, reduced }: CaseStudyCardProps) {
     >
       <Link
         href={`/work/${project.id}`}
-        className="group flex h-full cursor-pointer flex-col gap-4 rounded-[22px] border border-white/5 bg-white/2 p-6 transition-all duration-300 hover:border-[rgba(249,10,31,0.35)] hover:bg-white/4 will-change-transform"
+        className="group flex h-full cursor-pointer flex-col rounded-[22px] border border-white/5 bg-white/2 transition-all duration-300 hover:border-[rgba(249,10,31,0.35)] hover:bg-white/4 will-change-transform overflow-hidden"
       >
-        <div className="relative aspect-16/10 w-full overflow-hidden rounded-[14px]">
+        <div className="relative aspect-16/10 w-full overflow-hidden">
           <Image
             src={project.image}
             alt={project.title}
@@ -44,7 +46,7 @@ export function CaseStudyCard({ project, index, reduced }: CaseStudyCardProps) {
           />
         </div>
 
-        <div className="flex flex-1 flex-col gap-1.5 pt-2">
+        <div className="flex flex-1 flex-col gap-1.5 p-6 pt-4">
           <div className="flex items-center justify-between">
             <p className="text-[11px] font-bold uppercase tracking-[1.5px] text-[#f90a1f]">
               {project.tag}

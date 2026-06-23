@@ -32,22 +32,18 @@ export default function BlogDetailPage({ blog }: { blog: Blog }) {
   return (
     <main className="min-h-screen bg-black text-white">
 
-      {/* TOP BAR */}
-      <div className="border-b border-red-900/40 bg-black/90 backdrop-blur">
-        <div className="mx-auto w-full max-w-300 px-5 py-4">
-          <Link
-            href="/blog"
-            className="text-red-400 hover:text-red-300 text-sm transition"
-          >
-            ← Back to Blogs
-          </Link>
-        </div>
-      </div>
-
       {/* GLOBAL WIDTH CONTAINER */}
-      <div className="mx-auto w-full max-w-300 px-5 py-12">
+      <div className="mx-auto w-full max-w-300 px-5 pt-24 pb-6">
 
-        <div className="grid grid-cols-1 lg:grid-cols-[7fr_5fr] gap-10">
+        {/* BACK LINK */}
+        <Link
+          href="/blog"
+          className="text-red-400 hover:text-red-300 text-sm transition inline-block mb-6 mt-6"
+        >
+          ← Back to Blogs
+        </Link>
+
+        <div className="grid grid-cols-1 lg:grid-cols-[8fr_4fr] gap-6">
 
           {/* CONTENT */}
           <div className="min-w-0 order-2 lg:order-1">
@@ -104,21 +100,13 @@ export default function BlogDetailPage({ blog }: { blog: Blog }) {
               </section>
             )}
 
-            {/* BACK */}
-            <div className="mt-16">
-              <Link
-                href="/blog"
-                className="text-red-400 hover:text-red-300 text-sm transition"
-              >
-                ← Back to Blogs
-              </Link>
-            </div>
+
 
           </div>
 
-          {/* SIDEBAR */}
+          {/* SIDEBAR — sticky, form card handles internal scroll */}
           <aside className="order-1 lg:order-2">
-            <div className="lg:sticky lg:top-[110px]">
+            <div className="lg:sticky lg:top-[90px]">
               <ContactForm variant="sidebar" />
             </div>
           </aside>

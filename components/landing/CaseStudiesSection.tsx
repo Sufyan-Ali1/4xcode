@@ -1,13 +1,14 @@
 "use client";
 
-import { motion, useReducedMotion } from "framer-motion";
+import { motion } from "framer-motion";
+import { useSafeReducedMotion } from "../../utils/useSafeReducedMotion";
 import { Reveal } from "@/utils/AnimationReveal";
 import { caseStudies } from "../../data/index";
 import { CaseStudyCard } from "../ui/CaseStudyCard";
 import { CaseStudy } from "../../types/index";
 
 export default function CaseStudiesSection() {
-  const reduced = useReducedMotion();
+  const reduced = useSafeReducedMotion();
   const projects: CaseStudy[] = caseStudies.slice(0, 3);
 
   return (

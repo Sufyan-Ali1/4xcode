@@ -4,6 +4,7 @@ import React from "react";
 import { useEffect } from "react";
 
 import { motion, useReducedMotion } from "framer-motion";
+import { useSafeReducedMotion } from "../../utils/useSafeReducedMotion";
 import { Space_Grotesk, Inter } from "next/font/google";
 import { Reveal } from "../../utils/AnimationReveal";
 import ContactCtaSection from "../../components/landing/ContactCtaSection";
@@ -48,7 +49,7 @@ const SHARED_CARD_CLASSES =
   "group flex h-full flex-col rounded-[22px] border border-white/5 bg-white/2 p-6 transition-all duration-300 hover:border-[rgba(249,10,31,0.35)] hover:bg-white/4 will-change-transform";
 
 export default function AboutPage() {
-  const reduced = useReducedMotion();
+  const reduced = useSafeReducedMotion();
 
   useEffect(() => {
     document.title = "About 4xCode | Senior Engineering & AI Studio";

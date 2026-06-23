@@ -1,10 +1,11 @@
 "use client";
 
-import { motion, useReducedMotion } from "framer-motion";
+import { motion } from "framer-motion";
+import { useSafeReducedMotion } from "../../utils/useSafeReducedMotion";
 import { Reveal } from "../../utils/AnimationReveal";
 
 export default function ProcessSection() {
-  const reduced = useReducedMotion();
+  const reduced = useSafeReducedMotion();
 
   const steps = [
     {
@@ -72,7 +73,7 @@ export default function ProcessSection() {
 
         {/* Steps */}
         <div className="relative mt-24">
-          <div className="absolute hidden md:block top-8 left-[10%] right-[10%] h-px bg-red-900" />
+          <div className="absolute hidden md:block top-8 left-[10%] right-[10%] h-px bg-red-900 z-0" />
 
           <div className="grid grid-cols-1 md:grid-cols-5 gap-12">
             {steps.map((step, index) => (
@@ -87,9 +88,9 @@ export default function ProcessSection() {
                   ease: [0.22, 1, 0.36, 1],
                 }}
                 whileHover={{ y: -6, scale: 1.02 }}
-                className="flex flex-col items-center text-center"
+                className="relative z-10 flex flex-col items-center text-center"
               >
-                <div className="flex h-16 w-16 items-center justify-center rounded-full border border-red-900 bg-black">
+                <div className="flex h-16 w-16 items-center justify-center rounded-full border border-red-900 bg-black z-10">
                   <span className="bg-linear-to-br from-[#ff8a8c] to-[#ef1f23] bg-clip-text text-3xl font-bold text-transparent">
                     {step.number}
                   </span>
@@ -139,7 +140,7 @@ export default function ProcessSection() {
                       : ""
                   }`}
                 >
-                  <span className="font-mono text-[10px] uppercase tracking-[2px] text-neutral-600 group-hover:text-[#ff8a8c] mb-2">
+                  <span className="font-mono text-[10px] uppercase tracking-[2px] text-white-400 group-hover:text-[#ff8a8c] mb-2 transition-colors duration-300">
                     0{idx + 1} — Benefit
                   </span>
 

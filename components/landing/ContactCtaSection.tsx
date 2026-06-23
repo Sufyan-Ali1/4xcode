@@ -2,12 +2,13 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { motion, useReducedMotion } from "framer-motion";
+import { motion } from "framer-motion";
+import { useSafeReducedMotion } from "../../utils/useSafeReducedMotion";
 import { Reveal } from "../../utils/AnimationReveal";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 
 export default function CTASection() {
-  const reduced = useReducedMotion();
+  const reduced = useSafeReducedMotion();
 
   return (
     <div className="w-full bg-black pt-12 pb-16 md:py-16  px-6 md:px-12 lg:px-24 flex items-center justify-center">

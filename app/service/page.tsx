@@ -3,6 +3,7 @@
 import React, { useEffect } from "react";
 import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
+import { useSafeReducedMotion } from "../../utils/useSafeReducedMotion";
 import { Space_Grotesk, Inter } from "next/font/google";
 import { Reveal } from "../../utils/AnimationReveal";
 import { SERVICES_DATA } from "../../data/serviceData";
@@ -49,7 +50,7 @@ function DynamicServiceIcon({ iconKey }: { iconKey: string }) {
 }
 
 export default function ServicePage() {
-  const reduced = useReducedMotion();
+  const reduced = useSafeReducedMotion();
   const MotionLink = motion.create(Link);
 
   useEffect(() => {

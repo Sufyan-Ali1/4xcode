@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { usePathname } from "next/navigation"; // 1. Imported pathname hook
+import { usePathname } from "next/navigation";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 
@@ -24,9 +24,9 @@ export default function Header() {
   const closeMenu = () => setIsMenuOpen(false);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-100 flex w-full items-center justify-center bg-black/50 px-4 py-4 backdrop-blur-md md:px-10">
-      <div className="mx-auto flex w-full max-w-314.5 items-center justify-between gap-6 rounded-[22px] px-5 py-3 lg:gap-20">
-
+    // Outer fixed wrapper takes full width for ambient blurring effects
+    <header className="fixed top-0 left-0 right-0 z-100 w-full bg-black/50 px-5 py-4 backdrop-blur-md md:px-12 lg:px-23">
+      <div className="mx-auto flex w-full max-w-7xl items-center justify-between gap-6 px-1 py-3">
         <Link
           href="/"
           aria-label="4xcode home"
@@ -42,7 +42,6 @@ export default function Header() {
           />
         </Link>
 
-
         <nav
           aria-label="Main navigation"
           className="hidden shrink-0 items-center gap-1 md:flex"
@@ -56,9 +55,7 @@ export default function Header() {
                 className="flex shrink-0 items-center justify-center whitespace-nowrap px-3 py-2.5 transition-colors duration-200"
               >
                 <span
-                  className={`font-['Inter',sans-serif] text-base font-medium leading-6 transition-colors duration-200 ${
-                    isActive ? "text-white" : "text-white/50"
-                  }`}
+                  className={`font-['Inter',sans-serif] text-base font-medium leading-6 transition-colors duration-200 ${isActive ? "text-white" : "text-white/50"}`}
                 >
                   {label}
                 </span>
@@ -76,7 +73,6 @@ export default function Header() {
             className="h-2.5 w-2.5 shrink-0 rounded-full bg-white"
             aria-hidden="true"
           />
-
           <span className="font-['Inter',sans-serif] text-[20px] font-bold text-white">
             Start Project
           </span>
@@ -91,38 +87,25 @@ export default function Header() {
           className="flex items-center justify-center p-2 md:hidden"
         >
           {isMenuOpen ? (
-            <CloseIcon
-              sx={{
-                fontSize: 30,
-                color: "#fff",
-              }}
-            />
+            <CloseIcon sx={{ fontSize: 30, color: "#fff" }} />
           ) : (
-            <MenuIcon
-              sx={{
-                fontSize: 30,
-                color: "#fff",
-              }}
-            />
+            <MenuIcon sx={{ fontSize: 30, color: "#fff" }} />
           )}
         </button>
       </div>
 
+      {/* Mobile Drops */}
       {isMenuOpen && (
         <>
           <div
             className="fixed inset-0 z-40 bg-black/50 backdrop-blur-sm md:hidden"
             onClick={closeMenu}
           />
-
-          {/* Menu Card */}
-          <div className="absolute left-4 right-4 top-[calc(100%+12px)] z-50 md:hidden">
+          <div className="absolute left-6 right-6 top-[calc(100%+12px)] z-50 md:hidden">
             <div className="overflow-hidden rounded-2xl border border-white/10 bg-[#0A0A0A]/95 shadow-[0_20px_60px_rgba(0,0,0,0.6)] backdrop-blur-xl">
               <nav className="flex flex-col p-4">
                 {NAV_ITEMS.map(({ label, href }) => {
-                  // 4. Mirror active check for mobile view
                   const isActive = pathname === href;
-
                   return (
                     <Link
                       key={label}
@@ -131,16 +114,13 @@ export default function Header() {
                       className="rounded-xl px-4 py-3 transition-all duration-200"
                     >
                       <span
-                        className={`font-['Inter',sans-serif] text-base font-medium leading-6 ${
-                          isActive ? "text-white" : "text-white/50"
-                        }`}
+                        className={`font-['Inter',sans-serif] text-base font-medium leading-6 ${isActive ? "text-white" : "text-white/50"}`}
                       >
                         {label}
                       </span>
                     </Link>
                   );
                 })}
-
                 <div className="my-4 h-px bg-white/10" />
                 <Link
                   href="/contact"
@@ -151,7 +131,6 @@ export default function Header() {
                     className="h-2.5 w-2.5 shrink-0 rounded-full bg-white"
                     aria-hidden="true"
                   />
-
                   <span className="font-['Inter',sans-serif] text-[20px] font-bold text-white">
                     Start Project
                   </span>

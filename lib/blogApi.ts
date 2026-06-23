@@ -24,15 +24,13 @@ export type Blog = {
   excerpt: string;
   content?: string;
   image: string;
-  images: BlogImage[]; // ✅ MUST BE OBJECT ARRAY
+  images: BlogImage[];
   date?: string;
   category?: string;
   author?: string;
 };
 
-/* =========================
-   NORMALISE (SAFE)
-========================= */
+
 function normalise(raw: any): Blog {
   return {
     id: String(raw?.slug ?? raw?.id ?? ""),
@@ -48,9 +46,6 @@ function normalise(raw: any): Blog {
   };
 }
 
-/* =========================
-   GET ALL BLOGS
-========================= */
 export async function getBlogs(): Promise<Blog[]> {
   const { base, auth } = getConfig();
 
@@ -71,7 +66,7 @@ export async function getBlogs(): Promise<Blog[]> {
 
     const data = await res.json();
 
-    // 🔥 IMPORTANT FIX: API RETURNS ARRAY DIRECTLY
+
     const blogsArray = Array.isArray(data) ? data : [];
 
     return blogsArray.map(normalise);
@@ -81,9 +76,7 @@ export async function getBlogs(): Promise<Blog[]> {
   }
 }
 
-/* =========================
-   GET BLOG BY SLUG
-========================= */
+
 export async function fetchBlog(slug: string): Promise<Blog | null> {
   const { base, auth } = getConfig();
 
@@ -107,9 +100,9 @@ export async function fetchBlog(slug: string): Promise<Blog | null> {
     throw new Error("Blog response is not valid JSON");
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
   const raw = data && typeof data === "object" && (data as any).data
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
     ? (data as any).data
     : data;
 

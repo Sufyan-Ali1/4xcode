@@ -128,7 +128,7 @@ export default function ServicePage() {
         </section>
 
         <section className="relative w-full z-10 px-6 md:px-12 lg:px-24">
-          <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 w-full">
+          <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 w-full">
             {SERVICES_DATA.map((service, index) => (
               <MotionLink
                 key={service.slug}
@@ -141,14 +141,13 @@ export default function ServicePage() {
                   delay: 0.06 * index,
                   ease: [0.22, 1, 0.36, 1],
                 }}
-                whileHover={{ scale: 1.015, y: -3 }}
-                className="group flex flex-col rounded-[18px] overflow-hidden border border-white/5 hover:border-[rgba(249,10,31,0.35)] transition-all duration-300 bg-white/4 p-5 justify-between min-h-[380px]"
+                className="group flex flex-col rounded-[18px] overflow-hidden border border-white/5 hover:border-[rgba(249,10,31,0.35)] transition-all duration-300 bg-white/4 p-5 justify-between min-h-[380px] hover:-translate-y-1"
               >
                 <div className="w-full">
                   <div className="flex items-start justify-between w-full mb-4">
                     <DynamicServiceIcon iconKey={service.iconKey} />
                     <NorthEastIcon
-                      className="text-zinc-600 group-hover:text-zinc-400 transition-transform duration-300 transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 mt-1"
+                      className="text-zinc-600 group-hover:text-zinc-400 transition-transform duration-300 transform  mt-1"
                       style={{ fontSize: 16 }}
                     />
                   </div>

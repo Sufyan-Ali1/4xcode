@@ -1,16 +1,4 @@
-/**
- * htmlSanitizer.ts
- *
- * Strips WYSIWYG-editor inline styles that cause content to become invisible
- * on dark backgrounds (black text on black bg, white bg on black bg, etc.).
- *
- * Safe to use server-side (Node/Edge) or client-side — no DOM dependency.
- * All operations are pure string regex transforms.
- */
 
-// ---------------------------------------------------------------------------
-// 1. CSS color normalization helpers
-// ---------------------------------------------------------------------------
 
 /** Converts "rgb(0,0,0)" or "rgba(0,0,0,1)" → { r, g, b, a } */
 function parseRgb(value: string): { r: number; g: number; b: number; a: number } | null {

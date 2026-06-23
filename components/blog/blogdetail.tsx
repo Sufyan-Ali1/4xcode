@@ -20,7 +20,7 @@ export type Blog = {
   date?: string;
   category?: string;
   author?: string;
-  images: BlogImage[];
+
 };
 
 /* ================= PAGE ================= */

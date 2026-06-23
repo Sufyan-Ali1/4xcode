@@ -47,18 +47,21 @@ export default function ProcessSection() {
   ];
 
   return (
-    <section className="py-20 px-13 text-white overflow-hidden">
-      <div className="mx-auto max-w-7xl">
+    <section className="py-28 bg-black text-white overflow-hidden">
+
+      {/* ✅ GLOBAL WIDTH CONTAINER */}
+      <div className="mx-auto w-full max-w-300 px-5">
+
         {/* Header */}
         <div className="text-center">
           <Reveal>
-            <p className="mb-4 text-[#f90a1f] text-[12px] font-normal uppercase tracking-[3.6px] leading-4">
+            <p className="mb-4 text-[#f90a1f] text-[12px] uppercase tracking-[3.6px]">
               Our Process
             </p>
           </Reveal>
 
           <Reveal delay={0.1}>
-            <h2 className="text-4xl font-bold md:text-6xl">
+            <h2 className="text-4xl md:text-6xl font-bold">
               From spark to{" "}
               <span className="bg-linear-to-br from-[#ff8a8c] to-[#ef1f23] bg-clip-text text-transparent">
                 shipped
@@ -67,43 +70,34 @@ export default function ProcessSection() {
           </Reveal>
         </div>
 
-        {/* Process Steps */}
+        {/* Steps */}
         <div className="relative mt-24">
           <div className="absolute hidden md:block top-8 left-[10%] right-[10%] h-px bg-red-900" />
 
-          <div className="grid grid-cols-1 gap-12 md:grid-cols-5">
+          <div className="grid grid-cols-1 md:grid-cols-5 gap-12">
             {steps.map((step, index) => (
               <motion.div
                 key={step.number}
-                initial={{
-                  opacity: 0,
-                  y: reduced ? 0 : 40,
-                }}
-                whileInView={{
-                  opacity: 1,
-                  y: 0,
-                }}
+                initial={{ opacity: 0, y: reduced ? 0 : 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{
                   duration: 0.8,
                   delay: index * 0.1,
                   ease: [0.22, 1, 0.36, 1],
                 }}
-                whileHover={{
-                  y: -6,
-                  scale: 1.02,
-                }}
-                className="relative flex flex-col items-center text-center will-change-transform"
+                whileHover={{ y: -6, scale: 1.02 }}
+                className="flex flex-col items-center text-center"
               >
-                <div className="relative z-10 flex h-16 w-16 items-center justify-center rounded-full border border-red-900 bg-black">
+                <div className="flex h-16 w-16 items-center justify-center rounded-full border border-red-900 bg-black">
                   <span className="bg-linear-to-br from-[#ff8a8c] to-[#ef1f23] bg-clip-text text-3xl font-bold text-transparent">
                     {step.number}
                   </span>
                 </div>
-                <h3 className="mt-6 text-xl font-semibold text-white">
-                  {step.title}
-                </h3>
-                <p className="mt-3 max-w-55 text-sm leading-relaxed text-gray-400">
+
+                <h3 className="mt-6 text-xl font-semibold">{step.title}</h3>
+
+                <p className="mt-3 max-w-55 text-sm text-gray-400 leading-relaxed">
                   {step.description}
                 </p>
               </motion.div>
@@ -111,10 +105,10 @@ export default function ProcessSection() {
           </div>
         </div>
 
-    
-        <div className="mt-25 flex flex-col items-center">
+        {/* Highlights */}
+        <div className="mt-28 flex flex-col items-center">
           <Reveal>
-            <h3 className="text-center text-2xl font-bold md:text-3xl tracking-tight text-white mb-14">
+            <h3 className="text-center text-2xl md:text-3xl font-bold mb-14">
               Why this version is{" "}
               <span className="bg-gradient-to-r from-[#ff8a8c] to-[#ef1f23] bg-clip-text text-transparent">
                 better:
@@ -122,7 +116,7 @@ export default function ProcessSection() {
             </h3>
           </Reveal>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-12 gap-y-4 max-w-5xl w-full px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-12 gap-y-4 w-full">
             {highlights.map((text, idx) => {
               const isLastAndOdd =
                 idx === highlights.length - 1 && highlights.length % 2 !== 0;
@@ -139,34 +133,27 @@ export default function ProcessSection() {
                     ease: [0.16, 1, 0.3, 1],
                   }}
                   whileHover={{ scale: 1.015 }}
-                  // lg:col-span-2 + justify-self-center handles centering the odd item beautifully
-                  className={`w-full relative py-8 flex flex-col items-center justify-center will-change-transform group cursor-default ${
+                  className={`relative py-8 flex flex-col items-center justify-center group ${
                     isLastAndOdd
                       ? "lg:col-span-2 lg:max-w-xl lg:justify-self-center"
                       : ""
                   }`}
                 >
-                  {/* Micro Typography Label */}
-                  <span className="font-mono text-[10px] uppercase tracking-[2px] text-neutral-600 group-hover:text-[#ff8a8c] transition-colors duration-300 mb-2">
-                    0{idx + 1} &mdash; Benefit
+                  <span className="font-mono text-[10px] uppercase tracking-[2px] text-neutral-600 group-hover:text-[#ff8a8c] mb-2">
+                    0{idx + 1} — Benefit
                   </span>
 
-                  {/* Central Sentence Statement */}
-                  <p className="text-center text-base md:text-lg font-normal tracking-wide text-gray-400 group-hover:text-white transition-all duration-300 ease-out max-w-2xl leading-relaxed">
+                  <p className="text-center text-base md:text-lg text-gray-400 group-hover:text-white transition-all max-w-2xl leading-relaxed">
                     {text}
                   </p>
 
-                  {/* Premium Bottom Divider Line (Hidden on the single centered item if it's last) */}
-                  <div
-                    className={`absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-neutral-800 to-transparent opacity-60 group-hover:via-red-900/50 transition-colors duration-500 ${
-                      isLastAndOdd ? "lg:hidden" : ""
-                    }`}
-                  />
+                  <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-neutral-800 to-transparent opacity-60 group-hover:via-red-900/50" />
                 </motion.div>
               );
             })}
           </div>
         </div>
+
       </div>
     </section>
   );

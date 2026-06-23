@@ -24,9 +24,11 @@ export default function Header() {
   const closeMenu = () => setIsMenuOpen(false);
 
   return (
-    // Outer fixed wrapper takes full width for ambient blurring effects
-    <header className="fixed top-0 left-0 right-0 z-100 w-full bg-black/50 px-5 py-4 backdrop-blur-md md:px-12 lg:px-23">
-      <div className="mx-auto flex w-full max-w-7xl items-center justify-between gap-6 px-1 py-3">
+    <header className="fixed top-0 left-0 right-0 z-100 flex w-full items-center justify-center bg-black/50 px-4 py-4 backdrop-blur-md md:px-10">
+      
+      {/* ✅ Reduced width here */}
+      <div className="mx-auto flex w-full max-w-300 items-center justify-between gap-6 rounded-[22px] px-5 py-3 lg:gap-20">
+
         <Link
           href="/"
           aria-label="4xcode home"
@@ -122,15 +124,13 @@ export default function Header() {
                   );
                 })}
                 <div className="my-4 h-px bg-white/10" />
+
                 <Link
                   href="/contact"
                   onClick={closeMenu}
                   className="group flex items-center justify-center gap-2 rounded-full border-2 border-[#f90a1f] bg-[#f90a1f]/20 px-8 py-3.5 backdrop-blur-md transition-colors duration-200 hover:bg-[#f90a1f]/30"
                 >
-                  <span
-                    className="h-2.5 w-2.5 shrink-0 rounded-full bg-white"
-                    aria-hidden="true"
-                  />
+                  <span className="h-2.5 w-2.5 shrink-0 rounded-full bg-white" />
                   <span className="font-['Inter',sans-serif] text-[20px] font-bold text-white">
                     Start Project
                   </span>

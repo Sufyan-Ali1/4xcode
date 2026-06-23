@@ -22,7 +22,7 @@ export default function ServiceWhyChoose({ serviceTitle, reasons }: ServiceWhyCh
   if (!reasons || reasons.length === 0) return null;
 
   return (
-    <div className="mt-36 flex flex-col items-center">
+    <div className="mt-36 flex flex-col items-center px-5">
       <Reveal>
         <h3 className={`${spaceGrotesk.className} text-center text-2xl font-bold md:text-3xl tracking-tight text-white mb-14`}>
           Why teams choose 4xCode for{" "}
@@ -33,7 +33,7 @@ export default function ServiceWhyChoose({ serviceTitle, reasons }: ServiceWhyCh
       </Reveal>
 
       {/* Premium Dynamic Grid Container */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-12 gap-y-4 max-w-5xl w-full px-4">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-12 gap-y-4 w-full max-w-300">
         {reasons.map((item, idx) => {
           const isSentenceOnly = !item.desc || typeof item.desc !== "string" || item.desc.trim() === "";
           const displayLabel = isSentenceOnly ? "Benefit" : item.title;

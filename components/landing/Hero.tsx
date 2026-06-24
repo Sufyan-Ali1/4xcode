@@ -18,12 +18,6 @@ const LOGO_SLIDES = [
 
 const BAR_HEIGHTS = [16, 26, 20, 32, 24, 36, 30, 40, 34];
 
-const SPRING_TRANSITION = {
-  type: "spring",
-  stiffness: 400,
-  damping: 30,
-} as const;
-
 const HERO_BACKGROUND_STYLES = {
   backgroundImage: `
     radial-gradient(ellipse 120% 57% at 50% 30%, rgba(239,31,35,0.18) 0%, rgba(239,31,35,0) 60%),
@@ -33,8 +27,7 @@ const HERO_BACKGROUND_STYLES = {
 };
 
 function LogoMarquee() {
-  const GROUP_W =
-    LOGO_SLIDES.length * 72 + (LOGO_SLIDES.length - 1) * 48 + 48;
+  const GROUP_W = LOGO_SLIDES.length * 110 + (LOGO_SLIDES.length - 1) * 48 + 48;
 
   const N_GROUPS = useMemo(() => {
     return Math.ceil((3840 * 3) / GROUP_W) + 1;
@@ -58,7 +51,7 @@ function LogoMarquee() {
       `}</style>
 
       <div
-        className="relative w-full h-24 overflow-hidden flex items-center"
+        className="relative w-full h-28 overflow-hidden flex items-center"
         style={{
           maskImage:
             "linear-gradient(to right, transparent, black 12%, black 88%, transparent)",
@@ -76,13 +69,13 @@ function LogoMarquee() {
               {LOGO_SLIDES.map((src, i) => (
                 <div
                   key={i}
-                  className="shrink-0 w-22 h-15 flex items-center justify-center transition-transform duration-300 ease-out hover:scale-110 cursor-pointer"
+                  className="shrink-0 w-28 h-20 flex items-center justify-center transition-transform duration-300 ease-out hover:scale-110 cursor-pointer"
                 >
                   <Image
                     src={src}
                     alt={idx === 0 ? "Partner logo" : ""}
-                    width={90}
-                    height={60}
+                    width={110}
+                    height={80}
                     className="object-contain opacity-65 hover:opacity-100 brightness-0 invert transition-opacity duration-300"
                   />
                 </div>
@@ -95,21 +88,15 @@ function LogoMarquee() {
   );
 }
 
-/* ---------------- SAFE MOTION WRAPPER ---------------- */
 function useSafeReducedMotion() {
   const reduced = useReducedMotion();
   const [mounted, setMounted] = useState(false);
-
   useEffect(() => setMounted(true), []);
-
   return { reduced: mounted ? reduced : true, mounted };
 }
 
-/* ---------------- CARDS ---------------- */
-
 function DeployCard() {
   const { reduced } = useSafeReducedMotion();
-
   return (
     <motion.div
       initial={{ opacity: 0, x: reduced ? 0 : -40, y: reduced ? 0 : 16 }}
@@ -117,7 +104,7 @@ function DeployCard() {
       viewport={{ once: true, amount: 0.5 }}
       transition={{ duration: 1.0, ease: [0.22, 1, 0.36, 1] }}
       whileHover={reduced ? {} : { scale: 1.03, y: -4 }}
-      className="w-52 flex flex-col gap-3 rounded-[20px] border border-white/10 bg-black/60 p-4 backdrop-blur-md shadow-xl cursor-default update-transform transition-shadow duration-300 will-change-transform"
+      className="w-52 flex flex-col gap-3 rounded-[20px] border border-white/10 bg-black/60 p-4 backdrop-blur-md shadow-xl cursor-default transition-shadow duration-300 will-change-transform"
     >
       <div className="flex items-center gap-3">
         <div className="size-10 flex items-center justify-center rounded-2xl bg-red-500/10 shrink-0">
@@ -136,9 +123,8 @@ function DeployCard() {
           <p className="text-lg font-bold text-white">−72%</p>
         </div>
       </div>
-
       <div className="h-1.5 w-full rounded-full bg-white/5 overflow-hidden">
-        <div className="h-full w-3/4 rounded-full bg-linear-to-r from-red-600 to-red-400" />
+        <div className="h-full w-3/4 rounded-full bg-gradient-to-r from-red-600 to-red-400" />
       </div>
     </motion.div>
   );
@@ -146,7 +132,6 @@ function DeployCard() {
 
 function ActiveUsersCard() {
   const { reduced } = useSafeReducedMotion();
-
   return (
     <motion.div
       initial={{ opacity: 0, x: reduced ? 0 : 40, y: reduced ? 0 : 16 }}
@@ -154,7 +139,7 @@ function ActiveUsersCard() {
       viewport={{ once: true, amount: 0.5 }}
       transition={{ duration: 1.0, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
       whileHover={reduced ? {} : { scale: 1.03, y: -4 }}
-      className="w-56 flex flex-col gap-1.5 rounded-[20px] border border-white/10 bg-black/60 p-4 backdrop-blur-md shadow-xl cursor-default update-transform transition-shadow duration-300 will-change-transform"
+      className="w-56 flex flex-col gap-1.5 rounded-[20px] border border-white/10 bg-black/60 p-4 backdrop-blur-md shadow-xl cursor-default transition-shadow duration-300 will-change-transform"
     >
       <div className="flex items-center justify-between">
         <p className="text-xs text-neutral-400">Active users</p>
@@ -163,14 +148,12 @@ function ActiveUsersCard() {
           live
         </span>
       </div>
-
       <p className="text-2xl font-bold tracking-tight text-white">128,402</p>
-
       <div className="flex items-end gap-1 pt-1">
         {BAR_HEIGHTS.map((h, i) => (
           <div
             key={i}
-            className="w-2 rounded-t bg-linear-to-t from-red-600/40 to-red-500"
+            className="w-2 rounded-t bg-gradient-to-t from-red-600/40 to-red-500"
             style={{ height: h }}
           />
         ))}
@@ -181,7 +164,6 @@ function ActiveUsersCard() {
 
 function DashboardImage() {
   const { reduced } = useSafeReducedMotion();
-
   return (
     <motion.div
       initial={{ opacity: 0, scale: 0.95, y: reduced ? 0 : 80 }}
@@ -190,19 +172,14 @@ function DashboardImage() {
       transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
       className="relative overflow-hidden rounded-2xl border border-white/10 bg-black/20 p-1.5 shadow-[0_40px_120px_-20px_rgba(239,31,35,0.45)] will-change-transform"
     >
-      <div className="absolute inset-0 bg-linear-to-r from-red-600/20 via-transparent to-red-600/20 blur-3xl pointer-events-none" />
-
+      <div className="absolute inset-0 bg-gradient-to-r from-red-600/20 via-transparent to-red-600/20 blur-3xl pointer-events-none" />
       <motion.div
         animate={reduced ? {} : { y: [0, -6, 0] }}
-        transition={{
-          duration: 5,
-          ease: "easeInOut",
-          repeat: Infinity,
-        }}
+        transition={{ duration: 5, ease: "easeInOut", repeat: Infinity }}
       >
         <img
           src="/assets/container.jpg"
-          alt="4xCode AI-powered SaaS dashboard interface preview"
+          alt="Dashboard interface preview"
           className="relative z-10 w-full h-auto object-cover rounded-xl"
         />
       </motion.div>
@@ -210,23 +187,20 @@ function DashboardImage() {
   );
 }
 
-/* ---------------- HERO ---------------- */
-
 export default function HeroSection() {
   const { reduced } = useSafeReducedMotion();
 
   return (
     <section
-      className="relative flex w-full flex-col items-center overflow-hidden px-4 pt-32 md:pt-40 bg-[#050505]"
+      className="relative flex w-full flex-col items-center overflow-hidden pt-32 md:pt-40 bg-[#050505]"
       style={HERO_BACKGROUND_STYLES}
     >
-      <div className="absolute inset-0 pointer-events-none opacity-20 " />
+      <div className="absolute inset-0 pointer-events-none opacity-20" />
       <div className="absolute -left-32 top-24 size-96 rounded-full bg-red-600/25 blur-[80px] pointer-events-none" />
       <div className="absolute -bottom-10 -right-40 size-80 rounded-full bg-red-600/15 blur-[70px] pointer-events-none" />
 
-      <div className="relative z-10 flex w-full max-w-6xl flex-col items-center gap-16 md:gap-20 px-4">
-
-        <div className="flex w-full max-w-3xl flex-col items-center gap-5 md:gap-6 text-center">
+      <div className="relative z-10 flex w-full max-w-7xl flex-col items-center gap-16 md:gap-20 px-5 sm:px-8 md:px-12">
+        <div className="flex w-full max-w-3xl flex-col items-center gap-5 md:gap-6 text-center mx-auto">
           <Reveal>
             <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/4 px-4 py-1.5">
               <span className="relative flex size-2 shrink-0">
@@ -244,14 +218,14 @@ export default function HeroSection() {
               Engineering the
               <br />
               Future With{" "}
-              <span className="bg-linear-to-br from-red-300 to-red-600 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-br from-red-300 to-red-600 bg-clip-text text-transparent">
                 Code
               </span>
             </h1>
           </Reveal>
 
           <Reveal delay={0.2}>
-            <p className="max-w-xl text-base md:text-lg leading-7 text-neutral-400">
+            <p className="max-w-xl text-base md:text-lg leading-7 text-neutral-400 mx-auto">
               A software development company building AI-powered SaaS, web, and
               mobile products for modern brands.
             </p>
@@ -264,11 +238,10 @@ export default function HeroSection() {
                   href="/contact"
                   className="group inline-flex items-center gap-2 rounded-[18px] bg-red-600 px-6 py-3.5 text-sm font-medium text-white shadow-[0_0_30px_0_rgba(239,31,35,0.5)]"
                 >
-                  Start Your Project
+                  Start Your Project{" "}
                   <ArrowForwardIcon style={{ fontSize: 16 }} />
                 </Link>
               </motion.div>
-
               <motion.div whileHover={reduced ? {} : { scale: 1.02, y: -2 }}>
                 <Link
                   href="/service"
@@ -281,17 +254,14 @@ export default function HeroSection() {
           </Reveal>
         </div>
 
-        <div className="relative w-full max-w-5xl mx-auto">
+        <div className="relative w-full mx-auto">
           <div className="hidden lg:block absolute -left-4 top-1/3 z-20">
             <DeployCard />
           </div>
-
           <div className="hidden lg:block absolute -right-4 bottom-10 z-20">
             <ActiveUsersCard />
           </div>
-
           <DashboardImage />
-
           <div className="flex lg:hidden items-start justify-between gap-3 mt-4 px-1">
             <DeployCard />
             <ActiveUsersCard />
@@ -299,8 +269,8 @@ export default function HeroSection() {
         </div>
 
         <Reveal className="flex w-full flex-col items-center gap-5 overflow-hidden pb-10">
-          <p className="text-xs uppercase tracking-[3.6px] text-neutral-400">
-            Trusted by builders shipping at the frontier logo size increase
+          <p className="text-xs uppercase tracking-[3.6px] text-neutral-400 text-center">
+            Trusted by builders shipping at the frontier
           </p>
           <LogoMarquee />
         </Reveal>

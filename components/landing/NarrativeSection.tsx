@@ -3,60 +3,60 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { useSafeReducedMotion } from "../../utils/useSafeReducedMotion";
-import { Space_Grotesk } from "next/font/google";
 
 interface NarrativeSectionProps {
   spaceGroteskClassName: string;
 }
-const spaceGrotesk = Space_Grotesk({
-  subsets: ["latin"],
-  weight: ["400", "500", "700"],
-});
 
 const CONTENT_PARAGRAPHS = [
   <>
-    We build software with a deep emphasis on architectural integrity and
-    long-term scalability. Leveraging modern execution environments like the{" "}
-    <span className="text-[#f90a1f]">Edge Runtime</span> and serverless
-    infrastructure, we eliminate cold starts and scale computations globally.
-    Every system is tailored around deterministic performance matrices, ensuring
-    your digital products respond instantaneously regardless of regional network
-    traffic loads.
+    We design and engineer software architectures that are built to perform
+    under real-world conditions — not just in development.{" "}
+    <span className="text-[#f90a1f] font-normal">Our senior engineers</span>{" "}
+    think in systems, not just features, combining edge-first infrastructure,
+    serverless runtimes, and deterministic performance principles to deliver
+    products that scale globally from day one.
   </>,
   <>
-    Our complete full-stack workflow unifies frontend interfaces with robust
-    backend architectures. By utilizing strict type configurations via{" "}
-    <span className="text-[#f90a1f]">TypeScript</span> alongside relational
-    state management systems, we avoid runtime memory leaks and maintain
-    end-to-end data safety. Whether orchestrating distributed microservices or
-    fine-tuning custom relational schemas inside multi-tenant structures, our
-    systems are built to process transaction layers securely at a massive scale.
+    Our full-stack development process connects frontend interfaces to backend
+    systems through a strictly typed codebase using{" "}
+    <span className="text-[#f90a1f] font-normal">TypeScript</span>. By
+    eliminating runtime errors at the type level, we produce software that is
+    faster to maintain, easier to extend, and significantly more reliable in
+    production — whether you're building multi-tenant SaaS platforms or
+    high-traffic web applications.
   </>,
   <>
-    Performance is never an afterthought; it is intentionally engineered into
-    our operational roadmap. We optimize web performance by enforcing
-    zero-layout shifts, static path generation protocols, and dynamic state
-    streaming techniques. This strict adherence to computational discipline
-    translates directly into premium user experiences and top-tier core web
-    vital scores.
+    We engineer web performance from the ground up — targeting zero layout
+    shifts, sub-second load times, and perfect Core Web Vitals scores. Using
+    static generation, dynamic streaming, and edge caching strategies, we
+    deliver web applications that rank higher in search results and convert
+    better.{" "}
+    <span className="text-[#f90a1f] font-normal">
+      Core Web Vitals • Next.js • Edge Runtime • Hyper-Fast Loading
+    </span>
   </>,
   <>
-    We seamlessly bridge the gap between deterministic software layers and
-    intelligent predictive workflows. Our native{" "}
-    <span className="text-[#f90a1f]">AI Integration</span> processes leverage
-    advanced vector embeddings, parallelized inference execution, and dynamic
-    context windows to build agents that solve complex logic paths safely.
-    Rather than relying on fragile prompt patterns, we structure deterministic
-    pipelines around language models to guarantee accurate responses.
+    We build production-grade AI systems — not demos. Our AI development
+    services include custom{" "}
+    <span className="text-[#f90a1f] font-normal">
+      LLM Integrations, RAG Pipelines
+    </span>
+    , vector search, and autonomous AI agents built on deterministic pipelines.
+    Every system is structured to deliver accurate, predictable outputs at scale
+    — without relying on fragile prompt engineering.
   </>,
   <>
-    From cloud orchestrations to automated delivery, our systems utilize
-    declarative infrastructure as code configurations. We maintain real-time
-    systems visibility using strict distributed{" "}
-    <span className="text-[#f90a1f]">Telemetry and Logging</span> solutions,
-    catching behavioral exceptions before they hit production environments. This
-    continuous monitoring pipeline ensures zero-downtime updates, maximum
-    operational health, and secure deployments across every region.
+    Our cloud engineering team delivers resilient, observable infrastructure on{" "}
+    <span className="text-[#f90a1f] font-normal">
+      AWS, Vercel, and Cloudflare
+    </span>
+    . Using infrastructure-as-code, distributed telemetry, and automated
+    delivery pipelines, we eliminate downtime and give you full visibility into
+    every layer of your system.{" "}
+    <span className="text-zinc-500 text-[13px] block mt-2">
+      DevOps Automation • Zero-Downtime Deployments
+    </span>
   </>,
 ];
 
@@ -66,8 +66,8 @@ export default function NarrativeSection({
   const reduced = useSafeReducedMotion();
 
   return (
-    <section className="relative w-full z-10 px-6 md:px-12 lg:px-24 mt-20 md:mt-28 text-white">
-      <div className="max-w-7xl mx-auto flex flex-col gap-8 md:gap-10">
+    <section className="relative w-full z-10 pe-5 ps-5 sm:ps-8 md:ps-12 mt-15 md:mt-16 text-white">
+      <div className="mx-auto w-full max-w-300 flex flex-col gap-8 md:gap-10">
         <motion.h2
           initial={{ opacity: 0, y: reduced ? 0 : 25 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -75,12 +75,11 @@ export default function NarrativeSection({
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           className={`${spaceGroteskClassName} text-white text-2xl sm:text-3xl md:text-[40px] font-bold tracking-tight leading-[1.25] text-left max-w-5xl`}
         >
-          Designing and engineering category-defining software architectures
-          optimized from the iron up for{" "}
-          <span className="text-[#f90a1f]">raw performance.</span>
+          Software Architecture Built for Performance, Scale &{" "}
+          <span className="text-[#f90a1f]"> Long-Term Growth.</span>
         </motion.h2>
 
-        <div className="flex flex-col gap-6 max-w-6xl text-sm md:text-[15px] font-light leading-[1.75] tracking-wide text-justify">
+        <div className="flex flex-col gap-6 max-w-6xl text-sm md:text-[15px] font-light leading-[1.75] tracking-wide text-justify text-zinc-300">
           {CONTENT_PARAGRAPHS.map((paragraph, index) => (
             <motion.p
               key={index}
@@ -92,7 +91,6 @@ export default function NarrativeSection({
                 delay: reduced ? 0 : index * 0.05,
                 ease: [0.22, 1, 0.36, 1],
               }}
-              className={`${spaceGrotesk.className} text-white`}
             >
               {paragraph}
             </motion.p>

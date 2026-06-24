@@ -1,4 +1,3 @@
-
 import { Testimonial } from "@/types";
 import { TeamMember } from "@/types";
 
@@ -7,36 +6,36 @@ export const TESTIMONIALS: Testimonial[] = [
     id: 1,
     stars: 5,
     quote:
-      "Diagnosed my air suspension fault in under an hour. Genuine parts, premium service. The workshop feels like a Formula 1 garage.",
-    author: "Daniel R.",
-    vehicle: "Range Rover Vogue",
-    initial: "D",
+      "4xCode delivered our SaaS MVP in 6 weeks — clean architecture, great UX, and zero hand-holding needed. They've become our go-to engineering partner.",
+    author: "James T.",
+    title: "Founder, FinTech Startup",
+    initial: "J",
   },
   {
     id: 2,
     stars: 5,
     quote:
-      "Booked online, got a quote within 30 minutes, car back the next day. They spotted issues my dealer missed. Highly recommend.",
-    author: "Sarah M.",
-    vehicle: "Range Rover Sport",
-    initial: "S",
+      "The AI pipeline they built cut our data processing time by 80%. Senior engineers, clear communication, and they actually hit the deadline.",
+    author: "Aisha M.",
+    title: " CTO, E-commerce Platform",
+    initial: "A",
   },
   {
     id: 3,
     stars: 5,
     quote:
-      "Best Range Rover specialist I've used. Transparent pricing, honest advice and the car drives like new. Worth every penny.",
-    author: "Omar K.",
-    vehicle: "Defender 110",
-    initial: "O",
+      "We replaced three freelancers with 4xCode and never looked back. The quality of code, the speed, and the product thinking are all outstanding.",
+    author: "Liam R.",
+    title: " Product Lead, B2B SaaS",
+    initial: "L",
   },
   {
     id: 4,
     stars: 5,
     quote:
-      "Brakes, fluids and a full diagnostic done in a day. The booking experience and communication were outstanding.",
-    author: "Priya S.",
-    vehicle: "Velar HSE",
+      "From discovery to launch in under two months. The team understood our domain quickly and shipped a product our users actually love.",
+    author: "Priya N",
+    title: " CEO, HealthTech Scale-up",
     initial: "P",
   },
 ];

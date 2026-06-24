@@ -1,4 +1,4 @@
-function getConfig() {
+export function getConfig() {
   const base = (process.env.BLOG_API_BASE ?? "").replace(/\/$/, "");
   const user = process.env.BLOG_API_USERNAME ?? "";
   const pass = process.env.BLOG_API_PASSWORD ?? "";

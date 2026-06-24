@@ -11,8 +11,9 @@ export default function CTASection() {
   const reduced = useSafeReducedMotion();
 
   return (
-    <div className="w-full bg-black pt-12 pb-16 md:py-16  px-6 md:px-12 lg:px-24 flex items-center justify-center">
-      <section className="relative w-full max-w-7xl min-h-125 md:min-h-145 rounded-3xl md:rounded-4xl overflow-hidden flex flex-col justify-center px-8 md:px-16 lg:px-24 py-20  border border-white/10 shadow-[0_0_30px_0_rgba(239,31,35,0.5)]">
+    <div className="w-full bg-black pt-12 pb-16 md:py-16 px-5 sm:px-8 md:px-12 flex items-center justify-center">
+      {/* ✅ LAYOUT SYSTEM INTEGRATION WRAPPER */}
+      <section className="relative w-full max-w-300 min-h-125 md:min-h-145 rounded-3xl md:rounded-4xl overflow-hidden flex flex-col justify-center px-8 md:px-16 lg:px-24 py-20 border border-white/10 shadow-[0_0_30px_0_rgba(239,31,35,0.5)]">
         <div className="absolute inset-0 z-0 pointer-events-none select-none">
           <Image
             src="/assets/CTASection.jpg"
@@ -22,10 +23,12 @@ export default function CTASection() {
             className="object-cover object-center scale-105"
             sizes="(max-w-1280px) 100vw, 1280px"
           />
-          <div className="absolute inset-0 bg-linear-to-r from-black/90 via-black/60 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-transparent" />
           <div className="absolute inset-0 bg-black/20 mix-blend-multiply" />
         </div>
-        <div className="pointer-events-none absolute inset-0 z-10 opacity-10  bg--size-[60px_60px]" />
+
+        <div className="pointer-events-none absolute inset-0 z-10 opacity-10 bg--size-[60px_60px]" />
+
         <div className="relative z-20 flex max-w-2xl flex-col items-start gap-5 md:gap-6 text-left">
           <Reveal>
             <span className="text-[#f90a1f] text-[12px] font-normal uppercase tracking-[3.6px] leading-4">
@@ -35,7 +38,7 @@ export default function CTASection() {
           <Reveal delay={0.1}>
             <h2 className="text-4xl md:text-[56px] lg:text-[64px] font-bold tracking-tight text-white leading-[1.1] md:leading-[1.05]">
               Let's Build Something <br />
-              <span className="bg-linear-to-br from-[#ff8a8c] to-[#ef1f23] bg-clip-text text-transparent">
+              <span className="bg-gradient-to-br from-[#ff8a8c] to-[#ef1f23] bg-clip-text text-transparent">
                 Extraordinary
               </span>
             </h2>
@@ -54,12 +57,12 @@ export default function CTASection() {
               >
                 <Link
                   href="/contact"
-                  className="group inline-flex h-13 items-center justify-center gap-2 rounded-[18px] bg-red-600 px-6 py-3.5 text-sm font-medium text-white shadow-[0_0_30px_0_rgba(239,31,35,0.5)] hover:opacity-90 transition-opacity  duration-300"
+                  className="group inline-flex h-13 items-center justify-center gap-2 rounded-[18px] bg-red-600 px-6 py-3.5 text-sm font-medium text-white shadow-[0_0_30px_0_rgba(239,31,35,0.5)] hover:opacity-90 transition-opacity duration-300"
                 >
                   <span>Book an intro call</span>
                   <ArrowForwardIcon
                     style={{ fontSize: 16 }}
-                    className="transition-transform duration-300 "
+                    className="transition-transform duration-300"
                   />
                 </Link>
               </motion.div>

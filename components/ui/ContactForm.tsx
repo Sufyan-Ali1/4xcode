@@ -10,6 +10,8 @@ import {
 } from "@mui/icons-material";
 import { useRouter } from "next/navigation";
 
+import { submitContactForm } from "../../lib/contactFormApi";
+
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
   weight: ["400", "700"],
@@ -23,6 +25,7 @@ export default function ContactForm({ variant = "default" }: ContactFormProps) {
   const router = useRouter();
   const reduced = useSafeReducedMotion();
   const [showErrorPopup, setShowErrorPopup] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const [formData, setFormData] = useState({
     name: "",
@@ -33,25 +36,21 @@ export default function ContactForm({ variant = "default" }: ContactFormProps) {
 
   const isSidebar = variant === "sidebar";
 
-  const handleInputChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleInputChange = (
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setIsSubmitting(true);
 
     try {
-      const response = await fetch("https://formspree.io/f/maqzvbyz", {
-        method: "POST",
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
+      const response = await submitContactForm(formData);
 
-      if (response.ok) {
+      if (response.success) {
         setFormData({
           name: "",
           email: "",
@@ -70,58 +69,62 @@ export default function ContactForm({ variant = "default" }: ContactFormProps) {
     } catch (error) {
       console.error(error);
       setShowErrorPopup(true);
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
   return (
+    /* Constrained mobile viewports to max-w-xl balanced with auto-margins */
     <div
-      className={`relative flex flex-col w-full box-border ${
+      className={`relative flex flex-col w-full max-w-xl mx-auto lg:max-w-none lg:mx-0 box-border ${
         isSidebar ? "max-w-full" : "lg:w-[58%]"
       }`}
     >
       <div className="w-full relative flex box-border">
-        {/* FIX 1: Modified glow element to conform to the layout's aspect ratio. 
-           In sidebar view, we reduce opacity to keep high contrast text legible. */}
-        <div 
-          className={`absolute inset-0 rounded-3xl md:rounded-[32px] bg-[#f90a1f]/10 blur-2xl pointer-events-none transition-opacity duration-300 ${
-            isSidebar ? "opacity-20" : "opacity-40"
-          }`} 
-          aria-hidden="true" 
+        <div
+          className={`absolute inset-0 rounded-2xl md:rounded-[32px] bg-[#f90a1f]/5 md:bg-[#f90a1f]/10 blur-xl md:blur-2xl pointer-events-none transition-opacity duration-300 ${
+            isSidebar ? "opacity-10" : "opacity-30"
+          }`}
+          aria-hidden="true"
         />
 
-        {/* FIX 2: Added a balanced container box-shadow for sidebars (`shadow-[0_4px_24px_rgba(0,0,0,0.5)]`).
-           This keeps the card completely straight and contained. */}
         <motion.div
-          initial={{ opacity: 0, y: reduced ? 0 : 30 }}
+          initial={{ opacity: 0, y: reduced ? 0 : 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
-          className={`relative w-full rounded-3xl md:rounded-[32px] border border-[rgba(255,255,255,0.1)] bg-[rgba(255,255,255,0.04)] shadow-[0_0_30px_0_rgba(239,31,35,0.35)] flex flex-col justify-between ${
-            isSidebar ? "px-6 py-8 max-h-[calc(100vh-130px)]" : "px-8 py-10 md:p-12"
+          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
+          className={`relative w-full rounded-2xl md:rounded-[32px] border border-white/5 md:border-[rgba(255,255,255,0.1)] bg-white/[0.02] md:bg-[rgba(255,255,255,0.04)] shadow-xl flex flex-col justify-between box-border ${
+            isSidebar
+              ? "px-4 py-5 sm:px-6 sm:py-8 max-h-[calc(100vh-130px)]"
+              : "px-4 py-6 sm:px-8 sm:py-10 md:p-12"
           }`}
         >
-          <form onSubmit={handleSubmit} className={`flex flex-col gap-5 h-full ${isSidebar ? "overflow-y-auto no-scrollbar" : ""}`}>
-            <div className="space-y-2">
+          <form
+            onSubmit={handleSubmit}
+            className={`flex flex-col gap-4 md:gap-5 h-full w-full box-border ${isSidebar ? "overflow-y-auto no-scrollbar" : ""}`}
+          >
+            <div className="space-y-1 w-full">
               <h2
                 className={`${spaceGrotesk.className} font-bold leading-tight tracking-tight text-white ${
-                  isSidebar ? "text-lg sm:text-xl" : "text-2xl sm:text-[32px]"
+                  isSidebar ? "text-base sm:text-xl" : "text-xl sm:text-[32px]"
                 }`}
               >
                 Let&apos;s build something great together
               </h2>
               <p
-                className={`font-normal leading-relaxed text-zinc-400 ${
-                  isSidebar ? "text-[13px]" : "text-sm sm:text-base max-w-sm"
+                className={`font-normal leading-relaxed text-zinc-500 max-w-full text-xs sm:text-base ${
+                  isSidebar ? "text-[12px]" : "lg:max-w-sm"
                 }`}
               >
                 Whether you have a project in mind or just want to say hi, we&apos;d love to hear from you.
               </p>
             </div>
 
-            {/* Input fields stack */}
-            <div className="flex flex-col gap-4 w-full box-border">
-              <div className="flex flex-col gap-1.5">
-                <label className="block text-[11px] font-semibold uppercase tracking-wider text-zinc-500">
+            {/* Input fields Stack */}
+            <div className="flex flex-col gap-3 md:gap-4 w-full box-border">
+              <div className="flex flex-col gap-1 w-full">
+                <label className="block text-[10px] font-semibold uppercase tracking-wider text-zinc-500">
                   Name
                 </label>
                 <input
@@ -131,27 +134,29 @@ export default function ContactForm({ variant = "default" }: ContactFormProps) {
                   onChange={handleInputChange}
                   placeholder="Name"
                   required
-                  className="w-full min-w-0 rounded-lg border border-white/5 bg-black/40 px-4 py-2.5 text-sm text-white placeholder:text-zinc-600 outline-none focus:border-[#f51d31]/40 transition-colors box-border"
+                  disabled={isSubmitting}
+                  className="w-full min-w-0 rounded-lg border border-white/5 bg-black/40 px-3.5 py-2 md:py-2.5 text-xs sm:text-sm text-white placeholder:text-zinc-600 outline-none focus:border-[#f51d31]/40 transition-colors box-border disabled:opacity-40"
                 />
               </div>
 
-              <div className="flex flex-col gap-1.5">
-                <label className="block text-[11px] font-semibold uppercase tracking-wider text-zinc-500">
+              <div className="flex flex-col gap-1 w-full">
+                <label className="block text-[10px] font-semibold uppercase tracking-wider text-zinc-500">
                   Email
                 </label>
                 <input
-                  type="email"
+                  type="text"
                   name="email"
                   value={formData.email}
                   onChange={handleInputChange}
                   placeholder="example@gmail.com"
                   required
-                  className="w-full min-w-0 rounded-lg border border-white/5 bg-black/40 px-4 py-2.5 text-sm text-white placeholder:text-zinc-600 outline-none focus:border-[#f51d31]/40 transition-colors box-border"
+                  disabled={isSubmitting}
+                  className="w-full min-w-0 rounded-lg border border-white/5 bg-black/40 px-3.5 py-2 md:py-2.5 text-xs sm:text-sm text-white placeholder:text-zinc-600 outline-none focus:border-[#f51d31]/40 transition-colors box-border disabled:opacity-40"
                 />
               </div>
 
-              <div className="flex flex-col gap-1.5">
-                <label className="block text-[11px] font-semibold uppercase tracking-wider text-zinc-500">
+              <div className="flex flex-col gap-1 w-full">
+                <label className="block text-[10px] font-semibold uppercase tracking-wider text-zinc-500">
                   Number
                 </label>
                 <input
@@ -159,13 +164,15 @@ export default function ContactForm({ variant = "default" }: ContactFormProps) {
                   name="number"
                   value={formData.number}
                   onChange={handleInputChange}
+                  required
+                  disabled={isSubmitting}
                   placeholder="000-111-2221"
-                  className="w-full min-w-0 rounded-lg border border-white/5 bg-black/40 px-4 py-2.5 text-sm text-white placeholder:text-zinc-600 outline-none focus:border-[#f51d31]/40 transition-colors box-border"
+                  className="w-full min-w-0 rounded-lg border border-white/5 bg-black/40 px-3.5 py-2 md:py-2.5 text-xs sm:text-sm text-white placeholder:text-zinc-600 outline-none focus:border-[#f51d31]/40 transition-colors box-border disabled:opacity-40"
                 />
               </div>
 
-              <div className="flex flex-col gap-1.5">
-                <label className="block text-[11px] font-semibold uppercase tracking-wider text-zinc-500">
+              <div className="flex flex-col gap-1 w-full">
+                <label className="block text-[10px] font-semibold uppercase tracking-wider text-zinc-500">
                   Project details
                 </label>
                 <textarea
@@ -174,28 +181,32 @@ export default function ContactForm({ variant = "default" }: ContactFormProps) {
                   onChange={handleInputChange}
                   placeholder="Tell us what you're building..."
                   required
-                  rows={isSidebar ? 3 : 5}
-                  className="w-full min-w-0 rounded-lg border border-white/5 bg-black/40 px-4 py-2.5 text-sm text-white placeholder:text-zinc-600 outline-none resize-none focus:border-[#f51d31]/40 transition-colors min-h-[100px] box-border"
+                  disabled={isSubmitting}
+                  rows={isSidebar ? 3 : 4}
+                  className="w-full min-w-0 rounded-lg border border-white/5 bg-black/40 px-3.5 py-2 md:py-2.5 text-xs sm:text-sm text-white placeholder:text-zinc-600 outline-none resize-none focus:border-[#f51d31]/40 transition-colors min-h-[80px] box-border disabled:opacity-40"
                 />
               </div>
             </div>
 
-            {/* Submit CTA Container */}
-            <div className="flex flex-col gap-3 w-full pt-2 box-border">
+            {/* Submit Action Block */}
+            <div className="flex flex-col gap-2.5 w-full pt-1 box-border">
               <motion.div
-                whileHover={reduced ? {} : { scale: 1.01, y: -0.5 }}
+                whileHover={
+                  reduced || isSubmitting ? {} : { scale: 1.01, y: -0.5 }
+                }
                 transition={{ type: "spring", stiffness: 400, damping: 30 }}
                 className="w-full"
               >
                 <button
                   type="submit"
-                  className="group inline-flex h-11 w-full items-center justify-center gap-2 rounded-lg bg-[#f51d31] py-2.5 px-6 text-sm font-semibold text-white shadow-[0_4px_12px_rgba(245,29,49,0.3)] hover:bg-[#ed1c20] transition-all duration-300 cursor-pointer box-border"
+                  disabled={isSubmitting}
+                  className="group inline-flex h-10 md:h-11 w-full items-center justify-center gap-2 rounded-lg bg-[#f51d31] py-2.5 px-6 text-xs sm:text-sm font-semibold text-white shadow-md hover:bg-[#ed1c20] transition-all duration-300 cursor-pointer box-border disabled:opacity-60 disabled:cursor-not-allowed"
                 >
-                  <SendIcon style={{ fontSize: 16 }} />
-                  <span>Send Message</span>
+                  <SendIcon style={{ fontSize: 14 }} />
+                  <span>{isSubmitting ? "Sending..." : "Send Message"}</span>
                 </button>
               </motion.div>
-              <p className="text-[11px] text-zinc-500 text-center font-normal">
+              <p className="text-[10px] text-zinc-600 text-center font-normal">
                 We&apos;ll respond within 24 hours during business days.
               </p>
             </div>
@@ -203,35 +214,32 @@ export default function ContactForm({ variant = "default" }: ContactFormProps) {
         </motion.div>
       </div>
 
-      {/* Error Modal Overlay */}
+      {/* Error Popup Layer Modal */}
       <AnimatePresence>
         {showErrorPopup && (
-          <div className="fixed inset-0 z-120 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm">
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm">
             <motion.div
-              initial={{ opacity: 0, scale: reduced ? 1 : 0.96, y: reduced ? 0 : 8 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: reduced ? 1 : 0.96, y: reduced ? 0 : 8 }}
-              transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+              initial={{ opacity: 0, scale: reduced ? 1 : 0.96 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: reduced ? 1 : 0.96 }}
+              transition={{ duration: 0.2 }}
               className="relative max-w-sm w-full bg-[#0D0D0E] border border-white/10 rounded-2xl p-6 shadow-2xl text-center flex flex-col items-center space-y-4 box-border"
             >
-              <div className="relative flex items-center justify-center w-12 h-12 rounded-full border border-[#f90a1f]/20 bg-[#f90a1f]/5 text-[#ef1f23]">
-                <div className="absolute inset-0 rounded-full bg-[#f90a1f]/10 blur-sm opacity-60" />
-                <ErrorIcon style={{ fontSize: 24 }} />
+              <div className="relative flex items-center justify-center w-11 h-11 rounded-full border border-[#f90a1f]/20 bg-[#f90a1f]/5 text-[#ef1f23]">
+                <ErrorIcon style={{ fontSize: 20 }} />
               </div>
-
-              <div className="space-y-1.5">
-                <h3 className={`${spaceGrotesk.className} text-base font-bold text-white tracking-tight`}>
+              <div className="space-y-1">
+                <h3 className={`${spaceGrotesk.className} text-sm font-bold text-white`}>
                   Submission not successful
                 </h3>
-                <p className="text-zinc-400 text-xs font-normal leading-relaxed">
+                <p className="text-zinc-500 text-[11px] leading-relaxed">
                   Your inquiry was not successful, please try again.
                 </p>
               </div>
-
               <button
                 type="button"
                 onClick={() => setShowErrorPopup(false)}
-                className="mt-2 w-full inline-flex h-9 items-center justify-center rounded-lg border border-white/5 bg-white/[0.02] hover:bg-white/[0.05] text-zinc-300 hover:text-white text-xs font-medium uppercase tracking-wider transition-all duration-300 outline-none cursor-pointer"
+                className="w-full inline-flex h-8 items-center justify-center rounded-lg border border-white/5 bg-white/[0.02] text-zinc-300 text-[11px] font-medium uppercase tracking-wider transition-all"
               >
                 <span>Go Back</span>
               </button>

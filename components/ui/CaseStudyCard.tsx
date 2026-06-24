@@ -34,104 +34,65 @@ export function CaseStudyCard({ project, index }: CaseStudyCardProps) {
     project?.excerpt ||
     "";
 
-  const resultsSection = project?.sections?.find((s: any) => s.results_table);
-
   const cardVariants: Variants = {
-    hidden: { opacity: 0, y: 40 },
+    hidden: { opacity: 0, y: 30 },
     visible: {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.8,
-        delay: 0.06 * index,
+        duration: 0.6,
+        delay: 0.05 * index,
         ease: [0.22, 1, 0.36, 1] as const,
       },
     },
   };
 
-  // Before mount or if reduced motion — skip animation entirely
-  if (!mounted || reduced) {
-    return (
-      <div className="group relative flex flex-col flex-1 justify-between overflow-hidden rounded-[18px] border border-white/5 bg-white/4 p-5 backdrop-blur-md h-full w-full transition-colors duration-300 hover:border-white/15">
-        <div className="w-full">
-          <div className="relative mb-5 aspect-video w-full overflow-hidden rounded-xl bg-zinc-900">
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent z-1 pointer-events-none" />
-            {project?.image ? (
-              <img
-                src={project.image}
-                alt={displayTitle}
-                className="h-full w-full object-cover"
-                loading="lazy"
-              />
-            ) : (
-              <div className="flex h-full w-full items-center justify-center bg-zinc-950">
-                <span className="text-xs font-mono tracking-widest text-zinc-500 uppercase">4xCode Case Study</span>
-              </div>
-            )}
-          </div>
-          <h3 className="text-white font-bold text-[18px] leading-6 tracking-[-0.3px]">{displayTitle}</h3>
-          <p className="text-[#a7a3a4] font-normal text-[13px] leading-relaxed mt-2 mb-4 line-clamp-3">{descriptionSnippet}</p>
-        </div>
-        <div className="mt-auto flex items-center justify-end border-t border-white/5 pt-4 w-full">
-          <div className="flex items-center gap-1.5 text-[14px] font-bold text-white transition-colors duration-200 group-hover:text-[#f90a1f]">
-            Read Study
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="h-4 w-4 text-zinc-600 transition-colors duration-300 group-hover:text-[#f90a1f]">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-            </svg>
-          </div>
-        </div>
-      </div>
-    );
-  }
-
-  return (
-    <motion.div
-      variants={reduced ? undefined : cardVariants}
-      initial={reduced ? "visible" : "hidden"}
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.15 }}
-      className="group relative flex flex-col flex-1 justify-between overflow-hidden rounded-[18px] border border-white/5 bg-white/4 p-5 backdrop-blur-md h-full w-full transition-colors duration-300 hover:border-white/15"
-    >
-      {/* Top Content Block */}
+  const renderCardContent = () => (
+    <>
       <div className="w-full">
-        {/* Card Image Container */}
-        <div className="relative mb-5 aspect-video w-full overflow-hidden rounded-xl bg-zinc-900">
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent z-1 pointer-events-none" />
+        {/* ✅ MATCHED BLOG LAYOUT: Fixed Cinema Aspect Ratio (2/1), wall-to-wall container with no extra padding spaces */}
+        <div className="relative aspect-[2/1] w-full overflow-hidden bg-zinc-900 border-b border-white/5">
+          <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent z-1 pointer-events-none" />
+          
           {project?.image ? (
             <img
               src={project.image}
               alt={displayTitle}
-              className="h-full w-full object-cover"
+              /* ✅ object-cover fills the aspect box uniformly, while object-center balances the left/right/top/bottom margins safely */
+              className="h-full w-full object-cover object-center opacity-90 md:opacity-80 transition-opacity duration-300 group-hover:opacity-100"
               loading="lazy"
             />
           ) : (
-            <div className="flex h-full w-full items-center justify-center text-zinc-700 bg-zinc-950">
-              <span className="text-xs font-mono tracking-widest text-zinc-500 uppercase">
+            <div className="flex h-full w-full items-center justify-center bg-zinc-950">
+              <span className="text-[10px] font-mono tracking-widest text-zinc-600 uppercase">
                 4xCode Case Study
               </span>
             </div>
           )}
         </div>
 
-        <h3 className="text-white font-bold text-[18px] leading-6 tracking-[-0.3px]">
-          {displayTitle}
-        </h3>
-
-        <p className="text-[#a7a3a4] font-normal text-[13px] leading-relaxed mt-2 mb-4 line-clamp-3">
-          {descriptionSnippet}
-        </p>
+        {/* ✅ TEXT CONTENT BOX: Structural padding and clamping mirroring the layout block perfectly */}
+        <div className="p-4.5 space-y-1.5">
+          <h3 className="text-white font-bold text-base tracking-tight leading-snug group-hover:text-[#f90a1f] transition-colors duration-200 line-clamp-1">
+            {displayTitle}
+          </h3>
+          <p className="text-zinc-400 font-normal text-[12px] leading-relaxed line-clamp-2">
+            {descriptionSnippet}
+          </p>
+        </div>
       </div>
 
-      <div className="mt-auto flex items-center justify-end border-t border-white/5 pt-4 w-full">
-        <div className="flex items-center gap-1.5 text-[14px] font-bold text-white transition-colors duration-200 group-hover:text-[#f90a1f]">
-          Read Study
+      {/* ✅ PREMIUM MICRO FOOTER BAR: Shifting vector arrow on container hover */}
+      <div className="mt-auto px-4.5 pb-4.5 flex items-center justify-end w-full">
+        <div className="flex items-center gap-1 text-[12px] font-bold text-zinc-400 transition-colors duration-200 group-hover:text-[#f90a1f] pt-3 border-t border-white/5 w-full justify-end">
+          <span>Read Case Study</span>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
             strokeWidth={2.5}
             stroke="currentColor"
-            className="h-4 w-4 text-zinc-600 transition-colors duration-300 group-hover:text-[#f90a1f]"
+            className="h-3 w-3 text-zinc-500 transition-transform duration-300 transform group-hover:translate-x-0.5 group-hover:text-[#f90a1f]"
           >
             <path
               strokeLinecap="round"
@@ -141,6 +102,26 @@ export function CaseStudyCard({ project, index }: CaseStudyCardProps) {
           </svg>
         </div>
       </div>
+    </>
+  );
+
+  if (!mounted || reduced) {
+    return (
+      <div className="group relative flex flex-col flex-1 justify-between overflow-hidden rounded-[14px] border border-white/5 bg-white/2 backdrop-blur-md h-full w-full transition-all duration-300 hover:border-white/10 hover:bg-white/4">
+        {renderCardContent()}
+      </div>
+    );
+  }
+
+  return (
+    <motion.div
+      variants={cardVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.1 }}
+      className="group relative flex flex-col flex-1 justify-between overflow-hidden rounded-[14px] border border-white/5 bg-white/2 backdrop-blur-md h-full w-full transition-all duration-300 hover:border-white/10 hover:bg-white/4"
+    >
+      {renderCardContent()}
     </motion.div>
   );
 }

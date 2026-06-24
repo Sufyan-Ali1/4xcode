@@ -3,7 +3,7 @@
 import React, { useMemo, useState, useEffect } from "react";
 import Link from "next/link";
 import { useParams, notFound } from "next/navigation";
-import { motion, useReducedMotion, type Variants } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 import { useSafeReducedMotion } from "../../../utils/useSafeReducedMotion";
 import ServiceFaq from "../../../components/ui/ServiceFaq";
 import { Space_Grotesk, Inter } from "next/font/google";
@@ -91,13 +91,13 @@ export default function ServiceDetailPage() {
       metaDescription.setAttribute("content", descriptionText);
       document.head.appendChild(metaDescription);
     }
-  }, []);
+  }, [service]);
 
   return (
     <div
-      className={`relative min-h-screen w-full overflow-hidden bg-[#030303] pb-12 text-white ${inter.className}`}
+      className={`relative min-h-screen w-full overflow-hidden bg-[#030303] pb-24 text-white ${inter.className}`}
     >
-
+      {/* Background Glow Overlay Layer */}
       <div
         className="pointer-events-none absolute left-0 right-0 top-0 z-0 h-[800px] select-none overflow-hidden"
         aria-hidden="true"
@@ -107,7 +107,8 @@ export default function ServiceDetailPage() {
         <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#030303]" />
       </div>
 
-      <div className="relative z-10 mx-auto w-full max-w-300 px-5 pt-32 md:pt-36">
+      {/* Primary Layout Container wrapper */}
+      <div className="relative z-10 mx-auto w-full max-w-300 px-5 pt-32 md:pt-36 flex flex-col">
         <Reveal>
           <Link
             href="/service"
@@ -173,6 +174,7 @@ export default function ServiceDetailPage() {
               </div>
             </Reveal>
           </div>
+          
           <div className="w-full lg:col-span-4">
             <motion.div
               initial={{ opacity: 0, y: reduced ? 0 : 40 }}
@@ -188,11 +190,9 @@ export default function ServiceDetailPage() {
                 Deployment Stack
               </h3>
               <div className="space-y-4">
-                {" "}
-                {/* Increased spacing for better readability with descriptions */}
                 {service.tags.map((tag) => (
                   <div
-                    key={tag.name} // Uses the unique tag name as the key
+                    key={tag.name}
                     className="flex flex-col gap-1 border-b border-white/5 pb-3.5 last:border-none last:pb-0"
                   >
                     <div className="flex items-center gap-3">
@@ -201,7 +201,6 @@ export default function ServiceDetailPage() {
                         {tag.name}
                       </span>
                     </div>
-                    {/* Tag Description Layer */}
                     <p className="pl-4 text-xs leading-relaxed text-zinc-400">
                       {tag.description}
                     </p>
@@ -228,6 +227,7 @@ export default function ServiceDetailPage() {
             />
           ))}
         </motion.div>
+
         <div className="mt-16 md:mt-24 lg:mt-28 pt-12">
           <Reveal>
             <div className="space-y-2">
@@ -259,6 +259,7 @@ export default function ServiceDetailPage() {
             ))}
           </motion.div>
         </div>
+
         <div className="mt-16 md:mt-24 lg:mt-28 pt-12">
           <Reveal>
             <div className="space-y-2">
@@ -279,12 +280,12 @@ export default function ServiceDetailPage() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.1 }}
-            className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4" // Updated grid layouts for richer text cards
+            className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4"
           >
             {service.features.map((feature) => (
               <CapabilityCard
-                key={feature.title} // Uses the unique title as the React execution key
-                data={feature} // Passes the entire object { title, description } to the card component
+                key={feature.title}
+                data={feature}
                 variants={itemVariants}
                 fontClass={spaceGrotesk.className}
               />
@@ -292,7 +293,6 @@ export default function ServiceDetailPage() {
           </motion.div>
         </div>
 
-        {/* Granular Infrastructure Tech Categories Matrix */}
         <div className="mt-16 md:mt-24 lg:mt-28 pt-12">
           <Reveal>
             <div className="space-y-2">
@@ -324,7 +324,6 @@ export default function ServiceDetailPage() {
           </motion.div>
         </div>
 
-        {/* Operational Flow Architecture Blueprint */}
         <div className="relative mt-16 md:mt-24 lg:mt-28 pt-12">
           <div className="mb-14 text-center">
             <Reveal>
@@ -359,8 +358,6 @@ export default function ServiceDetailPage() {
           </motion.div>
         </div>
 
-        {/* Accordion FAQ Block */}
-
         <ServiceFaq faqs={service.faqs} />
       </div>
 
@@ -368,8 +365,9 @@ export default function ServiceDetailPage() {
         serviceTitle={service.title}
         reasons={service.whyTeamsChoose}
       />
-      {/* Adjacent Dynamic Routing Services Section */}
-      <div className="relative z-10 mx-auto w-full max-w-300 px-5">
+
+      {/* Dynamic Routing Services & Final Project CTA Wrapper */}
+      <div className="relative z-10 mx-auto w-full max-w-300 px-5 flex flex-col">
         {relatedServices.length > 0 && (
           <div className="mt-16 md:mt-20 lg:mt-23 pt-5">
             <Reveal>
@@ -403,46 +401,45 @@ export default function ServiceDetailPage() {
             </motion.div>
           </div>
         )}
-      </div>
 
-      {/* Conversion Banner Section */}
-      <section className="relative w-full py-16 md:py-24 px-5 z-10">
-        <div className="mx-auto w-full max-w-300">
+        {/* ✅ CORRECTED CTA CONTAINER: Now shares the same layout boundaries */}
+        <section className="w-full mt-20 md:mt-28 pt-12 mx-auto">
           <motion.div
             initial={{ opacity: 0, y: reduced ? 0 : 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-            className="relative w-full bg-gradient-to-r from-[#070707] to-[#0d0d0d] border border-white/4 rounded-3xl p-6 sm:p-10 md:p-12 flex flex-col md:flex-row items-center justify-between text-center md:text-left gap-6 md:gap-8 overflow-hidden"
+            className="relative w-full bg-gradient-to-r from-[#070707] to-[#0d0d0d] border border-white/5 rounded-3xl sm:rounded-4xl p-6 sm:p-10 md:p-12 lg:p-16 flex flex-col md:flex-row items-center justify-between text-center md:text-left gap-6 md:gap-8 overflow-hidden"
           >
             <div
               className="absolute -right-20 -bottom-20 w-80 h-80 rounded-full bg-[#f90a1f]/15 blur-[60px] pointer-events-none"
               aria-hidden="true"
             />
-            <div className="relative z-10 space-y-1">
+
+            <div className="relative z-10 space-y-2">
               <h2
-                className={`${spaceGrotesk.className} text-2xl sm:text-3xl font-bold tracking-tight text-white`}
+                className={`${spaceGrotesk.className} text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-white`}
               >
                 Have a project in mind?
               </h2>
-              <p className="text-[#a7a3a4] text-xs sm:text-sm font-normal">
+              <p className="text-[#a7a3a4] text-xs sm:text-sm md:text-base font-normal">
                 Tell us the goal. We'll tell you the path.
               </p>
             </div>
 
             <Link
               href="/contact"
-              className="group relative z-10 inline-flex items-center justify-center w-full md:w-auto px-7 sm:px-8 py-3.5 bg-[#f90a1f] hover:bg-[#d60819] text-white font-bold rounded-full shadow-[0_4px_25px_rgba(249,10,31,0.3)] transition-all duration-200 text-sm whitespace-nowrap shrink-0 gap-2"
+              className="group relative z-10 inline-flex items-center justify-center w-full md:w-auto px-7 sm:px-8 py-3.5 sm:py-4 bg-[#f90a1f] hover:bg-[#d60819] text-white font-bold rounded-full shadow-[0_4px_25px_rgba(249,10,31,0.3)] transition-all duration-200 text-sm sm:text-base whitespace-nowrap shrink-0 gap-2"
             >
               <span>Start Project</span>
               <ArrowForwardIcon
                 style={{ fontSize: 18 }}
-                className="transition-transform duration-200 group-hover:translate-x-1"
+                className="transition-transform duration-200 "
               />
             </Link>
           </motion.div>
-        </div>
-      </section>
+        </section>
+      </div>
     </div>
   );
 }

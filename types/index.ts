@@ -3,7 +3,7 @@ export interface Testimonial {
   stars: number;
   quote: string;
   author: string;
-  vehicle: string;
+  title: string;
   initial: string;
 }
 

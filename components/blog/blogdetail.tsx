@@ -44,7 +44,7 @@ export default function BlogDetailPage({ blog }: { blog: Blog }) {
           ← Back to Blogs
         </Link>
 
-        <div className="grid grid-cols-1 lg:grid-cols-[8fr_4fr] gap-6">
+        <div className="flex flex-col-reverse lg:grid lg:grid-cols-[8fr_4fr] gap-4">
 
           {/* CONTENT */}
           <div className="min-w-0 order-2 lg:order-1">

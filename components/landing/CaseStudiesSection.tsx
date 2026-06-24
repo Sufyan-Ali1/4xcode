@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useReducedMotion } from "framer-motion";
+import { motion } from "framer-motion";
 import { Reveal } from "@/utils/AnimationReveal";
 import { CaseStudyCard } from "../ui/CaseStudyCard";
 import Link from "next/link";
@@ -13,8 +13,6 @@ interface CaseStudiesSectionProps {
 export default function CaseStudiesSection({
   initialData,
 }: CaseStudiesSectionProps) {
-  const reduced = useReducedMotion();
-
   const projects = (initialData || []).slice(0, 3);
 
   return (
@@ -49,7 +47,6 @@ export default function CaseStudiesSection({
               <CaseStudyCard
                 project={project}
                 index={index}
-                reduced={reduced}
               />
             </Link>
           ))}

@@ -1,11 +1,12 @@
 "use client";
 
 import Image from "next/image";
-import { motion, useReducedMotion } from "framer-motion";
+import { motion } from "framer-motion";
 import { Reveal } from "../../utils/AnimationReveal";
+import { useSafeReducedMotion } from "../../utils/useSafeReducedMotion";
 
 export default function AboutSection() {
-  const reduced = useReducedMotion();
+  const reduced = useSafeReducedMotion();
 
   const stats = [
     { value: "132+", label: "Products Shipped" },

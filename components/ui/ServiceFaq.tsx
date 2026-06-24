@@ -19,7 +19,7 @@ interface ServiceFaqProps {
 }
 
 export default function ServiceFaq({ faqs }: ServiceFaqProps) {
-  const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
+  const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
 
   if (!faqs || faqs.length === 0) return null;
 

@@ -1,7 +1,8 @@
 "use client";
 
 import React from "react";
-import { motion, useReducedMotion } from "framer-motion";
+import { motion } from "framer-motion";
+import { useSafeReducedMotion } from "../../utils/useSafeReducedMotion";
 import WebIcon from "@mui/icons-material/Web";
 import PhoneIphoneIcon from "@mui/icons-material/PhoneIphone";
 import LayersIcon from "@mui/icons-material/Layers";
@@ -91,7 +92,7 @@ const services = [
 ];
 
 export default function ServicesSection() {
-  const reduced = useReducedMotion();
+  const reduced = useSafeReducedMotion();
 
   return (
     <section className="relative w-full overflow-hidden bg-black py-28 px-6 md:px-12 lg:px-24">

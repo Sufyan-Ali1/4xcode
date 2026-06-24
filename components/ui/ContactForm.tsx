@@ -1,7 +1,8 @@
 "use client";
 
 import React, { useState, ChangeEvent, FormEvent } from "react";
-import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
+import { useSafeReducedMotion } from "../../utils/useSafeReducedMotion";
 import { Space_Grotesk } from "next/font/google";
 import {
   Send as SendIcon,
@@ -20,7 +21,7 @@ type ContactFormProps = {
 
 export default function ContactForm({ variant = "default" }: ContactFormProps) {
   const router = useRouter();
-  const reduced = useReducedMotion();
+  const reduced = useSafeReducedMotion();
   const [showErrorPopup, setShowErrorPopup] = useState(false);
 
   const [formData, setFormData] = useState({
@@ -95,14 +96,12 @@ export default function ContactForm({ variant = "default" }: ContactFormProps) {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
-          className={`relative w-full rounded-3xl border border-white/10 bg-white/[0.03] backdrop-blur-md flex flex-col box-border ${
-            isSidebar 
-              ? "px-5 py-6 shadow-[0_4px_30px_rgba(0,0,0,0.5)] md:rounded-3xl" 
-              : "px-8 py-10 md:p-12 shadow-[0_0_40px_0_rgba(239,31,35,0.25)] md:rounded-[32px]"
+          className={`relative w-full rounded-3xl md:rounded-[32px] border border-[rgba(255,255,255,0.1)] bg-[rgba(255,255,255,0.04)] shadow-[0_0_30px_0_rgba(239,31,35,0.35)] flex flex-col justify-between ${
+            isSidebar ? "px-6 py-8 max-h-[calc(100vh-130px)]" : "px-8 py-10 md:p-12"
           }`}
         >
-          <form onSubmit={handleSubmit} className="flex flex-col gap-5 w-full box-border">
-            <div className="space-y-1.5 w-full text-left">
+          <form onSubmit={handleSubmit} className={`flex flex-col gap-5 h-full ${isSidebar ? "overflow-y-auto no-scrollbar" : ""}`}>
+            <div className="space-y-2">
               <h2
                 className={`${spaceGrotesk.className} font-bold leading-tight tracking-tight text-white ${
                   isSidebar ? "text-lg sm:text-xl" : "text-2xl sm:text-[32px]"

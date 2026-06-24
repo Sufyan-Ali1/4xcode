@@ -1,11 +1,12 @@
 "use client";
 
-import { motion, useReducedMotion } from "framer-motion";
+import { motion } from "framer-motion";
+import { useSafeReducedMotion } from "../../utils/useSafeReducedMotion";
 import { Reveal } from "../../utils/AnimationReveal";
 import { TESTIMONIALS } from "../../data/index";
 
 export default function TestimonialsSection() {
-  const reduced = useReducedMotion();
+  const reduced = useSafeReducedMotion();
   const duplicatedTestimonials = [
     ...TESTIMONIALS,
     ...TESTIMONIALS,
@@ -34,27 +35,11 @@ export default function TestimonialsSection() {
       </div>
 
       <div className="relative w-full overflow-hidden flex items-center py-4">
-        <div
-          className={`flex gap-5 w-max will-change-transform ${
-            reduced
-              ? ""
-              : "animate-[marquee_35s_linear_infinite] hover:[animation-play-state:paused]"
-          }`}
-        >
+        <div className="flex gap-5 w-max will-change-transform animate-[marquee_35s_linear_infinite] hover:[animation-play-state:paused]">
           {duplicatedTestimonials.map((item, idx) => (
-            <motion.div
+            <div
               key={`${item.id}-${idx}`}
-              initial={{ opacity: 0, y: reduced ? 0 : 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{
-                type: "spring",
-                stiffness: 400,
-                damping: 30,
-                delay: reduced ? 0 : (idx % TESTIMONIALS.length) * 0.08,
-              }}
-              whileHover={reduced ? {} : { scale: 1.02, y: -4 }}
-              className="group w-85 md:w-95 shrink-0 flex flex-col justify-between rounded-[22px] border border-white/10 bg-white/2 p-6 transition-colors duration-300 hover:border-[#f90a1f]/40 hover:bg-white/4 will-change-transform cursor-default"
+              className="group w-85 md:w-95 shrink-0 flex flex-col justify-between rounded-[22px] border border-white/10 bg-white/2 p-6 transition-colors duration-300 hover:border-[#f90a1f]/40 hover:bg-white/4 cursor-default"
             >
               <div className="flex gap-1 mb-4">
                 {Array.from({ length: item.stars }).map((_, i) => (
@@ -85,7 +70,7 @@ export default function TestimonialsSection() {
                   </span>
                 </div>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

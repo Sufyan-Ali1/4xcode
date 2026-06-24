@@ -1,5 +1,8 @@
 "use client";
-import { motion, useReducedMotion } from "framer-motion";
+
+import { motion } from "framer-motion";
+import { useSafeReducedMotion } from "./useSafeReducedMotion";
+
 export function Reveal({
   children,
   delay = 0,
@@ -9,7 +12,8 @@ export function Reveal({
   delay?: number;
   className?: string;
 }) {
-  const reduced = useReducedMotion();
+  const reduced = useSafeReducedMotion();
+
   return (
     <motion.div
       initial={{ opacity: 0, y: reduced ? 0 : 60 }}

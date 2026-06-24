@@ -55,12 +55,22 @@ export type CaseStudy = {
 // ==========================================
 
 function normaliseCaseStudy(raw: CaseStudyResponse): CaseStudy {
-  const image =
+  let image =
     raw?.image ||
     (Array.isArray(raw?.images) && raw.images.length > 0
       ? raw.images[0]?.image
       : "") ||
     "";
+
+  // Cloudinary URLs without file extension need a format appended
+  // otherwise Next.js image optimisation can fail
+  if (
+    image &&
+    image.includes("res.cloudinary.com") &&
+    !/\.(jpg|jpeg|png|webp|avif|gif|svg)(\?|$)/i.test(image)
+  ) {
+    image = `${image}.jpg`;
+  }
 
   return {
     id: String(raw?.slug ?? raw?.id ?? ""),
@@ -71,7 +81,7 @@ function normaliseCaseStudy(raw: CaseStudyResponse): CaseStudy {
     image,
     images: Array.isArray(raw?.images) ? raw.images : [],
     date: String(raw?.created_at ?? ""),
-    category: raw?.category ? String(raw.category) : "",
+    category: raw?.category != null ? String(raw.category) : "Case Study",
     author: raw?.author ? String(raw.author) : undefined,
     content_type: String(raw?.content_type ?? "case_study"),
   };

@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { Space_Grotesk, Inter } from "next/font/google";
 import { motion, useReducedMotion } from "framer-motion";
+import { useSafeReducedMotion } from "../../utils/useSafeReducedMotion";
 import { Reveal } from "../../utils/AnimationReveal";
 import MailOutlineIcon from "@mui/icons-material/MailOutlined";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
@@ -21,7 +22,7 @@ const spaceGrotesk = Space_Grotesk({
 
 export default function ThankYouPage() {
   const router = useRouter();
-  const reduced = useReducedMotion();
+  const reduced = useSafeReducedMotion();
   const [countdown, setCountdown] = useState(10);
   const [isVerified, setIsVerified] = useState(false);
 

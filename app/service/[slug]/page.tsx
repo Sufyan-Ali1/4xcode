@@ -4,6 +4,7 @@ import React, { useMemo, useState, useEffect } from "react";
 import Link from "next/link";
 import { useParams, notFound } from "next/navigation";
 import { motion, useReducedMotion, type Variants } from "framer-motion";
+import { useSafeReducedMotion } from "../../../utils/useSafeReducedMotion";
 import ServiceFaq from "../../../components/ui/ServiceFaq";
 import { Space_Grotesk, Inter } from "next/font/google";
 import { Reveal } from "../../../utils/AnimationReveal";
@@ -31,7 +32,7 @@ const inter = Inter({ subsets: ["latin"], weight: ["300", "400", "500"] });
 
 export default function ServiceDetailPage() {
   const params = useParams();
-  const reduced = useReducedMotion();
+  const reduced = useSafeReducedMotion();
 
   const currentSlug = typeof params?.slug === "string" ? params.slug : "";
   const service = useMemo(() => {

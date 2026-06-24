@@ -1,7 +1,8 @@
 "use client";
 
 import React from "react";
-import { motion, useReducedMotion } from "framer-motion";
+import { motion } from "framer-motion";
+import { useSafeReducedMotion } from "../../utils/useSafeReducedMotion";
 import { Space_Grotesk } from "next/font/google";
 
 interface NarrativeSectionProps {
@@ -62,7 +63,7 @@ const CONTENT_PARAGRAPHS = [
 export default function NarrativeSection({
   spaceGroteskClassName,
 }: NarrativeSectionProps) {
-  const reduced = useReducedMotion();
+  const reduced = useSafeReducedMotion();
 
   return (
     <section className="relative w-full z-10 px-6 md:px-12 lg:px-24 mt-20 md:mt-28 text-white">

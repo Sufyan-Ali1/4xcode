@@ -1,7 +1,8 @@
 "use client";
 
 import React from "react";
-import { motion, useReducedMotion } from "framer-motion";
+import { motion } from "framer-motion";
+import { useSafeReducedMotion } from "../../utils/useSafeReducedMotion";
 import { Space_Grotesk } from "next/font/google";
 import { Reveal } from "../../utils/AnimationReveal";
 import { type ChoiceReason } from "../../data/serviceData";
@@ -17,7 +18,7 @@ interface ServiceWhyChooseProps {
 }
 
 export default function ServiceWhyChoose({ serviceTitle, reasons }: ServiceWhyChooseProps) {
-  const reduced = useReducedMotion();
+  const reduced = useSafeReducedMotion();
 
   if (!reasons || reasons.length === 0) return null;
 

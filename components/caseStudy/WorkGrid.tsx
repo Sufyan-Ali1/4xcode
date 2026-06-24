@@ -2,7 +2,6 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import { useReducedMotion } from "framer-motion";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import { CaseStudyCard } from "../ui/CaseStudyCard";
 import type { CaseStudy } from "../../types/index";
@@ -30,7 +29,6 @@ interface WorkGridProps {
 }
 
 export default function WorkGrid({ caseStudies }: WorkGridProps) {
-  const reduced = useReducedMotion();
   const [visibleCount, setVisibleCount] = useState(10);
 
   const displayedCaseStudies = caseStudies.slice(0, visibleCount);
@@ -55,7 +53,6 @@ export default function WorkGrid({ caseStudies }: WorkGridProps) {
               <CaseStudyCard
                 project={project}
                 index={index}
-                reduced={reduced}
               />
             </Link>
           ))}

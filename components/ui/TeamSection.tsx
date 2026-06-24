@@ -1,7 +1,8 @@
 "use client";
 
 import React from "react";
-import { motion, useReducedMotion } from "framer-motion";
+import { motion } from "framer-motion";
+import { useSafeReducedMotion } from "../../utils/useSafeReducedMotion";
 import { Space_Grotesk } from "next/font/google";
 import { Reveal } from "../../utils/AnimationReveal";
 import GroupsIcon from "@mui/icons-material/Groups";
@@ -14,7 +15,7 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export default function TeamSection() {
-  const reduced = useReducedMotion();
+  const reduced = useSafeReducedMotion();
 
   return (
     <section className="relative w-full py-16 px-6 md:px-12 lg:px-24 z-10">

@@ -6,7 +6,7 @@ import { motion, useReducedMotion, type Variants } from "framer-motion";
 import { Space_Grotesk, Inter } from "next/font/google";
 import { Reveal } from "../../utils/AnimationReveal";
 import { CaseStudyImage } from "../ui/CaseStudyImage";
-import CaseStudydefaultImg from "../../public/assets/caseStudy.jpeg";
+import CaseStudydefaultImg from "../../public/assets/caseStudy.webp";
 import type { CaseStudy } from "../../types/index";
 import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
 

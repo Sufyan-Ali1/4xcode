@@ -34,7 +34,7 @@ export default function Header() {
           className="flex shrink-0 items-center"
         >
           <Image
-            src="/assets/logo1.png"
+            src="/assets/logo1.webp"
             width={57}
             height={48}
             alt="4xcode logo"

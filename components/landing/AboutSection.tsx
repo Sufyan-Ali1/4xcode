@@ -33,7 +33,7 @@ export default function AboutSection() {
 
           <div className="relative w-full h-full rounded-3xl border border-white/5 overflow-hidden">
             <Image
-              src="/assets/aboutSection.png"
+              src="/assets/aboutSection.webp"
               alt="Engineering Team"
               fill
               priority

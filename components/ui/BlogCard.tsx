@@ -42,7 +42,7 @@ export function BlogCard({ post, index }: BlogCardProps) {
       >
         <div className="relative w-full h-[160px] overflow-hidden rounded-[14px]">
           <Image
-            src={"/assets/caseStudy.jpeg"}
+            src={"/assets/caseStudy.webp"}
             alt={post.title}
             fill
             className="object-cover opacity-90 md:opacity-80 transition-opacity duration-300 group-hover:opacity-100"

@@ -1,5 +1,5 @@
-import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { getBlogs } from "@/lib/blogApi";
 
 export const dynamic = "force-dynamic";
@@ -33,11 +33,15 @@ export default async function BlogPage() {
 
 {/* IMAGE — full width, no padding */}
                 {blog.image && (
-                  <img
-                    src={blog.image}
-                    alt={blog.title}
-                    className="w-full h-48 object-cover"
-                  />
+                  <div className="relative w-full h-48 overflow-hidden">
+                    <Image
+                      src={blog.image}
+                      alt={blog.title}
+                      fill
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                      className="object-cover"
+                    />
+                  </div>
                 )}
 
                 {/* TEXT CONTENT — padded */}

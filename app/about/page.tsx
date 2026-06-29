@@ -1,9 +1,7 @@
 "use client";
 
 import React from "react";
-import { useEffect } from "react";
-
-import { motion, useReducedMotion } from "framer-motion";
+import { motion } from "framer-motion";
 import { useSafeReducedMotion } from "../../utils/useSafeReducedMotion";
 import { Space_Grotesk, Inter } from "next/font/google";
 import { Reveal } from "../../utils/AnimationReveal";
@@ -50,22 +48,6 @@ const SHARED_CARD_CLASSES =
 
 export default function AboutPage() {
   const reduced = useSafeReducedMotion();
-
-  useEffect(() => {
-    document.title = "About 4xCode | Senior Engineering & AI Studio";
-    let metaDescription = document.querySelector('meta[name="description"]');
-    const descriptionText =
-      "4xCode is a remote-first engineering studio of senior developers, AI researchers, and designers. 120+ products shipped since 2021.";
-
-    if (metaDescription) {
-      metaDescription.setAttribute("content", descriptionText);
-    } else {
-      metaDescription = document.createElement("meta");
-      metaDescription.setAttribute("name", "description");
-      metaDescription.setAttribute("content", descriptionText);
-      document.head.appendChild(metaDescription);
-    }
-  }, []);
 
   return (
     <div

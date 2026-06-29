@@ -11,7 +11,7 @@ import AutoAwesomeIcon from "@mui/icons-material/AutoAwesome";
 import CloudQueueIcon from "@mui/icons-material/CloudQueue";
 import { Reveal } from "../../utils/AnimationReveal";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
-import Link from "next/dist/client/link";
+import Link from "next/link";
 
 function ServiceIcon({ children }: { children: React.ReactNode }) {
   return (

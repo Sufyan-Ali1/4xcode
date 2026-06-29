@@ -1,9 +1,6 @@
-"use client";
-
 import React from "react";
 import Link from "next/link";
 import { Space_Grotesk } from "next/font/google";
-// Import the ArrowForward icon from Material UI
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 
 const spaceGrotesk = Space_Grotesk({

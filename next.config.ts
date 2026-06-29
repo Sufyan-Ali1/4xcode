@@ -26,10 +26,10 @@ const nextConfig: NextConfig = {
         has: [
           {
             type: "host",
-            value: "https://4xcode.com", 
+            value: "www.4xcode.com", 
           },
         ],
-        destination: "https://www.4xcode.com/:path*", 
+        destination: "https://4xcode.com/:path*", 
         permanent: true,
       },
     ];

@@ -9,8 +9,10 @@ export default async function BlogPage() {
 
   return (
     <div className="min-h-screen bg-[#030303] text-white">
+
       {/* GLOBAL WIDTH CONTAINER */}
-      <div className="mx-auto w-full max-w-[1200px] px-5 pt-28 pb-16">
+      <div className="mx-auto w-full max-w-300 px-5 pt-28 pb-16">
+
         {/* HEADER */}
         <h1 className="text-3xl md:text-4xl font-bold mb-10">
           Latest Blogs
@@ -20,61 +22,67 @@ export default async function BlogPage() {
         {blogs.length === 0 ? (
           <p className="text-zinc-400">No blogs found</p>
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-8 auto-rows-fr">
+          /* ✅ Match grid specs with your high-end WorkGrid layout */
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-8 auto-rows-fr items-stretch">
+
             {blogs.map((blog: any) => (
               <Link
                 key={blog.slug || blog.id}
                 href={`/blog/${blog.slug}`}
-                className="group flex flex-col overflow-hidden rounded-[14px] border border-white/5 bg-white/5 backdrop-blur-md transition-all duration-300 hover:border-white/10 hover:bg-white/10 h-full"
+                /* ✅ Premium Card Sizing, Borders, Shading, and Hover Transitions */
+                className="group relative flex flex-col justify-between overflow-hidden rounded-[14px] border border-white/5 bg-white/2 backdrop-blur-md h-full w-full transition-all duration-300 hover:border-white/10 hover:bg-white/4 block"
               >
-                {/* IMAGE */}
+
+{/* IMAGE — full width, no padding */}
                 {blog.image && (
-                  <div className="relative w-full h-48">
-                    <Image
-                      src={blog.image}
-                      alt={blog.title}
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
+                  <img
+                    src={blog.image}
+                    alt={blog.title}
+                    className="w-full h-48 object-cover"
+                  />
                 )}
 
-                {/* CONTENT */}
-                <div className="flex flex-col flex-1 p-5">
-                  <h2 className="text-lg font-semibold mb-2 group-hover:text-white transition-colors">
+                {/* TEXT CONTENT — padded */}
+                <div className="p-5">
+                  {/* TITLE */}
+                  <h2 className="text-lg font-semibold mb-2 group-hover:text-white">
                     {blog.title}
                   </h2>
 
-                  <p className="text-zinc-400 text-sm leading-relaxed line-clamp-2">
-                    {(blog.excerpt || "").slice(0, 120)}
-                  </p>
-
-                  {/* FOOTER */}
-                  <div className="mt-auto pt-4 border-t border-white/5 flex justify-end">
-                    <div className="flex items-center gap-1 text-xs font-bold text-zinc-400 group-hover:text-[#f90a1f] transition-colors">
-                      <span>Read Post</span>
-
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        strokeWidth={2.5}
-                        stroke="currentColor"
-                        className="w-3 h-3 transition-all duration-300 group-hover:translate-x-1"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
-                        />
-                      </svg>
-                    </div>
+                    {/* EXCERPT */}
+                    <p className="text-zinc-400 font-normal text-[12px] leading-relaxed line-clamp-2">
+                      {(blog.excerpt || "").slice(0, 120)}
+                    </p>
                   </div>
                 </div>
+
+                {/* ✅ PREMIUM MICRO FOOTER BAR — Displays action link layout item with shifting vector arrow */}
+                <div className="mt-auto px-4.5 pb-4.5 flex items-center justify-end w-full">
+                  <div className="flex items-center gap-1 text-[12px] font-bold text-zinc-400 transition-colors duration-200 group-hover:text-[#f90a1f] pt-3 border-t border-white/5 w-full justify-end">
+                    <span>Read Post</span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth={2.5}
+                      stroke="currentColor"
+                      className="h-3 w-3 text-zinc-500 transition-transform duration-300 transform group-hover:translate-x-0.5 group-hover:text-[#f90a1f]"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
+                      />
+                    </svg>
+                  </div>
+                </div>
+
               </Link>
             ))}
+
           </div>
         )}
+
       </div>
     </div>
   );

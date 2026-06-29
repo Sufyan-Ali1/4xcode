@@ -33,7 +33,7 @@ export default function AboutSection() {
           {/* Fixed height on mobile, aspect-square only on lg+ */}
           <div className="relative w-full h-64 sm:h-80 lg:h-auto lg:aspect-square rounded-3xl border border-white/5 overflow-hidden">
             <Image
-              src="/assets/aboutSection.png"
+              src="/assets/aboutSection.webp"
               alt="Engineering Team"
               fill
               priority

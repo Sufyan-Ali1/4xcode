@@ -1,5 +1,5 @@
-import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { getBlogs } from "@/lib/blogApi";
 
 export const dynamic = "force-dynamic";
@@ -32,30 +32,22 @@ export default async function BlogPage() {
                 /* ✅ Premium Card Sizing, Borders, Shading, and Hover Transitions */
                 className="group relative flex flex-col justify-between overflow-hidden rounded-[14px] border border-white/5 bg-white/2 backdrop-blur-md h-full w-full transition-all duration-300 hover:border-white/10 hover:bg-white/4 block"
               >
-                <div className="w-full">
-                  {/* ✅ IMAGE — Cinema Aspect Ratio (2/1), full width, no padding, touching card edges perfectly */}
-                  {blog.image && (
-                    <div className="relative aspect-[2/1] w-full overflow-hidden bg-zinc-900 border-b border-white/5">
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent z-1 pointer-events-none" />
-                      <img
-                        src={blog.image}
-                        alt={blog.title}
-                        className="h-full w-full object-cover opacity-90 md:opacity-80 transition-opacity duration-300 group-hover:opacity-100"
-                      />
-                    </div>
-                  )}
 
-                  {/* ✅ TEXT CONTENT BOX — Isolated structural inner padding & line clamping */}
-                  <div className="p-4.5 space-y-1.5">
-                    {/* Optional Category Indicator placeholder — matches Blog layout themes */}
-                    <span className="text-[10px] font-bold uppercase tracking-[1.5px] text-[#ef1f23] block">
-                      {blog.category || "Engineering"}
-                    </span>
+{/* IMAGE — full width, no padding */}
+                {blog.image && (
+                  <img
+                    src={blog.image}
+                    alt={blog.title}
+                    className="w-full h-48 object-cover"
+                  />
+                )}
 
-                    {/* TITLE */}
-                    <h2 className="text-white font-bold text-base tracking-tight leading-snug group-hover:text-[#f90a1f] transition-colors duration-200 line-clamp-1">
-                      {blog.title}
-                    </h2>
+                {/* TEXT CONTENT — padded */}
+                <div className="p-5">
+                  {/* TITLE */}
+                  <h2 className="text-lg font-semibold mb-2 group-hover:text-white">
+                    {blog.title}
+                  </h2>
 
                     {/* EXCERPT */}
                     <p className="text-zinc-400 font-normal text-[12px] leading-relaxed line-clamp-2">

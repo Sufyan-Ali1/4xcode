@@ -3,7 +3,7 @@
     "id": "1",
     "slug": "automated-service-reminders-case-study",
     "heading": "How Automated Service Reminders Increased Repeat Customer",
-    "image": "./assets/caseStudy.jpeg",
+    "image": "./assets/caseStudy.webp",
     "sections": [
       {
         "section_number": 1,
@@ -232,7 +232,7 @@
     "id": "2",
     "slug": "garage-administrative-efficiency-case-study",
     "heading": "How a UK Garage Reduced Administrative Work by 60% Using 4xCode Garage Software",
-    "image": "/assets/caseStudy2/heroImage.jpg",
+    "image": "/assets/caseStudy2/heroImage.webp",
 
     "sections": [
       {
@@ -483,7 +483,7 @@
     "id": "3",
     "slug": "garage-administrative-efficiency-case-study",
     "heading": "How a UK Garage Reduced Administrative Work by 60% Using 4xCode Garage Software",
-    "image": "../assets/caseStudy.jpeg",
+    "image": "../assets/caseStudy.webp",
     "sections": [
       {
         "section_number": 1,

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
@@ -8,12 +8,12 @@ import { Reveal } from "../../utils/AnimationReveal";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 
 const LOGO_SLIDES = [
-  "/assets/slide1.png",
-  "/assets/slide2.png",
-  "/assets/slide3.png",
-  "/assets/slide4.png",
-  "/assets/slide5.png",
-  "/assets/slide6.png",
+  "/assets/slide1.webp",
+  "/assets/slide2.webp",
+  "/assets/slide3.webp",
+  "/assets/slide4.webp",
+  "/assets/slide5.webp",
+  "/assets/slide6.webp",
 ];
 
 const BAR_HEIGHTS = [16, 26, 20, 32, 24, 36, 30, 40, 34];
@@ -177,9 +177,12 @@ function DashboardImage() {
         animate={reduced ? {} : { y: [0, -6, 0] }}
         transition={{ duration: 5, ease: "easeInOut", repeat: Infinity }}
       >
-        <img
-          src="/assets/container.jpg"
-          alt="Dashboard interface preview"
+        <Image
+          src="/assets/container.webp"
+          alt="4xCode AI-powered SaaS dashboard interface preview"
+          width={1200}
+          height={750}
+          priority
           className="relative z-10 w-full h-auto object-cover rounded-xl"
         />
       </motion.div>

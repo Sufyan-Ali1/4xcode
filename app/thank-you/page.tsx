@@ -186,7 +186,7 @@ export default function ThankYouPage() {
               className="flex items-center"
             >
               <Image
-                src="/assets/logo1.png"
+          src="/assets/logo1.webp"
                 height={48}
                 width={48}
                 alt="4xcode logo"

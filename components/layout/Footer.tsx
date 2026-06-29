@@ -8,9 +8,40 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import PublicIcon from "@mui/icons-material/Public";
 
+const STUDIO_LINKS = [
+  { label: "Service", href: "/service" },
+  { label: "Work", href: "/work" },
+  { label: "Process", href: "/process" },
+  { label: "About", href: "/about" },
+];
+
+const SOCIAL_LINKS = [
+  {
+    label: "Twitter",
+    Icon: TwitterIcon,
+    href: "https://twitter.com/4xcode",
+  },
+  {
+    label: "GitHub",
+    Icon: GitHubIcon,
+    href: "https://github.com/4xcode",
+  },
+  {
+    label: "LinkedIn",
+    Icon: LinkedInIcon,
+    href: "https://www.linkedin.com/company/4xcode-software/",
+  },
+  {
+    label: "Website",
+    Icon: PublicIcon,
+    href: "https://4xcode.com",
+  },
+];
+
 export default function Footer() {
   return (
-    <footer className="relative w-full bg-black pt-16 pb-8 text-white">
+    <footer className="relative w-full bg-black py-16 text-white">
+      {/* Top line */}
       <div
         className="absolute top-0 left-0 h-[0.4px] w-full"
         style={{
@@ -19,27 +50,27 @@ export default function Footer() {
         }}
       />
 
-      {/* ✅ GLOBAL WIDTH CONTAINER */}
       <div className="mx-auto w-full max-w-300 px-5">
-        {/* Grid */}
         <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-12 lg:gap-8">
           {/* Logo */}
           <div className="flex flex-col gap-4 lg:col-span-4">
             <Link
               href="/"
               aria-label="4xcode home"
+              prefetch={false}
               className="flex items-center"
             >
               <Image
-                src="/assets/logo1.png"
-                height={48}
+                src="/assets/logo1.webp"
                 width={48}
+                height={48}
+                loading="lazy"
                 alt="4xcode logo"
                 className="h-12 w-[57px] object-contain"
               />
             </Link>
 
-            <p className="max-w-sm text-sm text-[#a7a3a4] leading-relaxed">
+            <p className="max-w-sm text-sm leading-relaxed text-[#a7a3a4]">
               Premium engineering studio building the next generation of
               software, AI and SaaS.
             </p>
@@ -52,13 +83,14 @@ export default function Footer() {
             </h3>
 
             <ul className="flex flex-col gap-1">
-              {["Service", "Work", "Contact", "About"].map((item) => (
-                <li key={item}>
+              {STUDIO_LINKS.map((item) => (
+                <li key={item.href}>
                   <Link
-                    href={`/${item.toLowerCase()}`}
-                    className="text-[14px] text-white hover:text-white/80"
+                    href={item.href}
+                    prefetch={false}
+                    className="text-[14px] text-white transition-colors hover:text-white/80"
                   >
-                    {item}
+                    {item.label}
                   </Link>
                 </li>
               ))}
@@ -73,11 +105,17 @@ export default function Footer() {
 
             <ul className="flex flex-col gap-2 text-sm text-[#a7a3a4]">
               <li>
-                <Link href="mailto:hello@4xcode.com" className="text-white">
+                <Link
+                  href="mailto:hello@4xcode.com"
+                  className="text-white"
+                  prefetch={false}
+                >
                   info@4xcode.com
                 </Link>
               </li>
-              <li>01 Padnal Court, Romford, RM6 5HR, United Kingdom</li>
+
+              <li>01 Padnal Court, Romford RM6 5HR</li>
+
               <li>Mon - Fri</li>
             </ul>
           </div>
@@ -97,7 +135,7 @@ export default function Footer() {
 
               <button
                 type="submit"
-                className="shrink-0 rounded-full bg-[#f90a1f] px-4 py-2 text-sm font-semibold hover:bg-[#ed1c20] transition"
+                className="shrink-0 rounded-full bg-[#f90a1f] px-4 py-2 text-sm font-semibold transition-colors hover:bg-[#ed1c20]"
               >
                 Subscribe
               </button>
@@ -105,27 +143,55 @@ export default function Footer() {
 
             {/* Social */}
             <div className="flex gap-4">
-              {[TwitterIcon, GitHubIcon, LinkedInIcon, PublicIcon].map(
-                (Icon, i) => (
-                  <Link
-                    key={i}
-                    href="#"
-                    className="flex h-10 w-10 items-center justify-center rounded-[14px] border border-white/10 bg-[#0a0a0a] hover:bg-[#1a1a1a] transition"
-                  >
-                    <Icon
-                      fontSize="small"
-                      className="text-[#a7a3a4] hover:text-white"
-                    />
-                  </Link>
-                ),
-              )}
+              {SOCIAL_LINKS.map(({ Icon, href, label }) => (
+                <Link
+                  key={href}
+                  href={href}
+                  aria-label={label}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  prefetch={false}
+                  className="flex h-10 w-10 items-center justify-center rounded-[14px] border border-white/10 bg-[#0a0a0a] transition-colors hover:bg-[#1a1a1a]"
+                >
+                  <Icon
+                    fontSize="small"
+                    className="text-[#a7a3a4] transition-colors hover:text-white"
+                  />
+                </Link>
+              ))}
             </div>
           </div>
         </div>
 
-        {/* Bottom bar */}
-        <div className="mt-16 flex flex-col items-center justify-center border-t border-white/10 pt-8 text-xs text-[#a7a3a4] md:flex-row">
+        {/* Bottom */}
+        <div className="mt-16 flex flex-col items-center justify-between border-t border-white/10 pt-8 text-xs text-[#a7a3a4] md:flex-row">
           <p>© 2026 4XCODE. Engineering the future with code.</p>
+
+          <div className="mt-4 flex gap-6 md:mt-0">
+            <Link
+              href="/privacy"
+              prefetch={false}
+              className="transition-colors hover:text-white"
+            >
+              Privacy
+            </Link>
+
+            <Link
+              href="/terms"
+              prefetch={false}
+              className="transition-colors hover:text-white"
+            >
+              Terms
+            </Link>
+
+            <Link
+              href="/security"
+              prefetch={false}
+              className="transition-colors hover:text-white"
+            >
+              Security
+            </Link>
+          </div>
         </div>
       </div>
     </footer>

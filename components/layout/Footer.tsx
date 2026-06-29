@@ -11,7 +11,7 @@ import PublicIcon from "@mui/icons-material/Public";
 const STUDIO_LINKS = [
   { label: "Service", href: "/service" },
   { label: "Work", href: "/work" },
-  { label: "Process", href: "/process" },
+  { label: "Contact", href: "/contact" },
   { label: "About", href: "/about" },
 ];
 
@@ -40,7 +40,7 @@ const SOCIAL_LINKS = [
 
 export default function Footer() {
   return (
-    <footer className="relative w-full bg-black py-16 text-white">
+    <footer className="relative w-full bg-black pt-16 pb-8 text-white">
       {/* Top line */}
       <div
         className="absolute top-0 left-0 h-[0.4px] w-full"
@@ -114,7 +114,7 @@ export default function Footer() {
                 </Link>
               </li>
 
-              <li>01 Padnal Court, Romford RM6 5HR</li>
+              <li>01 Padnal Court, Romford RM6 5HR, United Kingdom</li>
 
               <li>Mon - Fri</li>
             </ul>
@@ -164,34 +164,10 @@ export default function Footer() {
         </div>
 
         {/* Bottom */}
-        <div className="mt-16 flex flex-col items-center justify-between border-t border-white/10 pt-8 text-xs text-[#a7a3a4] md:flex-row">
+        <div className="mt-16 flex flex-col items-center justify-center border-t border-white/10 pt-8 text-xs text-[#a7a3a4] md:flex-row">
           <p>© 2026 4XCODE. Engineering the future with code.</p>
 
-          <div className="mt-4 flex gap-6 md:mt-0">
-            <Link
-              href="/privacy"
-              prefetch={false}
-              className="transition-colors hover:text-white"
-            >
-              Privacy
-            </Link>
-
-            <Link
-              href="/terms"
-              prefetch={false}
-              className="transition-colors hover:text-white"
-            >
-              Terms
-            </Link>
-
-            <Link
-              href="/security"
-              prefetch={false}
-              className="transition-colors hover:text-white"
-            >
-              Security
-            </Link>
-          </div>
+       
         </div>
       </div>
     </footer>

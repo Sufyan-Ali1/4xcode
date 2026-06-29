@@ -20,6 +20,9 @@ export const metadata: Metadata = {
   title: "4xCode | AI-Powered Software, SaaS & Web Development Studio",
   description:
     "4xCode engineers high-performance SaaS, AI agents, and web platforms for ambitious brands. Senior team, 132+ products shipped. Start your project today. ",
+  alternates: {
+    canonical: "/",
+  },
   icons: {
     icon: "./favicon.ico",
   },

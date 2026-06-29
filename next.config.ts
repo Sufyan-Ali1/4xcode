@@ -1,7 +1,6 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-
   images: {
     remotePatterns: [
       {
@@ -18,7 +17,6 @@ const nextConfig: NextConfig = {
     formats: ["image/avif", "image/webp"],
   },
 
-
   async redirects() {
     return [
       {
@@ -26,10 +24,10 @@ const nextConfig: NextConfig = {
         has: [
           {
             type: "host",
-            value: "www.4xcode.com", 
+            value: "4xcode.com",
           },
         ],
-        destination: "https://4xcode.com/:path*", 
+        destination: "https://www.4xcode.com/:path*",
         permanent: true,
       },
     ];

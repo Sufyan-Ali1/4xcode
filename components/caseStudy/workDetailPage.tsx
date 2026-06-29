@@ -10,7 +10,6 @@ import CaseStudydefaultImg from "../../public/assets/caseStudy.webp";
 import type { CaseStudy } from "../../types/index";
 import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
 
-
 import { BookDemoCallout } from "./BookDemoCallout";
 import styles from "./workModule.module.css";
 
@@ -55,7 +54,6 @@ export default function WorkDetail({ study }: CaseStudyDetailProps) {
       const cleanTitle = rawText.replace(/^\d+\.\s*/, "").trim();
 
       // Skip rendering the manual "Book Your Free Demo" if it appears in the raw payload 
-      // since we now display our clean dedicated Next component for it down below
       if (!cleanTitle || cleanTitle.toLowerCase().includes("book your free demo")) return;
 
       let htmlContent = "";
@@ -108,11 +106,13 @@ export default function WorkDetail({ study }: CaseStudyDetailProps) {
         <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#030303]" />
       </div>
 
-      <div className="relative z-10 mx-auto grid h-full max-w-7xl grid-cols-1 gap-12 px-6 pt-28 md:pt-32 lg:grid-cols-[1fr_350px] lg:px-24">
+     
+      <div className="relative z-10 mx-auto grid h-full max-w-300 w-full grid-cols-1 gap-12 px-5 pt-36 lg:grid-cols-[1fr_350px]">
+        
         {/* Left Content Column Dynamic Stream */}
         <main
           id="case-study-scroll-area"
-          className="h-full overflow-y-auto scroll-smooth pb-32 pr-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+          className="h-full overflow-y-auto scroll-smooth pb-32 pr-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
         >
           <div className="w-full space-y-12">
             <nav className="mb-4">
@@ -182,14 +182,13 @@ export default function WorkDetail({ study }: CaseStudyDetailProps) {
                 </section>
               ))}
 
-           
               <BookDemoCallout />
             </motion.div>
           </div>
         </main>
 
         {/* Right Sticky Navigation Index */}
-        <aside className="hidden h-full flex-col border-l border-white/5 pl-8 pb-12 lg:flex">
+        <aside className="hidden h-full flex-col border-l border-white/5 pl-8 pb-32 lg:flex">
           <h4 className={`${spaceGrotesk.className} mb-5 border-b border-white/5 pb-2 text-[12px] font-bold uppercase tracking-[3px] text-zinc-500`}>
             DOCUMENT INDEX
           </h4>

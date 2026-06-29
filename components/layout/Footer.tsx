@@ -43,10 +43,10 @@ export default function Footer() {
     <footer className="relative w-full bg-black py-16 text-white">
       {/* Top line */}
       <div
-        className="absolute top-0 left-0 h-[1px] w-full"
+        className="absolute top-0 left-0 h-[0.4px] w-full"
         style={{
           background:
-            "linear-gradient(90deg, transparent 0%, #f63040 40%, transparent 100%)",
+            "linear-gradient(90deg, transparent 0%, #4c5a6e 40%, transparent 100%)",
         }}
       />
 

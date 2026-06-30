@@ -1,80 +1,40 @@
-import Link from "next/link";
-import Image from "next/image";
-import { getBlogs } from "@/lib/blogApi";
+import React, { Suspense } from "react";
+import { Space_Grotesk, Inter } from "next/font/google";
+import BlogHeader from "../../components/blog/BlogHeader";
+import BlogDataLoader from "@/components/blog/BlogDataLoader";
+import CaseStudiesSkeleton from "@/components/landing/CaseStudiesSkeleton";
+import { Metadata } from "next";
 
-export const dynamic = "force-dynamic";
+const inter = Inter({ subsets: ["latin"], weight: ["300", "400", "500"] });
+const spaceGrotesk = Space_Grotesk({
+  subsets: ["latin"],
+  weight: ["400", "500", "700"],
+});
 
-export default async function BlogPage() {
-  const blogs = await getBlogs();
+export const metadata: Metadata = {
+  title: "Tech Insights, SaaS & AI Engineering Guides | 4xCode Blog",
+  description:
+    "Expert insights on building scalable SaaS, deploying AI agents, and mastering web architecture. Read deep dives from our senior engineering team.",
+  alternates: {
+    canonical: "https://4xcode.com/blog",
+  },
+};
 
+export default function BlogPage() {
   return (
-    <div className="min-h-screen bg-[#030303] text-white">
-      {/* GLOBAL WIDTH CONTAINER */}
-      <div className="mx-auto w-full max-w-[1200px] px-5 pt-28 pb-16">
-        {/* HEADER */}
-        <h1 className="text-3xl md:text-4xl font-bold mb-10">
-          Latest Blogs
-        </h1>
+    <div className={`min-h-screen bg-[#030303] text-white ${inter.className}`}>
+      {/* Background glow matching the brand aesthetic */}
+      <div className="absolute top-0 left-0 right-0 h-125 pointer-events-none z-0 overflow-hidden">
+        <div className="absolute top-[-15%] left-[15%] w-[55%] h-[70%] rounded-full bg-[#f90a1f]/10 blur-[120px]" />
+        <div className="absolute inset-0 bg-linear-to-b from-transparent to-[#030303]" />
+      </div>
 
-        {/* EMPTY STATE */}
-        {blogs.length === 0 ? (
-          <p className="text-zinc-400">No blogs found</p>
-        ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-8 auto-rows-fr">
-            {blogs.map((blog: any) => (
-              <Link
-                key={blog.slug || blog.id}
-                href={`/blog/${blog.slug}`}
-                className="group flex flex-col overflow-hidden rounded-[14px] border border-white/5 bg-white/5 backdrop-blur-md transition-all duration-300 hover:border-white/10 hover:bg-white/10 h-full"
-              >
-                {/* IMAGE */}
-                {blog.image && (
-                  <div className="relative w-full h-48">
-                    <Image
-                      src={blog.image}
-                      alt={blog.title}
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
-                )}
+      <div className="mx-auto w-full max-w-300 px-5 pt-36 pb-16 relative z-10 flex flex-col gap-y-16">
+        <BlogHeader spaceGroteskClass={spaceGrotesk.className} />
 
-                {/* CONTENT */}
-                <div className="flex flex-col flex-1 p-5">
-                  <h2 className="text-lg font-semibold mb-2 group-hover:text-white transition-colors">
-                    {blog.title}
-                  </h2>
-
-                  <p className="text-zinc-400 text-sm leading-relaxed line-clamp-2">
-                    {(blog.excerpt || "").slice(0, 120)}
-                  </p>
-
-                  {/* FOOTER */}
-                  <div className="mt-auto pt-4 border-t border-white/5 flex justify-end">
-                    <div className="flex items-center gap-1 text-xs font-bold text-zinc-400 group-hover:text-[#f90a1f] transition-colors">
-                      <span>Read Post</span>
-
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        strokeWidth={2.5}
-                        stroke="currentColor"
-                        className="w-3 h-3 transition-all duration-300 group-hover:translate-x-1"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
-                        />
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-              </Link>
-            ))}
-          </div>
-        )}
+        <Suspense fallback={<CaseStudiesSkeleton />}>
+          <BlogDataLoader />
+        </Suspense>
       </div>
     </div>
   );

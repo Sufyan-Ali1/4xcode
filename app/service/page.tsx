@@ -68,6 +68,17 @@ export default function ServicePage() {
       metaDescription.setAttribute("content", descriptionText);
       document.head.appendChild(metaDescription);
     }
+       let canonicalLink = document.querySelector('link[rel="canonical"]');
+    const canonicalUrl = window.location.href;
+
+    if (canonicalLink) {
+      canonicalLink.setAttribute("href", canonicalUrl);
+    } else {
+      canonicalLink = document.createElement("link");
+      canonicalLink.setAttribute("rel", "canonical");
+      canonicalLink.setAttribute("href", canonicalUrl);
+      document.head.appendChild(canonicalLink);
+    }
   }, []);
 
   return (

@@ -6,24 +6,18 @@ import ServicesSection from "@/components/landing/ServicesSection";
 import TestimonialsSection from "@/components/landing/TestimonialsSection";
 import ContactCtaSection from "@/components/landing/ContactCtaSection";
 
-// 1. Import your API fetch helper function
-import { getCaseStudies } from "@/lib/caseStudyApi";
+import { Suspense } from "react";
+import CaseStudiesSkeleton from "@/components/landing/CaseStudiesSkeleton";
 
 export default async function HomePage() {
- 
-  
-   const initialData = await getCaseStudies();
-
-
   return (
     <div className="flex min-h-screen flex-col">
       <div className="flex flex-1 flex-col items-center justify-center">
         <Hero />
         <ServicesSection />
-
-        {/* 3. Pass the server data directly down as a typed prop */}
-        <CaseStudiesSection initialData={initialData} />
-
+        <Suspense fallback={<CaseStudiesSkeleton />}>
+          <CaseStudiesSection />
+        </Suspense>
         <AboutSection />
         <ProcessSection />
         <TestimonialsSection />

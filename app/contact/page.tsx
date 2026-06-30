@@ -65,6 +65,17 @@ export default function ContactPage() {
       metaDescription.setAttribute("content", descriptionText);
       document.head.appendChild(metaDescription);
     }
+    let canonicalLink = document.querySelector('link[rel="canonical"]');
+    const canonicalUrl = window.location.href;
+
+    if (canonicalLink) {
+      canonicalLink.setAttribute("href", canonicalUrl);
+    } else {
+      canonicalLink = document.createElement("link");
+      canonicalLink.setAttribute("rel", "canonical");
+      canonicalLink.setAttribute("href", canonicalUrl);
+      document.head.appendChild(canonicalLink);
+    }
   }, []);
 
   return (
@@ -86,7 +97,6 @@ export default function ContactPage() {
       {/* Main Container Container */}
       <div className="mx-auto w-full max-w-300 px-4 sm:px-6 lg:px-8 pt-28 sm:pt-40 relative z-10">
         <div className="flex flex-col-reverse lg:flex-row lg:items-stretch gap-10 lg:gap-16 w-full box-border">
-          
           {/* Left Block: Text & Contact Badges (Width locked on mobile) */}
           <div className="w-full max-w-xl mx-auto lg:max-w-none lg:mx-0 lg:w-[42%] flex flex-col gap-4 md:gap-6 box-border">
             <Reveal>
@@ -124,7 +134,11 @@ export default function ContactPage() {
             {/* Details Badges List */}
             <div className="flex flex-col gap-2.5 pt-1 w-full box-border">
               {contactDetails.map((item, idx) => (
-                <Reveal key={item.id} delay={0.15 + idx * 0.05} className="w-full">
+                <Reveal
+                  key={item.id}
+                  delay={0.15 + idx * 0.05}
+                  className="w-full"
+                >
                   <div className="w-full flex items-center gap-3.5 rounded-xl sm:rounded-[20px] border border-[rgba(255,255,255,0.06)] bg-white/[0.02] p-3.5 sm:p-4 transition-all duration-300 hover:border-[rgba(239,31,35,0.25)] box-border">
                     <div className="w-9 h-9 rounded-full flex items-center justify-center bg-[rgba(239,31,35,0.08)] text-[#ef1f23] border border-[rgba(239,31,35,0.2)] shrink-0">
                       {renderContactIcon(item.id)}

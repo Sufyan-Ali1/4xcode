@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 import { motion } from "framer-motion";
 import { useSafeReducedMotion } from "../../utils/useSafeReducedMotion";
 import { Space_Grotesk, Inter } from "next/font/google";
@@ -49,10 +49,39 @@ const SHARED_CARD_CLASSES =
 export default function AboutPage() {
   const reduced = useSafeReducedMotion();
 
+  useEffect(() => {
+    document.title = "About 4xCode | Senior Engineering & AI Studio";
+    let metaDescription = document.querySelector('meta[name="description"]');
+    const descriptionText =
+      "4xCode is a remote-first engineering studio of senior developers, AI researchers, and designers. 120+ products shipped since 2021";
+
+    if (metaDescription) {
+      metaDescription.setAttribute("content", descriptionText);
+    } else {
+      metaDescription = document.createElement("meta");
+      metaDescription.setAttribute("name", "description");
+      metaDescription.setAttribute("content", descriptionText);
+      document.head.appendChild(metaDescription);
+    }
+
+    let canonicalLink = document.querySelector('link[rel="canonical"]');
+    const canonicalUrl = window.location.href;
+
+    if (canonicalLink) {
+      canonicalLink.setAttribute("href", canonicalUrl);
+    } else {
+      canonicalLink = document.createElement("link");
+      canonicalLink.setAttribute("rel", "canonical");
+      canonicalLink.setAttribute("href", canonicalUrl);
+      document.head.appendChild(canonicalLink);
+    }
+  }, []);
+
   return (
     <div
-      className={`bg-[#030303] text-white min-h-screen w-full relative overflow-hidden pb-14 ${inter.className}`}
+      className={`bg-[#030303] text-white min-h-screen w-full relative overflow-hidden pb-10 ${inter.className}`}
     >
+      {/* BACKGROUND EFFECTS */}
       <div className="absolute top-0 left-0 right-0 h-[800px] pointer-events-none z-0 overflow-hidden">
         <div
           className="absolute top-[-15%] left-[15%] w-[55%] h-[70%] rounded-full bg-[#f90a1f]/10 blur-[120px]"
@@ -68,8 +97,10 @@ export default function AboutPage() {
         />
       </div>
 
-      <section className="relative w-full pt-36 pb-12 px-6 md:px-12 lg:px-24 z-10">
-        <div className="max-w-7xl mx-auto flex flex-col space-y-6">
+      {/* GLOBAL WIDTH CONTAINER MANDATED GRID AND WRAPPERS */}
+      <div className="mx-auto w-full max-w-300 px-5 pt-36 pb-16 relative z-10 space-y-20">
+        {/* HERO SECTION */}
+        <section className="w-full flex flex-col items-start space-y-6">
           <Reveal>
             <div className="inline-flex items-center gap-2 rounded-full border border-[rgba(255,255,255,0.08)] bg-gradient-to-b from-[rgba(255,255,255,0.04)] to-[rgba(255,255,255,0.02)] px-[13px] py-[5px]">
               <div className="w-[6px] h-[6px] rounded-full bg-[#ef1f23] shadow-[0px_0px_40px_-10px_rgba(245,29,49,0.7),0px_0px_80px_-30px_rgba(245,29,49,0.6)] shrink-0" />
@@ -92,7 +123,7 @@ export default function AboutPage() {
           </Reveal>
 
           <Reveal delay={0.2}>
-            <p className="text-[#a7a3a4] text-[12px] sm:text-base md:text-lg max-w-2xl leading-relaxed">
+            <p className="text-[#a7a3a4] text-sm sm:text-base md:text-lg max-w-2xl font-normal leading-relaxed">
               4xCode is a senior software development studio — engineers, AI
               researchers, and designers building products that feel like the
               future arrived early. Since our founding, we've shipped 120+
@@ -100,54 +131,53 @@ export default function AboutPage() {
               with a remote-first team spanning three time zones.
             </p>
           </Reveal>
-        </div>
-      </section>
+        </section>
 
-      <section className="relative w-full pb-15 px-6 md:px-12 lg:px-24 z-10">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 auto-rows-fr gap-6">
-          <Reveal delay={0.3} className="h-full">
-            <div className={SHARED_CARD_CLASSES}>
-              <div className="mb-3">
-                <RocketLaunchOutlinedIcon
-                  sx={{ fontSize: 22, color: "#EF1F23" }}
-                />
+        {/* MISSION & VISION CARDS SECTION */}
+        <section className="w-full">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full auto-rows-fr">
+            <Reveal delay={0.3} className="h-full">
+              <div className={SHARED_CARD_CLASSES}>
+                <div className="mb-3">
+                  <RocketLaunchOutlinedIcon
+                    sx={{ fontSize: 22, color: "#EF1F23" }}
+                  />
+                </div>
+                <h3
+                  className={`${spaceGrotesk.className} text-xl font-bold mb-2`}
+                >
+                  Mission
+                </h3>
+                <p className="text-[#a7a3a4] text-sm leading-relaxed flex-grow">
+                  To engineer the software that defines the next decade —
+                  intelligent, fast, and built with genuine craft, not cutting
+                  corners.
+                </p>
               </div>
-              <h3
-                className={`${spaceGrotesk.className} text-xl font-bold mb-2`}
-              >
-                Mission
-              </h3>
-              <p className="text-[#a7a3a4] text-sm leading-relaxed flex-grow">
-                To engineer the software that defines the next decade —
-                intelligent, fast, and built with genuine craft, not cutting
-                corners.
-              </p>
-            </div>
-          </Reveal>
+            </Reveal>
 
-          <Reveal delay={0.4} className="h-full">
-            <div className={SHARED_CARD_CLASSES}>
-              <div className="mb-3">
-                <VisibilityIcon sx={{ fontSize: 22, color: "#EF1F23" }} />
+            <Reveal delay={0.4} className="h-full">
+              <div className={SHARED_CARD_CLASSES}>
+                <div className="mb-3">
+                  <VisibilityIcon sx={{ fontSize: 22, color: "#EF1F23" }} />
+                </div>
+                <h3
+                  className={`${spaceGrotesk.className} text-xl font-bold mb-2`}
+                >
+                  Vision
+                </h3>
+                <p className="text-[#a7a3a4] text-sm leading-relaxed flex-grow">
+                  A world where every ambitious team has access to elite
+                  engineering and applied AI — not just the companies large
+                  enough to afford a fifty-person in-house team.
+                </p>
               </div>
-              <h3
-                className={`${spaceGrotesk.className} text-xl font-bold mb-2`}
-              >
-                Vision
-              </h3>
-              <p className="text-[#a7a3a4] text-sm leading-relaxed flex-grow">
-                A world where every ambitious team has access to elite
-                engineering and applied AI — not just the companies large enough
-                to afford a fifty-person in-house team.
-              </p>
-            </div>
-          </Reveal>
-        </div>
-      </section>
+            </Reveal>
+          </div>
+        </section>
 
-      {/* ─── WHY 4XCODE SECTION ─── */}
-      <section className="relative w-full py-14 px-6 md:px-12 lg:px-24 z-10">
-        <div className="max-w-7xl mx-auto space-y-10">
+        {/* WHY 4XCODE SECTION */}
+        <section className="w-full space-y-10">
           <Reveal>
             <div className="space-y-3">
               <span className="text-[#f90a1f] text-[12px] font-normal uppercase tracking-[3.6px] leading-4">
@@ -164,7 +194,7 @@ export default function AboutPage() {
             </div>
           </Reveal>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 auto-rows-fr gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 auto-rows-fr gap-4 w-full">
             {HIGHLIGHTS.map((item, index) => (
               <motion.div
                 key={item.title}
@@ -213,7 +243,7 @@ export default function AboutPage() {
                     })()}
                   </div>
                   <h4
-                    className={`${spaceGrotesk.className}  text-white font-semibold text-sm mb-1`}
+                    className={`${spaceGrotesk.className} text-white font-semibold text-sm mb-1`}
                   >
                     {item.title}
                   </h4>
@@ -224,8 +254,10 @@ export default function AboutPage() {
               </motion.div>
             ))}
           </div>
-        </div>
-      </section>
+        </section>
+      </div>
+
+      {/* SUB-SECTIONS (SELF-CONTAINED WRAPPERS) */}
       <TimeLine />
       <TeamSection />
       <ContactCtaSection />

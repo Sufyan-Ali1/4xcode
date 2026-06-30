@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     icon: "./favicon.ico",
   },
   alternates: {
-    canonical: "https://4xcode.com/",
+    canonical: "https://www.4xcode.com",
   },
 };
 

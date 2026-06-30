@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   description:
     "Expert insights on building scalable SaaS, deploying AI agents, and mastering web architecture. Read deep dives from our senior engineering team.",
   alternates: {
-    canonical: "https://4xcode.com/blog",
+    canonical: "https://www.4xcode.com/blog",
   },
 };
 

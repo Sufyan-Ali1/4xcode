@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   description:
     "Explore our case studies. From autonomous AI agents to scalable SaaS platforms, see how our senior engineering team turns ambitious concepts into reality.",
   alternates: {
-    canonical: "https://4xcode.com/work",
+    canonical: "https://www.4xcode.com/work",
   },
 };
 

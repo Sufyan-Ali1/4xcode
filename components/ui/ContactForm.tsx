@@ -40,7 +40,19 @@ export default function ContactForm({ variant = "default" }: ContactFormProps) {
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
+
+    if (name === "name") {
+      // Allows only alphabets (both upper and lower case) and spaces
+      const cleanValue = value.replace(/[^a-zA-Z\s]/g, "");
+      setFormData((prev) => ({ ...prev, [name]: cleanValue }));
+    } else if (name === "number") {
+      // Allows only digits and hyphens to support your placeholder format (e.g., 000-111-2221)
+      const cleanValue = value.replace(/[^0-9\-]/g, "");
+      setFormData((prev) => ({ ...prev, [name]: cleanValue }));
+    } else {
+      // Standard fallback for email and textarea inputs
+      setFormData((prev) => ({ ...prev, [name]: value }));
+    }
   };
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
@@ -70,6 +82,12 @@ export default function ContactForm({ variant = "default" }: ContactFormProps) {
       console.error(error);
       setShowErrorPopup(true);
     } finally {
+      setFormData({
+        name: "",
+        email: "",
+        number: "",
+        details: "",
+      });
       setIsSubmitting(false);
     }
   };
@@ -117,12 +135,14 @@ export default function ContactForm({ variant = "default" }: ContactFormProps) {
                   isSidebar ? "text-[12px]" : "lg:max-w-sm"
                 }`}
               >
-                Whether you have a project in mind or just want to say hi, we&apos;d love to hear from you.
+                Whether you have a project in mind or just want to say hi,
+                we&apos;d love to hear from you.
               </p>
             </div>
 
             {/* Input fields Stack */}
             <div className="flex flex-col gap-3 md:gap-4 w-full box-border">
+              {/* Name Field */}
               <div className="flex flex-col gap-1 w-full">
                 <label className="block text-[10px] font-semibold uppercase tracking-wider text-zinc-500">
                   Name
@@ -139,12 +159,13 @@ export default function ContactForm({ variant = "default" }: ContactFormProps) {
                 />
               </div>
 
+              {/* Email Field */}
               <div className="flex flex-col gap-1 w-full">
                 <label className="block text-[10px] font-semibold uppercase tracking-wider text-zinc-500">
                   Email
                 </label>
                 <input
-                  type="text"
+                  type="email"
                   name="email"
                   value={formData.email}
                   onChange={handleInputChange}
@@ -155,6 +176,7 @@ export default function ContactForm({ variant = "default" }: ContactFormProps) {
                 />
               </div>
 
+              {/* Number Field */}
               <div className="flex flex-col gap-1 w-full">
                 <label className="block text-[10px] font-semibold uppercase tracking-wider text-zinc-500">
                   Number
@@ -171,6 +193,7 @@ export default function ContactForm({ variant = "default" }: ContactFormProps) {
                 />
               </div>
 
+              {/* Project Details Field */}
               <div className="flex flex-col gap-1 w-full">
                 <label className="block text-[10px] font-semibold uppercase tracking-wider text-zinc-500">
                   Project details
@@ -229,7 +252,9 @@ export default function ContactForm({ variant = "default" }: ContactFormProps) {
                 <ErrorIcon style={{ fontSize: 20 }} />
               </div>
               <div className="space-y-1">
-                <h3 className={`${spaceGrotesk.className} text-sm font-bold text-white`}>
+                <h3
+                  className={`${spaceGrotesk.className} text-sm font-bold text-white`}
+                >
                   Submission not successful
                 </h3>
                 <p className="text-zinc-500 text-[11px] leading-relaxed">

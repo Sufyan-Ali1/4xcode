@@ -17,16 +17,6 @@ const STUDIO_LINKS = [
 
 const SOCIAL_LINKS = [
   {
-    label: "Twitter",
-    Icon: TwitterIcon,
-    href: "https://twitter.com/4xcode",
-  },
-  {
-    label: "GitHub",
-    Icon: GitHubIcon,
-    href: "https://github.com/4xcode",
-  },
-  {
     label: "LinkedIn",
     Icon: LinkedInIcon,
     href: "https://www.linkedin.com/company/4xcode-software/",

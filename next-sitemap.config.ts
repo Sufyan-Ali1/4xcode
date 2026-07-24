@@ -21,12 +21,6 @@ const slugs = {
     "how-automated-service-reminders-increased-repeat-customers",
     "how-a-uk-garage-reduced-administrative-work-by-60-using-4xcode-garage-software",
   ],
-  blog: [
-    "independent-garage-management-system",
-    "top-10-challenges-uk-garages-face-in-2026",
-    "best-saas-garage-management-platform",
-    "digital-garage-management-software",
-  ],
 };
 
 const config = {
@@ -42,6 +36,7 @@ const config = {
     paths.push({ loc: "/thank-you", changefreq: "daily", priority: 0.9 });
     paths.push({ loc: "/contact", changefreq: "daily", priority: 0.9 });
     paths.push({ loc: "/service", changefreq: "daily", priority: 0.9 });
+
     // Loop through services
     slugs.service.forEach((slug) => {
       paths.push({
@@ -60,10 +55,29 @@ const config = {
       });
     });
 
-    // Loop through blogs
-    slugs.blog.forEach((slug) => {
-      paths.push({ loc: `/blog/${slug}`, changefreq: "weekly", priority: 0.8 });
-    });
+    // Fetch blog slugs dynamically from the API
+    const base = (process.env.BLOG_API_BASE ?? "").replace(/\/$/, "");
+    const user = process.env.BLOG_API_USERNAME ?? "";
+    const pass = process.env.BLOG_API_PASSWORD ?? "";
+    const auth = user && pass
+      ? `Basic ${Buffer.from(`${user}:${pass}`).toString("base64")}`
+      : "";
+
+    try {
+      const res = await fetch(`${base}/blogs/`, {
+        headers: auth ? { Authorization: auth } : {},
+      });
+      if (res.ok) {
+        const data = await res.json();
+        const blogs: any[] = Array.isArray(data) ? data : [];
+        blogs.forEach((b) => {
+          const slug = b?.slug ?? b?.id;
+          if (slug) paths.push({ loc: `/blog/${slug}`, changefreq: "weekly", priority: 0.8 });
+        });
+      }
+    } catch (err: any) {
+      console.warn("[next-sitemap] Could not fetch blog slugs:", err.message);
+    }
 
     return paths;
   },

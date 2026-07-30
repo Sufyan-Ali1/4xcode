@@ -79,9 +79,14 @@ export default function ServiceDetailPage() {
   }, [service]);
 
   useEffect(() => {
-    document.title = `${service?.titleTag} `;
+    if (!service) return;
+
+    // 1. Set Title
+    document.title = `${service.titleTag} `;
+
+    // 2. Set Meta Description
     let metaDescription = document.querySelector('meta[name="description"]');
-    const descriptionText = service?.metaDesc;
+    const descriptionText = service.metaDesc;
 
     if (metaDescription) {
       metaDescription.setAttribute("content", descriptionText);
@@ -90,6 +95,22 @@ export default function ServiceDetailPage() {
       metaDescription.setAttribute("name", "description");
       metaDescription.setAttribute("content", descriptionText);
       document.head.appendChild(metaDescription);
+    }
+
+    // 3. Set Canonical Link
+    let canonicalLink = document.querySelector('link[rel="canonical"]');
+    const canonicalUrl =
+      typeof window !== "undefined"
+        ? `${window.location.origin}${window.location.pathname}`
+        : `https://www.4xcode.com/service/${service.slug}`;
+
+    if (canonicalLink) {
+      canonicalLink.setAttribute("href", canonicalUrl);
+    } else {
+      canonicalLink = document.createElement("link");
+      canonicalLink.setAttribute("rel", "canonical");
+      canonicalLink.setAttribute("href", canonicalUrl);
+      document.head.appendChild(canonicalLink);
     }
   }, [service]);
 
@@ -174,7 +195,7 @@ export default function ServiceDetailPage() {
               </div>
             </Reveal>
           </div>
-          
+
           <div className="w-full lg:col-span-4">
             <motion.div
               initial={{ opacity: 0, y: reduced ? 0 : 40 }}
@@ -402,7 +423,6 @@ export default function ServiceDetailPage() {
           </div>
         )}
 
-        {/* ✅ CORRECTED CTA CONTAINER: Now shares the same layout boundaries */}
         <section className="w-full mt-20 md:mt-28 pt-12 mx-auto">
           <motion.div
             initial={{ opacity: 0, y: reduced ? 0 : 30 }}

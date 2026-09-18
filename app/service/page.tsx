@@ -7,6 +7,10 @@ import { useSafeReducedMotion } from "../../utils/useSafeReducedMotion";
 import { Space_Grotesk, Inter } from "next/font/google";
 import { Reveal } from "../../utils/AnimationReveal";
 import { SERVICES_DATA } from "../../data/serviceData";
+import {software_build_data} from "@/data/serviceData";
+import {sectionData} from "@/data/serviceData";
+import Build_for_industry from "@/components/Build_for_industry";
+import Technology_Experience from "@/components/Technology_Experience";
 import WebIcon from "@mui/icons-material/Web";
 import PhoneIphoneIcon from "@mui/icons-material/PhoneIphone";
 import CodeIcon from "@mui/icons-material/Code";
@@ -205,7 +209,7 @@ export default function ServicePage() {
             ))}
           </div>
         </section>
-
+          <TestimonialsSection />
         {/* CTA BANNER */}
         <section className="w-full">
           <motion.div
@@ -242,11 +246,19 @@ export default function ServicePage() {
           </motion.div>
         </section>
       </div>
-
+  <div className="flex flex-wrap w-full justify-center">
+      <Build_for_industry data={software_build_data} />
+      </div>
       {/* SUB-SECTIONS (THEY MANAGE THEIR OWN WRAPPERS) */}
+     
       <NarrativeSection spaceGroteskClassName={spaceGrotesk.className} />
+    
+         <div className="flex flex-wrap w-full justify-center">
+       <Technology_Experience sectionData={sectionData} />
+      </div>
+     
       <ProcessSection />
-      <TestimonialsSection />
+     
     </div>
   );
-}
+}   

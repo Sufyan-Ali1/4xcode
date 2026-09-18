@@ -36,6 +36,24 @@ export interface Pillar {
   desc: string;
 }
 
+export interface SoftwareBuildData {
+  heading: {
+    white: string;
+    red: string;
+  };
+  subheading: string;
+  industries: string[];
+}
+
+export interface SectionData {
+  heading: string;
+  description: string;
+  cards: {
+    card_heading: string;
+    card_description: string;
+  }[];
+}
+
 export interface ServiceItem {
   slug: string;
   iconKey: string;
@@ -56,6 +74,8 @@ export interface ServiceItem {
   faqs: Faq[];
   pillars: Pillar[];
   relatedSlugs: string[];
+  software_build_data: SoftwareBuildData;
+  sectionData: SectionData;
 }
 
 export const SERVICES_DATA: ServiceItem[] = [
@@ -193,7 +213,73 @@ export const SERVICES_DATA: ServiceItem[] = [
       },
     ],
     relatedSlugs: ["custom-software", "automation-systems", "cloud-systems"],
+ 
+sectionData:{
+    heading: "Technology experience for scalable digital products",
+
+    description:
+      "4xCode combines software architecture, AI development, web performance, SaaS engineering, and cloud infrastructure for startup and growing businesses.",
+
+    cards: [
+      {
+        card_heading: "AI Development Services",
+        card_description:
+          "We build intelligent AI solutions, agents, and RAG systems for business products.",
+      },
+      {
+        card_heading: "Custom Software Development",
+        card_description:
+          "Scalable software solutions designed around your business requirements.",
+      },
+      {
+        card_heading: "SaaS Development Company",
+        card_description:
+          "Launch scalable SaaS platforms with reliable backend, billing, and secure infrastructure.",
+      },
+      {
+        card_heading: "Web Development Services",
+        card_description:
+          "Fast, responsive, and optimized websites that convert users and search traffic.",
+      },
+      {
+        card_heading: "Cloud Engineering Services",
+        card_description:
+          "Build, deploy, and manage cloud infrastructure that scales reliably and confidently.",
+      },
+      {
+        card_heading: "SEO-Friendly Web Development",
+        card_description:
+          "Improve ranking with technical SEO, Core Web Vitals, and high-performance design.",
+      },
+    ],
   },
+   software_build_data:{
+  heading:{
+    white: "Software built for your",
+    red: "Indusddtry",
+  },
+
+  subheading:
+    "We combine product thinking, engineering, and industry-specific workflows to create software that drives your business operations.",
+
+  industries:[
+    "Automotive & Mobility",
+    "Professional Services",
+    "Startups & SaaS",
+    "Sports & Fitness",
+      "E-Commerce & Retail",
+    "Finance & Operations",
+    "Logistics & Transportation",
+    "Food and water",
+    "Travel & Hospitality",
+  "Education & EdTech",  
+    "Marketing & Advertising",
+  "Healthcare & Technology",
+  ]
+
+},
+  
+},
   {
     slug: "custom-software",
     iconKey: "software",
@@ -321,7 +407,71 @@ export const SERVICES_DATA: ServiceItem[] = [
       },
     ],
     relatedSlugs: ["saas-engineering", "api-integration", "cloud-systems"],
+    software_build_data:{
+  heading:{
+    white: "Software built for your",
+    red: "Industry",
   },
+
+  subheading:
+    "We combine product thinking, engineering, and industry-specific workflows to create software that drives your business operations.",
+
+  industries:[
+    "Automotive & Mobility",
+    "Professional Services",
+    "Startups & SaaS",
+    "Sports & Fitness",
+      "E-Commerce & Retail",
+    "Finance & Operations",
+    "Logistics & Transportation",
+    "Food",
+    "Travel & Hospitality",
+  "Education & EdTech",  
+    "Marketing & Advertising",
+  "Healthcare & Technology",
+  ]
+
+},
+sectionData:{
+    heading: "Technology experience for scalable digital products",
+
+    description:
+      "4xCode combines software architecture, AI development, web performance, SaaS engineering, and cloud infrastructure for startup and growing businesses.",
+
+    cards: [
+      {
+        card_heading: "AI Development Services",
+        card_description:
+          "We build intelligent AI solutions, agents, and RAG systems for business products.",
+      },
+      {
+        card_heading: "Custom Software Development",
+        card_description:
+          "Scalable software solutions designed around your business requirements.",
+      },
+      {
+        card_heading: "SaaS Development Company",
+        card_description:
+          "Launch scalable SaaS platforms with reliable backend, billing, and secure infrastructure.",
+      },
+      {
+        card_heading: "Web Development Services",
+        card_description:
+          "Fast, responsive, and optimized websites that convert users and search traffic.",
+      },
+      {
+        card_heading: "Cloud Engineering Services",
+        card_description:
+          "Build, deploy, and manage cloud infrastructure that scales reliably and confidently.",
+      },
+      {
+        card_heading: "SEO-Friendly Web Development",
+        card_description:
+          "Improve ranking with technical SEO, Core Web Vitals, and high-performance design.",
+      },
+    ],
+  },  
+},
   {
     slug: "saas-engineering",
     iconKey: "saas",
@@ -456,7 +606,72 @@ export const SERVICES_DATA: ServiceItem[] = [
       },
     ],
     relatedSlugs: ["custom-software", "web-development", "api-integration"],
+    software_build_data:{
+  heading:{
+    white: "Software built for your",
+    red: "Industry",
   },
+
+  subheading:
+    "We combine product thinking, engineering, and industry-specific workflows to create software that drives your business operations.",
+
+  industries:[
+    "Automotive & Mobility",
+    "Professional Services",
+    "Startups & SaaS",
+    "Sports & Fitness",
+      "E-Commerce & Retail",
+    "Finance & Operations",
+    "Logistics & Transportation",
+    "Food",
+    "Travel & Hospitality",
+  "Education & EdTech",  
+    "Marketing & Advertising",
+  "Healthcare & Technology",
+  ]
+
+},
+sectionData:{
+    heading: "Technology experience for scalable digital products",
+
+    description:
+      "4xCode combines software architecture, AI development, web performance, SaaS engineering, and cloud infrastructure for startup and growing businesses.",
+
+    cards: [
+      {
+        card_heading: "AI Development Services",
+        card_description:
+          "We build intelligent AI solutions, agents, and RAG systems for business products.",
+      },
+      {
+        card_heading: "Custom Software Development",
+        card_description:
+          "Scalable software solutions designed around your business requirements.",
+      },
+      {
+        card_heading: "SaaS Development Company",
+        card_description:
+          "Launch scalable SaaS platforms with reliable backend, billing, and secure infrastructure.",
+      },
+      {
+        card_heading: "Web Development Services",
+        card_description:
+          "Fast, responsive, and optimized websites that convert users and search traffic.",
+      },
+      {
+        card_heading: "Cloud Engineering Services",
+        card_description:
+          "Build, deploy, and manage cloud infrastructure that scales reliably and confidently.",
+      },
+      {
+        card_heading: "SEO-Friendly Web Development",
+        card_description:
+          "Improve ranking with technical SEO, Core Web Vitals, and high-performance design.",
+      },
+    ],
+  },
+ 
+},
   {
     slug: "web-development",
     iconKey: "web",
@@ -591,7 +806,72 @@ export const SERVICES_DATA: ServiceItem[] = [
       },
     ],
     relatedSlugs: ["ui-ux-design", "seo-digital-marketing", "saas-engineering"],
+    software_build_data:{
+  heading:{
+    white: "Software built for your",
+    red: "Industry",
   },
+
+  subheading:
+    "We combine product thinking, engineering, and industry-specific workflows to create software that drives your business operations.",
+
+  industries:[
+    "Automotive & Mobility",
+    "Professional Services",
+    "Startups & SaaS",
+    "Sports & Fitness",
+      "E-Commerce & Retail",
+    "Finance & Operations",
+    "Logistics & Transportation",
+    "Food",
+    "Travel & Hospitality",
+  "Education & EdTech",  
+    "Marketing & Advertising",
+  "Healthcare & Technology",
+  ]
+
+},
+sectionData:{
+    heading: "Technology experience for scalable digital products",
+
+    description:
+      "4xCode combines software architecture, AI development, web performance, SaaS engineering, and cloud infrastructure for startup and growing businesses.",
+
+    cards: [
+      {
+        card_heading: "AI Development Services",
+        card_description:
+          "We build intelligent AI solutions, agents, and RAG systems for business products.",
+      },
+      {
+        card_heading: "Custom Software Development",
+        card_description:
+          "Scalable software solutions designed around your business requirements.",
+      },
+      {
+        card_heading: "SaaS Development Company",
+        card_description:
+          "Launch scalable SaaS platforms with reliable backend, billing, and secure infrastructure.",
+      },
+      {
+        card_heading: "Web Development Services",
+        card_description:
+          "Fast, responsive, and optimized websites that convert users and search traffic.",
+      },
+      {
+        card_heading: "Cloud Engineering Services",
+        card_description:
+          "Build, deploy, and manage cloud infrastructure that scales reliably and confidently.",
+      },
+      {
+        card_heading: "SEO-Friendly Web Development",
+        card_description:
+          "Improve ranking with technical SEO, Core Web Vitals, and high-performance design.",
+      },
+    ],
+  },
+  
+},
   {
     slug: "mobile-apps",
     iconKey: "mobile",
@@ -726,7 +1006,72 @@ export const SERVICES_DATA: ServiceItem[] = [
       },
     ],
     relatedSlugs: ["ui-ux-design", "api-integration", "custom-software"],
+    software_build_data:{
+  heading:{
+    white: "Software built for your",
+    red: "Industry",
   },
+
+  subheading:
+    "We combine product thinking, engineering, and industry-specific workflows to create software that drives your business operations.",
+
+  industries:[
+    "Automotive & Mobility",
+    "Professional Services",
+    "Startups & SaaS",
+    "Sports & Fitness",
+      "E-Commerce & Retail",
+    "Finance & Operations",
+    "Logistics & Transportation",
+    "Food",
+    "Travel & Hospitality",
+  "Education & EdTech",  
+    "Marketing & Advertising",
+  "Healthcare & Technology",
+  ]
+
+},
+sectionData:{
+    heading: "Technology experience for scalable digital products",
+
+    description:
+      "4xCode combines software architecture, AI development, web performance, SaaS engineering, and cloud infrastructure for startup and growing businesses.",
+
+    cards: [
+      {
+        card_heading: "AI Development Services",
+        card_description:
+          "We build intelligent AI solutions, agents, and RAG systems for business products.",
+      },
+      {
+        card_heading: "Custom Software Development",
+        card_description:
+          "Scalable software solutions designed around your business requirements.",
+      },
+      {
+        card_heading: "SaaS Development Company",
+        card_description:
+          "Launch scalable SaaS platforms with reliable backend, billing, and secure infrastructure.",
+      },
+      {
+        card_heading: "Web Development Services",
+        card_description:
+          "Fast, responsive, and optimized websites that convert users and search traffic.",
+      },
+      {
+        card_heading: "Cloud Engineering Services",
+        card_description:
+          "Build, deploy, and manage cloud infrastructure that scales reliably and confidently.",
+      },
+      {
+        card_heading: "SEO-Friendly Web Development",
+        card_description:
+          "Improve ranking with technical SEO, Core Web Vitals, and high-performance design.",
+      },
+    ],
+  },
+  
+},
   {
     slug: "api-integration",
     iconKey: "api",
@@ -862,7 +1207,72 @@ export const SERVICES_DATA: ServiceItem[] = [
       },
     ],
     relatedSlugs: ["automation-systems", "saas-engineering", "cloud-systems"],
+    software_build_data:{
+  heading:{
+    white: "Software built for your",
+    red: "Industry",
   },
+
+  subheading:
+    "We combine product thinking, engineering, and industry-specific workflows to create software that drives your business operations.",
+
+  industries:[
+    "Automotive & Mobility",
+    "Professional Services",
+    "Startups & SaaS",
+    "Sports & Fitness",
+      "E-Commerce & Retail",
+    "Finance & Operations",
+    "Logistics & Transportation",
+    "Food",
+    "Travel & Hospitality",
+  "Education & EdTech",  
+    "Marketing & Advertising",
+  "Healthcare & Technology",
+  ]
+
+},
+sectionData:{
+    heading: "Technology experience for scalable digital products",
+
+    description:
+      "4xCode combines software architecture, AI development, web performance, SaaS engineering, and cloud infrastructure for startup and growing businesses.",
+
+    cards: [
+      {
+        card_heading: "AI Development Services",
+        card_description:
+          "We build intelligent AI solutions, agents, and RAG systems for business products.",
+      },
+      {
+        card_heading: "Custom Software Development",
+        card_description:
+          "Scalable software solutions designed around your business requirements.",
+      },
+      {
+        card_heading: "SaaS Development Company",
+        card_description:
+          "Launch scalable SaaS platforms with reliable backend, billing, and secure infrastructure.",
+      },
+      {
+        card_heading: "Web Development Services",
+        card_description:
+          "Fast, responsive, and optimized websites that convert users and search traffic.",
+      },
+      {
+        card_heading: "Cloud Engineering Services",
+        card_description:
+          "Build, deploy, and manage cloud infrastructure that scales reliably and confidently.",
+      },
+      {
+        card_heading: "SEO-Friendly Web Development",
+        card_description:
+          "Improve ranking with technical SEO, Core Web Vitals, and high-performance design.",
+      },
+    ],
+  },
+  
+},
   {
     slug: "automation-systems",
     iconKey: "automation",
@@ -1001,7 +1411,72 @@ export const SERVICES_DATA: ServiceItem[] = [
       },
     ],
     relatedSlugs: ["ai-development", "api-integration", "cloud-systems"],
+    software_build_data:{
+  heading:{
+    white: "Software built for your",
+    red: "Industry",
   },
+
+  subheading:
+    "We combine product thinking, engineering, and industry-specific workflows to create software that drives your business operations.",
+
+  industries:[
+    "Automotive & Mobility",
+    "Professional Services",
+    "Startups & SaaS",
+    "Sports & Fitness",
+      "E-Commerce & Retail",
+    "Finance & Operations",
+    "Logistics & Transportation",
+    "Food",
+    "Travel & Hospitality",
+  "Education & EdTech",  
+    "Marketing & Advertising",
+  "Healthcare & Technology",
+  ]
+
+},
+sectionData:{
+    heading: "Technology experience for scalable digital products",
+
+    description:
+      "4xCode combines software architecture, AI development, web performance, SaaS engineering, and cloud infrastructure for startup and growing businesses.",
+
+    cards: [
+      {
+        card_heading: "AI Development Services",
+        card_description:
+          "We build intelligent AI solutions, agents, and RAG systems for business products.",
+      },
+      {
+        card_heading: "Custom Software Development",
+        card_description:
+          "Scalable software solutions designed around your business requirements.",
+      },
+      {
+        card_heading: "SaaS Development Company",
+        card_description:
+          "Launch scalable SaaS platforms with reliable backend, billing, and secure infrastructure.",
+      },
+      {
+        card_heading: "Web Development Services",
+        card_description:
+          "Fast, responsive, and optimized websites that convert users and search traffic.",
+      },
+      {
+        card_heading: "Cloud Engineering Services",
+        card_description:
+          "Build, deploy, and manage cloud infrastructure that scales reliably and confidently.",
+      },
+      {
+        card_heading: "SEO-Friendly Web Development",
+        card_description:
+          "Improve ranking with technical SEO, Core Web Vitals, and high-performance design.",
+      },
+    ],
+  },
+  
+},
   {
     slug: "ui-ux-design",
     iconKey: "ui",
@@ -1139,7 +1614,72 @@ export const SERVICES_DATA: ServiceItem[] = [
       },
     ],
     relatedSlugs: ["web-development", "mobile-apps", "saas-engineering"],
+    software_build_data:{
+  heading:{
+    white: "Software built for your",
+    red: "Industry",
   },
+
+  subheading:
+    "We combine product thinking, engineering, and industry-specific workflows to create software that drives your business operations.",
+
+  industries:[
+    "Automotive & Mobility",
+    "Professional Services",
+    "Startups & SaaS",
+    "Sports & Fitness",
+      "E-Commerce & Retail",
+    "Finance & Operations",
+    "Logistics & Transportation",
+    "Food",
+    "Travel & Hospitality",
+  "Education & EdTech",  
+    "Marketing & Advertising",
+  "Healthcare & Technology",
+  ]
+
+},
+sectionData:{
+    heading: "Technology experience for scalable digital products",
+
+    description:
+      "4xCode combines software architecture, AI development, web performance, SaaS engineering, and cloud infrastructure for startup and growing businesses.",
+
+    cards: [
+      {
+        card_heading: "AI Development Services",
+        card_description:
+          "We build intelligent AI solutions, agents, and RAG systems for business products.",
+      },
+      {
+        card_heading: "Custom Software Development",
+        card_description:
+          "Scalable software solutions designed around your business requirements.",
+      },
+      {
+        card_heading: "SaaS Development Company",
+        card_description:
+          "Launch scalable SaaS platforms with reliable backend, billing, and secure infrastructure.",
+      },
+      {
+        card_heading: "Web Development Services",
+        card_description:
+          "Fast, responsive, and optimized websites that convert users and search traffic.",
+      },
+      {
+        card_heading: "Cloud Engineering Services",
+        card_description:
+          "Build, deploy, and manage cloud infrastructure that scales reliably and confidently.",
+      },
+      {
+        card_heading: "SEO-Friendly Web Development",
+        card_description:
+          "Improve ranking with technical SEO, Core Web Vitals, and high-performance design.",
+      },
+    ],
+  },
+  
+},
   {
     slug: "cloud-systems",
     iconKey: "cloud",
@@ -1271,7 +1811,72 @@ export const SERVICES_DATA: ServiceItem[] = [
       },
     ],
     relatedSlugs: ["custom-software", "automation-systems", "api-integration"],
+    software_build_data:{
+  heading:{
+    white: "Software built for your",
+    red: "Industry",
   },
+
+  subheading:
+    "We combine product thinking, engineering, and industry-specific workflows to create software that drives your business operations.",
+
+  industries:[
+    "Automotive & Mobility",
+    "Professional Services",
+    "Startups & SaaS",
+    "Sports & Fitness",
+      "E-Commerce & Retail",
+    "Finance & Operations",
+    "Logistics & Transportation",
+    "Food",
+    "Travel & Hospitality",
+  "Education & EdTech",  
+    "Marketing & Advertising",
+  "Healthcare & Technology",
+  ]
+
+},
+sectionData:{
+    heading: "Technology experience for scalable digital products",
+
+    description:
+      "4xCode combines software architecture, AI development, web performance, SaaS engineering, and cloud infrastructure for startup and growing businesses.",
+
+    cards: [
+      {
+        card_heading: "AI Development Services",
+        card_description:
+          "We build intelligent AI solutions, agents, and RAG systems for business products.",
+      },
+      {
+        card_heading: "Custom Software Development",
+        card_description:
+          "Scalable software solutions designed around your business requirements.",
+      },
+      {
+        card_heading: "SaaS Development Company",
+        card_description:
+          "Launch scalable SaaS platforms with reliable backend, billing, and secure infrastructure.",
+      },
+      {
+        card_heading: "Web Development Services",
+        card_description:
+          "Fast, responsive, and optimized websites that convert users and search traffic.",
+      },
+      {
+        card_heading: "Cloud Engineering Services",
+        card_description:
+          "Build, deploy, and manage cloud infrastructure that scales reliably and confidently.",
+      },
+      {
+        card_heading: "SEO-Friendly Web Development",
+        card_description:
+          "Improve ranking with technical SEO, Core Web Vitals, and high-performance design.",
+      },
+    ],
+  },
+  
+},
   {
     slug: "seo-digital-marketing",
     iconKey: "marketing",
@@ -1410,7 +2015,72 @@ export const SERVICES_DATA: ServiceItem[] = [
       },
     ],
     relatedSlugs: ["web-development", "ecommerce-solutions", "ui-ux-design"],
+    software_build_data:{
+  heading:{
+    white: "Software built for your",
+    red: "Industry",
   },
+
+  subheading:
+    "We combine product thinking, engineering, and industry-specific workflows to create software that drives your business operations.",
+
+  industries:[
+    "Automotive & Mobility",
+    "Professional Services",
+    "Startups & SaaS",
+    "Sports & Fitness",
+      "E-Commerce & Retail",
+    "Finance & Operations",
+    "Logistics & Transportation",
+    "Food",
+    "Travel & Hospitality",
+  "Education & EdTech",  
+    "Marketing & Advertising",
+  "Healthcare & Technology",
+  ]
+
+},
+sectionData:{
+    heading: "Technology experience for scalable digital products",
+
+    description:
+      "4xCode combines software architecture, AI development, web performance, SaaS engineering, and cloud infrastructure for startup and growing businesses.",
+
+    cards: [
+      {
+        card_heading: "AI Development Services",
+        card_description:
+          "We build intelligent AI solutions, agents, and RAG systems for business products.",
+      },
+      {
+        card_heading: "Custom Software Development",
+        card_description:
+          "Scalable software solutions designed around your business requirements.",
+      },
+      {
+        card_heading: "SaaS Development Company",
+        card_description:
+          "Launch scalable SaaS platforms with reliable backend, billing, and secure infrastructure.",
+      },
+      {
+        card_heading: "Web Development Services",
+        card_description:
+          "Fast, responsive, and optimized websites that convert users and search traffic.",
+      },
+      {
+        card_heading: "Cloud Engineering Services",
+        card_description:
+          "Build, deploy, and manage cloud infrastructure that scales reliably and confidently.",
+      },
+      {
+        card_heading: "SEO-Friendly Web Development",
+        card_description:
+          "Improve ranking with technical SEO, Core Web Vitals, and high-performance design.",
+      },
+    ],
+  },
+  
+},
   {
     slug: "ecommerce-solutions",
     iconKey: "ecommerce",
@@ -1552,5 +2222,141 @@ export const SERVICES_DATA: ServiceItem[] = [
       "seo-digital-marketing",
       "saas-engineering",
     ],
+    software_build_data:{
+  heading:{
+    white: "Software built for your",
+    red: "Industry",
   },
+
+  subheading:
+    "We combine product thinking, engineering, and industry-specific workflows to create software that drives your business operations.",
+
+  industries:[
+    "Automotive & Mobility",
+    "Professional Services",
+    "Startups & SaaS",
+    "Sports & Fitness",
+      "E-Commerce & Retail",
+    "Finance & Operations",
+    "Logistics & Transportation",
+    "Food",
+    "Travel & Hospitality",
+  "Education & EdTech",  
+    "Marketing & Advertising",
+  "Healthcare & Technology",
+  ]
+
+},
+sectionData:{
+    heading: "Technology experience for scalable digital products",
+
+    description:
+      "4xCode combines software architecture, AI development, web performance, SaaS engineering, and cloud infrastructure for startup and growing businesses.",
+
+    cards: [
+      {
+        card_heading: "AI Development Services",
+        card_description:
+          "We build intelligent AI solutions, agents, and RAG systems for business products.",
+      },
+      {
+        card_heading: "Custom Software Development",
+        card_description:
+          "Scalable software solutions designed around your business requirements.",
+      },
+      {
+        card_heading: "SaaS Development Company",
+        card_description:
+          "Launch scalable SaaS platforms with reliable backend, billing, and secure infrastructure.",
+      },
+      {
+        card_heading: "Web Development Services",
+        card_description:
+          "Fast, responsive, and optimized websites that convert users and search traffic.",
+      },
+      {
+        card_heading: "Cloud Engineering Services",
+        card_description:
+          "Build, deploy, and manage cloud infrastructure that scales reliably and confidently.",
+      },
+      {
+        card_heading: "SEO-Friendly Web Development",
+        card_description:
+          "Improve ranking with technical SEO, Core Web Vitals, and high-performance design.",
+      },
+    ],
+  },
+  
+},
 ];
+
+
+
+
+
+export const software_build_data={
+  heading:{
+    white: "Software built for your",
+    red: "Industry",
+  },
+
+  subheading:
+    "We combine product thinking, engineering, and industry-specific workflows to create software that drives your business operations.",
+
+  industries:[
+    "Automotive & Mobility",
+    "Professional Services",
+    "Startups & SaaS",
+    "Sports & Fitness",
+      "E-Commerce & Retail",
+    "Finance & Operations",
+    "Logistics & Transportation",
+    "Food",
+    "Travel & Hospitality",
+  "Education & EdTech",  
+    "Marketing & Advertising",
+  "Healthcare & Technology",
+  ]
+
+}
+
+
+export const sectionData = {
+    heading: "Technology experience for scalable digital products",
+
+    description:
+      "4xCode combines software architecture, AI development, web performance, SaaS engineering, and cloud infrastructure for startup and growing businesses.",
+
+    cards: [
+      {
+        card_heading: "AI Development Services",
+        card_description:
+          "We build intelligent AI solutions, agents, and RAG systems for business products.",
+      },
+      {
+        card_heading: "Custom Software Development",
+        card_description:
+          "Scalable software solutions designed around your business requirements.",
+      },
+      {
+        card_heading: "SaaS Development Company",
+        card_description:
+          "Launch scalable SaaS platforms with reliable backend, billing, and secure infrastructure.",
+      },
+      {
+        card_heading: "Web Development Services",
+        card_description:
+          "Fast, responsive, and optimized websites that convert users and search traffic.",
+      },
+      {
+        card_heading: "Cloud Engineering Services",
+        card_description:
+          "Build, deploy, and manage cloud infrastructure that scales reliably and confidently.",
+      },
+      {
+        card_heading: "SEO-Friendly Web Development",
+        card_description:
+          "Improve ranking with technical SEO, Core Web Vitals, and high-performance design.",
+      },
+    ],
+  };

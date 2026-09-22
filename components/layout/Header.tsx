@@ -85,7 +85,7 @@ export default function Header() {
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           aria-expanded={isMenuOpen}
           onClick={toggleMenu}
-          className="flex items-center justify-center p-2 md:hidden"
+          className="flex items-center justify-end md:hidden"
         >
           {isMenuOpen ? (
             <CloseIcon sx={{ fontSize: 30, color: "#fff" }} />

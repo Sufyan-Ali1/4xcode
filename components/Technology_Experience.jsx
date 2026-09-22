@@ -4,9 +4,9 @@ import React from "react";
 
 export default function TechnologyExperience({sectionData}) {
   return (
-    <section className="w-full bg-[#030303] px-15 py-12 sm:px-8 md:py-16">
+    <section className="w-full bg-[#030303] py-12 md:py-16">
       <div className="mx-auto flex flex-wrap  w-full max-w-7xl">
-        <div className="rounded-[18px]   bg-[#101010] px-6 py-8 sm:px-8 sm:py-9 md:px-10 md:py-10">
+        <div className="rounded-[18px]   bg-[#101010] px-6 py-8 mx-5 md:mx-8 sm:py-9 lg:mx-14 md:py-10">
           <h2 className="max-w-[600px] text-xl font-bold leading-tight tracking-tight text-white sm:text-2xl md:text-3xl lg:text-4xl ">
             {sectionData.heading}
           </h2>

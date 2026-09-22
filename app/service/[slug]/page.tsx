@@ -10,6 +10,8 @@ import { Space_Grotesk, Inter } from "next/font/google";
 import { Reveal } from "../../../utils/AnimationReveal";
 import { SERVICES_DATA, type ServiceItem } from "../../../data/serviceData";
 
+import Technology_Experience from "@/components/Technology_Experience";
+import Build_for_industry from "@/components/Build_for_industry";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
 
@@ -344,7 +346,42 @@ export default function ServiceDetailPage() {
             ))}
           </motion.div>
         </div>
+  <section className="w-full mt-20 md:mt-28 pt-12 mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: reduced ? 0 : 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            className="relative w-full bg-gradient-to-r from-[#070707] to-[#0d0d0d] border border-white/5 rounded-3xl sm:rounded-4xl p-6 sm:p-10 md:p-12 lg:p-16 flex flex-col md:flex-row items-center justify-between text-center md:text-left gap-6 md:gap-8 overflow-hidden"
+          >
+            <div
+              className="absolute -right-20 -bottom-20 w-80 h-80 rounded-full bg-[#f90a1f]/15 blur-[60px] pointer-events-none"
+              aria-hidden="true"
+            />
 
+            <div className="relative z-10 space-y-2">
+              <h2
+                className={`${spaceGrotesk.className} text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-white`}
+              >
+                Have a project in mind?
+              </h2>
+              <p className="text-[#a7a3a4] text-xs sm:text-sm md:text-base font-normal">
+                Tell us the goal. We'll tell you the path.
+              </p>
+            </div>
+
+            <Link
+              href="/contact"
+              className="group relative z-10 inline-flex items-center justify-center w-full md:w-auto px-7 sm:px-8 py-3.5 sm:py-4 bg-[#f90a1f] hover:bg-[#d60819] text-white font-bold rounded-full shadow-[0_4px_25px_rgba(249,10,31,0.3)] transition-all duration-200 text-sm sm:text-base whitespace-nowrap shrink-0 gap-2"
+            >
+              <span>Start Project</span>
+              <ArrowForwardIcon
+                style={{ fontSize: 18 }}
+                className="transition-transform duration-200 "
+              />
+            </Link>
+          </motion.div>
+        </section>
         <div className="relative mt-16 md:mt-24 lg:mt-28 pt-12">
           <div className="mb-14 text-center">
             <Reveal>
@@ -360,6 +397,7 @@ export default function ServiceDetailPage() {
                 </h2>
               </div>
             </Reveal>
+            
           </div>
           <motion.div
             variants={containerVariants}
@@ -379,6 +417,11 @@ export default function ServiceDetailPage() {
           </motion.div>
         </div>
 
+      </div>
+      <div className="max-w-7xl">
+        
+      <Build_for_industry data={service.software_build_data} />
+       <Technology_Experience sectionData={service.sectionData} />
         <ServiceFaq faqs={service.faqs} />
       </div>
 
@@ -423,42 +466,7 @@ export default function ServiceDetailPage() {
           </div>
         )}
 
-        <section className="w-full mt-20 md:mt-28 pt-12 mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: reduced ? 0 : 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-            className="relative w-full bg-gradient-to-r from-[#070707] to-[#0d0d0d] border border-white/5 rounded-3xl sm:rounded-4xl p-6 sm:p-10 md:p-12 lg:p-16 flex flex-col md:flex-row items-center justify-between text-center md:text-left gap-6 md:gap-8 overflow-hidden"
-          >
-            <div
-              className="absolute -right-20 -bottom-20 w-80 h-80 rounded-full bg-[#f90a1f]/15 blur-[60px] pointer-events-none"
-              aria-hidden="true"
-            />
-
-            <div className="relative z-10 space-y-2">
-              <h2
-                className={`${spaceGrotesk.className} text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-white`}
-              >
-                Have a project in mind?
-              </h2>
-              <p className="text-[#a7a3a4] text-xs sm:text-sm md:text-base font-normal">
-                Tell us the goal. We'll tell you the path.
-              </p>
-            </div>
-
-            <Link
-              href="/contact"
-              className="group relative z-10 inline-flex items-center justify-center w-full md:w-auto px-7 sm:px-8 py-3.5 sm:py-4 bg-[#f90a1f] hover:bg-[#d60819] text-white font-bold rounded-full shadow-[0_4px_25px_rgba(249,10,31,0.3)] transition-all duration-200 text-sm sm:text-base whitespace-nowrap shrink-0 gap-2"
-            >
-              <span>Start Project</span>
-              <ArrowForwardIcon
-                style={{ fontSize: 18 }}
-                className="transition-transform duration-200 "
-              />
-            </Link>
-          </motion.div>
-        </section>
+      
       </div>
     </div>
   );

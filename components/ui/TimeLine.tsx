@@ -44,7 +44,7 @@ const TIMELINE = [
 
 export default function TimelineSection() {
   return (
-    <section className="relative w-full py-12 md:py-16 px-6 md:px-12 lg:px-24 z-10 overflow-hidden box-border">
+    <section className="relative w-full py-10 px-6 md:px-12 lg:px-24 z-10 overflow-hidden box-border">
       <div className="mx-auto w-full max-w-7xl space-y-12 overflow-hidden">
         {/* Section Header */}
         <div className="w-full text-left">

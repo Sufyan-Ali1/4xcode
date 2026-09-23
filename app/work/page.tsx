@@ -35,11 +35,12 @@ export default async function WorkPage() {
         <div className="absolute inset-0 bg-linear-to-b from-transparent to-[#030303]" />
       </div>
 
-      <div className="mx-auto w-full max-w-300 px-5 pt-36 pb-16 relative z-10 flex flex-col gap-y-16">
+      <div className="mx-auto w-full max-w-300 px-5  relative z-10 flex flex-col gap-y-10">
         <WorkHeader spaceGroteskClass={spaceGrotesk.className} />
 
         <Suspense fallback={<CaseStudiesSkeleton />}>
           <CaseStudiesDataLoader />
+          
         </Suspense>
       </div>
 

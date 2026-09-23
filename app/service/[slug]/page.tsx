@@ -239,7 +239,7 @@ export default function ServiceDetailPage() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.15 }}
-          className="relative mt-16 md:mt-24 lg:mt-28 grid w-full grid-cols-1 gap-6 pt-12 sm:grid-cols-3"
+          className="relative mt-8 grid w-full grid-cols-1 gap-6  sm:grid-cols-3"
         >
           {service.metrics.map((metric) => (
             <MetricCard
@@ -251,7 +251,7 @@ export default function ServiceDetailPage() {
           ))}
         </motion.div>
 
-        <div className="mt-16 md:mt-24 lg:mt-28 pt-12">
+        <div className="mt-8 pt-12">
           <Reveal>
             <div className="space-y-2">
               <p className="text-[#f90a1f] text-[12px] font-normal uppercase tracking-[3.6px] leading-4">
@@ -283,7 +283,7 @@ export default function ServiceDetailPage() {
           </motion.div>
         </div>
 
-        <div className="mt-16 md:mt-24 lg:mt-28 pt-12">
+        <div className="mt-4 pt-12">
           <Reveal>
             <div className="space-y-2">
               <p className="text-[#f90a1f] text-[12px] font-normal uppercase tracking-[3.6px] leading-4">
@@ -316,7 +316,7 @@ export default function ServiceDetailPage() {
           </motion.div>
         </div>
 
-        <div className="mt-16 md:mt-24 lg:mt-28 pt-12">
+        <div className="mt-4 pt-12">
           <Reveal>
             <div className="space-y-2">
               <p className="text-[#f90a1f] text-[12px] font-normal uppercase tracking-[3.6px] leading-4">
@@ -346,43 +346,162 @@ export default function ServiceDetailPage() {
             ))}
           </motion.div>
         </div>
-  <section className="w-full mt-20 md:mt-28 pt-12 mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: reduced ? 0 : 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-            className="relative w-full bg-gradient-to-r from-[#070707] to-[#0d0d0d] border border-white/5 rounded-3xl sm:rounded-4xl p-6 sm:p-10 md:p-12 lg:p-16 flex flex-col md:flex-row items-center justify-between text-center md:text-left gap-6 md:gap-8 overflow-hidden"
-          >
-            <div
-              className="absolute -right-20 -bottom-20 w-80 h-80 rounded-full bg-[#f90a1f]/15 blur-[60px] pointer-events-none"
-              aria-hidden="true"
-            />
+        <section className="w-full mt-10 ">
+  <motion.div
+    initial={{ opacity: 0, y: reduced ? 0 : 30 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true, amount: 0.2 }}
+    transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+    className="
+      relative w-full overflow-hidden
+      rounded-3xl
+      border border-[#f90a1f]/60
+      bg-[#070707]
+      py-4
+      px-6 
+      sm:px-10 
+      md:px-12 
+      lg:px-16 
+      flex flex-col md:flex-row
+      items-center justify-between
+      text-center md:text-left
+      gap-8
+    "
+  >
+    <div
+      className="
+        absolute -right-24 -top-24
+        w-96 h-96
+        rounded-full
+        bg-[#f90a1f]/20
+        blur-[90px]
+        pointer-events-none
+      "
+      aria-hidden="true"
+    />
 
-            <div className="relative z-10 space-y-2">
-              <h2
-                className={`${spaceGrotesk.className} text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-white`}
-              >
-                Have a project in mind?
-              </h2>
-              <p className="text-[#a7a3a4] text-xs sm:text-sm md:text-base font-normal">
-                Tell us the goal. We'll tell you the path.
-              </p>
-            </div>
+    <div
+      className="
+        absolute -left-24 -bottom-32
+        w-72 h-72
+        rounded-full
+        bg-[#f90a1f]/10
+        blur-[80px]
+        pointer-events-none
+      "
+      aria-hidden="true"
+    />
 
-            <Link
-              href="/contact"
-              className="group relative z-10 inline-flex items-center justify-center w-full md:w-auto px-7 sm:px-8 py-3.5 sm:py-4 bg-[#f90a1f] hover:bg-[#d60819] text-white font-bold rounded-full shadow-[0_4px_25px_rgba(249,10,31,0.3)] transition-all duration-200 text-sm sm:text-base whitespace-nowrap shrink-0 gap-2"
-            >
-              <span>Start Project</span>
-              <ArrowForwardIcon
-                style={{ fontSize: 18 }}
-                className="transition-transform duration-200 "
-              />
-            </Link>
-          </motion.div>
-        </section>
-        <div className="relative mt-16 md:mt-24 lg:mt-28 pt-12">
+    <div
+      className="
+        absolute -top-16 -left-16
+        w-32 h-32
+        rounded-full
+        bg-[#f90a1f]/20
+        blur-[35px]
+        pointer-events-none
+      "
+      aria-hidden="true"
+    />
+
+    <div className="relative z-10">
+      <div className="flex items-center justify-center md:justify-start gap-3 mb-4">
+        <span className="h-px w-6 bg-[#f90a1f]" />
+        <span
+          className="
+            text-[#f90a1f]
+            text-[10px] sm:text-xs
+            font-bold
+            tracking-[0.35em]
+            uppercase
+          "
+        >
+          Get Started
+        </span>
+        <span className="h-px w-6 bg-[#f90a1f]" />
+      </div>
+
+      <h2
+        className={`${spaceGrotesk.className}
+          text-3xl
+          sm:text-4xl
+          md:text-4xl
+          lg:text-5xl
+          font-bold
+          tracking-tight
+          leading-tight
+          text-white
+        `}
+      >
+        Have a project in{" "}
+        <span className="text-[#f90a1f]">mind?</span>
+      </h2>
+
+      <p className="
+        mt-3
+       text-[#a7a3a4]
+        text-sm
+        sm:text-base
+        md:text-lg
+        font-normal
+      ">
+        Tell us the goal. We'll tell you the path.
+      </p>
+    </div>
+
+    {/* Button */}
+    <Link
+      href="/contact"
+      className="
+        group relative z-10
+        inline-flex items-center justify-center
+        w-full md:w-auto
+        min-w-[180px]
+        px-8 sm:px-10
+        py-4
+        bg-[#f90a1f]
+        hover:bg-[#c70819]
+        text-white
+        font-bold
+        rounded-full
+        text-sm sm:text-base
+        whitespace-nowrap
+        shrink-0
+        gap-3
+
+        shadow-[0_0_25px_rgba(249,10,31,0.35)]
+        
+
+        transition-all duration-300
+        
+      "
+    >
+      <span>Start Project</span>
+
+      <ArrowForwardIcon
+        style={{ fontSize: 20 }}
+        className="
+          transition-transform
+          duration-300
+          
+        "
+      />
+    </Link>
+
+    {/* Bottom-right decorative glow */}
+    <div
+      className="
+        absolute -right-16 -bottom-20
+        w-48 h-48
+        rounded-full
+        border border-[#f90a1f]/30
+        pointer-events-none
+      "
+      aria-hidden="true"
+    />
+  </motion.div>
+</section>
+        <div className="relative mt-8 pt-12">
           <div className="mb-14 text-center">
             <Reveal>
               <div className="space-y-2 flex flex-col items-center text-center">
@@ -418,11 +537,13 @@ export default function ServiceDetailPage() {
         </div>
 
       </div>
-      <div className="max-w-7xl">
-        
+      
+        <div className="w-full flex flex-wrap justify-center">
+          <div className="max-w-7xl">
       <Build_for_industry data={service.software_build_data} />
        <Technology_Experience sectionData={service.sectionData} />
         <ServiceFaq faqs={service.faqs} />
+        </div>
       </div>
 
       <ServiceWhyChoose
@@ -433,7 +554,7 @@ export default function ServiceDetailPage() {
       {/* Dynamic Routing Services & Final Project CTA Wrapper */}
       <div className="relative z-10 mx-auto w-full max-w-300 px-5 flex flex-col">
         {relatedServices.length > 0 && (
-          <div className="mt-16 md:mt-20 lg:mt-23 pt-5">
+          <div className="mt-10 pt-5">
             <Reveal>
               <div className="space-y-2">
                 <p className="text-[#f90a1f] text-[12px] font-normal uppercase tracking-[3.6px] leading-4">

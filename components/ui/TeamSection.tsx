@@ -18,7 +18,7 @@ export default function TeamSection() {
   const reduced = useSafeReducedMotion();
 
   return (
-    <section className="relative w-full py-16 px-6 md:px-12 lg:px-24 z-10">
+    <section className="relative w-full  px-6 md:px-12 lg:px-24 z-10">
       <div className="max-w-7xl mx-auto space-y-10">
         <Reveal>
           <div className="flex items-end justify-between border-b border-zinc-900 pb-4">

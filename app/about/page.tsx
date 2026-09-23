@@ -98,7 +98,7 @@ export default function AboutPage() {
       </div>
 
       {/* GLOBAL WIDTH CONTAINER MANDATED GRID AND WRAPPERS */}
-      <div className="mx-auto w-full max-w-300 px-5 pt-36 pb-16 relative z-10 space-y-20">
+      <div className="mx-auto w-full max-w-300 px-5 pt-36  relative z-10 space-y-10">
         {/* HERO SECTION */}
         <section className="w-full flex flex-col items-start space-y-6">
           <Reveal>

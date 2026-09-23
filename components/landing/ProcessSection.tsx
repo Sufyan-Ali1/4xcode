@@ -41,7 +41,7 @@ export default function ProcessSection() {
   ];
 
   return (
-    <section className="py-16 md:py-28 bg-black text-white overflow-hidden w-full">
+    <section className="py-5 bg-black text-white overflow-hidden w-full">
       {/* ✅ PERFECT GLOBAL ALIGNMENT MATCHING THE HEADER & BLOG SYSTEM */}
       <div className="mx-auto w-full max-w-300 px-5">
 

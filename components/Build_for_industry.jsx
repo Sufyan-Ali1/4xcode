@@ -6,7 +6,7 @@ export default function BuildForIndustry({data}) {
  
 
   return (
-    <section className="w-full  max-w-7xl bg-[#030303] px-5 py-5 lg:px-15 ">
+    <section className="w-full  max-w-7xl bg-[#030303] px-7 py-5 lg:px-15 ">
       <div className="mx-auto w-full ">
         {/* Heading */}
         <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold leading-tight tracking-tight text-white sm:text-2xl">

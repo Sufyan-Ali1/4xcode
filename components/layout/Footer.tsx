@@ -30,7 +30,7 @@ const SOCIAL_LINKS = [
 
 export default function Footer() {
   return (
-    <footer className="relative w-full bg-black pt-16 pb-8 text-white">
+    <footer className="relative w-full bg-black pt-4 pb-2 text-white">
       {/* Top line */}
       <div
         className="absolute top-0 left-0 h-[0.4px] w-full"

@@ -104,7 +104,7 @@ export default function ServicePage() {
       </div>
 
       {/* GLOBAL WIDTH CONTAINER MANDATED GRID AND WRAPPERS */}
-      <div className="mx-auto w-full max-w-300 px-5 pt-36 pb-16 relative z-10 space-y-20">
+      <div className="mx-auto w-full max-w-300 px-5 pt-36 pb-16 relative z-10 space-y-10">
         
         {/* HERO SECTION */}
         <section className="w-full flex flex-col items-start space-y-6">
@@ -156,7 +156,7 @@ export default function ServicePage() {
                   delay: 0.06 * index,
                   ease: [0.22, 1, 0.36, 1],
                 }}
-                className="group flex flex-col rounded-[18px] overflow-hidden border border-white/5 hover:border-[rgba(249,10,31,0.35)] transition-all duration-300 bg-white/4 p-5 justify-between min-h-[380px] hover:-translate-y-1"
+                className="group flex flex-col rounded-[18px] overflow-hidden border border-white/5 hover:border-[rgba(249,10,31,0.35)] transition-all duration-300 bg-white/4 p-5 justify-between  hover:-translate-y-1"
               >
                 <div className="w-full">
                   <div className="flex items-start justify-between w-full mb-4">
@@ -230,7 +230,7 @@ export default function ServicePage() {
       flex flex-col md:flex-row
       items-center justify-between
       text-center md:text-left
-      gap-8
+      gap-5
     "
   >
     {/* Background red glow - right */}
@@ -275,7 +275,7 @@ export default function ServicePage() {
     {/* Content */}
     <div className="relative z-10">
       {/* Small label */}
-      <div className="flex items-center justify-center md:justify-start gap-3 mb-4">
+      <div className="flex items-center justify-center md:justify-start gap-3 ">
         <span className="h-px w-6 bg-[#f90a1f]" />
         <span
           className="

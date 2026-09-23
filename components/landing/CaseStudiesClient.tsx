@@ -13,10 +13,10 @@ export default  function CaseStudiesClient({ initialData }: Props) {
   const projects = (initialData || []).slice(0, 3);
 
   return (
-    <section className="relative w-full overflow-hidden bg-black py-12 px-6 md:px-12 lg:px-24">
+    <section className="relative w-full overflow-hidden bg-black py-8 px-6 md:px-12 lg:px-24">
       <div className="pointer-events-none absolute inset-0 opacity-20 " />
 
-      <div className="relative mx-auto flex max-w-7xl flex-col items-center gap-16">
+      <div className="relative mx-auto flex max-w-7xl flex-col items-center gap-8">
         <div className="flex max-w-2xl flex-col items-center gap-4 text-center">
           <Reveal delay={0}>
             <p className="text-[#f90a1f] text-[12px] font-normal uppercase tracking-[3.6px] leading-4">
@@ -50,7 +50,7 @@ export default  function CaseStudiesClient({ initialData }: Props) {
           <motion.a
             href="/work"
             whileHover={{ scale: 1.02 }}
-            className="flex h-12 w-full max-w-[560px] cursor-pointer items-center justify-center rounded-[55px] border-2 border-[#f90a1f] bg-black/30 px-12 py-5 text-center text-[20px] font-bold whitespace-nowrap text-white shadow-[0_0_24px_rgba(239,31,35,0.05)] transition-colors duration-300 hover:bg-[rgba(249,10,31,0.08)]"
+            className="flex  w-full max-w-[560px] cursor-pointer items-center justify-center rounded-[55px] border-2 border-[#f90a1f] bg-black/30 px-12 py-5 text-center text-[20px] font-bold whitespace-nowrap text-white shadow-[0_0_24px_rgba(239,31,35,0.05)] transition-colors duration-300 hover:bg-[rgba(249,10,31,0.08)]"
           >
             View More Work
           </motion.a>

@@ -10,7 +10,7 @@ interface WorkHeaderProps {
 
 export default function WorkHeader({ spaceGroteskClass }: WorkHeaderProps) {
   return (
-    <section className="w-full flex flex-col space-y-6">
+    <section className="w-full pt-20 flex flex-col space-y-6">
       <Reveal>
         <div className="inline-flex items-center gap-2 rounded-full border border-[rgba(255,255,255,0.08)] bg-gradient-to-b from-[rgba(255,255,255,0.04)] to-[rgba(255,255,255,0.02)] px-[13px] py-[5px]">
           <div className="w-[6px] h-[6px] rounded-full bg-[#ef1f23] shadow-[0px_0px_40px_-10px_rgba(245,29,49,0.7),0px_0px_80px_-30px_rgba(245,29,49,0.6)] shrink-0" />

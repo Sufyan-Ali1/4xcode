@@ -239,7 +239,7 @@ export default function ServiceDetailPage() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.15 }}
-          className="relative mt-16 md:mt-24 lg:mt-28 grid w-full grid-cols-1 gap-6 pt-12 sm:grid-cols-3"
+          className="relative mt-8 grid w-full grid-cols-1 gap-6  sm:grid-cols-3"
         >
           {service.metrics.map((metric) => (
             <MetricCard
@@ -251,7 +251,7 @@ export default function ServiceDetailPage() {
           ))}
         </motion.div>
 
-        <div className="mt-16 md:mt-24 lg:mt-28 pt-12">
+        <div className="mt-8 pt-12">
           <Reveal>
             <div className="space-y-2">
               <p className="text-[#f90a1f] text-[12px] font-normal uppercase tracking-[3.6px] leading-4">
@@ -283,7 +283,7 @@ export default function ServiceDetailPage() {
           </motion.div>
         </div>
 
-        <div className="mt-16 md:mt-24 lg:mt-28 pt-12">
+        <div className="mt-4 pt-12">
           <Reveal>
             <div className="space-y-2">
               <p className="text-[#f90a1f] text-[12px] font-normal uppercase tracking-[3.6px] leading-4">
@@ -316,7 +316,7 @@ export default function ServiceDetailPage() {
           </motion.div>
         </div>
 
-        <div className="mt-16 md:mt-24 lg:mt-28 pt-12">
+        <div className="mt-4 pt-12">
           <Reveal>
             <div className="space-y-2">
               <p className="text-[#f90a1f] text-[12px] font-normal uppercase tracking-[3.6px] leading-4">
@@ -501,7 +501,7 @@ export default function ServiceDetailPage() {
     />
   </motion.div>
 </section>
-        <div className="relative mt-16 md:mt-24 lg:mt-28 pt-12">
+        <div className="relative mt-8 pt-12">
           <div className="mb-14 text-center">
             <Reveal>
               <div className="space-y-2 flex flex-col items-center text-center">
@@ -554,7 +554,7 @@ export default function ServiceDetailPage() {
       {/* Dynamic Routing Services & Final Project CTA Wrapper */}
       <div className="relative z-10 mx-auto w-full max-w-300 px-5 flex flex-col">
         {relatedServices.length > 0 && (
-          <div className="mt-16 md:mt-20 lg:mt-23 pt-5">
+          <div className="mt-10 pt-5">
             <Reveal>
               <div className="space-y-2">
                 <p className="text-[#f90a1f] text-[12px] font-normal uppercase tracking-[3.6px] leading-4">

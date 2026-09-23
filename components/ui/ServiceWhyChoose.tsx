@@ -24,9 +24,9 @@ export default function ServiceWhyChoose({ serviceTitle, reasons }: ServiceWhyCh
 
   return (
     /* Added mx-auto, w-full, and bounded max-w to keep the section unified */
-    <div className="mt-36 mx-auto flex w-full max-w-300 flex-col items-center px-5 overflow-hidden">
+    <div className="mt-15 mx-auto flex w-full max-w-300 flex-col items-center px-5 overflow-hidden">
       <Reveal>
-        <h3 className={`${spaceGrotesk.className} text-center text-2xl font-bold md:text-3xl tracking-tight text-white mb-14 px-4`}>
+        <h3 className={`${spaceGrotesk.className} text-center text-2xl font-bold md:text-3xl tracking-tight text-white px-4`}>
           Why teams choose 4xCode for{" "}
           <span className="bg-gradient-to-r from-[#ff8a8c] to-[#ef1f23] bg-clip-text text-transparent">
             {serviceTitle}

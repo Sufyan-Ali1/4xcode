@@ -95,7 +95,7 @@ export default function ServicesSection() {
   const reduced = useSafeReducedMotion();
 
   return (
-    <section className="relative w-full overflow-hidden bg-black py-28 px-6 md:px-12 lg:px-24">
+    <section className="relative w-full overflow-hidden bg-black py-15 px-6 md:px-12 lg:px-24">
       <div className="absolute inset-0 opacity-30 pointer-events-none " />
       <div className="relative max-w-7xl mx-auto flex flex-col items-center gap-16">
         <div className="flex flex-col items-center gap-3.75 text-center max-w-2xl pt-1.25">

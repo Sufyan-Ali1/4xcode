@@ -28,7 +28,7 @@ export default function ServiceFaq({ faqs }: ServiceFaqProps) {
   };
 
   return (
-    <div className="mt-16">
+    <div className="">
       <Reveal>
         <div className="space-y-2 mb-10 text-center">
           <p className="text-[#ef1f23] text-[12px] font-normal uppercase tracking-[3.6px] leading-4">

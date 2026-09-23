@@ -4,6 +4,7 @@ import React, { useState, ChangeEvent, FormEvent } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useSafeReducedMotion } from "../../utils/useSafeReducedMotion";
 import { Space_Grotesk } from "next/font/google";
+import RefreshIcon from "@mui/icons-material/Refresh";
 import {
   Send as SendIcon,
   ErrorOutlined as ErrorIcon,
@@ -35,7 +36,13 @@ export default function ContactForm({ variant = "default" }: ContactFormProps) {
   });
 
   const isSidebar = variant === "sidebar";
+const [captcha, setCaptcha] = useState({
+  first: Math.floor(Math.random() * 9) + 1,
+  second: Math.floor(Math.random() * 9) + 1,
+});
 
+const [captchaAnswer, setCaptchaAnswer] = useState("");
+const [captchaError, setCaptchaError] = useState("");
   const handleInputChange = (
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
@@ -49,7 +56,17 @@ export default function ContactForm({ variant = "default" }: ContactFormProps) {
       // Allows only digits and hyphens to support your placeholder format (e.g., 000-111-2221)
       const cleanValue = value.replace(/[^0-9\-]/g, "");
       setFormData((prev) => ({ ...prev, [name]: cleanValue }));
-    } else {
+    } 
+    else if (name === "captcha") {
+  setCaptchaAnswer(value);
+
+  if (Number(value) !== captcha.first + captcha.second) {
+    setCaptchaError("Incorrect answer");
+  } else {
+    setCaptchaError("");
+  }
+}
+    else {
       // Standard fallback for email and textarea inputs
       setFormData((prev) => ({ ...prev, [name]: value }));
     }
@@ -57,6 +74,16 @@ export default function ContactForm({ variant = "default" }: ContactFormProps) {
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    const correctAnswer = captcha.first + captcha.second;
+    if (!captchaAnswer.trim()) {
+    setCaptchaError("Please enter the answer.");
+    return;
+  }
+
+  else if (Number(captchaAnswer) !== correctAnswer) {
+    setCaptchaError("Incorrect answer. Please try again.");
+    return;
+  }
     setIsSubmitting(true);
 
     try {
@@ -210,7 +237,49 @@ export default function ContactForm({ variant = "default" }: ContactFormProps) {
                 />
               </div>
             </div>
+<div>
+ <div className="flex items-center gap-2 md:gap-3 lg:gap-4 w-full rounded-[22px] border border-[#f51d31]/40 px-5 py-4">
+  <span className="text-base text-xs sm:text-sm md:text-md lg:text-lg font-semibold text-[white] whitespace-nowrap">
+    What is {captcha.first} + {captcha.second}?
+  </span>
 
+  <div className="flex items-center gap-3 flex-1">
+    <input
+      type="text"
+      name="captcha"
+      value={captchaAnswer}
+      onChange={handleInputChange}
+      placeholder="Your answer"
+      inputMode="numeric"
+      className="w-full h-12 rounded-[18px] border border-[#f51d31]/40 bg-black px-4 text-center text-base text-white outline-none transition-all placeholder-white/50 focus:border-[#f51d31]/40 focus:ring-2 focus:ring-[#f51d31]/20"
+    />
+
+    <button
+      type="button"
+onClick={() => {
+  setCaptcha({
+    first: Math.floor(Math.random() * 9) + 1,
+    second: Math.floor(Math.random() * 9) + 1,
+  });
+  setCaptchaAnswer("");
+  setCaptchaError("");
+}}
+      className="flex h-12 w-8 lg:h-12 lg:w-12 shrink-0 items-center justify-center rounded-[10px] lg:rounded-[16px] border border-[#f51d31]/40  text-[#f51d31]/60 shadow-sm transition-all duration-200 hover:border-[#f51d31]/60 hover:bg-[#f51d31]/5 hover:text-[#f51d31]/80 cursor-pointer"
+      aria-label="Reset captcha"
+    >
+      <RefreshIcon style={{ fontSize: 24 }} />
+    </button>
+  </div>
+</div>
+
+{captchaError && (
+  <p className="mt-1 text-xs text-[#f51d31]">
+    {captchaError}
+  </p>
+)}
+
+ 
+</div>
             {/* Submit Action Block */}
             <div className="flex flex-col gap-2.5 w-full pt-1 box-border">
               <motion.div

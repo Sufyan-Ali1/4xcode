@@ -13,6 +13,11 @@ const nextConfig: NextConfig = {
         hostname: "blogs-tbsmf.ondigitalocean.app",
         pathname: "/**",
       },
+      {
+        protocol: 'https',
+        hostname: 'vogueimages.co.uk',
+        pathname: '/**',
+      }
     ],
     formats: ["image/avif", "image/webp"],
   },

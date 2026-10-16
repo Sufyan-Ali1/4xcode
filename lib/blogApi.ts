@@ -22,6 +22,8 @@ export type Blog = {
   slug: string;
   title: string;
   excerpt: string;
+  meta_title?: string;
+  meta_description?: string;
   content?: string;
   image: string;
   images: BlogImage[];
@@ -36,6 +38,8 @@ function normalise(raw: any): Blog {
     id: String(raw?.slug ?? raw?.id ?? ""),
     slug: String(raw?.slug ?? raw?.id ?? ""),
     title: String(raw?.title ?? ""),
+    meta_title: String(raw?.meta_title ?? "").trim(),
+    meta_description: String(raw?.meta_description ?? "").trim(),
     excerpt: String(raw?.excerpt ?? raw?.description ?? ""),
     content: String(raw?.content ?? raw?.body ?? ""),
     image: String(raw?.image ?? ""),

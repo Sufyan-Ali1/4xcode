@@ -9,6 +9,25 @@ type Props = {
   blogs: Blog[] | null | undefined;
 };
 
+const dateFormatter = new Intl.DateTimeFormat("en-US", {
+  month: "short",
+  day: "numeric",
+  year: "numeric",
+  timeZone: "UTC",
+});
+
+function BlogDate({ value }: { value?: string }) {
+  if (!value) return null;
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) return null;
+
+  return (
+    <time dateTime={date.toISOString()} className="mb-3 text-xs text-zinc-400">
+      {dateFormatter.format(date)}
+    </time>
+  );
+}
+
 const BlogGrid: FC<Props> = ({ blogs }) => {
   // 1. Establish state to track how many posts to display (Increments of 9)
   const [visibleCount, setVisibleCount] = useState<number>(9);
@@ -39,17 +58,19 @@ const BlogGrid: FC<Props> = ({ blogs }) => {
           >
             {/* IMAGE CONTAINER */}
             {blog.image && (
-              <div className="relative w-full h-48 bg-zinc-900">
+              <div className="relative aspect-video w-full overflow-hidden bg-zinc-900">
                 <Image
                   src={blog.image}
                   alt={blog.title}
                   fill
-                  className="object-cover transition-opacity duration-300 opacity-90 group-hover:opacity-100"
+                  sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, (max-width: 1200px) 33vw, 371px"
+                  className="object-contain opacity-90 transition-all duration-[1800ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-105 group-hover:opacity-100 motion-reduce:transform-none motion-reduce:transition-none"
                 />
               </div>
             )}
 
             <div className="flex flex-col flex-1 p-5">
+              <BlogDate value={blog.date} />
               <h2 className="text-lg font-semibold mb-2 group-hover:text-[#f90a1f] transition-colors duration-200 line-clamp-2">
                 {blog.title}
               </h2>

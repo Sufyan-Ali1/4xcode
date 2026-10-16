@@ -21,8 +21,9 @@ export async function generateMetadata({
   const canonicalUrl = `https://www.4xcode.com/blog/${cleanSlug}`;
 
   return {
-    title: blog.title ? `${blog.title} | 4xCode` : "Blog | 4xCode",
+    title: blog.meta_title || (blog.title ? `${blog.title} | 4xCode` : "Blog | 4xCode"),
     description:
+      blog.meta_description ||
       blog.excerpt ||
       "Read our latest insights on software engineering, modern web architectures, and AI.",
     alternates: {

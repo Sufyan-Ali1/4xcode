@@ -109,12 +109,7 @@ export function ArchitectureStep({
   fontClass,
 }: CardProps<ArchitecturePhase>) {
   return (
-    <motion.div
-      variants={variants}
-      whileHover={{ scale: 1.02, y: -4 }}
-      transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-      className="group relative z-10 flex h-full flex-col items-start rounded-[22px] border border-white/5 bg-white/2 p-6 text-left transition-all duration-300 will-change-transform hover:border-[rgba(249,10,31,0.35)] hover:bg-white/4"
-    >
+   <div className="group relative z-10 flex h-full flex-col items-start rounded-[22px] border border-white/5 bg-white/2 p-6 text-left transition-transform duration-200 ease-linear hover:scale-[1.01] hover:-translate-y-1 hover:border-[rgba(249,10,31,0.35)] hover:bg-white/4">
       <span
         className={`${fontClass} mb-4 flex h-10 w-10 items-center justify-center rounded-full border border-white/10 text-sm font-semibold text-zinc-300 transition-colors duration-300 group-hover:border-[#ef1f23]/50 group-hover:text-[#ef1f23]`}
       >
@@ -128,7 +123,7 @@ export function ArchitectureStep({
       <p className="mt-2 flex-grow text-xs leading-relaxed text-[#a7a3a4]">
         {step.desc}
       </p>
-    </motion.div>
+    </div>
   );
 }
 

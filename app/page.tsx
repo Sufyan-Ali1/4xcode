@@ -5,10 +5,10 @@ import ProcessSection from "@/components/landing/ProcessSection";
 import ServicesSection from "@/components/landing/ServicesSection";
 import TestimonialsSection from "@/components/landing/TestimonialsSection";
 import ContactCtaSection from "@/components/landing/ContactCtaSection";
-
+import data from "@/data/products.json";
 import { Suspense } from "react";
 import CaseStudiesSkeleton from "@/components/landing/CaseStudiesSkeleton";
-
+import Products from "@/components/products/ProductsMain"
 export default async function HomePage() {
   return (
     <div className="flex min-h-screen flex-col">
@@ -16,9 +16,10 @@ export default async function HomePage() {
         <Hero />
         <ServicesSection />
         <Suspense fallback={<CaseStudiesSkeleton />}>
-          <CaseStudiesSection />
+        <CaseStudiesSection />
         </Suspense>
         <AboutSection />
+          <Products products={data} />
         <ProcessSection />
         <TestimonialsSection />
         <ContactCtaSection />

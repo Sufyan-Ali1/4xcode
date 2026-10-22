@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import data from "@/data/products.json";
 
 // Icons
 import TwitterIcon from "@mui/icons-material/Twitter";
@@ -13,6 +14,7 @@ const STUDIO_LINKS = [
   { label: "Work", href: "/work" },
   { label: "Contact", href: "/contact" },
   { label: "About", href: "/about" },
+   { label: "Blog", href: "/blog" },
 ];
 
 const SOCIAL_LINKS = [
@@ -41,14 +43,14 @@ export default function Footer() {
       />
 
       <div className="mx-auto w-full max-w-300 px-5">
-        <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-12 lg:gap-8">
+<div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-10">
           {/* Logo */}
-          <div className="flex flex-col gap-4 lg:col-span-4">
+          <div className="flex flex-col lg:col-span-2">
             <Link
               href="/"
               aria-label="4xcode home"
               prefetch={false}
-              className="flex items-center"
+              className="flex mt-4 mb-2 items-center"
             >
               <Image
                 src="/assets/logo1.webp"
@@ -67,8 +69,8 @@ export default function Footer() {
           </div>
 
           {/* Studio */}
-          <div className="lg:col-span-2">
-            <h3 className="mb-6 text-[12px] uppercase tracking-[0.2em] text-[#a7a3a4]">
+          <div className="flex flex-col lg:col-span-1">
+            <h3 className="mt-4 mb-2 text-[12px] uppercase tracking-[0.2em] text-[#a7a3a4]">
               Studio
             </h3>
 
@@ -86,33 +88,60 @@ export default function Footer() {
               ))}
             </ul>
           </div>
+           <div className="flex flex-col lg:col-span-2 ">
+            <h3 className="mt-4 mb-2 text-[12px] uppercase tracking-[0.2em] text-[#a7a3a4]">
+              Products
+            </h3>
+
+          <ul className="flex flex-col gap-1">
+          {Object.entries(data)[1] && (
+        <li>
+          <Link
+            href={Object.entries(data)[1][1].href}
+            prefetch={false}
+            className="text-[14px] text-white transition-colors hover:text-white/80"
+          >
+            {Object.entries(data)[1][1].title}
+          </Link>
+        </li>
+  )}
+    </ul>
+          </div>
 
           {/* Contact */}
-          <div className="lg:col-span-2">
-            <h3 className="mb-6 text-[12px] uppercase tracking-[0.2em] text-[#a7a3a4]">
+          <div className="flex flex-col lg:col-span-2">
+            <h3 className="mt-4 mb-2 text-[12px] uppercase tracking-[0.2em] text-[#a7a3a4]">
               Contact
             </h3>
 
-            <ul className="flex flex-col gap-2 text-sm text-[#a7a3a4]">
+            <ul className="flex flex-col  text-sm text-[#a7a3a4]">
               <li>
                 <Link
                   href="mailto:hello@4xcode.com"
                   className="text-white"
+                  target="_blank"
                   prefetch={false}
                 >
                   info@4xcode.com
                 </Link>
               </li>
 
-              <li>01 Padnal Court, Romford RM6 5HR, United Kingdom</li>
+              <li>
+                <Link
+                  href="https://maps.app.goo.gl/qVoMxWqZqKPeZm1s8"
+                  className="mt-2 block hover:text-white"
+                  target="_blank"
+                  prefetch={false}
+                >01 Padnal Court, Romford RM6 5HR, United Kingdom
+                </Link></li>
 
-              <li>Mon - Fri</li>
+              <li className="mt-2">Mon - Fri</li>
             </ul>
           </div>
 
           {/* Newsletter */}
-          <div className="lg:col-span-4">
-            <h3 className="mb-6 text-[12px] uppercase tracking-[0.2em] text-[#a7a3a4]">
+          <div className="flex flex-col lg:col-span-3">
+            <h3 className="mt-4 mb-2 text-[12px] uppercase tracking-[0.2em] text-[#a7a3a4]">
               Newsletter
             </h3>
 
@@ -120,14 +149,14 @@ export default function Footer() {
               <input
                 type="email"
                 placeholder="you@company.com"
-                className="w-full bg-transparent px-4 text-sm text-white placeholder:text-[#a7a3a4] focus:outline-none"
+                className="w-2/3 lg:w-1/2 bg-transparent px-4 text-sm text-white placeholder:text-[#a7a3a4] focus:outline-none"
               />
 
               <button
                 type="submit"
-                className="shrink-0 rounded-full bg-[#f90a1f] px-4 py-2 text-sm font-semibold transition-colors hover:bg-[#ed1c20]"
+                className="shrink-0 w-1/3 min-w-[100px] lg:w-1/2 rounded-full bg-[#f90a1f] px-4 py-2 text-sm font-semibold transition-colors hover:bg-[#ed1c20] cursor-pointer"
               >
-                Subscribe
+                Subscribe 
               </button>
             </form>
 

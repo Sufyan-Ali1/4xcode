@@ -10,15 +10,17 @@ import products_data from "@/data/products.json";
 import InspectionSteps from "@/components/products/InspectionSteps";
 import PricingPlans from "@/components/products/PricingPlans";
 import BlogsCarousel from "@/components/products/BlogsCarousel";
-import FaqAccordion from "@/components/products/FaqAccordion";
+import ServiceFaq from "@/components/ui/ServiceFaq";
+import OurVideosSection from "@/components/landing/OurVideosSection";
+import videos from "@/data/Videos.json";
 export default function Home() {
   const data=products_data["garage-management-system"]
   return (
-    <main className=" bg-black text-white flex flex-wrap justify-center mx-auto px-5 sm:px-8 lg:px-10">
-      <section className="relative w-[1150px] flex  items-start overflow-hidden bg-black py-10 sm:py-12 lg:min-h-[300px] lg:items-center lg:py-16">
-      <div className="w-full max-w-[700px]">      
-<div className="mb-7 inline-flex h-7 items-center gap-2 rounded-full bg-black px-3.5 shadow-[0_0_18px_rgba(255,91,99,0.18)] sm:mb-7">
-  <span className="relative flex h-3.5 w-3.5 shrink-0 items-center justify-center rounded-full bg-[#ff5b63]/15">
+    <main className=" bg-black mt-15 text-white flex flex-wrap justify-center mx-auto px-5 sm:px-8 lg:px-10">
+      <section className="relative w-[1150px] flex flex-wrap items-start overflow-hidden bg-black py-10 sm:py-12 lg:min-h-[300px] lg:items-center lg:py-16">
+      <div className="w-full lg:w-1/2">      
+<div className="inline-flex h-7 gap-2 rounded-full bg-black px-3.5 shadow-[0_0_18px_rgba(255,91,99,0.18)] ">
+  <span className="relative flex shrink-0 items-center justify-center rounded-full bg-[#ff5b63]/15">
     <span className="h-1.5 w-1.5 rounded-full bg-[#E35D59]" />
   </span>
 
@@ -52,10 +54,11 @@ export default function Home() {
             to work together seamlessly.
           </p>
         </div>
-      </section> 
-      <div className="w-full">
+     
+      <div className="w-full lg:w-1/2 lg:pl-5">
       <BookCallForm />
       </div>
+       </section> 
       <div className="w-full">
       <GarageChallenges />
       </div>
@@ -93,9 +96,11 @@ export default function Home() {
        <div className="w-full ">
       <BlogsCarousel />
       </div>
+      <div className="w-full">
+          <OurVideosSection data={videos} />
+      </div>
        <div className="w-full ">
-      <FaqAccordion data={data.faq}
-/>
+      <ServiceFaq faqs={data.faqs} />
 </div>
       
     </main>

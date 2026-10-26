@@ -40,7 +40,7 @@ const BookCallForm: React.FC = () => {
   };
 
   return (
-    <section className="w-full bg-black px-4 pb-10 pt-5 md:pb-14">
+    <section className="w-full mt-10 bg-black">
       <div className="mx-auto w-full max-w-[1150px]">
         <form
           onSubmit={handleSubmit}

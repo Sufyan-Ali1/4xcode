@@ -27,6 +27,9 @@ import ProcessSection from "../../components/landing/ProcessSection";
 import TestimonialsSection from "../../components/landing/TestimonialsSection";
 import NarrativeSection from "../../components/landing/NarrativeSection";
 
+import NarrativeData from "@/data/NarrativeSection.json"
+import service_data from "@/data/ServiceMainPage.json"
+import ServiceFaq from "@/components/ui/ServiceFaq";
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
   weight: ["400", "500", "700"],
@@ -380,14 +383,15 @@ export default function ServicePage() {
       </div>
       {/* SUB-SECTIONS (THEY MANAGE THEIR OWN WRAPPERS) */}
      
-      <NarrativeSection spaceGroteskClassName={spaceGrotesk.className} />
+      <NarrativeSection data={NarrativeData.services} spaceGroteskClassName={spaceGrotesk.className} />
     
          <div className="flex flex-wrap w-full justify-center">
        <Technology_Experience sectionData={sectionData} />
       </div>
      
       <ProcessSection />
-     
+
+           <ServiceFaq faqs={service_data.faqs} />
     </div>
   );
 }   

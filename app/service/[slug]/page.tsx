@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useMemo, useState, useEffect } from "react";
+import NarrativeSection from "@/components/landing/NarrativeSection";
 import Link from "next/link";
 import { useParams, notFound } from "next/navigation";
 import { motion, type Variants } from "framer-motion";
@@ -10,6 +11,8 @@ import { Space_Grotesk, Inter } from "next/font/google";
 import { Reveal } from "../../../utils/AnimationReveal";
 import { SERVICES_DATA, type ServiceItem } from "../../../data/serviceData";
 
+import AboutSection from "@/components/landing/AboutSection";
+import CompanyOverview from "@/components/landing/CompanyOverview";
 import Technology_Experience from "@/components/Technology_Experience";
 import Build_for_industry from "@/components/Build_for_industry";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
@@ -282,7 +285,15 @@ export default function ServiceDetailPage() {
             ))}
           </motion.div>
         </div>
-
+        
+        <div className="mt-5">
+          <ServiceWhyChoose
+        serviceTitle={service.title}
+        reasons={service.whyTeamsChoose}
+      />
+      </div>
+        <AboutSection data={service.about_section_data1} />
+         <NarrativeSection data={service.NarrativeData} spaceGroteskClassName={spaceGrotesk.className} />
         <div className="mt-4 pt-12">
           <Reveal>
             <div className="space-y-2">
@@ -290,8 +301,8 @@ export default function ServiceDetailPage() {
                 Capability Matrix
               </p>
               <h2 className="text-3xl font-bold sm:text-4xl">
-                What's{" "}
-                <span className="bg-gradient-to-r from-[#ff8a8c] to-[#ef1f23] bg-clip-text text-transparent">
+                What's
+                <span className="ml-3 bg-gradient-to-r from-[#ff8a8c] to-[#ef1f23] bg-clip-text text-transparent">
                   Included
                 </span>
               </h2>
@@ -541,15 +552,13 @@ export default function ServiceDetailPage() {
         <div className="w-full flex flex-wrap justify-center">
           <div className="max-w-7xl">
       <Build_for_industry data={service.software_build_data} />
+        <CompanyOverview data={service.about_section_data2} />
        <Technology_Experience sectionData={service.sectionData} />
-        <ServiceFaq faqs={service.faqs} />
+    
         </div>
       </div>
 
-      <ServiceWhyChoose
-        serviceTitle={service.title}
-        reasons={service.whyTeamsChoose}
-      />
+    
 
       {/* Dynamic Routing Services & Final Project CTA Wrapper */}
       <div className="relative z-10 mx-auto w-full max-w-300 px-5 flex flex-col">
@@ -589,6 +598,9 @@ export default function ServiceDetailPage() {
 
       
       </div>
+      <div className="w-full pt-20">
+          <ServiceFaq faqs={service.faqs} />
+          </div>
     </div>
   );
 }

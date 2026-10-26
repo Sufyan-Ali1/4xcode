@@ -1,0 +1,46 @@
+{
+  "eyebrow": "Watch & Explore",
+  "whiteTitle": "Our",
+  "redTitle": "Videos",
+  "description": "See our work in action, get expert insights, and learn more about what makes 4xCode different.",
+  "videos": [
+    {
+      "id": 1,
+      "tag": "Our Work",
+      "title": "From Idea to Launch",
+      "description": "Walk through the way we plan, build and deliver digital products from the first call to go-live.",
+      "duration": "00:30",
+      "thumbnail": "https://img.youtube.com/vi/qrsYfPJQDSw/hqdefault.jpg",
+      "videoUrl": "https://www.youtube.com/embed/qrsYfPJQDSw?rel=0"
+    },
+    {
+      "id": 2,
+      "tag": "Design",
+      "title": "Design That Converts",
+      "description": "See how we shape clean, user-friendly experiences that look sharp on every screen.",
+      "duration": "03:00",
+      "thumbnail": "https://img.youtube.com/vi/hI9HQfCAw64/hqdefault.jpg",
+      "videoUrl": "https://www.youtube.com/embed/hI9HQfCAw64?rel=0"
+    },
+
+    {
+      "id": 4,
+      "tag": "Our Team",
+      "title": "Life at 4xCode",
+      "description": "Meet our team, our culture and what it's like working with us.",
+      "duration": "00:30",
+      "thumbnail": "https://img.youtube.com/vi/2ybiGOIjTkM/hqdefault.jpg",
+      "videoUrl": "https://www.youtube.com/embed/2ybiGOIjTkM?rel=0"
+    },
+ 
+    {
+      "id": 6,
+      "tag": "Insights",
+      "title": "Ideas That Move You Forward",
+      "description": "Short, practical insights from our team to help you plan and grow your digital product with confidence.",
+      "duration": "00:30",
+      "thumbnail": "https://img.youtube.com/vi/UzCC36p8F7Y/hqdefault.jpg",
+      "videoUrl": "https://www.youtube.com/embed/UzCC36p8F7Y?rel=0"
+    }
+  ]
+}

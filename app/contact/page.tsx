@@ -1,5 +1,5 @@
 "use client";
-
+import Link from "next/link";
 import { Space_Grotesk, Inter } from "next/font/google";
 import { Reveal } from "../../utils/AnimationReveal";
 import ContactForm from "../../components/ui/ContactForm";
@@ -24,15 +24,17 @@ interface ContactDetailsItem {
   id: string;
   label: string;
   value: string;
+  href:string;
 }
 
 const contactDetails: ContactDetailsItem[] = [
-  { id: "email", label: "Email", value: "info@4xcode.com" },
-  { id: "phone", label: "Phone", value: "+44 7578 227223" },
+  { id: "email", label: "Email", value: "info@4xcode.com", href:"mailto:info@4xcode.com" },
+  { id: "phone", label: "Phone", value: "+44 7578 227223", href:"tel:+447578227223" },
   {
     id: "address",
     label: "ADDRESS",
     value: "01 Padnal Court, Romford, RM6 5HR, United Kingdom",
+    href:"https://maps.app.goo.gl/qVoMxWqZqKPeZm1s8"
   },
 ];
 
@@ -147,11 +149,12 @@ export default function ContactPage() {
                       <span className="text-[9px] sm:text-[10px] font-medium tracking-wider text-zinc-500 uppercase leading-none">
                         {item.label}
                       </span>
-                      <span
+                      <Link
+                      href={item.href}
                         className={`${spaceGrotesk.className} text-xs sm:text-sm font-normal text-zinc-200 break-words tracking-wide`}
                       >
                         {item.value}
-                      </span>
+                      </Link>
                     </div>
                   </div>
                 </Reveal>

@@ -485,44 +485,25 @@
         }
       ]
     },
-    "faq":
-{
-  "headingWhite": "Frequently",
-  "headingRed": "Asked Questions",
-  "subtitle": "Find answers to common questions about our garage management system.",
-  "faqs": [
-    {
-      "id": 1,
-      "question": "What is a garage management system?",
-      "answer": "A garage management system helps workshops manage bookings, vehicle inspections, job cards, invoices, customer records, and daily operations from one platform."
-    },
-    {
-      "id": 2,
-      "question": "Can I manage customer bookings online?",
-      "answer": "Yes, you can manage customer enquiries, schedule appointments, and keep track of upcoming bookings in one centralised system."
-    },
-    {
-      "id": 3,
-      "question": "Can I create invoices for customers?",
-      "answer": "Yes, you can generate invoices, track payments, and maintain clear records of completed jobs and customer transactions."
-    },
-    {
-      "id": 4,
-      "question": "Can I track vehicle repairs and job progress?",
-      "answer": "Yes, you can follow each vehicle through inspection, quotation, approval, repair work, parts allocation, and final collection."
-    },
-    {
-      "id": 5,
-      "question": "Is the system suitable for small workshops?",
-      "answer": "Yes, the system helps independent garages and larger workshops organise their workflow, reduce paperwork, and improve efficiency."
-    },
-    {
-      "id": 6,
-      "question": "Can multiple team members use the system?",
-      "answer": "Yes, team members can coordinate bookings, inspections, repairs, and administrative tasks, depending on their configured permissions."
-    }
-  ]
-},
+  
+"faqs": [
+  {
+    "q": "How long does a typical project take to complete?",
+    "a": "Timelines depend on scope and complexity. A small project usually takes 2 to 4 weeks, while a larger custom solution can take 8 to 12 weeks."
+  },
+  {
+    "q": "What is the process once I book a free demo?",
+    "a": "After you book a demo, our team reviews your requirements, walks you through a live demonstration, and then shares a clear proposal with scope, timeline, and cost."
+  },
+  {
+    "q": "Will I get regular updates during development?",
+    "a": "Yes. We follow an agile workflow with weekly progress updates and a dedicated point of contact."
+  },
+  {
+    "q": "Do you provide support after the project is delivered?",
+    "a": "Yes. We offer post-launch support and maintenance plans including bug fixes, updates, and performance monitoring."
+  }
+],
 
   "security_data1": {
     "label": "Security",

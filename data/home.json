@@ -1,0 +1,20 @@
+{
+    "faqs": [
+  {
+    "q": "Home How long does a typical project take to complete?",
+    "a": "Timelines depend on scope and complexity. A small project usually takes 2 to 4 weeks, while a larger custom solution can take 8 to 12 weeks."
+  },
+  {
+    "q": "What is the process once I book a free demo?",
+    "a": "After you book a demo, our team reviews your requirements, walks you through a live demonstration, and then shares a clear proposal with scope, timeline, and cost."
+  },
+  {
+    "q": "Will I get regular updates during development?",
+    "a": "Yes. We follow an agile workflow with weekly progress updates and a dedicated point of contact."
+  },
+  {
+    "q": "Do you provide support after the project is delivered?",
+    "a": "Yes. We offer post-launch support and maintenance plans including bug fixes, updates, and performance monitoring."
+  }
+]
+}

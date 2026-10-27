@@ -53,7 +53,31 @@ export interface SectionData {
     card_description: string;
   }[];
 }
+export interface AboutSectionData {
+  white_heading: string;
+  red_heading: string;
+  paragraphs: string[];
+  stats?: Metric[];
+  image: string;
+  founded?: string;
+}
+export interface NarrativeSegment {
+  text: string;
+  highlight?: boolean;
+}
 
+export interface NarrativeParagraph {
+  segments: NarrativeSegment[];
+  note?: string;
+}
+
+export interface NarrativeDataType {
+  heading: {
+    white: string;
+    red: string;
+  };
+  paragraphs: NarrativeParagraph[];
+}
 export interface ServiceItem {
   slug: string;
   iconKey: string;
@@ -76,6 +100,10 @@ export interface ServiceItem {
   relatedSlugs: string[];
   software_build_data: SoftwareBuildData;
   sectionData: SectionData;
+  about_section_data1:AboutSectionData; 
+  about_section_data2:AboutSectionData;
+  NarrativeData:NarrativeDataType;
+  
 }
 
 export const SERVICES_DATA: ServiceItem[] = [
@@ -276,9 +304,115 @@ sectionData:{
     "Marketing & Advertising",
   "Healthcare & Technology",
   ]
-
 },
-  
+about_section_data1:{
+  white_heading: "A boutique engineering studio with a",
+  red_heading: "blockbuster output.",
+  paragraphs: [
+    "4xCode is a boutique software development company building ultra-fast, AI-powered SaaS platforms, web applications, and mobile products for startups and scaling brands.",
+    "From custom software development and AI agent engineering to cloud infrastructure and UI/UX design, our senior team turns ambitious product ideas into category-defining software — shipped in weeks, not quarters."
+  ],
+  stats: [
+    { value: "132+", label: "Products Shipped" },
+    { value: "30M", label: "Users Reached" },
+    { value: "99.99%", label: "Production Uptime" },
+    { value: "9yr", label: "Avg. Team Experience" }
+  ],
+  image: "/assets/aboutSection.webp",
+  founded: "2021 · Remote-first"
+},  
+about_section_data2:{
+  white_heading: "A boutique engineering studio with a",
+  red_heading: "blockbuster output.",
+  paragraphs: [
+    "4xCode is a boutique software development company building ultra-fast, AI-powered SaaS platforms, web applications, and mobile products for startups and scaling brands.",
+    "From custom software development and AI agent engineering to cloud infrastructure and UI/UX design, our senior team turns ambitious product ideas into category-defining software — shipped in weeks, not quarters."
+  ],
+  stats: [
+    { value: "132+", label: "Products Shipped" },
+    { value: "30M", label: "Users Reached" },
+    { value: "99.99%", label: "Production Uptime" },
+    { value: "9yr", label: "Avg. Team Experience" }
+  ],
+  image: "/assets/aboutSection.webp",
+  founded: "2021 · Remote-first"
+}, 
+  NarrativeData:{
+  heading: {
+    white: "Software Architecture Built for Performance, Scale & ",
+    red: " Long-Term Growth."
+  },
+  paragraphs: [
+    {
+      segments: [
+        {
+          text: "We design and engineer software architectures that are built to perform under real-world conditions — not just in development. "
+        },
+        {
+          text: "Our senior engineers",
+          highlight: true
+        },
+        {
+          text: " think in systems, not just features, combining edge-first infrastructure, serverless runtimes, and deterministic performance principles to deliver products that scale globally from day one."
+        }
+      ]
+    },
+    {
+      segments: [
+        {
+          text: "Our full-stack development process connects frontend interfaces to backend systems through a strictly typed codebase using "
+        },
+        {
+          text: "TypeScript",
+          highlight: true
+        },
+        {
+          text: ". By eliminating runtime errors at the type level, we produce software that is faster to maintain, easier to extend, and significantly more reliable in production — whether you're building multi-tenant SaaS platforms or high-traffic web applications."
+        }
+      ]
+    },
+    {
+      segments: [
+        {
+          text: "We engineer web performance from the ground up — targeting zero layout shifts, sub-second load times, and perfect Core Web Vitals scores. Using static generation, dynamic streaming, and edge caching strategies, we deliver web applications that rank higher in search results and convert better. "
+        },
+        {
+          text: "Core Web Vitals • Next.js • Edge Runtime • Hyper-Fast Loading",
+          highlight: true
+        }
+      ]
+    },
+    {
+      segments: [
+        {
+          text: "We build production-grade AI systems — not demos. Our AI development services include custom "
+        },
+        {
+          text: "LLM Integrations, RAG Pipelines",
+          highlight: true
+        },
+        {
+          text: ", vector search, and autonomous AI agents built on deterministic pipelines. Every system is structured to deliver accurate, predictable outputs at scale — without relying on fragile prompt engineering."
+        }
+      ]
+    },
+    {
+      segments: [
+        {
+          text: "Our cloud engineering team delivers resilient, observable infrastructure on "
+        },
+        {
+          text: "AWS, Vercel, and Cloudflare",
+          highlight: true
+        },
+        {
+          text: ". Using infrastructure-as-code, distributed telemetry, and automated delivery pipelines, we eliminate downtime and give you full visibility into every layer of your system."
+        }
+      ],
+      note: "DevOps Automation • Zero-Downtime Deployments"
+    }
+  ]
+}
 },
   {
     slug: "custom-software",
@@ -471,6 +605,114 @@ sectionData:{
       },
     ],
   },  
+about_section_data1:{
+  white_heading: "A boutique engineering studio with a",
+  red_heading: "blockbuster output.",
+  paragraphs: [
+    "4xCode is a boutique software development company building ultra-fast, AI-powered SaaS platforms, web applications, and mobile products for startups and scaling brands.",
+    "From custom software development and AI agent engineering to cloud infrastructure and UI/UX design, our senior team turns ambitious product ideas into category-defining software — shipped in weeks, not quarters."
+  ],
+  stats: [
+    { value: "132+", label: "Products Shipped" },
+    { value: "30M", label: "Users Reached" },
+    { value: "99.99%", label: "Production Uptime" },
+    { value: "9yr", label: "Avg. Team Experience" }
+  ],
+  image: "/assets/aboutSection.webp",
+  founded: "2021 · Remote-first"
+}, 
+about_section_data2:{
+  white_heading: "A boutique engineering studio with a",
+  red_heading: "blockbuster output.",
+  paragraphs: [
+    "4xCode is a boutique software development company building ultra-fast, AI-powered SaaS platforms, web applications, and mobile products for startups and scaling brands.",
+    "From custom software development and AI agent engineering to cloud infrastructure and UI/UX design, our senior team turns ambitious product ideas into category-defining software — shipped in weeks, not quarters."
+  ],
+  stats: [
+    { value: "132+", label: "Products Shipped" },
+    { value: "30M", label: "Users Reached" },
+    { value: "99.99%", label: "Production Uptime" },
+    { value: "9yr", label: "Avg. Team Experience" }
+  ],
+  image: "/assets/aboutSection.webp",
+  founded: "2021 · Remote-first"
+}, 
+  NarrativeData:{
+  heading: {
+    white: "Software Architecture Built for Performance, Scale & ",
+    red: " Long-Term Growth."
+  },
+  paragraphs: [
+    {
+      segments: [
+        {
+          text: "We design and engineer software architectures that are built to perform under real-world conditions — not just in development. "
+        },
+        {
+          text: "Our senior engineers",
+          highlight: true
+        },
+        {
+          text: " think in systems, not just features, combining edge-first infrastructure, serverless runtimes, and deterministic performance principles to deliver products that scale globally from day one."
+        }
+      ]
+    },
+    {
+      segments: [
+        {
+          text: "Our full-stack development process connects frontend interfaces to backend systems through a strictly typed codebase using "
+        },
+        {
+          text: "TypeScript",
+          highlight: true
+        },
+        {
+          text: ". By eliminating runtime errors at the type level, we produce software that is faster to maintain, easier to extend, and significantly more reliable in production — whether you're building multi-tenant SaaS platforms or high-traffic web applications."
+        }
+      ]
+    },
+    {
+      segments: [
+        {
+          text: "We engineer web performance from the ground up — targeting zero layout shifts, sub-second load times, and perfect Core Web Vitals scores. Using static generation, dynamic streaming, and edge caching strategies, we deliver web applications that rank higher in search results and convert better. "
+        },
+        {
+          text: "Core Web Vitals • Next.js • Edge Runtime • Hyper-Fast Loading",
+          highlight: true
+        }
+      ]
+    },
+    {
+      segments: [
+        {
+          text: "We build production-grade AI systems — not demos. Our AI development services include custom "
+        },
+        {
+          text: "LLM Integrations, RAG Pipelines",
+          highlight: true
+        },
+        {
+          text: ", vector search, and autonomous AI agents built on deterministic pipelines. Every system is structured to deliver accurate, predictable outputs at scale — without relying on fragile prompt engineering."
+        }
+      ]
+    },
+    {
+      segments: [
+        {
+          text: "Our cloud engineering team delivers resilient, observable infrastructure on "
+        },
+        {
+          text: "AWS, Vercel, and Cloudflare",
+          highlight: true
+        },
+        {
+          text: ". Using infrastructure-as-code, distributed telemetry, and automated delivery pipelines, we eliminate downtime and give you full visibility into every layer of your system."
+        }
+      ],
+      note: "DevOps Automation • Zero-Downtime Deployments"
+    }
+  ]
+}
 },
   {
     slug: "saas-engineering",
@@ -670,7 +912,115 @@ sectionData:{
       },
     ],
   },
- 
+about_section_data1:{
+  white_heading: "A boutique engineering studio with a",
+  red_heading: "blockbuster output.",
+  paragraphs: [
+    "4xCode is a boutique software development company building ultra-fast, AI-powered SaaS platforms, web applications, and mobile products for startups and scaling brands.",
+    "From custom software development and AI agent engineering to cloud infrastructure and UI/UX design, our senior team turns ambitious product ideas into category-defining software — shipped in weeks, not quarters."
+  ],
+  stats: [
+    { value: "132+", label: "Products Shipped" },
+    { value: "30M", label: "Users Reached" },
+    { value: "99.99%", label: "Production Uptime" },
+    { value: "9yr", label: "Avg. Team Experience" }
+  ],
+  image: "/assets/aboutSection.webp",
+  founded: "2021 · Remote-first"
+}, 
+about_section_data2:{
+  white_heading: "A boutique engineering studio with a",
+  red_heading: "blockbuster output.",
+  paragraphs: [
+    "4xCode is a boutique software development company building ultra-fast, AI-powered SaaS platforms, web applications, and mobile products for startups and scaling brands.",
+    "From custom software development and AI agent engineering to cloud infrastructure and UI/UX design, our senior team turns ambitious product ideas into category-defining software — shipped in weeks, not quarters."
+  ],
+  stats: [
+    { value: "132+", label: "Products Shipped" },
+    { value: "30M", label: "Users Reached" },
+    { value: "99.99%", label: "Production Uptime" },
+    { value: "9yr", label: "Avg. Team Experience" }
+  ],
+  image: "/assets/aboutSection.webp",
+  founded: "2021 · Remote-first"
+},  
+
+  NarrativeData:{
+  heading: {
+    white: "Software Architecture Built for Performance, Scale & ",
+    red: " Long-Term Growth."
+  },
+  paragraphs: [
+    {
+      segments: [
+        {
+          text: "We design and engineer software architectures that are built to perform under real-world conditions — not just in development. "
+        },
+        {
+          text: "Our senior engineers",
+          highlight: true
+        },
+        {
+          text: " think in systems, not just features, combining edge-first infrastructure, serverless runtimes, and deterministic performance principles to deliver products that scale globally from day one."
+        }
+      ]
+    },
+    {
+      segments: [
+        {
+          text: "Our full-stack development process connects frontend interfaces to backend systems through a strictly typed codebase using "
+        },
+        {
+          text: "TypeScript",
+          highlight: true
+        },
+        {
+          text: ". By eliminating runtime errors at the type level, we produce software that is faster to maintain, easier to extend, and significantly more reliable in production — whether you're building multi-tenant SaaS platforms or high-traffic web applications."
+        }
+      ]
+    },
+    {
+      segments: [
+        {
+          text: "We engineer web performance from the ground up — targeting zero layout shifts, sub-second load times, and perfect Core Web Vitals scores. Using static generation, dynamic streaming, and edge caching strategies, we deliver web applications that rank higher in search results and convert better. "
+        },
+        {
+          text: "Core Web Vitals • Next.js • Edge Runtime • Hyper-Fast Loading",
+          highlight: true
+        }
+      ]
+    },
+    {
+      segments: [
+        {
+          text: "We build production-grade AI systems — not demos. Our AI development services include custom "
+        },
+        {
+          text: "LLM Integrations, RAG Pipelines",
+          highlight: true
+        },
+        {
+          text: ", vector search, and autonomous AI agents built on deterministic pipelines. Every system is structured to deliver accurate, predictable outputs at scale — without relying on fragile prompt engineering."
+        }
+      ]
+    },
+    {
+      segments: [
+        {
+          text: "Our cloud engineering team delivers resilient, observable infrastructure on "
+        },
+        {
+          text: "AWS, Vercel, and Cloudflare",
+          highlight: true
+        },
+        {
+          text: ". Using infrastructure-as-code, distributed telemetry, and automated delivery pipelines, we eliminate downtime and give you full visibility into every layer of your system."
+        }
+      ],
+      note: "DevOps Automation • Zero-Downtime Deployments"
+    }
+  ]
+}
 },
   {
     slug: "web-development",
@@ -871,6 +1221,114 @@ sectionData:{
     ],
   },
   
+about_section_data1:{
+  white_heading: "A boutique engineering studio with a",
+  red_heading: "blockbuster output.",
+  paragraphs: [
+    "4xCode is a boutique software development company building ultra-fast, AI-powered SaaS platforms, web applications, and mobile products for startups and scaling brands.",
+    "From custom software development and AI agent engineering to cloud infrastructure and UI/UX design, our senior team turns ambitious product ideas into category-defining software — shipped in weeks, not quarters."
+  ],
+  stats: [
+    { value: "132+", label: "Products Shipped" },
+    { value: "30M", label: "Users Reached" },
+    { value: "99.99%", label: "Production Uptime" },
+    { value: "9yr", label: "Avg. Team Experience" }
+  ],
+  image: "/assets/aboutSection.webp",
+  founded: "2021 · Remote-first"
+}, 
+about_section_data2:{
+  white_heading: "A boutique engineering studio with a",
+  red_heading: "blockbuster output.",
+  paragraphs: [
+    "4xCode is a boutique software development company building ultra-fast, AI-powered SaaS platforms, web applications, and mobile products for startups and scaling brands.",
+    "From custom software development and AI agent engineering to cloud infrastructure and UI/UX design, our senior team turns ambitious product ideas into category-defining software — shipped in weeks, not quarters."
+  ],
+  stats: [
+    { value: "132+", label: "Products Shipped" },
+    { value: "30M", label: "Users Reached" },
+    { value: "99.99%", label: "Production Uptime" },
+    { value: "9yr", label: "Avg. Team Experience" }
+  ],
+  image: "/assets/aboutSection.webp",
+  founded: "2021 · Remote-first"
+}, 
+  NarrativeData:{
+  heading: {
+    white: "Software Architecture Built for Performance, Scale & ",
+    red: " Long-Term Growth."
+  },
+  paragraphs: [
+    {
+      segments: [
+        {
+          text: "We design and engineer software architectures that are built to perform under real-world conditions — not just in development. "
+        },
+        {
+          text: "Our senior engineers",
+          highlight: true
+        },
+        {
+          text: " think in systems, not just features, combining edge-first infrastructure, serverless runtimes, and deterministic performance principles to deliver products that scale globally from day one."
+        }
+      ]
+    },
+    {
+      segments: [
+        {
+          text: "Our full-stack development process connects frontend interfaces to backend systems through a strictly typed codebase using "
+        },
+        {
+          text: "TypeScript",
+          highlight: true
+        },
+        {
+          text: ". By eliminating runtime errors at the type level, we produce software that is faster to maintain, easier to extend, and significantly more reliable in production — whether you're building multi-tenant SaaS platforms or high-traffic web applications."
+        }
+      ]
+    },
+    {
+      segments: [
+        {
+          text: "We engineer web performance from the ground up — targeting zero layout shifts, sub-second load times, and perfect Core Web Vitals scores. Using static generation, dynamic streaming, and edge caching strategies, we deliver web applications that rank higher in search results and convert better. "
+        },
+        {
+          text: "Core Web Vitals • Next.js • Edge Runtime • Hyper-Fast Loading",
+          highlight: true
+        }
+      ]
+    },
+    {
+      segments: [
+        {
+          text: "We build production-grade AI systems — not demos. Our AI development services include custom "
+        },
+        {
+          text: "LLM Integrations, RAG Pipelines",
+          highlight: true
+        },
+        {
+          text: ", vector search, and autonomous AI agents built on deterministic pipelines. Every system is structured to deliver accurate, predictable outputs at scale — without relying on fragile prompt engineering."
+        }
+      ]
+    },
+    {
+      segments: [
+        {
+          text: "Our cloud engineering team delivers resilient, observable infrastructure on "
+        },
+        {
+          text: "AWS, Vercel, and Cloudflare",
+          highlight: true
+        },
+        {
+          text: ". Using infrastructure-as-code, distributed telemetry, and automated delivery pipelines, we eliminate downtime and give you full visibility into every layer of your system."
+        }
+      ],
+      note: "DevOps Automation • Zero-Downtime Deployments"
+    }
+  ]
+}
 },
   {
     slug: "mobile-apps",
@@ -1070,7 +1528,114 @@ sectionData:{
       },
     ],
   },
-  
+about_section_data1:{
+  white_heading: "A boutique engineering studio with a",
+  red_heading: "blockbuster output.",
+  paragraphs: [
+    "4xCode is a boutique software development company building ultra-fast, AI-powered SaaS platforms, web applications, and mobile products for startups and scaling brands.",
+    "From custom software development and AI agent engineering to cloud infrastructure and UI/UX design, our senior team turns ambitious product ideas into category-defining software — shipped in weeks, not quarters."
+  ],
+  stats: [
+    { value: "132+", label: "Products Shipped" },
+    { value: "30M", label: "Users Reached" },
+    { value: "99.99%", label: "Production Uptime" },
+    { value: "9yr", label: "Avg. Team Experience" }
+  ],
+  image: "/assets/aboutSection.webp",
+  founded: "2021 · Remote-first"
+},   
+about_section_data2:{
+  white_heading: "A boutique engineering studio with a",
+  red_heading: "blockbuster output.",
+  paragraphs: [
+    "4xCode is a boutique software development company building ultra-fast, AI-powered SaaS platforms, web applications, and mobile products for startups and scaling brands.",
+    "From custom software development and AI agent engineering to cloud infrastructure and UI/UX design, our senior team turns ambitious product ideas into category-defining software — shipped in weeks, not quarters."
+  ],
+  stats: [
+    { value: "132+", label: "Products Shipped" },
+    { value: "30M", label: "Users Reached" },
+    { value: "99.99%", label: "Production Uptime" },
+    { value: "9yr", label: "Avg. Team Experience" }
+  ],
+  image: "/assets/aboutSection.webp",
+  founded: "2021 · Remote-first"
+}, 
+  NarrativeData:{
+  heading: {
+    white: "Software Architecture Built for Performance, Scale & ",
+    red: " Long-Term Growth."
+  },
+  paragraphs: [
+    {
+      segments: [
+        {
+          text: "We design and engineer software architectures that are built to perform under real-world conditions — not just in development. "
+        },
+        {
+          text: "Our senior engineers",
+          highlight: true
+        },
+        {
+          text: " think in systems, not just features, combining edge-first infrastructure, serverless runtimes, and deterministic performance principles to deliver products that scale globally from day one."
+        }
+      ]
+    },
+    {
+      segments: [
+        {
+          text: "Our full-stack development process connects frontend interfaces to backend systems through a strictly typed codebase using "
+        },
+        {
+          text: "TypeScript",
+          highlight: true
+        },
+        {
+          text: ". By eliminating runtime errors at the type level, we produce software that is faster to maintain, easier to extend, and significantly more reliable in production — whether you're building multi-tenant SaaS platforms or high-traffic web applications."
+        }
+      ]
+    },
+    {
+      segments: [
+        {
+          text: "We engineer web performance from the ground up — targeting zero layout shifts, sub-second load times, and perfect Core Web Vitals scores. Using static generation, dynamic streaming, and edge caching strategies, we deliver web applications that rank higher in search results and convert better. "
+        },
+        {
+          text: "Core Web Vitals • Next.js • Edge Runtime • Hyper-Fast Loading",
+          highlight: true
+        }
+      ]
+    },
+    {
+      segments: [
+        {
+          text: "We build production-grade AI systems — not demos. Our AI development services include custom "
+        },
+        {
+          text: "LLM Integrations, RAG Pipelines",
+          highlight: true
+        },
+        {
+          text: ", vector search, and autonomous AI agents built on deterministic pipelines. Every system is structured to deliver accurate, predictable outputs at scale — without relying on fragile prompt engineering."
+        }
+      ]
+    },
+    {
+      segments: [
+        {
+          text: "Our cloud engineering team delivers resilient, observable infrastructure on "
+        },
+        {
+          text: "AWS, Vercel, and Cloudflare",
+          highlight: true
+        },
+        {
+          text: ". Using infrastructure-as-code, distributed telemetry, and automated delivery pipelines, we eliminate downtime and give you full visibility into every layer of your system."
+        }
+      ],
+      note: "DevOps Automation • Zero-Downtime Deployments"
+    }
+  ]
+}
 },
   {
     slug: "api-integration",
@@ -1271,7 +1836,115 @@ sectionData:{
       },
     ],
   },
-  
+about_section_data1:{
+  white_heading: "A boutique engineering studio with a",
+  red_heading: "blockbuster output.",
+  paragraphs: [
+    "4xCode is a boutique software development company building ultra-fast, AI-powered SaaS platforms, web applications, and mobile products for startups and scaling brands.",
+    "From custom software development and AI agent engineering to cloud infrastructure and UI/UX design, our senior team turns ambitious product ideas into category-defining software — shipped in weeks, not quarters."
+  ],
+  stats: [
+    { value: "132+", label: "Products Shipped" },
+    { value: "30M", label: "Users Reached" },
+    { value: "99.99%", label: "Production Uptime" },
+    { value: "9yr", label: "Avg. Team Experience" }
+  ],
+  image: "/assets/aboutSection.webp",
+  founded: "2021 · Remote-first"
+},  
+about_section_data2:{
+  white_heading: "A boutique engineering studio with a",
+  red_heading: "blockbuster output.",
+  paragraphs: [
+    "4xCode is a boutique software development company building ultra-fast, AI-powered SaaS platforms, web applications, and mobile products for startups and scaling brands.",
+    "From custom software development and AI agent engineering to cloud infrastructure and UI/UX design, our senior team turns ambitious product ideas into category-defining software — shipped in weeks, not quarters."
+  ],
+  stats: [
+    { value: "132+", label: "Products Shipped" },
+    { value: "30M", label: "Users Reached" },
+    { value: "99.99%", label: "Production Uptime" },
+    { value: "9yr", label: "Avg. Team Experience" }
+  ],
+  image: "/assets/aboutSection.webp",
+  founded: "2021 · Remote-first"
+},  
+  NarrativeData:{
+  heading: {
+    white: "Software Architecture Built for Performance, Scale & ",
+    red: " Long-Term Growth."
+  },
+  paragraphs: [
+    {
+      segments: [
+        {
+          text: "We design and engineer software architectures that are built to perform under real-world conditions — not just in development. "
+        },
+        {
+          text: "Our senior engineers",
+          highlight: true
+        },
+        {
+          text: " think in systems, not just features, combining edge-first infrastructure, serverless runtimes, and deterministic performance principles to deliver products that scale globally from day one."
+        }
+      ]
+    },
+    {
+      segments: [
+        {
+          text: "Our full-stack development process connects frontend interfaces to backend systems through a strictly typed codebase using "
+        },
+        {
+          text: "TypeScript",
+          highlight: true
+        },
+        {
+          text: ". By eliminating runtime errors at the type level, we produce software that is faster to maintain, easier to extend, and significantly more reliable in production — whether you're building multi-tenant SaaS platforms or high-traffic web applications."
+        }
+      ]
+    },
+    {
+      segments: [
+        {
+          text: "We engineer web performance from the ground up — targeting zero layout shifts, sub-second load times, and perfect Core Web Vitals scores. Using static generation, dynamic streaming, and edge caching strategies, we deliver web applications that rank higher in search results and convert better. "
+        },
+        {
+          text: "Core Web Vitals • Next.js • Edge Runtime • Hyper-Fast Loading",
+          highlight: true
+        }
+      ]
+    },
+    {
+      segments: [
+        {
+          text: "We build production-grade AI systems — not demos. Our AI development services include custom "
+        },
+        {
+          text: "LLM Integrations, RAG Pipelines",
+          highlight: true
+        },
+        {
+          text: ", vector search, and autonomous AI agents built on deterministic pipelines. Every system is structured to deliver accurate, predictable outputs at scale — without relying on fragile prompt engineering."
+        }
+      ]
+    },
+    {
+      segments: [
+        {
+          text: "Our cloud engineering team delivers resilient, observable infrastructure on "
+        },
+        {
+          text: "AWS, Vercel, and Cloudflare",
+          highlight: true
+        },
+        {
+          text: ". Using infrastructure-as-code, distributed telemetry, and automated delivery pipelines, we eliminate downtime and give you full visibility into every layer of your system."
+        }
+      ],
+      note: "DevOps Automation • Zero-Downtime Deployments"
+    }
+  ]
+}
+
 },
   {
     slug: "automation-systems",
@@ -1475,7 +2148,114 @@ sectionData:{
       },
     ],
   },
-  
+about_section_data1:{
+  white_heading: "A boutique engineering studio with a",
+  red_heading: "blockbuster output.",
+  paragraphs: [
+    "4xCode is a boutique software development company building ultra-fast, AI-powered SaaS platforms, web applications, and mobile products for startups and scaling brands.",
+    "From custom software development and AI agent engineering to cloud infrastructure and UI/UX design, our senior team turns ambitious product ideas into category-defining software — shipped in weeks, not quarters."
+  ],
+  stats: [
+    { value: "132+", label: "Products Shipped" },
+    { value: "30M", label: "Users Reached" },
+    { value: "99.99%", label: "Production Uptime" },
+    { value: "9yr", label: "Avg. Team Experience" }
+  ],
+  image: "/assets/aboutSection.webp",
+  founded: "2021 · Remote-first"
+},  
+about_section_data2:{
+  white_heading: "A boutique engineering studio with a",
+  red_heading: "blockbuster output.",
+  paragraphs: [
+    "4xCode is a boutique software development company building ultra-fast, AI-powered SaaS platforms, web applications, and mobile products for startups and scaling brands.",
+    "From custom software development and AI agent engineering to cloud infrastructure and UI/UX design, our senior team turns ambitious product ideas into category-defining software — shipped in weeks, not quarters."
+  ],
+  stats: [
+    { value: "132+", label: "Products Shipped" },
+    { value: "30M", label: "Users Reached" },
+    { value: "99.99%", label: "Production Uptime" },
+    { value: "9yr", label: "Avg. Team Experience" }
+  ],
+  image: "/assets/aboutSection.webp",
+  founded: "2021 · Remote-first"
+},  
+  NarrativeData:{
+  heading: {
+    white: "Software Architecture Built for Performance, Scale & ",
+    red: " Long-Term Growth."
+  },
+  paragraphs: [
+    {
+      segments: [
+        {
+          text: "We design and engineer software architectures that are built to perform under real-world conditions — not just in development. "
+        },
+        {
+          text: "Our senior engineers",
+          highlight: true
+        },
+        {
+          text: " think in systems, not just features, combining edge-first infrastructure, serverless runtimes, and deterministic performance principles to deliver products that scale globally from day one."
+        }
+      ]
+    },
+    {
+      segments: [
+        {
+          text: "Our full-stack development process connects frontend interfaces to backend systems through a strictly typed codebase using "
+        },
+        {
+          text: "TypeScript",
+          highlight: true
+        },
+        {
+          text: ". By eliminating runtime errors at the type level, we produce software that is faster to maintain, easier to extend, and significantly more reliable in production — whether you're building multi-tenant SaaS platforms or high-traffic web applications."
+        }
+      ]
+    },
+    {
+      segments: [
+        {
+          text: "We engineer web performance from the ground up — targeting zero layout shifts, sub-second load times, and perfect Core Web Vitals scores. Using static generation, dynamic streaming, and edge caching strategies, we deliver web applications that rank higher in search results and convert better. "
+        },
+        {
+          text: "Core Web Vitals • Next.js • Edge Runtime • Hyper-Fast Loading",
+          highlight: true
+        }
+      ]
+    },
+    {
+      segments: [
+        {
+          text: "We build production-grade AI systems — not demos. Our AI development services include custom "
+        },
+        {
+          text: "LLM Integrations, RAG Pipelines",
+          highlight: true
+        },
+        {
+          text: ", vector search, and autonomous AI agents built on deterministic pipelines. Every system is structured to deliver accurate, predictable outputs at scale — without relying on fragile prompt engineering."
+        }
+      ]
+    },
+    {
+      segments: [
+        {
+          text: "Our cloud engineering team delivers resilient, observable infrastructure on "
+        },
+        {
+          text: "AWS, Vercel, and Cloudflare",
+          highlight: true
+        },
+        {
+          text: ". Using infrastructure-as-code, distributed telemetry, and automated delivery pipelines, we eliminate downtime and give you full visibility into every layer of your system."
+        }
+      ],
+      note: "DevOps Automation • Zero-Downtime Deployments"
+    }
+  ]
+}
 },
   {
     slug: "ui-ux-design",
@@ -1678,7 +2458,115 @@ sectionData:{
       },
     ],
   },
-  
+about_section_data1:{
+  white_heading: "A boutique engineering studio with a",
+  red_heading: "blockbuster output.",
+  paragraphs: [
+    "4xCode is a boutique software development company building ultra-fast, AI-powered SaaS platforms, web applications, and mobile products for startups and scaling brands.",
+    "From custom software development and AI agent engineering to cloud infrastructure and UI/UX design, our senior team turns ambitious product ideas into category-defining software — shipped in weeks, not quarters."
+  ],
+  stats: [
+    { value: "132+", label: "Products Shipped" },
+    { value: "30M", label: "Users Reached" },
+    { value: "99.99%", label: "Production Uptime" },
+    { value: "9yr", label: "Avg. Team Experience" }
+  ],
+  image: "/assets/aboutSection.webp",
+  founded: "2021 · Remote-first"
+},   
+about_section_data2:{
+  white_heading: "A boutique engineering studio with a",
+  red_heading: "blockbuster output.",
+  paragraphs: [
+    "4xCode is a boutique software development company building ultra-fast, AI-powered SaaS platforms, web applications, and mobile products for startups and scaling brands.",
+    "From custom software development and AI agent engineering to cloud infrastructure and UI/UX design, our senior team turns ambitious product ideas into category-defining software — shipped in weeks, not quarters."
+  ],
+  stats: [
+    { value: "132+", label: "Products Shipped" },
+    { value: "30M", label: "Users Reached" },
+    { value: "99.99%", label: "Production Uptime" },
+    { value: "9yr", label: "Avg. Team Experience" }
+  ],
+  image: "/assets/aboutSection.webp",
+  founded: "2021 · Remote-first"
+}, 
+
+  NarrativeData:{
+  heading: {
+    white: "Software Architecture Built for Performance, Scale & ",
+    red: " Long-Term Growth."
+  },
+  paragraphs: [
+    {
+      segments: [
+        {
+          text: "We design and engineer software architectures that are built to perform under real-world conditions — not just in development. "
+        },
+        {
+          text: "Our senior engineers",
+          highlight: true
+        },
+        {
+          text: " think in systems, not just features, combining edge-first infrastructure, serverless runtimes, and deterministic performance principles to deliver products that scale globally from day one."
+        }
+      ]
+    },
+    {
+      segments: [
+        {
+          text: "Our full-stack development process connects frontend interfaces to backend systems through a strictly typed codebase using "
+        },
+        {
+          text: "TypeScript",
+          highlight: true
+        },
+        {
+          text: ". By eliminating runtime errors at the type level, we produce software that is faster to maintain, easier to extend, and significantly more reliable in production — whether you're building multi-tenant SaaS platforms or high-traffic web applications."
+        }
+      ]
+    },
+    {
+      segments: [
+        {
+          text: "We engineer web performance from the ground up — targeting zero layout shifts, sub-second load times, and perfect Core Web Vitals scores. Using static generation, dynamic streaming, and edge caching strategies, we deliver web applications that rank higher in search results and convert better. "
+        },
+        {
+          text: "Core Web Vitals • Next.js • Edge Runtime • Hyper-Fast Loading",
+          highlight: true
+        }
+      ]
+    },
+    {
+      segments: [
+        {
+          text: "We build production-grade AI systems — not demos. Our AI development services include custom "
+        },
+        {
+          text: "LLM Integrations, RAG Pipelines",
+          highlight: true
+        },
+        {
+          text: ", vector search, and autonomous AI agents built on deterministic pipelines. Every system is structured to deliver accurate, predictable outputs at scale — without relying on fragile prompt engineering."
+        }
+      ]
+    },
+    {
+      segments: [
+        {
+          text: "Our cloud engineering team delivers resilient, observable infrastructure on "
+        },
+        {
+          text: "AWS, Vercel, and Cloudflare",
+          highlight: true
+        },
+        {
+          text: ". Using infrastructure-as-code, distributed telemetry, and automated delivery pipelines, we eliminate downtime and give you full visibility into every layer of your system."
+        }
+      ],
+      note: "DevOps Automation • Zero-Downtime Deployments"
+    }
+  ]
+}
 },
   {
     slug: "cloud-systems",
@@ -1876,23 +2764,127 @@ sectionData:{
     ],
   },
   
+about_section_data1:{
+  white_heading: "A boutique engineering studio with a",
+  red_heading: "blockbuster output.",
+  paragraphs: [
+    "4xCode is a boutique software development company building ultra-fast, AI-powered SaaS platforms, web applications, and mobile products for startups and scaling brands.",
+    "From custom software development and AI agent engineering to cloud infrastructure and UI/UX design, our senior team turns ambitious product ideas into category-defining software — shipped in weeks, not quarters."
+  ],
+  stats: [
+    { value: "132+", label: "Products Shipped" },
+    { value: "30M", label: "Users Reached" },
+    { value: "99.99%", label: "Production Uptime" },
+    { value: "9yr", label: "Avg. Team Experience" }
+  ],
+  image: "/assets/aboutSection.webp",
+  founded: "2021 · Remote-first"
+}, 
+about_section_data2:{
+  white_heading: "A boutique engineering studio with a",
+  red_heading: "blockbuster output.",
+  paragraphs: [
+    "4xCode is a boutique software development company building ultra-fast, AI-powered SaaS platforms, web applications, and mobile products for startups and scaling brands.",
+    "From custom software development and AI agent engineering to cloud infrastructure and UI/UX design, our senior team turns ambitious product ideas into category-defining software — shipped in weeks, not quarters."
+  ],
+  stats: [
+    { value: "132+", label: "Products Shipped" },
+    { value: "30M", label: "Users Reached" },
+    { value: "99.99%", label: "Production Uptime" },
+    { value: "9yr", label: "Avg. Team Experience" }
+  ],
+  image: "/assets/aboutSection.webp",
+  founded: "2021 · Remote-first"
+}, 
+  NarrativeData:{
+  heading: {
+    white: "Software Architecture Built for Performance, Scale & ",
+    red: " Long-Term Growth."
+  },
+  paragraphs: [
+    {
+      segments: [
+        {
+          text: "We design and engineer software architectures that are built to perform under real-world conditions — not just in development. "
+        },
+        {
+          text: "Our senior engineers",
+          highlight: true
+        },
+        {
+          text: " think in systems, not just features, combining edge-first infrastructure, serverless runtimes, and deterministic performance principles to deliver products that scale globally from day one."
+        }
+      ]
+    },
+    {
+      segments: [
+        {
+          text: "Our full-stack development process connects frontend interfaces to backend systems through a strictly typed codebase using "
+        },
+        {
+          text: "TypeScript",
+          highlight: true
+        },
+        {
+          text: ". By eliminating runtime errors at the type level, we produce software that is faster to maintain, easier to extend, and significantly more reliable in production — whether you're building multi-tenant SaaS platforms or high-traffic web applications."
+        }
+      ]
+    },
+    {
+      segments: [
+        {
+          text: "We engineer web performance from the ground up — targeting zero layout shifts, sub-second load times, and perfect Core Web Vitals scores. Using static generation, dynamic streaming, and edge caching strategies, we deliver web applications that rank higher in search results and convert better. "
+        },
+        {
+          text: "Core Web Vitals • Next.js • Edge Runtime • Hyper-Fast Loading",
+          highlight: true
+        }
+      ]
+    },
+    {
+      segments: [
+        {
+          text: "We build production-grade AI systems — not demos. Our AI development services include custom "
+        },
+        {
+          text: "LLM Integrations, RAG Pipelines",
+          highlight: true
+        },
+        {
+          text: ", vector search, and autonomous AI agents built on deterministic pipelines. Every system is structured to deliver accurate, predictable outputs at scale — without relying on fragile prompt engineering."
+        }
+      ]
+    },
+    {
+      segments: [
+        {
+          text: "Our cloud engineering team delivers resilient, observable infrastructure on "
+        },
+        {
+          text: "AWS, Vercel, and Cloudflare",
+          highlight: true
+        },
+        {
+          text: ". Using infrastructure-as-code, distributed telemetry, and automated delivery pipelines, we eliminate downtime and give you full visibility into every layer of your system."
+        }
+      ],
+      note: "DevOps Automation • Zero-Downtime Deployments"
+    }
+  ]
+}
 },
   {
-    slug: "seo-digital-marketing",
+    slug: "digital-marketing",
     iconKey: "marketing",
-    title: "SEO & Digital Marketing",
-    titleTag: "Technical SEO & Growth Marketing Services — 4xCode",
+    title: "Digital Marketing",
+    titleTag: "Technical Growth Marketing Services — 4xCode",
     metaDesc:
       "Data-driven technical SEO, content strategy, and paid campaigns that drive qualified traffic and measurable revenue, not vanity metrics.",
     desc: "Data-driven technical SEO, content strategy, and paid campaigns that drive qualified traffic and measurable revenue, not vanity metrics.",
     intro:
-      "4xCode pairs technical SEO and content strategy with paid acquisition — Google Ads, Meta Ads, and conversion optimization — to drive traffic that actually converts, backed by the same engineering rigor we bring to product. ",
+      "4xCode pairs content strategy with paid acquisition — Google Ads, Meta Ads, and conversion optimization — to drive traffic that actually converts, backed by the same engineering rigor we bring to product. ",
     features: [
-      {
-        title: "Technical SEO",
-        description:
-          "Site speed, crawlability, schema markup, and Core Web Vitals fixes that remove the technical ceiling on your rankings.",
-      },
+   
       {
         title: "Content strategy",
         description:
@@ -1914,11 +2906,7 @@ sectionData:{
         name: "Google Ads",
         description: "High-intent paid search acquisition.",
       },
-      {
-        name: "SEO",
-        description:
-          "Technical audits, keyword research, and rank tracking via elite industry tooling.",
-      },
+     
       {
         name: "Analytics",
         description: "Funnel measurement and attribution back to revenue.",
@@ -1928,7 +2916,7 @@ sectionData:{
         description: "Paid social acquisition and retargeting.",
       },
     ],
-    longTitle: "Technical SEO & Growth Marketing That Drives Revenue, Not ",
+    longTitle: "Technical Growth Marketing That Drives Revenue, Not ",
     gradientWord: "Vanity Metrics",
     longDesc:
       "Technical SEO, content strategy, and paid campaigns built on the same engineering rigor as our products. Marketing and engineering are usually run as separate disciplines, which is exactly why most SEO work fails to move the needle — content gets published on a site with broken Core Web Vitals, or paid campaigns drive traffic to a page that doesn't convert. 4xCode runs SEO and digital marketing alongside engineering, which means technical SEO fixes (site speed, schema, crawlability) and content strategy are paired with the actual product and conversion path — and paid campaigns (Google Ads, Meta Ads) are optimized against real revenue data, not just click-through rate.",
@@ -2079,7 +3067,427 @@ sectionData:{
       },
     ],
   },
-  
+about_section_data1:{
+  white_heading: "A boutique engineering studio with a",
+  red_heading: "blockbuster output.",
+  paragraphs: [
+    "4xCode is a boutique software development company building ultra-fast, AI-powered SaaS platforms, web applications, and mobile products for startups and scaling brands.",
+    "From custom software development and AI agent engineering to cloud infrastructure and UI/UX design, our senior team turns ambitious product ideas into category-defining software — shipped in weeks, not quarters."
+  ],
+  stats: [
+    { value: "132+", label: "Products Shipped" },
+    { value: "30M", label: "Users Reached" },
+    { value: "99.99%", label: "Production Uptime" },
+    { value: "9yr", label: "Avg. Team Experience" }
+  ],
+  image: "/assets/aboutSection.webp",
+  founded: "2021 · Remote-first"
+},  
+about_section_data2:{
+  white_heading: "A boutique engineering studio with a",
+  red_heading: "blockbuster output.",
+  paragraphs: [
+    "4xCode is a boutique software development company building ultra-fast, AI-powered SaaS platforms, web applications, and mobile products for startups and scaling brands.",
+    "From custom software development and AI agent engineering to cloud infrastructure and UI/UX design, our senior team turns ambitious product ideas into category-defining software — shipped in weeks, not quarters."
+  ],
+  stats: [
+    { value: "132+", label: "Products Shipped" },
+    { value: "30M", label: "Users Reached" },
+    { value: "99.99%", label: "Production Uptime" },
+    { value: "9yr", label: "Avg. Team Experience" }
+  ],
+  image: "/assets/aboutSection.webp",
+  founded: "2021 · Remote-first"
+}, 
+
+  NarrativeData:{
+  heading: {
+    white: "Software Architecture Built for Performance, Scale & ",
+    red: " Long-Term Growth."
+  },
+  paragraphs: [
+    {
+      segments: [
+        {
+          text: "We design and engineer software architectures that are built to perform under real-world conditions — not just in development. "
+        },
+        {
+          text: "Our senior engineers",
+          highlight: true
+        },
+        {
+          text: " think in systems, not just features, combining edge-first infrastructure, serverless runtimes, and deterministic performance principles to deliver products that scale globally from day one."
+        }
+      ]
+    },
+    {
+      segments: [
+        {
+          text: "Our full-stack development process connects frontend interfaces to backend systems through a strictly typed codebase using "
+        },
+        {
+          text: "TypeScript",
+          highlight: true
+        },
+        {
+          text: ". By eliminating runtime errors at the type level, we produce software that is faster to maintain, easier to extend, and significantly more reliable in production — whether you're building multi-tenant SaaS platforms or high-traffic web applications."
+        }
+      ]
+    },
+    {
+      segments: [
+        {
+          text: "We engineer web performance from the ground up — targeting zero layout shifts, sub-second load times, and perfect Core Web Vitals scores. Using static generation, dynamic streaming, and edge caching strategies, we deliver web applications that rank higher in search results and convert better. "
+        },
+        {
+          text: "Core Web Vitals • Next.js • Edge Runtime • Hyper-Fast Loading",
+          highlight: true
+        }
+      ]
+    },
+    {
+      segments: [
+        {
+          text: "We build production-grade AI systems — not demos. Our AI development services include custom "
+        },
+        {
+          text: "LLM Integrations, RAG Pipelines",
+          highlight: true
+        },
+        {
+          text: ", vector search, and autonomous AI agents built on deterministic pipelines. Every system is structured to deliver accurate, predictable outputs at scale — without relying on fragile prompt engineering."
+        }
+      ]
+    },
+    {
+      segments: [
+        {
+          text: "Our cloud engineering team delivers resilient, observable infrastructure on "
+        },
+        {
+          text: "AWS, Vercel, and Cloudflare",
+          highlight: true
+        },
+        {
+          text: ". Using infrastructure-as-code, distributed telemetry, and automated delivery pipelines, we eliminate downtime and give you full visibility into every layer of your system."
+        }
+      ],
+      note: "DevOps Automation • Zero-Downtime Deployments"
+    }
+  ]
+}
+},
+ {
+    slug: "seo",
+    iconKey: "marketing",
+    title: "SEO ",
+    titleTag: "Technical SEO Services — 4xCode",
+    metaDesc:
+      "Data-driven technical SEO, content strategy, and paid campaigns that drive qualified traffic and measurable revenue, not vanity metrics.",
+    desc: "Data-driven technical SEO, content strategy, and paid campaigns that drive qualified traffic and measurable revenue, not vanity metrics.",
+    intro:
+      "4xCode pairs technical SEO and content strategy with paid acquisition — Google Ads, Meta Ads, and conversion optimization — to drive traffic that actually converts, backed by the same engineering rigor we bring to product. ",
+    features: [
+      {
+        title: "Technical SEO",
+        description:
+          "Site speed, crawlability, schema markup, and Core Web Vitals fixes that remove the technical ceiling on your rankings.",
+      },
+      {
+        title: "Content strategy",
+        description:
+          "Keyword-mapped content plans built around actual search intent and your sales funnel, not just volume metrics.",
+      },
+      {
+        title: "PPC campaigns",
+        description:
+          "Google Ads and Meta Ads campaigns built and optimized against revenue, not vanity click metrics.",
+      },
+      {
+        title: "Conversion optimization",
+        description:
+          "Landing page and funnel testing to make sure traffic you've earned actually converts.",
+      },
+    ],
+    tags: [
+      {
+        name: "Google Ads",
+        description: "High-intent paid search acquisition.",
+      },
+      {
+        name: "SEO",
+        description:
+          "Technical audits, keyword research, and rank tracking via elite industry tooling.",
+      },
+      {
+        name: "Analytics",
+        description: "Funnel measurement and attribution back to revenue.",
+      },
+      {
+        name: "Meta Ads",
+        description: "Paid social acquisition and retargeting.",
+      },
+    ],
+    longTitle: "Technical SEO That Drives Revenue, Not ",
+    gradientWord: "Vanity Metrics",
+    longDesc:
+      "Technical SEO, content strategy, and paid campaigns built on the same engineering rigor as our products. Marketing and engineering are usually run as separate disciplines, which is exactly why most SEO work fails to move the needle — content gets published on a site with broken Core Web Vitals, or paid campaigns drive traffic to a page that doesn't convert. 4xCode runs SEO and digital marketing alongside engineering, which means technical SEO fixes (site speed, schema, crawlability) and content strategy are paired with the actual product and conversion path — and paid campaigns (Google Ads, Meta Ads) are optimized against real revenue data, not just click-through rate.",
+    techCategories: [
+      {
+        name: "Performance Audits",
+        items: [
+          "Lighthouse Insights",
+          "Screaming Frog Core",
+          "Search Console Matrices",
+        ],
+      },
+      {
+        name: "Conversion Analytics",
+        items: ["Google Analytics 4", "PostHog Platform", "Hotjar Tracking"],
+      },
+      {
+        name: "Campaign Optimization",
+        items: ["Meta Pixel Engine", "Google Tag Manager", "Semrush Systems"],
+      },
+    ],
+    architecture: [
+      {
+        phase: "01",
+        title: "System Performance Audit",
+        desc: "Fixing network crawler errors, structural server layout parameters, and caching values.",
+      },
+      {
+        phase: "02",
+        title: "Taxonomy Asset Deployment",
+        desc: "Injecting semantic content layouts dynamically across all targeted user channels.",
+      },
+      {
+        phase: "03",
+        title: "Conversion Matrix Tracking",
+        desc: "Deploying analytical event triggers to track exactly where customer acquisitions convert.",
+      },
+    ],
+    metrics: [
+      { value: "+140%", label: "Organic Visibility Growth" },
+      { value: "Sub-Second", label: "Crawler Document Parse" },
+      { value: "100%", label: "Event Capture Integrity" },
+    ],
+    faqs: [
+      {
+        q: "How long does SEO take to show results?",
+        a: "Technical fixes can show ranking movement within weeks; competitive keyword rankings through content typically take 3–6 months of consistent publishing.",
+      },
+      {
+        q: "Do you handle both SEO and paid ads, or just one?",
+        a: "Both — and we coordinate them, since paid campaigns and organic content should reinforce the same keyword strategy rather than compete for budget separately.",
+      },
+      {
+        q: "Can you fix technical SEO issues on our existing site without a rebuild?",
+        a: "In most cases yes — schema, speed, and crawlability issues are usually fixable without a full rebuild.",
+      },
+    ],
+    pillars: [
+      {
+        title: "Technical foundation first",
+        desc: "We fix the technical SEO ceiling (speed, schema, crawlability) most agencies can't touch because they don't have engineers.",
+      },
+      {
+        title: "Measured, not guessed",
+        desc: "Content strategy is mapped to actual search intent and your funnel, not just keyword volume.",
+      },
+      {
+        title: "Compounding, not rented",
+        desc: "Paid campaigns are measured against revenue and LTV, not just impressions and clicks.",
+      },
+    ],
+    whyTeamsChoose: [
+      {
+        title: "Engineering-Driven Mechanics",
+        desc: "We fix the technical SEO ceiling (speed, schema, crawlability) most agencies can't touch because they don't have engineers.",
+      },
+      {
+        title: "Intentional Pipeline Architecture",
+        desc: "Content strategy is mapped to actual search intent and your funnel, not just keyword volume.",
+      },
+      {
+        title: "Unit Economic Measurement",
+        desc: "Paid campaigns are measured against revenue and LTV, not just impressions and clicks.",
+      },
+    ],
+    relatedSlugs: ["web-development", "ecommerce-solutions", "ui-ux-design"],
+    software_build_data:{
+  heading:{
+    white: "Software built for your",
+    red: "Industry",
+  },
+
+  subheading:
+    "We combine product thinking, engineering, and industry-specific workflows to create software that drives your business operations.",
+
+  industries:[
+    "Automotive & Mobility",
+    "Professional Services",
+    "Startups & SaaS",
+    "Sports & Fitness",
+      "E-Commerce & Retail",
+    "Finance & Operations",
+    "Logistics & Transportation",
+    "Food",
+    "Travel & Hospitality",
+  "Education & EdTech",  
+    "Marketing & Advertising",
+  "Healthcare & Technology",
+  ]
+
+},
+sectionData:{
+    heading: "Technology experience for scalable digital products",
+
+    description:
+      "4xCode combines software architecture, AI development, web performance, SaaS engineering, and cloud infrastructure for startup and growing businesses.",
+
+    cards: [
+      {
+        card_heading: "AI Development Services",
+        card_description:
+          "We build intelligent AI solutions, agents, and RAG systems for business products.",
+      },
+      {
+        card_heading: "Custom Software Development",
+        card_description:
+          "Scalable software solutions designed around your business requirements.",
+      },
+      {
+        card_heading: "SaaS Development Company",
+        card_description:
+          "Launch scalable SaaS platforms with reliable backend, billing, and secure infrastructure.",
+      },
+      {
+        card_heading: "Web Development Services",
+        card_description:
+          "Fast, responsive, and optimized websites that convert users and search traffic.",
+      },
+      {
+        card_heading: "Cloud Engineering Services",
+        card_description:
+          "Build, deploy, and manage cloud infrastructure that scales reliably and confidently.",
+      },
+      {
+        card_heading: "SEO-Friendly Web Development",
+        card_description:
+          "Improve ranking with technical SEO, Core Web Vitals, and high-performance design.",
+      },
+    ],
+  },
+about_section_data1:{
+  white_heading: "A boutique engineering studio with a",
+  red_heading: "blockbuster output.",
+  paragraphs: [
+    "4xCode is a boutique software development company building ultra-fast, AI-powered SaaS platforms, web applications, and mobile products for startups and scaling brands.",
+    "From custom software development and AI agent engineering to cloud infrastructure and UI/UX design, our senior team turns ambitious product ideas into category-defining software — shipped in weeks, not quarters."
+  ],
+  stats: [
+    { value: "132+", label: "Products Shipped" },
+    { value: "30M", label: "Users Reached" },
+    { value: "99.99%", label: "Production Uptime" },
+    { value: "9yr", label: "Avg. Team Experience" }
+  ],
+  image: "/assets/aboutSection.webp",
+  founded: "2021 · Remote-first"
+},  
+about_section_data2:{
+  white_heading: "A boutique engineering studio with a",
+  red_heading: "blockbuster output.",
+  paragraphs: [
+    "4xCode is a boutique software development company building ultra-fast, AI-powered SaaS platforms, web applications, and mobile products for startups and scaling brands.",
+    "From custom software development and AI agent engineering to cloud infrastructure and UI/UX design, our senior team turns ambitious product ideas into category-defining software — shipped in weeks, not quarters."
+  ],
+  stats: [
+    { value: "132+", label: "Products Shipped" },
+    { value: "30M", label: "Users Reached" },
+    { value: "99.99%", label: "Production Uptime" },
+    { value: "9yr", label: "Avg. Team Experience" }
+  ],
+  image: "/assets/aboutSection.webp",
+  founded: "2021 · Remote-first"
+}, 
+
+  NarrativeData:{
+  heading: {
+    white: "Software Architecture Built for Performance, Scale & ",
+    red: " Long-Term Growth."
+  },
+  paragraphs: [
+    {
+      segments: [
+        {
+          text: "We design and engineer software architectures that are built to perform under real-world conditions — not just in development. "
+        },
+        {
+          text: "Our senior engineers",
+          highlight: true
+        },
+        {
+          text: " think in systems, not just features, combining edge-first infrastructure, serverless runtimes, and deterministic performance principles to deliver products that scale globally from day one."
+        }
+      ]
+    },
+    {
+      segments: [
+        {
+          text: "Our full-stack development process connects frontend interfaces to backend systems through a strictly typed codebase using "
+        },
+        {
+          text: "TypeScript",
+          highlight: true
+        },
+        {
+          text: ". By eliminating runtime errors at the type level, we produce software that is faster to maintain, easier to extend, and significantly more reliable in production — whether you're building multi-tenant SaaS platforms or high-traffic web applications."
+        }
+      ]
+    },
+    {
+      segments: [
+        {
+          text: "We engineer web performance from the ground up — targeting zero layout shifts, sub-second load times, and perfect Core Web Vitals scores. Using static generation, dynamic streaming, and edge caching strategies, we deliver web applications that rank higher in search results and convert better. "
+        },
+        {
+          text: "Core Web Vitals • Next.js • Edge Runtime • Hyper-Fast Loading",
+          highlight: true
+        }
+      ]
+    },
+    {
+      segments: [
+        {
+          text: "We build production-grade AI systems — not demos. Our AI development services include custom "
+        },
+        {
+          text: "LLM Integrations, RAG Pipelines",
+          highlight: true
+        },
+        {
+          text: ", vector search, and autonomous AI agents built on deterministic pipelines. Every system is structured to deliver accurate, predictable outputs at scale — without relying on fragile prompt engineering."
+        }
+      ]
+    },
+    {
+      segments: [
+        {
+          text: "Our cloud engineering team delivers resilient, observable infrastructure on "
+        },
+        {
+          text: "AWS, Vercel, and Cloudflare",
+          highlight: true
+        },
+        {
+          text: ". Using infrastructure-as-code, distributed telemetry, and automated delivery pipelines, we eliminate downtime and give you full visibility into every layer of your system."
+        }
+      ],
+      note: "DevOps Automation • Zero-Downtime Deployments"
+    }
+  ]
+}
 },
   {
     slug: "ecommerce-solutions",
@@ -2286,7 +3694,115 @@ sectionData:{
       },
     ],
   },
-  
+about_section_data1:{
+  white_heading: "A boutique engineering studio with a",
+  red_heading: "blockbuster output.",
+  paragraphs: [
+    "4xCode is a boutique software development company building ultra-fast, AI-powered SaaS platforms, web applications, and mobile products for startups and scaling brands.",
+    "From custom software development and AI agent engineering to cloud infrastructure and UI/UX design, our senior team turns ambitious product ideas into category-defining software — shipped in weeks, not quarters."
+  ],
+  stats: [
+    { value: "132+", label: "Products Shipped" },
+    { value: "30M", label: "Users Reached" },
+    { value: "99.99%", label: "Production Uptime" },
+    { value: "9yr", label: "Avg. Team Experience" }
+  ],
+  image: "/assets/aboutSection.webp",
+  founded: "2021 · Remote-first"
+},   
+about_section_data2:{
+  white_heading: "A boutique engineering studio with a",
+  red_heading: "blockbuster output.",
+  paragraphs: [
+    "4xCode is a boutique software development company building ultra-fast, AI-powered SaaS platforms, web applications, and mobile products for startups and scaling brands.",
+    "From custom software development and AI agent engineering to cloud infrastructure and UI/UX design, our senior team turns ambitious product ideas into category-defining software — shipped in weeks, not quarters."
+  ],
+  stats: [
+    { value: "132+", label: "Products Shipped" },
+    { value: "30M", label: "Users Reached" },
+    { value: "99.99%", label: "Production Uptime" },
+    { value: "9yr", label: "Avg. Team Experience" }
+  ],
+  image: "/assets/aboutSection.webp",
+  founded: "2021 · Remote-first"
+},
+
+  NarrativeData:{
+  heading: {
+    white: "Software Architecture Built for Performance, Scale & ",
+    red: " Long-Term Growth."
+  },
+  paragraphs: [
+    {
+      segments: [
+        {
+          text: "We design and engineer software architectures that are built to perform under real-world conditions — not just in development. "
+        },
+        {
+          text: "Our senior engineers",
+          highlight: true
+        },
+        {
+          text: " think in systems, not just features, combining edge-first infrastructure, serverless runtimes, and deterministic performance principles to deliver products that scale globally from day one."
+        }
+      ]
+    },
+    {
+      segments: [
+        {
+          text: "Our full-stack development process connects frontend interfaces to backend systems through a strictly typed codebase using "
+        },
+        {
+          text: "TypeScript",
+          highlight: true
+        },
+        {
+          text: ". By eliminating runtime errors at the type level, we produce software that is faster to maintain, easier to extend, and significantly more reliable in production — whether you're building multi-tenant SaaS platforms or high-traffic web applications."
+        }
+      ]
+    },
+    {
+      segments: [
+        {
+          text: "We engineer web performance from the ground up — targeting zero layout shifts, sub-second load times, and perfect Core Web Vitals scores. Using static generation, dynamic streaming, and edge caching strategies, we deliver web applications that rank higher in search results and convert better. "
+        },
+        {
+          text: "Core Web Vitals • Next.js • Edge Runtime • Hyper-Fast Loading",
+          highlight: true
+        }
+      ]
+    },
+    {
+      segments: [
+        {
+          text: "We build production-grade AI systems — not demos. Our AI development services include custom "
+        },
+        {
+          text: "LLM Integrations, RAG Pipelines",
+          highlight: true
+        },
+        {
+          text: ", vector search, and autonomous AI agents built on deterministic pipelines. Every system is structured to deliver accurate, predictable outputs at scale — without relying on fragile prompt engineering."
+        }
+      ]
+    },
+    {
+      segments: [
+        {
+          text: "Our cloud engineering team delivers resilient, observable infrastructure on "
+        },
+        {
+          text: "AWS, Vercel, and Cloudflare",
+          highlight: true
+        },
+        {
+          text: ". Using infrastructure-as-code, distributed telemetry, and automated delivery pipelines, we eliminate downtime and give you full visibility into every layer of your system."
+        }
+      ],
+      note: "DevOps Automation • Zero-Downtime Deployments"
+    }
+  ]
+}
 },
 ];
 

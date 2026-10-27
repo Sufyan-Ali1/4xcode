@@ -3,12 +3,9 @@ import Link from "next/link";
 import Image from "next/image";
 import data from "@/data/products.json";
 
-// Icons
-import TwitterIcon from "@mui/icons-material/Twitter";
-import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import PublicIcon from "@mui/icons-material/Public";
-
+import FacebookIcon from "@mui/icons-material/Facebook";
 const STUDIO_LINKS = [
   { label: "Service", href: "/service" },
   { label: "Work", href: "/work" },
@@ -28,6 +25,12 @@ const SOCIAL_LINKS = [
     Icon: PublicIcon,
     href: "https://4xcode.com",
   },
+   {
+    label: "Facebook",
+    Icon: FacebookIcon,
+    href: "https://www.facebook.com/p/4xcode-61591747731295/",
+  },
+  
 ];
 
 export default function Footer() {

@@ -1,12 +1,15 @@
 import AboutSection from "@/components/landing/AboutSection";
+import About_section from "@/data/About_section.json";
 import CaseStudiesSection from "@/components/landing/CaseStudiesSection";
 import Hero from "@/components/landing/Hero";
 import ProcessSection from "@/components/landing/ProcessSection";
 import ServicesSection from "@/components/landing/ServicesSection";
 import TestimonialsSection from "@/components/landing/TestimonialsSection";
 import ContactCtaSection from "@/components/landing/ContactCtaSection";
-import data from "@/data/products.json";
+import products_data from "@/data/products.json";
+import home_data from "@/data/home.json"
 import { Suspense } from "react";
+import ServiceFaq from "@/components/ui/ServiceFaq";
 import CaseStudiesSkeleton from "@/components/landing/CaseStudiesSkeleton";
 import Products from "@/components/products/ProductsMain"
 export default async function HomePage() {
@@ -18,11 +21,12 @@ export default async function HomePage() {
         <Suspense fallback={<CaseStudiesSkeleton />}>
         <CaseStudiesSection />
         </Suspense>
-        <AboutSection />
-          <Products products={data} />
+        <AboutSection data={About_section} />
+          <Products products={products_data} />
         <ProcessSection />
         <TestimonialsSection />
         <ContactCtaSection />
+        <ServiceFaq faqs={home_data.faqs} />
       </div>
     </div>
   );

@@ -27,8 +27,9 @@ const config = {
   siteUrl: "https://4xcode.com/",
   generateRobotsTxt: true,
   generateIndexSitemap: false,
-  additionalPaths: async (config: any) => {
-    const paths: any[] = [];
+
+  additionalPaths: async () => {
+    const paths = [];
 
     paths.push({ loc: "/blog", changefreq: "daily", priority: 0.9 });
     paths.push({ loc: "/about", changefreq: "daily", priority: 0.9 });
@@ -37,7 +38,6 @@ const config = {
     paths.push({ loc: "/contact", changefreq: "daily", priority: 0.9 });
     paths.push({ loc: "/service", changefreq: "daily", priority: 0.9 });
 
-    // Loop through services
     slugs.service.forEach((slug) => {
       paths.push({
         loc: `/service/${slug}`,
@@ -46,7 +46,6 @@ const config = {
       });
     });
 
-    // Loop through work
     slugs.work.forEach((slug) => {
       paths.push({
         loc: `/work/${slug}`,
@@ -55,32 +54,47 @@ const config = {
       });
     });
 
-    // Fetch blog slugs dynamically from the API
     const base = (process.env.BLOG_API_BASE ?? "").replace(/\/$/, "");
     const user = process.env.BLOG_API_USERNAME ?? "";
     const pass = process.env.BLOG_API_PASSWORD ?? "";
-    const auth = user && pass
-      ? `Basic ${Buffer.from(`${user}:${pass}`).toString("base64")}`
-      : "";
+
+    const auth =
+      user && pass
+        ? `Basic ${Buffer.from(`${user}:${pass}`).toString("base64")}`
+        : "";
 
     try {
-      const res = await fetch(`${base}/blogs/`, {
-        headers: auth ? { Authorization: auth } : {},
-      });
-      if (res.ok) {
-        const data = await res.json();
-        const blogs: any[] = Array.isArray(data) ? data : [];
-        blogs.forEach((b) => {
-          const slug = b?.slug ?? b?.id;
-          if (slug) paths.push({ loc: `/blog/${slug}`, changefreq: "weekly", priority: 0.8 });
+      if (base) {
+        const res = await fetch(`${base}/blogs/`, {
+          headers: auth ? { Authorization: auth } : {},
         });
+
+        if (res.ok) {
+          const data = await res.json();
+          const blogs = Array.isArray(data) ? data : [];
+
+          blogs.forEach((blog) => {
+            const slug = blog?.slug ?? blog?.id;
+
+            if (slug) {
+              paths.push({
+                loc: `/blog/${slug}`,
+                changefreq: "weekly",
+                priority: 0.8,
+              });
+            }
+          });
+        }
       }
-    } catch (err: any) {
-      console.warn("[next-sitemap] Could not fetch blog slugs:", err.message);
+    } catch (err) {
+      console.warn(
+        "[next-sitemap] Could not fetch blog slugs:",
+        err instanceof Error ? err.message : err
+      );
     }
 
     return paths;
   },
 };
 
-export default config;
+module.exports = config;

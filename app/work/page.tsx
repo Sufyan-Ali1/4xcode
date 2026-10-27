@@ -3,12 +3,13 @@ import { Space_Grotesk, Inter } from "next/font/google";
 
 import NarrativeSection from "../../components/landing/NarrativeSection";
 import ContactCtaSection from "../../components/landing/ContactCtaSection";
-
+import NarrativeData from "@/data/NarrativeSection.json"
 import WorkHeader from "@/components/caseStudy/WorkHeader";
 import CaseStudiesSkeleton from "@/components/landing/CaseStudiesSkeleton";
 import CaseStudiesDataLoader from "@/components/caseStudy/CaseStudiesDataLoader";
 import { Metadata } from "next";
-
+import works_data from "@/data/WorksMainPage.json"
+import ServiceFaq from "@/components/ui/ServiceFaq";
 const inter = Inter({ subsets: ["latin"], weight: ["300", "400", "500"] });
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -44,8 +45,9 @@ export default async function WorkPage() {
         </Suspense>
       </div>
 
-      <NarrativeSection spaceGroteskClassName={spaceGrotesk.className} />
+      <NarrativeSection data={NarrativeData.services} spaceGroteskClassName={spaceGrotesk.className} />
       <ContactCtaSection />
+      <ServiceFaq faqs={works_data.faqs} />
     </div>
   );
 }

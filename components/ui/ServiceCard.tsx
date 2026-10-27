@@ -90,14 +90,7 @@ export function StackGroup({
         {category.name}
       </h4>
       <div className="flex flex-wrap gap-2">
-        {category.items.map((tech) => (
-          <span
-            key={tech}
-            className="rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-xs text-zinc-300 transition-colors duration-200 hover:border-white/25 hover:text-white"
-          >
-            {tech}
-          </span>
-        ))}
+        {category.description}
       </div>
     </motion.div>
   );

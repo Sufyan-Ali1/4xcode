@@ -3,7 +3,13 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 
-export default function CTA()
+const default_cta={
+  heading_white:" Have a project in",
+  heading_red:"mind?",
+  text:"Tell us the goal. We'll tell you the path.",
+  button:"Start Project",
+};
+export default function CTA({data=default_cta})
 {
     return(
               <section className="w-full flex flex-wrap justify-center">
@@ -89,8 +95,8 @@ export default function CTA()
                   text-white
                 `}
               >
-                Have a project in
-                <span className="ml-3 text-[#f90a1f]">mind?</span>
+               {data.heading_white}
+                <span className="ml-3 text-[#f90a1f]">{data.heading_red}</span>
               </h2>
         
              
@@ -102,7 +108,7 @@ export default function CTA()
                 md:text-lg
                 font-normal
               ">
-                Tell us the goal. We'll tell you the path.
+                {data.text}
               </p>
             </div>
             <Link
@@ -127,7 +133,7 @@ export default function CTA()
                 transition-all duration-300      
               "
             >
-              <span>Start Project</span>
+              <span>{data.button}</span>
         
               <ArrowForwardIcon
                 style={{ fontSize: 20 }}

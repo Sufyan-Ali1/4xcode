@@ -42,7 +42,7 @@ export default function NarrativeSection({
           className={`${spaceGroteskClassName} text-white text-2xl sm:text-3xl md:text-[40px] font-bold tracking-tight leading-[1.25] text-left max-w-5xl`}
         >
           {data.heading.white}
-          <span className="text-[#f90a1f]">
+          <span className="pl-3 text-[#f90a1f]">
             {data.heading.red}
           </span>
         </motion.h2>

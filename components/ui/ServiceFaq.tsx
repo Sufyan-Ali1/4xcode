@@ -15,10 +15,12 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 interface ServiceFaqProps {
+  faq_white_heading?: string;
+  faq_red_heading?: string;
   faqs: Faq[];
 }
 
-export default function ServiceFaq({ faqs }: ServiceFaqProps) {
+export default function ServiceFaq({  faq_white_heading, faq_red_heading, faqs }: ServiceFaqProps) {
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
 
   if (!faqs || faqs.length === 0) return null;
@@ -35,9 +37,9 @@ export default function ServiceFaq({ faqs }: ServiceFaqProps) {
             Technical Validation
           </p>
           <h2 className="text-3xl font-bold sm:text-4xl tracking-tight text-white">
-            Frequently Asked{" "}
-            <span className="bg-gradient-to-r from-[#ff8a8c] to-[#ef1f23] bg-clip-text text-transparent">
-              Questions
+            {faq_white_heading || "Frequently Asked"}
+            <span className="bg-gradient-to-r ml-3 from-[#ff8a8c] to-[#ef1f23] bg-clip-text text-transparent">
+             {faq_red_heading || "Questions"}
             </span>
           </h2>
         </div>

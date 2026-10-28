@@ -35,6 +35,11 @@ const nextConfig: NextConfig = {
         destination: "https://www.4xcode.com/:path*",
         permanent: true,
       },
+        {
+  source: "/service/seo",
+  destination: "/service/search-engine-optimization-seo",
+  permanent: true,
+},
     ];
   },
 };

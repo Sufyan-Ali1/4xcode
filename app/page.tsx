@@ -11,12 +11,14 @@ import home_data from "@/data/home.json"
 import { Suspense } from "react";
 import ServiceFaq from "@/components/ui/ServiceFaq";
 import CaseStudiesSkeleton from "@/components/landing/CaseStudiesSkeleton";
-import Products from "@/components/products/ProductsMain"
+import Products from "@/components/products/ProductsMain";
+import LogoMarquee from "@/components/landing/LogosMarquee";
 export default async function HomePage() {
   return (
     <div className="flex min-h-screen flex-col">
       <div className="flex flex-1 flex-col items-center justify-center">
         <Hero />
+        <LogoMarquee />
         <ServicesSection />
         <Suspense fallback={<CaseStudiesSkeleton />}>
         <CaseStudiesSection />

@@ -38,8 +38,8 @@ const InspectionSteps: React.FC = () => {
             Inspection
           </p>
           <h2 className="mt-3 text-white text-3xl md:text-5xl font-bold tracking-tight">
-            Digital Vehicle
-            <span className="text-[#e55d5d] ml-3">Inspection</span>
+            Digital Vehicle{" "}
+            <span className="text-[#e55d5d]">Inspection</span>
           </h2>
         </div>
 

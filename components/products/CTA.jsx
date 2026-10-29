@@ -95,8 +95,8 @@ export default function CTA({data=default_cta})
                   text-white
                 `}
               >
-               {data.heading_white}
-                <span className="ml-3 text-[#f90a1f]">{data.heading_red}</span>
+               {data.heading_white}{" "}
+                <span className="text-[#f90a1f]">{data.heading_red}</span>
               </h2>
         
              

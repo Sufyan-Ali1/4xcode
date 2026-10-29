@@ -11,6 +11,19 @@ export function getConfig() {
   return { base, auth };
 }
 
+export function getGarageBlogConfig() {
+  const base = (process.env.Garage_BLOG_API_BASE ?? "").replace(/\/$/, "");
+  const user = process.env.BLOG_API_USERNAME ?? "";
+  const pass = process.env.BLOG_API_PASSWORD ?? "";
+
+  const auth =
+    user && pass
+      ? `Basic ${Buffer.from(`${user}:${pass}`).toString("base64")}`
+      : "";
+
+  return { base, auth };
+}
+
 export type BlogImage = {
   id: number;
   image: string;
@@ -79,14 +92,57 @@ export async function getBlogs(): Promise<Blog[]> {
     return [];
   }
 }
+export async function getGarageBlogs(): Promise<Blog[]> {
+  const { base, auth } = getGarageBlogConfig();
+
+  if (!base) return [];
+
+  try {
+    const res = await fetch(`${base}/blogs/`, {
+      method: "GET",
+      headers: auth ? { Authorization: auth } : {},
+      cache: "no-store",
+    });
+
+    if (!res.ok) {
+      const err = await res.text();
+      console.log("API ERROR:", res.status, err);
+      return [];
+    }
+
+    const data = await res.json();
+
+
+    const blogsArray = Array.isArray(data) ? data : [];
+
+    return blogsArray.map(normalise);
+  } catch (error: any) {
+    console.error("getBlogs error:", error.message);
+    return [];
+  }
+}
+
 
 
 export async function fetchBlog(slug: string): Promise<Blog | null> {
-  const { base, auth } = getConfig();
+  let { base, auth } = getGarageBlogConfig();
 
-  if (!base) {
-    return null;
+  if (base) {
+    const url = `${base}/blogs/${slug}/`;
+
+    const res = await fetch(url, {
+      headers: auth ? { Authorization: auth } : {},
+      next: { revalidate: 300 },
+    });
+
+    if (res.ok) {
+      const data = await res.json();
+      const raw = data?.data ?? data;
+      return normalise(raw);
+    }
   }
+  ({ base, auth } = getConfig());
+  if (!base) return null;
 
   const url = `${base}/blogs/${slug}/`;
   const res = await fetch(url, {
@@ -95,20 +151,12 @@ export async function fetchBlog(slug: string): Promise<Blog | null> {
   });
 
   if (res.status === 404) return null;
-  if (!res.ok) throw new Error(`Failed to fetch blog: ${res.status} (url: ${url})`);
-
-  let data: unknown;
-  try {
-    data = await res.json();
-  } catch {
-    throw new Error("Blog response is not valid JSON");
+  if (!res.ok) {
+    throw new Error(`Failed to fetch blog: ${res.status}`);
   }
 
-
-  const raw = data && typeof data === "object" && (data as any).data
-
-    ? (data as any).data
-    : data;
+  const data = await res.json();
+  const raw = data?.data ?? data;
 
   return normalise(raw);
 }

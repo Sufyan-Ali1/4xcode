@@ -27,8 +27,6 @@ import {
   CapabilityCard,
   StackGroup,
   ArchitectureStep,
-  
-
 } from "../../../components/ui/ServiceCard";
 import RelatedServices from "@/components/ui/relatedCard"
 
@@ -265,8 +263,8 @@ export default function ServiceDetailPage() {
                 Core Philosophy
               </p>
               <h2 className="text-3xl font-bold sm:text-4xl">
-                {service.pillers_heading_white}
-                <span className="bg-gradient-to-r ml-3 from-[#ff8a8c] to-[#ef1f23] bg-clip-text text-transparent">
+                {service.pillers_heading_white}{" "}
+                <span className="bg-gradient-to-r from-[#ff8a8c] to-[#ef1f23] bg-clip-text text-transparent">
                   {service.pillers_heading_red}
                 </span>
               </h2>
@@ -307,8 +305,8 @@ export default function ServiceDetailPage() {
                 Capability Matrix
               </p>
               <h2 className="text-3xl font-bold sm:text-4xl">
-                  {service.features_white_heading}
-                <span className="ml-3 bg-gradient-to-r from-[#ff8a8c] to-[#ef1f23] bg-clip-text text-transparent">
+                  {service.features_white_heading}{" "}
+                <span className="bg-gradient-to-r from-[#ff8a8c] to-[#ef1f23] bg-clip-text text-transparent">
                     {service.features_red_heading}
                 </span>
               </h2>
@@ -340,8 +338,8 @@ export default function ServiceDetailPage() {
                 Engineering Stack
               </p>
               <h2 className="text-3xl font-bold sm:text-4xl">
-                {service.tech_section_white_heading}
-                <span className="ml-2 bg-gradient-to-r from-[#ff8a8c] to-[#ef1f23] bg-clip-text text-transparent">
+                {service.tech_section_white_heading}{" "}
+                <span className="bg-gradient-to-r from-[#ff8a8c] to-[#ef1f23] bg-clip-text text-transparent">
                   {service.tech_section_red_heading}
                 </span>
               </h2>
@@ -374,8 +372,8 @@ export default function ServiceDetailPage() {
                   Operational Delivery Flow
                 </p>
                 <h2 className="text-3xl font-bold sm:text-4xl">
-                  {service.archetecture_white_heading}
-                  <span className="ml-3 bg-gradient-to-r from-[#ff8a8c] to-[#ef1f23] bg-clip-text text-transparent">
+                  {service.archetecture_white_heading}{" "}
+                  <span className="bg-gradient-to-r from-[#ff8a8c] to-[#ef1f23] bg-clip-text text-transparent">
                     {service.archetecture_red_heading}
                   </span>
                 </h2>
@@ -424,8 +422,8 @@ export default function ServiceDetailPage() {
                   Adjacent Capabilities
                 </p>
                 <h2 className="text-3xl font-bold sm:text-4xl">
-                  {service.relatedSlugsWhiteHeading}
-                  <span className="bg-gradient-to-r ml-3 from-[#ff8a8c] to-[#ef1f23] bg-clip-text text-transparent">
+                  {service.relatedSlugsWhiteHeading}{" "}
+                  <span className="bg-gradient-to-r from-[#ff8a8c] to-[#ef1f23] bg-clip-text text-transparent">
                     {service.relatedSlugsRedHeading}
                   </span>
                 </h2>

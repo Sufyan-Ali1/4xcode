@@ -20,16 +20,6 @@ const SOCIAL_LINKS = [
     Icon: LinkedInIcon,
     href: "https://www.linkedin.com/company/4xcode-software/",
   },
-  {
-    label: "Website",
-    Icon: PublicIcon,
-    href: "https://4xcode.com",
-  },
-   {
-    label: "Facebook",
-    Icon: FacebookIcon,
-    href: "https://www.facebook.com/p/4xcode-61591747731295/",
-  },
   
 ];
 

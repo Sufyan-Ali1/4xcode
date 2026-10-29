@@ -116,13 +116,21 @@ export default function Product({products}) {
           </p>
         </div>
 
-        <div className="grid mt-10 grid-cols-1 gap-5  lg:grid-cols-2">
+        <div className="flex flex-wrap mt-10 justify-center gap-10 ">        
            {Object.entries(products)[1] && (
+             <div>
   <ProductCard
     key={Object.entries(products)[1][1].title}
     product={Object.entries(products)[1][1]}
   />
+  </div>
 )}
+    
+
+
+
+
+    
         </div>
       </div>
     </section>

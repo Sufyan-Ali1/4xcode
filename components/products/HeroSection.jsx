@@ -23,8 +23,8 @@ export default function HeroSection({product})
     
               <Reveal delay={0.1}>
                 <h1 className={`text-4xl sm:text-5xl md:text-[56px] font-bold tracking-tight leading-[1.1] max-w-4xl ${spaceGrotesk.className} `}>
-                  {product.title1}
-                  <span className="ml-3 text-transparent bg-clip-text bg-gradient-to-r from-[#FF8A8C] to-[#EF1F23]">
+                  {product.title1}{" "}
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF8A8C] to-[#EF1F23]">
                     {product.title2}
                   </span>
                   <br className="hidden sm:inline" /> <span>{product.title3}</span>

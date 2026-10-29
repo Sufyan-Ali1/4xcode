@@ -24,16 +24,18 @@ interface CardProps<T> {
 
 export function MetricCard({ data, variants, fontClass }: CardProps<Metric>) {
   return (
-    <motion.div variants={variants} className={SHARED_CARD_CLASSES}>
-      <span
-        className={`${fontClass} block bg-gradient-to-b from-white to-[#a7a3a4] bg-clip-text text-4xl font-bold tracking-tight text-transparent md:text-5xl`}
-      >
-        {data.value}
-      </span>
-      <span className="mt-2 block text-xs font-semibold uppercase tracking-wider text-zinc-400">
-        {data.label}
-      </span>
-    </motion.div>
+ <motion.div
+  variants={variants}
+  className={`${SHARED_CARD_CLASSES} row-span-2 grid grid-rows-subgrid gap-y-0`}
+>
+  <h4 className="min-h-[42px] bg-gradient-to-b from-white to-[#a7a3a4] bg-clip-text text-3xl font-bold tracking-tight text-transparent md:text-[30px]">
+    {data.value}
+  </h4>
+
+  <span className="mt-2 block text-xs font-semibold uppercase tracking-wider text-zinc-400">
+    {data.label}
+  </span>
+</motion.div>
   );
 }
 

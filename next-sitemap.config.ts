@@ -93,6 +93,54 @@ const config = {
       );
     }
 
+    const garage_blog_base = (
+      process.env.Garage_BLOG_API_BASE ?? ""
+    ).replace(/\/$/, "");
+
+    try {
+      console.log(
+        "[next-sitemap] Garage Blog API configured:",
+        Boolean(garage_blog_base)
+      );
+
+      if (garage_blog_base) {
+        const res = await fetch(`${garage_blog_base}/blogs/`, {
+          headers: auth ? { Authorization: auth } : {},
+          cache: "no-store",
+        });
+
+        if (!res.ok) {
+          console.warn(
+            "[next-sitemap] Garage Blog API error:",
+            res.status,
+            await res.text()
+          );
+        } else {
+          const data = await res.json();
+          const blogs = Array.isArray(data) ? data : [];
+
+          console.log("[next-sitemap] Garage blogs fetched:", blogs.length);
+
+          blogs.forEach((blog) => {
+            const slug = blog?.slug ?? blog?.id;
+
+            if (slug) {
+              paths.push({
+                loc: `/blog/${slug}`,
+                changefreq: "weekly",
+                priority: 0.8,
+              });
+            }
+          });
+        }
+      }
+    } catch (err) {
+      console.warn(
+        "[next-sitemap] Could not fetch Garage blog slugs:",
+        err instanceof Error ? err.message : err
+      );
+    }
+
     return paths;
   },
 };

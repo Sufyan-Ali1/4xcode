@@ -37,8 +37,8 @@ export default function ServiceFaq({  faq_white_heading, faq_red_heading, faqs }
             Technical Validation
           </p>
           <h2 className="text-3xl font-bold sm:text-4xl tracking-tight text-white">
-            {faq_white_heading || "Frequently Asked"}
-            <span className="bg-gradient-to-r ml-3 from-[#ff8a8c] to-[#ef1f23] bg-clip-text text-transparent">
+            {faq_white_heading || "Frequently Asked"}{" "}
+            <span className="bg-gradient-to-r from-[#ff8a8c] to-[#ef1f23] bg-clip-text text-transparent">
              {faq_red_heading || "Questions"}
             </span>
           </h2>

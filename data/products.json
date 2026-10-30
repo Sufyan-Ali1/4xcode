@@ -3,7 +3,7 @@
       "title": "Auto Recovery System",
   "description": "Reliable automotive towing and recovery services for vehicles that are stranded, damaged, or unable to move.",
   "href": "/product/auto-recovery-system",
-  "image": "/assets/fd7595f94fdcf79aafb92775ce42fc6b2574e257.jpg",
+  "image": "/assets/auto-recovery.webp",
   "icon": "recovery",
     "hero_data":{
   "product": "Engine Rebuild",
@@ -18,7 +18,7 @@
   "title2": "Garage",
   "title3": "Is More Than Managing Records",
   "subtitle": "Every day, garages are dealing with moving parts, changing priorities, and decisions that need to happen quickly.",
-  "logo": "/assets/4xcode-logo.png",
+  "logo": "/assets/4xcode-logo.webp",
   "problems": [
     {
       "id": 1,
@@ -146,7 +146,7 @@
 
       "preview": {
         "title": "Garage Management System",
-        "image": "/assets/logo.png",
+        "image": "/assets/auto-recovery-logo.webp",
         "alt": "Garage Management System logo",
         "placeholder": "Garage Management System"
       }
@@ -337,7 +337,7 @@
   "title": "Garage Management System",
   "description": "A complete garage management system designed to simplify and streamline your automotive workshop operations.",
   "href": "/product/garage-management-system",
-  "image": "/assets/4a794bf69fe71230db4a0c5c3a41234839556666.jpg",
+  "image": "/assets/garage-management-banner.webp",
   "testinomials":{
   "eyebrow": "TESTIMONIALS",
   "heading": "Loved by",

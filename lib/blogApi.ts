@@ -1,18 +1,8 @@
-export function getConfig() {
-  const base = (process.env.BLOG_API_BASE ?? "").replace(/\/$/, "");
-  const user = process.env.BLOG_API_USERNAME ?? "";
-  const pass = process.env.BLOG_API_PASSWORD ?? "";
-
-  const auth =
-    user && pass
-      ? `Basic ${Buffer.from(`${user}:${pass}`).toString("base64")}`
-      : "";
-
-  return { base, auth };
-}
-
-export function getGarageBlogConfig() {
-  const base = (process.env.Garage_BLOG_API_BASE ?? "").replace(/\/$/, "");
+export function getConfig(blog: boolean) {
+  const base =
+  blog === true
+    ? (process.env.Garage_BLOG_API_BASE ?? "").replace(/\/$/, "")
+    : (process.env.BLOG_API_BASE ?? "").replace(/\/$/, "");
   const user = process.env.BLOG_API_USERNAME ?? "";
   const pass = process.env.BLOG_API_PASSWORD ?? "";
 
@@ -63,8 +53,8 @@ function normalise(raw: any): Blog {
   };
 }
 
-export async function getBlogs(): Promise<Blog[]> {
-  const { base, auth } = getConfig();
+export async function getBlogs(blog: boolean): Promise<Blog[]> {
+  const { base, auth } = getConfig(blog);
 
   if (!base) return [];
 
@@ -76,37 +66,6 @@ export async function getBlogs(): Promise<Blog[]> {
     });
 
     if (!res.ok) {
-      const err = await res.text();
-      console.log("API ERROR:", res.status, err);
-      return [];
-    }
-
-    const data = await res.json();
-
-
-    const blogsArray = Array.isArray(data) ? data : [];
-
-    return blogsArray.map(normalise);
-  } catch (error: any) {
-    console.error("getBlogs error:", error.message);
-    return [];
-  }
-}
-export async function getGarageBlogs(): Promise<Blog[]> {
-  const { base, auth } = getGarageBlogConfig();
-
-  if (!base) return [];
-
-  try {
-    const res = await fetch(`${base}/blogs/`, {
-      method: "GET",
-      headers: auth ? { Authorization: auth } : {},
-      cache: "no-store",
-    });
-
-    if (!res.ok) {
-      const err = await res.text();
-      console.log("API ERROR:", res.status, err);
       return [];
     }
 
@@ -125,7 +84,7 @@ export async function getGarageBlogs(): Promise<Blog[]> {
 
 
 export async function fetchBlog(slug: string): Promise<Blog | null> {
-  let { base, auth } = getGarageBlogConfig();
+  let { base, auth } = getConfig(true);
 
   if (base) {
     const url = `${base}/blogs/${slug}/`;
@@ -141,7 +100,7 @@ export async function fetchBlog(slug: string): Promise<Blog | null> {
       return normalise(raw);
     }
   }
-  ({ base, auth } = getConfig());
+  ({ base, auth } = getConfig(false));
   if (!base) return null;
 
   const url = `${base}/blogs/${slug}/`;

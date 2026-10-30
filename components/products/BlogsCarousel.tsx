@@ -1,7 +1,7 @@
-import { getGarageBlogs } from "@/lib/blogApi";
-import BlogGrid from "@/components/blog/blogCard";
+import { getBlogs } from "@/lib/blogApi";
+import BlogGrid from "@/components/blog/GarageBlogCard";
 export default async function BlogsCarousel() {
-   const blogs = await getGarageBlogs();
+   const blogs = await getBlogs(true);
  
    if (!blogs || blogs.length === 0) {
      return null;

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { Plus_Jakarta_Sans, JetBrains_Mono } from "next/font/google";
 import Link from "next/link";
-const BRAIN_SRC = "/assets/163dc0656ad684454caf40b205f2464a36536b69.png";
+const BRAIN_SRC = "/assets/hero-image.webp";
 const jakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800"],

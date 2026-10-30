@@ -98,10 +98,6 @@ const config = {
     ).replace(/\/$/, "");
 
     try {
-      console.log(
-        "[next-sitemap] Garage Blog API configured:",
-        Boolean(garage_blog_base)
-      );
 
       if (garage_blog_base) {
         const res = await fetch(`${garage_blog_base}/blogs/`, {
@@ -118,8 +114,6 @@ const config = {
         } else {
           const data = await res.json();
           const blogs = Array.isArray(data) ? data : [];
-
-          console.log("[next-sitemap] Garage blogs fetched:", blogs.length);
 
           blogs.forEach((blog) => {
             const slug = blog?.slug ?? blog?.id;

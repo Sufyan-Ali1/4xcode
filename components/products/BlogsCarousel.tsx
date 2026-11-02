@@ -1,15 +1,11 @@
 import { getBlogs } from "@/lib/blogApi";
-import BlogGrid from "@/components/blog/blogCard";
+import BlogGrid from "@/components/blog/GarageBlogCard";
 export default async function BlogsCarousel() {
-    const selectedIds = ["vehicle-repair-management-software", "ai-development-cost-uk", "workshop-management-software-system"];
-   const blogs = await getBlogs();
+   const blogs = await getBlogs(true);
  
    if (!blogs || blogs.length === 0) {
      return null;
    }
-  const selectedBlogs = blogs.filter((blog) =>
-    selectedIds.includes(blog.slug)
-  );
   return (
     <section className="w-full bg-black px-4 py-12 md:py-16">
       <div className="mx-auto w-full max-w-[1150px]">
@@ -26,7 +22,7 @@ export default async function BlogsCarousel() {
           </p>
         </div>
         <div className="mt-10">
-           <BlogGrid blogs={selectedBlogs} />
+           <BlogGrid blogs={blogs} />
         </div>
       </div>
     </section>

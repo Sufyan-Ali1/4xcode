@@ -72,8 +72,8 @@ export default function AboutSection({ data }: AboutSectionProps) {
 
           <Reveal delay={0.1}>
             <h2 className="text-3xl md:text-[40px] font-bold leading-[1.15] text-white">
-              {data.white_heading}
-              <span className="ml-3 bg-gradient-to-br from-[#ff8a8c] to-[#ef1f23] bg-clip-text text-transparent">
+              {data.white_heading}{" "}
+              <span className="bg-gradient-to-br from-[#ff8a8c] to-[#ef1f23] bg-clip-text text-transparent">
                 {data.red_heading}
               </span>
             </h2>
@@ -89,7 +89,7 @@ export default function AboutSection({ data }: AboutSectionProps) {
 
           {/* Stats — 2 col on all sizes, comfortable padding */}
           {data.stats && data.stats.length > 0 && (
-            <div className="grid grid-cols-2 gap-3 pt-2">
+            <div className="grid grid-cols-2 gap-3 pt-2 [&>*:last-child:nth-child(odd)]:col-span-2">
               {data.stats.map((stat, index) => (
                 <motion.div
                   key={index}
@@ -105,9 +105,9 @@ export default function AboutSection({ data }: AboutSectionProps) {
                   whileHover={reduced ? {} : { scale: 1.02, y: -3 }}
                   className="group bg-[#0D0D0E] border border-white/4 hover:border-[rgba(249,10,31,0.25)] hover:bg-white/3 rounded-2xl p-4 md:p-5 flex flex-col justify-center transition-colors duration-300 cursor-default"
                 >
-                  <span className="text-xl md:text-2xl font-bold text-white">
+                  <h4 className="text-xl md:text-2xl font-bold text-white">
                     {stat.value}
-                  </span>
+                  </h4>
                   <span className="text-gray-500 text-[10px] uppercase tracking-wider font-medium mt-1 group-hover:text-gray-400">
                     {stat.label}
                   </span>

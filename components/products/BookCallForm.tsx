@@ -34,7 +34,6 @@ const BookCallForm: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log(formData);
     alert(JSON.stringify(formData, null, 2));
     setFormData(INITIAL_DATA);
   };

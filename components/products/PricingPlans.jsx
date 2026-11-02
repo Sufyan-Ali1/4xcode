@@ -124,8 +124,8 @@ export default function PricingPlans({ data }) {
           <h2 className="mt-4 text-white text-3xl md:text-5xl font-bold tracking-tight">
             {data.title}
             {data.highlight && (
-              <span className="ml-3 bg-gradient-to-r from-[#ff8a8c] to-[#ef1f23] bg-clip-text text-transparent">
-                {data.highlight}
+              <span className="bg-gradient-to-r from-[#ff8a8c] to-[#ef1f23] bg-clip-text text-transparent">
+                {" "}{data.highlight}
               </span>
             )}
           </h2>

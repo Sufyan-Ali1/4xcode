@@ -100,8 +100,6 @@ export async function getCaseStudies(): Promise<CaseStudy[]> {
     });
 
     if (!res.ok) {
-      const err = await res.text();
-      console.log("API ERROR (Case Studies):", res.status, err);
       return [];
     }
 

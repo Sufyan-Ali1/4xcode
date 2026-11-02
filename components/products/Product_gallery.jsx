@@ -13,8 +13,8 @@ function GalleryHeading({ data }) {
       </div>
 
       <h2 className="text-3xl md:text-4xl font-bold leading-tight tracking-tight text-white lg:text-5xl">
-        {data.title}
-        <span className="ml-3 bg-gradient-to-r from-[#ff8a8c] to-[#ef1f23] bg-clip-text text-transparent">{data.highlight}</span>
+        {data.title}{" "}
+        <span className="bg-gradient-to-r from-[#ff8a8c] to-[#ef1f23] bg-clip-text text-transparent">{data.highlight}</span>
       </h2>
 
       <p className="mt-3 text-sm font-normal text-slate-200 sm:text-base">

@@ -63,9 +63,9 @@ export default function TestimonialsSection({ data }) {
           {(data.heading || data.highlight) && (
             <Reveal delay={0.1}>
               <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-white">
-                {data.heading}
+                {data.heading}{" "}
                 {data.highlight && (
-                  <span className="ml-3 bg-gradient-to-br from-[#ff8a8c] to-[#ef1f23] bg-clip-text text-transparent">
+                  <span className="bg-gradient-to-br from-[#ff8a8c] to-[#ef1f23] bg-clip-text text-transparent">
                     {data.highlight}
                   </span>
                 )}

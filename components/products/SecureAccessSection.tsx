@@ -83,8 +83,8 @@ const SecureAccessSection: React.FC<SecureAccessSectionProps> = ({
             {label}
           </p>
           <h2 className="mt-3 text-white text-3xl md:text-5xl font-bold tracking-tight">
-            {whiteHeading}
-            <span className="text-[#e55d5d] ml-3">{redHeading}</span>
+            {whiteHeading}{" "}
+            <span className="text-[#e55d5d]">{redHeading}</span>
             <span className="">{headingSuffix}</span>
           </h2>
         </div>

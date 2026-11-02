@@ -62,8 +62,8 @@ const WorkflowSection: React.FC = () => {
             Work Flow
           </p>
           <h2 className="mt-3 text-white text-3xl md:text-5xl font-bold tracking-tight">
-            From Enquiry to Collection,
-            <span className="text-[#e55d5d] ml-3">Everything Connected</span>
+            From Enquiry to Collection,{" "}
+            <span className="text-[#e55d5d]">Everything Connected</span>
           </h2>
           <p className="mx-auto mt-4 max-w-[700px] text-[13px] leading-snug text-[#b5b5b5] md:text-sm">
             4Xcode connects every stage of your workshop workflow, giving your

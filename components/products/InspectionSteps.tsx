@@ -38,8 +38,8 @@ const InspectionSteps: React.FC = () => {
             Inspection
           </p>
           <h2 className="mt-3 text-white text-3xl md:text-5xl font-bold tracking-tight">
-            Digital Vehicle
-            <span className="text-[#e55d5d] ml-3">Inspection</span>
+            Digital Vehicle{" "}
+            <span className="text-[#e55d5d]">Inspection</span>
           </h2>
         </div>
 
@@ -64,7 +64,7 @@ const InspectionSteps: React.FC = () => {
         </div>
         <div className="w-full mt-20 lg:mt-25">
               <Image
-    src="/assets/e184ae4a06c7ef53179cc688fa9e2a50fd3d00b3.webp"
+    src="/assets/technicianician-job-management.webp"
     alt="4XCode Workshop Workflow"
     width={1160}
     height={619}

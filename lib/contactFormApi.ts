@@ -10,9 +10,8 @@ interface ContactPayload {
 }
 
 export async function submitContactForm(formData: ContactPayload) {
-  console.log("👉 RAW FORM DATA RECEIVED ON SERVER:", formData);
   try {
-    const { base, auth } = getConfig();
+    const { base, auth } = getConfig(false);
 
     const backendPayload = {
       name: formData.name,

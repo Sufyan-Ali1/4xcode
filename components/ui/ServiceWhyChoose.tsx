@@ -34,18 +34,18 @@ export default function ServiceWhyChoose({
 
   return (
     /* Added mx-auto, w-full, and bounded max-w to keep the section unified */
-    <div className="mt-15 mx-auto flex w-full max-w-300 flex-col items-center px-5 overflow-hidden">
-      <Reveal>
-        <h3 className={`${spaceGrotesk.className} text-center text-2xl font-bold md:text-3xl tracking-tight text-white px-4`}>
-          {whyTeamChooseWhiteHeading}
-          <span className="ml-3 bg-gradient-to-r from-[#ff8a8c] to-[#ef1f23] bg-clip-text text-transparent">
+    <div className="mt-15 mx-auto flex w-full flex flex-wrap flex-col items-center px-5 overflow-hidden">
+      <Reveal className="flex flex-wrap w-full">
+        <h2 className={`${spaceGrotesk.className} text-left  text-3xl md:text-[40px] font-bold tracking-tight  text-white  w-full md:w-[90%] lg:w-[80%]`}>
+          {whyTeamChooseWhiteHeading}{" "}
+          <span className="bg-gradient-to-r from-[#ff8a8c] to-[#ef1f23] bg-clip-text text-transparent">
             {whyTeamChooseRedHeading}
           </span>
-        </h3>
+        </h2>
       </Reveal>
 
       {/* Premium Dynamic Grid Container */}
-     <div className="w-full flex flex-wrap">
+     <div className="w-full mt-5 flex flex-wrap">
         {whyTeamsChoose.description}
      </div>
         <div className="w-full mt-5 italic flex flex-wrap">

@@ -169,7 +169,7 @@ function ProblemColumn({ items, side }) {
 }
 
 export default function GarageChallenges({
-  logo = "/assets/4xcode-logo.png",
+  logo = "/assets/4xcode-logo.webp",
 }) {
   return (
     <section className="w-full overflow-hidden bg-black px-4 py-8 text-white sm:py-10 lg:py-8 flex flex-wrap justify-center" style={{

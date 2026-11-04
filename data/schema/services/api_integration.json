@@ -1,0 +1,180 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.4xcode.com/#organization",
+      "name": "4xCode",
+      "url": "https://www.4xcode.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "@id": "https://www.4xcode.com/#logo",
+        "url": "https://www.4xcode.com/assets/logo1.webp",
+        "contentUrl": "https://www.4xcode.com/assets/logo1.webp"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/company/4xcode-software/"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.4xcode.com/#website",
+      "url": "https://www.4xcode.com/",
+      "name": "4xCode",
+      "alternateName": "4xcode",
+      "publisher": {
+        "@id": "https://www.4xcode.com/#organization"
+      },
+      "inLanguage": "en-GB"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.4xcode.com/service/api-integration#webpage",
+      "url": "https://www.4xcode.com/service/api-integration",
+      "name": "API Integration Services for CRMs, Payments & AI | 4xcode",
+      "description": "API integration services that connect your payment processors, CRMs and AI tools using webhooks, OAuth and custom SDKs. Talk to our integration team.",
+      "isPartOf": {
+        "@id": "https://www.4xcode.com/#website"
+      },
+      "about": {
+        "@id": "https://www.4xcode.com/#organization"
+      },
+      "publisher": {
+        "@id": "https://www.4xcode.com/#organization"
+      },
+      "inLanguage": "en-GB",
+      "keywords": "api integration services",
+      "mainEntity": {
+        "@id": "https://www.4xcode.com/service/api-integration#service"
+      },
+      "breadcrumb": {
+        "@id": "https://www.4xcode.com/service/api-integration#breadcrumb"
+      }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://www.4xcode.com/service/api-integration#service",
+      "name": "API Integration Services",
+      "serviceType": "api integration services",
+      "description": "4xcode provides API integration services for businesses that need their applications, databases, and third-party platforms to work together. From CRM and ERP connectivity to payment gateways and custom API development, we build integrations around defined business workflows.",
+      "url": "https://www.4xcode.com/service/api-integration",
+      "provider": {
+        "@id": "https://www.4xcode.com/#organization"
+      },
+      "mainEntityOfPage": {
+        "@id": "https://www.4xcode.com/service/api-integration#webpage"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "API Integration Services Solutions",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Custom API Development Services"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Third-Party API Integration Services"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Business Data Synchronization Solutions"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Legacy System API Connectivity"
+            }
+          }
+        ]
+      },
+      "isRelatedTo": [
+        {
+          "@type": "Service",
+          "@id": "https://www.4xcode.com/service/custom-software#service",
+          "name": "Custom Software Development",
+          "url": "https://www.4xcode.com/service/custom-software"
+        },
+        {
+          "@type": "Service",
+          "@id": "https://www.4xcode.com/service/saas-engineering#service",
+          "name": "SaaS Development",
+          "url": "https://www.4xcode.com/service/saas-engineering"
+        },
+        {
+          "@type": "Service",
+          "@id": "https://www.4xcode.com/service/ai-development#service",
+          "name": "Custom AI Development",
+          "url": "https://www.4xcode.com/service/ai-development"
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.4xcode.com/service/api-integration#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.4xcode.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Services",
+          "item": "https://www.4xcode.com/service"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "API Integration",
+          "item": "https://www.4xcode.com/service/api-integration"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.4xcode.com/service/api-integration#faq",
+      "isPartOf": {
+        "@id": "https://www.4xcode.com/service/api-integration#webpage"
+      },
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What Is Included in Professional API Integration Services for Businesses?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "API integration services can include system discovery, API documentation review, authentication configuration, data mapping, endpoint development, workflow implementation, testing, and deployment. The exact scope depends on the applications involved and the information being exchanged. Some projects connect existing third-party APIs, while others require custom interfaces or middleware. A technical assessment helps identify platform limitations, security requirements, synchronization methods, and the expected behavior of connected workflows."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How Long Does Custom API Development and Integration Usually Take?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Development timelines depend on API availability, documentation quality, authentication requirements, data complexity, and the number of connected systems. A straightforward integration between well-documented services generally involves fewer technical dependencies than a project connecting legacy software with multiple external platforms. Testing must also account for rate limits, unavailable services, incorrect data, and synchronization failures. Requirements discovery helps establish realistic milestones and identify dependencies before implementation begins."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What Factors Affect the Cost of Custom API Integration Services?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "API integration costs depend on the number of systems, endpoint complexity, authentication requirements, data transformations, and error handling needs. Additional considerations include API usage fees, middleware infrastructure, monitoring, maintenance, and changes introduced by third-party providers. Integrations involving sensitive information or complex business transactions may require more extensive validation and security controls. A meaningful estimate should consider both implementation effort and ongoing operational responsibilities."
+          }
+        }
+      ]
+    }
+  ]
+}

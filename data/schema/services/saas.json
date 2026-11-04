@@ -1,0 +1,180 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.4xcode.com/#organization",
+      "name": "4xCode",
+      "url": "https://www.4xcode.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "@id": "https://www.4xcode.com/#logo",
+        "url": "https://www.4xcode.com/assets/logo1.webp",
+        "contentUrl": "https://www.4xcode.com/assets/logo1.webp"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/company/4xcode-software/"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.4xcode.com/#website",
+      "url": "https://www.4xcode.com/",
+      "name": "4xCode",
+      "alternateName": "4xcode",
+      "publisher": {
+        "@id": "https://www.4xcode.com/#organization"
+      },
+      "inLanguage": "en-GB"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.4xcode.com/service/saas-engineering#webpage",
+      "url": "https://www.4xcode.com/service/saas-engineering",
+      "name": "SaaS Development Company for Scalable Platforms | 4xcode",
+      "description": "4xcode is a SaaS development company building multi-tenant platforms with billing, role-based access and onboarding on Next.js and AWS. Discuss your SaaS.",
+      "isPartOf": {
+        "@id": "https://www.4xcode.com/#website"
+      },
+      "about": {
+        "@id": "https://www.4xcode.com/#organization"
+      },
+      "publisher": {
+        "@id": "https://www.4xcode.com/#organization"
+      },
+      "inLanguage": "en-GB",
+      "keywords": "saas development company",
+      "mainEntity": {
+        "@id": "https://www.4xcode.com/service/saas-engineering#service"
+      },
+      "breadcrumb": {
+        "@id": "https://www.4xcode.com/service/saas-engineering#breadcrumb"
+      }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://www.4xcode.com/service/saas-engineering#service",
+      "name": "SaaS Development",
+      "serviceType": "saas development company",
+      "description": "4xcode provides SaaS development services for startups, software businesses, and enterprises planning subscription-based digital products. From early-stage MVPs to multi-tenant platforms, we develop applications around product requirements, customer workflows, and operational needs.",
+      "url": "https://www.4xcode.com/service/saas-engineering",
+      "provider": {
+        "@id": "https://www.4xcode.com/#organization"
+      },
+      "mainEntityOfPage": {
+        "@id": "https://www.4xcode.com/service/saas-engineering#webpage"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "SaaS Development Solutions",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "SaaS MVP Development Services"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Multi-Tenant SaaS Application Development"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "SaaS Subscription Billing Integration"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Existing SaaS Platform Modernization"
+            }
+          }
+        ]
+      },
+      "isRelatedTo": [
+        {
+          "@type": "Service",
+          "@id": "https://www.4xcode.com/service/custom-software#service",
+          "name": "Custom Software Development",
+          "url": "https://www.4xcode.com/service/custom-software"
+        },
+        {
+          "@type": "Service",
+          "@id": "https://www.4xcode.com/service/api-integration#service",
+          "name": "API Integration Services",
+          "url": "https://www.4xcode.com/service/api-integration"
+        },
+        {
+          "@type": "Service",
+          "@id": "https://www.4xcode.com/service/ai-development#service",
+          "name": "Custom AI Development",
+          "url": "https://www.4xcode.com/service/ai-development"
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.4xcode.com/service/saas-engineering#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.4xcode.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Services",
+          "item": "https://www.4xcode.com/service"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "SaaS Engineering",
+          "item": "https://www.4xcode.com/service/saas-engineering"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.4xcode.com/service/saas-engineering#faq",
+      "isPartOf": {
+        "@id": "https://www.4xcode.com/service/saas-engineering#webpage"
+      },
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What Is Included in Professional SaaS Application Development Services?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "SaaS application development services can include product discovery, architecture planning, user authentication, tenant management, subscription integrations, application development, testing, and deployment. The exact scope depends on the product's target audience, features, and business model. Some projects require only a focused MVP, while others involve enterprise account management, advanced permissions, and complex integrations. A requirements assessment helps determine which capabilities are necessary for the initial release."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How Long Does It Take to Develop a SaaS MVP?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "SaaS MVP development timelines depend on the number of features, interface complexity, tenant management requirements, billing integrations, and testing needs. A focused product with limited workflows generally requires less development than a platform supporting multiple account types and complex subscription rules. Product discovery helps establish realistic milestones and technical priorities. An iterative release strategy can also help teams evaluate essential functionality before expanding the application."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What Factors Influence SaaS Development Cost and Ongoing Expenses?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "SaaS development cost depends on product scope, architecture complexity, user interfaces, subscription functionality, integrations, security requirements, and quality assurance. Ongoing expenses may include cloud hosting, database services, payment processing, monitoring, maintenance, and customer support infrastructure. Multi-tenant platforms can introduce additional engineering considerations around data isolation and resource management. A reliable estimate should consider both initial development requirements and the long-term costs of operating the product."
+          }
+        }
+      ]
+    }
+  ]
+}

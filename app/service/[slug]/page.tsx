@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useMemo, useState, useEffect } from "react";
+import React, { useMemo, useState } from "react";
 import NarrativeSection from "@/components/landing/NarrativeSection";
 import Link from "next/link";
 import { useParams, notFound } from "next/navigation";
@@ -85,41 +85,6 @@ export default function ServiceDetailPage() {
       .slice(0, 3);
   }, [service]);
 
-  useEffect(() => {
-    if (!service) return;
-
-    // 1. Set Title
-    document.title = `${service.titleTag} `;
-
-    // 2. Set Meta Description
-    let metaDescription = document.querySelector('meta[name="description"]');
-    const descriptionText = service.metaDesc;
-
-    if (metaDescription) {
-      metaDescription.setAttribute("content", descriptionText);
-    } else {
-      metaDescription = document.createElement("meta");
-      metaDescription.setAttribute("name", "description");
-      metaDescription.setAttribute("content", descriptionText);
-      document.head.appendChild(metaDescription);
-    }
-
-    // 3. Set Canonical Link
-    let canonicalLink = document.querySelector('link[rel="canonical"]');
-    const canonicalUrl =
-      typeof window !== "undefined"
-        ? `${window.location.origin}${window.location.pathname}`
-        : `https://www.4xcode.com/service/${service.slug}`;
-
-    if (canonicalLink) {
-      canonicalLink.setAttribute("href", canonicalUrl);
-    } else {
-      canonicalLink = document.createElement("link");
-      canonicalLink.setAttribute("rel", "canonical");
-      canonicalLink.setAttribute("href", canonicalUrl);
-      document.head.appendChild(canonicalLink);
-    }
-  }, [service]);
 
   return (
     <div

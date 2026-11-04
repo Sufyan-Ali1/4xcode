@@ -1,0 +1,180 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.4xcode.com/#organization",
+      "name": "4xCode",
+      "url": "https://www.4xcode.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "@id": "https://www.4xcode.com/#logo",
+        "url": "https://www.4xcode.com/assets/logo1.webp",
+        "contentUrl": "https://www.4xcode.com/assets/logo1.webp"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/company/4xcode-software/"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.4xcode.com/#website",
+      "url": "https://www.4xcode.com/",
+      "name": "4xCode",
+      "alternateName": "4xcode",
+      "publisher": {
+        "@id": "https://www.4xcode.com/#organization"
+      },
+      "inLanguage": "en-GB"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.4xcode.com/service/ui-ux-design#webpage",
+      "url": "https://www.4xcode.com/service/ui-ux-design",
+      "name": "UX UI Design Services for Web & SaaS Products | 4xcode",
+      "description": "UX UI design services from a team that also builds your product: design systems, interactive prototypes and user research. Discuss your project today.",
+      "isPartOf": {
+        "@id": "https://www.4xcode.com/#website"
+      },
+      "about": {
+        "@id": "https://www.4xcode.com/#organization"
+      },
+      "publisher": {
+        "@id": "https://www.4xcode.com/#organization"
+      },
+      "inLanguage": "en-GB",
+      "keywords": "ux ui design services",
+      "mainEntity": {
+        "@id": "https://www.4xcode.com/service/ui-ux-design#service"
+      },
+      "breadcrumb": {
+        "@id": "https://www.4xcode.com/service/ui-ux-design#breadcrumb"
+      }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://www.4xcode.com/service/ui-ux-design#service",
+      "name": "UX UI Design Services",
+      "serviceType": "ux ui design services",
+      "description": "4xcode provides UX UI design services for businesses developing websites, mobile applications, SaaS products, and internal platforms. We help translate user needs and business requirements into clear journeys, intuitive interfaces, and consistent design patterns.",
+      "url": "https://www.4xcode.com/service/ui-ux-design",
+      "provider": {
+        "@id": "https://www.4xcode.com/#organization"
+      },
+      "mainEntityOfPage": {
+        "@id": "https://www.4xcode.com/service/ui-ux-design#webpage"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "UX UI Design Services Solutions",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "User Experience Research and Strategy"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Wireframing and Interactive Prototyping"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Website and Mobile UI Design"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "SaaS Interface and Design Systems"
+            }
+          }
+        ]
+      },
+      "isRelatedTo": [
+        {
+          "@type": "Service",
+          "@id": "https://www.4xcode.com/service/web-development#service",
+          "name": "Website Development Services",
+          "url": "https://www.4xcode.com/service/web-development"
+        },
+        {
+          "@type": "Service",
+          "@id": "https://www.4xcode.com/service/mobile-apps#service",
+          "name": "Custom Mobile App Development",
+          "url": "https://www.4xcode.com/service/mobile-apps"
+        },
+        {
+          "@type": "Service",
+          "@id": "https://www.4xcode.com/service/saas-engineering#service",
+          "name": "SaaS Development",
+          "url": "https://www.4xcode.com/service/saas-engineering"
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.4xcode.com/service/ui-ux-design#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.4xcode.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Services",
+          "item": "https://www.4xcode.com/service"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "UI / UX Design",
+          "item": "https://www.4xcode.com/service/ui-ux-design"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.4xcode.com/service/ui-ux-design#faq",
+      "isPartOf": {
+        "@id": "https://www.4xcode.com/service/ui-ux-design#webpage"
+      },
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What Is Included in Professional UX UI Design Services?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "UX UI design services may include user research, information architecture, journey mapping, wireframes, interface design, interactive prototypes, usability evaluation, and design system documentation. The exact scope depends on whether the project involves a new product, an existing application, or a specific usability problem. Some engagements focus on research and validation, while others include detailed screen designs and specifications for developer handoff."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How Do UI UX Designers Improve Existing SaaS Applications?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Designers can begin by reviewing product analytics, user feedback, navigation structures, and representative tasks to identify experience problems. Findings may lead to changes in onboarding, dashboard organisation, forms, permissions, or interaction patterns. Proposed improvements can be explored through wireframes and prototypes before implementation. Usability evaluation helps assess whether revised interfaces address the original problems, although results depend on the product and its users."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What Factors Influence UI UX Design Cost and Project Timelines?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "UI UX design cost depends on product complexity, the number of unique screens, research requirements, prototype detail, usability testing, and design system scope. A focused interface review usually requires different resources than designing a complete SaaS application with multiple user roles. Timelines also depend on stakeholder feedback, access to users, and approval cycles. A clear project scope helps establish suitable deliverables and realistic estimates."
+          }
+        }
+      ]
+    }
+  ]
+}

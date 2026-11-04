@@ -1,0 +1,180 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.4xcode.com/#organization",
+      "name": "4xCode",
+      "url": "https://www.4xcode.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "@id": "https://www.4xcode.com/#logo",
+        "url": "https://www.4xcode.com/assets/logo1.webp",
+        "contentUrl": "https://www.4xcode.com/assets/logo1.webp"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/company/4xcode-software/"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.4xcode.com/#website",
+      "url": "https://www.4xcode.com/",
+      "name": "4xCode",
+      "alternateName": "4xcode",
+      "publisher": {
+        "@id": "https://www.4xcode.com/#organization"
+      },
+      "inLanguage": "en-GB"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.4xcode.com/service/ai-development#webpage",
+      "url": "https://www.4xcode.com/service/ai-development",
+      "name": "Custom AI Development: LLM Agents & RAG Systems | 4xcode",
+      "description": "Custom AI development for production, not demos. 4xcode builds LLM agents, RAG pipelines and fine-tuned models around your data. Talk to our experts.",
+      "isPartOf": {
+        "@id": "https://www.4xcode.com/#website"
+      },
+      "about": {
+        "@id": "https://www.4xcode.com/#organization"
+      },
+      "publisher": {
+        "@id": "https://www.4xcode.com/#organization"
+      },
+      "inLanguage": "en-GB",
+      "keywords": "custom ai development",
+      "mainEntity": {
+        "@id": "https://www.4xcode.com/service/ai-development#service"
+      },
+      "breadcrumb": {
+        "@id": "https://www.4xcode.com/service/ai-development#breadcrumb"
+      }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://www.4xcode.com/service/ai-development#service",
+      "name": "Custom AI Development",
+      "serviceType": "custom ai development",
+      "description": "4xcode provides custom AI development services for startups, growing businesses, and enterprises seeking practical artificial intelligence solutions. From intelligent AI agents and generative AI applications to automated workflows and knowledge assistants, we develop AI-powered systems around specific business requirements.",
+      "url": "https://www.4xcode.com/service/ai-development",
+      "provider": {
+        "@id": "https://www.4xcode.com/#organization"
+      },
+      "mainEntityOfPage": {
+        "@id": "https://www.4xcode.com/service/ai-development#webpage"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Custom AI Development Solutions",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "AI Agent Development Services"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Generative AI Application Development"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "AI Chatbot Development Services"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "AI MVP Development Services"
+            }
+          }
+        ]
+      },
+      "isRelatedTo": [
+        {
+          "@type": "Service",
+          "@id": "https://www.4xcode.com/service/custom-software#service",
+          "name": "Custom Software Development",
+          "url": "https://www.4xcode.com/service/custom-software"
+        },
+        {
+          "@type": "Service",
+          "@id": "https://www.4xcode.com/service/api-integration#service",
+          "name": "API Integration Services",
+          "url": "https://www.4xcode.com/service/api-integration"
+        },
+        {
+          "@type": "Service",
+          "@id": "https://www.4xcode.com/service/saas-engineering#service",
+          "name": "SaaS Development",
+          "url": "https://www.4xcode.com/service/saas-engineering"
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.4xcode.com/service/ai-development#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.4xcode.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Services",
+          "item": "https://www.4xcode.com/service"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "AI Development",
+          "item": "https://www.4xcode.com/service/ai-development"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.4xcode.com/service/ai-development#faq",
+      "isPartOf": {
+        "@id": "https://www.4xcode.com/service/ai-development#webpage"
+      },
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What Types of Business Applications Can Custom AI Development Support?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Custom AI development can support knowledge assistants, document processing applications, customer service chatbots, intelligent search, and task-oriented AI agents. Suitable applications depend on the information available, the complexity of the task, and integration requirements. Businesses should prioritize use cases with clearly defined objectives and measurable acceptance criteria. Activities involving sensitive decisions or consequential actions may also require additional safeguards and human supervision."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How Long Does It Take to Develop a Custom AI Agent?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Development timelines depend on workflow complexity, available data, model requirements, external integrations, and the level of evaluation needed. A limited proof of concept may require substantially less work than an agent connected to multiple business systems with complex permissions. Requirements discovery helps establish realistic milestones. Testing should also account for incorrect outputs, unexpected tool behavior, security concerns, and changes in application performance."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What Determines AI Agent Development Cost and Ongoing Operating Expenses?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "AI agent development cost depends on application scope, model selection, workflow complexity, integrations, data preparation, and evaluation requirements. Ongoing expenses may include model inference, token consumption, hosting, monitoring, storage, and maintenance. Applications handling sensitive information or executing business actions may require additional security and approval controls. A meaningful estimate should consider both initial engineering costs and the expected volume of ongoing AI operations."
+          }
+        }
+      ]
+    }
+  ]
+}

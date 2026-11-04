@@ -1,7 +1,6 @@
-import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-
+import { pageMetadata } from "@/data/metadata";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { FormProvider } from "./context/FormContext";
@@ -16,17 +15,7 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  title: "4xCode | AI-Powered Software, SaaS & Web Development Studio",
-  description:
-    "4xCode engineers high-performance SaaS, AI agents, and web platforms for ambitious brands. Senior team, 132+ products shipped. Start your project today. ",
-  icons: {
-    icon: "./favicon.ico",
-  },
-  alternates: {
-    canonical: "https://www.4xcode.com",
-  },
-};
+export const metadata = pageMetadata.home;
 
 export default function RootLayout({
   children,

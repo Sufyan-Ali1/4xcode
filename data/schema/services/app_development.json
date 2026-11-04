@@ -1,0 +1,180 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.4xcode.com/#organization",
+      "name": "4xCode",
+      "url": "https://www.4xcode.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "@id": "https://www.4xcode.com/#logo",
+        "url": "https://www.4xcode.com/assets/logo1.webp",
+        "contentUrl": "https://www.4xcode.com/assets/logo1.webp"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/company/4xcode-software/"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.4xcode.com/#website",
+      "url": "https://www.4xcode.com/",
+      "name": "4xCode",
+      "alternateName": "4xcode",
+      "publisher": {
+        "@id": "https://www.4xcode.com/#organization"
+      },
+      "inLanguage": "en-GB"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.4xcode.com/service/mobile-apps#webpage",
+      "url": "https://www.4xcode.com/service/mobile-apps",
+      "name": "Custom Mobile App Development Company | iOS & Android",
+      "description": "4xcode is a custom mobile app development company building native-feel iOS and Android apps with React Native, Swift and Kotlin. Discuss your app idea.",
+      "isPartOf": {
+        "@id": "https://www.4xcode.com/#website"
+      },
+      "about": {
+        "@id": "https://www.4xcode.com/#organization"
+      },
+      "publisher": {
+        "@id": "https://www.4xcode.com/#organization"
+      },
+      "inLanguage": "en-GB",
+      "keywords": "custom mobile app development company",
+      "mainEntity": {
+        "@id": "https://www.4xcode.com/service/mobile-apps#service"
+      },
+      "breadcrumb": {
+        "@id": "https://www.4xcode.com/service/mobile-apps#breadcrumb"
+      }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://www.4xcode.com/service/mobile-apps#service",
+      "name": "Custom Mobile App Development",
+      "serviceType": "custom mobile app development company",
+      "description": "4xcode provides custom mobile app development services for startups, growing businesses, and enterprises seeking practical mobile solutions. From customer-facing iOS and Android applications to internal business tools and cross-platform products, we develop applications around specific user requirements.",
+      "url": "https://www.4xcode.com/service/mobile-apps",
+      "provider": {
+        "@id": "https://www.4xcode.com/#organization"
+      },
+      "mainEntityOfPage": {
+        "@id": "https://www.4xcode.com/service/mobile-apps#webpage"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Custom Mobile App Development Solutions",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Native iOS Application Development"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Native Android Application Development"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Cross-Platform Mobile App Development"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Enterprise Mobile Application Development"
+            }
+          }
+        ]
+      },
+      "isRelatedTo": [
+        {
+          "@type": "Service",
+          "@id": "https://www.4xcode.com/service/custom-software#service",
+          "name": "Custom Software Development",
+          "url": "https://www.4xcode.com/service/custom-software"
+        },
+        {
+          "@type": "Service",
+          "@id": "https://www.4xcode.com/service/ui-ux-design#service",
+          "name": "UX UI Design Services",
+          "url": "https://www.4xcode.com/service/ui-ux-design"
+        },
+        {
+          "@type": "Service",
+          "@id": "https://www.4xcode.com/service/api-integration#service",
+          "name": "API Integration Services",
+          "url": "https://www.4xcode.com/service/api-integration"
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.4xcode.com/service/mobile-apps#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.4xcode.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Services",
+          "item": "https://www.4xcode.com/service"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Mobile Apps",
+          "item": "https://www.4xcode.com/service/mobile-apps"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.4xcode.com/service/mobile-apps#faq",
+      "isPartOf": {
+        "@id": "https://www.4xcode.com/service/mobile-apps#webpage"
+      },
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Should My Business Choose Native or Cross-Platform Mobile App Development?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Native development is often suitable when an application requires extensive platform-specific functionality, specialized device integrations, or highly customized operating system behavior. Cross-platform development may be appropriate when iOS and Android applications share substantial functionality and interface requirements. The right approach depends on product features, performance expectations, supported devices, maintenance needs, and budget. A technical assessment helps determine which option best fits the application's intended use."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How Long Does Custom Mobile App Development Usually Take?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Development timelines depend on application complexity, supported platforms, interface requirements, backend integrations, and testing needs. A focused application with limited functionality generally requires less work than an enterprise mobile system with complex permissions, offline synchronization, and multiple integrations. Requirements discovery helps establish realistic milestones and identify technical dependencies. App Store and Google Play review processes should also be considered when planning public application releases."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What Determines the Cost of Custom Mobile App Development Services?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Custom mobile app development costs depend on feature complexity, platform selection, interface design, backend requirements, third-party integrations, and testing scope. Native applications developed separately for iOS and Android may involve different engineering requirements than a shared-code solution. Ongoing expenses can include hosting, software maintenance, monitoring, and operating system compatibility updates. A meaningful estimate should account for both initial development and long-term application ownership."
+          }
+        }
+      ]
+    }
+  ]
+}

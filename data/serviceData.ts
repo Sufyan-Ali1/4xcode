@@ -323,9 +323,9 @@ features: [
 ],
     iconKey: "software",
     title: "Custom Software",
-    titleTag: "Custom Software Development Services — 4xCode",
+    titleTag: "Custom Software Development Company for Your Workflow",
     metaDesc:
-      "Bespoke software architecture, backend systems, and data platforms engineered for ambitious products with serious technical depth.",
+      "Custom AI development for production, not demos. 4xcode builds LLM agents, RAG pipelines and fine-tuned models around your data. Talk to our experts.",
     desc: "Bespoke software architecture, backend systems, and data platforms engineered for ambitious products with serious technical depth.",
     intro:
       "When off-the-shelf tools hit their ceiling, 4xCode designs custom software architecture built for your exact problem — backend systems, data platforms, and realtime sync built on Go, Node.js, and Postgres. ",
@@ -710,10 +710,10 @@ faqs: [
 
   iconKey: "software",
   title: "Custom AI Development",
-  titleTag: "Custom AI Development Services — 4xCode",
+  titleTag: "Custom AI Development: LLM Agents & RAG Systems | 4xcode",
 
   metaDesc:
-    "4xcode provides custom AI development services for intelligent applications, AI agents, generative AI, and business workflow automation.",
+    "Custom AI development for production, not demos. 4xcode builds LLM agents, RAG pipelines and fine-tuned models around your data. Talk to our experts.",
 
   desc:
     "4xcode provides custom AI development services for intelligent applications, AI agents, generative AI, and business workflow automation.",
@@ -1126,10 +1126,10 @@ faqs: [
 
   iconKey: "software",
   title: "SaaS Development",
-  titleTag: "SaaS Development Services — 4xCode",
+  titleTag: "SaaS Development Company for Scalable Platforms | 4xcode",
 
   metaDesc:
-    "4xcode provides SaaS development services for MVPs, multi-tenant platforms, subscription billing integration, and SaaS platform modernization.",
+    "4xcode is a SaaS development company building multi-tenant platforms with billing, role-based access and onboarding on Next.js and AWS. Discuss your SaaS.",
 
   desc:
     "4xcode provides SaaS development services for MVPs, multi-tenant platforms, subscription billing integration, and SaaS platform modernization.",
@@ -1536,10 +1536,10 @@ faqs: [
 
   iconKey: "software",
   title: "Website Development",
-  titleTag: "Website Development Services — 4xCode",
+  titleTag: "Website Development Services: Fast & SEO-Ready | 4xcode",
 
   metaDesc:
-    "4xcode provides website development services for startups, small businesses, and established organizations seeking reliable digital experiences.",
+    "Website development services with React and Next.js, built for fast loading, clean SEO structure and edge delivery. Get a quote for your next website.",
 
   desc:
     "4xcode provides website development services for startups, small businesses, and established organizations seeking reliable digital experiences.",
@@ -1928,10 +1928,10 @@ faqs: [
 
   iconKey: "software",
   title: "Mobile App Development",
-  titleTag: "Custom Mobile App Development Services — 4xCode",
+  titleTag: "Custom Mobile App Development Company | iOS & Android",
 
   metaDesc:
-    "4xcode provides custom mobile app development services for startups, growing businesses, and enterprises seeking practical mobile solutions.",
+    "4xcode is a custom mobile app development company building native-feel iOS and Android apps with React Native, Swift and Kotlin. Discuss your app idea.",
 
   desc:
     "4xcode provides custom mobile app development services for startups, growing businesses, and enterprises seeking practical mobile solutions.",
@@ -2713,10 +2713,10 @@ faqs: [
 
   iconKey: "software",
   title: "UI UX Design",
-  titleTag: "UX UI Design Services — 4xCode",
+  titleTag: "UX UI Design Services for Web & SaaS Products | 4xcode",
 
   metaDesc:
-    "4xcode provides UX UI design services for businesses developing websites, mobile applications, SaaS products, and internal platforms.",
+    "UX UI design services from a team that also builds your product: design systems, interactive prototypes and user research. Discuss your project today.",
 
   desc:
     "4xcode provides UX UI design services for businesses developing websites, mobile applications, SaaS products, and internal platforms.",
@@ -3103,10 +3103,10 @@ faqs: [
 
   iconKey: "software",
   title: "Cloud Systems",
-  titleTag: "Cloud Consulting Services — 4xCode",
+  titleTag: "Cloud Consulting Services: AWS, IaC & DevOps | 4xcode",
 
   metaDesc:
-    "4xcode provides cloud consulting services for businesses planning cloud adoption, infrastructure modernization, or improvements to existing environments.",
+    "Cloud consulting services covering AWS infrastructure-as-code, observability, cost control and zero-downtime deployments. Talk to our cloud experts.",
 
   desc:
     "4xcode provides cloud consulting services for businesses planning cloud adoption, infrastructure modernization, or improvements to existing environments.",
@@ -3498,10 +3498,10 @@ faqs: [
 
   iconKey: "software",
   title: "Digital Marketing Services",
-  titleTag: "Digital Marketing Services — 4xCode",
+  titleTag: "Digital Marketing Services: SEO, PPC & Paid Social | 4xcode",
 
   metaDesc:
-    "4xCode provides digital marketing services that connect search, paid media, social, email and conversion optimization into one data-driven strategy.",
+    "Digital marketing services that combine Google Ads, Meta Ads, SEO and analytics with conversion optimisation to grow qualified leads. Talk to our team.",
 
   desc:
     "4xCode provides digital marketing services that connect search, paid media, social, email and conversion optimization into one data-driven strategy.",
@@ -3891,10 +3891,10 @@ faqs: [
 
   iconKey: "software",
   title: "Search Engine Optimization",
-  titleTag: "Search Engine Optimization Services — 4xCode",
+  titleTag: "Search Engine Optimization for Software Brands | 4xcode",
 
   metaDesc:
-    "4xCode delivers search engine optimization services that make your website easier for Google to crawl, rank and recommend, and easier for AI platforms such as ChatGPT and Claude to understand and cite.",
+    "Search engine optimization from an engineering team: technical SEO audits, Core Web Vitals fixes and content strategy that turns traffic into enquiries.",
 
   desc:
     "4xCode delivers search engine optimization services that make your website easier for Google to crawl, rank and recommend, and easier for AI platforms such as ChatGPT and Claude to understand and cite.",
@@ -4284,10 +4284,10 @@ faqs: [
 
   iconKey: "software",
   title: "Ecommerce Development",
-  titleTag: "Ecommerce Development Services — 4xCode",
+  titleTag: "Ecommerce Development Services: Shopify & Next.js | 4xcode",
 
   metaDesc:
-    "4xCode provides ecommerce development services for brands that have outgrown templates.",
+    "Ecommerce development services for custom Shopify and Next.js storefronts, payment gateways, inventory systems and marketplaces. Discuss your store today.",
 
   desc:
     "4xCode provides ecommerce development services for brands that have outgrown templates.",
@@ -4672,10 +4672,10 @@ faqs: [
 
   iconKey: "software",
   title: "API Integration",
-  titleTag: "API Integration Services — 4xCode",
+  titleTag: "API Integration Services for CRMs, Payments & AI | 4xcode",
 
   metaDesc:
-    "4xcode provides API integration services for businesses that need their applications, databases, and third-party platforms to work together.",
+     "API integration services that connect your payment processors, CRMs and AI tools using webhooks, OAuth and custom SDKs. Talk to our integration team.",
 
   desc:
     "4xcode provides API integration services for businesses that need their applications, databases, and third-party platforms to work together.",

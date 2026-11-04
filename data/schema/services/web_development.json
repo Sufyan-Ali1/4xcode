@@ -1,0 +1,180 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.4xcode.com/#organization",
+      "name": "4xCode",
+      "url": "https://www.4xcode.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "@id": "https://www.4xcode.com/#logo",
+        "url": "https://www.4xcode.com/assets/logo1.webp",
+        "contentUrl": "https://www.4xcode.com/assets/logo1.webp"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/company/4xcode-software/"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.4xcode.com/#website",
+      "url": "https://www.4xcode.com/",
+      "name": "4xCode",
+      "alternateName": "4xcode",
+      "publisher": {
+        "@id": "https://www.4xcode.com/#organization"
+      },
+      "inLanguage": "en-GB"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.4xcode.com/service/web-development#webpage",
+      "url": "https://www.4xcode.com/service/web-development",
+      "name": "Website Development Services: Fast & SEO-Ready | 4xcode",
+      "description": "Website development services with React and Next.js, built for fast loading, clean SEO structure and edge delivery. Get a quote for your next website.",
+      "isPartOf": {
+        "@id": "https://www.4xcode.com/#website"
+      },
+      "about": {
+        "@id": "https://www.4xcode.com/#organization"
+      },
+      "publisher": {
+        "@id": "https://www.4xcode.com/#organization"
+      },
+      "inLanguage": "en-GB",
+      "keywords": "website development services",
+      "mainEntity": {
+        "@id": "https://www.4xcode.com/service/web-development#service"
+      },
+      "breadcrumb": {
+        "@id": "https://www.4xcode.com/service/web-development#breadcrumb"
+      }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://www.4xcode.com/service/web-development#service",
+      "name": "Website Development Services",
+      "serviceType": "website development services",
+      "description": "4xcode provides website development services for startups, small businesses, and established organizations seeking reliable digital experiences. From professional business websites and responsive interfaces to custom web applications and customer portals, we develop web solutions around your requirements.",
+      "url": "https://www.4xcode.com/service/web-development",
+      "provider": {
+        "@id": "https://www.4xcode.com/#organization"
+      },
+      "mainEntityOfPage": {
+        "@id": "https://www.4xcode.com/service/web-development#webpage"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Website Development Services Solutions",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Custom Business Website Development"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Custom Web Application Development"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "B2B Website Development Services"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Customer Portal Development Services"
+            }
+          }
+        ]
+      },
+      "isRelatedTo": [
+        {
+          "@type": "Service",
+          "@id": "https://www.4xcode.com/service/search-engine-optimization-seo#service",
+          "name": "Search Engine Optimization",
+          "url": "https://www.4xcode.com/service/search-engine-optimization-seo"
+        },
+        {
+          "@type": "Service",
+          "@id": "https://www.4xcode.com/service/custom-software#service",
+          "name": "Custom Software Development",
+          "url": "https://www.4xcode.com/service/custom-software"
+        },
+        {
+          "@type": "Service",
+          "@id": "https://www.4xcode.com/service/ui-ux-design#service",
+          "name": "UX UI Design Services",
+          "url": "https://www.4xcode.com/service/ui-ux-design"
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.4xcode.com/service/web-development#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.4xcode.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Services",
+          "item": "https://www.4xcode.com/service"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Web Development",
+          "item": "https://www.4xcode.com/service/web-development"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.4xcode.com/service/web-development#faq",
+      "isPartOf": {
+        "@id": "https://www.4xcode.com/service/web-development#webpage"
+      },
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What Is Included in Professional Website Development Services for Businesses?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Website development services can include requirements discovery, information architecture, responsive interface implementation, CMS integration, technical SEO foundations, testing, and deployment. The exact scope depends on whether the project involves a marketing website, customer portal, or custom web application. Some businesses also require integrations with CRM platforms, booking systems, or other services. A project assessment helps determine the appropriate functionality, content structure, and technical approach."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How Long Does It Take to Develop a Custom Business Website?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Development timelines depend on the number of pages, design requirements, content readiness, CMS functionality, integrations, and testing complexity. A relatively simple business website generally requires less engineering than a custom web portal with authentication and dynamic data. Discovery and technical planning help establish realistic milestones. Content approvals, stakeholder feedback, and external dependencies can also influence the overall schedule and should be considered during project planning."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What Factors Affect Custom Website Development Cost and Maintenance?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Website development cost depends on project scope, interface complexity, page templates, content management requirements, integrations, and testing needs. Ongoing expenses may include hosting, domain registration, software licenses, security updates, maintenance, and future improvements. Custom web applications typically introduce additional backend and infrastructure considerations. A meaningful quotation should reflect the required functionality and technical responsibilities rather than relying only on the number of website pages."
+          }
+        }
+      ]
+    }
+  ]
+}

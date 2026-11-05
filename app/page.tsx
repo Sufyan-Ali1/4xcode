@@ -11,7 +11,6 @@ import home_data from "@/data/home.json";
 import { Suspense } from "react";
 import ServiceFaq from "@/components/ui/ServiceFaq";
 import CaseStudiesSkeleton from "@/components/landing/CaseStudiesSkeleton";
-import LogoMarquee from "@/components/landing/LogosMarquee";
 import Products from "@/components/products/ProductsMain";
 
 export default async function HomePage() {
@@ -20,7 +19,6 @@ export default async function HomePage() {
       <JsonLd data={homeSchema} />
       <div className="flex flex-1 flex-col items-center justify-center">
         <Hero data={home_data.hero} />
-        <LogoMarquee data={home_data.logos} />
         <ServicesSection data={home_data.services} />
         <Suspense fallback={<CaseStudiesSkeleton />}>
           <CaseStudiesSection data={home_data.work} />

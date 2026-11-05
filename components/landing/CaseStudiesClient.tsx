@@ -1,4 +1,5 @@
 "use client";
+import home from "@/data/home.json";
 import { motion } from "framer-motion";
 import { Reveal } from "@/utils/AnimationReveal";
 import { CaseStudyCard } from "../ui/CaseStudyCard";
@@ -7,10 +8,11 @@ import { CaseStudy } from "../../lib/caseStudyApi";
 
 type Props = {
   initialData: CaseStudy[];
+  data?: typeof home.work;
 };
 
-export default  function CaseStudiesClient({ initialData }: Props) {
-  const projects = (initialData || []).slice(0, 3);
+export default  function CaseStudiesClient({ initialData, data = home.work }: Props) {
+  const projects = (initialData || []).slice(0, data.limit);
 
   return (
     <section className="relative w-full overflow-hidden bg-black py-8 px-6 md:px-12 lg:px-24">
@@ -20,15 +22,15 @@ export default  function CaseStudiesClient({ initialData }: Props) {
         <div className="flex max-w-2xl flex-col items-center gap-4 text-center">
           <Reveal delay={0}>
             <p className="text-[#f90a1f] text-[12px] font-normal uppercase tracking-[3.6px] leading-4">
-              Featured Work
+              {data.label}
             </p>
           </Reveal>
 
           <Reveal delay={0.1}>
             <h2 className="text-center text-[36px] font-bold leading-[1.1] tracking-[-1.2px] text-white md:text-[48px]">
-              Selected{" "}
+              {data.heading}{" "}
               <span className="bg-gradient-to-br from-[#ff8a8c] to-[#ef1f23] bg-clip-text text-transparent">
-                case studies.
+                {data.highlight}
               </span>
             </h2>
           </Reveal>
@@ -41,18 +43,18 @@ export default  function CaseStudiesClient({ initialData }: Props) {
               key={project.id || index}
               className="flex flex-col h-full w-full transition-transform duration-300 ease-out hover:scale-[1.015]"
             >
-              <CaseStudyCard project={project} index={index} />
+              <CaseStudyCard project={project} index={index} showCategory labels={{ action: data.cardAction, imageFallback: data.imageFallback, titleFallback: data.titleFallback }} />
             </Link>
           ))}
         </div>
 
         <Reveal delay={0.3} className="flex w-full justify-center">
           <motion.a
-            href="/work"
+            href={data.action.href}
             whileHover={{ scale: 1.02 }}
             className="flex  w-full max-w-[560px] cursor-pointer items-center justify-center rounded-[55px] border-2 border-[#f90a1f] bg-black/30 px-12 py-5 text-center text-[20px] font-bold whitespace-nowrap text-white shadow-[0_0_24px_rgba(239,31,35,0.05)] transition-colors duration-300 hover:bg-[rgba(249,10,31,0.08)]"
           >
-            View More Work
+            {data.action.label}
           </motion.a>
         </Reveal>
       </div>

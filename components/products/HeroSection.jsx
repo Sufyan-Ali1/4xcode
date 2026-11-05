@@ -1,13 +1,6 @@
+import { spaceGrotesk, inter } from "@/lib/fonts";
 import { Reveal } from "../../utils/AnimationReveal";
-import { Space_Grotesk } from "next/font/google";
-import { Inter } from "next/font/google";
 
-const inter = Inter({
-  subsets: ["latin"],
-});
-const spaceGrotesk = Space_Grotesk({
-  subsets: ["latin"],
-});
 export default function HeroSection({product})
 {
   return(
@@ -20,7 +13,7 @@ export default function HeroSection({product})
                   </span>
                 </div>
               </Reveal>
-    
+
               <Reveal delay={0.1}>
                 <h1 className={`text-4xl sm:text-5xl md:text-[56px] font-bold tracking-tight leading-[1.1] max-w-4xl ${spaceGrotesk.className} `}>
                   {product.title1}{" "}
@@ -31,7 +24,7 @@ export default function HeroSection({product})
                   <span className="text-[#EF1F23]">.</span>
                 </h1>
               </Reveal>
-    
+
               <Reveal delay={0.2}>
                 <p className={`text-[#a7a3a4] text-sm sm:text-base md:text-lg max-w-2xl font-normal leading-relaxed ${inter.className}`}>
                   {product.description}

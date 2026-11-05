@@ -1,0 +1,228 @@
+{
+"@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.4xcode.com/#organization",
+      "name": "4xCode",
+      "alternateName": "4xcode",
+      "url": "https://www.4xcode.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "@id": "https://www.4xcode.com/#logo",
+        "url": "https://www.4xcode.com/assets/logo1.webp",
+        "contentUrl": "https://www.4xcode.com/assets/logo1.webp"
+      },
+      "image": {
+        "@id": "https://www.4xcode.com/#logo"
+      },
+      "description": "4xCode is a remote-first software development company building fast, AI-powered SaaS platforms, web applications, and mobile products for startups and growing brands.",
+      "slogan": "Engineering the future with code.",
+      "email": "hello@4xcode.com",
+      "telephone": "+44-7578-227223",
+      "foundingDate": "2021",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "01 Padnal Court",
+        "addressLocality": "Romford",
+        "postalCode": "RM6 5HR",
+        "addressCountry": "GB"
+      },
+      "founder": [
+        {
+          "@type": "Person",
+          "name": "Vic",
+          "jobTitle": "CEO & Co-Founder"
+        },
+        {
+          "@type": "Person",
+          "name": "Muhammad Ali",
+          "jobTitle": "CTO & Co-Founder"
+        }
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "sales",
+        "email": "hello@4xcode.com",
+        "telephone": "+44-7578-227223",
+        "url": "https://www.4xcode.com/contact",
+        "availableLanguage": "English"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/company/4xcode-software/"
+      ],
+      "knowsAbout": [
+        "Custom software development",
+        "Website development",
+        "Mobile app development",
+        "SaaS engineering",
+        "UI/UX design",
+        "AI development",
+        "AI agents",
+        "RAG pipelines",
+        "LLM-powered workflows",
+        "AI automation",
+        "Cloud systems",
+        "Search engine optimization",
+        "Digital marketing",
+        "Garage management software"
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "4xCode Services and Products",
+        "itemListElement": [
+          {
+            "@type": "OfferCatalog",
+            "name": "Software Development Services",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "@id": "https://www.4xcode.com/service/web-development#service",
+                  "name": "Website Development Services",
+                  "url": "https://www.4xcode.com/service/web-development"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "@id": "https://www.4xcode.com/service/mobile-apps#service",
+                  "name": "Custom Mobile App Development",
+                  "url": "https://www.4xcode.com/service/mobile-apps"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "@id": "https://www.4xcode.com/service/saas-engineering#service",
+                  "name": "SaaS Development",
+                  "url": "https://www.4xcode.com/service/saas-engineering"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "@id": "https://www.4xcode.com/service/ui-ux-design#service",
+                  "name": "UX UI Design Services",
+                  "url": "https://www.4xcode.com/service/ui-ux-design"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "@id": "https://www.4xcode.com/service/ai-development#service",
+                  "name": "Custom AI Development",
+                  "url": "https://www.4xcode.com/service/ai-development"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "@id": "https://www.4xcode.com/service/cloud-systems#service",
+                  "name": "Cloud Consulting Services",
+                  "url": "https://www.4xcode.com/service/cloud-systems"
+                }
+              }
+            ]
+          },
+          {
+            "@type": "OfferCatalog",
+            "name": "Ready-Made Business Software",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "@id": "https://www.4xcode.com/products/garage-management-system#product",
+                  "name": "Garage Management System",
+                  "url": "https://www.4xcode.com/products/garage-management-system"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.4xcode.com/#website",
+      "url": "https://www.4xcode.com/",
+      "name": "4xCode",
+      "alternateName": "4xcode",
+      "publisher": {
+        "@id": "https://www.4xcode.com/#organization"
+      },
+      "inLanguage": "en-GB"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.4xcode.com/#webpage",
+      "url": "https://www.4xcode.com/",
+      "name": "Software Development Agency for Growing Businesses | 4xCode",
+      "description": "4xCode is a software development agency building custom software, websites, mobile apps, SaaS platforms and AI automation, plus a ready-made garage system.",
+      "keywords": "software development agency",
+      "inLanguage": "en-GB",
+      "isPartOf": {
+        "@id": "https://www.4xcode.com/#website"
+      },
+      "about": {
+        "@id": "https://www.4xcode.com/#organization"
+      },
+      "publisher": {
+        "@id": "https://www.4xcode.com/#organization"
+      },
+      "mainEntity": {
+        "@id": "https://www.4xcode.com/#organization"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.4xcode.com/#faq",
+      "url": "https://www.4xcode.com/",
+      "inLanguage": "en-GB",
+      "isPartOf": {
+        "@id": "https://www.4xcode.com/#webpage"
+      },
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How long does a typical software development project take?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Timelines depend on scope and complexity. Smaller projects usually take 2 to 4 weeks, while larger custom software solutions typically take 8 to 12 weeks from discovery to launch."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the process when I book a free demo?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You book a short call, share your goals, and we walk you through relevant solutions. Afterwards, you receive tailored recommendations and a clear proposal for your project."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Will I receive regular updates during development?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. We work in agile sprints and share weekly progress updates, so you always know what has been completed, what comes next, and how your project is progressing."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you provide support after the project is delivered?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. After launch, we offer ongoing maintenance, performance monitoring, bug fixes, and feature enhancements to keep your software secure, stable, and ready to scale with your business."
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,14 +1,14 @@
 "use client";
 
+import defaults from "@/data/landing-defaults.json";
 import { useMemo } from "react";
-import { motion } from "framer-motion";
-import { useSafeReducedMotion } from "../../utils/useSafeReducedMotion";
 import { Reveal } from "../../utils/AnimationReveal";
 import { TESTIMONIALS } from "../../data/index";
+import { type Testimonial } from "@/types";
 
-export default function TestimonialsSection() {
+export default function TestimonialsSection({ testimonials = TESTIMONIALS, data = defaults.testimonialSection }: { testimonials?: Testimonial[]; data?: { label: string; heading: string; highlight?: string; quoteOpen: string; quoteClose: string } }) {
   const STEP_W = 400;
-  const GROUP_W = TESTIMONIALS.length * STEP_W;
+  const GROUP_W = Math.max(testimonials.length, 1) * STEP_W;
 
   const N_GROUPS = useMemo(() => {
     return Math.ceil((3840 * 3) / GROUP_W) + 1;
@@ -38,16 +38,13 @@ export default function TestimonialsSection() {
         <div className="relative z-10 flex flex-col items-center gap-3 text-center px-6">
           <Reveal>
             <span className="text-[#f90a1f] text-[12px] font-normal uppercase tracking-[3.6px] leading-4">
-              Testimonials
+              {data.label}
             </span>
           </Reveal>
 
           <Reveal delay={0.1}>
             <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-white">
-              Loved by{" "}
-              <span className="bg-gradient-to-br from-[#ff8a8c] to-[#ef1f23] bg-clip-text text-transparent">
-                operators
-              </span>
+              {data.heading}{data.highlight && <> <span className="bg-gradient-to-br from-[#ff8a8c] to-[#ef1f23] bg-clip-text text-transparent">{data.highlight}</span></>}
             </h2>
           </Reveal>
         </div>
@@ -68,7 +65,7 @@ export default function TestimonialsSection() {
                 className="flex shrink-0 items-stretch gap-5 pr-5"
                 aria-hidden={idx > 0 ? true : undefined}
               >
-                {TESTIMONIALS.map((item, i) => (
+                {testimonials.map((item, i) => (
                   <div
                     key={`${item.id}-${i}`}
                     className="group w-85 md:w-95 shrink-0 flex flex-col justify-between rounded-[22px] border border-white/10 bg-white/2 p-6 transition-colors duration-300 hover:border-[#f90a1f]/40 hover:bg-white/4 cursor-default h-full"
@@ -87,7 +84,7 @@ export default function TestimonialsSection() {
                       </div>
 
                       <p className="text-sm md:text-base leading-relaxed text-zinc-400 group-hover:text-zinc-300 transition-colors duration-300 font-light mb-8">
-                        "{item.quote}"
+                        {data.quoteOpen}{item.quote}{data.quoteClose}
                       </p>
                     </div>
                     

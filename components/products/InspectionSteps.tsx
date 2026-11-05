@@ -1,51 +1,24 @@
+import garage from "@/data/GarageManagementPage.json";
 import React from "react";
-import Image from "next/image";
-interface InspectionStep {
-  id: number;
-  number: string;
-  title: string;
-  description: string;
-}
-
-const STEPS: InspectionStep[] = [
-  {
-    id: 1,
-    number: "01",
-    title: "Inspect",
-    description: "Technician records faults and adds photos.",
-  },
-  {
-    id: 2,
-    number: "02",
-    title: "Quote",
-    description: "Recommended repairs are turned into a quote.",
-  },
-  {
-    id: 3,
-    number: "03",
-    title: "Approve",
-    description: "Customer reviews and authorises the work digitally.",
-  },
-];
-
-const InspectionSteps: React.FC = () => {
+const InspectionSteps = ({ data = garage.inspections }: { data?: typeof garage.inspections }) => {
   return (
     <section className="w-full bg-black px-4 py-12 md:py-16">
       <div className="mx-auto w-full max-w-[1150px]">
         {/* Heading */}
         <div className="text-center">
           <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#8b0f17]">
-            Inspection
+            {data.label}
           </p>
           <h2 className="mt-3 text-white text-3xl md:text-5xl font-bold tracking-tight">
-            Digital Vehicle{" "}
-            <span className="text-[#e55d5d]">Inspection</span>
+            {data.heading}{" "}
+            <span className="text-[#e55d5d]">{data.highlight}</span>
           </h2>
+          <p className="mt-3 text-sm text-zinc-400">{data.description}</p>
         </div>
 
         {/* Cards */}
         <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6 md:mt-14">
-          {STEPS.map((step) => (
+          {data.steps.map((step) => (
             <div
               key={step.id}
               className="flex min-h-[176px] flex-col rounded-[22px] bg-[#212121] px-4 pb-6 pt-4"
@@ -62,18 +35,7 @@ const InspectionSteps: React.FC = () => {
             </div>
           ))}
         </div>
-        <div className="w-full mt-20 lg:mt-25">
-              <Image
-    src="/assets/technicianician-job-management.webp"
-    alt="4XCode Workshop Workflow"
-    width={1160}
-    height={619}
-    className="h-auto w-full object-cover"
-    priority
-  />
 
-
-        </div>
       </div>
 
     </section>

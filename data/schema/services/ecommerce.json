@@ -113,9 +113,9 @@
         },
         {
           "@type": "Service",
-          "@id": "https://www.4xcode.com/service/automation-systems#service",
+          "@id": "https://www.4xcode.com/service/ai-automation#service",
           "name": "AI Automation Services",
-          "url": "https://www.4xcode.com/service/automation-systems"
+          "url": "https://www.4xcode.com/service/ai-automation"
         }
       ]
     },

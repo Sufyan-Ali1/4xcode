@@ -1,15 +1,16 @@
 const slugs = {
   service: [
+    "ai-automation",
     "ai-development",
     "custom-software",
     "saas-engineering",
     "web-development",
     "mobile-apps",
     "api-integration",
-    "automation-systems",
     "ui-ux-design",
     "cloud-systems",
-    "seo-digital-marketing",
+    "digital-marketing-services",
+    "search-engine-optimization-seo",
     "ecommerce-solutions",
   ],
   work: [
@@ -30,6 +31,9 @@ const config = {
 
   additionalPaths: async () => {
     const paths = [];
+
+    paths.push({ loc: "/", changefreq: "daily", priority: 1.0 });
+    paths.push({ loc: "/product/garage-management-system", changefreq: "weekly", priority: 0.8 });
 
     paths.push({ loc: "/blog", changefreq: "daily", priority: 0.9 });
     paths.push({ loc: "/about", changefreq: "daily", priority: 0.9 });

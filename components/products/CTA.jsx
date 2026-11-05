@@ -1,15 +1,10 @@
 "use client"
 import Link from "next/link";
-import { motion } from "framer-motion";
+import defaults from "@/data/landing-defaults.json";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 
-const default_cta={
-  heading_white:" Have a project in",
-  heading_red:"mind?",
-  text:"Tell us the goal. We'll tell you the path.",
-  button:"Start Project",
-};
-export default function CTA({data=default_cta})
+/** @param {{ data?: { heading_white: string, heading_red: string, text: string, button: string, label?: string, href?: string, secondaryAction?: { label: string, href: string } } }} props */
+export default function CTA({data=defaults.productCta})
 {
     return(
               <section className="w-full flex flex-wrap justify-center">
@@ -79,7 +74,7 @@ export default function CTA({data=default_cta})
                     uppercase
                   "
                 >
-                  Get Started
+                  {data.label ?? defaults.productCta.label}
                 </span>
                 <span className="h-px w-6 bg-[#f90a1f]" />
               </div>
@@ -111,8 +106,9 @@ export default function CTA({data=default_cta})
                 {data.text}
               </p>
             </div>
+            <div className="relative z-10 flex w-full flex-col gap-3 md:w-auto">
             <Link
-              href="/contact"
+              href={data.href ?? defaults.productCta.href}
               className="
                 group relative z-10
                 inline-flex items-center justify-center
@@ -144,6 +140,8 @@ export default function CTA({data=default_cta})
                 "
               />
             </Link>
+            {data.secondaryAction && <Link href={data.secondaryAction.href} className="inline-flex min-h-[48px] items-center justify-center rounded-full border border-white/20 px-6 py-3 text-sm font-semibold text-white hover:bg-white/5">{data.secondaryAction.label}</Link>}
+            </div>
             <div
               className="
                 absolute -right-16 -bottom-20

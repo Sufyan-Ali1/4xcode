@@ -1,13 +1,9 @@
 "use client";
 
-import React from "react";
-import { Space_Grotesk } from "next/font/google";
-import { Reveal } from "../../utils/AnimationReveal";
+import { spaceGrotesk } from "@/lib/fonts";
 
-const spaceGrotesk = Space_Grotesk({
-  subsets: ["latin"],
-  weight: ["400", "500", "700"],
-});
+import React from "react";
+import { Reveal } from "../../utils/AnimationReveal";
 
 const TIMELINE = [
   {

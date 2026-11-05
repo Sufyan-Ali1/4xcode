@@ -1,19 +1,9 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { geistSans, geistMono } from "@/lib/fonts";
 import "./globals.css";
 import { pageMetadata } from "@/data/metadata";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { FormProvider } from "./context/FormContext";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export const metadata = pageMetadata.home;
 

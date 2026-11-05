@@ -1,3 +1,4 @@
+import aiAutomation from "./ai_automation.json";
 
 import uiUxDesign from "./ui_ux.json";
 import webDevelopment from "./web_development.json";
@@ -12,6 +13,7 @@ import cloud from "./cloud.json";
 import apiIntegration from "./api_integration.json";
 
 export const serviceSchemas: Record<string, unknown> = {
+  "ai-automation": aiAutomation,
   "ui-ux-design": uiUxDesign,
   "web-development": webDevelopment,
   "ai-development": aiDevelopment,

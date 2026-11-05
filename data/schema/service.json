@@ -31,8 +31,10 @@
       "@type": "CollectionPage",
       "@id": "https://www.4xcode.com/service#webpage",
       "url": "https://www.4xcode.com/service",
-      "name": "Software Development Services for AI, SaaS & Web | 4xcode",
-      "description": "Explore 4xcode software development services across AI, custom software, SaaS, web, mobile, APIs and cloud, all from one team. Find the right service.",
+      "name": "Software Development Services: AI, SaaS & Web | 4xCode",
+      "description": "End-to-end software development services from 4xCode: custom software, AI, SaaS, websites, mobile apps, cloud, SEO and API integration for growing businesses.",
+      "keywords": "software development services",
+      "inLanguage": "en-GB",
       "isPartOf": {
         "@id": "https://www.4xcode.com/#website"
       },
@@ -42,8 +44,6 @@
       "publisher": {
         "@id": "https://www.4xcode.com/#organization"
       },
-      "inLanguage": "en-GB",
-      "keywords": "Software Development Services",
       "mainEntity": {
         "@id": "https://www.4xcode.com/service#itemlist"
       },
@@ -54,18 +54,19 @@
     {
       "@type": "ItemList",
       "@id": "https://www.4xcode.com/service#itemlist",
-      "name": "Software Development Services",
+      "name": "4xCode Software Development Services",
       "numberOfItems": 12,
+      "itemListOrder": "https://schema.org/ItemListUnordered",
       "itemListElement": [
         {
           "@type": "ListItem",
           "position": 1,
           "item": {
             "@type": "Service",
-            "@id": "https://www.4xcode.com/service/ai-development#service",
-            "name": "Custom AI Development",
-            "url": "https://www.4xcode.com/service/ai-development",
-            "description": "We build custom AI development solutions that move beyond prototypes and into production.",
+            "@id": "https://www.4xcode.com/service/custom-software#service",
+            "name": "Custom Software Development",
+            "url": "https://www.4xcode.com/service/custom-software",
+            "description": "Every business runs differently. Our custom software development services turn your unique processes into tailored applications that remove manual work, connect your teams, and grow alongside your operations.",
             "provider": {
               "@id": "https://www.4xcode.com/#organization"
             }
@@ -76,10 +77,10 @@
           "position": 2,
           "item": {
             "@type": "Service",
-            "@id": "https://www.4xcode.com/service/custom-software#service",
-            "name": "Custom Software Development",
-            "url": "https://www.4xcode.com/service/custom-software",
-            "description": "As a custom software development company, we build tools around your exact process when off-the-shelf products start holding you back.",
+            "@id": "https://www.4xcode.com/service/ai-development#service",
+            "name": "Custom AI Development",
+            "url": "https://www.4xcode.com/service/ai-development",
+            "description": "We design practical AI solutions that solve real business problems. From intelligent automation to custom AI agents, our custom AI development helps you save time, reduce costs, and make faster decisions.",
             "provider": {
               "@id": "https://www.4xcode.com/#organization"
             }
@@ -93,7 +94,7 @@
             "@id": "https://www.4xcode.com/service/saas-engineering#service",
             "name": "SaaS Development",
             "url": "https://www.4xcode.com/service/saas-engineering",
-            "description": "4xCode is a SaaS development company focused on the foundations subscription products need: multi-tenant architecture, billing, role-based access and smooth onboarding.",
+            "description": "As a SaaS development company, we turn product ideas into subscription-ready platforms. We handle architecture, user management, billing, and analytics so you can launch faster and scale with confidence.",
             "provider": {
               "@id": "https://www.4xcode.com/#organization"
             }
@@ -105,9 +106,9 @@
           "item": {
             "@type": "Service",
             "@id": "https://www.4xcode.com/service/web-development#service",
-            "name": "Website Development Services",
+            "name": "Website Development",
             "url": "https://www.4xcode.com/service/web-development",
-            "description": "Our website development services combine React and Next.js engineering with thoughtful design systems, SEO-ready rendering and edge delivery.",
+            "description": "Your website is often your first impression. Our website development services create fast, responsive, and conversion-focused websites that represent your brand professionally and turn visitors into enquiries and customers.",
             "provider": {
               "@id": "https://www.4xcode.com/#organization"
             }
@@ -119,9 +120,9 @@
           "item": {
             "@type": "Service",
             "@id": "https://www.4xcode.com/service/mobile-apps#service",
-            "name": "Custom Mobile App Development",
+            "name": "Mobile App Development",
             "url": "https://www.4xcode.com/service/mobile-apps",
-            "description": "As a custom mobile app development company, we build iOS and Android apps that feel native and stay easy to maintain.",
+            "description": "As a custom mobile app development company, we build iOS and Android apps that feel smooth and intuitive. Whether native or cross-platform, every app is designed for performance and engagement.",
             "provider": {
               "@id": "https://www.4xcode.com/#organization"
             }
@@ -132,10 +133,10 @@
           "position": 6,
           "item": {
             "@type": "Service",
-            "@id": "https://www.4xcode.com/service/api-integration#service",
-            "name": "API Integration Services",
-            "url": "https://www.4xcode.com/service/api-integration",
-            "description": "Our API integration services connect the tools your business already depends on, including payment processors, CRMs and AI APIs.",
+            "@id": "https://www.4xcode.com/service/ui-ux-design#service",
+            "name": "UI/UX Design",
+            "url": "https://www.4xcode.com/service/ui-ux-design",
+            "description": "Great software starts with great experiences. Our UX/UI design services combine user research, wireframes, and interactive prototypes to create interfaces that feel intuitive, look distinctive, and keep users engaged.",
             "provider": {
               "@id": "https://www.4xcode.com/#organization"
             }
@@ -146,10 +147,10 @@
           "position": 7,
           "item": {
             "@type": "Service",
-            "@id": "https://www.4xcode.com/service/automation-systems#service",
-            "name": "AI Automation Services",
-            "url": "https://www.4xcode.com/service/automation-systems",
-            "description": "We design workflow automation that removes repetitive manual work from your team's day.",
+            "@id": "https://www.4xcode.com/service/cloud-systems#service",
+            "name": "Cloud Systems",
+            "url": "https://www.4xcode.com/service/cloud-systems",
+            "description": "Our cloud consulting services help you build reliable infrastructure that stays fast under pressure. We set up, automate, and monitor cloud environments so your applications remain secure, available, and ready to scale.",
             "provider": {
               "@id": "https://www.4xcode.com/#organization"
             }
@@ -160,10 +161,10 @@
           "position": 8,
           "item": {
             "@type": "Service",
-            "@id": "https://www.4xcode.com/service/ui-ux-design#service",
-            "name": "UX UI Design Services",
-            "url": "https://www.4xcode.com/service/ui-ux-design",
-            "description": "Our UX UI design services sit inside the engineering team, so every interface we design can be built exactly as intended.",
+            "@id": "https://www.4xcode.com/service/digital-marketing-services#service",
+            "name": "Digital Marketing Services",
+            "url": "https://www.4xcode.com/service/digital-marketing-services",
+            "description": "Great products need the right audience. Our digital marketing services help businesses attract qualified leads, increase online visibility, and turn advertising spend into measurable enquiries and sales.",
             "provider": {
               "@id": "https://www.4xcode.com/#organization"
             }
@@ -174,10 +175,10 @@
           "position": 9,
           "item": {
             "@type": "Service",
-            "@id": "https://www.4xcode.com/service/cloud-systems#service",
-            "name": "Cloud Consulting Services",
-            "url": "https://www.4xcode.com/service/cloud-systems",
-            "description": "Our cloud consulting services cover infrastructure-as-code, observability and zero-downtime deployments across AWS, Vercel and Cloudflare.",
+            "@id": "https://www.4xcode.com/service/search-engine-optimization-seo#service",
+            "name": "Search Engine Optimization",
+            "url": "https://www.4xcode.com/service/search-engine-optimization-seo",
+            "description": "Our search engine optimization services improve how your website appears in search results. We combine technical fixes, keyword strategy, and on-page improvements to grow sustainable organic traffic over time.",
             "provider": {
               "@id": "https://www.4xcode.com/#organization"
             }
@@ -188,10 +189,10 @@
           "position": 10,
           "item": {
             "@type": "Service",
-            "@id": "https://www.4xcode.com/service/search-engine-optimization-seo#service",
-            "name": "Search Engine Optimization",
-            "url": "https://www.4xcode.com/service/search-engine-optimization-seo",
-            "description": "As an SEO company with an engineering background, we pair technical SEO and content strategy with paid acquisition across Google Ads and Meta Ads.",
+            "@id": "https://www.4xcode.com/service/ecommerce-solutions#service",
+            "name": "Ecommerce Development",
+            "url": "https://www.4xcode.com/service/ecommerce-solutions",
+            "description": "Our ecommerce development services create online stores that are easy to manage and simple to buy from. We focus on smooth product browsing, secure checkout, and performance that supports higher sales.",
             "provider": {
               "@id": "https://www.4xcode.com/#organization"
             }
@@ -202,10 +203,10 @@
           "position": 11,
           "item": {
             "@type": "Service",
-            "@id": "https://www.4xcode.com/service/digital-marketing-services#service",
-            "name": "Digital Marketing Services",
-            "url": "https://www.4xcode.com/service/digital-marketing-services",
-            "description": "Our digital marketing services focus on conversion, not just visibility, applying the same structured approach we use in software to help traffic turn into enquiries.",
+            "@id": "https://www.4xcode.com/service/api-integration#service",
+            "name": "API Integration",
+            "url": "https://www.4xcode.com/service/api-integration",
+            "description": "Disconnected systems slow businesses down. Our API integration services connect your software, third-party platforms, and data sources so information flows automatically and your teams stop entering data twice.",
             "provider": {
               "@id": "https://www.4xcode.com/#organization"
             }
@@ -216,10 +217,10 @@
           "position": 12,
           "item": {
             "@type": "Service",
-            "@id": "https://www.4xcode.com/service/ecommerce-solutions#service",
-            "name": "Ecommerce Development Services",
-            "url": "https://www.4xcode.com/service/ecommerce-solutions",
-            "description": "Our ecommerce development team builds custom storefronts and marketplaces on Shopify and Next.js, designed to turn browsers into buyers.",
+            "@id": "https://www.4xcode.com/service/ai-automation#service",
+            "name": "AI Automation Services",
+            "url": "https://www.4xcode.com/service/ai-automation",
+            "description": "Repetitive tasks slow your team down and increase the risk of errors. Our AI automation software handles routine work such as data entry, enquiry responses, and document processing, so your staff can focus on higher-value tasks while operations run faster and more accurately.",
             "provider": {
               "@id": "https://www.4xcode.com/#organization"
             }
@@ -242,6 +243,49 @@
           "position": 2,
           "name": "Services",
           "item": "https://www.4xcode.com/service"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.4xcode.com/service#faq",
+      "url": "https://www.4xcode.com/service",
+      "inLanguage": "en-GB",
+      "isPartOf": {
+        "@id": "https://www.4xcode.com/service#webpage"
+      },
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How long does a typical software development project take?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Timelines depend on project scope, features, and complexity. Smaller projects usually take 2 to 4 weeks, while larger custom software solutions typically take 8 to 12 weeks. We confirm a realistic timeline during planning, before development begins."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does the software development process begin with 4XCODE?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It begins with a free demo or consultation call where we discuss your goals, challenges, and requirements. We then recommend the right approach and share a clear proposal covering scope, timeline, and next steps for your project."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Will I receive regular updates during development?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. We work in agile sprints and share weekly progress updates, so you always know what has been completed, what is coming next, and can give feedback before each stage moves forward."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you provide support after the software is launched?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. After launch, we can provide ongoing maintenance, bug fixes, performance monitoring, and feature enhancements. Support arrangements are agreed according to your project needs, helping your software stay secure, stable, and ready to grow."
+          }
         }
       ]
     }

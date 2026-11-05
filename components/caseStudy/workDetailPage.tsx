@@ -1,9 +1,10 @@
 "use client";
 
+import { spaceGrotesk, inter } from "@/lib/fonts";
+
 import React, { useMemo, useEffect, useState } from "react";
 import Link from "next/link";
 import { motion, useReducedMotion, type Variants } from "framer-motion";
-import { Space_Grotesk, Inter } from "next/font/google";
 import { Reveal } from "../../utils/AnimationReveal";
 import { CaseStudyImage } from "../ui/CaseStudyImage";
 import CaseStudydefaultImg from "../../public/assets/caseStudy.webp";
@@ -12,12 +13,6 @@ import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
 
 import { BookDemoCallout } from "./BookDemoCallout";
 import styles from "./workModule.module.css";
-
-const spaceGrotesk = Space_Grotesk({
-  subsets: ["latin"],
-  weight: ["400", "500", "700"],
-});
-const inter = Inter({ subsets: ["latin"], weight: ["300", "400", "500"] });
 
 interface CaseStudyDetailProps {
   study: CaseStudy | any;
@@ -53,7 +48,7 @@ export default function WorkDetail({ study }: CaseStudyDetailProps) {
       const rawText = heading.textContent || "";
       const cleanTitle = rawText.replace(/^\d+\.\s*/, "").trim();
 
-      // Skip rendering the manual "Book Your Free Demo" if it appears in the raw payload 
+      // Skip rendering the manual "Book Your Free Demo" if it appears in the raw payload
       if (!cleanTitle || cleanTitle.toLowerCase().includes("book your free demo")) return;
 
       let htmlContent = "";
@@ -103,10 +98,10 @@ export default function WorkDetail({ study }: CaseStudyDetailProps) {
       </div>
 
       <div className="relative z-10 mx-auto grid max-w-300 w-full grid-cols-1 gap-12 px-5 pt-36 lg:grid-cols-[1fr_350px]">
-        
+
         {/* Left Content Column Dynamic Stream */}
         <main
-        id="case-study-scroll-area" 
+        id="case-study-scroll-area"
         className="pb-32 pr-2">
           <div className="w-full space-y-12">
             <nav className="mb-4">

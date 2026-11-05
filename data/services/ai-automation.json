@@ -1,0 +1,350 @@
+{
+  "slug": "ai-automation",
+  "eyebrow": "",
+  "iconKey": "automation",
+  "title": "AI Automation Services",
+  "titleTag": "AI Automation Services for Businesses | 4xCode",
+  "metaDesc": "4xCode delivers AI automation services for businesses of every size, from AI agents and workflow automation to document processing and CRM integration.",
+  "intro": "4XCODE delivers AI automation services for businesses that want to work faster, reduce manual effort and make better decisions with data.",
+  "desc": "4XCODE delivers AI automation services for businesses that want to work faster, reduce manual effort and make better decisions with data. Our engineers design intelligent workflows, AI agents and custom integrations that connect your CRM, ERP, inbox and cloud tools into one dependable system. From AI automation services for small businesses replacing spreadsheets to enterprise-grade process automation, we map your operations, identify where AI automation is needed most and build secure solutions that scale. The result is less busywork, fewer errors and teams free to focus on customers and growth.",
+  "contact_button": "Book a Consultation",
+  "service_button": "Explore Our Services",
+  "hideHeroActions": true,
+  "headingSuffix": "",
+  "longTitle": "AI Automation Services That Turn Repetitive Work into",
+  "gradientWord": "Scalable Growth",
+  "longDesc": "4XCODE delivers AI automation services for businesses that want to work faster, reduce manual effort and make better decisions with data. Our engineers design intelligent workflows, AI agents and custom integrations that connect your CRM, ERP, inbox and cloud tools into one dependable system. From AI automation services for small businesses replacing spreadsheets to enterprise-grade process automation, we map your operations, identify where AI automation is needed most and build secure solutions that scale. The result is less busywork, fewer errors and teams free to focus on customers and growth.",
+  "labels": {
+    "philosophy": "OUR APPROACH",
+    "capabilities": "WHAT WE DO",
+    "stack": "",
+    "process": "",
+    "related": "EXPLORE MORE",
+    "faq": ""
+  },
+  "metrics": [
+    {
+      "value": "[XX+]",
+      "label": "Automation Projects Delivered"
+    },
+    {
+      "value": "[XX%]",
+      "label": "Average Manual Time Saved"
+    },
+    {
+      "value": "[XX+]",
+      "label": "Platforms Integrated"
+    },
+    {
+      "value": "[XX+]",
+      "label": "Countries Served"
+    }
+  ],
+  "tags_section_heading": "Why Teams Choose 4XCODE",
+  "tags": [
+    {
+      "name": "Custom-Built",
+      "description": "Automations designed around your workflows, not forced into generic templates."
+    },
+    {
+      "name": "Integration-Ready",
+      "description": "Connects with the CRMs, ERPs, APIs and SaaS tools you already use."
+    },
+    {
+      "name": "Secure by Design",
+      "description": "Data protection, access controls and audit trails built into every workflow."
+    },
+    {
+      "name": "Ongoing Support",
+      "description": "Monitoring, optimisation and updates that keep automations accurate as you grow."
+    }
+  ],
+  "pillers_heading_white": "Automation Built Around",
+  "pillers_heading_red": "Business Outcomes",
+  "pillars": [
+    {
+      "title": "Outcomes Before Technology",
+      "desc": "Every project starts with a measurable goal, whether that is faster response times, lower costs or fewer errors, then we choose the right AI."
+    },
+    {
+      "title": "Humans Stay in Control",
+      "desc": "We design automations with approval steps, clear audit trails and human review, so AI supports your people rather than replacing their judgement."
+    },
+    {
+      "title": "Start Small, Scale Fast",
+      "desc": "We launch focused automations that prove value quickly, then extend them across departments as your confidence, data and requirements grow."
+    }
+  ],
+  "whyTeamChooseWhiteHeading": "Why Choose 4XCODE Among",
+  "whyTeamChooseRedHeading": "AI Automation Services Companies?",
+  "whyTeamsChoose": {
+    "description": "",
+    "closing_tag": "",
+    "items": [
+      {
+        "title": "Specialist AI Engineering",
+        "description": "Our team combines machine learning, large language models and software engineering to build automations that handle real business data reliably."
+      },
+      {
+        "title": "Proven Delivery Methodology",
+        "description": "We follow a structured discovery, build, test and deploy cycle with clear milestones, so you always know progress, costs and next steps."
+      },
+      {
+        "title": "Clear, Itemised Pricing",
+        "description": "Our AI automation agency pricing is clear and itemised, scoped around your priorities, from small pilot projects to full multi-department programmes."
+      }
+    ]
+  },
+  "about_section_data1": {
+    "label": "ABOUT 4XCODE",
+    "white_heading": "4XCODE: Your Trusted Partner for",
+    "red_heading": "Intelligent Business Automation",
+    "paragraphs": [
+      "4XCODE is a software development company building custom software, SaaS products and AI-powered solutions for startups and established organisations. Our AI automation services bring that engineering depth to the everyday workflows that slow businesses down.",
+      "We work as an extension of your team, auditing processes, prioritising high-impact opportunities and building automations that integrate cleanly with existing systems. Clients gain dependable tools, transparent communication and a partner focused on long-term, measurable results."
+    ],
+    "stats": [
+      {
+        "value": "[XX+]",
+        "label": "Years of Experience"
+      },
+      {
+        "value": "[XX+]",
+        "label": "Projects Completed"
+      },
+      {
+        "value": "[XX+]",
+        "label": "Skilled Engineers"
+      },
+      {
+        "value": "[XX%]",
+        "label": "Client Retention Rate"
+      }
+    ],
+    "image": "/assets/aboutSection.webp",
+    "imageAlt": "Engineering Team"
+  },
+  "NarrativeData": {
+    "heading": {
+      "white": "How Our AI Automation Services Transform",
+      "red": "Operations, Accuracy and Business Growth"
+    },
+    "paragraphs": [
+      {
+        "segments": [
+          {
+            "text": "At 4XCODE, AI automation services start with understanding how your business really runs. We analyse process bottlenecks, data flows and team workloads, then design solutions that combine artificial intelligence with dependable software engineering. This practical approach ensures every automation solves a genuine problem and delivers a clear return."
+          }
+        ]
+      },
+      {
+        "segments": [
+          {
+            "text": "Our delivery follows an agile methodology with short sprints, working prototypes and regular reviews. We map workflows, select suitable large language models or machine learning techniques, and build integrations through secure APIs. Each automation is tested against real scenarios before deployment, reducing risk and keeping stakeholders aligned throughout."
+          }
+        ]
+      },
+      {
+        "segments": [
+          {
+            "text": "Well-designed automation removes repetitive data entry, speeds up approvals and reduces costly human error. Using robotic process automation (RPA), natural language processing and intelligent document processing, we help teams process invoices, emails and support requests faster. Performance dashboards then track throughput, accuracy and time saved."
+          }
+        ]
+      },
+      {
+        "segments": [
+          {
+            "text": "For more complex needs, we build AI agents that reason across multiple steps, retrieve company knowledge through retrieval-augmented generation (RAG) and act inside tools such as CRMs and helpdesks. These AI automation applications handle lead qualification, customer support triage, reporting and forecasting with appropriate human oversight."
+          }
+        ]
+      },
+      {
+        "segments": [
+          {
+            "text": "Automation only creates value when it keeps working. We build with data security, role-based access and GDPR-aware data handling, then provide monitoring, model updates and ongoing optimisation. As your business evolves, your automations evolve too, delivering dependable performance and compounding efficiency gains year after year."
+          }
+        ],
+        "note": "Engineered for accuracy, built to scale"
+      }
+    ]
+  },
+  "features_white_heading": "Our AI",
+  "features_red_heading": "Automation Services",
+  "features": [
+    {
+      "title": "Workflow and Process Automation",
+      "description": "We automate repetitive tasks across sales, finance, HR and operations, connecting your apps so data moves instantly and accurately without manual copying or chasing approvals."
+    },
+    {
+      "title": "Custom AI Agents",
+      "description": "Purpose-built AI agents answer customer queries, qualify leads, draft responses and complete multi-step tasks inside your systems, working around the clock with human oversight built in."
+    },
+    {
+      "title": "Intelligent Document Processing",
+      "description": "Extract, classify and validate data from invoices, contracts, forms and emails automatically, turning unstructured documents into clean, structured records ready for your ERP or CRM."
+    },
+    {
+      "title": "AI Integration and Consulting",
+      "description": "We assess where AI automation is needed, recommend the right tools and integrate AI models into existing software, giving you a clear, practical roadmap for adoption."
+    }
+  ],
+  "tech_section_white_heading": "Tools and Technologies",
+  "tech_section_red_heading": "We Use",
+  "techCategories": [
+    {
+      "name": "AI Models and Frameworks",
+      "description": "OpenAI GPT · Anthropic Claude · LangChain"
+    },
+    {
+      "name": "Automation Platforms",
+      "description": "Zapier · Make · n8n"
+    },
+    {
+      "name": "Cloud and Integrations",
+      "description": "AWS · Microsoft Azure · REST APIs"
+    }
+  ],
+  "cta": {
+    "label": "",
+    "heading_white": "Ready to Automate",
+    "heading_red": "Your Business?",
+    "text": "Book a consultation and our specialists will review your workflows, identify quick automation wins and outline a clear plan with timelines and costs.",
+    "button": "Book a Consultation",
+    "href": "/contact",
+    "secondaryAction": {
+      "label": "Explore Our Services",
+      "href": "/service"
+    }
+  },
+  "archetecture_white_heading": "Our Proven",
+  "archetecture_red_heading": "Automation Process",
+  "architecture": [
+    {
+      "phase": "01",
+      "title": "Discover and Audit",
+      "desc": "We map your current workflows, data sources and pain points to find the highest-value automation opportunities."
+    },
+    {
+      "phase": "02",
+      "title": "Build and Integrate",
+      "desc": "Our engineers develop, test and connect your AI automations to existing systems in short, transparent sprints."
+    },
+    {
+      "phase": "03",
+      "title": "Launch and Optimise",
+      "desc": "We deploy, train your team, then monitor performance and refine automations as your business grows."
+    }
+  ],
+  "buildforindustry": {
+    "headingwhite": "Industries We",
+    "headingred": "Automate For",
+    "subheading": "From startups to established enterprises, our AI automation services for businesses adapt to sector-specific workflows, compliance needs and customer expectations, delivering practical results in every industry we support.",
+    "items": [],
+    "headingSuffix": "",
+    "tags": [
+      "E-commerce and Retail",
+      "Healthcare",
+      "Finance and Accounting",
+      "Real Estate",
+      "Logistics and Supply Chain",
+      "Education and eLearning",
+      "Legal Services",
+      "Marketing Agencies",
+      "SaaS and Technology",
+      "Manufacturing"
+    ]
+  },
+  "about_section_data2": {
+    "label": "FOR SMALL BUSINESSES",
+    "white_heading": "AI Automation Agency for",
+    "red_heading": "Small Business Growth and Efficiency",
+    "paragraphs": [
+      "As an AI automation agency for small business owners, 4XCODE makes enterprise-grade automation accessible. We focus on affordable, high-impact projects such as automated bookings, invoicing, lead follow-ups and customer support chatbots.",
+      "These AI automation services for small businesses free owners and lean teams from admin, helping them respond faster, serve more customers and compete with larger rivals without adding headcount or complex software."
+    ],
+    "image": "/assets/aboutSection.webp",
+    "imageAlt": "Engineering Team"
+  },
+  "sectionData": {
+    "heading": "Our AI Automation Capabilities Across Your Business",
+    "description": "Our capabilities cover every stage of the customer and operations lifecycle, so you can automate front-office, back-office and decision-making processes from one trusted partner.",
+    "columnLayout": true,
+    "cards": [
+      {
+        "card_heading": "Sales and CRM Automation",
+        "card_description": "Automatically capture, score and route leads, update CRM records and trigger personalised follow-ups at the right moment."
+      },
+      {
+        "card_heading": "Customer Support Chatbots",
+        "card_description": "AI chatbots resolve common questions instantly across website, WhatsApp and email, escalating complex cases to your team."
+      },
+      {
+        "card_heading": "Marketing Automation",
+        "card_description": "Generate content drafts, segment audiences and schedule campaigns using AI that learns from your performance data."
+      },
+      {
+        "card_heading": "Finance and Back Office",
+        "card_description": "Automate invoice processing, expense matching, reconciliations and reporting to close books faster with fewer errors."
+      },
+      {
+        "card_heading": "HR and Recruitment",
+        "card_description": "Screen CVs, schedule interviews and streamline employee onboarding with consistent, fair and well-documented automated workflows."
+      },
+      {
+        "card_heading": "Data and Reporting",
+        "card_description": "Turn scattered data into automated dashboards, forecasts and alerts that support faster, better-informed business decisions."
+      }
+    ]
+  },
+  "relatedSlugsWhiteHeading": "Complementary Services to",
+  "relatedSlugsRedHeading": "Power Your Growth",
+  "relatedSlugs": [
+    {
+      "link": "ai-development",
+      "heading": "AI Development",
+      "description": "Build custom AI models, machine learning features and generative AI products tailored to your data, extending automation into smarter, AI-powered software.",
+      "button": "Learn More"
+    },
+    {
+      "link": "api-integration",
+      "heading": "API Development and Integration",
+      "description": "Connect every platform in your stack with secure, well-documented APIs so data flows reliably between automations, apps and third-party services.",
+      "button": "Learn More"
+    },
+    {
+      "link": "saas-engineering",
+      "heading": "SaaS Product Development",
+      "description": "Turn your automation idea into a market-ready SaaS product, ideal if you are exploring AI automation services to sell or launching on an AI automation marketplace.",
+      "button": "Learn More"
+    }
+  ],
+  "faq_white_heading": "Frequently Asked Questions",
+  "faq_red_heading": "About AI Automation",
+  "faqDescription": "Clear answers to the questions business owners most often ask before investing in AI automation services, from pricing and security to getting started.",
+  "faqs": [
+    {
+      "q": "What are AI automation services and how do they work?",
+      "a": "AI automation services combine artificial intelligence with workflow automation to handle repetitive tasks. Systems read data, make rule-based or AI-driven decisions and take actions across your tools, such as updating records, replying to customers or generating reports."
+    },
+    {
+      "q": "Are AI automation services suitable for small businesses with limited budgets?",
+      "a": "Yes. Many AI automation services for small businesses start with a single, focused workflow, such as lead follow-up or invoice processing. This keeps costs manageable while delivering quick time savings you can reinvest in further automation."
+    },
+    {
+      "q": "How is AI automation agency pricing usually calculated for projects?",
+      "a": "Pricing depends on workflow complexity, the number of integrations, AI model usage and ongoing support needs. 4XCODE provides an itemised quote after a discovery session, so you know the scope, timeline and costs before work begins."
+    },
+    {
+      "q": "How do I know where AI automation is needed in my business?",
+      "a": "Look for tasks that are repetitive, rule-based, high-volume or error-prone, such as data entry, email triage and reporting. Our discovery audit maps your processes and ranks opportunities by effort, cost and expected impact."
+    },
+    {
+      "q": "Do you provide AI automation services for UK businesses?",
+      "a": "Yes. Our team delivers projects remotely, so UK businesses and international clients receive the same structured process, clear communication and GDPR-aware data handling, with meetings scheduled to suit your working hours."
+    },
+    {
+      "q": "Is my business data secure when using AI automation tools?",
+      "a": "Security is built into every project. We use encrypted connections, role-based access controls and audit logs, and we choose AI providers and hosting options that match your privacy, compliance and data-residency requirements."
+    }
+  ]
+}

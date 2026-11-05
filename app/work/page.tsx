@@ -1,28 +1,16 @@
+import { spaceGrotesk, inter } from "@/lib/fonts";
+import worksSchema from "@/data/schema/works.json";
 import React, { Suspense } from "react";
-import { Space_Grotesk, Inter } from "next/font/google";
 
 import NarrativeSection from "../../components/landing/NarrativeSection";
 import ContactCtaSection from "../../components/landing/ContactCtaSection";
-import NarrativeData from "@/data/NarrativeSection.json"
 import WorkHeader from "@/components/caseStudy/WorkHeader";
 import CaseStudiesSkeleton from "@/components/landing/CaseStudiesSkeleton";
 import CaseStudiesDataLoader from "@/components/caseStudy/CaseStudiesDataLoader";
-import { Metadata } from "next";
+import { pageMetadata } from "@/data/metadata";
 import works_data from "@/data/WorksMainPage.json"
 import ServiceFaq from "@/components/ui/ServiceFaq";
-const inter = Inter({ subsets: ["latin"], weight: ["300", "400", "500"] });
-const spaceGrotesk = Space_Grotesk({
-  subsets: ["latin"],
-  weight: ["400", "500", "700"],
-});
-export const metadata: Metadata = {
-  title: "Case Studies & Proven Software | 4xCode Work",
-  description:
-    "Explore our case studies. From autonomous AI agents to scalable SaaS platforms, see how our senior engineering team turns ambitious concepts into reality.",
-  alternates: {
-    canonical: "https://www.4xcode.com/work",
-  },
-};
+export const metadata = pageMetadata.work;
 
 export default async function WorkPage() {
   return (
@@ -37,17 +25,17 @@ export default async function WorkPage() {
       </div>
 
       <div className="mx-auto w-full max-w-300 px-5  relative z-10 flex flex-col gap-y-10">
-        <WorkHeader spaceGroteskClass={spaceGrotesk.className} />
+        <WorkHeader data={works_data.hero} spaceGroteskClass={spaceGrotesk.className} />
 
         <Suspense fallback={<CaseStudiesSkeleton />}>
-          <CaseStudiesDataLoader />
-          
+          <CaseStudiesDataLoader schema={worksSchema} />
+
         </Suspense>
       </div>
 
-      <NarrativeSection data={NarrativeData.services} spaceGroteskClassName={spaceGrotesk.className} />
-      <ContactCtaSection />
-      <ServiceFaq faqs={works_data.faqs} />
+      <NarrativeSection data={works_data.narrative} spaceGroteskClassName={spaceGrotesk.className} />
+      <ContactCtaSection data={works_data.cta} />
+      <ServiceFaq label={works_data.faqSection.label} faq_white_heading={works_data.faqSection.heading} faq_red_heading={works_data.faqSection.highlight} description={works_data.faqSection.description} faqs={works_data.faqs} />
     </div>
   );
 }

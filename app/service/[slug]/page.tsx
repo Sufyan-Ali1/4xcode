@@ -1,13 +1,14 @@
 "use client";
 
-import React, { useMemo, useState } from "react";
+import { spaceGrotesk, inter } from "@/lib/fonts";
+
+import React, { useMemo } from "react";
 import NarrativeSection from "@/components/landing/NarrativeSection";
 import Link from "next/link";
 import { useParams, notFound } from "next/navigation";
 import { motion, type Variants } from "framer-motion";
 import { useSafeReducedMotion } from "../../../utils/useSafeReducedMotion";
 import ServiceFaq from "../../../components/ui/ServiceFaq";
-import { Space_Grotesk, Inter } from "next/font/google";
 import { Reveal } from "../../../utils/AnimationReveal";
 import { SERVICES_DATA, type ServiceItem } from "../../../data/serviceData";
 
@@ -31,11 +32,6 @@ import {
 import RelatedServices from "@/components/ui/relatedCard"
 
 import {} from "@/components/ui/ServiceCard";
-const spaceGrotesk = Space_Grotesk({
-  subsets: ["latin"],
-  weight: ["400", "500", "700"],
-});
-const inter = Inter({ subsets: ["latin"], weight: ["300", "400", "500"] });
 
 export default function ServiceDetailPage() {
   const params = useParams();
@@ -71,20 +67,6 @@ export default function ServiceDetailPage() {
     };
     return { containerVariants: container, itemVariants: item };
   }, [reduced]);
-
-  const relatedServices = useMemo(() => {
-    if (!service) return [];
-    const slugs = service.relatedSlugs?.length
-      ? service.relatedSlugs
-      : SERVICES_DATA.filter((s) => s.slug !== service.slug)
-          .slice(0, 3)
-          .map((s) => s.slug);
-    return slugs
-      .map((slug) => SERVICES_DATA.find((s) => s.slug === slug))
-      .filter((s): s is ServiceItem => Boolean(s))
-      .slice(0, 3);
-  }, [service]);
-
 
   return (
     <div
@@ -135,7 +117,7 @@ export default function ServiceDetailPage() {
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF8A8C] to-[#EF1F23]">
                   {service.gradientWord}
                 </span>
-                <span className="text-[#EF1F23]">.</span>
+                <span className="text-[#EF1F23]">{service.headingSuffix ?? "."}</span>
               </h1>
             </Reveal>
 
@@ -145,7 +127,7 @@ export default function ServiceDetailPage() {
               </p>
             </Reveal>
 
-            <Reveal delay={0.25}>
+            {!service.hideHeroActions && <Reveal delay={0.25}>
               <div className="flex flex-wrap gap-3 pt-1">
                 <Link
                   href="/contact"
@@ -165,7 +147,7 @@ export default function ServiceDetailPage() {
                   {service.service_button}
                 </Link>
               </div>
-            </Reveal>
+            </Reveal>}
           </div>
 
           <div className="w-full lg:col-span-4">
@@ -209,7 +191,7 @@ export default function ServiceDetailPage() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.15 }}
-          className="relative mt-8 grid w-full grid-cols-1 gap-6  sm:grid-cols-3"
+          className={`relative mt-8 grid w-full grid-cols-1 gap-6 ${service.metrics.length === 4 ? "sm:grid-cols-2 lg:grid-cols-4" : "sm:grid-cols-3"}`}
         >
           {service.metrics.map((metric) => (
             <MetricCard
@@ -225,7 +207,7 @@ export default function ServiceDetailPage() {
           <Reveal>
             <div className="space-y-2">
               <p className="text-[#f90a1f] text-[12px] font-normal uppercase tracking-[3.6px] leading-4">
-                Core Philosophy
+                {service.labels?.philosophy ?? "Core Philosophy"}
               </p>
               <h2 className="text-3xl font-bold sm:text-4xl">
                 {service.pillers_heading_white}{" "}
@@ -252,13 +234,13 @@ export default function ServiceDetailPage() {
             ))}
           </motion.div>
         </div>
-        
+
         <div className="mt-5">
      <ServiceWhyChoose
  whyTeamChooseWhiteHeading={service. whyTeamChooseWhiteHeading}
   whyTeamChooseRedHeading={service.whyTeamChooseRedHeading}
   whyTeamsChoose={service.whyTeamsChoose}
- 
+
 />
       </div>
         <AboutSection data={service.about_section_data1} />
@@ -267,7 +249,7 @@ export default function ServiceDetailPage() {
           <Reveal>
             <div className="space-y-2">
               <p className="text-[#f90a1f] text-[12px] font-normal uppercase tracking-[3.6px] leading-4">
-                Capability Matrix
+                {service.labels?.capabilities ?? "Capability Matrix"}
               </p>
               <h2 className="text-3xl font-bold sm:text-4xl">
                   {service.features_white_heading}{" "}
@@ -300,7 +282,7 @@ export default function ServiceDetailPage() {
           <Reveal>
             <div className="space-y-2">
               <p className="text-[#f90a1f] text-[12px] font-normal uppercase tracking-[3.6px] leading-4">
-                Engineering Stack
+                {service.labels?.stack ?? "Engineering Stack"}
               </p>
               <h2 className="text-3xl font-bold sm:text-4xl">
                 {service.tech_section_white_heading}{" "}
@@ -334,7 +316,7 @@ export default function ServiceDetailPage() {
             <Reveal>
               <div className="space-y-2 flex flex-col items-center text-center">
                 <p className="text-[#f90a1f] text-[12px] font-normal uppercase tracking-[3.6px] leading-4">
-                  Operational Delivery Flow
+                  {service.labels?.process ?? "Operational Delivery Flow"}
                 </p>
                 <h2 className="text-3xl font-bold sm:text-4xl">
                   {service.archetecture_white_heading}{" "}
@@ -344,7 +326,7 @@ export default function ServiceDetailPage() {
                 </h2>
               </div>
             </Reveal>
-            
+
           </div>
           <motion.div
             variants={containerVariants}
@@ -365,26 +347,24 @@ export default function ServiceDetailPage() {
         </div>
 
       </div>
-      
+
         <div className="w-full flex flex-wrap justify-center">
           <div className="max-w-7xl">
       <Build_for_industry data={service.buildforindustry} />
         <CompanyOverview data={service.about_section_data2} />
        <Technology_Experience sectionData={service.sectionData} />
-    
+
         </div>
       </div>
 
-    
-
       {/* Dynamic Routing Services & Final Project CTA Wrapper */}
       <div className="relative z-10 mx-auto w-full max-w-300 px-5 flex flex-col">
-        
+
           <div className="mt-10 pt-5">
             <Reveal>
               <div className="space-y-2">
                 <p className="text-[#f90a1f] text-[12px] font-normal uppercase tracking-[3.6px] leading-4">
-                  Adjacent Capabilities
+                  {service.labels?.related ?? "Adjacent Capabilities"}
                 </p>
                 <h2 className="text-3xl font-bold sm:text-4xl">
                   {service.relatedSlugsWhiteHeading}{" "}
@@ -404,7 +384,7 @@ export default function ServiceDetailPage() {
               {service.relatedSlugs.map((rel,index) => (
                   <RelatedServices
                   key={index}
-      
+
                     items={rel}
 
                 />
@@ -412,10 +392,11 @@ export default function ServiceDetailPage() {
             </motion.div>
           </div>
 
-      
       </div>
       <div className="w-full pt-20">
-          <ServiceFaq 
+          <ServiceFaq
+          label={service.labels?.faq}
+          description={service.faqDescription}
           faq_white_heading={service.faq_white_heading}
           faq_red_heading={service.faq_red_heading}
           faqs={service.faqs} />

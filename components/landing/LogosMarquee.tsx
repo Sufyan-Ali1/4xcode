@@ -1,14 +1,6 @@
 import Image from "next/image";
 
-const LOGO_SLIDES = [
-  "/assets/slide1.webp",
-  "/assets/slide2.webp",
-  "/assets/slide3.webp",
-  "/assets/slide4.webp",
-  "/assets/slide5.webp",
-  "/assets/slide6.webp",
-  "/assets/slide7.webp",
-];
+import home from "@/data/home.json";
 
 // Ek group mein logos 2 baar repeat hotay hain taaki group screen se chaura ho.
 // Phir poora group 2 baar render hota hai, aur track -50% tak move karta hai
@@ -16,11 +8,8 @@ const LOGO_SLIDES = [
 const REPEAT_PER_GROUP = 2;
 const SPEED_SECONDS = 50; // kam = tez, zyada = slow
 
-const GROUP_LOGOS = Array.from({ length: REPEAT_PER_GROUP }).flatMap(
-  () => LOGO_SLIDES
-);
-
-export default function LogoMarquee() {
+export default function LogoMarquee({ data = home.logos }: { data?: typeof home.logos }) {
+  const groupLogos = Array.from({ length: REPEAT_PER_GROUP }).flatMap(() => data.items);
   return (
     <>
       <style>{`
@@ -38,7 +27,7 @@ export default function LogoMarquee() {
       `}</style>
 
       <div
-        className="relative flex h-28 pt-10 w-full shrink-0 items-center overflow-hidden bg-black"
+        className="relative flex min-h-28 py-6 w-full shrink-0 items-center overflow-hidden bg-black"
         style={{
           maskImage:
             "linear-gradient(to right, transparent, black 10%, black 90%, transparent)",
@@ -53,17 +42,19 @@ export default function LogoMarquee() {
               className="flex shrink-0 items-center gap-12 pr-12"
               aria-hidden={group === 1 ? true : undefined}
             >
-              {GROUP_LOGOS.map((src, i) => (
+              {groupLogos.map((logo, i) => (
                 <div
                   key={`${group}-${i}`}
-                  className="flex h-20 w-28 shrink-0 items-center justify-center transition-transform duration-300 ease-out hover:scale-110"
+                  className="flex shrink-0 items-center justify-center"
                 >
                   <Image
-                    src={src}
-                    alt={group === 0 ? "Partner logo" : ""}
-                    width={110}
-                    height={80}
-                    className="object-contain h-[80px] opacity-65 brightness-0 invert transition-opacity duration-300 hover:opacity-100"
+                    src={logo.src}
+                    alt={group === 0 ? logo.alt : ""}
+                    width={Math.round((logo.width / logo.height) * data.height)}
+                    height={data.height}
+                    loading="eager"
+                    className={`block max-w-none object-contain opacity-65 transition-opacity duration-300 hover:opacity-100 ${logo.treatment === "invert" ? "grayscale invert mix-blend-screen" : "brightness-0 invert"}`}
+                    style={{ height: data.height, width: "auto" }}
                   />
                 </div>
               ))}

@@ -1,14 +1,12 @@
 "use client";
 
+import { spaceGrotesk, inter } from "@/lib/fonts";
+
 import React from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { useSafeReducedMotion } from "../../utils/useSafeReducedMotion";
-import { Space_Grotesk, Inter } from "next/font/google";
 import { Reveal } from "../../utils/AnimationReveal";
-import { SERVICES_DATA } from "../../data/serviceData";
-import { software_build_data } from "@/data/serviceData";
-import { sectionData } from "@/data/serviceData";
 import Build_for_industry from "@/components/Build_for_industry";
 import Technology_Experience from "@/components/Technology_Experience";
 import WebIcon from "@mui/icons-material/Web";
@@ -27,14 +25,8 @@ import ProcessSection from "../../components/landing/ProcessSection";
 import TestimonialsSection from "../../components/landing/TestimonialsSection";
 import NarrativeSection from "../../components/landing/NarrativeSection";
 
-import NarrativeData from "@/data/NarrativeSection.json"
 import service_data from "@/data/ServiceMainPage.json"
 import ServiceFaq from "@/components/ui/ServiceFaq";
-const spaceGrotesk = Space_Grotesk({
-    subsets: ["latin"],
-    weight: ["400", "500", "700"],
-});
-const inter = Inter({ subsets: ["latin"], weight: ["300", "400", "500"] });
 
 const ICONS_MAP: Record<string, React.ReactNode> = {
     ai: <AutoAwesomeIcon fontSize="small" />,
@@ -87,31 +79,21 @@ export default function ServicePage() {
                         <div className="inline-flex items-center gap-2 rounded-full border border-[rgba(255,255,255,0.08)] bg-gradient-to-b from-[rgba(255,255,255,0.04)] to-[rgba(255,255,255,0.02)] px-[13px] py-[5px]">
                             <div className="w-[6px] h-[6px] rounded-full bg-[#ef1f23] shadow-[0px_0px_40px_-10px_rgba(245,29,49,0.7),0px_0px_80px_-30px_rgba(245,29,49,0.6)] shrink-0" />
                             <span className="text-[12px] font-normal tracking-[2.64px] uppercase text-[rgba(255,255,255,0.7)] leading-[16px]">
-                                Services
+                                {service_data.hero.label}
                             </span>
                         </div>
                     </Reveal>
 
                     <Reveal delay={0.1}>
                         <h1 className={`${spaceGrotesk.className} text-4xl sm:text-5xl md:text-[56px] font-bold tracking-tight leading-[1.1] max-w-4xl`}>
-                            Every layer of{" "}
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF8A8C] to-[#EF1F23]">
-                                modern
-                            </span>{" "}
-                            <br className="hidden sm:inline" /> software
-                            <span className="text-[#EF1F23]">.</span>
+                            {service_data.hero.heading}{" "}
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF8A8C] to-[#EF1F23]">{service_data.hero.highlight}</span>
                         </h1>
                     </Reveal>
 
                     <Reveal delay={0.2}>
                         <p className="text-[#a7a3a4] text-sm sm:text-base md:text-lg max-w-2xl font-normal leading-relaxed">
-                            4xCode delivers end-to-end software development services — from
-                            AI research and custom backend architecture to pixel-perfect
-                            frontend design and cloud infrastructure. Whether you need a
-                            SaaS platform built from scratch, an AI agent integrated into
-                            your product, or a full e-commerce buildout, our senior
-                            engineers handle every layer so you don't have to stitch
-                            together five different vendors.
+                            {service_data.hero.description}
                         </p>
                     </Reveal>
                 </section>
@@ -119,10 +101,10 @@ export default function ServicePage() {
                 {/* CARDS SECTION */}
                 <section className="w-full">
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 w-full">
-                        {SERVICES_DATA.map((service, index) => (
+                        {service_data.services.map((service, index) => (
                             <MotionLink
                                 key={service.slug}
-                                href={`/service/${service.slug}`}
+                                href={service.href}
                                 initial={{ opacity: 0, y: reduced ? 0 : 40 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true, amount: 0.15 }}
@@ -184,7 +166,7 @@ export default function ServicePage() {
                         ))}
                     </div>
                 </section>
-                <TestimonialsSection />
+                <TestimonialsSection testimonials={service_data.testimonials} data={service_data.testimonialSection} />
                 {/* CTA BANNER */}
                 <section className="w-full">
                     <motion.div
@@ -198,10 +180,10 @@ export default function ServicePage() {
       border border-[#f90a1f]/60
       bg-[#070707]
       py-4
-      px-6 
-      sm:px-10 
-      md:px-12 
-      lg:px-16 
+      px-6
+      sm:px-10
+      md:px-12
+      lg:px-16
       flex flex-col md:flex-row
       items-center justify-between
       text-center md:text-left
@@ -261,7 +243,7 @@ export default function ServicePage() {
             uppercase
           "
                                 >
-                                    Get Started
+                                    {service_data.cta.label}
                                 </span>
                                 <span className="h-px w-6 bg-[#f90a1f]" />
                             </div>
@@ -279,8 +261,8 @@ export default function ServicePage() {
           text-white
         `}
                             >
-                                Have a project in{" "}
-                                <span className="text-[#f90a1f]">mind?</span>
+                                {service_data.cta.heading}{" "}
+                                <span className="text-[#f90a1f]">{service_data.cta.highlight}</span>
                             </h2>
 
                             {/* Description */}
@@ -292,13 +274,13 @@ export default function ServicePage() {
         md:text-lg
         font-normal
       ">
-                                Tell us the goal. We'll tell you the path.
+                                {service_data.cta.description}
                             </p>
                         </div>
 
                         {/* Button */}
                         <Link
-                            href="/contact"
+                            href={service_data.cta.action.href}
                             className="
         group relative z-10
         inline-flex items-center justify-center
@@ -317,20 +299,19 @@ export default function ServicePage() {
         gap-3
 
         shadow-[0_0_25px_rgba(249,10,31,0.35)]
-        
 
         transition-all duration-300
-        
+
       "
                         >
-                            <span>Start Project</span>
+                            <span>{service_data.cta.action.label}</span>
 
                             <ArrowForwardIcon
                                 style={{ fontSize: 20 }}
                                 className="
           transition-transform
           duration-300
-          
+
         "
                             />
                         </Link>
@@ -351,19 +332,19 @@ export default function ServicePage() {
 
             </div>
             <div className="flex flex-wrap w-full justify-center">
-                <Build_for_industry data={software_build_data} />
+                <Build_for_industry data={service_data.industries} headingSuffix="" />
             </div>
             {/* SUB-SECTIONS (THEY MANAGE THEIR OWN WRAPPERS) */}
 
-            <NarrativeSection data={NarrativeData.services} spaceGroteskClassName={spaceGrotesk.className} />
+            <NarrativeSection data={service_data.narrative} spaceGroteskClassName={spaceGrotesk.className} />
 
             <div className="flex flex-wrap w-full justify-center">
-                <Technology_Experience sectionData={sectionData} />
+                <Technology_Experience sectionData={service_data.expertise} />
             </div>
 
-            <ProcessSection />
+            <ProcessSection data={service_data.process} />
 
-            <ServiceFaq faqs={service_data.faqs} />
+            <ServiceFaq label={service_data.faqSection.label} faq_white_heading={service_data.faqSection.heading} faq_red_heading={service_data.faqSection.highlight} faqs={service_data.faqs} />
         </div>
     );
-}   
+}

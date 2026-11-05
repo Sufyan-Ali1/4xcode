@@ -1,6 +1,8 @@
 "use client";
+
+import { spaceGrotesk, inter } from "@/lib/fonts";
+
 import Link from "next/link";
-import { Space_Grotesk, Inter } from "next/font/google";
 import { Reveal } from "../../utils/AnimationReveal";
 import ContactForm from "../../components/ui/ContactForm";
 import { useEffect } from "react";
@@ -10,15 +12,6 @@ import {
   LocalPhoneOutlined as LocalPhoneOutlinedIcon,
   PlaceOutlined as PlaceOutlinedIcon,
 } from "@mui/icons-material";
-
-const spaceGrotesk = Space_Grotesk({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "700"],
-});
-const inter = Inter({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600"],
-});
 
 interface ContactDetailsItem {
   id: string;

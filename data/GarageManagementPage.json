@@ -1,0 +1,269 @@
+{
+  "hero": {
+    "label": "PRODUCTS",
+    "heading": "Garage Management Software Built for",
+    "highlight": "Modern Workshops",
+    "description": "4x code Garage Management System is all-in-one garage management software designed for independent garages, automotive repair workshops, mechanics, and vehicle service businesses. It brings customer records, vehicle histories, service bookings, job tracking, quotations, digital inspections, and customer communication together in one connected platform. Instead of juggling paperwork, spreadsheets, and phone notes, your team can organise daily workshop activity in one place, keep every job moving, and give customers a more professional, transparent service experience."
+  },
+  "introCta": {
+    "label": "",
+    "heading_white": "Ready to Simplify",
+    "heading_red": "Your Workshop?",
+    "text": "Discuss your garage's needs with our software team today.",
+    "button": "Book a Free Demo",
+    "href": "/contact"
+  },
+  "features": {
+    "label": "",
+    "heading": "Everything Your Garage Needs",
+    "highlight": "in One Connected System",
+    "description": "From the first phone call to the final invoice, our garage workshop software keeps every task organised.",
+    "items": [
+      {
+        "id": 1,
+        "title": "Customer Management",
+        "description": "Keep every customer's contact details, vehicles, past visits, and communication history in one searchable profile, so your team always has the full picture.",
+        "icon": "customer"
+      },
+      {
+        "id": 2,
+        "title": "Vehicle Records",
+        "description": "Record registration numbers, make, model, mileage, and complete service history, helping technicians understand each vehicle before work begins.",
+        "icon": "vehicle"
+      },
+      {
+        "id": 3,
+        "title": "Booking Management",
+        "description": "Schedule appointments, manage incoming enquiries, and plan workshop capacity with a clear calendar that helps prevent double bookings and idle bays.",
+        "icon": "booking"
+      },
+      {
+        "id": 4,
+        "title": "Job Management",
+        "description": "Create job cards, assign tasks, and track repair progress in real time, so nothing is forgotten between check-in and collection.",
+        "icon": "job"
+      },
+      {
+        "id": 5,
+        "title": "Quotes & Invoices",
+        "description": "Build professional quotations from inspection findings, record customer approvals, and convert completed work into accurate invoices in just a few clicks.",
+        "icon": "quote"
+      },
+      {
+        "id": 6,
+        "title": "Staff Management",
+        "description": "Assign jobs to technicians, define user responsibilities, and control system access, keeping your workshop team coordinated and accountable throughout the day.",
+        "icon": "staff"
+      },
+      {
+        "id": 7,
+        "title": "Service Reminders",
+        "description": "Remind customers when MOTs, services, or follow-up checks are due, helping you encourage repeat visits and maintain long-term customer relationships.",
+        "icon": "reminder"
+      },
+      {
+        "id": 8,
+        "title": "Reports & Analytics",
+        "description": "View jobs completed, revenue, outstanding invoices, and workshop activity through clear reports that support better day-to-day business decisions.",
+        "icon": "report"
+      },
+      {
+        "id": 9,
+        "title": "Digital Inspections",
+        "description": "Record inspection findings with notes and photos, then share them with customers so they clearly understand recommended repairs and why they matter.",
+        "icon": "inspection"
+      }
+    ]
+  },
+  "security": {
+    "label": "",
+    "whiteHeading": "Controlled Access,",
+    "redHeading": "Organised Operations",
+    "headingSuffix": "",
+    "paragraphs": [
+      "Your garage handles valuable customer details, vehicle records, and financial information every day. Keeping this information organised and accessible only to the right people protects your business and builds customer trust.",
+      "Our Garage Management System uses role-based user accounts, so owners, managers, and technicians each see what they need. Managers keep full visibility over jobs, invoices, and workshop activity at all times."
+    ],
+    "buttonText": "Explore the Platform",
+    "items": [
+      {
+        "id": 1,
+        "title": "Separate user roles for owners, managers, and technicians",
+        "description": ""
+      },
+      {
+        "id": 2,
+        "title": "Permission settings that control access to sensitive data",
+        "description": ""
+      },
+      {
+        "id": 3,
+        "title": "Secure login for every member of staff",
+        "description": ""
+      },
+      {
+        "id": 4,
+        "title": "Customer and vehicle data stored in one place",
+        "description": ""
+      },
+      {
+        "id": 5,
+        "title": "Clear visibility of job updates and changes",
+        "description": ""
+      }
+    ]
+  },
+  "testimonials": {
+    "eyebrow": "Testimonials",
+    "heading": "Trusted by",
+    "highlight": "Independent Garages",
+    "reviews": [
+      {
+        "id": 1,
+        "stars": 0,
+        "quote": "\"Before switching, our bookings lived in a diary and job notes on paper. Now everything is in one system, and my technicians always know exactly which vehicle they are working on next.\"",
+        "author": "James W.",
+        "title": "Owner, Independent Garage",
+        "initial": "J"
+      },
+      {
+        "id": 2,
+        "stars": 0,
+        "quote": "\"Digital inspections have changed how we talk to customers. Sending photos with clear notes makes repair recommendations easy to understand, and approvals come back much faster than phone calls ever did.\"",
+        "author": "Rebecca L.",
+        "title": "Workshop Manager, Auto Repair Centre",
+        "initial": "R"
+      },
+      {
+        "id": 3,
+        "stars": 0,
+        "quote": "\"The setup was straightforward and the 4XCODE team answered every question we had. Invoicing used to take hours each week, but now it is quick, accurate, and linked to every job.\"",
+        "author": "Mohammed S.",
+        "title": "Director, Vehicle Service Centre",
+        "initial": "M"
+      }
+    ]
+  },
+  "reporting": {
+    "label": "",
+    "whiteHeading": "See Your",
+    "redHeading": "Garage Clearly",
+    "headingSuffix": "",
+    "paragraphs": [
+      "Running a profitable garage is difficult when you cannot see the full picture. Knowing how many jobs are open, which invoices are unpaid, and how busy your workshop is helps you plan each day with confidence.",
+      "Our reporting tools turn everyday garage data into clear, organised information. Instead of guessing, you can identify busy periods, monitor outstanding payments, and make informed decisions about staffing, pricing, and growth."
+    ],
+    "buttonText": "View Reporting Features",
+    "items": [
+      {
+        "id": 1,
+        "title": "Track completed jobs and current workshop workload",
+        "description": ""
+      },
+      {
+        "id": 2,
+        "title": "Monitor revenue, payments, and outstanding invoices",
+        "description": ""
+      },
+      {
+        "id": 3,
+        "title": "Review technician activity and job completion times",
+        "description": ""
+      },
+      {
+        "id": 4,
+        "title": "Identify returning customers and upcoming service needs",
+        "description": ""
+      }
+    ]
+  },
+  "inspections": {
+    "label": "Digital Inspections",
+    "heading": "Smarter Vehicle",
+    "highlight": "Inspections",
+    "description": "Turn every vehicle inspection into clear, professional information your customers can understand and trust.",
+    "steps": [
+      {
+        "id": 1,
+        "number": "01",
+        "title": "Inspect",
+        "description": "Technicians record the vehicle's condition, faults, and observations with notes and photos during inspection."
+      },
+      {
+        "id": 2,
+        "number": "02",
+        "title": "Quote",
+        "description": "Inspection findings feed directly into repair recommendations and accurate cost estimates for the customer."
+      },
+      {
+        "id": 3,
+        "number": "03",
+        "title": "Approve",
+        "description": "Customers review recommended work and costs, then approve repairs before your team begins any work."
+      }
+    ]
+  },
+  "closingCta": {
+    "label": "",
+    "heading_white": "Let's Modernise",
+    "heading_red": "Your Workshop",
+    "text": "Find out how our garage software fits your business.",
+    "button": "Speak to Our Team",
+    "href": "/contact"
+  },
+  "faqSection": {
+    "label": "FAQs",
+    "heading": "Garage Software",
+    "highlight": "Questions Answered",
+    "description": "Find answers about our Garage Management System's features, pricing, setup, and everyday use in your workshop."
+  },
+  "faqs": [
+    {
+      "q": "Which garages can use 4XCODE's garage management software?",
+      "a": "Our software is designed for independent garages, automotive repair workshops, mobile mechanics, MOT and service centres, and vehicle repair businesses. Whether you run a single-bay workshop or a busy multi-bay garage, the system adapts to your daily workflow and team size."
+    },
+    {
+      "q": "What daily garage activities can the Garage Management System help manage?",
+      "a": "The system helps you manage customer records, vehicle histories, bookings, job cards, technician assignments, digital inspections, quotations, customer approvals, invoicing, and service reminders. Reporting tools also give you a clear overview of workshop activity, payments, and performance, all from one connected auto repair garage software platform."
+    },
+    {
+      "q": "How does pricing work for your garage software plans?",
+      "a": "We offer three plans: Essential for smaller garages, Advanced for busier workshops needing inspections and reporting, and Enterprise with custom pricing for larger operations. Each plan includes different features, so you can choose the option that best matches your garage's needs."
+    },
+    {
+      "q": "How can my garage start using the Garage Management System?",
+      "a": "Start by booking a demo with our team. We will understand your workshop's requirements, set up your account, and help import your existing customer and vehicle information. Our team then guides your staff through the system so they feel confident using it."
+    },
+    {
+      "q": "Is support available after the software has been set up?",
+      "a": "Yes. Our support team helps with technical questions, troubleshooting, and using new features as your garage grows. We also release regular software improvements, and the level of support available depends on the plan you choose for your workshop."
+    }
+  ],
+  "form": {
+    "heading": "Book a 30-Minute Call",
+    "description": "Fill out the details below to schedule a consultation.",
+    "button": "Book a 30-Minute Call",
+    "fields": {
+      "name": {
+        "label": "Name",
+        "placeholder": "Enter your name"
+      },
+      "email": {
+        "label": "Email",
+        "placeholder": "Enter your email"
+      },
+      "phone": {
+        "label": "Phone",
+        "placeholder": "Enter your phone number"
+      },
+      "liveDate": {
+        "label": "When do you need it live?",
+        "placeholder": "Select a date"
+      },
+      "message": {
+        "label": "Anything that would make the call useful?",
+        "placeholder": "Tell us about your project..."
+      }
+    }
+  }
+}

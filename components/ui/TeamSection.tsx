@@ -1,18 +1,14 @@
 "use client";
 
+import { spaceGrotesk } from "@/lib/fonts";
+
 import React from "react";
 import { motion } from "framer-motion";
 import { useSafeReducedMotion } from "../../utils/useSafeReducedMotion";
-import { Space_Grotesk } from "next/font/google";
 import { Reveal } from "../../utils/AnimationReveal";
 import GroupsIcon from "@mui/icons-material/Groups";
 import { TeamMember } from "../../types/index";
 import { TEAM } from "../../data/index";
-
-const spaceGrotesk = Space_Grotesk({
-  subsets: ["latin"],
-  weight: ["400", "500", "700"],
-});
 
 export default function TeamSection() {
   const reduced = useSafeReducedMotion();
@@ -53,7 +49,7 @@ export default function TeamSection() {
             >
               {/* Centered layout box grid across the screen */}
               <div className="grid grid-cols-1 md:grid-cols-12 gap-y-6 md:gap-x-12 items-center max-w-5xl mx-auto px-4">
-                
+
                 {/* LEFT: Stacked Profile Metadata Block (Spans 4 columns) */}
                 <div className="md:col-span-4 flex flex-col items-center md:items-start text-center md:text-left space-y-3">
                   {/* 1. Initials on Top */}

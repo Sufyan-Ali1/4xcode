@@ -1,3 +1,4 @@
+import { Reveal } from "@/utils/AnimationReveal";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -5,7 +6,7 @@ import Image from "next/image";
 
 function ProductIcon({ type }) {
   return (
-    <div className="flex size-12 shrink-0 items-center justify-center rounded-2xl border border-red-500/20 bg-red-600/10 text-red-500 shadow-[0_0_25px_rgba(239,31,35,0.12)] transition-all duration-300 group-hover:border-red-500/50 group-hover:bg-red-600/20">
+    <div className="flex size-12 shrink-0 items-center justify-center rounded-2xl border border-red-500/20 bg-red-600/10 text-red-500 shadow-[0_0_25px_rgba(239,31,35,0.12)] transition-all duration-200 group-hover:border-red-500/50 group-hover:bg-red-600/20">
       {type === "recovery" ? (
         <svg
           viewBox="0 0 24 24"
@@ -47,33 +48,33 @@ function ProductCard({ product, actionLabel }) {
     <Link
       href={product.href}
       aria-label={product.title}
-      className="group relative isolate flex min-h-[280px] w-full flex-col overflow-hidden rounded-[24px] border border-white/[0.07] bg-[#101010] p-7 outline-none transition-all duration-500 hover:-translate-y-1 hover:border-red-500/30 hover:shadow-[0_15px_50px_rgba(239,31,35,0.10)] focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-4 focus-visible:ring-offset-black sm:min-h-[300px] sm:p-8 lg:min-h-[280px]"
+      className="group relative isolate flex min-h-[280px] w-full flex-col overflow-hidden rounded-[24px] border border-white/[0.07] bg-[#101010] p-7 outline-none transition-all duration-200 hover:border-red-500/30 hover:shadow-[0_15px_50px_rgba(239,31,35,0.10)] focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-4 focus-visible:ring-offset-black sm:min-h-[300px] sm:p-8 lg:min-h-[280px]"
     >
       <Image
         src={product.image}
         alt={product.imageAlt}
         fill
         sizes="(max-width: 767px) 100vw, (max-width: 1279px) 50vw, 640px"
-        className="absolute inset-0 -z-20 object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+        className="absolute inset-0 -z-20 object-cover transition-transform duration-200 ease-out group-hover:scale-105"
       />
-      <div className="absolute inset-0 -z-10 bg-black/20 transition-colors duration-500 group-hover:bg-black/55" />
+      <div className="absolute inset-0 -z-10 bg-black/20 transition-colors duration-200 group-hover:bg-black/55" />
 
       <div className="absolute inset-0 -z-10 bg-gradient-to-b from-black/30 via-black/30 to-black/75" />
-      <div className="pointer-events-none absolute -left-16 -top-20 -z-10 size-56 rounded-full bg-red-600/[0.06] blur-[70px] transition-opacity duration-500 group-hover:opacity-100" />
+      <div className="pointer-events-none absolute -left-16 -top-20 -z-10 size-56 rounded-full bg-red-600/[0.06] blur-[70px] transition-opacity duration-200 group-hover:opacity-100" />
       <div className="flex flex-1 flex-col items-start">
         <ProductIcon type={product.icon} />
 
         <div className="mt-6 max-w-[420px]">
-          <h3 className="text-xl font-semibold tracking-tight text-white transition-colors duration-300 group-hover:text-red-400 sm:text-[21px]">
+          <h3 className="text-xl font-semibold tracking-tight text-white transition-colors duration-200 group-hover:text-red-400 sm:text-[21px]">
             {product.title}
           </h3>
 
-          <p className="mt-2.5 max-w-[380px] text-sm leading-[1.65] text-neutral-400 transition-colors duration-300 group-hover:text-neutral-300 sm:text-[15px]">
+          <p className="mt-2.5 max-w-[380px] text-sm leading-[1.65] text-neutral-400 transition-colors duration-200 group-hover:text-neutral-300 sm:text-[15px]">
             {product.description}
           </p>
         </div>
 
-        <div className="mt-auto flex items-center gap-2 pt-5 text-sm font-medium text-white/0 transition-all duration-300 group-hover:translate-x-1 group-hover:text-red-400">
+        <div className="mt-auto flex items-center gap-2 pt-5 text-sm font-medium text-white/0 transition-all duration-200 group-hover:translate-x-1 group-hover:text-red-400">
           {actionLabel}
           <svg
             viewBox="0 0 24 24"
@@ -97,11 +98,11 @@ export default function Product({data}) {
   return (
     <section
       id={data.id}
-      className="relative isolate w-full overflow-hidden bg-black px-5 py-5 sm:px-8 lg:px-12 "
+      className="relative isolate w-full overflow-hidden bg-black py-5"
     >
       <div className="pointer-events-none absolute left-1/2 top-0 -z-10 h-[300px] w-[700px] -translate-x-1/2 rounded-full bg-red-600/[0.035] blur-[120px]" />
 
-      <div className="mx-auto w-full max-w-7xl">
+      <div className="site-container">
         <div className="mx-auto flex max-w-2xl flex-col items-center text-center ">
           <span className="text-[11px] font-medium uppercase tracking-[5px] text-red-500">
             {data.label}
@@ -116,11 +117,11 @@ export default function Product({data}) {
           </p>
         </div>
 
-        <div className="flex flex-wrap mt-10 justify-center gap-10 ">        
+        <div className="grid mt-10 grid-cols-1 gap-10 md:grid-cols-2">
           {data.items.map((product) => (
-            <div key={product.href} className="w-full max-w-xl">
+            <Reveal key={product.href} className="min-w-0 h-full">
               <ProductCard product={product} actionLabel={data.cardAction} />
-            </div>
+            </Reveal>
           ))}
         </div>
       </div>

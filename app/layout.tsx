@@ -1,6 +1,7 @@
 import { geistSans, geistMono } from "@/lib/fonts";
 import "./globals.css";
 import { pageMetadata } from "@/data/metadata";
+import MotionProvider from "@/components/layout/MotionProvider";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { FormProvider } from "./context/FormContext";
@@ -20,9 +21,11 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col" suppressHydrationWarning>
         <FormProvider>
-          <Header />
-          <div className="flex-1">{children}</div>
-          <Footer />
+          <MotionProvider>
+            <Header />
+            <div className="flex-1">{children}</div>
+            <Footer />
+          </MotionProvider>
         </FormProvider>
       </body>
     </html>

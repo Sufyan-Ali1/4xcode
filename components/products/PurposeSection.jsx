@@ -2,7 +2,7 @@
 export default function PurposeSection({purposeData}) {
   return (
     <section className="w-full bg-black pt-10 pb-5 ">
-      <div className="mx-auto w-full max-w-[1200px] overflow-hidden rounded-[20px] py-10 bg-[#111111]  sm:rounded-[24px] sm:px-8 md:px-10 lg:px-12">
+      <div className="mx-auto w-full  overflow-hidden rounded-[20px] py-10 bg-[#111111]  sm:rounded-[24px] sm:px-8 md:px-10 lg:px-12">
 
         <div className="mx-auto flex max-w-5xl flex-col items-center text-center">
 
@@ -19,7 +19,7 @@ export default function PurposeSection({purposeData}) {
                     ? "bg-gradient-to-br from-[#ff8a8c] to-[#ef1f23] bg-clip-text text-transparent"
                     : "text-white"}
                 `}
-                
+
               >
                 {part.text}
               </span>

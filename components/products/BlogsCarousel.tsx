@@ -2,13 +2,13 @@ import { getBlogs } from "@/lib/blogApi";
 import BlogGrid from "@/components/blog/GarageBlogCard";
 export default async function BlogsCarousel() {
    const blogs = await getBlogs(true);
- 
+
    if (!blogs || blogs.length === 0) {
      return null;
    }
   return (
-    <section className="w-full bg-black px-4 py-12 md:py-16">
-      <div className="mx-auto w-full max-w-[1150px]">
+    <section className="w-full bg-black py-12 md:py-16">
+      <div className="mx-auto w-full ">
         {/* Heading */}
         <div className="text-center">
           <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#8b0f17]">

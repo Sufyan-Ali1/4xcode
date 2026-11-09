@@ -1,5 +1,7 @@
 "use client";
 
+import { entranceOffset, entranceTransition, revealViewport } from "@/utils/motion";
+
 import { spaceGrotesk, inter } from "@/lib/fonts";
 
 import React, { useEffect } from "react";
@@ -39,7 +41,7 @@ const HIGHLIGHTS = [
 ];
 
 const SHARED_CARD_CLASSES =
-  "group flex h-full flex-col rounded-[22px] border border-white/5 bg-white/2 p-6 transition-all duration-300 hover:border-[rgba(249,10,31,0.35)] hover:bg-white/4 will-change-transform";
+  "group flex h-full flex-col rounded-[22px] border border-white/5 bg-white/2 p-6 transition-all duration-200 hover:border-[rgba(249,10,31,0.35)] hover:bg-white/4 will-change-transform";
 
 export default function AboutPage() {
   const reduced = useSafeReducedMotion();
@@ -93,7 +95,7 @@ export default function AboutPage() {
       </div>
 
       {/* GLOBAL WIDTH CONTAINER MANDATED GRID AND WRAPPERS */}
-      <div className="mx-auto w-full max-w-300 px-5 pt-36  relative z-10 space-y-10">
+      <div className="site-container pt-36  relative z-10 space-y-10">
         {/* HERO SECTION */}
         <section className="w-full flex flex-col items-start space-y-6">
           <Reveal>
@@ -105,7 +107,7 @@ export default function AboutPage() {
             </div>
           </Reveal>
 
-          <Reveal delay={0.1}>
+          <Reveal>
             <h1
               className={`${spaceGrotesk.className} text-4xl sm:text-5xl md:text-[56px] font-bold tracking-tight leading-[1.1] max-w-4xl`}
             >
@@ -117,7 +119,7 @@ export default function AboutPage() {
             </h1>
           </Reveal>
 
-          <Reveal delay={0.2}>
+          <Reveal>
             <p className="text-[#a7a3a4] text-sm sm:text-base md:text-lg max-w-2xl font-normal leading-relaxed">
               4xCode is a senior software development studio — engineers, AI
               researchers, and designers building products that feel like the
@@ -131,7 +133,7 @@ export default function AboutPage() {
         {/* MISSION & VISION CARDS SECTION */}
         <section className="w-full">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full auto-rows-fr">
-            <Reveal delay={0.3} className="h-full">
+            <Reveal className="h-full">
               <div className={SHARED_CARD_CLASSES}>
                 <div className="mb-3">
                   <RocketLaunchOutlinedIcon
@@ -151,7 +153,7 @@ export default function AboutPage() {
               </div>
             </Reveal>
 
-            <Reveal delay={0.4} className="h-full">
+            <Reveal className="h-full">
               <div className={SHARED_CARD_CLASSES}>
                 <div className="mb-3">
                   <VisibilityIcon sx={{ fontSize: 22, color: "#EF1F23" }} />
@@ -190,18 +192,13 @@ export default function AboutPage() {
           </Reveal>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 auto-rows-fr gap-4 w-full">
-            {HIGHLIGHTS.map((item, index) => (
+            {HIGHLIGHTS.map((item) => (
               <motion.div
                 key={item.title}
-                initial={{ opacity: 0, y: reduced ? 0 : 40 }}
+                initial={{ opacity: 0, y: reduced ? 0 : entranceOffset }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.15 }}
-                transition={{
-                  duration: 0.8,
-                  delay: 0.06 * index,
-                  ease: [0.22, 1, 0.36, 1],
-                }}
-                whileHover={{ scale: 1.02, y: -4 }}
+                viewport={revealViewport}
+                transition={entranceTransition}
                 className="h-full"
               >
                 <div className={SHARED_CARD_CLASSES}>

@@ -1,11 +1,12 @@
 "use client";
 
+import { entranceOffset, entranceTransition, revealViewport } from "@/utils/motion";
+
 import defaults from "@/data/landing-defaults.json";
 import { motion, type Variants } from "framer-motion";
 import { CaseStudy } from "../../types/index";
 import { CaseStudyItem } from "../../components/caseStudy/WorkGrid";
 import { useSafeReducedMotion } from "@/utils/useSafeReducedMotion";
-import { useState, useEffect } from "react";
 
 interface CaseStudyCardProps {
   project: CaseStudy | CaseStudyItem | any;
@@ -15,14 +16,8 @@ interface CaseStudyCardProps {
   labels?: typeof defaults.caseStudyCard;
 }
 
-export function CaseStudyCard({ project, index, showCategory = false, showLinkCaption = true, labels = defaults.caseStudyCard }: CaseStudyCardProps) {
+export function CaseStudyCard({ project, showCategory = false, showLinkCaption = true, labels = defaults.caseStudyCard }: CaseStudyCardProps) {
   const reduced = useSafeReducedMotion();
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
   const displayTitle =
     project?.heading || project?.title || labels.titleFallback;
 
@@ -39,15 +34,11 @@ export function CaseStudyCard({ project, index, showCategory = false, showLinkCa
     "";
 
   const cardVariants: Variants = {
-    hidden: { opacity: 0, y: 30 },
+    hidden: { opacity: 0, y: reduced ? 0 : entranceOffset },
     visible: {
       opacity: 1,
       y: 0,
-      transition: {
-        duration: 0.6,
-        delay: 0.05 * index,
-        ease: [0.22, 1, 0.36, 1] as const,
-      },
+      transition: entranceTransition,
     },
   };
 
@@ -57,13 +48,13 @@ export function CaseStudyCard({ project, index, showCategory = false, showLinkCa
         {/* ✅ MATCHED BLOG LAYOUT: Fixed Cinema Aspect Ratio (2/1), wall-to-wall container with no extra padding spaces */}
         <div className="relative aspect-[2/1] w-full overflow-hidden bg-zinc-900 border-b border-white/5">
           <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent z-1 pointer-events-none" />
-          
+
           {project?.image ? (
             <img
               src={project.image}
               alt={displayTitle}
               /* ✅ object-cover fills the aspect box uniformly, while object-center balances the left/right/top/bottom margins safely */
-              className="h-full w-full object-cover object-center opacity-90 md:opacity-80 transition-opacity duration-300 group-hover:opacity-100"
+              className="h-full w-full object-cover object-center opacity-90 md:opacity-80 transition-opacity duration-200 group-hover:opacity-100"
               loading="lazy"
             />
           ) : (
@@ -95,7 +86,7 @@ export function CaseStudyCard({ project, index, showCategory = false, showLinkCa
             viewBox="0 0 24 24"
             strokeWidth={2.5}
             stroke="currentColor"
-            className="h-3 w-3 text-zinc-500 transition-transform duration-300 transform group-hover:translate-x-0.5 group-hover:text-[#f90a1f]"
+            className="h-3 w-3 text-zinc-500 transition-transform duration-200 transform group-hover:translate-x-0.5 group-hover:text-[#f90a1f]"
           >
             <path
               strokeLinecap="round"
@@ -108,21 +99,13 @@ export function CaseStudyCard({ project, index, showCategory = false, showLinkCa
     </>
   );
 
-  if (!mounted || reduced) {
-    return (
-      <div className="group relative flex flex-col flex-1 justify-between overflow-hidden rounded-[14px] border border-white/5 bg-white/2 backdrop-blur-md h-full w-full transition-all duration-300 hover:border-white/10 hover:bg-white/4">
-        {renderCardContent()}
-      </div>
-    );
-  }
-
   return (
     <motion.div
       variants={cardVariants}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, amount: 0.1 }}
-      className="group relative flex flex-col flex-1 justify-between overflow-hidden rounded-[14px] border border-white/5 bg-white/2 backdrop-blur-md h-full w-full transition-all duration-300 hover:border-white/10 hover:bg-white/4"
+      viewport={revealViewport}
+      className="group relative flex flex-col flex-1 justify-between overflow-hidden rounded-[14px] border border-white/5 bg-white/2 backdrop-blur-md h-full w-full transition-colors duration-200 hover:border-white/10 hover:bg-white/4"
     >
       {renderCardContent()}
     </motion.div>

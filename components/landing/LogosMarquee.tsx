@@ -53,7 +53,7 @@ export default function LogoMarquee({ data = home.logos }: { data?: typeof home.
                     width={Math.round((logo.width / logo.height) * data.height)}
                     height={data.height}
                     loading="eager"
-                    className={`block max-w-none object-contain opacity-65 transition-opacity duration-300 hover:opacity-100 ${logo.treatment === "invert" ? "grayscale invert mix-blend-screen" : "brightness-0 invert"}`}
+                    className={`block max-w-none object-contain opacity-65 transition-opacity duration-200 hover:opacity-100 ${logo.treatment === "invert" ? "grayscale invert mix-blend-screen" : "brightness-0 invert"}`}
                     style={{ height: data.height, width: "auto" }}
                   />
                 </div>

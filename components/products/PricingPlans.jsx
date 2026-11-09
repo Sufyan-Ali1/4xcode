@@ -1,5 +1,8 @@
-
 "use client";
+
+
+
+import { entranceOffset, entranceTransition, revealViewport } from "@/utils/motion";
 
 import React from "react";
 import Link from "next/link";
@@ -22,24 +25,16 @@ function FeatureCheck({ featured }) {
     </svg>
   );
 }
-function PricingCard({ plan, index }) {
+function PricingCard({ plan }) {
   const featured = Boolean(plan.featured);
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 25 }}
+      initial={{ opacity: 0, y: entranceOffset }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.15 }}
-      transition={{
-        duration: 0.65,
-        delay: index * 0.12,
-        ease: [0.22, 1, 0.36, 1],
-      }}
-      whileHover={{
-        y: -5,
-        transition: { duration: 0.25 },
-      }}
-      className={`relative flex h-full min-h-[372px] flex-col rounded-[15px] border bg-[#111111] px-7 py-8 transition-colors duration-300 sm:px-9 ${
+      viewport={revealViewport}
+      transition={entranceTransition}
+      className={`relative flex h-full min-h-[372px] flex-col rounded-[15px] border bg-[#111111] px-7 py-8 transition-colors duration-200 sm:px-9 ${
         featured
           ? "border-[#ef1f23] shadow-[0_0_30px_rgba(239,31,35,0.06)]"
           : "border-[#454545] hover:border-white/40"
@@ -86,7 +81,7 @@ function PricingCard({ plan, index }) {
       <div className="mt-auto pt-8">
         <Link
           href={plan.action?.href || "/contact"}
-          className={`flex min-h-[47px] w-full items-center justify-center rounded-lg px-5 py-3 text-center text-[13px] font-bold uppercase transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ef1f23] focus-visible:ring-offset-2 focus-visible:ring-offset-[#111111] ${
+          className={`flex min-h-[47px] w-full items-center justify-center rounded-lg px-5 py-3 text-center text-[13px] font-bold uppercase transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ef1f23] focus-visible:ring-offset-2 focus-visible:ring-offset-[#111111] ${
             featured
               ? "bg-[#ef1f23] text-white hover:bg-[#d60819] hover:shadow-[0_0_25px_rgba(239,31,35,0.25)]"
               : "bg-white text-black hover:bg-neutral-200"
@@ -107,9 +102,9 @@ export default function PricingPlans({ data }) {
       className="w-full flex flex-wrap justify-center"
       aria-label={data.sectionLabel || "Pricing plans"}
     >
-      <div   className="relative w-full max-w-[1150px] overflow-hidden bg-black pt-5 pb-10 text-white ">
+      <div   className="relative w-full  overflow-hidden bg-black pt-5 pb-10 text-white ">
 
-      
+
       <div
         aria-hidden="true"
         className="pointer-events-none absolute left-1/2 top-0 -z-0 h-[260px] w-[650px] -translate-x-1/2 rounded-full bg-[#ef1f23]/[0.035] blur-[110px]"
@@ -135,11 +130,10 @@ export default function PricingPlans({ data }) {
           </p>
         </div>
         <div className="grid grid-cols-1 items-stretch gap-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-8">
-          {data.plans?.map((plan, index) => (
+          {data.plans?.map((plan) => (
             <PricingCard
               key={plan.id || plan.name}
               plan={plan}
-              index={index}
             />
           ))}
         </div>

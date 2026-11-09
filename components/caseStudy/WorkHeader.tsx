@@ -1,5 +1,6 @@
-// components/work/WorkHeader.tsx
 "use client";
+
+// components/work/WorkHeader.tsx
 
 import works from "@/data/WorksMainPage.json";
 import React from "react";
@@ -22,14 +23,14 @@ export default function WorkHeader({ spaceGroteskClass, data = works.hero }: Wor
         </div>
       </Reveal>
 
-      <Reveal delay={0.1}>
+      <Reveal>
         <h1 className={`${spaceGroteskClass} text-4xl sm:text-5xl md:text-[56px] font-bold leading-[1.1] max-w-4xl`}>
           {data.heading}{" "}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF8A8C] to-[#EF1F23]">{data.highlight}</span>
         </h1>
       </Reveal>
 
-      <Reveal delay={0.2}>
+      <Reveal>
         <p className="text-[#a7a3a4] text-sm sm:text-base md:text-lg max-w-2xl leading-relaxed">
           {data.description}
         </p>

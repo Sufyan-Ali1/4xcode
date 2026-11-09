@@ -98,11 +98,11 @@
     "actions": [
       {
         "label": "Explore Our Services",
-        "href": "#services"
+        "href": "/service"
       },
       {
         "label": "View Our Products",
-        "href": "#products"
+        "href": "/product/garage-management-system"
       }
     ],
     "features": [
@@ -156,7 +156,8 @@
       {
         "label": "Cloud Architecture",
         "icon": "cloud",
-        "left": "75.27%",
+        "left": "auto",
+        "right": "0",
         "top": "48.3%",
         "detail": ""
       },

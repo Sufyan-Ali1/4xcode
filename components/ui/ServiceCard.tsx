@@ -1,3 +1,4 @@
+import { METRIC_LABEL_CLASSES, METRIC_VALUE_CLASSES } from "./cardStyles";
 // components/ui/ServiceCards.tsx
 import React from "react";
 import Link from "next/link";
@@ -13,7 +14,7 @@ import {
 } from "../../data/serviceData";
 
 export const SHARED_CARD_CLASSES =
-  "group flex h-full flex-col rounded-[22px] border border-white/5 bg-white/2 p-6 transition-all duration-300 hover:border-[rgba(249,10,31,0.35)] hover:bg-white/4 will-change-transform";
+  "group flex h-full flex-col rounded-[22px] border border-white/5 bg-white/2 p-6 transition-colors duration-200 hover:border-[rgba(249,10,31,0.35)] hover:bg-white/4 will-change-transform";
 
 interface CardProps<T> {
   data: T;
@@ -27,11 +28,11 @@ export function MetricCard({ data, variants }: CardProps<Metric>) {
   variants={variants}
   className={`${SHARED_CARD_CLASSES} row-span-2 grid grid-rows-subgrid gap-y-0`}
 >
-  <h4 className="min-h-[42px] bg-gradient-to-b from-white to-[#a7a3a4] bg-clip-text text-3xl font-bold tracking-tight text-transparent md:text-[30px]">
+  <h4 className={`${METRIC_VALUE_CLASSES} min-h-[42px]`}>
     {data.value}
   </h4>
 
-  <span className="mt-2 block text-xs font-semibold uppercase tracking-wider text-zinc-400">
+  <span className={METRIC_LABEL_CLASSES}>
     {data.label}
   </span>
 </motion.div>
@@ -102,9 +103,9 @@ export function ArchitectureStep({
   fontClass,
 }: CardProps<ArchitecturePhase>) {
   return (
-   <div className="group relative z-10 flex h-full flex-col items-start rounded-[22px] border border-white/5 bg-white/2 p-6 text-left transition-transform duration-200 ease-linear hover:scale-[1.01] hover:-translate-y-1 hover:border-[rgba(249,10,31,0.35)] hover:bg-white/4">
+   <div className="group relative z-10 flex h-full flex-col items-start rounded-[22px] border border-white/5 bg-white/2 p-6 text-left transition-transform duration-200 ease-linear hover:border-[rgba(249,10,31,0.35)] hover:bg-white/4">
       <span
-        className={`${fontClass} mb-4 flex h-10 w-10 items-center justify-center rounded-full border border-white/10 text-sm font-semibold text-zinc-300 transition-colors duration-300 group-hover:border-[#ef1f23]/50 group-hover:text-[#ef1f23]`}
+        className={`${fontClass} mb-4 flex h-10 w-10 items-center justify-center rounded-full border border-white/10 text-sm font-semibold text-zinc-300 transition-colors duration-200 group-hover:border-[#ef1f23]/50 group-hover:text-[#ef1f23]`}
       >
         {step.phase}
       </span>
@@ -128,13 +129,11 @@ export function RelatedServiceCard({
   return (
     <motion.div
       variants={variants}
-      whileHover={{ y: -4 }}
-      transition={{ duration: 0.3 }}
       className="will-change-transform h-full"
     >
       <Link
         href={`/service/${related.slug}`}
-        className="group relative flex h-full flex-col rounded-[28px] border border-white/5 bg-[#090909] p-8 text-left transition-all duration-300 hover:border-[rgba(249,10,31,0.25)] hover:bg-[#0d0d0d]"
+        className="group relative flex h-full flex-col rounded-[28px] border border-white/5 bg-[#090909] p-8 text-left transition-all duration-200 hover:border-[rgba(249,10,31,0.25)] hover:bg-[#0d0d0d]"
       >
         {/* Top Header Row: Red Dot and Title */}
         <div className="flex items-start gap-4">
@@ -159,7 +158,7 @@ export function RelatedServiceCard({
             Explore Service
           </span>
 
-          <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-[14px] bg-white/[0.02] border border-white/5 text-zinc-400 transition-all duration-300 group-hover:bg-[#ef1f23]/10 group-hover:border-[#ef1f23]/30 group-hover:text-white">
+          <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-[14px] bg-white/[0.02] border border-white/5 text-zinc-400 transition-all duration-200 group-hover:bg-[#ef1f23]/10 group-hover:border-[#ef1f23]/30 group-hover:text-white">
             <NorthEastIcon style={{ fontSize: 16 }} aria-hidden="true" />
           </div>
         </div>

@@ -3,10 +3,10 @@
 
 export default function BuildForIndustry({data, headingSuffix = "."}) {
   // All content is dynamic and kept inside this component
- 
+
 
   return (
-    <section className="w-full  max-w-7xl bg-[#030303] px-7 py-5 lg:px-15 ">
+    <section className="site-container bg-[#030303] py-5">
       <div className="mx-auto w-full ">
         {/* Heading */}
         <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold leading-tight tracking-tight text-white sm:text-2xl">
@@ -24,7 +24,7 @@ export default function BuildForIndustry({data, headingSuffix = "."}) {
     <button
       key={industry}
       type="button"
-      className="mt-2  rounded-full border border-[#EF1F23] bg-transparent py-3 text-[10px] font-normal text-white transition-colors duration-300 hover:bg-[#EF1F23] hover:text-white md:text-[12px] "
+      className="mt-2  rounded-full border border-[#EF1F23] bg-transparent py-3 text-[10px] font-normal text-white transition-colors duration-200 hover:bg-[#EF1F23] hover:text-white md:text-[12px] "
     >
       {industry}
     </button>

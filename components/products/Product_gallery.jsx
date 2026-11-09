@@ -1,5 +1,6 @@
-
 "use client";
+
+
 
 import Image from "next/image";
 import PhotoLibraryOutlinedIcon from "@mui/icons-material/PhotoLibraryOutlined";
@@ -32,7 +33,7 @@ function GalleryImageCard({ item }) {
         alt={item.alt}
         fill
         sizes="(max-width: 767px) 100vw, (max-width: 1279px) 50vw, 33vw"
-        className="object-cover h-[300] object-center transition-transform duration-500 group-hover:scale-[1.025]"
+        className="object-cover h-[300] object-center transition-transform duration-200 group-hover:scale-[1.025]"
       />
     </div>
   );
@@ -46,7 +47,7 @@ export default function Product_gallery({ data }) {
       id={data.sectionId}
       className="w-full bg-black pt-5 pb-10 text-white "
     >
-      <div className="mx-auto max-w-[1200px]">
+      <div className="mx-auto ">
         <GalleryHeading data={data} />
 
         <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3  xl:gap-6">

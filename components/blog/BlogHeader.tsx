@@ -1,5 +1,6 @@
-// components/work/WorkHeader.tsx
 "use client";
+
+// components/work/WorkHeader.tsx
 
 import React from "react";
 import { Reveal } from "@/utils/AnimationReveal";
@@ -20,7 +21,7 @@ export default function BlogHeader({ spaceGroteskClass }: BlogHeaderProps) {
         </div>
       </Reveal>
 
-      <Reveal delay={0.1}>
+      <Reveal>
         <h1
           className={`${spaceGroteskClass} text-4xl sm:text-5xl md:text-[56px] font-bold leading-[1.1] max-w-4xl`}
         >
@@ -33,7 +34,7 @@ export default function BlogHeader({ spaceGroteskClass }: BlogHeaderProps) {
         </h1>
       </Reveal>
 
-      <Reveal delay={0.2}>
+      <Reveal>
         <p className="text-[#a7a3a4] text-sm sm:text-base md:text-lg max-w-2xl leading-relaxed">
           Essays, deep-dives, and dispatches on AI, SaaS, and the craft of
           building software.

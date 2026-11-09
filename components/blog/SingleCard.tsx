@@ -1,3 +1,4 @@
+import { Reveal } from "@/utils/AnimationReveal";
 import Link from "next/link";
 import Image from "next/image";
 type Blog = {
@@ -31,10 +32,11 @@ function BlogDate({ value }: { value?: string }) {
 }
 export default function SingleCard({ blog }: SingleCardProps) {
     return(
+<Reveal className="h-full">
 <Link
             key={blog.slug || blog.id}
             href={`/blog/${blog.slug}`}
-            className="group flex flex-col overflow-hidden rounded-[14px] border border-white/5 bg-white/5 backdrop-blur-md transition-all duration-300 hover:border-white/10 hover:bg-white/10 h-full"
+            className="group flex flex-col overflow-hidden rounded-[14px] border border-white/5 bg-white/5 backdrop-blur-md transition-all duration-200 hover:border-white/10 hover:bg-white/10 h-full"
           >
             {/* IMAGE CONTAINER */}
             {blog.image && (
@@ -44,7 +46,7 @@ export default function SingleCard({ blog }: SingleCardProps) {
                   alt={blog.title}
                   fill
                   sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, (max-width: 1200px) 33vw, 371px"
-                  className="object-contain opacity-90 transition-all duration-[1800ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-105 group-hover:opacity-100 motion-reduce:transform-none motion-reduce:transition-none"
+                  className="object-contain opacity-90 transition-all duration-200 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-105 group-hover:opacity-100 motion-reduce:transform-none motion-reduce:transition-none"
                 />
               </div>
             )}
@@ -67,7 +69,7 @@ export default function SingleCard({ blog }: SingleCardProps) {
                     viewBox="0 0 24 24"
                     strokeWidth={2.5}
                     stroke="currentColor"
-                    className="w-3 h-3 transition-transform duration-300 transform group-hover:translate-x-1"
+                    className="w-3 h-3 transition-transform duration-200 transform group-hover:translate-x-1"
                   >
                     <path
                       strokeLinecap="round"
@@ -79,5 +81,6 @@ export default function SingleCard({ blog }: SingleCardProps) {
               </div>
             </div>
 </Link>
+</Reveal>
     )
 }

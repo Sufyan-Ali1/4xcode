@@ -6,7 +6,7 @@ import { Reveal } from "../../utils/AnimationReveal";
 import { TESTIMONIALS } from "../../data/index";
 import { type Testimonial } from "@/types";
 
-export default function TestimonialsSection({ testimonials = TESTIMONIALS, data = defaults.testimonialSection }: { testimonials?: Testimonial[]; data?: { label: string; heading: string; highlight?: string; quoteOpen: string; quoteClose: string } }) {
+export default function TestimonialsSection({ testimonials = TESTIMONIALS, data = defaults.testimonialSection, contained = false }: { contained?: boolean; testimonials?: Testimonial[]; data?: { label: string; heading: string; highlight?: string; quoteOpen: string; quoteClose: string } }) {
   const STEP_W = 400;
   const GROUP_W = Math.max(testimonials.length, 1) * STEP_W;
 
@@ -32,17 +32,17 @@ export default function TestimonialsSection({ testimonials = TESTIMONIALS, data 
         }
       `}</style>
 
-      <section className="relative w-full overflow-hidden px-3 flex flex-col items-center gap-8">
+      <section className={`${contained ? "w-full" : "site-container"} relative overflow-hidden flex flex-col items-center gap-8`}>
         <div className="pointer-events-none absolute inset-0 opacity-10" />
 
-        <div className="relative z-10 flex flex-col items-center gap-3 text-center px-6">
+        <div className="relative z-10 flex flex-col items-center gap-3 text-center">
           <Reveal>
             <span className="text-[#f90a1f] text-[12px] font-normal uppercase tracking-[3.6px] leading-4">
               {data.label}
             </span>
           </Reveal>
 
-          <Reveal delay={0.1}>
+          <Reveal>
             <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-white">
               {data.heading}{data.highlight && <> <span className="bg-gradient-to-br from-[#ff8a8c] to-[#ef1f23] bg-clip-text text-transparent">{data.highlight}</span></>}
             </h2>
@@ -68,7 +68,7 @@ export default function TestimonialsSection({ testimonials = TESTIMONIALS, data 
                 {testimonials.map((item, i) => (
                   <div
                     key={`${item.id}-${i}`}
-                    className="group w-85 md:w-95 shrink-0 flex flex-col justify-between rounded-[22px] border border-white/10 bg-white/2 p-6 transition-colors duration-300 hover:border-[#f90a1f]/40 hover:bg-white/4 cursor-default h-full"
+                    className="group w-85 md:w-95 shrink-0 flex flex-col justify-between rounded-[22px] border border-white/10 bg-white/2 p-6 transition-colors duration-200 hover:border-[#f90a1f]/40 hover:bg-white/4 cursor-default h-full"
                   >
                     <div>
                       <div className="flex gap-1 mb-4">
@@ -83,11 +83,11 @@ export default function TestimonialsSection({ testimonials = TESTIMONIALS, data 
                         ))}
                       </div>
 
-                      <p className="text-sm md:text-base leading-relaxed text-zinc-400 group-hover:text-zinc-300 transition-colors duration-300 font-light mb-8">
+                      <p className="text-sm md:text-base leading-relaxed text-zinc-400 group-hover:text-zinc-300 transition-colors duration-200 font-light mb-8">
                         {data.quoteOpen}{item.quote}{data.quoteClose}
                       </p>
                     </div>
-                    
+
                     <div className="flex items-center gap-3.5 pt-4 border-t border-white/6 mt-auto">
                       <div className="size-9 rounded-full bg-[#f90a1f]/10 border border-[#f90a1f]/20 flex items-center justify-center font-bold text-xs text-[#f90a1f]">
                         {item.initial}

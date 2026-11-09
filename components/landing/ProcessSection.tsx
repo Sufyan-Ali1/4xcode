@@ -1,5 +1,7 @@
 "use client";
 
+import { entranceOffset, entranceTransition, revealViewport } from "@/utils/motion";
+
 import home from "@/data/home.json";
 import { motion } from "framer-motion";
 import { useSafeReducedMotion } from "../../utils/useSafeReducedMotion";
@@ -12,7 +14,7 @@ export default function ProcessSection({ data = home.process }: { data?: typeof 
   return (
     <section className="py-5 bg-black text-white overflow-hidden w-full">
       {/* ✅ PERFECT GLOBAL ALIGNMENT MATCHING THE HEADER & BLOG SYSTEM */}
-      <div className="mx-auto w-full max-w-300 px-5">
+      <div className="site-container">
 
         {/* Header */}
         <div className="text-center">
@@ -21,7 +23,7 @@ export default function ProcessSection({ data = home.process }: { data?: typeof 
               {data.label}
             </p>
           </Reveal>
-          <Reveal delay={0.1}>
+          <Reveal>
             <h2 className="text-3xl md:text-6xl font-bold">
               {data.heading}{" "}
               <span className="bg-gradient-to-br from-[#ff8a8c] to-[#ef1f23] bg-clip-text text-transparent">
@@ -42,18 +44,13 @@ export default function ProcessSection({ data = home.process }: { data?: typeof 
 
           {/* ✅ FIXED GRID & AUTO-ROWS: Prevents horizontal expanding over parent limits */}
           <div className="flex flex-col md:grid md:grid-cols-5 gap-8 md:gap-6 auto-rows-fr items-stretch">
-            {data.steps.map((step, index) => (
+            {data.steps.map((step) => (
               <motion.div
                 key={step.number}
-                initial={{ opacity: 0, y: reduced ? 0 : 40 }}
+                initial={{ opacity: 0, y: reduced ? 0 : entranceOffset }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.2 }}
-                transition={{
-                  duration: 0.8,
-                  delay: index * 0.1,
-                  ease: [0.22, 1, 0.36, 1],
-                }}
-                whileHover={reduced ? {} : { y: -6, scale: 1.02 }}
+                viewport={revealViewport}
+                transition={entranceTransition}
                 className="relative z-10 flex flex-row md:flex-col items-start md:items-center gap-5 md:gap-0 text-left md:text-center w-full"
               >
                 {/* Number circle */}

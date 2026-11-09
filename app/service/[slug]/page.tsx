@@ -1,5 +1,7 @@
 "use client";
 
+import { entranceOffset, entranceTransition, revealViewport } from "@/utils/motion";
+
 import { spaceGrotesk, inter } from "@/lib/fonts";
 
 import React, { useMemo } from "react";
@@ -50,19 +52,18 @@ export default function ServiceDetailPage() {
 
   const { containerVariants, itemVariants } = useMemo(() => {
     const container: Variants = {
-      hidden: { opacity: 0 },
+      hidden: { opacity: 1 },
       visible: {
         opacity: 1,
-        transition: { staggerChildren: reduced ? 0 : 0.06 },
       },
     };
 
     const item: Variants = {
-      hidden: { opacity: 0, y: reduced ? 0 : 30 },
+      hidden: { opacity: 0, y: reduced ? 0 : entranceOffset },
       visible: {
         opacity: 1,
         y: 0,
-        transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] },
+        transition: entranceTransition,
       },
     };
     return { containerVariants: container, itemVariants: item };
@@ -83,16 +84,16 @@ export default function ServiceDetailPage() {
       </div>
 
       {/* Primary Layout Container wrapper */}
-      <div className="relative z-10 mx-auto w-full max-w-300 px-5 pt-32 md:pt-36 flex flex-col">
+      <div className="relative z-10 site-container pt-32 md:pt-36 flex flex-col">
         <Reveal>
           <Link
             href="/service"
-            className="group mb-8 inline-flex items-center gap-2.5 text-[11px] font-normal uppercase tracking-[2.64px] text-zinc-500 transition-colors duration-300 hover:text-white"
+            className="group mb-8 inline-flex items-center gap-2.5 text-[11px] font-normal uppercase tracking-[2.64px] text-zinc-500 transition-colors duration-200 hover:text-white"
           >
             <KeyboardBackspaceIcon
               style={{ fontSize: 13 }}
               aria-hidden="true"
-              className="transform transition-transform duration-300 ease-out "
+              className="transform transition-transform duration-200 ease-out "
             />
             <span>BACK TO CAPABILITIES</span>
           </Link>
@@ -109,7 +110,7 @@ export default function ServiceDetailPage() {
               </div>
             </Reveal>
 
-            <Reveal delay={0.1}>
+            <Reveal>
               <h1
                 className={`${spaceGrotesk.className} text-4xl sm:text-5xl md:text-[56px] font-bold tracking-tight leading-[1.1]`}
               >
@@ -121,17 +122,17 @@ export default function ServiceDetailPage() {
               </h1>
             </Reveal>
 
-            <Reveal delay={0.2}>
+            <Reveal>
               <p className="max-w-2xl text-sm sm:text-base md:text-lg leading-relaxed text-[#a7a3a4]">
                 {service.longDesc}
               </p>
             </Reveal>
 
-            {!service.hideHeroActions && <Reveal delay={0.25}>
+            {!service.hideHeroActions && <Reveal>
               <div className="flex flex-wrap gap-3 pt-1">
                 <Link
                   href="/contact"
-                  className="group inline-flex items-center justify-center gap-2.5 rounded-xl bg-[#ef1f23] px-7 py-5.5 text-xs font-bold uppercase tracking-widest text-white transition-all duration-300 hover:bg-[#d60819] hover:shadow-[0_0_25px_rgba(249,10,31,0.3)] focus-visible:outline-none"
+                  className="group inline-flex items-center justify-center gap-2.5 rounded-xl bg-[#ef1f23] px-7 py-5.5 text-xs font-bold uppercase tracking-widest text-white transition-colors duration-200 hover:bg-[#d60819] hover:shadow-[0_0_25px_rgba(249,10,31,0.3)] focus-visible:outline-none"
                 >
                   {service.contact_button}
                   <ArrowForwardIcon
@@ -142,7 +143,7 @@ export default function ServiceDetailPage() {
                 </Link>
                 <Link
                   href="/service"
-                  className="inline-flex items-center justify-center gap-2.5 rounded-xl border border-white/10 bg-transparent px-7 py-5.5 text-xs font-bold uppercase tracking-widest text-zinc-300 transition-all duration-300 hover:border-white/30 hover:text-white focus-visible:outline-none"
+                  className="inline-flex items-center justify-center gap-2.5 rounded-xl border border-white/10 bg-transparent px-7 py-5.5 text-xs font-bold uppercase tracking-widest text-zinc-300 transition-colors duration-200 hover:border-white/30 hover:text-white focus-visible:outline-none"
                 >
                   {service.service_button}
                 </Link>
@@ -152,14 +153,10 @@ export default function ServiceDetailPage() {
 
           <div className="w-full lg:col-span-4">
             <motion.div
-              initial={{ opacity: 0, y: reduced ? 0 : 40 }}
+              initial={{ opacity: 0, y: reduced ? 0 : entranceOffset }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{
-                duration: 0.8,
-                ease: [0.22, 1, 0.36, 1],
-                delay: 0.3,
-              }}
-              className="group/card relative space-y-5 rounded-[22px] border border-white/5 bg-white/2 p-6 md:p-8 shadow-2xl backdrop-blur-xl hover:border-[rgba(249,10,31,0.25)] transition-all duration-300"
+              transition={entranceTransition}
+              className="group/card relative space-y-5 rounded-[22px] border border-white/5 bg-white/2 p-6 md:p-8 shadow-2xl backdrop-blur-xl hover:border-[rgba(249,10,31,0.25)] transition-colors duration-200"
             >
               <h3 className="text-lg font-bold uppercase text-zinc-300 tracking-wide">
                 {service.tags_section_heading}
@@ -190,7 +187,7 @@ export default function ServiceDetailPage() {
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.15 }}
+          viewport={revealViewport}
           className={`relative mt-8 grid w-full grid-cols-1 gap-6 ${service.metrics.length === 4 ? "sm:grid-cols-2 lg:grid-cols-4" : "sm:grid-cols-3"}`}
         >
           {service.metrics.map((metric) => (
@@ -221,7 +218,7 @@ export default function ServiceDetailPage() {
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.1 }}
+            viewport={revealViewport}
             className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-3"
           >
             {service.pillars.map((pillar) => (
@@ -243,8 +240,8 @@ export default function ServiceDetailPage() {
 
 />
       </div>
-        <AboutSection data={service.about_section_data1} />
-         <NarrativeSection data={service.NarrativeData} spaceGroteskClassName={spaceGrotesk.className} />
+        <AboutSection contained statsVariant="text" data={service.about_section_data1} />
+         <NarrativeSection contained data={service.NarrativeData} spaceGroteskClassName={spaceGrotesk.className} />
         <div className="mt-4 pt-12">
           <Reveal>
             <div className="space-y-2">
@@ -264,7 +261,7 @@ export default function ServiceDetailPage() {
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.1 }}
+            viewport={revealViewport}
             className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4"
           >
             {service.features.map((feature) => (
@@ -296,7 +293,7 @@ export default function ServiceDetailPage() {
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.1 }}
+            viewport={revealViewport}
             className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-3"
           >
             {service.techCategories.map((category) => (
@@ -332,7 +329,7 @@ export default function ServiceDetailPage() {
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.15 }}
+            viewport={revealViewport}
             className="relative mx-auto grid w-full grid-cols-1 gap-6 md:grid-cols-3 lg:gap-8"
           >
             {service.architecture.map((step) => (
@@ -349,7 +346,7 @@ export default function ServiceDetailPage() {
       </div>
 
         <div className="w-full flex flex-wrap justify-center">
-          <div className="max-w-7xl">
+          <div className="w-full">
       <Build_for_industry data={service.buildforindustry} />
         <CompanyOverview data={service.about_section_data2} />
        <Technology_Experience sectionData={service.sectionData} />
@@ -358,7 +355,7 @@ export default function ServiceDetailPage() {
       </div>
 
       {/* Dynamic Routing Services & Final Project CTA Wrapper */}
-      <div className="relative z-10 mx-auto w-full max-w-300 px-5 flex flex-col">
+      <div className="relative z-10 site-container flex flex-col">
 
           <div className="mt-10 pt-5">
             <Reveal>
@@ -378,7 +375,7 @@ export default function ServiceDetailPage() {
               variants={containerVariants}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true, amount: 0.1 }}
+              viewport={revealViewport}
               className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-3"
             >
               {service.relatedSlugs.map((rel,index) => (
@@ -393,7 +390,7 @@ export default function ServiceDetailPage() {
           </div>
 
       </div>
-      <div className="w-full pt-20">
+      <div className="site-container pt-20">
           <ServiceFaq
           label={service.labels?.faq}
           description={service.faqDescription}

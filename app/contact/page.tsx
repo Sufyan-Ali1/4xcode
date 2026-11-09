@@ -90,7 +90,7 @@ export default function ContactPage() {
       </div>
 
       {/* Main Container Container */}
-      <div className="mx-auto w-full max-w-300 px-4 sm:px-6 lg:px-8 pt-28 sm:pt-40 relative z-10">
+      <div className="site-container pt-28 sm:pt-40 relative z-10">
         <div className="flex flex-col-reverse lg:flex-row lg:items-stretch gap-10 lg:gap-16 w-full box-border">
           {/* Left Block: Text & Contact Badges (Width locked on mobile) */}
           <div className="w-full max-w-xl mx-auto lg:max-w-none lg:mx-0 lg:w-[42%] flex flex-col gap-4 md:gap-6 box-border">
@@ -103,7 +103,7 @@ export default function ContactPage() {
               </div>
             </Reveal>
 
-            <Reveal delay={0.1}>
+            <Reveal>
               <h1
                 className={`${spaceGrotesk.className} text-3xl sm:text-5xl lg:text-[56px] xl:text-[60px] font-bold tracking-tight leading-[1.1] text-[#f8f8f8]`}
               >
@@ -119,7 +119,7 @@ export default function ContactPage() {
               </h1>
             </Reveal>
 
-            <Reveal delay={0.2}>
+            <Reveal>
               <p className="text-xs sm:text-base font-normal leading-relaxed text-zinc-400 max-w-full lg:max-w-md">
                 Tell us about your project. We reply within 24 hours with a
                 clear plan, a scope, and an honest opinion.
@@ -128,13 +128,12 @@ export default function ContactPage() {
 
             {/* Details Badges List */}
             <div className="flex flex-col gap-2.5 pt-1 w-full box-border">
-              {contactDetails.map((item, idx) => (
+              {contactDetails.map((item) => (
                 <Reveal
                   key={item.id}
-                  delay={0.15 + idx * 0.05}
                   className="w-full"
                 >
-                  <div className="w-full flex items-center gap-3.5 rounded-xl sm:rounded-[20px] border border-[rgba(255,255,255,0.06)] bg-white/[0.02] p-3.5 sm:p-4 transition-all duration-300 hover:border-[rgba(239,31,35,0.25)] box-border">
+                  <div className="w-full flex items-center gap-3.5 rounded-xl sm:rounded-[20px] border border-[rgba(255,255,255,0.06)] bg-white/[0.02] p-3.5 sm:p-4 transition-all duration-200 hover:border-[rgba(239,31,35,0.25)] box-border">
                     <div className="w-9 h-9 rounded-full flex items-center justify-center bg-[rgba(239,31,35,0.08)] text-[#ef1f23] border border-[rgba(239,31,35,0.2)] shrink-0">
                       {renderContactIcon(item.id)}
                     </div>
@@ -155,7 +154,7 @@ export default function ContactPage() {
             </div>
 
             {/* Failsafe Accent Wave Box */}
-            <Reveal delay={0.4} className="w-full">
+            <Reveal className="w-full">
               <div className="rounded-xl sm:rounded-[20px] border border-[rgba(255,255,255,0.06)] h-[110px] sm:h-[150px] w-full overflow-hidden relative box-border">
                 <div
                   className="absolute inset-0"

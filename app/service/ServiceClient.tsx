@@ -1,5 +1,7 @@
 "use client";
 
+import { entranceOffset, entranceTransition, revealViewport } from "@/utils/motion";
+
 import { spaceGrotesk, inter } from "@/lib/fonts";
 
 import React from "react";
@@ -28,6 +30,8 @@ import NarrativeSection from "../../components/landing/NarrativeSection";
 import service_data from "@/data/ServiceMainPage.json"
 import ServiceFaq from "@/components/ui/ServiceFaq";
 
+const MotionLink = motion.create(Link);
+
 const ICONS_MAP: Record<string, React.ReactNode> = {
     ai: <AutoAwesomeIcon fontSize="small" />,
     software: <CodeIcon fontSize="small" />,
@@ -50,7 +54,7 @@ function DynamicServiceIcon({ iconKey }: { iconKey: string }) {
 
 export default function ServicePage() {
     const reduced = useSafeReducedMotion();
-    const MotionLink = motion.create(Link);
+
 
     return (
         <div className={`bg-[#030303] text-white min-h-screen relative w-full overflow-hidden pb-10 ${inter.className}`}>
@@ -71,7 +75,7 @@ export default function ServicePage() {
             </div>
 
             {/* GLOBAL WIDTH CONTAINER MANDATED GRID AND WRAPPERS */}
-            <div className="mx-auto w-full max-w-300 px-5 pt-36 pb-16 relative z-10 space-y-10">
+            <div className="site-container pt-36 pb-16 relative z-10 space-y-10">
 
                 {/* HERO SECTION */}
                 <section className="w-full flex flex-col items-start space-y-6">
@@ -84,14 +88,14 @@ export default function ServicePage() {
                         </div>
                     </Reveal>
 
-                    <Reveal delay={0.1}>
+                    <Reveal>
                         <h1 className={`${spaceGrotesk.className} text-4xl sm:text-5xl md:text-[56px] font-bold tracking-tight leading-[1.1] max-w-4xl`}>
                             {service_data.hero.heading}{" "}
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF8A8C] to-[#EF1F23]">{service_data.hero.highlight}</span>
                         </h1>
                     </Reveal>
 
-                    <Reveal delay={0.2}>
+                    <Reveal>
                         <p className="text-[#a7a3a4] text-sm sm:text-base md:text-lg max-w-2xl font-normal leading-relaxed">
                             {service_data.hero.description}
                         </p>
@@ -101,25 +105,21 @@ export default function ServicePage() {
                 {/* CARDS SECTION */}
                 <section className="w-full">
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 w-full">
-                        {service_data.services.map((service, index) => (
+                        {service_data.services.map((service) => (
                             <MotionLink
                                 key={service.slug}
                                 href={service.href}
-                                initial={{ opacity: 0, y: reduced ? 0 : 40 }}
+                                initial={{ opacity: 0, y: reduced ? 0 : entranceOffset }}
                                 whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true, amount: 0.15 }}
-                                transition={{
-                                    duration: 0.8,
-                                    delay: 0.06 * index,
-                                    ease: [0.22, 1, 0.36, 1],
-                                }}
-                                className="group flex flex-col rounded-[18px] overflow-hidden border border-white/5 hover:border-[rgba(249,10,31,0.35)] transition-all duration-300 bg-white/4 p-5 justify-between  hover:-translate-y-1"
+                                viewport={revealViewport}
+                                transition={entranceTransition}
+                                className="group flex flex-col rounded-[18px] overflow-hidden border border-white/5 hover:border-[rgba(249,10,31,0.35)] transition-colors duration-200 bg-white/4 p-5 justify-between"
                             >
                                 <div className="w-full">
                                     <div className="flex items-start justify-between w-full mb-4">
                                         <DynamicServiceIcon iconKey={service.iconKey} />
                                         <NorthEastIcon
-                                            className="text-zinc-600 group-hover:text-zinc-400 transition-transform duration-300 transform mt-1"
+                                            className="text-zinc-600 group-hover:text-zinc-400 transition-transform duration-200 transform mt-1"
                                             style={{ fontSize: 16 }}
                                         />
                                     </div>
@@ -166,14 +166,14 @@ export default function ServicePage() {
                         ))}
                     </div>
                 </section>
-                <TestimonialsSection testimonials={service_data.testimonials} data={service_data.testimonialSection} />
+                <TestimonialsSection contained testimonials={service_data.testimonials} data={service_data.testimonialSection} />
                 {/* CTA BANNER */}
                 <section className="w-full">
                     <motion.div
-                        initial={{ opacity: 0, y: reduced ? 0 : 30 }}
+                        initial={{ opacity: 0, y: reduced ? 0 : entranceOffset }}
                         whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true, amount: 0.2 }}
-                        transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+                        viewport={revealViewport}
+                        transition={entranceTransition}
                         className="
       relative w-full overflow-hidden
       rounded-3xl
@@ -300,7 +300,7 @@ export default function ServicePage() {
 
         shadow-[0_0_25px_rgba(249,10,31,0.35)]
 
-        transition-all duration-300
+        transition-all duration-200
 
       "
                         >
@@ -310,7 +310,7 @@ export default function ServicePage() {
                                 style={{ fontSize: 20 }}
                                 className="
           transition-transform
-          duration-300
+          duration-200
 
         "
                             />
@@ -344,7 +344,9 @@ export default function ServicePage() {
 
             <ProcessSection data={service_data.process} />
 
-            <ServiceFaq label={service_data.faqSection.label} faq_white_heading={service_data.faqSection.heading} faq_red_heading={service_data.faqSection.highlight} faqs={service_data.faqs} />
+            <div className="site-container mt-12 md:mt-20">
+                <ServiceFaq label={service_data.faqSection.label} faq_white_heading={service_data.faqSection.heading} faq_red_heading={service_data.faqSection.highlight} faqs={service_data.faqs} />
+            </div>
         </div>
     );
 }

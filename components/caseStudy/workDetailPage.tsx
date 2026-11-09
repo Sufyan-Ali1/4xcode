@@ -1,5 +1,7 @@
 "use client";
 
+import { revealViewport } from "@/utils/motion";
+
 import { spaceGrotesk, inter } from "@/lib/fonts";
 
 import React, { useMemo, useEffect, useState } from "react";
@@ -70,14 +72,13 @@ export default function WorkDetail({ study }: CaseStudyDetailProps) {
 
   const { containerVariants } = useMemo(() => {
     const container: Variants = {
-      hidden: { opacity: 0 },
+      hidden: { opacity: 1 },
       visible: {
         opacity: 1,
-        transition: { staggerChildren: reduced ? 0 : 0.06 },
       },
     };
     return { containerVariants: container };
-  }, [reduced]);
+  }, []);
 
   const scrollToSection = (sectionId: number) => {
     const target = document.getElementById(`section-${sectionId}`);
@@ -97,7 +98,7 @@ export default function WorkDetail({ study }: CaseStudyDetailProps) {
         <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#030303]" />
       </div>
 
-      <div className="relative z-10 mx-auto grid max-w-300 w-full grid-cols-1 gap-12 px-5 pt-36 lg:grid-cols-[1fr_350px]">
+      <div className="relative z-10 site-container grid grid-cols-1 gap-12 pt-36 lg:grid-cols-[1fr_350px]">
 
         {/* Left Content Column Dynamic Stream */}
         <main
@@ -108,9 +109,9 @@ export default function WorkDetail({ study }: CaseStudyDetailProps) {
               <Reveal>
                 <Link
                   href="/work"
-                  className="group inline-flex items-center gap-2.5 text-[11px] font-normal uppercase tracking-[2.64px] text-zinc-500 transition-colors duration-300 hover:text-white"
+                  className="group inline-flex items-center gap-2.5 text-[11px] font-normal uppercase tracking-[2.64px] text-zinc-500 transition-colors duration-200 hover:text-white"
                 >
-                  <KeyboardBackspaceIcon style={{ fontSize: 13 }} className="transform transition-transform duration-300 ease-out" />
+                  <KeyboardBackspaceIcon style={{ fontSize: 13 }} className="transform transition-transform duration-200 ease-out" />
                   <span>BACK TO CASE STUDIES</span>
                 </Link>
               </Reveal>
@@ -126,13 +127,13 @@ export default function WorkDetail({ study }: CaseStudyDetailProps) {
                 </div>
               </Reveal>
 
-              <Reveal delay={0.1}>
+              <Reveal>
                 <h1 className={`${spaceGrotesk.className} text-3xl font-bold tracking-tight leading-tight sm:text-4xl md:text-[44px]`}>
                   {study.title || study.heading}
                 </h1>
               </Reveal>
 
-              <Reveal delay={0.2}>
+              <Reveal>
                 <div className="mt-4 w-full overflow-hidden rounded-[22px] border border-white/5 bg-white/5 shadow-2xl backdrop-blur-xl">
                   <CaseStudyImage
                     src={heroImage}
@@ -148,7 +149,7 @@ export default function WorkDetail({ study }: CaseStudyDetailProps) {
               variants={containerVariants}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true, amount: 0.02 }}
+              viewport={revealViewport}
               className="space-y-16"
             >
               {sections.map((section) => (

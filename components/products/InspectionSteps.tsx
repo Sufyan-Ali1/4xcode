@@ -2,8 +2,8 @@ import garage from "@/data/GarageManagementPage.json";
 import React from "react";
 const InspectionSteps = ({ data = garage.inspections }: { data?: typeof garage.inspections }) => {
   return (
-    <section className="w-full bg-black px-4 py-12 md:py-16">
-      <div className="mx-auto w-full max-w-[1150px]">
+    <section className="w-full bg-black py-12 md:py-16">
+      <div className="mx-auto w-full ">
         {/* Heading */}
         <div className="text-center">
           <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#8b0f17]">

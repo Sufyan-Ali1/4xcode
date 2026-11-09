@@ -1,5 +1,7 @@
 "use client";
 
+import { interactionTransition } from "@/utils/motion";
+
 import defaults from "@/data/landing-defaults.json";
 import Link from "next/link";
 import Image from "next/image";
@@ -12,9 +14,9 @@ export default function CTASection({ data = defaults.cta }: { data?: typeof defa
   const reduced = useSafeReducedMotion();
 
   return (
-    <div className="w-full bg-black pt-12 pb-16 md:py-16 px-5 sm:px-8 md:px-12 flex items-center justify-center">
+    <div className="site-container pt-12 pb-16 md:py-16 flex items-center justify-center">
       {/* ✅ LAYOUT SYSTEM INTEGRATION WRAPPER */}
-      <section className="relative w-full max-w-300 min-h-125 md:min-h-145 rounded-3xl md:rounded-4xl overflow-hidden flex flex-col justify-center px-8 md:px-16 lg:px-24 py-20 border border-white/10 shadow-[0_0_30px_0_rgba(239,31,35,0.5)]">
+      <section className="relative w-full min-h-125 md:min-h-145 rounded-3xl md:rounded-4xl overflow-hidden flex flex-col justify-center px-8 md:px-16 lg:px-24 py-20 border border-white/10 shadow-[0_0_30px_0_rgba(239,31,35,0.5)]">
         <div className="absolute inset-0 z-0 pointer-events-none select-none">
           <Image
             src={data.image.src}
@@ -36,40 +38,40 @@ export default function CTASection({ data = defaults.cta }: { data?: typeof defa
               {data.label}
             </span>
           </Reveal>
-          <Reveal delay={0.1}>
+          <Reveal>
             <h2 className="text-4xl md:text-[56px] lg:text-[64px] font-bold tracking-tight text-white leading-[1.1] md:leading-[1.05]">
               {data.heading}{" "}<span className="bg-gradient-to-br from-[#ff8a8c] to-[#ef1f23] bg-clip-text text-transparent">{data.highlight}</span>
             </h2>
           </Reveal>
-          <Reveal delay={0.2}>
+          <Reveal>
             <p className="max-w-xl text-sm md:text-base lg:text-lg leading-relaxed text-zinc-400 font-light">
               {data.description}
             </p>
           </Reveal>
-          <Reveal delay={0.3}>
+          <Reveal>
             <div className="flex flex-wrap items-center gap-4 pt-4">
               <motion.div
-                whileHover={reduced ? {} : { scale: 1.02, y: -2 }}
-                transition={{ type: "spring", stiffness: 400, damping: 30 }}
+                whileHover={reduced ? {} : { scale: 1.02, y: -2, transition: interactionTransition }}
+                transition={interactionTransition}
               >
                 <Link
                   href={data.actions[0].href}
-                  className="group inline-flex h-13 items-center justify-center gap-2 rounded-[18px] bg-red-600 px-6 py-3.5 text-sm font-medium text-white shadow-[0_0_30px_0_rgba(239,31,35,0.5)] hover:opacity-90 transition-opacity duration-300"
+                  className="group inline-flex h-13 items-center justify-center gap-2 rounded-[18px] bg-red-600 px-6 py-3.5 text-sm font-medium text-white shadow-[0_0_30px_0_rgba(239,31,35,0.5)] hover:opacity-90 transition-opacity duration-200"
                 >
                   <span>{data.actions[0].label}</span>
                   <ArrowForwardIcon
                     style={{ fontSize: 16 }}
-                    className="transition-transform duration-300"
+                    className="transition-transform duration-200"
                   />
                 </Link>
               </motion.div>
               <motion.div
-                whileHover={reduced ? {} : { scale: 1.02, y: -2 }}
-                transition={{ type: "spring", stiffness: 400, damping: 30 }}
+                whileHover={reduced ? {} : { scale: 1.02, y: -2, transition: interactionTransition }}
+                transition={interactionTransition}
               >
                 <Link
                   href={data.actions[1].href}
-                  className="inline-flex h-13 items-center justify-center rounded-[18px] border border-white/10 bg-black/40 backdrop-blur-sm px-7 text-sm font-semibold text-white hover:border-white/20 hover:bg-white/5 transition-colors duration-300"
+                  className="inline-flex h-13 items-center justify-center rounded-[18px] border border-white/10 bg-black/40 backdrop-blur-sm px-7 text-sm font-semibold text-white hover:border-white/20 hover:bg-white/5 transition-colors duration-200"
                 >
                   {data.actions[1].label}
                 </Link>

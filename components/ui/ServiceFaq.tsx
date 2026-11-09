@@ -1,5 +1,7 @@
 "use client";
 
+import { entranceOffset, entranceTransition, interactionTransition, revealViewport } from "@/utils/motion";
+
 import { spaceGrotesk } from "@/lib/fonts";
 
 import defaults from "@/data/landing-defaults.json";
@@ -17,9 +19,10 @@ interface ServiceFaqProps {
   faqs: Faq[];
   label?: string;
   description?: string;
+  contentClassName?: string;
 }
 
-export default function ServiceFaq({ label = defaults.faqSection.label, faq_white_heading, faq_red_heading, description, faqs }: ServiceFaqProps) {
+export default function ServiceFaq({ label = defaults.faqSection.label, faq_white_heading, faq_red_heading, description, faqs, contentClassName = "w-full" }: ServiceFaqProps) {
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
 
   if (!faqs || faqs.length === 0) return null;
@@ -45,17 +48,17 @@ export default function ServiceFaq({ label = defaults.faqSection.label, faq_whit
         </div>
       </Reveal>
 
-      <div className="mx-auto max-w-3xl space-y-4 py-10 ">
+      <div className={`mx-auto space-y-4 py-10 ${contentClassName}`}>
         {faqs.map((faq, index) => {
           const isOpen = openFaqIndex === index;
           return (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 15 }}
+              initial={{ opacity: 0, y: entranceOffset }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-40px" }}
-              transition={{ duration: 0.5, delay: index * 0.05 }}
-              className="overflow-hidden rounded-xl border border-white/5 bg-white/2 transition-colors duration-300 hover:border-white/10"
+              viewport={revealViewport}
+              transition={entranceTransition}
+              className="overflow-hidden rounded-xl border border-white/5 bg-white/2 transition-colors duration-200 hover:border-white/10"
             >
               <button
                 onClick={() => toggleFaq(index)}
@@ -65,7 +68,7 @@ export default function ServiceFaq({ label = defaults.faqSection.label, faq_whit
                 <span className={`${spaceGrotesk.className} text-base md:text-lg tracking-wide`}>
                   {faq.q}
                 </span>
-                <span className="ml-4 shrink-0 text-zinc-500 transition-colors duration-300 group-hover:text-zinc-300">
+                <span className="ml-4 shrink-0 text-zinc-500 transition-colors duration-200 group-hover:text-zinc-300">
                   {isOpen ? (
                     <RemoveIcon style={{ fontSize: 18 }} className="text-[#ef1f23]" />
                   ) : (
@@ -81,18 +84,12 @@ export default function ServiceFaq({ label = defaults.faqSection.label, faq_whit
                     animate={{
                       height: "auto",
                       opacity: 1,
-                      transition: {
-                        height: { duration: 0.35, ease: [0.25, 1, 0.5, 1] },
-                        opacity: { duration: 0.25, delay: 0.05 }
-                      }
+                      transition: interactionTransition
                     }}
                     exit={{
                       height: 0,
                       opacity: 0,
-                      transition: {
-                        height: { duration: 0.3, ease: [0.25, 1, 0.5, 1] },
-                        opacity: { duration: 0.15 }
-                      }
+                      transition: interactionTransition
                     }}
                   >
                     <div className="border-t border-white/5 p-5 text-sm md:text-base leading-relaxed text-zinc-400 bg-white/[0.01]">

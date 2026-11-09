@@ -1,5 +1,11 @@
 "use client";
 
+import { entranceOffset, entranceTransition, revealViewport } from "@/utils/motion";
+
+import { METRIC_LABEL_CLASSES, METRIC_VALUE_CLASSES } from "@/components/ui/cardStyles";
+
+import { spaceGrotesk } from "@/lib/fonts";
+
 import defaults from "@/data/landing-defaults.json";
 import Image from "next/image";
 import { motion } from "framer-motion";
@@ -22,21 +28,23 @@ export interface AboutSectionData {
 
 interface AboutSectionProps {
   data: AboutSectionData;
+  contained?: boolean;
+  statsVariant?: "metric" | "text";
   label?: string;
 }
 
-export default function AboutSection({ data, label = data.label ?? defaults.about.label }: AboutSectionProps) {
+export default function AboutSection({ data, contained = false, statsVariant = "metric", label = data.label ?? defaults.about.label }: AboutSectionProps) {
   const reduced = useSafeReducedMotion();
 
   return (
     <section className="bg-black w-full text-white flex justify-center py-8 md:py-16">
-      <div className="w-full max-w-7xl px-5 sm:px-8 md:px-12 flex flex-col lg:flex-row items-center justify-between gap-10 lg:gap-16">
+      <div className={`${contained ? "w-full" : "site-container"} flex flex-col lg:flex-row items-center justify-between gap-10 lg:gap-16`}>
         {/* ── Left: Image ── */}
         <motion.div
-          initial={{ opacity: 0, y: reduced ? 0 : 40 }}
+          initial={{ opacity: 0, y: reduced ? 0 : entranceOffset }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+          viewport={revealViewport}
+          transition={entranceTransition}
           /* On mobile: fixed height so it doesn't eat the whole screen.
              On desktop: flex-1 with square aspect. */
           className="relative w-full lg:flex-1 isolate"
@@ -75,7 +83,7 @@ export default function AboutSection({ data, label = data.label ?? defaults.abou
             </span>
           </Reveal>
 
-          <Reveal delay={0.1}>
+          <Reveal>
             <h2 className="text-3xl md:text-[40px] font-bold leading-[1.15] text-white">
               {data.white_heading}{" "}
               <span className="bg-gradient-to-br from-[#ff8a8c] to-[#ef1f23] bg-clip-text text-transparent">
@@ -84,7 +92,7 @@ export default function AboutSection({ data, label = data.label ?? defaults.abou
             </h2>
           </Reveal>
 
-          <Reveal delay={0.2}>
+          <Reveal>
             <div className="space-y-3 text-gray-400 text-sm md:text-base leading-relaxed font-light">
               {data.paragraphs.map((paragraph, index) => (
                 <p key={index}>{paragraph}</p>
@@ -98,22 +106,16 @@ export default function AboutSection({ data, label = data.label ?? defaults.abou
               {data.stats.map((stat, index) => (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, y: reduced ? 0 : 30 }}
+                  initial={{ opacity: 0, y: reduced ? 0 : entranceOffset }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.2 }}
-                  transition={{
-                    type: "spring",
-                    stiffness: 400,
-                    damping: 30,
-                    delay: reduced ? 0 : index * 0.08,
-                  }}
-                  whileHover={reduced ? {} : { scale: 1.02, y: -3 }}
-                  className="group bg-[#0D0D0E] border border-white/4 hover:border-[rgba(249,10,31,0.25)] hover:bg-white/3 rounded-2xl p-4 md:p-5 flex flex-col justify-center transition-colors duration-300 cursor-default"
+                  viewport={revealViewport}
+                  transition={entranceTransition}
+                  className="group bg-[#0D0D0E] border border-white/4 hover:border-[rgba(249,10,31,0.25)] hover:bg-white/3 rounded-2xl p-4 md:p-5 flex flex-col justify-center transition-colors duration-200 cursor-default"
                 >
-                  <h4 className="text-xl md:text-2xl font-bold text-white">
+                  <h4 className={statsVariant === "text" ? `${spaceGrotesk.className} text-base font-bold tracking-wide text-white` : METRIC_VALUE_CLASSES}>
                     {stat.value}
                   </h4>
-                  <span className="text-gray-500 text-[10px] uppercase tracking-wider font-medium mt-1 group-hover:text-gray-400">
+                  <span className={statsVariant === "text" ? "mt-2 text-xs sm:text-sm font-normal leading-relaxed text-zinc-400" : METRIC_LABEL_CLASSES}>
                     {stat.label}
                   </span>
                 </motion.div>

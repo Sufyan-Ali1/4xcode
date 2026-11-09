@@ -47,7 +47,7 @@ export default function WorkGrid({ caseStudies, labels = works.grid }: WorkGridP
           <Link
             href={`/work/${project.slug}`}
             key={project.id}
-            className="flex flex-col h-full w-full transition-transform duration-300 ease-out hover:scale-[1.015]"
+            className="flex flex-col h-full w-full transition-transform duration-200 ease-out"
           >
             <CaseStudyCard
               project={project}
@@ -62,7 +62,7 @@ export default function WorkGrid({ caseStudies, labels = works.grid }: WorkGridP
         <div className="w-full flex justify-center pt-12">
           <button
             onClick={() => setVisibleCount(caseStudies.length)}
-            className="group inline-flex items-center justify-center px-8 py-4 md:py-3.5 bg-[#f90a1f] hover:bg-[#ef1f23] text-white text-[13px] font-semibold tracking-wide rounded-full shadow-[0_0_15px_0_rgba(249,10,31,0.45)] transition-all duration-300 select-none cursor-pointer gap-2 transform hover:-translate-y-0.5 hover:scale-[1.02] outline-none"
+            className="group inline-flex items-center justify-center px-8 py-4 md:py-3.5 bg-[#f90a1f] hover:bg-[#ef1f23] text-white text-[13px] font-semibold tracking-wide rounded-full shadow-[0_0_15px_0_rgba(249,10,31,0.45)] transition-all duration-200 select-none cursor-pointer gap-2 transform outline-none"
           >
             <span>{labels.loadMore}</span>
             <span className="text-[11px] font-bold tracking-normal transition-transform duration-200 group-hover:translate-x-0.5">

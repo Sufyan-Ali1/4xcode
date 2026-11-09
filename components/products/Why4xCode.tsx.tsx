@@ -45,10 +45,10 @@ const columns = [
 
 export default function Why4xCode() {
   return (
-    <section className="w-full mt-15 overflow-hidden bg-black px-4 pb-8 pt-2 text-white sm:px-5" style={{
+    <section className="w-full mt-15 overflow-hidden bg-black pb-8 pt-2 text-white" style={{
     fontFamily: '"SF Pro Display", -apple-system, BlinkMacSystemFont, sans-serif',
   }}>
-      <div className="mx-auto w-full max-w-[1150px]">
+      <div className="mx-auto w-full ">
         {/* Heading */}
         <div className="text-center">
           <p className="text-[13px] uppercase leading-5 tracking-[2px] text-[#ff1025]/50">

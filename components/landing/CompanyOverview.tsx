@@ -1,5 +1,7 @@
 "use client";
 
+import { entranceOffset, entranceTransition, revealViewport } from "@/utils/motion";
+
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { useSafeReducedMotion } from "../../utils/useSafeReducedMotion";
@@ -26,9 +28,9 @@ export default function CompanyOverview({ data }: AboutSectionProps) {
 
   return (
     <section className="bg-black w-full text-white flex justify-center py-8 md:py-16">
-      <div className="w-full max-w-7xl px-5 sm:px-8 md:px-12 flex flex-col lg:flex-row justify-between gap-10 lg:gap-16">
+      <div className="site-container flex flex-col lg:flex-row justify-between gap-10 lg:gap-16">
         {/* ── Left: Image ── */}
-       
+
        <div className="flex flex-col items-start gap-4 w-full lg:w-1/2">
 
           {data.label && <p className="text-[#f90a1f] text-[11px] uppercase tracking-[3.6px]">{data.label}</p>}
@@ -49,14 +51,14 @@ export default function CompanyOverview({ data }: AboutSectionProps) {
             </div>
           </div>
 
-        
+
         </div>
          {/* ── Right: Text + Stats ── */}
          <motion.div
-          initial={{ opacity: 0, y: reduced ? 0 : 40 }}
+          initial={{ opacity: 0, y: reduced ? 0 : entranceOffset }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+          viewport={revealViewport}
+          transition={entranceTransition}
           /* On mobile: fixed height so it doesn't eat the whole screen.
              On desktop: flex-1 with square aspect. */
           className="relative w-full lg:w-1/2 isolate"
@@ -74,10 +76,10 @@ export default function CompanyOverview({ data }: AboutSectionProps) {
             />
           </div>
 
-       
+
         </motion.div>
 
-       
+
       </div>
     </section>
   );

@@ -40,8 +40,8 @@ const TIMELINE = [
 
 export default function TimelineSection() {
   return (
-    <section className="relative w-full py-10 px-6 md:px-12 lg:px-24 z-10 overflow-hidden box-border">
-      <div className="mx-auto w-full max-w-7xl space-y-12 overflow-hidden">
+    <section className="relative w-full py-10 z-10 overflow-hidden box-border">
+      <div className="site-container space-y-12 overflow-hidden">
         {/* Section Header */}
         <div className="w-full text-left">
           <Reveal>
@@ -64,7 +64,7 @@ export default function TimelineSection() {
 
         {/* Timeline Dynamic Component Tree Wrapper */}
         {/* Timeline Dynamic Component Tree Wrapper */}
-        <div className="relative mx-auto w-full max-w-5xl box-border overflow-hidden before:absolute before:inset-y-0 before:left-4 before:w-[1px] before:bg-gradient-to-b before:from-zinc-900 before:via-[#EF1F23]/40 before:to-zinc-900 md:before:left-1/2 md:before:-translate-x-1/2">
+        <div className="relative mx-auto w-full box-border overflow-hidden before:absolute before:inset-y-0 before:left-4 before:w-[1px] before:bg-gradient-to-b before:from-zinc-900 before:via-[#EF1F23]/40 before:to-zinc-900 md:before:left-1/2 md:before:-translate-x-1/2">
           {TIMELINE.map((item, index) => (
             <div
               key={index}
@@ -75,8 +75,8 @@ export default function TimelineSection() {
               <div
                 className={`w-full min-w-0 pl-10 md:pl-0 md:w-[42%] md:max-w-[42%] shrink-0 box-border ${item.side === "left" ? "md:text-right" : "md:text-left"} text-left`}
               >
-                <Reveal delay={0.05 * index}>
-                  <div className="group flex w-full flex-col rounded-[18px] border border-white/5 bg-white/[0.01] p-5 transition-all duration-300 hover:border-[#EF1F23]/25 hover:bg-white/[0.02] will-change-transform box-border overflow-hidden">
+                <Reveal>
+                  <div className="group flex w-full flex-col rounded-[18px] border border-white/5 bg-white/[0.01] p-5 transition-all duration-200 hover:border-[#EF1F23]/25 hover:bg-white/[0.02] will-change-transform box-border overflow-hidden">
                     <span className="mb-0.5 block text-[10px] font-bold tracking-wider text-[#EF1F23]">
                       {item.year}
                     </span>

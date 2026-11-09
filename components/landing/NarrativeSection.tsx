@@ -1,5 +1,7 @@
 "use client";
 
+import { entranceOffset, entranceTransition, revealViewport } from "@/utils/motion";
+
 import React from "react";
 import { motion } from "framer-motion";
 import { useSafeReducedMotion } from "../../utils/useSafeReducedMotion";
@@ -23,22 +25,24 @@ export interface NarrativeSectionData {
 interface NarrativeSectionProps {
   spaceGroteskClassName: string;
   data: NarrativeSectionData;
+  contained?: boolean;
 }
 
 export default function NarrativeSection({
   spaceGroteskClassName,
   data,
+  contained = false,
 }: NarrativeSectionProps) {
   const reduced = useSafeReducedMotion();
 
   return (
-    <section className="relative w-full z-10 pe-5 ps-5 sm:ps-8 md:ps-12 mt-15 md:mt-16 text-white">
-      <div className="mx-auto w-full max-w-300 flex flex-col gap-8 md:gap-10">
+    <section className="relative w-full z-10 mt-15 md:mt-16 text-white">
+      <div className={`${contained ? "w-full" : "site-container"} flex flex-col gap-8 md:gap-10`}>
         <motion.h2
-          initial={{ opacity: 0, y: reduced ? 0 : 25 }}
+          initial={{ opacity: 0, y: reduced ? 0 : entranceOffset }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+          viewport={revealViewport}
+          transition={entranceTransition}
           className={`${spaceGroteskClassName} text-white text-2xl sm:text-3xl md:text-[40px] font-bold tracking-tight leading-[1.25] text-left max-w-5xl`}
         >
           {data.heading.white}
@@ -51,14 +55,10 @@ export default function NarrativeSection({
           {data.paragraphs.map((paragraph, index) => (
             <motion.p
               key={index}
-              initial={{ opacity: 0, y: reduced ? 0 : 20 }}
+              initial={{ opacity: 0, y: reduced ? 0 : entranceOffset }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.15 }}
-              transition={{
-                duration: 0.7,
-                delay: reduced ? 0 : index * 0.05,
-                ease: [0.22, 1, 0.36, 1],
-              }}
+              viewport={revealViewport}
+              transition={entranceTransition}
             >
               {paragraph.segments.map((segment, segmentIndex) =>
                 segment.highlight ? (

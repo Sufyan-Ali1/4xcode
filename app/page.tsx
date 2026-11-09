@@ -17,7 +17,7 @@ export default async function HomePage() {
   return (
     <div className="flex min-h-screen flex-col">
       <JsonLd data={homeSchema} />
-      <div className="flex flex-1 flex-col items-center justify-center">
+      <div className="flex flex-1 flex-col">
         <Hero data={home_data.hero} />
         <ServicesSection data={home_data.services} />
         <Suspense fallback={<CaseStudiesSkeleton />}>
@@ -28,7 +28,9 @@ export default async function HomePage() {
         <ProcessSection data={home_data.process} />
         <TestimonialsSection testimonials={home_data.testimonials} data={home_data.testimonialSection} />
         <ContactCtaSection data={home_data.cta} />
-        <ServiceFaq label={home_data.faqSection.label} faq_white_heading={home_data.faqSection.heading} faq_red_heading={home_data.faqSection.highlight} faqs={home_data.faqs} />
+        <div className="site-container">
+          <ServiceFaq contentClassName="w-full" label={home_data.faqSection.label} faq_white_heading={home_data.faqSection.heading} faq_red_heading={home_data.faqSection.highlight} faqs={home_data.faqs} />
+        </div>
       </div>
     </div>
   );

@@ -26,7 +26,7 @@ export default function ServiceWhyChoose({
 
   return (
     /* Added mx-auto, w-full, and bounded max-w to keep the section unified */
-    <div className="mt-15 mx-auto flex w-full flex flex-wrap flex-col items-center px-5 overflow-hidden">
+    <div className="mt-15 mx-auto flex w-full flex flex-wrap flex-col items-center overflow-hidden">
       <Reveal className="flex flex-wrap w-full">
         <h2 className={`${spaceGrotesk.className} text-left  text-3xl md:text-[40px] font-bold tracking-tight  text-white  w-full md:w-[90%] lg:w-[80%]`}>
           {whyTeamChooseWhiteHeading}{" "}

@@ -10,16 +10,15 @@ export default function CTA({data=defaults.productCta})
               <section className="w-full flex flex-wrap justify-center">
           <div
             className="
-            max-w-[1150px]
               relative w-full overflow-hidden
               rounded-3xl
               border border-[#f90a1f]/60
               bg-[#070707]
               py-4
-              px-6 
-              sm:px-10 
-              md:px-12 
-              lg:px-16 
+              px-6
+              sm:px-10
+              md:px-12
+              lg:px-16
               flex flex-col md:flex-row
               items-center justify-between
               text-center md:text-left
@@ -37,7 +36,7 @@ export default function CTA({data=defaults.productCta})
               "
               aria-hidden="true"
             />
-        
+
             <div
               className="
                 absolute -left-24 -bottom-32
@@ -49,7 +48,7 @@ export default function CTA({data=defaults.productCta})
               "
               aria-hidden="true"
             />
-        
+
             <div
               className="
                 absolute -top-16 -left-16
@@ -61,7 +60,7 @@ export default function CTA({data=defaults.productCta})
               "
               aria-hidden="true"
             />
-        
+
             <div className="relative z-10">
               <div className="flex items-center justify-center md:justify-start gap-3 ">
                 <span className="h-px w-6 bg-[#f90a1f]" />
@@ -93,8 +92,8 @@ export default function CTA({data=defaults.productCta})
                {data.heading_white}{" "}
                 <span className="text-[#f90a1f]">{data.heading_red}</span>
               </h2>
-        
-             
+
+
               <p className="
                 mt-3
                text-[#a7a3a4]
@@ -126,17 +125,17 @@ export default function CTA({data=defaults.productCta})
                 shrink-0
                 gap-3
                 shadow-[0_0_25px_rgba(249,10,31,0.35)]
-                transition-all duration-300      
+                transition-all duration-200
               "
             >
               <span>{data.button}</span>
-        
+
               <ArrowForwardIcon
                 style={{ fontSize: 20 }}
                 className="
                   transition-transform
-                  duration-300
-                  
+                  duration-200
+
                 "
               />
             </Link>

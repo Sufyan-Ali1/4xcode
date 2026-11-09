@@ -4,6 +4,7 @@ import Image from "next/image";
 import site from "@/data/site.json";
 
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import FacebookIcon from "@mui/icons-material/Facebook";
 export default function Footer({ data = site.footer, brand = site.brand }: { data?: typeof site.footer; brand?: typeof site.brand }) {
   return (
     <footer className="relative w-full bg-black pt-4 pb-2 text-white">
@@ -16,7 +17,7 @@ export default function Footer({ data = site.footer, brand = site.brand }: { dat
         }}
       />
 
-      <div className="mx-auto w-full max-w-300 px-5">
+      <div className="site-container">
 <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-10">
           {/* Logo */}
           <div className="flex flex-col lg:col-span-2">
@@ -94,7 +95,7 @@ export default function Footer({ data = site.footer, brand = site.brand }: { dat
               <li>
                 <Link
                   href={data.address.href}
-                  className="mt-2 block hover:text-white"
+                  className="mt-2 block text-white"
                   target="_blank"
                   prefetch={false}
                 >{data.address.label}
@@ -127,7 +128,9 @@ export default function Footer({ data = site.footer, brand = site.brand }: { dat
 
             {/* Social */}
             <div className="flex gap-4">
-              {data.socialLinks.map(({ href, label }) => (
+              {data.socialLinks.map(({ href, label, icon }) => {
+                const SocialIcon = icon === "facebook" ? FacebookIcon : LinkedInIcon;
+                return (
                 <Link
                   key={href}
                   href={href}
@@ -137,12 +140,13 @@ export default function Footer({ data = site.footer, brand = site.brand }: { dat
                   prefetch={false}
                   className="flex h-10 w-10 items-center justify-center rounded-[14px] border border-white/10 bg-[#0a0a0a] transition-colors hover:bg-[#1a1a1a]"
                 >
-                  <LinkedInIcon
+                  <SocialIcon
                     fontSize="small"
                     className="text-[#a7a3a4] transition-colors hover:text-white"
                   />
                 </Link>
-              ))}
+                );
+              })}
             </div>
           </div>
         </div>

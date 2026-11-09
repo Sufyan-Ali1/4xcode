@@ -14,7 +14,7 @@ const icons = { customer: DisplaySettingsOutlinedIcon, vehicle: LocalParkingOutl
 const GarageNeedsFeatures = ({ data = garage.features }: { data?: typeof garage.features }) => {
   return (
     <section className="w-full bg-black py-12 md:py-16">
-      <div className="mx-auto w-full max-w-[1150px] px-4">
+      <div className="mx-auto w-full">
         {/* Heading */}
         <div className="mb-10 text-center md:mb-14">
           <p className="text-[13px] uppercase leading-5 tracking-[2px] text-[#ff1025]/50">

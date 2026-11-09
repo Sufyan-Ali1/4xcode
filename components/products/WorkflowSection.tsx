@@ -54,8 +54,8 @@ const StepItem: React.FC<{ label: string; isLast: boolean }> = ({
 
 const WorkflowSection: React.FC = () => {
   return (
-    <section className="w-full bg-black px-4 py-10 md:py-14">
-      <div className="mx-auto w-full max-w-[1150px] rounded-[28px] bg-[#0d0d0d] px-4 py-10 md:px-8 md:py-12">
+    <section className="w-full bg-black py-10 md:py-14">
+      <div className="mx-auto w-full  rounded-[28px] bg-[#0d0d0d] px-4 py-10 md:px-8 md:py-12">
         {/* Heading */}
         <div className="text-center">
           <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#8b0f17]">

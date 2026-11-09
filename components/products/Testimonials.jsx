@@ -46,10 +46,10 @@ export default function TestimonialsSection({ data }) {
       `}</style>
 
       <section className="flex flex-wrap justify-center">
-        
-        <div className="relative mt-8 w-full max-w-[1200px] overflow-hidden px-3 flex flex-col items-center gap-8">
 
-       
+        <div className="relative mt-8 w-full  overflow-hidden flex flex-col items-center gap-8">
+
+
         <div className="pointer-events-none absolute inset-0 opacity-10" />
         <div className="relative z-10 flex flex-col items-center gap-3 text-center px-6">
           {data.eyebrow && (
@@ -61,7 +61,7 @@ export default function TestimonialsSection({ data }) {
           )}
 
           {(data.heading || data.highlight) && (
-            <Reveal delay={0.1}>
+            <Reveal>
               <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-white">
                 {data.heading}{" "}
                 {data.highlight && (
@@ -74,7 +74,7 @@ export default function TestimonialsSection({ data }) {
           )}
 
           {data.description && (
-            <Reveal delay={0.2}>
+            <Reveal>
               <p className="text-sm md:text-base text-zinc-400">
                 {data.description}
               </p>
@@ -101,7 +101,7 @@ export default function TestimonialsSection({ data }) {
                   {reviews.map((item, i) => (
                     <div
                       key={`${item.id || item.author}-${idx}-${i}`}
-                      className="group w-85 md:w-95 shrink-0 flex flex-col justify-between rounded-[22px] border border-white/10 bg-white/2 p-6 transition-colors duration-300 hover:border-[#f90a1f]/40 hover:bg-white/4 cursor-default h-full"
+                      className="group w-85 md:w-95 shrink-0 flex flex-col justify-between rounded-[22px] border border-white/10 bg-white/2 p-6 transition-colors duration-200 hover:border-[#f90a1f]/40 hover:bg-white/4 cursor-default h-full"
                     >
                       <div>
                         <div className="flex gap-1 mb-4">
@@ -117,7 +117,7 @@ export default function TestimonialsSection({ data }) {
                             </svg>
                           ))}
                         </div>
-                        <p className="text-sm md:text-base leading-relaxed text-zinc-400 group-hover:text-zinc-300 transition-colors duration-300 font-light mb-8">
+                        <p className="text-sm md:text-base leading-relaxed text-zinc-400 group-hover:text-zinc-300 transition-colors duration-200 font-light mb-8">
                           {item.quote}
                         </p>
                       </div>

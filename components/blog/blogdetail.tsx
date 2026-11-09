@@ -34,7 +34,7 @@ export default function BlogDetailPage({ blog }: { blog: Blog }) {
     <main className="min-h-screen bg-black text-white">
 
       {/* GLOBAL WIDTH CONTAINER */}
-      <div className="mx-auto w-full max-w-300 px-5 pt-24 pb-6">
+      <div className="site-container pt-24 pb-6">
 
         {/* BACK LINK */}
         <Link

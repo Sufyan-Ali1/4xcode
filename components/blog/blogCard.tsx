@@ -36,7 +36,7 @@ const BlogGrid: FC<Props> = ({ blogs }) => {
         <div className="flex justify-center pt-4">
           <button
             onClick={handleLoadMore}
-            className="rounded-xl border border-white/10 bg-white/5 px-6 py-3 text-sm font-semibold text-zinc-200 shadow-sm hover:bg-white/10 hover:text-white transition-all focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white/20"
+            className="cursor-pointer rounded-xl border border-white/10 bg-white/5 px-6 py-3 text-sm font-semibold text-zinc-200 shadow-sm hover:bg-white/10 hover:text-white transition-all focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white/20"
           >
             Load More Posts
           </button>

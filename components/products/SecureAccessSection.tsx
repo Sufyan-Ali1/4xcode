@@ -41,8 +41,8 @@ const SecureAccessSection: React.FC<SecureAccessSectionProps> = ({
   } = data;
 
   return (
-    <section className="w-full bg-black px-4 py-12 md:pb-10">
-      <div className="mx-auto w-full max-w-[1150px]">
+    <section className="w-full bg-black py-12 md:pb-10">
+      <div className="mx-auto w-full ">
         {/* Heading */}
         <div className="text-center">
           {label && <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#8b0f17]">{label}</p>}

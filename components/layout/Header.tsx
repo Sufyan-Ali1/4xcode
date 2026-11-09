@@ -18,9 +18,8 @@ export default function Header({ data = site.header, brand = site.brand }: { dat
 
   return (
     <header className="fixed top-0 left-0 right-0 z-100 flex w-full items-center justify-center py-4 backdrop-blur-md bg-black/50">
-      
-      {/* ✅ Reduced width here */}
-      <div className="mx-auto flex w-full max-w-300 items-center justify-between gap-6 rounded-[22px] px-5 py-3 lg:gap-20">
+
+      <div className="site-container flex items-center justify-between gap-6 rounded-[22px] py-3 lg:gap-20">
         <Link
           href={brand.href}
           aria-label={brand.homeLabel}

@@ -41,7 +41,7 @@ const BookCallForm = ({ data = garage.form }: { data?: typeof garage.form }) => 
 
   return (
     <section className="w-full mt-10 bg-black">
-      <div className="mx-auto w-full max-w-[1150px]">
+      <div className="mx-auto w-full ">
         <form
           onSubmit={handleSubmit}
           className="rounded-[12px] border border-[#1d1d1d] bg-[#1c1c1c] p-5 sm:p-6 md:px-5 md:py-5"

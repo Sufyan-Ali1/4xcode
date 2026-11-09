@@ -44,7 +44,7 @@ export default function OurVideosSection({ data }: OurVideosSectionProps) {
   const [playingId, setPlayingId] = useState<string | number | null>(null);
 
   return (
-    <section className="relative isolate w-full overflow-hidden bg-black py-10 px-6 lg:px-10 lg:py-15">
+    <section className="relative isolate w-full overflow-hidden bg-black py-10 lg:py-15">
       {/* Background decorations */}
       <div className="pointer-events-none absolute -left-40 -top-40 -z-10 h-[460px] w-[460px] rounded-full bg-red-700/25 blur-[140px]" />
       <div className="pointer-events-none absolute -bottom-48 -right-40 -z-10 h-[460px] w-[460px] rounded-full bg-red-700/25 blur-[150px]" />
@@ -140,7 +140,7 @@ export default function OurVideosSection({ data }: OurVideosSectionProps) {
       </div>
 
       {/* Content */}
-      <div className="relative mx-auto w-full max-w-[1150px]">
+      <div className="relative w-full">
         {/* Heading */}
         <div className="mx-auto mb-10 flex max-w-2xl flex-col items-center text-center sm:mb-14">
           <div className="mb-5 flex w-full items-center justify-center gap-3 sm:gap-4">
@@ -178,7 +178,7 @@ export default function OurVideosSection({ data }: OurVideosSectionProps) {
           {videos.map((video) => (
             <article
               key={video.id}
-              className="group relative min-w-0 overflow-hidden rounded-2xl border border-red-600/70 bg-gradient-to-b from-[#0d0d0d] to-black shadow-[0_0_22px_rgba(220,38,38,0.18),inset_0_-30px_40px_-30px_rgba(239,68,68,0.45)] transition duration-300 hover:-translate-y-1 hover:border-red-500 hover:shadow-[0_0_36px_rgba(239,68,68,0.4),inset_0_-30px_40px_-30px_rgba(239,68,68,0.6)]"
+              className="group relative min-w-0 overflow-hidden rounded-2xl border border-red-600/70 bg-gradient-to-b from-[#0d0d0d] to-black shadow-[0_0_22px_rgba(220,38,38,0.18),inset_0_-30px_40px_-30px_rgba(239,68,68,0.45)] transition duration-200 hover:border-red-500 hover:shadow-[0_0_36px_rgba(239,68,68,0.4),inset_0_-30px_40px_-30px_rgba(239,68,68,0.6)]"
             >
               {/* Thumbnail / inline player */}
               {playingId === video.id && video.videoUrl ? (
@@ -205,7 +205,7 @@ export default function OurVideosSection({ data }: OurVideosSectionProps) {
                     <img
                       src={video.thumbnail}
                       alt={video.title}
-                      className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                      className="h-full w-full object-cover transition duration-200 group-hover:scale-105"
                     />
                   ) : (
                     <div className="h-full w-full bg-[radial-gradient(circle_at_30%_20%,rgba(239,68,68,0.45),transparent_55%),linear-gradient(135deg,#1a1a1a,#050505)]" />

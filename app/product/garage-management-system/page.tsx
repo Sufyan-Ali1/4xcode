@@ -22,9 +22,9 @@ export const metadata = pageMetadata.garage;
 export default function Home() {
   const data=products_data["garage-management-system"]
   return (
-    <main className=" bg-black mt-15 text-white flex flex-wrap justify-center mx-auto px-5 sm:px-8 lg:px-10">
+    <main className=" bg-black mt-15 text-white flex flex-wrap justify-center site-container">
       <JsonLd data={garageSchema} />
-      <section className="relative w-[1150px] flex flex-wrap items-start overflow-hidden bg-black py-10 sm:py-12 lg:min-h-[300px] lg:items-center lg:py-16">
+      <section className="relative w-full flex flex-wrap items-start overflow-hidden bg-black py-10 sm:py-12 lg:min-h-[300px] lg:items-center lg:py-16">
       <div className="w-full lg:w-1/2">      
 <div className="inline-flex h-7 gap-2 rounded-full bg-black px-3.5 shadow-[0_0_18px_rgba(255,91,99,0.18)] ">
   <span className="relative flex shrink-0 items-center justify-center rounded-full bg-[#ff5b63]/15">
@@ -48,7 +48,7 @@ export default function Home() {
             {garage.hero.description}
           </p>
         </div>
-     
+
       <div className="w-full lg:w-1/2 lg:pl-5">
       <BookCallForm data={garage.form} />
       </div>
@@ -86,7 +86,7 @@ export default function Home() {
        <div className="w-full ">
       <CTA data={garage.closingCta} />
       </div>
-      
+
        <div className="w-full ">
       <BlogsCarousel />
       </div>
@@ -96,7 +96,7 @@ export default function Home() {
        <div className="w-full ">
       <ServiceFaq label={garage.faqSection.label} faq_white_heading={garage.faqSection.heading} faq_red_heading={garage.faqSection.highlight} description={garage.faqSection.description} faqs={garage.faqs} />
 </div>
-      
+
     </main>
   );
 }

@@ -198,14 +198,21 @@ export default function Hero({ data = home.hero }: { data?: typeof home.hero }) 
         />
       ))}
 
-      <div className="relative px-5 flex w-full flex-col max-w-[1150px] items-center justify-between gap-14  min-[1120px]:flex-row min-[1120px]:items-start min-[1120px]:gap-[14px]">
+      <div className="site-container relative flex flex-col items-center justify-between gap-14  min-[1120px]:flex-row min-[1120px]:items-start min-[1120px]:gap-[14px]">
 
         <div className="min-w-0 w-full min-[1120px]:w-[600px]">
           <div
-            className={`${mono.className} inline-flex px-3 items-center h-[25px] rounded-full bg-[#0b0405] border border-white/[0.07] shadow-[0_4px_14px_rgba(0,0,0,0.35)] text-[8.3px] font-bold tracking-[0.14em] text-[#f4eaea] whitespace-nowrap max-sm:whitespace-normal max-sm:flex-wrap max-sm:h-auto max-sm:py-2 max-sm:rounded-2xl max-sm:text-[9px]`}
+            className={`${mono.className} inline-flex gap-x-3 gap-y-2 px-3 items-center h-[25px] rounded-full bg-[#0b0405] border border-white/[0.07] shadow-[0_4px_14px_rgba(0,0,0,0.35)] text-[8.3px] font-bold tracking-[0.14em] text-[#f4eaea] whitespace-nowrap max-sm:whitespace-normal max-sm:flex-wrap max-sm:h-auto max-sm:py-2 max-sm:rounded-2xl max-sm:text-[9px]`}
           >
-            <span className="w-[7.5px] h-[7.5px] rounded-full bg-[#ee1c2e] mr-[7.5px] shadow-[0_0_6px_rgba(238,28,46,0.9)]" />
-            {data.eyebrow.map((text, index) => <span key={text}>{index > 0 && <span className="mx-[7px] font-normal text-[#e32134]">{data.separator}</span>}{text}</span>)}
+            {data.eyebrow.map((text) => (
+              <span key={text} className="inline-flex items-center gap-2 whitespace-nowrap">
+                <span
+                  aria-hidden="true"
+                  className="size-2 shrink-0 rounded-full bg-[#ee1c2e] shadow-[0_0_6px_rgba(238,28,46,0.9)]"
+                />
+                {text}
+              </span>
+            ))}
           </div>
           <h1 className="mt-[25px] font-bold text-white tracking-[-0.052em] text-[38px] leading-[37px] sm:text-[54px] sm:leading-[52.5px]">
             {data.heading.map((line, index) => <span key={line} className={`block mt-1 ${index === data.heading.length - 1 ? "text-[#e8203a]" : ""}`}>{line}</span>)}
@@ -264,7 +271,7 @@ export default function Hero({ data = home.hero }: { data?: typeof home.hero }) 
               filter: "brightness(0.8)",
   }} />
           {data.chips.map((item) => (
-            <div key={item.label} className={chip} style={{ left: item.left, top: item.top }}>
+            <div key={item.label} className={chip} style={{ left: item.left, right: item.right, top: item.top }}>
               <span className="inline-flex text-[#f0283a]" aria-hidden="true">
                 {item.icon === "gear" ? <IconGear /> : item.icon === "globe" ? <IconGlobe /> : item.icon === "cloud" ? <IconCloud /> : item.icon === "chart" ? <IconChart /> : item.icon === "code" ? <span>&lt;/&gt;</span> : <span className="w-[5px] h-[5px] rounded-full bg-[#f0222f]" />}
               </span>

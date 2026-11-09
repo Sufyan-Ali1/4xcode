@@ -24,10 +24,10 @@ export default async function WorkPage() {
         <div className="absolute inset-0 bg-linear-to-b from-transparent to-[#030303]" />
       </div>
 
-      <div className="mx-auto w-full max-w-300 px-5  relative z-10 flex flex-col gap-y-10">
+      <div className="site-container  relative z-10 flex flex-col gap-y-10">
         <WorkHeader data={works_data.hero} spaceGroteskClass={spaceGrotesk.className} />
 
-        <Suspense fallback={<CaseStudiesSkeleton />}>
+        <Suspense fallback={<CaseStudiesSkeleton contained />}>
           <CaseStudiesDataLoader schema={worksSchema} />
 
         </Suspense>
@@ -35,7 +35,9 @@ export default async function WorkPage() {
 
       <NarrativeSection data={works_data.narrative} spaceGroteskClassName={spaceGrotesk.className} />
       <ContactCtaSection data={works_data.cta} />
+      <div className="site-container">
       <ServiceFaq label={works_data.faqSection.label} faq_white_heading={works_data.faqSection.heading} faq_red_heading={works_data.faqSection.highlight} description={works_data.faqSection.description} faqs={works_data.faqs} />
+      </div>
     </div>
   );
 }

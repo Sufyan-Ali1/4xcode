@@ -1,5 +1,7 @@
 "use client";
 
+import { entranceOffset, entranceTransition, interactionTransition, revealViewport } from "@/utils/motion";
+
 import React from "react";
 import home from "@/data/home.json";
 import { motion } from "framer-motion";
@@ -28,39 +30,34 @@ export default function ServicesSection({ data = home.services }: { data?: typeo
   const reduced = useSafeReducedMotion();
 
   return (
-    <section id={data.id} className="relative w-full overflow-hidden bg-black py-15 px-6 md:px-12 lg:px-24">
+    <section id={data.id} className="relative w-full overflow-hidden bg-black py-15">
       <div className="absolute inset-0 opacity-30 pointer-events-none " />
-      <div className="relative max-w-7xl mx-auto flex flex-col items-center gap-16">
+      <div className="site-container relative flex flex-col items-center gap-16">
         <div className="flex flex-col items-center gap-3.75 text-center max-w-2xl pt-1.25">
-          <Reveal delay={0}>
+          <Reveal>
             <p className="text-[#f90a1f] text-[12px] font-normal uppercase tracking-[3.6px] leading-4">
               {data.label}
             </p>
           </Reveal>
 
-          <Reveal delay={0.1}>
+          <Reveal>
             <h2 className="text-white font-bold text-[32px] md:text-[48px] text-center tracking-[-1.2px] leading-[1.1]">
               {data.heading}{" "}<span className="bg-clip-text text-transparent bg-linear-to-br from-[#ff8a8c] to-[#ef1f23]">{data.highlight}</span>
             </h2>
           </Reveal>
 
-          <Reveal delay={0.2}><p className="text-[#a7a3a4] text-base leading-6">{data.description}</p></Reveal>
+          <Reveal><p className="text-[#a7a3a4] text-base leading-6">{data.description}</p></Reveal>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 w-full">
-          {data.items.map((service, index) => (
+          {data.items.map((service) => (
             <motion.div
               key={service.title}
-              initial={{ opacity: 0, y: reduced ? 0 : 40 }}
+              initial={{ opacity: 0, y: reduced ? 0 : entranceOffset }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{
-                duration: 0.8,
-                delay: 0.1 * index,
-                ease: [0.22, 1, 0.36, 1],
-              }}
-              whileHover={{ scale: 1.02, y: -4 }}
-              className="group flex flex-col rounded-[22px] overflow-hidden border border-transparent hover:border-[rgba(249,10,31,0.4)] transition-colors duration-300 bg-white/4 will-change-transform"
+              viewport={revealViewport}
+              transition={entranceTransition}
+              className="group flex flex-col rounded-[22px] overflow-hidden border border-transparent hover:border-[rgba(249,10,31,0.4)] transition-colors duration-200 bg-white/4 will-change-transform"
             >
               <Link
                 href={service.href}
@@ -78,7 +75,7 @@ export default function ServicesSection({ data = home.services }: { data?: typeo
                   {service.description}
                 </p>
 
-                <div className="flex items-center gap-2 pt-[16.6px] opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-[#f90a1f] text-[14px] leading-5 font-normal">
+                <div className="flex items-center gap-2 pt-[16.6px] opacity-0 group-hover:opacity-100 transition-opacity duration-200 text-[#f90a1f] text-[14px] leading-5 font-normal">
                   <span>{data.cardAction}</span>
                   <ArrowForwardIcon style={{ fontSize: 16 }} />
                 </div>
@@ -87,11 +84,11 @@ export default function ServicesSection({ data = home.services }: { data?: typeo
           ))}
         </div>
 
-        <Reveal delay={0.4} className="w-full flex justify-center">
+        <Reveal className="w-full flex justify-center">
           <motion.a
             href={data.action.href}
-            whileHover={{ scale: 1.02 }}
-            className="flex items-center justify-center h-13.25 w-full max-w-140 rounded-[55px] border-2 border-[#f90a1f] bg-black/30 hover:bg-[rgba(249,10,31,0.08)] transition-colors duration-300 cursor-pointer px-13.25 py-5 text-white font-bold text-center capitalize whitespace-nowrap text-[20px]"
+            whileHover={{ scale: 1.02, transition: interactionTransition }}
+            className="flex items-center justify-center h-13.25 w-full max-w-140 rounded-[55px] border-2 border-[#f90a1f] bg-black/30 hover:bg-[rgba(249,10,31,0.08)] transition-colors duration-200 cursor-pointer px-13.25 py-5 text-white font-bold text-center capitalize whitespace-nowrap text-[20px]"
           >
             {data.action.label}
           </motion.a>

@@ -172,10 +172,10 @@ export default function GarageChallenges({
   logo = "/assets/4xcode-logo.webp",
 }) {
   return (
-    <section className="w-full overflow-hidden bg-black px-4 py-8 text-white sm:py-10 lg:py-8 flex flex-wrap justify-center" style={{
+    <section className="w-full overflow-hidden bg-black py-8 text-white sm:py-10 lg:py-8 flex flex-wrap justify-center" style={{
     fontFamily: '"SF Pro Display", -apple-system, BlinkMacSystemFont, sans-serif',
   }}>
-      <div className="w-full max-w-[1150px] ">
+      <div className="w-full">
         {/* Heading */}
         <header className="text-center">
           <p className="text-[13px]  tracking-[2px] text-[#ed1828]/50">

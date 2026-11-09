@@ -12,7 +12,7 @@ export default async function ProductDetailPage() {
   const product_data = data["auto-recovery-system"];
 
   return (
-    <div className="px-5 md:px-9 lg:px-13 flex flex-wrap justify-center">
+    <div className="site-container flex flex-wrap justify-center">
     <div className="w-full flex flex-wrap justify-center">
       <HeroSection product={product_data.hero_data} />
      </div>
@@ -34,13 +34,11 @@ export default async function ProductDetailPage() {
       <div className="w-full flex flex-wrap justify-center">
       <PurposeSection purposeData={product_data.purpose_section} />
       </div>
-      
-      
+
         <div className="w-full flex flex-wrap justify-center">
       <Product_gallery data={product_data.product_gallery} />
       </div>
-      
-      
+
     </div>
   );
 }

@@ -1,20 +1,101 @@
 {
-    "faqs": [
-  {
-    "q": "works How long does a typical project take to complete?",
-    "a": "Timelines depend on scope and complexity. A small project usually takes 2 to 4 weeks, while a larger custom solution can take 8 to 12 weeks."
+  "hero": {
+    "label": "Work",
+    "heading": "Software Development Case Studies",
+    "highlight": "That Deliver Results",
+    "description": "Explore 4XCODE portfolio of completed digital projects, from custom software and business automation to websites, digital transformation, and online growth campaigns. Each project began with a real business challenge, whether winning more customers, simplifying daily administration, or modernising outdated processes. Our team combines thoughtful engineering, modern frameworks, and practical problem-solving to build solutions that fit how our clients actually work and help them operate more efficiently."
   },
-  {
-    "q": "What is the process once I book a free demo?",
-    "a": "After you book a demo, our team reviews your requirements, walks you through a live demonstration, and then shares a clear proposal with scope, timeline, and cost."
+  "grid": {
+    "singular": "Featured Project",
+    "plural": "Featured Projects",
+    "loadMore": "Load More Projects"
   },
-  {
-    "q": "Will I get regular updates during development?",
-    "a": "Yes. We follow an agile workflow with weekly progress updates and a dedicated point of contact."
+  "narrative": {
+    "heading": {
+      "white": "How Strong Software Architecture Creates",
+      "red": "Faster, Scalable, and Reliable Products"
+    },
+    "paragraphs": [
+      {
+        "segments": [
+          {
+            "text": "Every project in our software development portfolio starts with understanding the business behind it. Before writing code, we map workflows, users, data, and growth plans, then design a software architecture that supports them. Decisions about databases, application structure, and integrations are made early, because a well-planned foundation keeps systems reliable, easier to extend, and far less costly to maintain as requirements evolve."
+          }
+        ]
+      },
+      {
+        "segments": [
+          {
+            "text": "On the frontend, we build responsive interfaces with React and Vue.js, while our backend development relies on Python, Django, and PostgreSQL for stable, secure data handling. Well-designed REST APIs connect each layer cleanly. We follow consistent coding standards, peer reviews, and clear documentation, creating maintainable code that new features can build on without breaking existing functionality."
+          }
+        ]
+      },
+      {
+        "segments": [
+          {
+            "text": "Performance directly affects how users experience a digital product. We optimise database queries, use caching where it helps, and reduce unnecessary front-end loading so pages and dashboards respond quickly. Content delivery through Cloudflare and efficient asset handling support faster load times. These decisions improve usability, support search visibility, and keep applications responsive as traffic and data volumes grow."
+          }
+        ]
+      },
+      {
+        "segments": [
+          {
+            "text": "Our AI development case studies show how intelligent systems solve everyday business problems. We build AI agents that handle repetitive tasks, LLM integrations that power assistants and chatbots, and RAG pipelines that let teams query their own documents and knowledge bases accurately. The focus is always practical: automating workflows, reducing manual effort, and helping teams make better decisions with their data."
+          }
+        ]
+      },
+      {
+        "segments": [
+          {
+            "text": "Reliable software needs reliable infrastructure. We deploy applications on cloud platforms such as AWS and Vercel, using CI/CD pipelines to release updates safely and consistently. Monitoring tools help us spot issues early, while regular maintenance keeps systems secure, up to date, and ready to scale as each business grows."
+          }
+        ],
+        "note": "Python · Django · React · AWS · AI"
+      }
+    ]
   },
-  {
-    "q": "Do you provide support after the project is delivered?",
-    "a": "Yes. We offer post-launch support and maintenance plans including bug fixes, updates, and performance monitoring."
-  }
-]
+  "cta": {
+    "label": "Start Your Project",
+    "heading": "Have a Software Idea",
+    "highlight": "Worth Building?",
+    "description": "Tell us about your goals, challenges, and requirements. Our team will review your project, discuss the best technical approach with you, and prepare a clear proposal outlining the scope and next steps.",
+    "image": {
+      "src": "/assets/CTASection.webp",
+      "alt": "CTA Background Graphic"
+    },
+    "actions": [
+      {
+        "label": "Discuss Your Project",
+        "href": "/contact"
+      },
+      {
+        "label": "View Our Services",
+        "href": "/service"
+      }
+    ]
+  },
+  "faqSection": {
+    "label": "FAQs",
+    "heading": "Questions About",
+    "highlight": "Working With Us",
+    "description": "Here are answers to common questions about how we plan, build, and support software development projects for our clients."
+  },
+  "faqs": [
+    {
+      "q": "How long does a typical software development project take?",
+      "a": "Every timeline depends on the project's scope, technical complexity, required features, and integrations. Smaller projects can be completed within a few weeks, while larger custom platforms take longer. We agree a realistic schedule during planning, before development begins."
+    },
+    {
+      "q": "How can my business start a software development project?",
+      "a": "Start by booking a call with our team. We discuss your goals, current challenges, and project requirements, then recommend a suitable technical approach. You will receive a proposal covering scope, timeline, and costs before any work begins."
+    },
+    {
+      "q": "How will I receive updates during the development process?",
+      "a": "We follow an agile development approach, delivering work in stages and sharing progress regularly. You can review completed features, give feedback, and stay informed about upcoming tasks, so there are no surprises when your project reaches launch."
+    },
+    {
+      "q": "Do you provide support and maintenance after project delivery?",
+      "a": "Yes. After launch, we can help with bug fixes, troubleshooting, performance improvements, security updates, and new features. Support arrangements are agreed based on your project's needs, ensuring your software stays stable and continues to grow with your business."
+    }
+  ]
 }

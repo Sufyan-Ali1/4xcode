@@ -1,19 +1,14 @@
 "use client";
 
-import React from "react";
-import { motion } from "framer-motion";
-import { useSafeReducedMotion } from "../../utils/useSafeReducedMotion";
-import { Space_Grotesk } from "next/font/google";
-import { Reveal } from "../../utils/AnimationReveal";
+import { spaceGrotesk } from "@/lib/fonts";
 
-const spaceGrotesk = Space_Grotesk({
-  subsets: ["latin"],
-  weight: ["500", "700"],
-});
+import React from "react";
+import { Reveal } from "../../utils/AnimationReveal";
 
 type WhyTeamChoose = {
   description: string;
   closing_tag:string;
+  items?: { title: string; description: string }[];
 
 };
 
@@ -28,9 +23,6 @@ export default function ServiceWhyChoose({
   whyTeamChooseRedHeading,
   whyTeamsChoose,
 }: ServiceWhyChooseProps) {
-  const reduced = useSafeReducedMotion();
-
-
 
   return (
     /* Added mx-auto, w-full, and bounded max-w to keep the section unified */
@@ -45,14 +37,21 @@ export default function ServiceWhyChoose({
       </Reveal>
 
       {/* Premium Dynamic Grid Container */}
-     <div className="w-full mt-5 flex flex-wrap">
-        {whyTeamsChoose.description}
-     </div>
-        <div className="w-full mt-5 italic flex flex-wrap">
-        {whyTeamsChoose.closing_tag}
-     </div>
+      {whyTeamsChoose.items?.length ? (
+        <div className="mt-6 grid w-full gap-5 md:grid-cols-3">
+          {whyTeamsChoose.items.map((item) => (
+            <div key={item.title} className="rounded-[22px] border border-white/5 bg-white/2 p-6">
+              <h3 className="text-base font-bold text-white">{item.title}</h3>
+              <p className="mt-3 text-sm leading-relaxed text-zinc-400">{item.description}</p>
+            </div>
+          ))}
+        </div>
+      ) : <>
+        <div className="w-full mt-5 flex flex-wrap">{whyTeamsChoose.description}</div>
+        <div className="w-full mt-5 italic flex flex-wrap">{whyTeamsChoose.closing_tag}</div>
+      </>}
       <div className="w-full flex flex-wrap">
-    
+
      </div>
     </div>
   );

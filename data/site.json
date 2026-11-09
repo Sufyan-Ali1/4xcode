@@ -1,0 +1,97 @@
+{
+  "brand": {
+    "href": "/",
+    "homeLabel": "4xcode home",
+    "logo": "/assets/logo1.webp",
+    "logoAlt": "4xcode logo"
+  },
+  "header": {
+    "navigation": [
+      {
+        "label": "Home",
+        "href": "/"
+      },
+      {
+        "label": "Services",
+        "href": "/service"
+      },
+      {
+        "label": "Work",
+        "href": "/work"
+      },
+      {
+        "label": "About",
+        "href": "/about"
+      },
+      {
+        "label": "Blog",
+        "href": "/blog"
+      },
+      {
+        "label": "Contact",
+        "href": "/contact"
+      }
+    ],
+    "navigationLabel": "Main navigation",
+    "action": {
+      "label": "Start Project",
+      "href": "/contact"
+    },
+    "closeMenuLabel": "Close menu",
+    "openMenuLabel": "Open menu"
+  },
+  "footer": {
+    "description": "Premium engineering studio building the next generation of software, AI and SaaS.",
+    "studioLabel": "Studio",
+    "studioLinks": [
+      {
+        "label": "Service",
+        "href": "/service"
+      },
+      {
+        "label": "Work",
+        "href": "/work"
+      },
+      {
+        "label": "Contact",
+        "href": "/contact"
+      },
+      {
+        "label": "About",
+        "href": "/about"
+      },
+      {
+        "label": "Blog",
+        "href": "/blog"
+      }
+    ],
+    "productsLabel": "Products",
+    "products": [
+      {
+        "label": "Garage Management System",
+        "href": "/product/garage-management-system"
+      }
+    ],
+    "contactLabel": "Contact",
+    "email": {
+      "label": "info@4xcode.com",
+      "href": "mailto:hello@4xcode.com"
+    },
+    "address": {
+      "label": "01 Padnal Court, Romford RM6 5HR, United Kingdom",
+      "href": "https://maps.app.goo.gl/qVoMxWqZqKPeZm1s8"
+    },
+    "hours": "Mon - Fri",
+    "newsletterLabel": "Newsletter",
+    "emailPlaceholder": "you@company.com",
+    "subscribeLabel": "Subscribe",
+    "socialLinks": [
+      {
+        "label": "LinkedIn",
+        "icon": "linkedin",
+        "href": "https://www.linkedin.com/company/4xcode-software/"
+      }
+    ],
+    "copyright": "\u00a9 2026 4XCODE. Engineering the future with code."
+  }
+}

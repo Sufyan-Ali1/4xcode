@@ -1,4 +1,5 @@
 "use client"
+import garage from "@/data/GarageManagementPage.json";
 import React, { useState } from "react";
 
 interface BookCallFormData {
@@ -22,7 +23,7 @@ const labelClass = "mb-2 block text-[11px] font-semibold text-white";
 const inputClass =
   "h-[38px] w-full rounded-[6px] border border-[#8f8f8f] bg-[#323235] px-3 text-[12px] text-white placeholder:text-[#8a8a8a] outline-none transition focus:border-[#e8141c]";
 
-const BookCallForm: React.FC = () => {
+const BookCallForm = ({ data = garage.form }: { data?: typeof garage.form }) => {
   const [formData, setFormData] = useState<BookCallFormData>(INITIAL_DATA);
 
   const handleChange = (
@@ -47,17 +48,17 @@ const BookCallForm: React.FC = () => {
         >
           {/* Heading */}
           <h2 className="text-[20px] font-semibold leading-tight text-white">
-            Book a 30-Minute Call
+            {data.heading}
           </h2>
           <p className="mt-2 text-[11px] text-[#e5e5e5]">
-            Fill out the details below to schedule a consultation.
+            {data.description}
           </p>
 
           {/* Fields */}
           <div className="mt-6 grid grid-cols-1 gap-x-[10px] gap-y-5 md:grid-cols-2">
             <div>
               <label htmlFor="name" className={labelClass}>
-                Name
+                {data.fields.name.label}
               </label>
               <input
                 id="name"
@@ -65,14 +66,14 @@ const BookCallForm: React.FC = () => {
                 type="text"
                 value={formData.name}
                 onChange={handleChange}
-                placeholder="Enter your name"
+                placeholder={data.fields.name.placeholder}
                 className={inputClass}
               />
             </div>
 
             <div>
               <label htmlFor="email" className={labelClass}>
-                Email
+                {data.fields.email.label}
               </label>
               <input
                 id="email"
@@ -80,14 +81,14 @@ const BookCallForm: React.FC = () => {
                 type="email"
                 value={formData.email}
                 onChange={handleChange}
-                placeholder="Enter your email"
+                placeholder={data.fields.email.placeholder}
                 className={inputClass}
               />
             </div>
 
             <div>
               <label htmlFor="phone" className={labelClass}>
-                Phone
+                {data.fields.phone.label}
               </label>
               <input
                 id="phone"
@@ -95,14 +96,14 @@ const BookCallForm: React.FC = () => {
                 type="tel"
                 value={formData.phone}
                 onChange={handleChange}
-                placeholder="Enter your phone number"
+                placeholder={data.fields.phone.placeholder}
                 className={inputClass}
               />
             </div>
 
             <div>
               <label htmlFor="liveDate" className={labelClass}>
-                When do you need it live?
+                {data.fields.liveDate.label}
               </label>
               <input
                 id="liveDate"
@@ -114,21 +115,21 @@ const BookCallForm: React.FC = () => {
                 onBlur={(e) => {
                   if (!e.target.value) e.target.type = "text";
                 }}
-                placeholder="Select a date"
+                placeholder={data.fields.liveDate.placeholder}
                 className={`${inputClass} [color-scheme:dark]`}
               />
             </div>
 
             <div className="md:col-span-2">
               <label htmlFor="message" className={labelClass}>
-                Anything that would make the call useful?
+                {data.fields.message.label}
               </label>
               <textarea
                 id="message"
                 name="message"
                 value={formData.message}
                 onChange={handleChange}
-                placeholder="Tell us about your project..."
+                placeholder={data.fields.message.placeholder}
                 className="h-[80px] w-full resize-none rounded-[6px] border border-[#8f8f8f] bg-[#323235] px-3 py-2 text-[12px] text-white placeholder:text-[#8a8a8a] outline-none transition focus:border-[#e8141c]"
               />
             </div>
@@ -140,7 +141,7 @@ const BookCallForm: React.FC = () => {
               type="submit"
               className="h-[40px] w-full rounded-[6px] bg-[#9b0f1a] text-[13px] font-medium text-white transition hover:bg-[#b3121f] md:w-[200px]"
             >
-              Book a 30-Minute Call
+              {data.button}
             </button>
           </div>
         </form>

@@ -1,0 +1,306 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.4xcode.com/#organization",
+      "name": "4xCode",
+      "url": "https://www.4xcode.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "@id": "https://www.4xcode.com/#logo",
+        "url": "https://www.4xcode.com/assets/logo1.webp",
+        "contentUrl": "https://www.4xcode.com/assets/logo1.webp"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/company/4xcode-software/"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.4xcode.com/#website",
+      "url": "https://www.4xcode.com/",
+      "name": "4xCode",
+      "alternateName": "4xcode",
+      "publisher": {
+        "@id": "https://www.4xcode.com/#organization"
+      },
+      "inLanguage": "en-GB"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.4xcode.com/product/garage-management-system#webpage",
+      "url": "https://www.4xcode.com/product/garage-management-system",
+      "name": "Garage Management Software for Modern Workshops | 4xCode",
+      "description": "All-in-one garage management software for independent garages: bookings, job cards, digital inspections, quotes, invoices and service reminders. Book a demo.",
+      "keywords": "garage management software",
+      "inLanguage": "en-GB",
+      "isPartOf": {
+        "@id": "https://www.4xcode.com/#website"
+      },
+      "about": {
+        "@id": "https://www.4xcode.com/#organization"
+      },
+      "publisher": {
+        "@id": "https://www.4xcode.com/#organization"
+      },
+      "mainEntity": {
+        "@id": "https://www.4xcode.com/product/garage-management-system#product"
+      },
+      "breadcrumb": {
+        "@id": "https://www.4xcode.com/product/garage-management-system#breadcrumb"
+      }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://www.4xcode.com/product/garage-management-system#product",
+      "name": "Garage Management System",
+      "alternateName": "4xCode Garage Management System",
+      "serviceType": "Garage management software",
+      "category": "Business software",
+      "description": "4xCode Garage Management System is all-in-one garage management software designed for independent garages, automotive repair workshops, mechanics, and vehicle service businesses. It brings customer records, vehicle histories, service bookings, job tracking, quotations, digital inspections, and customer communication together in one connected platform.",
+      "url": "https://www.4xcode.com/product/garage-management-system",
+      "provider": {
+        "@id": "https://www.4xcode.com/#organization"
+      },
+      "brand": {
+        "@type": "Brand",
+        "name": "4xCode"
+      },
+      "mainEntityOfPage": {
+        "@id": "https://www.4xcode.com/product/garage-management-system#webpage"
+      },
+      "audience": {
+        "@type": "BusinessAudience",
+        "audienceType": "Independent garages, automotive repair workshops, mobile mechanics, MOT and service centres, and vehicle repair businesses"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Garage Management System Features",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Customer Management",
+              "description": "Keep every customer's contact details, vehicles, past visits, and communication history in one searchable profile, so your team always has the full picture.",
+              "provider": {
+                "@id": "https://www.4xcode.com/#organization"
+              }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Vehicle Records",
+              "description": "Record registration numbers, make, model, mileage, and complete service history, helping technicians understand each vehicle before work begins.",
+              "provider": {
+                "@id": "https://www.4xcode.com/#organization"
+              }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Booking Management",
+              "description": "Schedule appointments, manage incoming enquiries, and plan workshop capacity with a clear calendar that helps prevent double bookings and idle bays.",
+              "provider": {
+                "@id": "https://www.4xcode.com/#organization"
+              }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Job Management",
+              "description": "Create job cards, assign tasks, and track repair progress in real time, so nothing is forgotten between check-in and collection.",
+              "provider": {
+                "@id": "https://www.4xcode.com/#organization"
+              }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Quotes & Invoices",
+              "description": "Build professional quotations from inspection findings, record customer approvals, and convert completed work into accurate invoices in just a few clicks.",
+              "provider": {
+                "@id": "https://www.4xcode.com/#organization"
+              }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Staff Management",
+              "description": "Assign jobs to technicians, define user responsibilities, and control system access, keeping your workshop team coordinated and accountable throughout the day.",
+              "provider": {
+                "@id": "https://www.4xcode.com/#organization"
+              }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Service Reminders",
+              "description": "Remind customers when MOTs, services, or follow-up checks are due, helping you encourage repeat visits and maintain long-term customer relationships.",
+              "provider": {
+                "@id": "https://www.4xcode.com/#organization"
+              }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Reports & Analytics",
+              "description": "View jobs completed, revenue, outstanding invoices, and workshop activity through clear reports that support better day-to-day business decisions.",
+              "provider": {
+                "@id": "https://www.4xcode.com/#organization"
+              }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Digital Inspections",
+              "description": "Record inspection findings with notes and photos, then share them with customers so they clearly understand recommended repairs and why they matter.",
+              "provider": {
+                "@id": "https://www.4xcode.com/#organization"
+              }
+            }
+          }
+        ]
+      },
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Essential Plan",
+          "description": "Best for small garages getting started.",
+          "seller": {
+            "@id": "https://www.4xcode.com/#organization"
+          },
+          "price": "99",
+          "priceCurrency": "GBP",
+          "url": "https://www.4xcode.com/product/garage-management-system#pricing",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "price": "99",
+            "priceCurrency": "GBP",
+            "unitText": "month"
+          }
+        },
+        {
+          "@type": "Offer",
+          "name": "Advanced Plan",
+          "description": "Best for growing automotive businesses.",
+          "seller": {
+            "@id": "https://www.4xcode.com/#organization"
+          },
+          "price": "175",
+          "priceCurrency": "GBP",
+          "url": "https://www.4xcode.com/product/garage-management-system#pricing",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "price": "175",
+            "priceCurrency": "GBP",
+            "unitText": "month"
+          }
+        },
+        {
+          "@type": "Offer",
+          "name": "Enterprise Plan",
+          "description": "Complete garage management solution.",
+          "seller": {
+            "@id": "https://www.4xcode.com/#organization"
+          },
+          "price": "250",
+          "priceCurrency": "GBP",
+          "url": "https://www.4xcode.com/product/garage-management-system#pricing",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "price": "250",
+            "priceCurrency": "GBP",
+            "unitText": "month"
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.4xcode.com/product/garage-management-system#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.4xcode.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Garage Management System",
+          "item": "https://www.4xcode.com/product/garage-management-system"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.4xcode.com/product/garage-management-system#faq",
+      "url": "https://www.4xcode.com/product/garage-management-system",
+      "inLanguage": "en-GB",
+      "isPartOf": {
+        "@id": "https://www.4xcode.com/product/garage-management-system#webpage"
+      },
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Which garages can use 4XCODE's garage management software?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Our software is designed for independent garages, automotive repair workshops, mobile mechanics, MOT and service centres, and vehicle repair businesses. Whether you run a single-bay workshop or a busy multi-bay garage, the system adapts to your daily workflow and team size."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What daily garage activities can the Garage Management System help manage?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The system helps you manage customer records, vehicle histories, bookings, job cards, technician assignments, digital inspections, quotations, customer approvals, invoicing, and service reminders. Reporting tools also give you a clear overview of workshop activity, payments, and performance, all from one connected auto repair garage software platform."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does pricing work for your garage software plans?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We offer three plans: Essential for smaller garages, Advanced for busier workshops needing inspections and reporting, and Enterprise with custom pricing for larger operations. Each plan includes different features, so you can choose the option that best matches your garage's needs."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How can my garage start using the Garage Management System?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Start by booking a demo with our team. We will understand your workshop's requirements, set up your account, and help import your existing customer and vehicle information. Our team then guides your staff through the system so they feel confident using it."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is support available after the software has been set up?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Our support team helps with technical questions, troubleshooting, and using new features as your garage grows. We also release regular software improvements, and the level of support available depends on the plan you choose for your workshop."
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,3 +1,4 @@
+import garage from "@/data/GarageManagementPage.json";
 import React from "react";
 import TaskAltOutlinedIcon from "@mui/icons-material/TaskAltOutlined";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
@@ -18,42 +19,7 @@ export interface SecureAccessData {
   items: AccessItem[]; // right side ki list
 }
 
-export const DEFAULT_SECURE_ACCESS_DATA: SecureAccessData = {
-  label: "Security",
-  whiteHeading: "Secure Access.",
-  redHeading: "Complete Control",
-  headingSuffix: ".",
-  paragraphs: [
-    "N/A",
-    "N/A",
-  ],
-  buttonText: "Start Project",
-  items: [
-    {
-      id: 1,
-      title: "",
-      description: "",
-    },
-    {
-      id: 2,
-      title: "",
-      description:
-        "",
-    },
-    {
-      id: 3,
-      title: "",
-      description:
-        "",
-    },
-    {
-      id: 4,
-      title: "",
-      description:
-        "",
-    },
-  ],
-};
+export const DEFAULT_SECURE_ACCESS_DATA: SecureAccessData = garage.security;
 
 interface SecureAccessSectionProps {
   data?: SecureAccessData;
@@ -79,9 +45,7 @@ const SecureAccessSection: React.FC<SecureAccessSectionProps> = ({
       <div className="mx-auto w-full max-w-[1150px]">
         {/* Heading */}
         <div className="text-center">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#8b0f17]">
-            {label}
-          </p>
+          {label && <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#8b0f17]">{label}</p>}
           <h2 className="mt-3 text-white text-3xl md:text-5xl font-bold tracking-tight">
             {whiteHeading}{" "}
             <span className="text-[#e55d5d]">{redHeading}</span>

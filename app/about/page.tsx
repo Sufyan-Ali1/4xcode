@@ -1,9 +1,10 @@
 "use client";
 
+import { spaceGrotesk, inter } from "@/lib/fonts";
+
 import React, { useEffect } from "react";
 import { motion } from "framer-motion";
 import { useSafeReducedMotion } from "../../utils/useSafeReducedMotion";
-import { Space_Grotesk, Inter } from "next/font/google";
 import { Reveal } from "../../utils/AnimationReveal";
 import ContactCtaSection from "../../components/landing/ContactCtaSection";
 import TeamSection from "../../components/ui/TeamSection";
@@ -13,12 +14,6 @@ import ShieldOutlinedIcon from "@mui/icons-material/ShieldOutlined";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import MemoryOutlinedIcon from "@mui/icons-material/MemoryOutlined";
 import VisibilityIcon from "@mui/icons-material/Visibility";
-
-const spaceGrotesk = Space_Grotesk({
-  subsets: ["latin"],
-  weight: ["400", "500", "700"],
-});
-const inter = Inter({ subsets: ["latin"], weight: ["300", "400", "500"] });
 
 const HIGHLIGHTS = [
   {

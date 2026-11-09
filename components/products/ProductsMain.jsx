@@ -42,16 +42,16 @@ function ProductIcon({ type }) {
   );
 }
 
-function ProductCard({ product }) {
+function ProductCard({ product, actionLabel }) {
   return (
     <Link
       href={product.href}
-      aria-label={`Explore ${product.title}`}
+      aria-label={product.title}
       className="group relative isolate flex min-h-[280px] w-full flex-col overflow-hidden rounded-[24px] border border-white/[0.07] bg-[#101010] p-7 outline-none transition-all duration-500 hover:-translate-y-1 hover:border-red-500/30 hover:shadow-[0_15px_50px_rgba(239,31,35,0.10)] focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-4 focus-visible:ring-offset-black sm:min-h-[300px] sm:p-8 lg:min-h-[280px]"
     >
       <Image
         src={product.image}
-        alt=""
+        alt={product.imageAlt}
         fill
         sizes="(max-width: 767px) 100vw, (max-width: 1279px) 50vw, 640px"
         className="absolute inset-0 -z-20 object-cover transition-transform duration-700 ease-out group-hover:scale-105"
@@ -74,7 +74,7 @@ function ProductCard({ product }) {
         </div>
 
         <div className="mt-auto flex items-center gap-2 pt-5 text-sm font-medium text-white/0 transition-all duration-300 group-hover:translate-x-1 group-hover:text-red-400">
-          Explore product
+          {actionLabel}
           <svg
             viewBox="0 0 24 24"
             fill="none"
@@ -93,10 +93,10 @@ function ProductCard({ product }) {
   );
 }
 
-export default function Product({products}) {
+export default function Product({data}) {
   return (
     <section
-      id="products"
+      id={data.id}
       className="relative isolate w-full overflow-hidden bg-black px-5 py-5 sm:px-8 lg:px-12 "
     >
       <div className="pointer-events-none absolute left-1/2 top-0 -z-10 h-[300px] w-[700px] -translate-x-1/2 rounded-full bg-red-600/[0.035] blur-[120px]" />
@@ -104,33 +104,24 @@ export default function Product({products}) {
       <div className="mx-auto w-full max-w-7xl">
         <div className="mx-auto flex max-w-2xl flex-col items-center text-center ">
           <span className="text-[11px] font-medium uppercase tracking-[5px] text-red-500">
-            Delivered
+            {data.label}
           </span>
 
           <h2 className="mt-2 text-4xl font-bold leading-tight tracking-[-1.5px] text-white sm:text-5xl lg:text-[48px]">
-            Our <span className="text-[#f04b50]">Products.</span>
+            {data.heading}{" "}<span className="text-[#f04b50]">{data.highlight}</span>
           </h2>
 
           <p className="mt-2 max-w-lg text-sm leading-7 text-neutral-400 sm:text-base">
-            Innovative solutions designed to simplify your business.
+            {data.description}
           </p>
         </div>
 
         <div className="flex flex-wrap mt-10 justify-center gap-10 ">        
-           {Object.entries(products)[1] && (
-             <div>
-  <ProductCard
-    key={Object.entries(products)[1][1].title}
-    product={Object.entries(products)[1][1]}
-  />
-  </div>
-)}
-    
-
-
-
-
-    
+          {data.items.map((product) => (
+            <div key={product.href} className="w-full max-w-xl">
+              <ProductCard product={product} actionLabel={data.cardAction} />
+            </div>
+          ))}
         </div>
       </div>
     </section>

@@ -4,6 +4,8 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { useSafeReducedMotion } from "../../utils/useSafeReducedMotion";
 export interface AboutSectionData {
+  label?: string;
+  imageAlt?: string;
   white_heading: string;
   red_heading: string;
   paragraphs: string[];
@@ -29,6 +31,7 @@ export default function CompanyOverview({ data }: AboutSectionProps) {
        
        <div className="flex flex-col items-start gap-4 w-full lg:w-1/2">
 
+          {data.label && <p className="text-[#f90a1f] text-[11px] uppercase tracking-[3.6px]">{data.label}</p>}
           <div>
             <h2 className="text-3xl md:text-[40px] font-bold leading-[1.15] text-white">
               {data.white_heading}{" "}
@@ -64,7 +67,7 @@ export default function CompanyOverview({ data }: AboutSectionProps) {
           <div className="relative w-full h-64 sm:h-80 lg:h-auto lg:aspect-square rounded-3xl border border-white/5 overflow-hidden">
             <Image
               src={data.image}
-              alt="Engineering Team"
+              alt={data.imageAlt ?? "Engineering Team"}
               fill
               priority
               className="object-cover"

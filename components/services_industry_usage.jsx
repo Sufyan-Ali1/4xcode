@@ -11,7 +11,7 @@ export default function BuildForIndustry({data}) {
         {/* Heading */}
         <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold leading-tight tracking-tight text-white sm:text-2xl">
           {data.headingwhite}{" "}
-          <span className="text-[#EF1F23]">{data.headingred}.</span>
+          <span className="text-[#EF1F23]">{data.headingred}{data.headingSuffix ?? "."}</span>
         </h2>
 
         {/* Subheading */}
@@ -19,7 +19,9 @@ export default function BuildForIndustry({data}) {
           {data.subheading}
         </p>
     <div className="mt-6 grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4">
-  {data.items.map((industry,index) => (
+  {data.tags ? data.tags.map((tag) => (
+    <div key={tag} className="rounded-full border border-[#EF1F23]/50 px-3 py-3 text-center text-sm text-white">{tag}</div>
+  )) : data.items.map((industry,index) => (
     <button
       key={index}
       type="button"

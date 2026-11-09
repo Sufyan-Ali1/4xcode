@@ -1,44 +1,13 @@
 "use client";
 
+import home from "@/data/home.json";
 import { motion } from "framer-motion";
 import { useSafeReducedMotion } from "../../utils/useSafeReducedMotion";
 import { Reveal } from "../../utils/AnimationReveal";
 
-export default function ProcessSection() {
+export default function ProcessSection({ data = home.process }: { data?: typeof home.process }) {
   const reduced = useSafeReducedMotion();
 
-  const steps = [
-    {
-      number: "01",
-      title: "Discover",
-      description:
-        "We transform ideas into clear digital strategies through workshops, technical audits, and product roadmap planning.",
-    },
-    {
-      number: "02",
-      title: "Design",
-      description:
-        "We create intuitive, user-focused experiences with modern UI/UX design and interactive prototypes before development begins.",
-    },
-    {
-      number: "03",
-      title: "Development",
-      description:
-        "Our senior engineers build scalable, high-performance solutions through agile development and transparent weekly progress updates.",
-    },
-    {
-      number: "04",
-      title: "Launch & Scale",
-      description:
-        "We ensure successful product launches with performance optimization, analytics integration, and growth-focused strategies.",
-    },
-    {
-      number: "05",
-      title: "Optimize & Evolve",
-      description:
-        "We continuously improve your product using real-world data, user feedback, and ongoing performance enhancements to drive long-term success.",
-    },
-  ];
 
   return (
     <section className="py-5 bg-black text-white overflow-hidden w-full">
@@ -49,14 +18,14 @@ export default function ProcessSection() {
         <div className="text-center">
           <Reveal>
             <p className="mb-4 text-[#f90a1f] text-[12px] uppercase tracking-[3.6px]">
-              Our Process
+              {data.label}
             </p>
           </Reveal>
           <Reveal delay={0.1}>
             <h2 className="text-3xl md:text-6xl font-bold">
-              From spark to{" "}
+              {data.heading}{" "}
               <span className="bg-gradient-to-br from-[#ff8a8c] to-[#ef1f23] bg-clip-text text-transparent">
-                shipped
+                {data.highlight}
               </span>
             </h2>
           </Reveal>
@@ -73,7 +42,7 @@ export default function ProcessSection() {
 
           {/* ✅ FIXED GRID & AUTO-ROWS: Prevents horizontal expanding over parent limits */}
           <div className="flex flex-col md:grid md:grid-cols-5 gap-8 md:gap-6 auto-rows-fr items-stretch">
-            {steps.map((step, index) => (
+            {data.steps.map((step, index) => (
               <motion.div
                 key={step.number}
                 initial={{ opacity: 0, y: reduced ? 0 : 40 }}

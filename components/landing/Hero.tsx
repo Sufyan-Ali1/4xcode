@@ -1,15 +1,7 @@
+import { jakarta, mono } from "@/lib/fonts";
 import Image from "next/image";
-import { Plus_Jakarta_Sans, JetBrains_Mono } from "next/font/google";
 import Link from "next/link";
-const BRAIN_SRC = "/assets/hero-image.webp";
-const jakarta = Plus_Jakarta_Sans({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
-});
-const mono = JetBrains_Mono({
-  subsets: ["latin"],
-  weight: ["400", "500", "700"],
-});
+import home from "@/data/home.json";
 const PARTICLES = [
   { x: 54.3, y: 4.2, s: 3, o: 0.7 },
   { x: 53.5, y: 9.8, s: 2, o: 0.5 },
@@ -37,10 +29,10 @@ const PARTICLES = [
   { x: 36.0, y: 36.0, s: 2, o: 0.25 },
 ];
 const LINK_NEIGHBORS = 2;
-const ASPECT = 1.6; 
+const ASPECT = 1.6;
 const DOT_SCALE = 0.85;
-const LINK_COLOR = "rgba(255,75,88,0.07)"; 
-const LINK_WIDTH = 0.75; 
+const LINK_COLOR = "rgba(255,75,88,0.07)";
+const LINK_WIDTH = 0.75;
 const LINKS: [number, number][] = (() => {
   const seen = new Set<string>();
   const out: [number, number][] = [];
@@ -139,7 +131,7 @@ const ftitle =
   "text-[11.6px] leading-[15px] font-medium text-white tracking-[-0.005em] whitespace-nowrap";
 const fsub = "text-[9.75px] leading-[15px] text-white/50 whitespace-nowrap";
 
-export default function Hero() {
+export default function Hero({ data = home.hero }: { data?: typeof home.hero }) {
   return (
     <section
       className={`${jakarta.className} relative flex w-full pt-35 justify-center overflow-hidden min-[1120px]:pb-0 text-white`}
@@ -206,92 +198,45 @@ export default function Hero() {
         />
       ))}
 
-      <div className="relative px-5 flex w-full flex-col max-w-[1150px] max-h-[1000px] items-center justify-between gap-14  min-[1120px]:flex-row min-[1120px]:items-start min-[1120px]:gap-[14px]">
-  
-        <div className="shrink-0 max-w-full">
+      <div className="relative px-5 flex w-full flex-col max-w-[1150px] items-center justify-between gap-14  min-[1120px]:flex-row min-[1120px]:items-start min-[1120px]:gap-[14px]">
+
+        <div className="min-w-0 w-full min-[1120px]:w-[600px]">
           <div
             className={`${mono.className} inline-flex px-3 items-center h-[25px] rounded-full bg-[#0b0405] border border-white/[0.07] shadow-[0_4px_14px_rgba(0,0,0,0.35)] text-[8.3px] font-bold tracking-[0.14em] text-[#f4eaea] whitespace-nowrap max-sm:whitespace-normal max-sm:flex-wrap max-sm:h-auto max-sm:py-2 max-sm:rounded-2xl max-sm:text-[9px]`}
           >
             <span className="w-[7.5px] h-[7.5px] rounded-full bg-[#ee1c2e] mr-[7.5px] shadow-[0_0_6px_rgba(238,28,46,0.9)]" />
-            <span>CUSTOM SOFTWARE</span>
-            <span className="mx-[7px] font-normal text-[#e32134]">//</span>
-            <span>PREBUILT PRODUCTS</span>
-            <span className="mx-[7px] font-normal text-[#e32134]">//</span>
-            <span>DIGITAL GROWTH</span>
+            {data.eyebrow.map((text, index) => <span key={text}>{index > 0 && <span className="mx-[7px] font-normal text-[#e32134]">{data.separator}</span>}{text}</span>)}
           </div>
           <h1 className="mt-[25px] font-bold text-white tracking-[-0.052em] text-[38px] leading-[37px] sm:text-[54px] sm:leading-[52.5px]">
-            <span className="block whitespace-nowrap">Technology</span>
-            <span className="block whitespace-nowrap mt-1 ">
-              Adapts to <span className="text-[#f01a30]">Your</span>
-            </span>
-            <span className=" mt-1 block whitespace-nowrap text-[#e8203a]">
-              Business
-            </span>
+            {data.heading.map((line, index) => <span key={line} className={`block mt-1 ${index === data.heading.length - 1 ? "text-[#e8203a]" : ""}`}>{line}</span>)}
           </h1>
           <p className="mt-4 max-w-[25.5rem] text-[15px] leading-[21px] tracking-[-0.005em] text-[rgba(236,218,219,0.64)]">
-            We build custom software, powerful websites, and smart automation
-            solutions — plus our prebuilt Garage Management Software, to help
-            businesses work smarter, grow faster, and stay ahead.
+            {data.description}
           </p>
           <div className="mt-[30px] flex gap-4 max-sm:flex-col">
-            <Link 
-              href="#services"
+            <Link
+              href={data.actions[0].href}
               className="flex flex-wrap items-center gap-5  justify-center text-center py-3 px-4 rounded-[5px] text-[15px] font-medium tracking-[-0.005em] text-white no-underline bg-gradient-to-b from-[#e8202f] to-[#dc1627] shadow-[0_8px_24px_rgba(226,24,42,0.32),inset_0_1px_0_rgba(255,255,255,0.14)] transition duration-200 hover:-translate-y-0.5 hover:shadow-[0_10px_30px_rgba(226,24,42,0.5),inset_0_1px_0_rgba(255,255,255,0.18)]"
             >
-            <span>Explore Our Services</span>  
+            <span>{data.actions[0].label}</span>
               <IconArrow />
             </Link>
-            <Link 
-              href="#products"
+            <Link
+              href={data.actions[1].href}
               className="flex flex-wrap items-center gap-5 lg:gap-10 justify-center py-4 px-4 rounded-[8px] text-[15px] font-medium tracking-[-0.005em] text-white no-underline bg-[#110608] border border-[rgba(255,60,75,0.2)] shadow-[inset_0_1px_0_rgba(255,255,255,0.03)] transition duration-200 hover:-translate-y-0.5 hover:border-[rgba(255,60,75,0.45)]"
             >
-              <span>View Our Products</span>
+              <span>{data.actions[1].label}</span>
               <i className="w-1 h-1 rounded-full bg-white/45 mr-0.5" />
             </Link>
           </div>
           <div className="mt-[42px] h-px w-full bg-white/[0.075]" />
           <div className="mt-[26px] flex flex-wrap gap-y-5">
-            <div className={fitem}>
-              <span
-                className={`${ficon} ${mono.className} !w-[21px] text-[8px] font-bold tracking-[-0.04em]`}
-              >
-                &lt;/&gt;
-              </span>
-              <div>
-                <div className={ftitle}>Custom Software</div>
-                <div className={fsub}>Development</div>
+            {data.features.map((feature) => (
+              <div key={feature.title} className={fitem}>
+                <span className={ficon}>{feature.icon === "code" ? <span aria-hidden="true">&lt;/&gt;</span> : feature.icon === "globe" ? <IconGlobe size={11} /> : feature.icon === "gear" ? <IconGear size={11} /> : <IconImage size={11} />}</span>
+                <div><div className={ftitle}>{feature.title}</div><div className={fsub}>{feature.subtitle}</div></div>
               </div>
-            </div>
-
-            <div className={fitem}>
-              <span className={ficon}>
-                <IconGlobe size={11} />
-              </span>
-              <div>
-                <div className={ftitle}>Websites &amp;</div>
-                <div className={fsub}>SEO Solutions</div>
-              </div>
-            </div>
-
-            <div className={fitem}>
-              <span className={ficon}>
-                <IconGear size={11} />
-              </span>
-              <div>
-                <div className={ftitle}>Business</div>
-                <div className={fsub}>Automation</div>
-              </div>
-            </div>
-
-            <div className={fitem}>
-              <span className={ficon}>
-                <IconImage size={11} />
-              </span>
-              <div>
-                <div className={ftitle}>Integrated</div>
-                <div className={fsub}>Systems</div>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
 
@@ -308,8 +253,8 @@ export default function Hero() {
             }}
           />
           <Image
-            src={BRAIN_SRC}
-            alt="AI brain connected to digital network"
+            src={data.image.src}
+            alt={data.image.alt}
             width={469}
             height={499}
             priority
@@ -318,55 +263,16 @@ export default function Hero() {
               objectFit: "contain",
               filter: "brightness(0.8)",
   }} />
-          <div className={chip} style={{ left: "30.28%", top: "17.43%", height: 24 }}>
-            <span className="inline-flex text-[rgba(240,70,85,0.75)]">
-              <IconGear size={10} />
-            </span>
-            <span>Automation</span>
-          </div>
+          {data.chips.map((item) => (
+            <div key={item.label} className={chip} style={{ left: item.left, top: item.top }}>
+              <span className="inline-flex text-[#f0283a]" aria-hidden="true">
+                {item.icon === "gear" ? <IconGear /> : item.icon === "globe" ? <IconGlobe /> : item.icon === "cloud" ? <IconCloud /> : item.icon === "chart" ? <IconChart /> : item.icon === "code" ? <span>&lt;/&gt;</span> : <span className="w-[5px] h-[5px] rounded-full bg-[#f0222f]" />}
+              </span>
+              <span>{item.label}</span>
+              {item.detail && <span className="text-[#f0283a]">{item.detail}</span>}
+            </div>
+          ))}
 
-          <div
-            className={`${chip} !rounded-full !h-[25.5px] !pl-[15px] !pr-[22px] !border-[rgba(255,60,75,0.3)]`}
-            style={{ left: "71.43%", top: "19.04%" }}
-          >
-            <span className="w-[5px] h-[5px] rounded-full bg-[#f0222f] shadow-[0_0_6px_rgba(240,34,47,0.9)]" />
-            <span className="font-bold text-white">AI Integration</span>
-          </div>
-
-          <div
-            className={`${chip} !h-[25.5px] !pr-[15px]`}
-            style={{ left: "6.82%", top: "40.48%" }}
-          >
-            <span className="inline-flex text-[8.3px] font-bold tracking-[-0.04em] text-[#f0283a]">
-              &lt;/&gt;
-            </span>
-            <span>Custom Solutions</span>
-            <span className="w-[5px] h-[5px] rounded-full bg-[#f0222f] shadow-[0_0_6px_rgba(240,34,47,0.9)]" />
-          </div>
-
-          <div className={chip} style={{ left: "75.27%", top: "48.3%" }}>
-            <span className="inline-flex text-[rgba(240,70,85,0.85)]">
-              <IconCloud size={10} />
-            </span>
-            <span>Cloud Architecture</span>
-          </div>
-
-          <div className={chip} style={{ left: "13.65%", top: "65.13%" }}>
-            <span className="inline-flex text-[#f0283a]">
-              <IconGlobe size={10} />
-            </span>
-            <span>Web Development</span>
-            <span className="text-[7px] font-bold tracking-[0.02em] text-[#f0283a]">
-              99.9%
-            </span>
-          </div>
-
-          <div className={chip} style={{ left: "68.23%", top: "71.34%" }}>
-            <span className="inline-flex text-[#f0283a]">
-              <IconChart size={10} />
-            </span>
-            <span>Data Synthesis</span>
-          </div>
         </div>
       </div>
     </section>

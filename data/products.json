@@ -380,111 +380,122 @@
 },
  
  "pricing": {
-      "sectionId": "pricing",
-      "sectionLabel": "Garage Management System pricing",
-      "eyebrow": "Pricing",
-      "title": "Plans Built Around Your",
-      "highlight": "Needs",
-      "description": "Choose the perfect plan for your business. No hidden fees, no surprises.",
-      "plans": [
-        {
-          "id": "essential",
-          "name": "Essential",
-          "currencySymbol": "$",
-          "price": "19",
-          "billingPeriod": "/mo",
-          "priceDescription": "",
-          "featured": false,
-          "features": [
-            "Up to 5 active projects",
-            "Basic analytics dashboard",
-            "Email support",
-            "Standard security features"
-          ],
-          "action": {
-            "label": "Select Plan",
-            "href": "/contact"
-          }
-        },
-        {
-          "id": "advanced",
-          "name": "Advanced",
-          "currencySymbol": "$",
-          "price": "49",
-          "billingPeriod": "/mo",
-          "priceDescription": "",
-          "featured": true,
-          "features": [
-            "Unlimited active projects",
-            "Advanced analytics & reporting",
-            "Priority 24/7 support",
-            "Custom integrations"
-          ],
-          "action": {
-            "label": "Select Plan",
-            "href": "/contact"
-          }
-        },
-        {
-          "id": "enterprise",
-          "name": "Enterprise",
-          "currencySymbol": "$",
-          "price": "99",
-          "billingPeriod": "/mo",
-          "priceDescription": "",
-          "featured": false,
-          "features": [
-            "Unlimited everything",
-            "Dedicated account manager",
-            "White-label solutions",
-            "Enterprise-grade security"
-          ],
-          "action": {
-            "label": "Select Plan",
-            "href": "/contact"
+  "sectionId": "pricing",
+  "sectionLabel": "Garage Management System pricing",
+  "eyebrow": "Pricing",
+  "title": "Plans Built Around Your",
+  "highlight": "Needs",
+  "description": "Choose the perfect plan for your business. No hidden fees, no surprises.",
+  "plans": [
+    {
+      "id": "essential",
+      "name": "Essential",
+      "currencySymbol": "£",
+      "price": "99",
+      "billingPeriod": "/month",
+      "priceDescription": "Best for small garages getting started.",
+      "featured": false,
+      "features": [
+        "Job card management",
+        "Quotes and invoices",
+        "Booking management",
+        "Basic dashboard",
+        "Email support"
+      ],
+      "action": {
+        "label": "Essential",
+        "href": "/contact"
+      }
+    },
+    {
+      "id": "advanced",
+      "name": "Advanced",
+      "currencySymbol": "£",
+      "price": "175",
+      "billingPeriod": "/month",
+      "priceDescription": "Best for growing automotive businesses.",
+      "featured": true,
+      "features": [
+        "Everything in Essential",
+        "Enquiry management",
+        "Automated follow-up reminders",
+        "Calendar and booking management",
+        "Vehicle registration lookup (VRM)",
+        "Performance reports",
+        "Advanced dashboard",
+        "Priority support"
+      ],
+      "action": {
+        "label": "Most Popular",
+        "href": "/contact"
+      }
+    },
+    {
+      "id": "enterprise",
+      "name": "Enterprise",
+      "currencySymbol": "£",
+      "price": "250",
+      "billingPeriod": "/month",
+      "priceDescription": "Complete garage management solution.",
+      "featured": false,
+      "features": [
+        "Everything in Advanced",
+        "Full business management system",
+        "Advanced reporting and analytics",
+        "Reserved parking job cards",
+        "Quote and invoice management",
+        "Web enquiry integration",
+        "Customer follow-up automation",
+        "Advanced job status tracking",
+        "Dedicated onboarding",
+        "Premium support"
+      ],
+      "action": {
+        "label": "Complete Solution",
+        "href": "/contact"
+      },
+      "product_gallery": {
+        "sectionId": "product-gallery",
+        "eyebrow": "Gallery",
+        "title": "Inside the",
+        "highlight": "Product",
+        "description": "Designed for clarity. Built for performance.",
+        "cards": [
+          {
+            "id": "welcome-screen",
+            "image": "/assets/gallery/welcome-screen.webp",
+            "alt": "Auto Recovery app welcome screen"
           },
-           "product_gallery":{
-  "sectionId": "product-gallery",
-  "eyebrow": "Gallery",
-  "title": "Inside the",
-  "highlight": "Product",
-  "description": "Designed for clarity. Built for performance.",
-  "cards": [
-    {
-      "id": "welcome-screen",
-      "image": "/assets/gallery/welcome-screen.webp",
-      "alt": "Auto Recovery app welcome screen"
-    },
-    {
-      "id": "login-screen",
-      "image": "/assets/gallery/login-screen.webp",
-      "alt": "Auto Recovery app login screen"
-    },
-    {
-      "id": "current-job-screen",
-      "image": "/assets/gallery/current-job.webp",
-      "alt": "Auto Recovery app current job screen"
-    },
-    {
-      "id": "scheduled-jobs-screen",
-      "image": "/assets/gallery/scheduled-jobs.webp",
-      "alt": "Auto Recovery app scheduled jobs screen"
-    },
-    {
-      "id": "navigation-screen",
-      "image": "/assets/gallery/navigation.webp",
-      "alt": "Auto Recovery app navigation screen"
-    },
-    {
-      "id": "gps-validation-screen",
-      "image": "/assets/gallery/gps-validation.webp",
-      "alt": "Auto Recovery app GPS validation screen"
+          {
+            "id": "login-screen",
+            "image": "/assets/gallery/login-screen.webp",
+            "alt": "Auto Recovery app login screen"
+          },
+          {
+            "id": "current-job-screen",
+            "image": "/assets/gallery/current-job.webp",
+            "alt": "Auto Recovery app current job screen"
+          },
+          {
+            "id": "scheduled-jobs-screen",
+            "image": "/assets/gallery/scheduled-jobs.webp",
+            "alt": "Auto Recovery app scheduled jobs screen"
+          },
+          {
+            "id": "navigation-screen",
+            "image": "/assets/gallery/navigation.webp",
+            "alt": "Auto Recovery app navigation screen"
+          },
+          {
+            "id": "gps-validation-screen",
+            "image": "/assets/gallery/gps-validation.webp",
+            "alt": "Auto Recovery app GPS validation screen"
+          }
+        ]
+      }
     }
   ]
-}
-        }
-      ]
-    },
+},
   
 "faqs": [
   {

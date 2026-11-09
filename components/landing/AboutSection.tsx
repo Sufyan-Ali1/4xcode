@@ -1,5 +1,6 @@
 "use client";
 
+import defaults from "@/data/landing-defaults.json";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Reveal } from "../../utils/AnimationReveal";
@@ -14,13 +15,17 @@ export interface AboutSectionData {
   }[];
   image: string;
   founded?: string;
+  label?: string;
+  imageAlt?: string;
+  foundedLabel?: string;
 }
 
 interface AboutSectionProps {
   data: AboutSectionData;
+  label?: string;
 }
 
-export default function AboutSection({ data }: AboutSectionProps) {
+export default function AboutSection({ data, label = data.label ?? defaults.about.label }: AboutSectionProps) {
   const reduced = useSafeReducedMotion();
 
   return (
@@ -42,7 +47,7 @@ export default function AboutSection({ data }: AboutSectionProps) {
           <div className="relative w-full h-64 sm:h-80 lg:h-auto lg:aspect-square rounded-3xl border border-white/5 overflow-hidden">
             <Image
               src={data.image}
-              alt="Engineering Team"
+              alt={data.imageAlt ?? defaults.about.imageAlt}
               fill
               priority
               className="object-cover"
@@ -53,7 +58,7 @@ export default function AboutSection({ data }: AboutSectionProps) {
           {data.founded && (
             <div className="absolute bottom-3 right-3 flex flex-col rounded-[16px] border border-white/10 bg-black/60 p-3 backdrop-blur-md w-40 shadow-2xl select-none">
               <span className="text-zinc-500 text-[9px] uppercase tracking-[0.15em] font-bold mb-1">
-                Founded
+                {data.foundedLabel ?? defaults.about.foundedLabel}
               </span>
               <span className="text-white text-[16px] font-bold leading-tight">
                 {data.founded}
@@ -66,7 +71,7 @@ export default function AboutSection({ data }: AboutSectionProps) {
         <div className="flex flex-col justify-center space-y-5 w-full lg:flex-1">
           <Reveal>
             <span className="text-[#f90a1f] text-[11px] uppercase tracking-[3.6px]">
-              About 4xCode
+              {label}
             </span>
           </Reveal>
 

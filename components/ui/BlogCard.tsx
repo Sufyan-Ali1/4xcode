@@ -1,16 +1,12 @@
 "use client";
 
+import { spaceGrotesk } from "@/lib/fonts";
+
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import NorthEastIcon from "@mui/icons-material/NorthEast";
-import { Space_Grotesk } from "next/font/google";
 import { BlogPost } from "../../types/index";
-
-const spaceGrotesk = Space_Grotesk({
-  subsets: ["latin"],
-  weight: ["400", "500", "700"],
-});
 
 type BlogCardProps = {
   post: BlogPost;

@@ -3,9 +3,8 @@ import type { Metadata } from "next";
 
 export const pageMetadata = {
   home: {
-    title: "4xCode | AI-Powered Software, SaaS & Web Development Studio",
-    description:
-      "4xCode engineers high-performance SaaS, AI agents, and web platforms for ambitious brands. Senior team, 132+ products shipped. Start your project today. ",
+    title: "Software Development Agency for Growing Businesses | 4xCode",
+    description: "4xCode is a software development agency building custom software, websites, mobile apps, SaaS platforms and AI automation, plus a ready-made garage system.",
     icons: {
       icon: "./favicon.ico",
     },
@@ -15,17 +14,28 @@ export const pageMetadata = {
   },
 
   services: {
-    title: "Software Development Services for AI, SaaS & Web | 4xcode",
-    description: "Explore 4xcode software development services across AI, custom software, SaaS, web, mobile, APIs and cloud, all from one team. Find the right service.",
+    title: "Software Development Services: AI, SaaS & Web | 4xCode",
+    description: "End-to-end software development services from 4xCode: custom software, AI, SaaS, websites, mobile apps, cloud, SEO and API integration for growing businesses.",
     alternates: {
       canonical: "https://www.4xcode.com/service",
     },
   },
 
+  work: {
+    title: "Software Development Case Studies & Portfolio | 4xCode",
+    description: "Explore 4xCode software development case studies covering custom software, business automation, websites, SEO and Google Ads projects that delivered results.",
+    alternates: { canonical: "https://www.4xcode.com/work" },
+  },
+  garage: {
+    title: "Garage Management Software for Modern Workshops | 4xCode",
+    description: "All-in-one garage management software for independent garages: bookings, job cards, digital inspections, quotes, invoices and service reminders. Book a demo.",
+    alternates: { canonical: "https://www.4xcode.com/product/garage-management-system" },
+  },
 } satisfies Record<string, Metadata>;
 
 // Service detail pages (key = URL slug)
 export const serviceMetadata: Record<string, Metadata> = {
+  "ai-automation": { title: "AI Automation Services for Businesses | 4xCode", description: "4xCode delivers AI automation services for businesses of every size, from AI agents and workflow automation to document processing and CRM integration." },
   "web-development": {
     title: "Website Development Services: Fast & SEO-Ready | 4xcode",
     description:

@@ -1,4 +1,9 @@
+import aiAutomation from "./services/ai-automation.json";
+
 export interface cta_type{
+ label?: string;
+ href?: string;
+ secondaryAction?: { label: string; href: string };
  heading_white:string;
  heading_red:string;
   text:string;
@@ -27,6 +32,7 @@ export interface ArchitecturePhase {
 type WhyTeamChooseType = {
   description: string;
   closing_tag:string;
+  items?: FeatureItem[];
 
 };
 
@@ -59,6 +65,7 @@ export interface SoftwareBuildData {
 }
 
 export interface SectionData {
+  columnLayout?: boolean;
   heading: string;
   description: string;
   cards: {
@@ -67,6 +74,8 @@ export interface SectionData {
   }[];
 }
 export interface AboutSectionData {
+  label?: string;
+  imageAlt?: string;
   white_heading: string;
   red_heading: string;
   paragraphs: string[];
@@ -97,6 +106,8 @@ export interface BuildForIndustryItem {
 }
 
 export interface BuildForIndustry {
+  headingSuffix?: string;
+  tags?: string[];
   headingwhite: string;
   headingred: string;
   subheading: string;
@@ -104,6 +115,10 @@ export interface BuildForIndustry {
 }
 
 export interface ServiceItem {
+  hideHeroActions?: boolean;
+  headingSuffix?: string;
+  labels?: { philosophy: string; capabilities: string; stack: string; process: string; related: string; faq: string };
+  faqDescription?: string;
   slug: string;
   eyebrow:string;
   contact_button:string;
@@ -151,6 +166,7 @@ export interface ServiceItem {
 }
 
 export const SERVICES_DATA: ServiceItem[] = [
+  aiAutomation,
 
   {
    slug: "custom-software",
@@ -325,7 +341,7 @@ features: [
     title: "Custom Software",
     titleTag: "Custom Software Development Company for Your Workflow",
     metaDesc:
-      "Custom AI development for production, not demos. 4xcode builds LLM agents, RAG pipelines and fine-tuned models around your data. Talk to our experts.",
+      "Need tools that fit your process? 4xcode is a custom software development company building backends, data platforms and real-time systems. Get a quote.",
     desc: "Bespoke software architecture, backend systems, and data platforms engineered for ambitious products with serious technical depth.",
     intro:
       "When off-the-shelf tools hit their ceiling, 4xCode designs custom software architecture built for your exact problem — backend systems, data platforms, and realtime sync built on Go, Node.js, and Postgres. ",
@@ -333,7 +349,7 @@ features: [
   
  tech_section_white_heading:"Technologies Supporting ",
  tech_section_red_heading:"Our Software Engineering",
- 
+
     techCategories: [
   {
     name: "Backend Development Languages and Frameworks",
@@ -462,7 +478,7 @@ about_section_data2: {
       button: "Explore Cloud Systems",
     },
   ],
- 
+
 sectionData: {
   heading: "Business Benefits of Investing in Custom Software Development Solutions",
 
@@ -1667,10 +1683,10 @@ faqs: [
   relatedSlugsRedHeading: "Website Development",
   relatedSlugs: [
     {
-      link: "digital-marketing-services",
-      heading: "SEO and Digital Marketing Services",
+      link: "search-engine-optimization-seo",
+      heading: "Search Engine Optimization",
       description:
-        "Support your website with keyword research, technical SEO, content optimization, and digital marketing activities designed to improve relevant search visibility and customer acquisition opportunities.",
+        "Our search engine optimization services improve how your website appears in search results. We combine technical fixes, keyword strategy, and on-page improvements to grow sustainable organic traffic over time.",
       button: "Explore SEO Services",
     },
     {
@@ -2140,398 +2156,7 @@ faqs: [
   ],
 },
 
- {
-  slug: "automation-systems",
-  eyebrow: "UK Garage Automation",
-  longTitle: "Garage Management Software UK",
-  gradientWord: "for Automotive Workshop Operations",
 
-  longDesc:
-    "4xcode provides garage management software solutions for UK automotive workshops seeking a more organised way to handle daily operations. From customer and vehicle records to job cards, appointment scheduling, and invoicing, the system brings essential workshop information into a structured digital workflow. Our focus is on helping independent garages manage administrative tasks and maintain clearer visibility across ongoing repair and servicing work.",
-
-  contact_button: "Discuss Your Garage",
-  service_button: "Explore Workshop Features",
-
-  metrics: [
-    {
-      value: "Digital Job Cards",
-      label: "Organised vehicle repair work records",
-    },
-    {
-      value: "Workshop Scheduling",
-      label: "Clearer appointment and workload planning",
-    },
-    {
-      value: "Garage Invoicing",
-      label: "Structured customer billing and records",
-    },
-  ],
-
-  tags_section_heading: "Essential Garage Management Functions",
-
-  tags: [
-    {
-      name: "Vehicle Record Management",
-      description:
-        "Maintain customer vehicles, registration details, service information, and relevant workshop records in one place.",
-    },
-    {
-      name: "Digital Job Cards",
-      description:
-        "Organise repair instructions, labour details, parts information, and job progress through structured records.",
-    },
-    {
-      name: "Appointment Scheduling",
-      description:
-        "Manage workshop bookings and planned servicing appointments with a clearer view of available capacity.",
-    },
-    {
-      name: "Customer Invoice Management",
-      description:
-        "Prepare invoices using recorded labour, parts, and service details to support consistent customer billing.",
-    },
-  ],
-
-  pillers_heading_white: "Why UK Garages Need",
-  pillers_heading_red: "Digital Management",
-
-  pillars: [
-    {
-      title: "Less Workshop Administration",
-      desc: "A garage management system can replace scattered paperwork and repetitive record handling with organised digital workflows. Staff can retrieve customer information, review existing job cards, and manage administrative activities without searching through separate files.",
-    },
-    {
-      title: "Clearer Daily Workshop Scheduling",
-      desc: "Garage scheduling software helps workshops organise appointments, planned jobs, and available working capacity. A structured workshop diary can make it easier to identify booking conflicts and coordinate upcoming servicing or repair activities.",
-    },
-    {
-      title: "More Consistent Customer Records",
-      desc: "Digital vehicle and customer records help garage staff review previous visits, recorded repairs, and relevant service information. Maintaining organised histories can support clearer customer conversations and more informed follow-up work.",
-    },
-  ],
-
-  about_section_data1: {
-    white_heading: "Bringing Workshop Bookings, Job Cards,",
-    red_heading: "and Vehicle Records Together",
-
-    paragraphs: [
-      "Garage operations involve several connected activities, including receiving customer bookings, identifying vehicle requirements, assigning work, recording repairs, and preparing invoices. Workshop management software helps organise these activities through a shared system. Connecting the workshop diary with customer records and digital job cards can reduce fragmented information and make individual jobs easier to follow from arrival through completion.",
-    ],
-
-    stats: [
-      {
-        value: "Workshop Booking Diary",
-        label:
-          "Organise upcoming appointments, planned service work, and workshop availability through a structured scheduling view.",
-      },
-      {
-        value: "Digital Repair Records",
-        label:
-          "Record vehicle concerns, repair instructions, labour activity, and parts associated with individual workshop jobs.",
-      },
-      {
-        value: "Customer Vehicle History",
-        label:
-          "Maintain linked customer and vehicle information to support future visits and repeat service requirements.",
-      },
-    ],
-
-    image: "/assets/aboutSection.webp",
-    founded:
-      "Garage Management Dashboard Showing Workshop Bookings and Digital Job Cards",
-  },
-
-  NarrativeData: {
-    heading: {
-      white: "How Garage Management Software Supports Daily",
-      red: "Workshop Operations Across the UK",
-    },
-
-    paragraphs: [
-      {
-        segments: [
-          {
-            text: "Independent garages often manage bookings, customer communication, vehicle inspections, repair work, and invoicing through several disconnected processes. When information is spread across paper diaries, spreadsheets, and separate documents, workshop administration becomes harder to coordinate. ",
-          },
-          {
-            text: "Garage management software",
-            highlight: true,
-          },
-          {
-            text: " provides a structured way to organise these activities, helping staff maintain more consistent records throughout the customer service and vehicle repair process.",
-          },
-        ],
-      },
-      {
-        segments: [
-          {
-            text: "A typical workshop workflow begins when a customer requests an appointment for servicing, diagnostics, repairs, or an MOT-related visit. ",
-          },
-          {
-            text: "Garage booking software",
-            highlight: true,
-          },
-          {
-            text: " can record the customer, vehicle, requested service, and planned appointment time. Workshop managers can then review upcoming work and organise available capacity. The booking information may also provide a starting point for a digital job card when the vehicle arrives.",
-          },
-        ],
-      },
-      {
-        segments: [
-          {
-            text: "Once work begins, the garage management system can organise repair instructions, inspection findings, labour entries, and parts information against the relevant vehicle record. Workshop staff can update job details as work progresses, creating a clearer record of activities performed. For garages handling multiple vehicles simultaneously, consistent job documentation helps maintain visibility into outstanding tasks and information needed before a repair can be completed.",
-          },
-        ],
-      },
-      {
-        segments: [
-          {
-            text: "After work is completed, garage invoicing software can use recorded labour and parts details to support invoice preparation. UK garages also need to consider applicable VAT treatment, customer record retention, and appropriate invoice information. A structured digital workflow can simplify record retrieval for later customer inquiries. Over time, consistent vehicle histories and organised workshop administration can support more informed service planning and operational decisions.",
-          },
-        ],
-      },
-    ],
-  },
-
-  features_white_heading: "Our Garage Software",
-  features_red_heading: "Solutions",
-
-  features: [
-    {
-      title: "Garage Booking and Appointment Management",
-      description:
-        "Organise customer appointments, vehicle details, service requests, and planned workshop availability through a digital booking workflow designed for everyday garage administration.",
-    },
-    {
-      title: "Digital Workshop Job Cards",
-      description:
-        "Create structured repair records covering customer concerns, vehicle information, technician notes, labour activity, and parts used during servicing or repair work.",
-    },
-    {
-      title: "Garage Invoice Management Software",
-      description:
-        "Prepare customer invoices from recorded service information, labour charges, and parts details while maintaining organised billing records for workshop administration.",
-    },
-    {
-      title: "Customer and Vehicle Records",
-      description:
-        "Maintain linked customer profiles, vehicle registrations, visit histories, and previous repair information to support consistent records across repeat workshop visits.",
-    },
-  ],
-
-  iconKey: "software",
-  title: "Garage Management Software",
-  titleTag: "Garage Management Software UK — 4xCode",
-
-  metaDesc:
-    "4xcode provides garage management software solutions for UK automotive workshops seeking a more organised way to handle daily operations.",
-
-  desc:
-    "4xcode provides garage management software solutions for UK automotive workshops seeking a more organised way to handle daily operations.",
-
-  intro:
-    "4xcode provides garage management software solutions for UK automotive workshops seeking a more organised way to handle daily operations.",
-
-  tech_section_white_heading: "Systems Behind ",
-  tech_section_red_heading: "Digital Garage Operations",
-
-  techCategories: [
-    {
-      name: "Centralised Workshop Data Management",
-      description:
-        "Structured customer, vehicle, appointment, and repair records allow workshop information to be organised through consistent relationships rather than separate paper documents or disconnected files.",
-    },
-    {
-      name: "Digital Workflow and Scheduling Logic",
-      description:
-        "Appointment records, job statuses, labour entries, and workshop diary views support coordination between vehicle bookings, repair activities, and administrative follow-up tasks.",
-    },
-    {
-      name: "Invoicing and Record Management",
-      description:
-        "Invoice generation workflows, structured billing information, access permissions, and record retrieval capabilities help workshops manage customer documentation and administrative information more consistently.",
-    },
-  ],
-
-  cta: {
-    heading_white: "Ready to Organise Your Garage ",
-    heading_red: "Operations Digitally?",
-    text: "Discuss your workshop bookings, job card processes, and invoicing requirements with the 4xcode team.",
-    button: "Discuss Garage Software",
-  },
-
-  archetecture_white_heading: "Our Garage Software",
-  archetecture_red_heading: "Implementation Approach",
-
-  architecture: [
-    {
-      phase: "01",
-      title: "Review Your Workshop Workflow",
-      desc: "We identify how your garage manages bookings, job cards, vehicle information, and invoices to understand operational requirements and suitable software configuration.",
-    },
-    {
-      phase: "02",
-      title: "Configure Workshop Management Workflows",
-      desc: "The implementation scope covers relevant customer records, appointment processes, repair documentation, and invoicing workflows, followed by checks against representative garage tasks.",
-    },
-    {
-      phase: "03",
-      title: "Introduce Digital Garage Operations",
-      desc: "The agreed system is prepared for operational use, with attention to existing record requirements, staff workflows, and the transition from current administrative processes.",
-    },
-  ],
-
-  buildforindustry: {
-    headingwhite: "Garage Management Software for Different",
-    headingred: "UK Workshops",
-    subheading:
-      "Automotive workshops vary in the vehicles they service, their appointment patterns, and the repairs they perform. Garage software can support different operating models by organising relevant customer, vehicle, job, and billing information.",
-    items: [
-      {
-        heading: "Independent Repair Garages",
-        text: "Manage customer bookings, repair job cards, vehicle histories, and workshop invoices.",
-      },
-      {
-        heading: "MOT Testing Centres",
-        text: "Organise MOT appointments, customer records, and related workshop administration without replacing official DVSA systems.",
-      },
-      {
-        heading: "Vehicle Servicing Workshops",
-        text: "Record scheduled servicing, maintenance work, customer visits, and associated labour details.",
-      },
-      {
-        heading: "Engine Repair Specialists",
-        text: "Track engine diagnostics, repair instructions, parts usage, and detailed workshop jobs.",
-      },
-      {
-        heading: "Tyre and Wheel Workshops",
-        text: "Manage tyre service bookings, vehicle records, fitting work, and customer billing.",
-      },
-      {
-        heading: "Body Repair Garages",
-        text: "Organise bodywork appointments, repair records, parts information, and job progress.",
-      },
-      {
-        heading: "Fleet Maintenance Workshops",
-        text: "Maintain vehicle service records, planned maintenance appointments, and repair documentation for fleets.",
-      },
-      {
-        heading: "Multi-Bay Automotive Workshops",
-        text: "Coordinate simultaneous repair jobs, workshop scheduling, and vehicle progress across service bays.",
-      },
-    ],
-  },
-
-  about_section_data2: {
-    white_heading: "Connecting Garage Invoicing With",
-    red_heading: "Repair Records and Customer Histories",
-
-    paragraphs: [
-      "Workshop invoicing becomes more manageable when billing information is linked to completed repair work. Labour entries, replacement parts, service descriptions, and applicable charges can be organised against individual job records. This helps garage staff prepare customer invoices using information already recorded during the repair process.",
-
-      "Maintaining invoice records alongside customer and vehicle histories can also support future service inquiries. UK garages should ensure their billing processes reflect applicable VAT requirements and relevant record-keeping obligations. Digital records can make previous repair information easier to retrieve, provided access and retention are managed appropriately.",
-
-      "Connected repair and billing records support clearer customer documentation and more organised workshop administration.",
-    ],
-
-    image: "/assets/aboutSection.webp",
-  },
-
-  whyTeamChooseWhiteHeading:
-    "Why Consider 4xcode for Garage Management Software",
-  whyTeamChooseRedHeading: " and Workshop Automation in the UK?",
-
-  whyTeamsChoose: {
-    description:
-      "4xcode's garage automation offering focuses on practical workshop activities, including bookings, vehicle records, digital job cards, and invoicing. When assessing a garage management system, the priority should be how naturally it fits the daily work of service advisers, technicians, and workshop managers. Requirements such as vehicle identification, labour recording, appointment handling, and customer documentation should inform implementation decisions. A workflow-focused approach helps garages evaluate whether digital processes suit their existing operations and administrative needs.",
-    closing_tag:
-      "The objective is practical workshop management: organised vehicle information, clearer repair documentation, and simpler administration for UK automotive businesses.",
-  },
-
-  relatedSlugsWhiteHeading: "Services Supporting ",
-  relatedSlugsRedHeading: "Garage Software Operations",
-  relatedSlugs: [
-    {
-      link: "custom-software",
-      heading: "Custom Software Development Services",
-      description:
-        "Custom software engineering can support specialised garage workflows, additional administrative functions, and tailored reporting requirements when standard workshop management features do not fully address operational needs.",
-      button: "Explore Custom Software",
-    },
-    {
-      link: "api-integration",
-      heading: "API Integration Development Services",
-      description:
-        "API integration can connect garage management systems with compatible accounting, communication, or other business applications, subject to provider permissions, supported interfaces, and implementation requirements.",
-      button: "Explore API Integration",
-    },
-    {
-      link: "web-development",
-      heading: "Website Development for Garages",
-      description:
-        "A professional garage website can present servicing information, repair specialisms, location details, and customer inquiry options while supporting a clearer online experience for prospective customers.",
-      button: "Explore Web Development",
-    },
-  ],
-
-  sectionData: {
-    heading: "Business Benefits of Garage Management Software for UK Workshops",
-
-    description:
-      "Digital garage management can help automotive businesses organise routine administration, maintain repair histories, and coordinate workshop activities. The practical benefits depend on the software's available functionality, staff adoption, and how well existing processes are configured. A structured system provides a foundation for managing workshop information more consistently.",
-
-    cards: [
-      {
-        card_heading: "Reduced Manual Workshop Administration",
-        card_description:
-          "Digital booking records, job cards, and customer information can reduce dependence on handwritten documents and repeated data entry, helping staff organise routine administrative tasks more efficiently.",
-      },
-      {
-        card_heading: "Clearer Appointment and Job Visibility",
-        card_description:
-          "A structured workshop diary can help managers review upcoming bookings, identify scheduled work, and coordinate repair activities across available staff and service bays.",
-      },
-      {
-        card_heading: "More Organised Vehicle Service Histories",
-        card_description:
-          "Linked customer and vehicle records make it easier to review previous visits, recorded repairs, and relevant service information when customers return for additional work.",
-      },
-      {
-        card_heading: "More Consistent Invoice Preparation",
-        card_description:
-          "Garage invoice software can organise labour charges, parts information, and service descriptions, supporting more consistent billing documentation and reducing the need to reconstruct completed job details.",
-      },
-      {
-        card_heading: "Better Workshop Workload Planning",
-        card_description:
-          "Visibility into planned appointments and ongoing jobs can help garage managers identify scheduling conflicts, review workshop capacity, and make more informed daily workload decisions.",
-      },
-      {
-        card_heading: "Improved Customer Service Continuity",
-        card_description:
-          "Accessible customer histories and documented repair information can help staff respond to inquiries, understand previous work, and provide more consistent service during repeat workshop visits.",
-      },
-    ],
-  },
-
-  faq_white_heading: "Garage Management Software",
-  faq_red_heading: "FAQs",
-
-  faqs: [
-    {
-      q: "What Features Should UK Garages Look for in Management Software?",
-      a: "UK garages should evaluate software based on their daily operating requirements. Common priorities include appointment scheduling, customer and vehicle records, digital job cards, labour and parts recording, and invoicing. Workshops may also need service histories, staff permissions, and reporting. The best garage management software UK businesses can choose depends on their workflow, budget, and the capabilities demonstrated by each provider rather than a universal feature checklist.",
-    },
-    {
-      q: "Can Garage Management Software Handle MOT Bookings and Workshop Invoices?",
-      a: "Garage management software can support MOT appointment scheduling, associated customer records, and workshop invoicing where those features are available. However, managing an MOT booking is different from conducting or officially recording an MOT test through DVSA systems. Garages should confirm which MOT-related functions a provider supports. Invoice capabilities should also be assessed against applicable VAT requirements and the workshop's accounting procedures.",
-    },
-    {
-      q: "How Much Does Garage Management Software Cost in the UK?",
-      a: "Garage management software costs vary according to the provider, subscription structure, number of users, included modules, onboarding requirements, and optional integrations. Some systems may charge recurring licence fees, while tailored implementations can involve additional configuration or development costs. Garage owners should request a quotation that clearly identifies the included features, ongoing charges, support arrangements, and any costs associated with transferring existing customer or vehicle records.",
-    },
-  ],
-},
  {
   slug: "ui-ux-design",
   eyebrow: "Human-Centred Product Design",
@@ -4428,7 +4053,7 @@ faqs: [
       button: "See UI/UX design",
     },
     {
-      link: "automation-systems",
+      link: "ai-automation",
       heading: "Order and Workflow Automation",
       description:
         "Automate fulfilment routing, stock alerts, customer notifications and back-office tasks. Our automation systems service removes repetitive operational work as order volumes grow.",

@@ -1,0 +1,304 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.4xcode.com/#organization",
+      "name": "4xCode",
+      "url": "https://www.4xcode.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "@id": "https://www.4xcode.com/#logo",
+        "url": "https://www.4xcode.com/assets/logo1.webp",
+        "contentUrl": "https://www.4xcode.com/assets/logo1.webp"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/company/4xcode-software/"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.4xcode.com/#website",
+      "url": "https://www.4xcode.com/",
+      "name": "4xCode",
+      "alternateName": "4xcode",
+      "publisher": {
+        "@id": "https://www.4xcode.com/#organization"
+      },
+      "inLanguage": "en-GB"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.4xcode.com/service/ai-automation#webpage",
+      "url": "https://www.4xcode.com/service/ai-automation",
+      "name": "AI Automation Services for Businesses | 4xCode",
+      "description": "4xCode delivers AI automation services for businesses of every size, from AI agents and workflow automation to document processing and CRM integration.",
+      "keywords": "ai automation services",
+      "inLanguage": "en-GB",
+      "isPartOf": {
+        "@id": "https://www.4xcode.com/#website"
+      },
+      "about": {
+        "@id": "https://www.4xcode.com/#organization"
+      },
+      "publisher": {
+        "@id": "https://www.4xcode.com/#organization"
+      },
+      "mainEntity": {
+        "@id": "https://www.4xcode.com/service/ai-automation#service"
+      },
+      "breadcrumb": {
+        "@id": "https://www.4xcode.com/service/ai-automation#breadcrumb"
+      }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://www.4xcode.com/service/ai-automation#service",
+      "name": "AI Automation Services",
+      "serviceType": "AI automation services",
+      "description": "4XCODE delivers AI automation services for businesses that want to work faster, reduce manual effort and make better decisions with data. Our engineers design intelligent workflows, AI agents and custom integrations that connect your CRM, ERP, inbox and cloud tools into one dependable system.",
+      "url": "https://www.4xcode.com/service/ai-automation",
+      "provider": {
+        "@id": "https://www.4xcode.com/#organization"
+      },
+      "mainEntityOfPage": {
+        "@id": "https://www.4xcode.com/service/ai-automation#webpage"
+      },
+      "audience": {
+        "@type": "BusinessAudience",
+        "audienceType": "Small businesses, startups and established enterprises"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "AI Automation Services",
+        "itemListElement": [
+          {
+            "@type": "OfferCatalog",
+            "name": "Our AI Automation Services",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Workflow and Process Automation",
+                  "description": "We automate repetitive tasks across sales, finance, HR and operations, connecting your apps so data moves instantly and accurately without manual copying or chasing approvals.",
+                  "provider": {
+                    "@id": "https://www.4xcode.com/#organization"
+                  }
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Custom AI Agents",
+                  "description": "Purpose-built AI agents answer customer queries, qualify leads, draft responses and complete multi-step tasks inside your systems, working around the clock with human oversight built in.",
+                  "provider": {
+                    "@id": "https://www.4xcode.com/#organization"
+                  }
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Intelligent Document Processing",
+                  "description": "Extract, classify and validate data from invoices, contracts, forms and emails automatically, turning unstructured documents into clean, structured records ready for your ERP or CRM.",
+                  "provider": {
+                    "@id": "https://www.4xcode.com/#organization"
+                  }
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "AI Integration and Consulting",
+                  "description": "We assess where AI automation is needed, recommend the right tools and integrate AI models into existing software, giving you a clear, practical roadmap for adoption.",
+                  "provider": {
+                    "@id": "https://www.4xcode.com/#organization"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "@type": "OfferCatalog",
+            "name": "AI Automation Capabilities Across Your Business",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Sales and CRM Automation",
+                  "description": "Automatically capture, score and route leads, update CRM records and trigger personalised follow-ups at the right moment.",
+                  "provider": {
+                    "@id": "https://www.4xcode.com/#organization"
+                  }
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Customer Support Chatbots",
+                  "description": "AI chatbots resolve common questions instantly across website, WhatsApp and email, escalating complex cases to your team.",
+                  "provider": {
+                    "@id": "https://www.4xcode.com/#organization"
+                  }
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Marketing Automation",
+                  "description": "Generate content drafts, segment audiences and schedule campaigns using AI that learns from your performance data.",
+                  "provider": {
+                    "@id": "https://www.4xcode.com/#organization"
+                  }
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Finance and Back Office",
+                  "description": "Automate invoice processing, expense matching, reconciliations and reporting to close books faster with fewer errors.",
+                  "provider": {
+                    "@id": "https://www.4xcode.com/#organization"
+                  }
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "HR and Recruitment",
+                  "description": "Screen CVs, schedule interviews and streamline employee onboarding with consistent, fair and well-documented automated workflows.",
+                  "provider": {
+                    "@id": "https://www.4xcode.com/#organization"
+                  }
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Data and Reporting",
+                  "description": "Turn scattered data into automated dashboards, forecasts and alerts that support faster, better-informed business decisions.",
+                  "provider": {
+                    "@id": "https://www.4xcode.com/#organization"
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "isRelatedTo": [
+        {
+          "@type": "Service",
+          "@id": "https://www.4xcode.com/service/ai-development#service",
+          "name": "Custom AI Development",
+          "url": "https://www.4xcode.com/service/ai-development"
+        },
+        {
+          "@type": "Service",
+          "@id": "https://www.4xcode.com/service/api-integration#service",
+          "name": "API Integration Services",
+          "url": "https://www.4xcode.com/service/api-integration"
+        },
+        {
+          "@type": "Service",
+          "@id": "https://www.4xcode.com/service/saas-engineering#service",
+          "name": "SaaS Development",
+          "url": "https://www.4xcode.com/service/saas-engineering"
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.4xcode.com/service/ai-automation#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.4xcode.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Services",
+          "item": "https://www.4xcode.com/service"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "AI Automation Services",
+          "item": "https://www.4xcode.com/service/ai-automation"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.4xcode.com/service/ai-automation#faq",
+      "url": "https://www.4xcode.com/service/ai-automation",
+      "inLanguage": "en-GB",
+      "isPartOf": {
+        "@id": "https://www.4xcode.com/service/ai-automation#webpage"
+      },
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What are AI automation services and how do they work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "AI automation services combine artificial intelligence with workflow automation to handle repetitive tasks. Systems read data, make rule-based or AI-driven decisions and take actions across your tools, such as updating records, replying to customers or generating reports."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are AI automation services suitable for small businesses with limited budgets?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Many AI automation services for small businesses start with a single, focused workflow, such as lead follow-up or invoice processing. This keeps costs manageable while delivering quick time savings you can reinvest in further automation."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How is AI automation agency pricing usually calculated for projects?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Pricing depends on workflow complexity, the number of integrations, AI model usage and ongoing support needs. 4XCODE provides an itemised quote after a discovery session, so you know the scope, timeline and costs before work begins."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I know where AI automation is needed in my business?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Look for tasks that are repetitive, rule-based, high-volume or error-prone, such as data entry, email triage and reporting. Our discovery audit maps your processes and ranks opportunities by effort, cost and expected impact."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you provide AI automation services for UK businesses?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Our team delivers projects remotely, so UK businesses and international clients receive the same structured process, clear communication and GDPR-aware data handling, with meetings scheduled to suit your working hours."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is my business data secure when using AI automation tools?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Security is built into every project. We use encrypted connections, role-based access controls and audit logs, and we choose AI providers and hosting options that match your privacy, compliance and data-residency requirements."
+          }
+        }
+      ]
+    }
+  ]
+}

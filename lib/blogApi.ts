@@ -1,5 +1,8 @@
-export function getConfig() {
-  const base = (process.env.BLOG_API_BASE ?? "").replace(/\/$/, "");
+export function getConfig(blog: boolean) {
+  const base =
+  blog === true
+    ? (process.env.Garage_BLOG_API_BASE ?? "").replace(/\/$/, "")
+    : (process.env.BLOG_API_BASE ?? "").replace(/\/$/, "");
   const user = process.env.BLOG_API_USERNAME ?? "";
   const pass = process.env.BLOG_API_PASSWORD ?? "";
 
@@ -50,8 +53,8 @@ function normalise(raw: any): Blog {
   };
 }
 
-export async function getBlogs(): Promise<Blog[]> {
-  const { base, auth } = getConfig();
+export async function getBlogs(blog: boolean): Promise<Blog[]> {
+  const { base, auth } = getConfig(blog);
 
   if (!base) return [];
 
@@ -63,8 +66,6 @@ export async function getBlogs(): Promise<Blog[]> {
     });
 
     if (!res.ok) {
-      const err = await res.text();
-      console.log("API ERROR:", res.status, err);
       return [];
     }
 
@@ -81,12 +82,26 @@ export async function getBlogs(): Promise<Blog[]> {
 }
 
 
-export async function fetchBlog(slug: string): Promise<Blog | null> {
-  const { base, auth } = getConfig();
 
-  if (!base) {
-    return null;
+export async function fetchBlog(slug: string): Promise<Blog | null> {
+  let { base, auth } = getConfig(true);
+
+  if (base) {
+    const url = `${base}/blogs/${slug}/`;
+
+    const res = await fetch(url, {
+      headers: auth ? { Authorization: auth } : {},
+      next: { revalidate: 300 },
+    });
+
+    if (res.ok) {
+      const data = await res.json();
+      const raw = data?.data ?? data;
+      return normalise(raw);
+    }
   }
+  ({ base, auth } = getConfig(false));
+  if (!base) return null;
 
   const url = `${base}/blogs/${slug}/`;
   const res = await fetch(url, {
@@ -95,20 +110,12 @@ export async function fetchBlog(slug: string): Promise<Blog | null> {
   });
 
   if (res.status === 404) return null;
-  if (!res.ok) throw new Error(`Failed to fetch blog: ${res.status} (url: ${url})`);
-
-  let data: unknown;
-  try {
-    data = await res.json();
-  } catch {
-    throw new Error("Blog response is not valid JSON");
+  if (!res.ok) {
+    throw new Error(`Failed to fetch blog: ${res.status}`);
   }
 
-
-  const raw = data && typeof data === "object" && (data as any).data
-
-    ? (data as any).data
-    : data;
+  const data = await res.json();
+  const raw = data?.data ?? data;
 
   return normalise(raw);
 }

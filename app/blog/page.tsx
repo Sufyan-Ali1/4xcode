@@ -1,15 +1,9 @@
+import { spaceGrotesk, inter } from "@/lib/fonts";
 import React, { Suspense } from "react";
-import { Space_Grotesk, Inter } from "next/font/google";
 import BlogHeader from "../../components/blog/BlogHeader";
 import BlogDataLoader from "@/components/blog/BlogDataLoader";
 import CaseStudiesSkeleton from "@/components/landing/CaseStudiesSkeleton";
 import { Metadata } from "next";
-
-const inter = Inter({ subsets: ["latin"], weight: ["300", "400", "500"] });
-const spaceGrotesk = Space_Grotesk({
-  subsets: ["latin"],
-  weight: ["400", "500", "700"],
-});
 
 export const metadata: Metadata = {
   title: "Tech Insights, SaaS & AI Engineering Guides | 4xCode Blog",

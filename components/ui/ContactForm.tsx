@@ -1,9 +1,10 @@
 "use client";
 
+import { spaceGrotesk } from "@/lib/fonts";
+
 import React, { useState, ChangeEvent, FormEvent } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useSafeReducedMotion } from "../../utils/useSafeReducedMotion";
-import { Space_Grotesk } from "next/font/google";
 import RefreshIcon from "@mui/icons-material/Refresh";
 import {
   Send as SendIcon,
@@ -12,11 +13,6 @@ import {
 import { useRouter } from "next/navigation";
 
 import { submitContactForm } from "../../lib/contactFormApi";
-
-const spaceGrotesk = Space_Grotesk({
-  subsets: ["latin"],
-  weight: ["400", "700"],
-});
 
 type ContactFormProps = {
   variant?: "default" | "sidebar";
@@ -56,7 +52,7 @@ const [captchaError, setCaptchaError] = useState("");
       // Allows only digits and hyphens to support your placeholder format (e.g., 000-111-2221)
       const cleanValue = value.replace(/[^0-9\-]/g, "");
       setFormData((prev) => ({ ...prev, [name]: cleanValue }));
-    } 
+    }
     else if (name === "captcha") {
   setCaptchaAnswer(value);
 
@@ -278,7 +274,6 @@ onClick={() => {
   </p>
 )}
 
- 
 </div>
             {/* Submit Action Block */}
             <div className="flex flex-col gap-2.5 w-full pt-1 box-border">

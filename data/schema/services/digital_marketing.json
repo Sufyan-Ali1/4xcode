@@ -1,0 +1,180 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.4xcode.com/#organization",
+      "name": "4xCode",
+      "url": "https://www.4xcode.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "@id": "https://www.4xcode.com/#logo",
+        "url": "https://www.4xcode.com/assets/logo1.webp",
+        "contentUrl": "https://www.4xcode.com/assets/logo1.webp"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/company/4xcode-software/"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.4xcode.com/#website",
+      "url": "https://www.4xcode.com/",
+      "name": "4xCode",
+      "alternateName": "4xcode",
+      "publisher": {
+        "@id": "https://www.4xcode.com/#organization"
+      },
+      "inLanguage": "en-GB"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.4xcode.com/service/digital-marketing-services#webpage",
+      "url": "https://www.4xcode.com/service/digital-marketing-services",
+      "name": "Digital Marketing Services: SEO, PPC & Paid Social | 4xcode",
+      "description": "Digital marketing services that combine Google Ads, Meta Ads, SEO and analytics with conversion optimisation to grow qualified leads. Talk to our team.",
+      "isPartOf": {
+        "@id": "https://www.4xcode.com/#website"
+      },
+      "about": {
+        "@id": "https://www.4xcode.com/#organization"
+      },
+      "publisher": {
+        "@id": "https://www.4xcode.com/#organization"
+      },
+      "inLanguage": "en-GB",
+      "keywords": "Digital Marketing Services",
+      "mainEntity": {
+        "@id": "https://www.4xcode.com/service/digital-marketing-services#service"
+      },
+      "breadcrumb": {
+        "@id": "https://www.4xcode.com/service/digital-marketing-services#breadcrumb"
+      }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://www.4xcode.com/service/digital-marketing-services#service",
+      "name": "Digital Marketing Services",
+      "serviceType": "Digital Marketing Services",
+      "description": "4xCode provides digital marketing services that connect search, paid media, social, email and conversion optimization into one data-driven strategy. Instead of running channels in isolation, we plan budgets around your customer journey, track every conversion and shift spend toward what produces qualified leads and sales.",
+      "url": "https://www.4xcode.com/service/digital-marketing-services",
+      "provider": {
+        "@id": "https://www.4xcode.com/#organization"
+      },
+      "mainEntityOfPage": {
+        "@id": "https://www.4xcode.com/service/digital-marketing-services#webpage"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Digital Marketing Services Solutions",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "PPC and Paid Social Management"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "SEO and AI Search Optimization"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Content, Social and Email Marketing"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Conversion and Landing Page Optimization"
+            }
+          }
+        ]
+      },
+      "isRelatedTo": [
+        {
+          "@type": "Service",
+          "@id": "https://www.4xcode.com/service/search-engine-optimization-seo#service",
+          "name": "Search Engine Optimization",
+          "url": "https://www.4xcode.com/service/search-engine-optimization-seo"
+        },
+        {
+          "@type": "Service",
+          "@id": "https://www.4xcode.com/service/web-development#service",
+          "name": "Website Development Services",
+          "url": "https://www.4xcode.com/service/web-development"
+        },
+        {
+          "@type": "Service",
+          "@id": "https://www.4xcode.com/service/ui-ux-design#service",
+          "name": "UX UI Design Services",
+          "url": "https://www.4xcode.com/service/ui-ux-design"
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.4xcode.com/service/digital-marketing-services#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.4xcode.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Services",
+          "item": "https://www.4xcode.com/service"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Digital Marketing",
+          "item": "https://www.4xcode.com/service/digital-marketing-services"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.4xcode.com/service/digital-marketing-services#faq",
+      "isPartOf": {
+        "@id": "https://www.4xcode.com/service/digital-marketing-services#webpage"
+      },
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How much do digital marketing services cost for a growing business?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Cost has two parts: management fees for strategy, campaign management and reporting, and media spend paid directly to platforms such as Google or Meta. Fees depend on the number of channels, campaign complexity, content volume and markets targeted. We recommend a budget after the audit, based on your goals and realistic cost-per-acquisition benchmarks, and provide a scoped proposal rather than a fixed package."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How soon will we see results from digital marketing campaigns?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It depends on the channel. Paid search and social campaigns can generate traffic and leads within days of launch, although the first weeks are used to gather data and refine targeting. SEO, content and email list growth build more gradually, typically over several months. We set early milestone KPIs so you can judge progress before longer-term channels reach full momentum."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Should we outsource digital marketing or build an in-house team?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Outsourcing gives you specialists across SEO, PPC, social, email, analytics and development without hiring each role, which suits most startups and growing businesses. An in-house team works well once channels are proven and volume justifies full-time staff. Many companies combine both: an internal marketing lead owns brand and priorities, while an agency handles specialist execution, testing and reporting."
+          }
+        }
+      ]
+    }
+  ]
+}

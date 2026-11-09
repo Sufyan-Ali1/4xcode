@@ -1,0 +1,180 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.4xcode.com/#organization",
+      "name": "4xCode",
+      "url": "https://www.4xcode.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "@id": "https://www.4xcode.com/#logo",
+        "url": "https://www.4xcode.com/assets/logo1.webp",
+        "contentUrl": "https://www.4xcode.com/assets/logo1.webp"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/company/4xcode-software/"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.4xcode.com/#website",
+      "url": "https://www.4xcode.com/",
+      "name": "4xCode",
+      "alternateName": "4xcode",
+      "publisher": {
+        "@id": "https://www.4xcode.com/#organization"
+      },
+      "inLanguage": "en-GB"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.4xcode.com/service/search-engine-optimization-seo#webpage",
+      "url": "https://www.4xcode.com/service/search-engine-optimization-seo",
+      "name": "Search Engine Optimization for Software Brands | 4xcode",
+      "description": "Search engine optimization from an engineering team: technical SEO audits, Core Web Vitals fixes and content strategy that turns traffic into enquiries.",
+      "isPartOf": {
+        "@id": "https://www.4xcode.com/#website"
+      },
+      "about": {
+        "@id": "https://www.4xcode.com/#organization"
+      },
+      "publisher": {
+        "@id": "https://www.4xcode.com/#organization"
+      },
+      "inLanguage": "en-GB",
+      "keywords": "Search Engine Optimization",
+      "mainEntity": {
+        "@id": "https://www.4xcode.com/service/search-engine-optimization-seo#service"
+      },
+      "breadcrumb": {
+        "@id": "https://www.4xcode.com/service/search-engine-optimization-seo#breadcrumb"
+      }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://www.4xcode.com/service/search-engine-optimization-seo#service",
+      "name": "Search Engine Optimization",
+      "serviceType": "Search Engine Optimization",
+      "description": "4xCode delivers search engine optimization services that make your website easier for Google to crawl, rank and recommend, and easier for AI platforms such as ChatGPT and Claude to understand and cite. We combine technical SEO, intent-led content and authority building into one custom SEO strategy for startups, B2B companies and growing brands that need qualified organic traffic and leads, not vanity rankings.",
+      "url": "https://www.4xcode.com/service/search-engine-optimization-seo",
+      "provider": {
+        "@id": "https://www.4xcode.com/#organization"
+      },
+      "mainEntityOfPage": {
+        "@id": "https://www.4xcode.com/service/search-engine-optimization-seo#webpage"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Search Engine Optimization Solutions",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Technical SEO and Site Health"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Keyword Research and Content Optimization"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "AI Search Optimization (GEO)"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Link Building and Local SEO"
+            }
+          }
+        ]
+      },
+      "isRelatedTo": [
+        {
+          "@type": "Service",
+          "@id": "https://www.4xcode.com/service/web-development#service",
+          "name": "Website Development Services",
+          "url": "https://www.4xcode.com/service/web-development"
+        },
+        {
+          "@type": "Service",
+          "@id": "https://www.4xcode.com/service/digital-marketing-services#service",
+          "name": "Digital Marketing Services",
+          "url": "https://www.4xcode.com/service/digital-marketing-services"
+        },
+        {
+          "@type": "Service",
+          "@id": "https://www.4xcode.com/service/ecommerce-solutions#service",
+          "name": "Ecommerce Development Services",
+          "url": "https://www.4xcode.com/service/ecommerce-solutions"
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.4xcode.com/service/search-engine-optimization-seo#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.4xcode.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Services",
+          "item": "https://www.4xcode.com/service"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "SEO",
+          "item": "https://www.4xcode.com/service/search-engine-optimization-seo"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.4xcode.com/service/search-engine-optimization-seo#faq",
+      "isPartOf": {
+        "@id": "https://www.4xcode.com/service/search-engine-optimization-seo#webpage"
+      },
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How much does it cost to implement an SEO campaign for my business?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Cost depends on scope rather than a fixed package: the size and condition of your website, how competitive your keywords are, how many locations or markets you target, and how much content and link building is required. Most SEO campaigns run as a monthly retainer after an initial audit. We provide a scoped proposal once we have reviewed your site and goals."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does SEO take before we see meaningful results?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Technical fixes can register within weeks of Google recrawling your pages, but competitive rankings and lead growth build more slowly; Google's own guidance suggests most SEO work needs four months to a year to show its full effect. Timing depends on domain history, competition and implementation speed, so we track milestone KPIs that show progress along the way."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does AI SEO replace traditional SEO services, or do we need both?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You need both, because they share the same foundations. AI assistants and Google AI Overviews draw heavily on content that is crawlable, well structured and trusted, which is exactly what traditional organic SEO builds. AI SEO adds specific work on top: answer-first formatting, entity clarity, brand mentions on third-party sites and monitoring how ChatGPT, Claude and other platforms describe your business."
+          }
+        }
+      ]
+    }
+  ]
+}

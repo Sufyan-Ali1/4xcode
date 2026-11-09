@@ -25,6 +25,16 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
+        source: "/service/automation-systems",
+        destination: "/service/ai-automation",
+        permanent: true,
+      },
+      {
+        source: "/service/seo-digital-marketing",
+        destination: "/service/search-engine-optimization-seo",
+        permanent: true,
+      },
+      {
         source: "/:path*",
         has: [
           {
@@ -35,6 +45,11 @@ const nextConfig: NextConfig = {
         destination: "https://www.4xcode.com/:path*",
         permanent: true,
       },
+        {
+  source: "/service/seo",
+  destination: "/service/search-engine-optimization-seo",
+  permanent: true,
+},
     ];
   },
 };

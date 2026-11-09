@@ -1,34 +1,10 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import site from "@/data/site.json";
 
-// Icons
-import TwitterIcon from "@mui/icons-material/Twitter";
-import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import PublicIcon from "@mui/icons-material/Public";
-
-const STUDIO_LINKS = [
-  { label: "Service", href: "/service" },
-  { label: "Work", href: "/work" },
-  { label: "Contact", href: "/contact" },
-  { label: "About", href: "/about" },
-];
-
-const SOCIAL_LINKS = [
-  {
-    label: "LinkedIn",
-    Icon: LinkedInIcon,
-    href: "https://www.linkedin.com/company/4xcode-software/",
-  },
-  {
-    label: "Website",
-    Icon: PublicIcon,
-    href: "https://4xcode.com",
-  },
-];
-
-export default function Footer() {
+export default function Footer({ data = site.footer, brand = site.brand }: { data?: typeof site.footer; brand?: typeof site.brand }) {
   return (
     <footer className="relative w-full bg-black pt-4 pb-2 text-white">
       {/* Top line */}
@@ -41,39 +17,38 @@ export default function Footer() {
       />
 
       <div className="mx-auto w-full max-w-300 px-5">
-        <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-12 lg:gap-8">
+<div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-10">
           {/* Logo */}
-          <div className="flex flex-col gap-4 lg:col-span-4">
+          <div className="flex flex-col lg:col-span-2">
             <Link
-              href="/"
-              aria-label="4xcode home"
+              href={brand.href}
+              aria-label={brand.homeLabel}
               prefetch={false}
-              className="flex items-center"
+              className="flex mt-4 mb-2 items-center"
             >
               <Image
-                src="/assets/logo1.webp"
+                src={brand.logo}
                 width={48}
                 height={48}
                 loading="lazy"
-                alt="4xcode logo"
+                alt={brand.logoAlt}
                 className="h-12 w-[57px] object-contain"
               />
             </Link>
 
             <p className="max-w-sm text-sm leading-relaxed text-[#a7a3a4]">
-              Premium engineering studio building the next generation of
-              software, AI and SaaS.
+              {data.description}
             </p>
           </div>
 
           {/* Studio */}
-          <div className="lg:col-span-2">
-            <h3 className="mb-6 text-[12px] uppercase tracking-[0.2em] text-[#a7a3a4]">
-              Studio
+          <div className="flex flex-col lg:col-span-1">
+            <h3 className="mt-4 mb-2 text-[12px] uppercase tracking-[0.2em] text-[#a7a3a4]">
+              {data.studioLabel}
             </h3>
 
             <ul className="flex flex-col gap-1">
-              {STUDIO_LINKS.map((item) => (
+              {data.studioLinks.map((item) => (
                 <li key={item.href}>
                   <Link
                     href={item.href}
@@ -86,54 +61,73 @@ export default function Footer() {
               ))}
             </ul>
           </div>
-
-          {/* Contact */}
-          <div className="lg:col-span-2">
-            <h3 className="mb-6 text-[12px] uppercase tracking-[0.2em] text-[#a7a3a4]">
-              Contact
+           <div className="flex flex-col lg:col-span-2 ">
+            <h3 className="mt-4 mb-2 text-[12px] uppercase tracking-[0.2em] text-[#a7a3a4]">
+              {data.productsLabel}
             </h3>
 
-            <ul className="flex flex-col gap-2 text-sm text-[#a7a3a4]">
+          <ul className="flex flex-col gap-1">
+          {data.products.map((product) => (
+            <li key={product.href}><Link href={product.href} prefetch={false} className="text-[14px] text-white transition-colors hover:text-white/80">{product.label}</Link></li>
+          ))}
+    </ul>
+          </div>
+
+          {/* Contact */}
+          <div className="flex flex-col lg:col-span-2">
+            <h3 className="mt-4 mb-2 text-[12px] uppercase tracking-[0.2em] text-[#a7a3a4]">
+              {data.contactLabel}
+            </h3>
+
+            <ul className="flex flex-col  text-sm text-[#a7a3a4]">
               <li>
                 <Link
-                  href="mailto:hello@4xcode.com"
+                  href={data.email.href}
                   className="text-white"
+                  target="_blank"
                   prefetch={false}
                 >
-                  info@4xcode.com
+                  {data.email.label}
                 </Link>
               </li>
 
-              <li>01 Padnal Court, Romford RM6 5HR, United Kingdom</li>
+              <li>
+                <Link
+                  href={data.address.href}
+                  className="mt-2 block hover:text-white"
+                  target="_blank"
+                  prefetch={false}
+                >{data.address.label}
+                </Link></li>
 
-              <li>Mon - Fri</li>
+              <li className="mt-2">{data.hours}</li>
             </ul>
           </div>
 
           {/* Newsletter */}
-          <div className="lg:col-span-4">
-            <h3 className="mb-6 text-[12px] uppercase tracking-[0.2em] text-[#a7a3a4]">
-              Newsletter
+          <div className="flex flex-col lg:col-span-3">
+            <h3 className="mt-4 mb-2 text-[12px] uppercase tracking-[0.2em] text-[#a7a3a4]">
+              {data.newsletterLabel}
             </h3>
 
             <form className="mb-8 flex items-center justify-between rounded-full border border-white/10 bg-[#0a0a0a] p-1.5">
               <input
                 type="email"
-                placeholder="you@company.com"
-                className="w-full bg-transparent px-4 text-sm text-white placeholder:text-[#a7a3a4] focus:outline-none"
+                placeholder={data.emailPlaceholder}
+                className="w-2/3 lg:w-1/2 bg-transparent px-4 text-sm text-white placeholder:text-[#a7a3a4] focus:outline-none"
               />
 
               <button
                 type="submit"
-                className="shrink-0 rounded-full bg-[#f90a1f] px-4 py-2 text-sm font-semibold transition-colors hover:bg-[#ed1c20]"
+                className="shrink-0 w-1/3 min-w-[100px] lg:w-1/2 rounded-full bg-[#f90a1f] px-4 py-2 text-sm font-semibold transition-colors hover:bg-[#ed1c20] cursor-pointer"
               >
-                Subscribe
+                {data.subscribeLabel}
               </button>
             </form>
 
             {/* Social */}
             <div className="flex gap-4">
-              {SOCIAL_LINKS.map(({ Icon, href, label }) => (
+              {data.socialLinks.map(({ href, label }) => (
                 <Link
                   key={href}
                   href={href}
@@ -143,7 +137,7 @@ export default function Footer() {
                   prefetch={false}
                   className="flex h-10 w-10 items-center justify-center rounded-[14px] border border-white/10 bg-[#0a0a0a] transition-colors hover:bg-[#1a1a1a]"
                 >
-                  <Icon
+                  <LinkedInIcon
                     fontSize="small"
                     className="text-[#a7a3a4] transition-colors hover:text-white"
                   />
@@ -155,7 +149,7 @@ export default function Footer() {
 
         {/* Bottom */}
         <div className="mt-16 flex flex-col items-center justify-center border-t border-white/10 pt-8 text-xs text-[#a7a3a4] md:flex-row">
-          <p>© 2026 4XCODE. Engineering the future with code.</p>
+          <p>{data.copyright}</p>
         </div>
       </div>
     </footer>

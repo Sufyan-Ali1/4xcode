@@ -1,0 +1,377 @@
+{
+  "faqs": [
+    {
+      "q": "How long does a typical software development project take?",
+      "a": "Timelines depend on scope and complexity. Smaller projects usually take 2 to 4 weeks, while larger custom software solutions typically take 8 to 12 weeks from discovery to launch."
+    },
+    {
+      "q": "What is the process when I book a free demo?",
+      "a": "You book a short call, share your goals, and we walk you through relevant solutions. Afterwards, you receive tailored recommendations and a clear proposal for your project."
+    },
+    {
+      "q": "Will I receive regular updates during development?",
+      "a": "Yes. We work in agile sprints and share weekly progress updates, so you always know what has been completed, what comes next, and how your project is progressing."
+    },
+    {
+      "q": "Do you provide support after the project is delivered?",
+      "a": "Yes. After launch, we offer ongoing maintenance, performance monitoring, bug fixes, and feature enhancements to keep your software secure, stable, and ready to scale with your business."
+    }
+  ],
+  "about": {
+    "white_heading": "A Boutique Software Development Agency",
+    "red_heading": "Delivering Exceptional Results",
+    "paragraphs": [
+      "4XCODE is a remote-first software development company building fast, AI-powered SaaS platforms, web applications, and mobile products for startups and growing brands.",
+      "From custom software development and AI integration to cloud infrastructure and UI/UX design, our senior team transforms ambitious ideas into market-ready software delivered in weeks, not quarters."
+    ],
+    "stats": [
+      {
+        "value": "132+",
+        "label": "Products Shipped"
+      },
+      {
+        "value": "30M",
+        "label": "Users Reached"
+      },
+      {
+        "value": "99.99%",
+        "label": "Production Uptime"
+      },
+      {
+        "value": "9 Years",
+        "label": "Average Team Experience"
+      }
+    ],
+    "image": "/assets/aboutSection.webp",
+    "label": "About 4XCODE",
+    "imageAlt": "Engineering Team",
+    "foundedLabel": "Founded",
+    "founded": "2021 · Remote-first"
+  },
+  "testimonials": [
+    {
+      "id": 0,
+      "stars": 5,
+      "quote": "4xCode delivered our SaaS MVP in 6 weeks — clean architecture, great UX, and zero hand-holding needed. They've become our go-to engineering partner.",
+      "author": "James T.",
+      "title": "Founder, FinTech Startup",
+      "initial": "J"
+    },
+    {
+      "id": 1,
+      "stars": 5,
+      "quote": "The AI pipeline they built cut our data processing time by 80%. Senior engineers, clear communication, and they actually hit the deadline.",
+      "author": "Aisha M.",
+      "title": "CTO, E-commerce Platform",
+      "initial": "A"
+    },
+    {
+      "id": 2,
+      "stars": 5,
+      "quote": "We replaced three freelancers with 4xCode and never looked back. The quality of code, the speed, and the product thinking are all outstanding.",
+      "author": "Liam R.",
+      "title": "Product Lead, B2B SaaS",
+      "initial": "L"
+    },
+    {
+      "id": 3,
+      "stars": 5,
+      "quote": "From discovery to launch in under [X] months. The team understood our [domain] quickly and shipped a product our users actually love.",
+      "author": "Priya N.",
+      "title": "CEO, HealthTech Scale-up",
+      "initial": "P"
+    }
+  ],
+  "hero": {
+    "eyebrow": [
+      "Custom Software",
+      "Prebuilt Products",
+      "Digital Growth"
+    ],
+    "separator": "·",
+    "heading": [
+      "The Software",
+      "Development Agency",
+      "Built for Growth"
+    ],
+    "description": "4xCode builds custom software, high-performance websites, mobile apps, SaaS platforms, and AI automation systems. We also offer a ready-to-use Garage Management System to help businesses operate efficiently and scale with confidence.",
+    "actions": [
+      {
+        "label": "Explore Our Services",
+        "href": "#services"
+      },
+      {
+        "label": "View Our Products",
+        "href": "#products"
+      }
+    ],
+    "features": [
+      {
+        "title": "Custom Software",
+        "subtitle": "Development",
+        "icon": "code"
+      },
+      {
+        "title": "Websites &",
+        "subtitle": "SEO Solutions",
+        "icon": "globe"
+      },
+      {
+        "title": "Business",
+        "subtitle": "Automation",
+        "icon": "gear"
+      },
+      {
+        "title": "Integrated",
+        "subtitle": "Systems",
+        "icon": "image"
+      }
+    ],
+    "image": {
+      "src": "/assets/hero-image.webp",
+      "alt": "AI brain connected to digital network"
+    },
+    "chips": [
+      {
+        "label": "Automation",
+        "icon": "gear",
+        "left": "30.28%",
+        "top": "17.43%",
+        "detail": ""
+      },
+      {
+        "label": "AI Integration",
+        "icon": "dot",
+        "left": "71.43%",
+        "top": "19.04%",
+        "detail": ""
+      },
+      {
+        "label": "Custom Solutions",
+        "icon": "code",
+        "left": "6.82%",
+        "top": "40.48%",
+        "detail": ""
+      },
+      {
+        "label": "Cloud Architecture",
+        "icon": "cloud",
+        "left": "75.27%",
+        "top": "48.3%",
+        "detail": ""
+      },
+      {
+        "label": "Web Development",
+        "icon": "globe",
+        "left": "13.65%",
+        "top": "65.13%",
+        "detail": "99.9%"
+      },
+      {
+        "label": "Data Synthesis",
+        "icon": "chart",
+        "left": "68.23%",
+        "top": "71.34%",
+        "detail": ""
+      }
+    ]
+  },
+  "services": {
+    "id": "services",
+    "label": "Capabilities",
+    "heading": "Full-Stack Expertise for",
+    "highlight": "Ambitious, Growing Businesses",
+    "description": "Interlocking capabilities. One obsessive standard of craft.",
+    "items": [
+      {
+        "title": "Web Development",
+        "href": "/service/web-development",
+        "description": "Fast, secure, full-stack websites and web applications built on modern frameworks to engage visitors and turn traffic into customers.",
+        "icon": "web"
+      },
+      {
+        "title": "Mobile Apps",
+        "href": "/service/mobile-apps",
+        "description": "Smooth, native-quality iOS and Android apps built with React Native, Swift, and Kotlin for reliable performance on every device.",
+        "icon": "mobile"
+      },
+      {
+        "title": "SaaS Engineering",
+        "href": "/service/saas-engineering",
+        "description": "Multi-tenant SaaS platforms with secure authentication, billing, analytics, and dashboards, engineered to support thousands of users as you grow.",
+        "icon": "saas"
+      },
+      {
+        "title": "UI/UX Design",
+        "href": "/service/ui-ux-design",
+        "description": "Research-led interface design that makes products intuitive, visually distinctive, and focused on converting visitors into loyal users.",
+        "icon": "design"
+      },
+      {
+        "title": "AI Development",
+        "href": "/service/ai-development",
+        "description": "As an AI software development agency, we build AI agents, RAG pipelines, and LLM-powered workflows that automate real business tasks.",
+        "icon": "ai"
+      },
+      {
+        "title": "Cloud Systems",
+        "href": "/service/cloud-systems",
+        "description": "Scalable, secure cloud infrastructure on AWS, Vercel, and Cloudflare, fully automated and monitored to keep your applications running smoothly.",
+        "icon": "cloud"
+      }
+    ],
+    "cardAction": "Learn more",
+    "action": {
+      "label": "View More Services",
+      "href": "/service"
+    }
+  },
+  "process": {
+    "label": "Our Process",
+    "heading": "From First Idea to",
+    "highlight": "Launch",
+    "steps": [
+      {
+        "number": "01",
+        "title": "Discover",
+        "description": "We explore your goals through workshops and technical audits, then create a clear product roadmap."
+      },
+      {
+        "number": "02",
+        "title": "Design",
+        "description": "We craft intuitive, user-focused UI/UX designs and interactive prototypes before any development begins."
+      },
+      {
+        "number": "03",
+        "title": "Develop",
+        "description": "Senior engineers build your software in agile sprints with transparent, weekly progress updates."
+      },
+      {
+        "number": "04",
+        "title": "Launch & Scale",
+        "description": "We launch with performance optimisation, analytics, and integrations, ready to support real growth."
+      },
+      {
+        "number": "05",
+        "title": "Optimise & Evolve",
+        "description": "We keep improving your product through real-world data, user feedback, and ongoing performance upgrades."
+      }
+    ]
+  },
+  "logos": {
+    "items": [
+      {
+        "src": "/assets/slide1.webp",
+        "alt": "Vogue Towing",
+        "width": 2926,
+        "height": 2029,
+        "treatment": "silhouette"
+      },
+      {
+        "src": "/assets/slide2.webp",
+        "alt": "Select Prestige",
+        "width": 437,
+        "height": 251,
+        "treatment": "silhouette"
+      },
+      {
+        "src": "/assets/slide3.webp",
+        "alt": "Ford Engines",
+        "width": 2327,
+        "height": 752,
+        "treatment": "silhouette"
+      },
+      {
+        "src": "/assets/slide4.webp",
+        "alt": "Range Rover Garage",
+        "width": 792,
+        "height": 288,
+        "treatment": "silhouette"
+      },
+      {
+        "src": "/assets/slide5.webp",
+        "alt": "Vogue Technics",
+        "width": 341,
+        "height": 85,
+        "treatment": "silhouette"
+      },
+      {
+        "src": "/assets/slide6.webp",
+        "alt": "Vogue Fix My Motor",
+        "width": 2299,
+        "height": 1313,
+        "treatment": "silhouette"
+      },
+      {
+        "src": "/assets/slide7.webp",
+        "alt": "Photography partner logo",
+        "width": 167,
+        "height": 245,
+        "treatment": "invert"
+      }
+    ],
+    "height": 48
+  },
+  "testimonialSection": {
+    "label": "Testimonials",
+    "heading": "Trusted by Growing Teams",
+    "quoteOpen": "\"",
+    "quoteClose": "\""
+  },
+  "work": {
+    "label": "Featured Work",
+    "heading": "Results-Driven",
+    "highlight": "Client Success Stories",
+    "action": {
+      "label": "View More Work",
+      "href": "/work"
+    },
+    "cardAction": "Read Case Study",
+    "imageFallback": "4xCode Case Study",
+    "titleFallback": "Untitled Case Study",
+    "limit": 3
+  },
+  "products": {
+    "id": "products",
+    "label": "Our Products",
+    "heading": "Ready-Made",
+    "highlight": "Business Software",
+    "description": "Practical, ready-to-use software solutions that simplify daily operations and help businesses grow.",
+    "cardAction": "Explore product",
+    "items": [
+      {
+        "title": "Garage Management System",
+        "href": "/product/garage-management-system",
+        "image": "/assets/garage-management-banner.webp",
+        "imageAlt": "",
+        "icon": "garage",
+        "description": "An all-in-one garage management platform that helps automotive workshops manage bookings, jobs, customers, and invoicing from one simple dashboard."
+      }
+    ]
+  },
+  "cta": {
+    "label": "Let's Build",
+    "heading": "Ready to Build Your",
+    "highlight": "Next Digital Product?",
+    "description": "Tell us about your project and our team will respond within 24 hours with a clear opinion, practical recommendations, and a straightforward plan to move forward.",
+    "image": {
+      "src": "/assets/CTASection.webp",
+      "alt": "CTA Background Graphic"
+    },
+    "actions": [
+      {
+        "label": "Book an Intro Call",
+        "href": "/contact"
+      },
+      {
+        "label": "See Our Capabilities",
+        "href": "/service"
+      }
+    ]
+  },
+  "faqSection": {
+    "label": "FAQs",
+    "heading": "Frequently Asked",
+    "highlight": "Questions"
+  }
+}

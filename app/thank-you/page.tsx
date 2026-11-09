@@ -1,9 +1,10 @@
 "use client";
 
+import { spaceGrotesk, inter } from "@/lib/fonts";
+
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { Space_Grotesk, Inter } from "next/font/google";
 import { motion } from "framer-motion";
 import { useSafeReducedMotion } from "../../utils/useSafeReducedMotion";
 import { Reveal } from "../../utils/AnimationReveal";
@@ -11,15 +12,6 @@ import MailOutlineIcon from "@mui/icons-material/MailOutlined";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import CheckIcon from "@mui/icons-material/Check";
 import Image from "next/image";
-
-const inter = Inter({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600"],
-});
-const spaceGrotesk = Space_Grotesk({
-  subsets: ["latin"],
-  weight: ["400", "500", "700"],
-});
 
 export default function ThankYouPage() {
   const router = useRouter();
@@ -86,7 +78,6 @@ export default function ThankYouPage() {
       </div>
 
       <div className="relative max-w-xl w-full text-center z-10 flex flex-col items-center space-y-8">
-        
 
         <div className="flex flex-col items-center space-y-6">
           {/* Countdown Clock */}
@@ -129,18 +120,18 @@ export default function ThankYouPage() {
           <motion.div
             initial={{ opacity: 0, scale: reduced ? 1 : 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ 
-              type: "spring", 
-              stiffness: 260, 
-              damping: 20, 
-              delay: 0.1 
+            transition={{
+              type: "spring",
+              stiffness: 260,
+              damping: 20,
+              delay: 0.1
             }}
             className="relative flex items-center justify-center w-28 h-28 rounded-3xl border border-[#ef1f23]/20 bg-gradient-to-b from-[#161618] to-[#0a0a0b] shadow-[0_0_50px_rgba(239,31,35,0.15)]"
           >
             <div className="absolute inset-0 rounded-3xl bg-[#F90A1F]/5 blur-xl opacity-100" />
-            <CheckIcon 
-              style={{ fontSize: 48 }} 
-              className="text-[#ef1f23] filter drop-shadow-[0_0_8px_rgba(239,31,35,0.5)]" 
+            <CheckIcon
+              style={{ fontSize: 48 }}
+              className="text-[#ef1f23] filter drop-shadow-[0_0_8px_rgba(239,31,35,0.5)]"
             />
           </motion.div>
         </div>

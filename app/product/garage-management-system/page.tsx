@@ -1,0 +1,102 @@
+import { pageMetadata } from "@/data/metadata";
+import JsonLd from "@/components/JsonLd";
+import garageSchema from "@/data/schema/garage-management-system.json";
+import garage from "@/data/GarageManagementPage.json";
+import GarageChallenges from "@/components/products/GarageChallenges"
+import CTA from "@/components/products/CTA";
+import Why4xCode from "@/components/products/Why4xCode.tsx";
+import GarageNeedsFeatures from "@/components/products/GarageNeedsFeatures";
+import WorkflowSection from "@/components/products/WorkflowSection";
+import SecureAccessSection from "@/components/products/SecureAccessSection";
+import BookCallForm from "@/components/products/BookCallForm";
+import TestimonialsSection from "@/components/products/Testimonials";
+import products_data from "@/data/products.json";
+import InspectionSteps from "@/components/products/InspectionSteps";
+import PricingPlans from "@/components/products/PricingPlans";
+import BlogsCarousel from "@/components/products/BlogsCarousel";
+import ServiceFaq from "@/components/ui/ServiceFaq";
+import OurVideosSection from "@/components/landing/OurVideosSection";
+import videos from "@/data/Videos.json";
+export const metadata = pageMetadata.garage;
+
+export default function Home() {
+  const data=products_data["garage-management-system"]
+  return (
+    <main className=" bg-black mt-15 text-white flex flex-wrap justify-center mx-auto px-5 sm:px-8 lg:px-10">
+      <JsonLd data={garageSchema} />
+      <section className="relative w-[1150px] flex flex-wrap items-start overflow-hidden bg-black py-10 sm:py-12 lg:min-h-[300px] lg:items-center lg:py-16">
+      <div className="w-full lg:w-1/2">      
+<div className="inline-flex h-7 gap-2 rounded-full bg-black px-3.5 shadow-[0_0_18px_rgba(255,91,99,0.18)] ">
+  <span className="relative flex shrink-0 items-center justify-center rounded-full bg-[#ff5b63]/15">
+    <span className="h-1.5 w-1.5 rounded-full bg-[#E35D59]" />
+  </span>
+
+  <span className="whitespace-nowrap text-sm font-medium leading-[1.82] tracking-[1.5px] text-[#a5a1a2] ">
+    {garage.hero.label}
+  </span>
+</div>
+
+
+          {/* Main heading */}
+          <h1 className="max-w-[680px] text-[38px] font-bold leading-[1.12] tracking-[-1.5px] sm:text-[48px] sm:leading-[1.1] sm:tracking-[-1.8px] lg:text-[52px] lg:tracking-[-2px]">
+            {garage.hero.heading}{" "}
+            <span className="text-[#e95d60]">{garage.hero.highlight}</span>
+          </h1>
+
+          {/* Description */}
+          <p className="mt-8 max-w-[665px] text-[16px] leading-[1.82] tracking-[1px] text-[#A7A3A4] sm:mt-9 sm:text-[17px] sm:leading-[1.72] lg:mt-9 lg:text-[17px]">
+            {garage.hero.description}
+          </p>
+        </div>
+     
+      <div className="w-full lg:w-1/2 lg:pl-5">
+      <BookCallForm data={garage.form} />
+      </div>
+       </section> 
+      <div className="w-full">
+      <GarageChallenges />
+      </div>
+      <div className="w-full mt-15">
+      <CTA data={garage.introCta} />
+      </div>
+      <div className="w-full">
+      <Why4xCode />
+      </div>
+       <div className="w-full">
+      <GarageNeedsFeatures data={garage.features} />
+      </div>
+      <div className="w-full">
+      < WorkflowSection />
+      </div>
+        <div className="w-full">
+      <SecureAccessSection data={garage.security} />
+      </div>
+       <div className="w-full">
+      <TestimonialsSection data={garage.testimonials} />
+      </div> 
+       <div className="w-full">
+      <PricingPlans data={data.pricing}/>
+      </div> 
+       <div className="w-full">
+      <SecureAccessSection data={garage.reporting} />
+      </div>
+       <div className="w-full">
+      <InspectionSteps data={garage.inspections} />
+      </div> 
+       <div className="w-full ">
+      <CTA data={garage.closingCta} />
+      </div>
+      
+       <div className="w-full ">
+      <BlogsCarousel />
+      </div>
+      <div className="w-full">
+          <OurVideosSection data={videos} />
+      </div>
+       <div className="w-full ">
+      <ServiceFaq label={garage.faqSection.label} faq_white_heading={garage.faqSection.heading} faq_red_heading={garage.faqSection.highlight} description={garage.faqSection.description} faqs={garage.faqs} />
+</div>
+      
+    </main>
+  );
+}

@@ -1,0 +1,155 @@
+{
+"works":{
+  "heading": {
+    "white": "Software Architecture Built for Performance, Scale & ",
+    "red": " Long-Term Growth."
+  },
+  "paragraphs": [
+    {
+      "segments": [
+        {
+          "text": "We design and engineer software architectures that are built to perform under real-world conditions — not just in development. "
+        },
+        {
+          "text": "Our senior engineers",
+          "highlight": true
+        },
+        {
+          "text": " think in systems, not just features, combining edge-first infrastructure, serverless runtimes, and deterministic performance principles to deliver products that scale globally from day one."
+        }
+      ]
+    },
+    {
+      "segments": [
+        {
+          "text": "Our full-stack development process connects frontend interfaces to backend systems through a strictly typed codebase using "
+        },
+        {
+          "text": "TypeScript",
+          "highlight": true
+        },
+        {
+          "text": ". By eliminating runtime errors at the type level, we produce software that is faster to maintain, easier to extend, and significantly more reliable in production — whether you're building multi-tenant SaaS platforms or high-traffic web applications."
+        }
+      ]
+    },
+    {
+      "segments": [
+        {
+          "text": "We engineer web performance from the ground up — targeting zero layout shifts, sub-second load times, and perfect Core Web Vitals scores. Using static generation, dynamic streaming, and edge caching strategies, we deliver web applications that rank higher in search results and convert better. "
+        },
+        {
+          "text": "Core Web Vitals • Next.js • Edge Runtime • Hyper-Fast Loading",
+          "highlight": true
+        }
+      ]
+    },
+    {
+      "segments": [
+        {
+          "text": "We build production-grade AI systems — not demos. Our AI development services include custom "
+        },
+        {
+          "text": "LLM Integrations, RAG Pipelines",
+          "highlight": true
+        },
+        {
+          "text": ", vector search, and autonomous AI agents built on deterministic pipelines. Every system is structured to deliver accurate, predictable outputs at scale — without relying on fragile prompt engineering."
+        }
+      ]
+    },
+    {
+      "segments": [
+        {
+          "text": "Our cloud engineering team delivers resilient, observable infrastructure on "
+        },
+        {
+          "text": "AWS, Vercel, and Cloudflare",
+          "highlight": true
+        },
+        {
+          "text": ". Using infrastructure-as-code, distributed telemetry, and automated delivery pipelines, we eliminate downtime and give you full visibility into every layer of your system."
+        }
+      ],
+      "note": "DevOps Automation • Zero-Downtime Deployments"
+    }
+  ]
+},
+
+"services":{
+  "heading": {
+    "white": "Software Architecture Built for Performance, Scale & ",
+    "red": " Long-Term Growth."
+  },
+  "paragraphs": [
+    {
+      "segments": [
+        {
+          "text": "We design and engineer software architectures that are built to perform under real-world conditions — not just in development. "
+        },
+        {
+          "text": "Our senior engineers",
+          "highlight": true
+        },
+        {
+          "text": " think in systems, not just features, combining edge-first infrastructure, serverless runtimes, and deterministic performance principles to deliver products that scale globally from day one."
+        }
+      ]
+    },
+    {
+      "segments": [
+        {
+          "text": "Our full-stack development process connects frontend interfaces to backend systems through a strictly typed codebase using "
+        },
+        {
+          "text": "TypeScript",
+          "highlight": true
+        },
+        {
+          "text": ". By eliminating runtime errors at the type level, we produce software that is faster to maintain, easier to extend, and significantly more reliable in production — whether you're building multi-tenant SaaS platforms or high-traffic web applications."
+        }
+      ]
+    },
+    {
+      "segments": [
+        {
+          "text": "We engineer web performance from the ground up — targeting zero layout shifts, sub-second load times, and perfect Core Web Vitals scores. Using static generation, dynamic streaming, and edge caching strategies, we deliver web applications that rank higher in search results and convert better. "
+        },
+        {
+          "text": "Core Web Vitals • Next.js • Edge Runtime • Hyper-Fast Loading",
+          "highlight": true
+        }
+      ]
+    },
+    {
+      "segments": [
+        {
+          "text": "We build production-grade AI systems — not demos. Our AI development services include custom "
+        },
+        {
+          "text": "LLM Integrations, RAG Pipelines",
+          "highlight": true
+        },
+        {
+          "text": ", vector search, and autonomous AI agents built on deterministic pipelines. Every system is structured to deliver accurate, predictable outputs at scale — without relying on fragile prompt engineering."
+        }
+      ]
+    },
+    {
+      "segments": [
+        {
+          "text": "Our cloud engineering team delivers resilient, observable infrastructure on "
+        },
+        {
+          "text": "AWS, Vercel, and Cloudflare",
+          "highlight": true
+        },
+        {
+          "text": ". Using infrastructure-as-code, distributed telemetry, and automated delivery pipelines, we eliminate downtime and give you full visibility into every layer of your system."
+        }
+      ],
+      "note": "DevOps Automation • Zero-Downtime Deployments"
+    }
+  ]
+}
+}

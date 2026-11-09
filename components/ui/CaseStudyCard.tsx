@@ -1,5 +1,6 @@
 "use client";
 
+import defaults from "@/data/landing-defaults.json";
 import { motion, type Variants } from "framer-motion";
 import { CaseStudy } from "../../types/index";
 import { CaseStudyItem } from "../../components/caseStudy/WorkGrid";
@@ -9,9 +10,12 @@ import { useState, useEffect } from "react";
 interface CaseStudyCardProps {
   project: CaseStudy | CaseStudyItem | any;
   index: number;
+  showCategory?: boolean;
+  showLinkCaption?: boolean;
+  labels?: typeof defaults.caseStudyCard;
 }
 
-export function CaseStudyCard({ project, index }: CaseStudyCardProps) {
+export function CaseStudyCard({ project, index, showCategory = false, showLinkCaption = true, labels = defaults.caseStudyCard }: CaseStudyCardProps) {
   const reduced = useSafeReducedMotion();
   const [mounted, setMounted] = useState(false);
 
@@ -20,7 +24,7 @@ export function CaseStudyCard({ project, index }: CaseStudyCardProps) {
   }, []);
 
   const displayTitle =
-    project?.heading || project?.title || "Untitled Case Study";
+    project?.heading || project?.title || labels.titleFallback;
 
   const execSummarySection = project?.sections?.find(
     (s: any) =>
@@ -64,28 +68,27 @@ export function CaseStudyCard({ project, index }: CaseStudyCardProps) {
             />
           ) : (
             <div className="flex h-full w-full items-center justify-center bg-zinc-950">
-              <span className="text-[10px] font-mono tracking-widest text-zinc-600 uppercase">
-                4xCode Case Study
-              </span>
+              {showLinkCaption && <span className="text-[10px] font-mono tracking-widest text-zinc-600 uppercase">{labels.imageFallback}</span>}
             </div>
           )}
         </div>
 
         {/* ✅ TEXT CONTENT BOX: Structural padding and clamping mirroring the layout block perfectly */}
         <div className="p-4.5 space-y-1.5">
-          <h3 className="text-white font-bold text-base tracking-tight leading-snug group-hover:text-[#f90a1f] transition-colors duration-200 line-clamp-1">
+          <h3 className={`text-white font-bold text-base tracking-tight leading-snug group-hover:text-[#f90a1f] transition-colors duration-200 ${showCategory ? "" : "line-clamp-1"}`}>
             {displayTitle}
           </h3>
-          <p className="text-zinc-400 font-normal text-[12px] leading-relaxed line-clamp-2">
+          {showCategory && <p className="text-[#f90a1f] text-xs">{project.category}</p>}
+          <p className={`text-zinc-400 font-normal text-[12px] leading-relaxed ${showCategory ? "" : "line-clamp-2"}`}>
             {descriptionSnippet}
           </p>
         </div>
       </div>
 
       {/* ✅ PREMIUM MICRO FOOTER BAR: Shifting vector arrow on container hover */}
-      <div className="mt-auto px-4.5 pb-4.5 flex items-center justify-end w-full">
+      {showLinkCaption && <div className="mt-auto px-4.5 pb-4.5 flex items-center justify-end w-full">
         <div className="flex items-center gap-1 text-[12px] font-bold text-zinc-400 transition-colors duration-200 group-hover:text-[#f90a1f] pt-3 border-t border-white/5 w-full justify-end">
-          <span>Read Case Study</span>
+          <span>{labels.action}</span>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -101,7 +104,7 @@ export function CaseStudyCard({ project, index }: CaseStudyCardProps) {
             />
           </svg>
         </div>
-      </div>
+      </div>}
     </>
   );
 

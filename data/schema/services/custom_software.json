@@ -1,0 +1,180 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.4xcode.com/#organization",
+      "name": "4xCode",
+      "url": "https://www.4xcode.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "@id": "https://www.4xcode.com/#logo",
+        "url": "https://www.4xcode.com/assets/logo1.webp",
+        "contentUrl": "https://www.4xcode.com/assets/logo1.webp"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/company/4xcode-software/"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.4xcode.com/#website",
+      "url": "https://www.4xcode.com/",
+      "name": "4xCode",
+      "alternateName": "4xcode",
+      "publisher": {
+        "@id": "https://www.4xcode.com/#organization"
+      },
+      "inLanguage": "en-GB"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.4xcode.com/service/custom-software#webpage",
+      "url": "https://www.4xcode.com/service/custom-software",
+      "name": "Custom Software Development Company for Your Workflow",
+      "description": "Need tools that fit your process? 4xcode is a custom software development company building backends, data platforms and real-time systems. Get a quote.",
+      "isPartOf": {
+        "@id": "https://www.4xcode.com/#website"
+      },
+      "about": {
+        "@id": "https://www.4xcode.com/#organization"
+      },
+      "publisher": {
+        "@id": "https://www.4xcode.com/#organization"
+      },
+      "inLanguage": "en-GB",
+      "keywords": "custom software development company",
+      "mainEntity": {
+        "@id": "https://www.4xcode.com/service/custom-software#service"
+      },
+      "breadcrumb": {
+        "@id": "https://www.4xcode.com/service/custom-software#breadcrumb"
+      }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://www.4xcode.com/service/custom-software#service",
+      "name": "Custom Software Development",
+      "serviceType": "custom software development company",
+      "description": "4xcode provides custom software development services for startups, growing businesses, and enterprises that need technology tailored to their operations. From business management applications and backend platforms to integrated enterprise systems, we develop software designed around specific requirements.",
+      "url": "https://www.4xcode.com/service/custom-software",
+      "provider": {
+        "@id": "https://www.4xcode.com/#organization"
+      },
+      "mainEntityOfPage": {
+        "@id": "https://www.4xcode.com/service/custom-software#webpage"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Custom Software Development Solutions",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Custom Business Application Development"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Custom CRM Software Development"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Enterprise Backend System Development"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Legacy Software Modernization Services"
+            }
+          }
+        ]
+      },
+      "isRelatedTo": [
+        {
+          "@type": "Service",
+          "@id": "https://www.4xcode.com/service/saas-engineering#service",
+          "name": "SaaS Development",
+          "url": "https://www.4xcode.com/service/saas-engineering"
+        },
+        {
+          "@type": "Service",
+          "@id": "https://www.4xcode.com/service/api-integration#service",
+          "name": "API Integration Services",
+          "url": "https://www.4xcode.com/service/api-integration"
+        },
+        {
+          "@type": "Service",
+          "@id": "https://www.4xcode.com/service/cloud-systems#service",
+          "name": "Cloud Consulting Services",
+          "url": "https://www.4xcode.com/service/cloud-systems"
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.4xcode.com/service/custom-software#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.4xcode.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Services",
+          "item": "https://www.4xcode.com/service"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Custom Software",
+          "item": "https://www.4xcode.com/service/custom-software"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.4xcode.com/service/custom-software#faq",
+      "isPartOf": {
+        "@id": "https://www.4xcode.com/service/custom-software#webpage"
+      },
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "When Should Businesses Choose Custom Software Instead of Ready-Made Applications?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Custom software is worth considering when existing products cannot adequately support essential workflows, data relationships, integration requirements, or access controls. It may also suit organizations requiring differentiated functionality unavailable through standard platforms. Before committing to development, businesses should compare implementation complexity, maintenance responsibilities, flexibility, and total ownership costs. Custom development is most appropriate when its expected operational value justifies the additional investment and ongoing technical responsibilities."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How Long Does Custom Software Development Take From Planning to Deployment?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Development timelines depend on application complexity, feature requirements, system integrations, data migration, and testing needs. A focused startup application typically requires less engineering work than a multi-department enterprise platform with complex permissions and legacy integrations. Requirements analysis helps establish realistic milestones, technical dependencies, and delivery priorities. An iterative development approach may also allow selected functionality to become available before the entire application is completed."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What Factors Determine Custom Software Development Cost and Maintenance Expenses?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Custom software development cost depends on project scope, feature complexity, application architecture, integrations, security requirements, user interfaces, and quality assurance needs. Hosting, monitoring, third-party services, maintenance, and future enhancements also influence total ownership expenses. A reliable estimate requires a defined project scope and technical assessment. Businesses should evaluate both initial development costs and ongoing operational responsibilities rather than comparing providers solely on upfront quotations."
+          }
+        }
+      ]
+    }
+  ]
+}

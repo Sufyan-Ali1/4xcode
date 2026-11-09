@@ -1,7 +1,7 @@
 "use client";
 
 
-export default function BuildForIndustry({data}) {
+export default function BuildForIndustry({data, headingSuffix = "."}) {
   // All content is dynamic and kept inside this component
  
 
@@ -11,7 +11,7 @@ export default function BuildForIndustry({data}) {
         {/* Heading */}
         <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold leading-tight tracking-tight text-white sm:text-2xl">
           {data.heading.white}{" "}
-          <span className="text-[#EF1F23]">{data.heading.red}.</span>
+          <span className="text-[#EF1F23]">{data.heading.red}{headingSuffix}</span>
         </h2>
 
         {/* Subheading */}

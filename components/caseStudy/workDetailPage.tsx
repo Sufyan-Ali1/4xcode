@@ -1,9 +1,10 @@
 "use client";
 
+import { spaceGrotesk, inter } from "@/lib/fonts";
+
 import React, { useMemo, useEffect, useState } from "react";
 import Link from "next/link";
 import { motion, useReducedMotion, type Variants } from "framer-motion";
-import { Space_Grotesk, Inter } from "next/font/google";
 import { Reveal } from "../../utils/AnimationReveal";
 import { CaseStudyImage } from "../ui/CaseStudyImage";
 import CaseStudydefaultImg from "../../public/assets/caseStudy.webp";
@@ -12,12 +13,6 @@ import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
 
 import { BookDemoCallout } from "./BookDemoCallout";
 import styles from "./workModule.module.css";
-
-const spaceGrotesk = Space_Grotesk({
-  subsets: ["latin"],
-  weight: ["400", "500", "700"],
-});
-const inter = Inter({ subsets: ["latin"], weight: ["300", "400", "500"] });
 
 interface CaseStudyDetailProps {
   study: CaseStudy | any;
@@ -53,7 +48,7 @@ export default function WorkDetail({ study }: CaseStudyDetailProps) {
       const rawText = heading.textContent || "";
       const cleanTitle = rawText.replace(/^\d+\.\s*/, "").trim();
 
-      // Skip rendering the manual "Book Your Free Demo" if it appears in the raw payload 
+      // Skip rendering the manual "Book Your Free Demo" if it appears in the raw payload
       if (!cleanTitle || cleanTitle.toLowerCase().includes("book your free demo")) return;
 
       let htmlContent = "";
@@ -85,20 +80,16 @@ export default function WorkDetail({ study }: CaseStudyDetailProps) {
   }, [reduced]);
 
   const scrollToSection = (sectionId: number) => {
-    const container = document.getElementById("case-study-scroll-area");
     const target = document.getElementById(`section-${sectionId}`);
-    if (container && target) {
+    if (target) {
       const offset = 24;
-      const containerTop = container.getBoundingClientRect().top;
-      const targetTop = target.getBoundingClientRect().top;
-      const scrollAmount =
-        container.scrollTop + (targetTop - containerTop) - offset;
-      container.scrollTo({ top: scrollAmount, behavior: "smooth" });
+      const top = target.getBoundingClientRect().top + window.scrollY - offset;
+      window.scrollTo({ top, behavior: reduced ? "auto" : "smooth" });
     }
   };
 
   return (
-    <div className={`relative h-screen w-full overflow-hidden bg-[#030303] text-white ${inter.className}`}>
+    <div className={`relative min-h-screen w-full overflow-x-clip bg-[#030303] text-white ${inter.className}`}>
       {/* Ambient Glow Background Visuals */}
       <div className="pointer-events-none absolute inset-x-0 top-0 z-0 h-[800px] select-none overflow-hidden" aria-hidden="true">
         <div className="absolute left-[15%] top-[-15%] h-[70%] w-[55%] rounded-full bg-[#f90a1f]/10 blur-[120px]" />
@@ -106,14 +97,12 @@ export default function WorkDetail({ study }: CaseStudyDetailProps) {
         <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#030303]" />
       </div>
 
-     
-      <div className="relative z-10 mx-auto grid h-full max-w-300 w-full grid-cols-1 gap-12 px-5 pt-36 lg:grid-cols-[1fr_350px]">
-        
+      <div className="relative z-10 mx-auto grid max-w-300 w-full grid-cols-1 gap-12 px-5 pt-36 lg:grid-cols-[1fr_350px]">
+
         {/* Left Content Column Dynamic Stream */}
         <main
-          id="case-study-scroll-area"
-          className="h-full overflow-y-auto scroll-smooth pb-32 pr-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
-        >
+        id="case-study-scroll-area"
+        className="pb-32 pr-2">
           <div className="w-full space-y-12">
             <nav className="mb-4">
               <Reveal>
@@ -187,12 +176,12 @@ export default function WorkDetail({ study }: CaseStudyDetailProps) {
           </div>
         </main>
 
-        {/* Right Sticky Navigation Index */}
-        <aside className="hidden h-full flex-col border-l border-white/5 pl-8 pb-32 lg:flex">
+       {/* Right Sticky Navigation Index */}
+       <aside className="hidden  lg:sticky lg:top-28 lg:self-start max-h-[calc(100vh-8rem)] flex-col border-l border-white/5 pl-8 lg:flex">
           <h4 className={`${spaceGrotesk.className} mb-5 border-b border-white/5 pb-2 text-[12px] font-bold uppercase tracking-[3px] text-zinc-500`}>
             DOCUMENT INDEX
           </h4>
-          <nav className="h-full overflow-y-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+          <nav className="flex-1 overflow-y-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
             <ul className="space-y-4 font-semibold text-zinc-400 text-sm pb-6">
               {sections.map((s) => (
                 <li key={s.id}>

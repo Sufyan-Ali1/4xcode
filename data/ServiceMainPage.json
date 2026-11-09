@@ -1,0 +1,613 @@
+{
+  "hero": {
+    "label": "Our Services",
+    "heading": "Software Development Services",
+    "highlight": "That Drive Growth",
+    "description": "4XCODE delivers end-to-end software development services for startups, SMEs, and established organisations. From custom software and AI solutions to SaaS platforms, websites, mobile apps, and cloud systems, we build secure, scalable digital products that simplify operations and support long-term business growth."
+  },
+  "services": [
+    {
+      "title": "Custom Software Development",
+      "slug": "custom-software",
+      "href": "/service/custom-software",
+      "iconKey": "software",
+      "intro": "Every business runs differently. Our custom software development services turn your unique processes into tailored applications that remove manual work, connect your teams, and grow alongside your operations.",
+      "features": [
+        {
+          "title": "Software built around your exact business workflows"
+        },
+        {
+          "title": "Internal tools, portals, and management dashboards"
+        },
+        {
+          "title": "Scalable architecture ready for future expansion"
+        },
+        {
+          "title": "Full source code ownership after delivery"
+        }
+      ],
+      "tags": [
+        {
+          "name": "Python"
+        },
+        {
+          "name": "Django"
+        },
+        {
+          "name": "React"
+        },
+        {
+          "name": "PostgreSQL"
+        }
+      ]
+    },
+    {
+      "title": "Custom AI Development",
+      "slug": "ai-development",
+      "href": "/service/ai-development",
+      "iconKey": "ai",
+      "intro": "We design practical AI solutions that solve real business problems. From intelligent automation to custom AI agents, our custom AI development helps you save time, reduce costs, and make faster decisions.",
+      "features": [
+        {
+          "title": "AI agents that automate repetitive business tasks"
+        },
+        {
+          "title": "RAG pipelines connected to your company knowledge"
+        },
+        {
+          "title": "LLM-powered chatbots, assistants, and workflows"
+        },
+        {
+          "title": "Machine learning models trained for your data"
+        }
+      ],
+      "tags": [
+        {
+          "name": "Agentic AI"
+        },
+        {
+          "name": "RAG"
+        },
+        {
+          "name": "LLM Integration"
+        },
+        {
+          "name": "Machine Learning"
+        }
+      ]
+    },
+    {
+      "title": "SaaS Development",
+      "slug": "saas-engineering",
+      "href": "/service/saas-engineering",
+      "iconKey": "saas",
+      "intro": "As a SaaS development company, we turn product ideas into subscription-ready platforms. We handle architecture, user management, billing, and analytics so you can launch faster and scale with confidence.",
+      "features": [
+        {
+          "title": "MVP development for fast market validation"
+        },
+        {
+          "title": "Multi-tenant architecture with secure user roles"
+        },
+        {
+          "title": "Subscription billing and payment gateway integration"
+        },
+        {
+          "title": "Admin dashboards with real-time usage analytics"
+        }
+      ],
+      "tags": [
+        {
+          "name": "Multi-Tenant Architecture"
+        },
+        {
+          "name": "Authentication"
+        },
+        {
+          "name": "Billing"
+        },
+        {
+          "name": "Analytics"
+        }
+      ]
+    },
+    {
+      "title": "Website Development",
+      "slug": "web-development",
+      "href": "/service/web-development",
+      "iconKey": "web",
+      "intro": "Your website is often your first impression. Our website development services create fast, responsive, and conversion-focused websites that represent your brand professionally and turn visitors into enquiries and customers.",
+      "features": [
+        {
+          "title": "Responsive designs for desktop, tablet, and mobile"
+        },
+        {
+          "title": "Fast-loading pages built for better user experience"
+        },
+        {
+          "title": "SEO-friendly structure from the very first build"
+        },
+        {
+          "title": "Easy content management for your internal team"
+        }
+      ],
+      "tags": [
+        {
+          "name": "React"
+        },
+        {
+          "name": "Vue.js"
+        },
+        {
+          "name": "Django"
+        },
+        {
+          "name": "Responsive Design"
+        }
+      ]
+    },
+    {
+      "title": "Mobile App Development",
+      "slug": "mobile-apps",
+      "href": "/service/mobile-apps",
+      "iconKey": "mobile",
+      "intro": "As a custom mobile app development company, we build iOS and Android apps that feel smooth and intuitive. Whether native or cross-platform, every app is designed for performance and engagement.",
+      "features": [
+        {
+          "title": "Native iOS and Android app development"
+        },
+        {
+          "title": "Cross-platform apps from a single codebase"
+        },
+        {
+          "title": "Push notifications, payments, and offline features"
+        },
+        {
+          "title": "App Store and Google Play launch support"
+        }
+      ],
+      "tags": [
+        {
+          "name": "React Native"
+        },
+        {
+          "name": "Swift"
+        },
+        {
+          "name": "Kotlin"
+        },
+        {
+          "name": "Cross-Platform"
+        }
+      ]
+    },
+    {
+      "title": "UI/UX Design",
+      "slug": "ui-ux-design",
+      "href": "/service/ui-ux-design",
+      "iconKey": "ui",
+      "intro": "Great software starts with great experiences. Our UX/UI design services combine user research, wireframes, and interactive prototypes to create interfaces that feel intuitive, look distinctive, and keep users engaged.",
+      "features": [
+        {
+          "title": "User research and customer journey mapping"
+        },
+        {
+          "title": "Wireframes and clickable interactive prototypes"
+        },
+        {
+          "title": "Clean, consistent interfaces and design systems"
+        },
+        {
+          "title": "Usability testing before development begins"
+        }
+      ],
+      "tags": [
+        {
+          "name": "User Research"
+        },
+        {
+          "name": "Wireframing"
+        },
+        {
+          "name": "Prototyping"
+        },
+        {
+          "name": "Design Systems"
+        }
+      ]
+    },
+    {
+      "title": "Cloud Systems",
+      "slug": "cloud-systems",
+      "href": "/service/cloud-systems",
+      "iconKey": "cloud",
+      "intro": "Our cloud consulting services help you build reliable infrastructure that stays fast under pressure. We set up, automate, and monitor cloud environments so your applications remain secure, available, and ready to scale.",
+      "features": [
+        {
+          "title": "Cloud architecture planning and secure migration"
+        },
+        {
+          "title": "Automated deployments through CI/CD pipelines"
+        },
+        {
+          "title": "Performance monitoring with proactive issue alerts"
+        },
+        {
+          "title": "Scalable hosting that grows with demand"
+        }
+      ],
+      "tags": [
+        {
+          "name": "AWS"
+        },
+        {
+          "name": "Vercel"
+        },
+        {
+          "name": "Cloudflare"
+        },
+        {
+          "name": "CI/CD"
+        }
+      ]
+    },
+    {
+      "title": "Digital Marketing Services",
+      "slug": "digital-marketing-services",
+      "href": "/service/digital-marketing-services",
+      "iconKey": "automation",
+      "intro": "Great products need the right audience. Our digital marketing services help businesses attract qualified leads, increase online visibility, and turn advertising spend into measurable enquiries and sales.",
+      "features": [
+        {
+          "title": "Google Ads campaign planning and management"
+        },
+        {
+          "title": "Lead generation strategies for local businesses"
+        },
+        {
+          "title": "Conversion tracking and campaign performance reporting"
+        },
+        {
+          "title": "Ongoing optimisation to improve return on spend"
+        }
+      ],
+      "tags": [
+        {
+          "name": "Google Ads"
+        },
+        {
+          "name": "Lead Generation"
+        },
+        {
+          "name": "Conversion Tracking"
+        },
+        {
+          "name": "Reporting"
+        }
+      ]
+    },
+    {
+      "title": "Search Engine Optimization",
+      "slug": "search-engine-optimization-seo",
+      "href": "/service/search-engine-optimization-seo",
+      "iconKey": "web",
+      "intro": "Our search engine optimization services improve how your website appears in search results. We combine technical fixes, keyword strategy, and on-page improvements to grow sustainable organic traffic over time.",
+      "features": [
+        {
+          "title": "Technical SEO audits and site health fixes"
+        },
+        {
+          "title": "Keyword research aligned with buyer intent"
+        },
+        {
+          "title": "On-page optimisation for content and metadata"
+        },
+        {
+          "title": "Structured data and site speed improvements"
+        }
+      ],
+      "tags": [
+        {
+          "name": "Technical SEO"
+        },
+        {
+          "name": "Keyword Research"
+        },
+        {
+          "name": "On-Page SEO"
+        },
+        {
+          "name": "Schema Markup"
+        }
+      ]
+    },
+    {
+      "title": "Ecommerce Development",
+      "slug": "ecommerce-solutions",
+      "href": "/service/ecommerce-solutions",
+      "iconKey": "web",
+      "intro": "Our ecommerce development services create online stores that are easy to manage and simple to buy from. We focus on smooth product browsing, secure checkout, and performance that supports higher sales.",
+      "features": [
+        {
+          "title": "Custom online stores built for your brand"
+        },
+        {
+          "title": "Product, inventory, and order management tools"
+        },
+        {
+          "title": "Secure checkout with payment gateway integration"
+        },
+        {
+          "title": "Mobile-friendly shopping experience that improves conversions"
+        }
+      ],
+      "tags": [
+        {
+          "name": "Online Stores"
+        },
+        {
+          "name": "Payment Integration"
+        },
+        {
+          "name": "Checkout"
+        },
+        {
+          "name": "Inventory Management"
+        }
+      ]
+    },
+    {
+      "title": "API Integration",
+      "slug": "api-integration",
+      "href": "/service/api-integration",
+      "iconKey": "api",
+      "intro": "Disconnected systems slow businesses down. Our API integration services connect your software, third-party platforms, and data sources so information flows automatically and your teams stop entering data twice.",
+      "features": [
+        {
+          "title": "Custom REST API design and development"
+        },
+        {
+          "title": "Third-party platform and payment integrations"
+        },
+        {
+          "title": "Automated data syncing between business systems"
+        },
+        {
+          "title": "Secure authentication and reliable error handling"
+        }
+      ],
+      "tags": [
+        {
+          "name": "REST APIs"
+        },
+        {
+          "name": "Third-Party Integrations"
+        },
+        {
+          "name": "Data Sync"
+        },
+        {
+          "name": "AI Automation"
+        }
+      ]
+    },
+    {
+      "title": "AI Automation Services",
+      "slug": "ai-automation",
+      "href": "/service/ai-automation",
+      "iconKey": "automation",
+      "intro": "Repetitive tasks slow your team down and increase the risk of errors. Our AI automation software handles routine work such as data entry, enquiry responses, and document processing, so your staff can focus on higher-value tasks while operations run faster and more accurately.",
+      "features": [
+        {
+          "title": "Automated workflows that remove manual, repetitive tasks"
+        },
+        {
+          "title": "AI chatbots that answer customer enquiries around the clock"
+        },
+        {
+          "title": "Smart document processing for invoices, forms, and emails"
+        },
+        {
+          "title": "Seamless integration with your CRM, email, and business tools"
+        }
+      ],
+      "tags": [
+        {
+          "name": "Workflow Automation"
+        },
+        {
+          "name": "AI Chatbots"
+        },
+        {
+          "name": "Document Processing"
+        },
+        {
+          "name": "Process Optimisation"
+        }
+      ]
+    }
+  ],
+  "testimonialSection": {
+    "label": "Testimonials",
+    "heading": "Trusted by Growing Businesses",
+    "quoteOpen": "“",
+    "quoteClose": "”"
+  },
+  "testimonials": [
+    {
+      "id": 1,
+      "stars": 5,
+      "quote": "4XCODE built our custom logistics dashboard exactly as we imagined. Their team asked the right questions, explained every technical decision clearly, and delivered a system our operations staff now use every day.",
+      "author": "Daniel K.",
+      "title": "Operations Director, Logistics Company",
+      "initial": "D"
+    },
+    {
+      "id": 2,
+      "stars": 5,
+      "quote": "Our new ecommerce website loads faster, looks far more professional, and online orders have increased steadily since launch. Weekly updates kept us informed, and every change request was handled quickly.",
+      "author": "Sarah T.",
+      "title": "Founder, Online Retail Brand",
+      "initial": "S"
+    },
+    {
+      "id": 3,
+      "stars": 5,
+      "quote": "We needed AI automation for customer enquiries and 4XCODE delivered a reliable solution within weeks. Even after launch, their support team stayed responsive and helped us add new features smoothly.",
+      "author": "Omar H.",
+      "title": "CEO, Professional Services Firm",
+      "initial": "O"
+    }
+  ],
+  "cta": {
+    "label": "Start a Project",
+    "heading": "Have a Project in",
+    "highlight": "Mind?",
+    "description": "Share your idea and get a clear plan from us.",
+    "action": {
+      "label": "Start Your Project",
+      "href": "/contact"
+    }
+  },
+  "industries": {
+    "heading": {
+      "white": "Software Solutions for",
+      "red": "Every Industry"
+    },
+    "subheading": "Every industry has its own workflows, regulations, and customer expectations. We adapt our software development approach to your sector, building solutions that fit your operations rather than forcing your business into generic tools.",
+    "industries": [
+      "Automotive",
+      "Finance & Banking",
+      "Healthcare",
+      "Real Estate",
+      "Ecommerce & Retail",
+      "Education & E-learning",
+      "Logistics & Transportation",
+      "Food & Beverage",
+      "Travel & Hospitality",
+      "Manufacturing",
+      "Media & Entertainment",
+      "Professional Services"
+    ]
+  },
+  "narrative": {
+    "heading": {
+      "white": "Custom Software Development Built on",
+      "red": "Strong, Scalable Architecture"
+    },
+    "paragraphs": [
+      {
+        "segments": [
+          {
+            "text": "Successful software starts long before the first line of code. A strong software architecture translates business requirements into a clear technical structure, defining how data moves, how components communicate, and how the system responds as demand grows. When architecture is planned around real business goals, applications stay fast, stable, and easier to scale, rather than becoming expensive to fix as your user base and operations expand."
+          }
+        ]
+      },
+      {
+        "segments": [
+          {
+            "text": "Every custom software project needs technical decisions that suit its purpose. Some products benefit from a modular monolith for speed and simplicity, while others require microservices, event-driven processing, or serverless functions. We choose frameworks such as Django, React, and React Native based on your needs, and design REST APIs that integrate cleanly with CRMs, payment gateways, and AI services. The right foundation lets your software adapt as requirements change."
+          }
+        ]
+      },
+      {
+        "segments": [
+          {
+            "text": "Performance and security shape how customers experience your digital product. We focus on efficient database queries, caching, and optimised front-end loading to keep applications responsive. Secure authentication, role-based access control, and careful data handling reduce risk, while clean, well-documented code and automated testing make maintenance easier. Reliable CI/CD pipelines and cloud monitoring help detect issues early, keeping your software dependable as it evolves."
+          }
+        ]
+      },
+      {
+        "segments": [
+          {
+            "text": "Software is never truly finished. As your business grows, your product needs new features, integrations, and performance improvements. We support long-term product development through iterative releases, analytics-led decisions, and scalable cloud infrastructure on platforms such as AWS. By investing in technical quality from the start, businesses reduce future development costs, launch features faster, and turn their software into a lasting competitive advantage that delivers measurable value."
+          }
+        ]
+      }
+    ]
+  },
+  "expertise": {
+    "heading": "Proven Expertise Across Modern Software Development",
+    "cards": [
+      {
+        "card_heading": "AI Development",
+        "card_description": "We build AI agents, RAG pipelines, and LLM-powered tools that automate tasks, unlock insights from data, and fit naturally into existing workflows."
+      },
+      {
+        "card_heading": "Custom Software Engineering",
+        "card_description": "Our engineers create business-specific applications with clean architecture, reliable integrations, and maintainable code that keeps performing as your operations grow."
+      },
+      {
+        "card_heading": "SaaS Product Development",
+        "card_description": "From MVP to mature platform, we develop subscription products with secure user management, billing, and analytics designed for long-term scalability."
+      },
+      {
+        "card_heading": "Modern Web Development",
+        "card_description": "We build fast, responsive web applications using React, Vue.js, and Django, delivering smooth experiences across browsers, devices, and screen sizes."
+      },
+      {
+        "card_heading": "Cloud Engineering",
+        "card_description": "We configure secure, automated cloud environments with CI/CD pipelines and monitoring, keeping applications available, efficient, and ready for growing traffic."
+      },
+      {
+        "card_heading": "SEO-Friendly Development",
+        "card_description": "Every website we build follows technical SEO best practices, including clean code, fast loading, and structured data that support stronger search visibility."
+      }
+    ]
+  },
+  "process": {
+    "label": "Our Process",
+    "heading": "From Idea to",
+    "highlight": "Finished Product",
+    "steps": [
+      {
+        "number": "01",
+        "title": "Discover",
+        "description": "We understand your goals, users, and challenges through workshops to define clear project requirements."
+      },
+      {
+        "number": "02",
+        "title": "Design",
+        "description": "We plan the technical architecture and create wireframes and prototypes before development begins."
+      },
+      {
+        "number": "03",
+        "title": "Develop",
+        "description": "Our engineers build your product in agile sprints, testing each feature for quality and functionality."
+      },
+      {
+        "number": "04",
+        "title": "Launch",
+        "description": "We deploy your product, complete final checks, and provide support during the initial launch period."
+      },
+      {
+        "number": "05",
+        "title": "Optimise",
+        "description": "We improve performance, maintain stability, and add new features based on real user feedback."
+      }
+    ]
+  },
+  "faqSection": {
+    "label": "FAQs",
+    "heading": "Common Questions",
+    "highlight": "Answered"
+  },
+  "faqs": [
+    {
+      "q": "How long does a typical software development project take?",
+      "a": "Timelines depend on project scope, features, and complexity. Smaller projects usually take 2 to 4 weeks, while larger custom software solutions typically take 8 to 12 weeks. We confirm a realistic timeline during planning, before development begins."
+    },
+    {
+      "q": "How does the software development process begin with 4XCODE?",
+      "a": "It begins with a free demo or consultation call where we discuss your goals, challenges, and requirements. We then recommend the right approach and share a clear proposal covering scope, timeline, and next steps for your project."
+    },
+    {
+      "q": "Will I receive regular updates during development?",
+      "a": "Yes. We work in agile sprints and share weekly progress updates, so you always know what has been completed, what is coming next, and can give feedback before each stage moves forward."
+    },
+    {
+      "q": "Do you provide support after the software is launched?",
+      "a": "Yes. After launch, we can provide ongoing maintenance, bug fixes, performance monitoring, and feature enhancements. Support arrangements are agreed according to your project needs, helping your software stay secure, stable, and ready to grow."
+    }
+  ]
+}

@@ -430,35 +430,40 @@
   "testimonialSection": {
     "label": "Testimonials",
     "heading": "Trusted by Growing Businesses",
+    "authorNote": "Reviewer display names are pseudonyms.",
     "quoteOpen": "“",
     "quoteClose": "”"
   },
   "testimonials": [
     {
-      "id": 1,
-      "stars": 5,
-      "quote": "4XCODE built our custom logistics dashboard exactly as we imagined. Their team asked the right questions, explained every technical decision clearly, and delivered a system our operations staff now use every day.",
-      "author": "Daniel K.",
-      "title": "Operations Director, Logistics Company",
-      "initial": "D"
+      "id": 0,
+      "stars": 0,
+      "industry": "Automotive Industry",
+      "quote": "4Xcode helped us streamline our garage operations with a tailored Garage Management Software solution. From customer management and vehicle tracking to job cards, quotations and invoicing, everything is now organised in one platform. Their automotive software development expertise has made managing our daily operations much easier.",
+      "author": "Alex Morgan",
+      "title": "CEO, VogueTehnics",
+      "initial": "A"
     },
     {
-      "id": 2,
-      "stars": 5,
-      "quote": "Our new ecommerce website loads faster, looks far more professional, and online orders have increased steadily since launch. Weekly updates kept us informed, and every change request was handled quickly.",
-      "author": "Sarah T.",
-      "title": "Founder, Online Retail Brand",
+      "id": 1,
+      "stars": 0,
+      "industry": "Healthcare Industry",
+      "quote": "We worked with 4Xcode to develop a digital solution that improved communication and appointment management for our healthcare services. Their team understood our requirements and delivered a customised solution with useful automation features. Their custom software development approach made the entire process smooth.",
+      "author": "Sophie Bennett",
+      "title": "CEO, HealthTech Scale-up",
       "initial": "S"
     },
     {
-      "id": 3,
-      "stars": 5,
-      "quote": "We needed AI automation for customer enquiries and 4XCODE delivered a reliable solution within weeks. Even after launch, their support team stayed responsive and helped us add new features smoothly.",
-      "author": "Omar H.",
-      "title": "CEO, Professional Services Firm",
-      "initial": "O"
+      "id": 2,
+      "stars": 0,
+      "industry": "E-commerce Industry",
+      "quote": "4Xcode delivered a professional e-commerce website tailored to our business requirements. The website provides a smooth shopping experience, responsive design and a user-friendly interface. Their web development team also helped us improve website performance and create a stronger online presence.",
+      "author": "Daniel Hayes",
+      "title": "CEO, AutoIris",
+      "initial": "D"
     }
   ],
+
   "cta": {
     "label": "Start a Project",
     "heading": "Have a Project in",

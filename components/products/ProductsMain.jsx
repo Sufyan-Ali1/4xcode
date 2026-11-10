@@ -1,6 +1,7 @@
 import { Reveal } from "@/utils/AnimationReveal";
 import Link from "next/link";
 import Image from "next/image";
+import garageManagementBanner from "@/public/assets/garage-management-banner.webp";
 
 
 
@@ -48,33 +49,33 @@ function ProductCard({ product, actionLabel }) {
     <Link
       href={product.href}
       aria-label={product.title}
-      className="group relative isolate flex min-h-[280px] w-full flex-col overflow-hidden rounded-[24px] border border-white/[0.07] bg-[#101010] p-7 outline-none transition-all duration-200 hover:border-red-500/30 hover:shadow-[0_15px_50px_rgba(239,31,35,0.10)] focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-4 focus-visible:ring-offset-black sm:min-h-[300px] sm:p-8 lg:min-h-[280px]"
+      className="group relative isolate block w-full overflow-hidden rounded-[24px] border border-white/[0.07] bg-[#101010] outline-none transition-all duration-200 hover:border-red-500/30 hover:shadow-[0_15px_50px_rgba(239,31,35,0.10)] focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-4 focus-visible:ring-offset-black"
     >
       <Image
-        src={product.image}
-        alt={product.imageAlt}
-        fill
+        src={product.image === "/assets/garage-management-banner.webp" ? garageManagementBanner : product.image}
+        alt={product.imageAlt || product.title}
+        width={garageManagementBanner.width}
+        height={garageManagementBanner.height}
         sizes="(max-width: 767px) 100vw, (max-width: 1279px) 50vw, 640px"
-        className="absolute inset-0 -z-20 object-cover transition-transform duration-200 ease-out group-hover:scale-105"
+        className="block h-auto w-full"
       />
-      <div className="absolute inset-0 -z-10 bg-black/20 transition-colors duration-200 group-hover:bg-black/55" />
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/95 via-black/60 to-black/10" />
+      <div className="absolute inset-0 flex flex-col items-start justify-end p-4 lg:p-6">
+        <div className="hidden lg:block">
+          <ProductIcon type={product.icon} />
+        </div>
 
-      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-black/30 via-black/30 to-black/75" />
-      <div className="pointer-events-none absolute -left-16 -top-20 -z-10 size-56 rounded-full bg-red-600/[0.06] blur-[70px] transition-opacity duration-200 group-hover:opacity-100" />
-      <div className="flex flex-1 flex-col items-start">
-        <ProductIcon type={product.icon} />
-
-        <div className="mt-6 max-w-[420px]">
-          <h3 className="text-xl font-semibold tracking-tight text-white transition-colors duration-200 group-hover:text-red-400 sm:text-[21px]">
+        <div className="max-w-[420px] lg:mt-3">
+          <h3 className="text-lg font-semibold leading-tight tracking-tight text-white transition-colors duration-200 group-hover:text-red-400 lg:text-[21px]">
             {product.title}
           </h3>
 
-          <p className="mt-2.5 max-w-[380px] text-sm leading-[1.65] text-neutral-400 transition-colors duration-200 group-hover:text-neutral-300 sm:text-[15px]">
+          <p className="mt-2 max-w-[380px] text-xs leading-relaxed text-neutral-200 transition-colors duration-200 group-hover:text-white lg:text-sm">
             {product.description}
           </p>
         </div>
 
-        <div className="mt-auto flex items-center gap-2 pt-5 text-sm font-medium text-white/0 transition-all duration-200 group-hover:translate-x-1 group-hover:text-red-400">
+        <div className="flex items-center gap-2 pt-2 text-xs font-medium text-white transition-colors duration-200 group-hover:text-red-400 lg:pt-3 lg:text-sm">
           {actionLabel}
           <svg
             viewBox="0 0 24 24"

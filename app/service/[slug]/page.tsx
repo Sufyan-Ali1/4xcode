@@ -183,22 +183,24 @@ export default function ServiceDetailPage() {
           </div>
         </div>
 
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={revealViewport}
-          className={`relative mt-8 grid w-full grid-cols-1 gap-6 ${service.metrics.length === 4 ? "sm:grid-cols-2 lg:grid-cols-4" : "sm:grid-cols-3"}`}
-        >
-          {service.metrics.map((metric) => (
-            <MetricCard
-              key={metric.label}
-              data={metric}
-              variants={itemVariants}
-              fontClass={spaceGrotesk.className}
-            />
-          ))}
-        </motion.div>
+        {service.metrics.length > 0 && (
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={revealViewport}
+            className={`relative mt-8 grid w-full grid-cols-1 gap-6 ${service.metrics.length === 4 ? "sm:grid-cols-2 lg:grid-cols-4" : "sm:grid-cols-3"}`}
+          >
+            {service.metrics.map((metric) => (
+              <MetricCard
+                key={metric.label}
+                data={metric}
+                variants={itemVariants}
+                fontClass={spaceGrotesk.className}
+              />
+            ))}
+          </motion.div>
+        )}
 
         <div className="mt-8 pt-12">
           <Reveal>
@@ -240,7 +242,7 @@ export default function ServiceDetailPage() {
 
 />
       </div>
-        <AboutSection contained statsVariant="text" data={service.about_section_data1} />
+        <AboutSection contained statsVariant={currentSlug === "ai-automation" ? "metric" : "text"} data={service.about_section_data1} />
          <NarrativeSection contained data={service.NarrativeData} spaceGroteskClassName={spaceGrotesk.className} />
         <div className="mt-4 pt-12">
           <Reveal>

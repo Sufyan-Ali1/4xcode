@@ -6,7 +6,12 @@ import { Reveal } from "../../utils/AnimationReveal";
 import { TESTIMONIALS } from "../../data/index";
 import { type Testimonial } from "@/types";
 
-export default function TestimonialsSection({ testimonials = TESTIMONIALS, data = defaults.testimonialSection, contained = false }: { contained?: boolean; testimonials?: Testimonial[]; data?: { label: string; heading: string; highlight?: string; quoteOpen: string; quoteClose: string } }) {
+type IndustryTestimonial = Testimonial & { industry?: string };
+
+export default function TestimonialsSection({ testimonials = TESTIMONIALS, data = defaults.testimonialSection, contained = false }: { contained?: boolean; testimonials?: IndustryTestimonial[]; data?: { label: string; heading: string; highlight?: string; quoteOpen: string; quoteClose: string; authorNote?: string } }) {
+  // Preserve the homepage pace (six reviews per 35-second loop).
+  const secondsPerReview = 35 / 6;
+  const loopDuration = Math.max(testimonials.length, 1) * secondsPerReview;
   const STEP_W = 400;
   const GROUP_W = Math.max(testimonials.length, 1) * STEP_W;
 
@@ -47,6 +52,9 @@ export default function TestimonialsSection({ testimonials = TESTIMONIALS, data 
               {data.heading}{data.highlight && <> <span className="bg-gradient-to-br from-[#ff8a8c] to-[#ef1f23] bg-clip-text text-transparent">{data.highlight}</span></>}
             </h2>
           </Reveal>
+          {data.authorNote && (
+            <p className="text-xs text-zinc-400">{data.authorNote}</p>
+          )}
         </div>
 
         {/* ✅ HORIZONTAL OVERFLOW BOX CONTAINER */}
@@ -58,7 +66,10 @@ export default function TestimonialsSection({ testimonials = TESTIMONIALS, data 
           }}
         >
           {/* Added items-stretch to align card heights naturally */}
-          <div className="test-track flex w-max items-stretch will-change-transform animate-[t-marquee_35s_linear_infinite]">
+          <div
+            className="test-track flex w-max items-stretch will-change-transform animate-[t-marquee_35s_linear_infinite]"
+            style={{ animationDuration: `${loopDuration}s` }}
+          >
             {Array.from({ length: N_GROUPS }, (_, idx) => (
               <div
                 key={idx}
@@ -72,6 +83,11 @@ export default function TestimonialsSection({ testimonials = TESTIMONIALS, data 
                   >
                     <div>
                       <div className="flex gap-1 mb-4">
+                        {item.industry && (
+                          <span className="text-xs font-medium uppercase tracking-wider text-[#f90a1f]">
+                            {item.industry}
+                          </span>
+                        )}
                         {Array.from({ length: item.stars }).map((_, starIdx) => (
                           <svg
                             key={starIdx}

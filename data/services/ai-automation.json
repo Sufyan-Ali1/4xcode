@@ -22,24 +22,7 @@
     "related": "EXPLORE MORE",
     "faq": ""
   },
-  "metrics": [
-    {
-      "value": "[XX+]",
-      "label": "Automation Projects Delivered"
-    },
-    {
-      "value": "[XX%]",
-      "label": "Average Manual Time Saved"
-    },
-    {
-      "value": "[XX+]",
-      "label": "Platforms Integrated"
-    },
-    {
-      "value": "[XX+]",
-      "label": "Countries Served"
-    }
-  ],
+  "metrics": [],
   "tags_section_heading": "Why Teams Choose 4XCODE",
   "tags": [
     {
@@ -105,20 +88,20 @@
     ],
     "stats": [
       {
-        "value": "[XX+]",
+        "value": "6+",
         "label": "Years of Experience"
       },
       {
-        "value": "[XX+]",
-        "label": "Projects Completed"
+        "value": "230+",
+        "label": "Projects Delivered"
       },
       {
-        "value": "[XX+]",
-        "label": "Skilled Engineers"
+        "value": "150+",
+        "label": "Happy Clients"
       },
       {
-        "value": "[XX%]",
-        "label": "Client Retention Rate"
+        "value": "10+",
+        "label": "Technology Experts"
       }
     ],
     "image": "/assets/aboutSection.webp",

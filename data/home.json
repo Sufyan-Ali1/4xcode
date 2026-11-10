@@ -26,20 +26,20 @@
     ],
     "stats": [
       {
-        "value": "132+",
-        "label": "Products Shipped"
+        "value": "6+",
+        "label": "Years of Experience"
       },
       {
-        "value": "30M",
-        "label": "Users Reached"
+        "value": "230+",
+        "label": "Projects Delivered"
       },
       {
-        "value": "99.99%",
-        "label": "Production Uptime"
+        "value": "150+",
+        "label": "Happy Clients"
       },
       {
-        "value": "9 Years",
-        "label": "Average Team Experience"
+        "value": "10+",
+        "label": "Technology Experts"
       }
     ],
     "image": "/assets/aboutSection.webp",
@@ -51,37 +51,60 @@
   "testimonials": [
     {
       "id": 0,
-      "stars": 5,
-      "quote": "4xCode delivered our SaaS MVP in 6 weeks — clean architecture, great UX, and zero hand-holding needed. They've become our go-to engineering partner.",
-      "author": "James T.",
-      "title": "Founder, FinTech Startup",
-      "initial": "J"
+      "stars": 0,
+      "industry": "Automotive Industry",
+      "quote": "4Xcode helped us streamline our garage operations with a tailored Garage Management Software solution. From customer management and vehicle tracking to job cards, quotations and invoicing, everything is now organised in one platform. Their automotive software development expertise has made managing our daily operations much easier.",
+      "author": "Priya N.",
+      "title": "CEO, VogueTehnics",
+      "initial": "P"
     },
     {
       "id": 1,
-      "stars": 5,
-      "quote": "The AI pipeline they built cut our data processing time by 80%. Senior engineers, clear communication, and they actually hit the deadline.",
-      "author": "Aisha M.",
-      "title": "CTO, E-commerce Platform",
-      "initial": "A"
-    },
-    {
-      "id": 2,
-      "stars": 5,
-      "quote": "We replaced three freelancers with 4xCode and never looked back. The quality of code, the speed, and the product thinking are all outstanding.",
-      "author": "Liam R.",
-      "title": "Product Lead, B2B SaaS",
-      "initial": "L"
-    },
-    {
-      "id": 3,
-      "stars": 5,
-      "quote": "From discovery to launch in under [X] months. The team understood our [domain] quickly and shipped a product our users actually love.",
+      "stars": 0,
+      "industry": "Healthcare Industry",
+      "quote": "We worked with 4Xcode to develop a digital solution that improved communication and appointment management for our healthcare services. Their team understood our requirements and delivered a customised solution with useful automation features. Their custom software development approach made the entire process smooth.",
       "author": "Priya N.",
       "title": "CEO, HealthTech Scale-up",
       "initial": "P"
+    },
+    {
+      "id": 2,
+      "stars": 0,
+      "industry": "E-commerce Industry",
+      "quote": "4Xcode delivered a professional e-commerce website tailored to our business requirements. The website provides a smooth shopping experience, responsive design and a user-friendly interface. Their web development team also helped us improve website performance and create a stronger online presence.",
+      "author": "Denn.",
+      "title": "CEO, AutoIris",
+      "initial": "D"
+    },
+    {
+      "id": 3,
+      "stars": 0,
+      "industry": "Logistics Industry",
+      "quote": "We needed a reliable digital platform to manage our transportation operations. 4Xcode helped us develop a customised solution with booking management, operational tracking and business automation. Their technical expertise and understanding of business processes made them a valuable development partner.",
+      "author": "James W.",
+      "title": "Transport Business Manager | United Kingdom",
+      "initial": "J"
+    },
+    {
+      "id": 4,
+      "stars": 0,
+      "industry": "Real Estate Industry",
+      "quote": "4Xcode helped us establish a stronger digital presence with a modern, responsive website designed around our business needs. Their team focused on user experience, website functionality and lead generation. We appreciated their communication and practical approach to web development.",
+      "author": "Sarah M.",
+      "title": "Property Consultant | United Kingdom",
+      "initial": "S"
+    },
+    {
+      "id": 5,
+      "stars": 0,
+      "industry": "Professional Services",
+      "quote": "Working with 4Xcode helped us identify opportunities to automate repetitive business tasks. They developed a customised solution that improved workflow management and reduced manual processes. Their ability to understand business requirements and turn them into practical software solutions was impressive.",
+      "author": "Daniel R.",
+      "title": "Business Automation & CRM",
+      "initial": "D"
     }
   ],
+
   "hero": {
     "eyebrow": [
       "Custom Software",
@@ -166,7 +189,7 @@
         "icon": "globe",
         "left": "13.65%",
         "top": "65.13%",
-        "detail": "99.9%"
+        "detail": ""
       },
       {
         "label": "Data Synthesis",
@@ -315,6 +338,7 @@
   },
   "testimonialSection": {
     "label": "Testimonials",
+    "authorNote": "Some reviewer display names are pseudonyms.",
     "heading": "Trusted by Growing Teams",
     "quoteOpen": "\"",
     "quoteClose": "\""

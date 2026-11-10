@@ -18,10 +18,10 @@ const INITIAL_DATA: BookCallFormData = {
   message: "",
 };
 
-const labelClass = "mb-2 block text-[11px] font-semibold text-white";
+const labelClass = "mb-2 block text-[10px] font-semibold uppercase tracking-wider text-zinc-500";
 
 const inputClass =
-  "h-[38px] w-full rounded-[6px] border border-[#8f8f8f] bg-[#323235] px-3 text-[12px] text-white placeholder:text-[#8a8a8a] outline-none transition focus:border-[#e8141c]";
+  "h-11 w-full min-w-0 rounded-lg border border-white/5 bg-black/40 px-3.5 text-xs text-white placeholder:text-zinc-600 outline-none transition-colors duration-200 focus:border-[#f51d31]/40 sm:text-sm";
 
 const BookCallForm = ({ data = garage.form }: { data?: typeof garage.form }) => {
   const [formData, setFormData] = useState<BookCallFormData>(INITIAL_DATA);
@@ -40,22 +40,30 @@ const BookCallForm = ({ data = garage.form }: { data?: typeof garage.form }) => 
   };
 
   return (
-    <section className="w-full mt-10 bg-black">
-      <div className="mx-auto w-full ">
+    <section className="w-full mt-10">
+      <div className="relative isolate mx-auto w-full">
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 -z-10 rounded-2xl bg-[#f90a1f]/5 opacity-30 blur-xl md:rounded-[32px] md:bg-[#f90a1f]/10 md:blur-2xl"
+        />
         <form
           onSubmit={handleSubmit}
-          className="rounded-[12px] border border-[#1d1d1d] bg-[#1c1c1c] p-5 sm:p-6 md:px-5 md:py-5"
+          className="relative isolate overflow-hidden rounded-2xl border border-white/5 bg-white/[0.02] p-6 shadow-xl backdrop-blur-xl sm:p-8 md:rounded-[32px] md:border-white/10 md:bg-white/[0.04]"
         >
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-0 -z-10 bg-linear-to-br from-white/[0.06] via-transparent to-transparent"
+          />
           {/* Heading */}
-          <h2 className="text-[20px] font-semibold leading-tight text-white">
+          <h2 className="text-2xl font-bold leading-tight tracking-tight text-white sm:text-3xl">
             {data.heading}
           </h2>
-          <p className="mt-2 text-[11px] text-[#e5e5e5]">
+          <p className="mt-3 text-xs leading-relaxed text-zinc-500 sm:text-sm">
             {data.description}
           </p>
 
           {/* Fields */}
-          <div className="mt-6 grid grid-cols-1 gap-x-[10px] gap-y-5 md:grid-cols-2">
+          <div className="mt-6 grid grid-cols-1 gap-4 md:grid-cols-2">
             <div>
               <label htmlFor="name" className={labelClass}>
                 {data.fields.name.label}
@@ -130,7 +138,7 @@ const BookCallForm = ({ data = garage.form }: { data?: typeof garage.form }) => 
                 value={formData.message}
                 onChange={handleChange}
                 placeholder={data.fields.message.placeholder}
-                className="h-[80px] w-full resize-none rounded-[6px] border border-[#8f8f8f] bg-[#323235] px-3 py-2 text-[12px] text-white placeholder:text-[#8a8a8a] outline-none transition focus:border-[#e8141c]"
+                className={`${inputClass} min-h-24 resize-none py-3`}
               />
             </div>
           </div>
@@ -139,7 +147,7 @@ const BookCallForm = ({ data = garage.form }: { data?: typeof garage.form }) => 
           <div className="mt-6 flex md:justify-end">
             <button
               type="submit"
-              className="h-[40px] w-full rounded-[6px] bg-[#9b0f1a] text-[13px] font-medium text-white transition hover:bg-[#b3121f] md:w-[200px]"
+              className="h-11 w-full cursor-pointer rounded-lg bg-[#f51d31] px-6 text-sm font-semibold text-white shadow-md transition-colors duration-200 hover:bg-[#ed1c20] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#f51d31] md:w-[200px]"
             >
               {data.button}
             </button>

@@ -1,7 +1,7 @@
-export default function CaseStudiesSkeleton() {
+export default function CaseStudiesSkeleton({ contained = false }: { contained?: boolean }) {
   return (
-    <section className="w-full bg-black py-12 px-10">
-      <div className="max-w-7xl mx-auto">
+    <section className="w-full bg-black py-12">
+      <div className={contained ? "w-full" : "site-container"}>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {[1, 2, 3].map((item) => (
             <div
@@ -18,7 +18,7 @@ export default function CaseStudiesSkeleton() {
                 <div className="p-4.5 space-y-3">
                   {/* Title Bar line clamp alternative */}
                   <div className="h-4 bg-zinc-800 rounded-md w-3/4" />
-                  
+
                   {/* Description Snippet line clamp alternatives */}
                   <div className="space-y-2">
                     <div className="h-3 bg-zinc-800/60 rounded-md w-full" />

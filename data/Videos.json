@@ -1,0 +1,42 @@
+{
+  "eyebrow": "Watch & Explore",
+  "whiteTitle": "Our",
+  "redTitle": "Videos",
+  "description": "Explore our garage management software, from quotations and job cards to sales invoices and customer reminders.",
+  "videos": [
+    {
+      "id": 1,
+      "tag": "Jobs & Invoices",
+      "title": "Job Cards, Invoices & Customer Reminders",
+      "description": "Explore job cards, sales invoices and customer reminders in 4Xcode Garage Software.",
+      "thumbnail": "https://img.youtube.com/vi/sQM7GRz1_LM/hqdefault.jpg",
+      "videoUrl": "https://www.youtube.com/embed/sQM7GRz1_LM?rel=0"
+    },
+    {
+      "id": 2,
+      "tag": "Job Management",
+      "title": "From Accepted Quote to Job Card",
+      "description": "See the workflow from an accepted quotation to a workshop job card in our garage management software.",
+      "thumbnail": "https://img.youtube.com/vi/R0cgd_Q6wLY/hqdefault.jpg",
+      "videoUrl": "https://www.youtube.com/embed/R0cgd_Q6wLY?rel=0"
+    },
+
+    {
+      "id": 4,
+      "tag": "Quotations",
+      "title": "Garage Software Quote Module",
+      "description": "Take a closer look at the quotation module in our garage management software.",
+      "thumbnail": "https://img.youtube.com/vi/ti75hO-yzow/hqdefault.jpg",
+      "videoUrl": "https://www.youtube.com/embed/ti75hO-yzow?rel=0"
+    },
+ 
+    {
+      "id": 6,
+      "tag": "Product Overview",
+      "title": "Garage Management Software Overview",
+      "description": "Get an overview of 4Xcode Garage Management Software and explore the platform in action.",
+      "thumbnail": "https://img.youtube.com/vi/12XkOzaWuZE/hqdefault.jpg",
+      "videoUrl": "https://www.youtube.com/embed/12XkOzaWuZE?rel=0"
+    }
+  ]
+}

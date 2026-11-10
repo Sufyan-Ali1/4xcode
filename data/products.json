@@ -1,0 +1,623 @@
+{
+"auto-recovery-system":{
+      "title": "Auto Recovery System",
+  "description": "Reliable automotive towing and recovery services for vehicles that are stranded, damaged, or unable to move.",
+  "href": "/product/auto-recovery-system",
+  "image": "/assets/auto-recovery.webp",
+  "icon": "recovery",
+    "hero_data":{
+  "product": "Engine Rebuild",
+  "title1": "Professional",
+  "title2": "Engine Rebuild",
+  "title3": "Services",
+  "description": "Run your garage with greater control, clarity, and efficiency. Our Garage Management System brings every part of your business together in one connected platform, giving you complete visibility across jobs, customers, vehicles, technicians, invoices, payments, bookings, and day-to-day operations. From managing new bookings and assigning work to tracking job progress, maintaining vehicle records, communicating with customers, and keeping your finances organised, everything is designed to work together seamlessly."
+},
+"productProblem":{
+  "label": "PROBLEM",
+  "title1": "Running a",
+  "title2": "Garage",
+  "title3": "Is More Than Managing Records",
+  "subtitle": "Every day, garages are dealing with moving parts, changing priorities, and decisions that need to happen quickly.",
+  "logo": "/assets/4xcode-logo.webp",
+  "problems": [
+    {
+      "id": 1,
+      "title": "Jobs Running Late",
+      "description": "Delays disrupt the entire workshop schedule.",
+      "icon": "AccessTime"
+    },
+    {
+      "id": 2,
+      "title": "Vehicle Waiting For Parts",
+      "description": "Workshop space tied up by idle vehicles.",
+      "icon": "DirectionsCar"
+    },
+    {
+      "id": 3,
+      "title": "Quotes Waiting For Approval",
+      "description": "Work delayed by pending customer approval.",
+      "icon": "FormatQuote"
+    },
+    {
+      "id": 4,
+      "title": "Technicians Are Free",
+      "description": "Available capacity gets lost when work isn't assigned efficiently.",
+      "icon": "Engineering"
+    },
+    {
+      "id": 5,
+      "title": "Unpaid Invoices",
+      "description": "Completed work with outstanding payments.",
+      "icon": "ReceiptLong"
+    },
+    {
+      "id": 6,
+      "title": "Parking Space Occupied",
+      "description": "Workshop space blocked by unfinished jobs.",
+      "icon": "LocalParking"
+    },
+    {
+      "id": 7,
+      "title": "Additional Work Not Authorized",
+      "description": "Repairs delayed by pending approval.",
+      "icon": "Build"
+    },
+    {
+      "id": 8,
+      "title": "Customers Waiting For Updates",
+      "description": "Staff overwhelmed by customer status calls.",
+      "icon": "Person"
+    }
+  ],
+  "solutionText": "4Xcode brings your entire workshop together in one connected management platform — helping you manage jobs, customers, vehicles, technicians, approvals, parts, payments, and daily operations from a single place."
+
+},
+ "whyChoose": {
+      "sectionLabel": "Why choose Garage Management System",
+
+      "title": "Garage Management System",
+
+      "description":
+        "Simplify your automotive workshop operations with organised job scheduling, vehicle records, and a centralised management system.",
+
+      "features": [
+        "Workshop Job Scheduling",
+        "Vehicle Service History",
+        "Customer Management",
+        "Repair and Maintenance Tracking",
+        "Digital Job Cards",
+        "Staff and Task Management",
+        "More features here"
+      ],
+
+      "workflowTitle": "Workshop Workflow",
+
+      "workflow": [
+        {
+          "number": 1,
+          "description":
+            "Register incoming vehicles and create a job card with customer and vehicle details."
+        },
+        {
+          "number": 2,
+          "description":
+            "Assign the repair job to your workshop team and track its progress."
+        },
+        {
+          "number": 3,
+          "description":
+            "Update the service record and manage the job through to completion."
+        }
+      ],
+
+      "scheduledJob": {
+        "title": "Workshop Job",
+
+        "details": [
+          {
+            "label": "Location",
+            "value": "Main Workshop"
+          },
+          {
+            "label": "Vehicle",
+            "value": "Toyota Corolla (Silver)"
+          }
+        ],
+
+        "status": {
+          "label": "Status",
+          "value": "In Progress"
+        },
+
+        "action": {
+          "label": "View Job",
+          "href": "/contact"
+        }
+      },
+
+      "gpsValidation": {
+        "title": "Job Progress",
+
+        "message": [
+          "Repair in Progress",
+          "Work is underway"
+        ]
+      },
+
+      "preview": {
+        "title": "Garage Management System",
+        "image": "/assets/auto-recovery-logo.webp",
+        "alt": "Garage Management System logo",
+        "placeholder": "Garage Management System"
+      }
+    },
+        "pricing": {
+      "sectionId": "pricing",
+      "sectionLabel": "Auto Recovery System pricing",
+      "eyebrow": "Pricing",
+      "title": "Plans Built Around Your",
+      "highlight": "Needs",
+      "description": "Choose the perfect plan for your business. No hidden fees, no surprises.",
+      "plans": [
+        {
+          "id": "essential",
+          "name": "Essential",
+          "currencySymbol": "$",
+          "price": "19",
+          "billingPeriod": "/mo",
+          "priceDescription": "",
+          "featured": false,
+          "features": [
+            "Up to 5 active projects",
+            "Basic analytics dashboard",
+            "Email support",
+            "Standard security features"
+          ],
+          "action": {
+            "label": "Select Plan",
+            "href": "/contact"
+          }
+        },
+        {
+          "id": "advanced",
+          "name": "Advanced",
+          "currencySymbol": "$",
+          "price": "49",
+          "billingPeriod": "/mo",
+          "priceDescription": "",
+          "featured": true,
+          "features": [
+            "Unlimited active projects",
+            "Advanced analytics & reporting",
+            "Priority 24/7 support",
+            "Custom integrations"
+          ],
+          "action": {
+            "label": "Select Plan",
+            "href": "/contact"
+          }
+        },
+        {
+          "id": "enterprise",
+          "name": "Enterprise",
+          "currencySymbol": "$",
+          "price": "99",
+          "billingPeriod": "/mo",
+          "priceDescription": "",
+          "featured": false,
+          "features": [
+            "Unlimited everything",
+            "Dedicated account manager",
+            "White-label solutions",
+            "Enterprise-grade security"
+          ],
+          "action": {
+            "label": "Select Plan",
+            "href": "/contact"
+          }
+        }
+      ]
+    },
+     "testimonials_data": {
+    "eyebrow": "Customer Reviews",
+    "heading": "What Our",
+    "highlight": "Customers Say",
+    "description": "Trusted by customers for professional service, quality workmanship and reliable results.",
+    "reviews": [
+      {
+        "id": 1,
+        "author": "James Wilson",
+        "initial": "J",
+        "title": "Verified Customer",
+        "stars": 5,
+        "quote": "Excellent service from start to finish. The team was professional, helpful and completed the work to a very high standard."
+      },
+      {
+        "id": 2,
+        "author": "Daniel Smith",
+        "initial": "D",
+        "title": "Verified Customer",
+        "stars": 5,
+        "quote": "Very impressed with the quality of work and communication throughout the process. Everything was explained clearly."
+      },
+      {
+        "id": 3,
+        "author": "Michael Brown",
+        "initial": "M",
+        "title": "Verified Customer",
+        "stars": 5,
+        "quote": "Great experience with the team. The service was efficient, professional and the final result was exactly what I needed."
+      },
+      {
+        "id": 4,
+        "author": "Robert Taylor",
+        "initial": "R",
+        "title": "Verified Customer",
+        "stars": 5,
+        "quote": "The team provided excellent support and kept me updated throughout the process. The quality of work was outstanding."
+      },
+      {
+        "id": 5,
+        "author": "Thomas Anderson",
+        "initial": "T",
+        "title": "Verified Customer",
+        "stars": 5,
+        "quote": "Professional service and great attention to detail. Everything was handled smoothly and I am very happy with the result."
+      }
+    ]
+  },
+  "purpose_section":
+{
+  "eyebrow": "Purpose",
+  "heading": [
+    {
+      "text": "Built for Real-World ",
+      "variant": "default"
+    },
+    {
+      "text": "Results",
+      "variant": "accent"
+    }
+  ],
+  "subtitle": "From First Use to Long-Term Value",
+  "paragraphs": [
+    "We turn ambitious ideas into powerful digital products designed to solve real problems, delight users, and scale with your business. From strategy and UX to development and launch, we bring together the technology, design, and expertise needed to build products that are ready for today—and prepared for tomorrow.",
+    "As your business evolves, the product gives you the flexibility to adapt without disrupting your existing workflow. From everyday operations to future growth, it provides a dependable foundation that can support changing needs, new opportunities, and continued improvement over time."
+  ]
+},
+       "product_gallery":{
+  "sectionId": "product-gallery",
+  "eyebrow": "Gallery",
+  "title": "Inside the",
+  "highlight": "Product",
+  "description": "Designed for clarity. Built for performance.",
+  "cards": [
+    {
+      "id": "welcome-screen",
+      "image": "/assets/gallery/welcome-screen.webp",
+      "alt": "Auto Recovery app welcome screen"
+    },
+    {
+      "id": "login-screen",
+      "image": "/assets/gallery/login-screen.webp",
+      "alt": "Auto Recovery app login screen"
+    },
+    {
+      "id": "current-job-screen",
+      "image": "/assets/gallery/current-job.webp",
+      "alt": "Auto Recovery app current job screen"
+    },
+    {
+      "id": "scheduled-jobs-screen",
+      "image": "/assets/gallery/scheduled-jobs.webp",
+      "alt": "Auto Recovery app scheduled jobs screen"
+    },
+    {
+      "id": "navigation-screen",
+      "image": "/assets/gallery/navigation.webp",
+      "alt": "Auto Recovery app navigation screen"
+    },
+    {
+      "id": "gps-validation-screen",
+      "image": "/assets/gallery/gps-validation.webp",
+      "alt": "Auto Recovery app GPS validation screen"
+    }
+  ]
+}
+}
+,
+
+
+
+
+
+
+
+"garage-management-system":{
+  "title": "Garage Management System",
+  "description": "A complete garage management system designed to simplify and streamline your automotive workshop operations.",
+  "href": "/product/garage-management-system",
+  "image": "/assets/garage-management-banner.webp",
+  "testinomials":{
+  "eyebrow": "TESTIMONIALS",
+  "heading": "Loved by",
+  "highlight": "operators",
+  "description": "",
+  "reviews": [
+    {
+      "id": "james-t",
+      "stars": 5,
+      "quote": "4xCode delivered our SaaS MVP in 6 weeks — clean architecture, great UX, and zero hand-holding needed. They've become our go-to engineering partner.",
+      "initial": "J",
+      "author": "James T.",
+      "title": "FOUNDER, FINTECH STARTUP"
+    },
+    {
+      "id": "aisha-m",
+      "stars": 5,
+      "quote": "The AI pipeline they built cut our data processing time by 80%. Senior engineers, clear communication, and they actually hit the deadline.",
+      "initial": "A",
+      "author": "Aisha M.",
+      "title": "CTO, E-COMMERCE PLATFORM"
+    },
+    {
+      "id": "liam-r",
+      "stars": 5,
+      "quote": "We replaced three freelancers with 4xCode and never looked back. The quality of code, the speed, and the product thinking are all outstanding.",
+      "initial": "L",
+      "author": "Liam R.",
+      "title": "PRODUCT LEAD, B2B SAAS"
+    },
+    {
+      "id": "priya-n",
+      "stars": 5,
+      "quote": "From discovery to launch in under two months. The team understood our domain quickly and shipped a product our users actually love.",
+      "initial": "P",
+      "author": "Priya N.",
+      "title": "CEO, HEALTHTECH SCALE-UP"
+    }
+  ]
+},
+ 
+ "pricing": {
+  "sectionId": "pricing",
+  "sectionLabel": "Garage Management System pricing",
+  "eyebrow": "Pricing",
+  "title": "Plans Built Around Your",
+  "highlight": "Needs",
+  "description": "Choose the perfect plan for your business. No hidden fees, no surprises.",
+  "plans": [
+    {
+      "id": "starter",
+      "name": "Starter",
+      "currencySymbol": "£",
+      "price": "99",
+      "billingPeriod": "/month",
+      "priceDescription": "Best for small garages getting started.",
+      "featured": false,
+      "features": [
+        "Customer & Vehicle Management",
+        "Manual Quote Creation",
+        "Job Card Management",
+        "Invoice Management",
+        "Paid / Unpaid Tracking",
+        "Customer & Vehicle History",
+        "Basic Dashboard & Reports",
+        "User Management"
+      ],
+      "action": {
+        "label": "Starter",
+        "href": "/contact"
+      }
+    },
+    {
+      "id": "professional",
+      "name": "Professional",
+      "currencySymbol": "£",
+      "price": "175",
+      "billingPeriod": "/month",
+      "priceDescription": "Everything in Starter, plus:",
+      "featured": true,
+      "features": [
+        "1 Website Integration",
+        "Automatic Web Enquiry Management",
+        "Enquiry Status Tracking",
+        "Email Quotation Templates",
+        "Quote Acceptance & Archive",
+        "Team Enquiry Assignment",
+        "Advanced Follow-ups",
+        "Sales Conversion Reports"
+      ],
+      "action": {
+        "label": "Most Popular",
+        "href": "/contact"
+      }
+    },
+    {
+      "id": "enterprise",
+      "name": "Enterprise",
+      "currencySymbol": "£",
+      "price": "250",
+      "billingPeriod": "/month",
+      "priceDescription": "Everything in Professional, plus:",
+      "featured": false,
+      "features": [
+        "Unlimited Website Integrations",
+        "Reserved Parking Management",
+        "Advanced Follow-up Management",
+        "Monthly Enquiry & Booking Calendar",
+        "Weekly, Monthly & Yearly Sales Reports",
+        "VAT Calculation & Reports",
+        "Inventory Management",
+        "MOT Reminders",
+        "VRM Tracker",
+        "Advanced Business Analytics"
+      ],
+      "action": {
+        "label": "Complete Solution",
+        "href": "/contact"
+      },
+      "product_gallery": {
+        "sectionId": "product-gallery",
+        "eyebrow": "Gallery",
+        "title": "Inside the",
+        "highlight": "Product",
+        "description": "Designed for clarity. Built for performance.",
+        "cards": [
+          {
+            "id": "welcome-screen",
+            "image": "/assets/gallery/welcome-screen.webp",
+            "alt": "Auto Recovery app welcome screen"
+          },
+          {
+            "id": "login-screen",
+            "image": "/assets/gallery/login-screen.webp",
+            "alt": "Auto Recovery app login screen"
+          },
+          {
+            "id": "current-job-screen",
+            "image": "/assets/gallery/current-job.webp",
+            "alt": "Auto Recovery app current job screen"
+          },
+          {
+            "id": "scheduled-jobs-screen",
+            "image": "/assets/gallery/scheduled-jobs.webp",
+            "alt": "Auto Recovery app scheduled jobs screen"
+          },
+          {
+            "id": "navigation-screen",
+            "image": "/assets/gallery/navigation.webp",
+            "alt": "Auto Recovery app navigation screen"
+          },
+          {
+            "id": "gps-validation-screen",
+            "image": "/assets/gallery/gps-validation.webp",
+            "alt": "Auto Recovery app GPS validation screen"
+          }
+        ]
+      }
+    }
+  ]
+},
+  
+"faqs": [
+  {
+    "q": "How long does a typical project take to complete?",
+    "a": "Timelines depend on scope and complexity. A small project usually takes 2 to 4 weeks, while a larger custom solution can take 8 to 12 weeks."
+  },
+  {
+    "q": "What is the process once I book a free demo?",
+    "a": "After you book a demo, our team reviews your requirements, walks you through a live demonstration, and then shares a clear proposal with scope, timeline, and cost."
+  },
+  {
+    "q": "Will I get regular updates during development?",
+    "a": "Yes. We follow an agile workflow with weekly progress updates and a dedicated point of contact."
+  },
+  {
+    "q": "Do you provide support after the project is delivered?",
+    "a": "Yes. We offer post-launch support and maintenance plans including bug fixes, updates, and performance monitoring."
+  }
+],
+
+  "security_data1": {
+    "label": "Security",
+    "whiteHeading": "Secure Access.",
+    "redHeading": "Complete Control",
+    "headingSuffix": ".",
+    "paragraphs": [
+      "Keep your garage data protected while giving every team member access to the tools they need. Control permissions, manage user access, and keep sensitive customer, vehicle, financial, and workshop information organised and secure.",
+      "Keep your garage data protected while giving every team member access to the tools they need. Control permissions, manage user access, and keep sensitive customer, vehicle, financial, and workshop information organised and secure."
+    ],
+    "buttonText": "Start Project",
+    "items": [
+      {
+        "id": 1,
+        "title": "Role-Based Access",
+        "description": "Give staff access based on their role and responsibilities."
+      },
+      {
+        "id": 2,
+        "title": "User Permissions",
+        "description": "Control which features and information each team member can view or manage."
+      },
+      {
+        "id": 3,
+        "title": "Secure Customer Data",
+        "description": "Keep customer, vehicle, service history, and contact information protected."
+      },
+      {
+        "id": 4,
+        "title": "Protected Financial Information",
+        "description": "Restrict access to invoices, payments, quotes, and other sensitive financial data."
+      }
+    ]
+  },
+  "security_data2": {
+    "label": "Reporting",
+    "whiteHeading": "Smarter Insights.",
+    "redHeading": "Clearer Decisions",
+    "headingSuffix": ".",
+    "paragraphs": [
+      "See how your workshop is really performing without digging through paperwork. Track jobs, revenue, technician workload, and customer activity from one simple dashboard that updates in real time.",
+      "Spot trends early, understand which services bring in the most profit, and plan ahead with confidence. Share clear reports with your team or accountant whenever you need them."
+    ],
+    "buttonText": "Book a Demo",
+    "items": [
+      {
+        "id": 1,
+        "title": "Live Revenue Tracking",
+        "description": "Monitor daily, weekly, and monthly earnings as jobs are completed and invoiced."
+      },
+      {
+        "id": 2,
+        "title": "Technician Performance",
+        "description": "Understand workload, completed jobs, and time spent so work is shared fairly."
+      },
+      {
+        "id": 3,
+        "title": "Service Profitability",
+        "description": "Find out which repairs and services bring in the best margins for your garage."
+      },
+      {
+        "id": 4,
+        "title": "Exportable Reports",
+        "description": "Download clean reports for your accountant, management, or tax records in one click."
+      }
+    ]
+  },
+  "reports_data": {
+    "label": "Reporting",
+    "whiteHeading": "Smarter Insights.",
+    "redHeading": "Clearer Decisions",
+    "headingSuffix": ".",
+    "paragraphs": [
+      "See how your workshop is really performing without digging through paperwork. Track jobs, revenue, technician workload, and customer activity from one simple dashboard that updates in real time.",
+      "Spot trends early, understand which services bring in the most profit, and plan ahead with confidence. Share clear reports with your team or accountant whenever you need them."
+    ],
+    "buttonText": "Book a Demo",
+    "items": [
+      {
+        "id": 1,
+        "title": "Live Revenue Tracking",
+        "description": "Monitor daily, weekly, and monthly earnings as jobs are completed and invoiced."
+      },
+      {
+        "id": 2,
+        "title": "Technician Performance",
+        "description": "Understand workload, completed jobs, and time spent so work is shared fairly."
+      },
+      {
+        "id": 3,
+        "title": "Service Profitability",
+        "description": "Find out which repairs and services bring in the best margins for your garage."
+      },
+      {
+        "id": 4,
+        "title": "Exportable Reports",
+        "description": "Download clean reports for your accountant, management, or tax records in one click."
+      }
+    ]
+  }
+}
+
+}

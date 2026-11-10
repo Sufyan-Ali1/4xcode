@@ -1,15 +1,9 @@
+import { spaceGrotesk, inter } from "@/lib/fonts";
 import React, { Suspense } from "react";
-import { Space_Grotesk, Inter } from "next/font/google";
 import BlogHeader from "../../components/blog/BlogHeader";
 import BlogDataLoader from "@/components/blog/BlogDataLoader";
 import CaseStudiesSkeleton from "@/components/landing/CaseStudiesSkeleton";
 import { Metadata } from "next";
-
-const inter = Inter({ subsets: ["latin"], weight: ["300", "400", "500"] });
-const spaceGrotesk = Space_Grotesk({
-  subsets: ["latin"],
-  weight: ["400", "500", "700"],
-});
 
 export const metadata: Metadata = {
   title: "Tech Insights, SaaS & AI Engineering Guides | 4xCode Blog",
@@ -29,10 +23,10 @@ export default function BlogPage() {
         <div className="absolute inset-0 bg-linear-to-b from-transparent to-[#030303]" />
       </div>
 
-      <div className="mx-auto w-full max-w-300 px-5 pt-36 pb-16 relative z-10 flex flex-col gap-y-16">
+      <div className="site-container pt-36 pb-16 relative z-10 flex flex-col gap-y-16">
         <BlogHeader spaceGroteskClass={spaceGrotesk.className} />
 
-        <Suspense fallback={<CaseStudiesSkeleton />}>
+        <Suspense fallback={<CaseStudiesSkeleton contained />}>
           <BlogDataLoader />
         </Suspense>
       </div>

@@ -5,15 +5,17 @@ import React from "react";
 export default function TechnologyExperience({sectionData}) {
   return (
     <section className="w-full bg-[#030303] py-12 md:py-16">
-      <div className="mx-auto flex flex-wrap  w-full max-w-7xl">
-        <div className="rounded-[18px]   bg-[#101010] px-6 py-8 mx-5 md:mx-8 sm:py-9 lg:mx-14 md:py-10">
-          <h2 className="max-w-[600px] text-xl font-bold leading-tight tracking-tight text-white sm:text-2xl md:text-3xl lg:text-4xl ">
+      <div className="site-container flex flex-wrap">
+        <div className="rounded-[18px]   bg-[#101010] w-full px-6 py-8 sm:py-9 md:py-10">
+          <h2 className="md:max-w-[90%] lg:max-w-[80%] text-xl font-bold leading-tight tracking-tight text-white sm:text-2xl md:text-3xl lg:text-4xl ">
             {sectionData.heading}
           </h2>
-          <p className="mt-4 max-w-[620px] text-[12px] md:text-[14px] lg:text-[16px] font-normal leading-[1.7]  sm:text-[11px] text-zinc-300">
-            {sectionData.description}
-          </p>
-          <div className="mt-8 grid grid-cols-1 gap-x-10 gap-y-7 sm:grid-cols-2">
+          {sectionData.description && (
+            <p className="mt-4 text-[12px] md:text-[14px] lg:text-[16px] font-normal leading-[1.7] sm:text-[11px] text-zinc-300">
+              {sectionData.description}
+            </p>
+          )}
+          <div className={`mt-8 grid grid-cols-1 gap-x-10 gap-y-7 sm:grid-cols-2 ${sectionData.columnLayout ? "sm:grid-flow-col sm:grid-rows-3" : ""}`}>
             {sectionData.cards.map((card, index) => (
               <div key={index} className="flex items-start gap-3">
                 <span className="mt-[2px] shrink-0 text-[14px] leading-none text-[#EF1F23]">

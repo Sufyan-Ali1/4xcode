@@ -1,25 +1,23 @@
 "use client";
 
+import { entranceOffset, entranceTransition, revealViewport } from "@/utils/motion";
+
+import { spaceGrotesk } from "@/lib/fonts";
+
 import React from "react";
 import { motion } from "framer-motion";
 import { useSafeReducedMotion } from "../../utils/useSafeReducedMotion";
-import { Space_Grotesk } from "next/font/google";
 import { Reveal } from "../../utils/AnimationReveal";
 import GroupsIcon from "@mui/icons-material/Groups";
 import { TeamMember } from "../../types/index";
 import { TEAM } from "../../data/index";
 
-const spaceGrotesk = Space_Grotesk({
-  subsets: ["latin"],
-  weight: ["400", "500", "700"],
-});
-
 export default function TeamSection() {
   const reduced = useSafeReducedMotion();
 
   return (
-    <section className="relative w-full  px-6 md:px-12 lg:px-24 z-10">
-      <div className="max-w-7xl mx-auto space-y-10">
+    <section className="relative w-full  z-10">
+      <div className="site-container space-y-10">
         <Reveal>
           <div className="flex items-end justify-between border-b border-zinc-900 pb-4">
             <div className="space-y-2">
@@ -42,22 +40,22 @@ export default function TeamSection() {
 
         {/* Full-width container with clean line breaks */}
         <div className="w-full divide-y divide-zinc-800/60 border-b border-zinc-800/60">
-          {TEAM.map((member: TeamMember, index: number) => (
+          {TEAM.map((member: TeamMember) => (
             <motion.div
               key={member.name}
-              initial={{ opacity: 0, y: reduced ? 0 : 15 }}
+              initial={{ opacity: 0, y: reduced ? 0 : entranceOffset }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.1 }}
-              transition={{ duration: 0.5, delay: index * 0.05 }}
-              className="w-full py-10 group transition-colors duration-300 hover:bg-zinc-900/10"
+              viewport={revealViewport}
+              transition={entranceTransition}
+              className="w-full py-10 group transition-colors duration-200 hover:bg-zinc-900/10"
             >
               {/* Centered layout box grid across the screen */}
-              <div className="grid grid-cols-1 md:grid-cols-12 gap-y-6 md:gap-x-12 items-center max-w-5xl mx-auto px-4">
-                
+              <div className="grid grid-cols-1 md:grid-cols-12 gap-y-6 md:gap-x-12 items-center w-full">
+
                 {/* LEFT: Stacked Profile Metadata Block (Spans 4 columns) */}
                 <div className="md:col-span-4 flex flex-col items-center md:items-start text-center md:text-left space-y-3">
                   {/* 1. Initials on Top */}
-                  <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-[#EF1F23] to-[#990a0d] flex items-center justify-center font-bold tracking-wider text-white text-sm shadow-md shadow-[#EF1F23]/10 flex-shrink-0 transition-transform duration-300 group-hover:scale-105">
+                  <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-[#EF1F23] to-[#990a0d] flex items-center justify-center font-bold tracking-wider text-white text-sm shadow-md shadow-[#EF1F23]/10 flex-shrink-0 transition-transform duration-200 group-hover:scale-105">
                     {member.initials}
                   </div>
 

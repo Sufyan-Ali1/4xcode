@@ -1,12 +1,7 @@
+import { spaceGrotesk } from "@/lib/fonts";
 import React from "react";
 import Link from "next/link";
-import { Space_Grotesk } from "next/font/google";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
-
-const spaceGrotesk = Space_Grotesk({
-  subsets: ["latin"],
-  weight: ["700"],
-});
 
 export function BookDemoCallout() {
   return (
@@ -33,10 +28,10 @@ export function BookDemoCallout() {
         </div>
 
         {/* Premium Dark Tech Callout Box Design Integration */}
-        <div className="group relative w-full overflow-hidden rounded-[22px] border border-[#ef1f23]/10 bg-gradient-to-b from-white/[0.03] to-white/[0.01] p-8 text-center shadow-2xl backdrop-blur-xl transition-all duration-300 hover:border-[#ef1f23]/30 md:p-10 mt-8">
+        <div className="group relative w-full overflow-hidden rounded-[22px] border border-[#ef1f23]/10 bg-gradient-to-b from-white/[0.03] to-white/[0.01] p-8 text-center shadow-2xl backdrop-blur-xl transition-all duration-200 hover:border-[#ef1f23]/30 md:p-10 mt-8">
           {/* Subtle Dynamic Target Aura Glow */}
           <div
-            className="pointer-events-none absolute -right-16 -bottom-16 h-48 w-48 rounded-full bg-[#ef1f23]/10 blur-[50px] transition-opacity duration-300 group-hover:opacity-20"
+            className="pointer-events-none absolute -right-16 -bottom-16 h-48 w-48 rounded-full bg-[#ef1f23]/10 blur-[50px] transition-opacity duration-200 group-hover:opacity-20"
             aria-hidden="true"
           />
 
@@ -63,7 +58,7 @@ export function BookDemoCallout() {
 
               <ArrowForwardIcon
                 style={{ fontSize: 16 }}
-                className="text-[#ef1f23] transition-transform duration-300 ease-out "
+                className="text-[#ef1f23] transition-transform duration-200 ease-out "
               />
             </Link>
           </div>

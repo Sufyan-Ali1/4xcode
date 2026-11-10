@@ -1,0 +1,52 @@
+{
+  "about": {
+    "label": "About 4xCode",
+    "imageAlt": "Engineering Team",
+    "foundedLabel": "Founded"
+  },
+  "testimonialSection": {
+    "label": "Testimonials",
+    "heading": "Loved by",
+    "highlight": "operators",
+    "quoteOpen": "\"",
+    "quoteClose": "\""
+  },
+  "cta": {
+    "label": "Let's Build",
+    "heading": "Let's Build Something",
+    "highlight": "Extraordinary",
+    "description": "Tell us about your product. We’ll come back within 24 hours with a sharp opinion and a clear path forward.",
+    "image": {
+      "src": "/assets/CTASection.webp",
+      "alt": "CTA Background Graphic"
+    },
+    "actions": [
+      {
+        "label": "Book an intro call",
+        "href": "/contact"
+      },
+      {
+        "label": "See capabilities",
+        "href": "/service"
+      }
+    ]
+  },
+  "faqSection": {
+    "label": "Technical Validation",
+    "heading": "Frequently Asked",
+    "highlight": "Questions"
+  },
+  "caseStudyCard": {
+    "action": "Read Case Study",
+    "imageFallback": "4xCode Case Study",
+    "titleFallback": "Untitled Case Study"
+  },
+  "productCta": {
+    "label": "Get Started",
+    "heading_white": " Have a project in",
+    "heading_red": "mind?",
+    "text": "Tell us the goal. We'll tell you the path.",
+    "button": "Start Project",
+    "href": "/contact"
+  }
+}

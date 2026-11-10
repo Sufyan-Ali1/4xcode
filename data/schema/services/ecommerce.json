@@ -1,0 +1,180 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.4xcode.com/#organization",
+      "name": "4xCode",
+      "url": "https://www.4xcode.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "@id": "https://www.4xcode.com/#logo",
+        "url": "https://www.4xcode.com/assets/logo1.webp",
+        "contentUrl": "https://www.4xcode.com/assets/logo1.webp"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/company/4xcode-software/"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.4xcode.com/#website",
+      "url": "https://www.4xcode.com/",
+      "name": "4xCode",
+      "alternateName": "4xcode",
+      "publisher": {
+        "@id": "https://www.4xcode.com/#organization"
+      },
+      "inLanguage": "en-GB"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.4xcode.com/service/ecommerce-solutions#webpage",
+      "url": "https://www.4xcode.com/service/ecommerce-solutions",
+      "name": "Ecommerce Development Services: Shopify & Next.js | 4xcode",
+      "description": "Ecommerce development services for custom Shopify and Next.js storefronts, payment gateways, inventory systems and marketplaces. Discuss your store today.",
+      "isPartOf": {
+        "@id": "https://www.4xcode.com/#website"
+      },
+      "about": {
+        "@id": "https://www.4xcode.com/#organization"
+      },
+      "publisher": {
+        "@id": "https://www.4xcode.com/#organization"
+      },
+      "inLanguage": "en-GB",
+      "keywords": "Ecommerce Development Services",
+      "mainEntity": {
+        "@id": "https://www.4xcode.com/service/ecommerce-solutions#service"
+      },
+      "breadcrumb": {
+        "@id": "https://www.4xcode.com/service/ecommerce-solutions#breadcrumb"
+      }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://www.4xcode.com/service/ecommerce-solutions#service",
+      "name": "Ecommerce Development Services",
+      "serviceType": "Ecommerce Development Services",
+      "description": "4xCode provides ecommerce development services for brands that have outgrown templates. We build Shopify stores, headless storefronts and custom ecommerce platforms that load fast, check out securely and stay in sync with your inventory, ERP, CRM and shipping systems.",
+      "url": "https://www.4xcode.com/service/ecommerce-solutions",
+      "provider": {
+        "@id": "https://www.4xcode.com/#organization"
+      },
+      "mainEntityOfPage": {
+        "@id": "https://www.4xcode.com/service/ecommerce-solutions#webpage"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Ecommerce Development Services Solutions",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Online Store and Marketplace Development"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Payment Gateway and Checkout"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "ERP, CRM and Inventory Integration"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Shipping, Fulfilment and Returns"
+            }
+          }
+        ]
+      },
+      "isRelatedTo": [
+        {
+          "@type": "Service",
+          "@id": "https://www.4xcode.com/service/api-integration#service",
+          "name": "API Integration Services",
+          "url": "https://www.4xcode.com/service/api-integration"
+        },
+        {
+          "@type": "Service",
+          "@id": "https://www.4xcode.com/service/ui-ux-design#service",
+          "name": "UX UI Design Services",
+          "url": "https://www.4xcode.com/service/ui-ux-design"
+        },
+        {
+          "@type": "Service",
+          "@id": "https://www.4xcode.com/service/ai-automation#service",
+          "name": "AI Automation Services",
+          "url": "https://www.4xcode.com/service/ai-automation"
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.4xcode.com/service/ecommerce-solutions#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.4xcode.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Services",
+          "item": "https://www.4xcode.com/service"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Ecommerce",
+          "item": "https://www.4xcode.com/service/ecommerce-solutions"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.4xcode.com/service/ecommerce-solutions#faq",
+      "isPartOf": {
+        "@id": "https://www.4xcode.com/service/ecommerce-solutions#webpage"
+      },
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Should we build our online store on Shopify or go fully custom?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Shopify suits most brands with standard catalogues, because hosting, security and core checkout are managed for you. A headless approach keeps Shopify's backend while giving you a faster, fully custom storefront. Fully custom ecommerce development makes sense for marketplaces, complex B2B pricing, unusual product configuration or deep ERP-driven workflows. We recommend the option after discovery, based on total cost of ownership rather than preference."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much do ecommerce development services cost, and what affects price?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Cost depends on scope: the platform chosen, number of custom features, catalogue size, data migration complexity, and how many systems need integrating, such as ERP, CRM, payment gateways and shipping providers. Design depth and ongoing support also affect the budget. We provide a scoped estimate after discovery, so you know what is included before development starts."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do you migrate an existing store without losing data or rankings?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Migration is planned to protect both. Products, customers and order history are mapped and test-migrated before launch, and every old URL receives a redirect to its new equivalent to preserve search visibility. Integrations are tested in parallel with the live store, and cutover is scheduled for a low-traffic window, with monitoring in place to catch issues quickly after launch."
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,9 +1,12 @@
 "use client";
 
+import { entranceOffset, entranceTransition, interactionTransition, revealViewport } from "@/utils/motion";
+
+import { spaceGrotesk } from "@/lib/fonts";
+
 import React, { useState, ChangeEvent, FormEvent } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useSafeReducedMotion } from "../../utils/useSafeReducedMotion";
-import { Space_Grotesk } from "next/font/google";
 import RefreshIcon from "@mui/icons-material/Refresh";
 import {
   Send as SendIcon,
@@ -12,11 +15,6 @@ import {
 import { useRouter } from "next/navigation";
 
 import { submitContactForm } from "../../lib/contactFormApi";
-
-const spaceGrotesk = Space_Grotesk({
-  subsets: ["latin"],
-  weight: ["400", "700"],
-});
 
 type ContactFormProps = {
   variant?: "default" | "sidebar";
@@ -56,7 +54,7 @@ const [captchaError, setCaptchaError] = useState("");
       // Allows only digits and hyphens to support your placeholder format (e.g., 000-111-2221)
       const cleanValue = value.replace(/[^0-9\-]/g, "");
       setFormData((prev) => ({ ...prev, [name]: cleanValue }));
-    } 
+    }
     else if (name === "captcha") {
   setCaptchaAnswer(value);
 
@@ -128,17 +126,17 @@ const [captchaError, setCaptchaError] = useState("");
     >
       <div className="w-full relative flex box-border">
         <div
-          className={`absolute inset-0 rounded-2xl md:rounded-[32px] bg-[#f90a1f]/5 md:bg-[#f90a1f]/10 blur-xl md:blur-2xl pointer-events-none transition-opacity duration-300 ${
+          className={`absolute inset-0 rounded-2xl md:rounded-[32px] bg-[#f90a1f]/5 md:bg-[#f90a1f]/10 blur-xl md:blur-2xl pointer-events-none transition-opacity duration-200 ${
             isSidebar ? "opacity-10" : "opacity-30"
           }`}
           aria-hidden="true"
         />
 
         <motion.div
-          initial={{ opacity: 0, y: reduced ? 0 : 20 }}
+          initial={{ opacity: 0, y: reduced ? 0 : entranceOffset }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
+          viewport={revealViewport}
+          transition={entranceTransition}
           className={`relative w-full rounded-2xl md:rounded-[32px] border border-white/5 md:border-[rgba(255,255,255,0.1)] bg-white/[0.02] md:bg-[rgba(255,255,255,0.04)] shadow-xl flex flex-col justify-between box-border ${
             isSidebar
               ? "px-4 py-5 sm:px-6 sm:py-8 max-h-[calc(100vh-130px)]"
@@ -249,7 +247,8 @@ const [captchaError, setCaptchaError] = useState("");
       name="captcha"
       value={captchaAnswer}
       onChange={handleInputChange}
-      placeholder="Your answer"
+      placeholder={isSidebar ? undefined : "Your answer"}
+      aria-label="CAPTCHA answer"
       inputMode="numeric"
       className="w-full h-12 rounded-[18px] border border-[#f51d31]/40 bg-black px-4 text-center text-base text-white outline-none transition-all placeholder-white/50 focus:border-[#f51d31]/40 focus:ring-2 focus:ring-[#f51d31]/20"
     />
@@ -278,7 +277,6 @@ onClick={() => {
   </p>
 )}
 
- 
 </div>
             {/* Submit Action Block */}
             <div className="flex flex-col gap-2.5 w-full pt-1 box-border">
@@ -286,13 +284,13 @@ onClick={() => {
                 whileHover={
                   reduced || isSubmitting ? {} : { scale: 1.01, y: -0.5 }
                 }
-                transition={{ type: "spring", stiffness: 400, damping: 30 }}
+                transition={interactionTransition}
                 className="w-full"
               >
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="group inline-flex h-10 md:h-11 w-full items-center justify-center gap-2 rounded-lg bg-[#f51d31] py-2.5 px-6 text-xs sm:text-sm font-semibold text-white shadow-md hover:bg-[#ed1c20] transition-all duration-300 cursor-pointer box-border disabled:opacity-60 disabled:cursor-not-allowed"
+                  className="group inline-flex h-10 md:h-11 w-full items-center justify-center gap-2 rounded-lg bg-[#f51d31] py-2.5 px-6 text-xs sm:text-sm font-semibold text-white shadow-md hover:bg-[#ed1c20] transition-all duration-200 cursor-pointer box-border disabled:opacity-60 disabled:cursor-not-allowed"
                 >
                   <SendIcon style={{ fontSize: 14 }} />
                   <span>{isSubmitting ? "Sending..." : "Send Message"}</span>
@@ -314,7 +312,7 @@ onClick={() => {
               initial={{ opacity: 0, scale: reduced ? 1 : 0.96 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: reduced ? 1 : 0.96 }}
-              transition={{ duration: 0.2 }}
+              transition={interactionTransition}
               className="relative max-w-sm w-full bg-[#0D0D0E] border border-white/10 rounded-2xl p-6 shadow-2xl text-center flex flex-col items-center space-y-4 box-border"
             >
               <div className="relative flex items-center justify-center w-11 h-11 rounded-full border border-[#f90a1f]/20 bg-[#f90a1f]/5 text-[#ef1f23]">

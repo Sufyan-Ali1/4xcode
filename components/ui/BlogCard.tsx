@@ -1,51 +1,39 @@
 "use client";
 
+import { entranceOffset, entranceTransition, revealViewport } from "@/utils/motion";
+
+import { spaceGrotesk } from "@/lib/fonts";
+
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import NorthEastIcon from "@mui/icons-material/NorthEast";
-import { Space_Grotesk } from "next/font/google";
 import { BlogPost } from "../../types/index";
-
-const spaceGrotesk = Space_Grotesk({
-  subsets: ["latin"],
-  weight: ["400", "500", "700"],
-});
 
 type BlogCardProps = {
   post: BlogPost;
   index: number;
 };
 
-export function BlogCard({ post, index }: BlogCardProps) {
+export function BlogCard({ post }: BlogCardProps) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
+      initial={{ opacity: 0, y: entranceOffset }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{
-        duration: 0.5,
-        delay: 0.04 * index,
-        ease: [0.16, 1, 0.3, 1],
-      }}
-      whileHover={
-        typeof window !== "undefined" &&
-        window.matchMedia("(pointer: fine)").matches
-          ? { scale: 1.02, y: -4 }
-          : {}
-      }
+      viewport={revealViewport}
+      transition={entranceTransition}
       className="h-full w-full"
     >
       <Link
         href={`/blog/${post.slug}`}
-        className="group relative flex flex-col h-full cursor-pointer rounded-[20px] bg-[#070708] p-6 border border-white/[0.04] transition-all duration-300 md:hover:border-[rgba(249,10,31,0.5)] md:hover:bg-white/4 will-change-transform"
+        className="group relative flex flex-col h-full cursor-pointer rounded-[20px] bg-[#070708] p-6 border border-white/[0.04] transition-all duration-200 md:hover:border-[rgba(249,10,31,0.5)] md:hover:bg-white/4 will-change-transform"
       >
         <div className="relative w-full h-[160px] overflow-hidden rounded-[14px]">
           <Image
             src={"/assets/caseStudy.webp"}
             alt={post.title}
             fill
-            className="object-cover opacity-90 md:opacity-80 transition-opacity duration-300 group-hover:opacity-100"
+            className="object-cover opacity-90 md:opacity-80 transition-opacity duration-200 group-hover:opacity-100"
             sizes="(max-width: 768px) 100vw, 33vw"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#070708]/70" />
@@ -58,7 +46,7 @@ export function BlogCard({ post, index }: BlogCardProps) {
                 {post.category || "Engineering"}
               </span>
               <NorthEastIcon
-                className="text-zinc-600 transition-all duration-300 group-hover:text-white "
+                className="text-zinc-600 transition-all duration-200 group-hover:text-white "
                 style={{ fontSize: 13 }}
               />
             </div>

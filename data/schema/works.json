@@ -1,0 +1,220 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.4xcode.com/#organization",
+      "name": "4xCode",
+      "url": "https://www.4xcode.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "@id": "https://www.4xcode.com/#logo",
+        "url": "https://www.4xcode.com/assets/logo1.webp",
+        "contentUrl": "https://www.4xcode.com/assets/logo1.webp"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/company/4xcode-software/"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.4xcode.com/#website",
+      "url": "https://www.4xcode.com/",
+      "name": "4xCode",
+      "alternateName": "4xcode",
+      "publisher": {
+        "@id": "https://www.4xcode.com/#organization"
+      },
+      "inLanguage": "en-GB"
+    },
+    {
+      "@type": "CollectionPage",
+      "@id": "https://www.4xcode.com/work#webpage",
+      "url": "https://www.4xcode.com/work",
+      "name": "Software Development Case Studies & Portfolio | 4xCode",
+      "description": "Explore 4xCode software development case studies covering custom software, business automation, websites, SEO and Google Ads projects that delivered results.",
+      "keywords": "software development case studies",
+      "inLanguage": "en-GB",
+      "isPartOf": {
+        "@id": "https://www.4xcode.com/#website"
+      },
+      "about": {
+        "@id": "https://www.4xcode.com/#organization"
+      },
+      "publisher": {
+        "@id": "https://www.4xcode.com/#organization"
+      },
+      "mainEntity": {
+        "@id": "https://www.4xcode.com/work#itemlist"
+      },
+      "breadcrumb": {
+        "@id": "https://www.4xcode.com/work#breadcrumb"
+      }
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://www.4xcode.com/work#itemlist",
+      "name": "Featured Software Development Case Studies",
+      "numberOfItems": 7,
+      "itemListOrder": "https://schema.org/ItemListUnordered",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": "CreativeWork",
+            "name": "Luxury Transportation Lead Generation",
+            "description": "A premium limousine and luxury transportation company needed more qualified bookings. We planned and managed targeted Google Ads campaigns to reach high-value customers searching online.",
+            "creator": {
+              "@id": "https://www.4xcode.com/#organization"
+            },
+            "inLanguage": "en-GB"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@type": "CreativeWork",
+            "name": "Automotive Repair and Engine Replacement Growth",
+            "description": "For a garage specialising in engine repairs and replacements, we built a focused paid advertising strategy designed to attract motorists actively searching for trusted repair services.",
+            "creator": {
+              "@id": "https://www.4xcode.com/#organization"
+            },
+            "inLanguage": "en-GB"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "item": {
+            "@type": "CreativeWork",
+            "name": "Vogue Technics Digital Transformation Journey",
+            "description": "Vogue Technics, a UK automotive repair garage with two decades of experience, partnered with us to modernise its operations and move its business onto digital systems.",
+            "creator": {
+              "@id": "https://www.4xcode.com/#organization"
+            },
+            "inLanguage": "en-GB",
+            "about": {
+              "@type": "Organization",
+              "name": "Vogue Technics"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "item": {
+            "@type": "CreativeWork",
+            "name": "From Paid Advertising to Organic Growth",
+            "description": "This project helped a business reduce reliance on paid ads by building organic visibility through technical SEO, keyword-focused content, and on-page optimisation.",
+            "creator": {
+              "@id": "https://www.4xcode.com/#organization"
+            },
+            "inLanguage": "en-GB"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "item": {
+            "@type": "CreativeWork",
+            "name": "Finance Expo Website Development Project",
+            "description": "A finance exhibition needed a professional online presence. We developed a responsive, easy-to-navigate website presenting event details, speakers, and visitor information clearly.",
+            "creator": {
+              "@id": "https://www.4xcode.com/#organization"
+            },
+            "inLanguage": "en-GB"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "item": {
+            "@type": "CreativeWork",
+            "name": "Automated Service Reminder System",
+            "description": "Manual reminder calls were consuming valuable staff time. We built an automated system that notifies customers about upcoming services, helping the business stay in touch consistently.",
+            "creator": {
+              "@id": "https://www.4xcode.com/#organization"
+            },
+            "inLanguage": "en-GB"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 7,
+          "item": {
+            "@type": "CreativeWork",
+            "name": "UK Garage Administrative Workflow Automation",
+            "description": "A UK garage struggled with paperwork and repetitive admin tasks. We streamlined its workflow with digital tools for managing jobs, customer records, and daily operations.",
+            "creator": {
+              "@id": "https://www.4xcode.com/#organization"
+            },
+            "inLanguage": "en-GB"
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.4xcode.com/work#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.4xcode.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Work",
+          "item": "https://www.4xcode.com/work"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.4xcode.com/work#faq",
+      "url": "https://www.4xcode.com/work",
+      "inLanguage": "en-GB",
+      "isPartOf": {
+        "@id": "https://www.4xcode.com/work#webpage"
+      },
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How long does a typical software development project take?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Every timeline depends on the project's scope, technical complexity, required features, and integrations. Smaller projects can be completed within a few weeks, while larger custom platforms take longer. We agree a realistic schedule during planning, before development begins."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How can my business start a software development project?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Start by booking a call with our team. We discuss your goals, current challenges, and project requirements, then recommend a suitable technical approach. You will receive a proposal covering scope, timeline, and costs before any work begins."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How will I receive updates during the development process?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We follow an agile development approach, delivering work in stages and sharing progress regularly. You can review completed features, give feedback, and stay informed about upcoming tasks, so there are no surprises when your project reaches launch."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you provide support and maintenance after project delivery?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. After launch, we can help with bug fixes, troubleshooting, performance improvements, security updates, and new features. Support arrangements are agreed based on your project's needs, ensuring your software stays stable and continues to grow with your business."
+          }
+        }
+      ]
+    }
+  ]
+}

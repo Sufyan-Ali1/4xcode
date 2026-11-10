@@ -1,0 +1,16 @@
+{
+    "white_heading":"A boutique engineering studio with a",
+    "red_heading":"blockbuster output.",
+    "paragraphs":[
+        "4xCode is a boutique software development company building ultra-fast, AI-powered SaaS platforms, web applications, and mobile products for startups and scaling brands.",
+        "From custom software development and AI agent engineering to cloud infrastructure and UI/UX design, our senior team turns ambitious product ideas into category-defining software — shipped in weeks, not quarters."
+    ],
+        "stats":[
+    { "value": "132+", "label": "Products Shipped" },
+    { "value": "30M", "label": "Users Reached" },
+    { "value": "99.99%", "label": "Production Uptime" },
+    { "value": "9yr", "label": "Avg. Team Experience" }
+        ],
+        "image":"/assets/aboutSection.webp",
+        "founded":"2021 · Remote-first"
+}

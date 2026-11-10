@@ -72,6 +72,18 @@
         "title": "Digital Inspections",
         "description": "Record inspection findings with notes and photos, then share them with customers so they clearly understand recommended repairs and why they matter.",
         "icon": "inspection"
+      },
+      {
+        "id": 10,
+        "title": "MOT Booking & Test Management",
+        "description": "Organise MOT bookings, track test due dates and keep customer and vehicle records connected. Our MOT management software helps your garage schedule appointments, manage reminders and coordinate follow-up work in one workshop system.",
+        "icon": "mot"
+      },
+      {
+        "id": 11,
+        "title": "Garage Inventory & Parts Management",
+        "description": "Track spare parts, monitor stock levels and organise workshop supplies in one place. Our garage inventory management software connects parts usage with repair jobs, helping your team plan reorders and keep vehicle repairs moving.",
+        "icon": "inventory"
       }
     ]
   },
@@ -120,27 +132,51 @@
     "reviews": [
       {
         "id": 1,
-        "stars": 0,
-        "quote": "\"Before switching, our bookings lived in a diary and job notes on paper. Now everything is in one system, and my technicians always know exactly which vehicle they are working on next.\"",
-        "author": "James W.",
-        "title": "Owner, Independent Garage",
-        "initial": "J"
+        "stars": 5,
+        "quote": "\"4Xcode's Garage Management Software has helped us organise our daily workshop operations more efficiently. Managing customer enquiries, vehicle details, job cards, quotations and invoices through one system has made a real difference to our workflow. A great solution for modern automotive garages.\"",
+        "author": "Vogue Technics",
+        "title": "Garage Management Software | United Kingdom",
+        "initial": "V"
       },
       {
         "id": 2,
-        "stars": 0,
-        "quote": "\"Digital inspections have changed how we talk to customers. Sending photos with clear notes makes repair recommendations easy to understand, and approvals come back much faster than phone calls ever did.\"",
-        "author": "Rebecca L.",
-        "title": "Workshop Manager, Auto Repair Centre",
+        "stars": 5,
+        "quote": "\"We were looking for a reliable garage management system to manage our workshop bookings and customer records. The 4Xcode platform provides useful features for managing vehicles, repair jobs, quotations and invoices. It has helped us keep our garage operations more organised.\"",
+        "author": "Range Rover Garage",
+        "title": "Independent Garage | United Kingdom",
         "initial": "R"
       },
       {
         "id": 3,
-        "stars": 0,
-        "quote": "\"The setup was straightforward and the 4XCODE team answered every question we had. Invoicing used to take hours each week, but now it is quick, accurate, and linked to every job.\"",
-        "author": "Mohammed S.",
-        "title": "Director, Vehicle Service Centre",
-        "initial": "M"
+        "stars": 5,
+        "quote": "\"The vehicle and job management features are particularly useful for our business. Having customer information, vehicle history, job cards and invoicing in one place makes it easier to manage workshop work. The software is designed around the practical needs of automotive businesses.\"",
+        "author": "Ford Engines",
+        "title": "Engine RangeRoverRepairs | United Kingdom",
+        "initial": "F"
+      },
+      {
+        "id": 4,
+        "stars": 5,
+        "quote": "\"4Xcode has provided us with a centralised system for managing customer enquiries, quotations, bookings and workshop jobs. The ability to track job progress and manage invoices from one dashboard makes day-to-day garage management much simpler.\"",
+        "author": "Audi Engine Specialists",
+        "title": "Automotive Repair Business | United Kingdom",
+        "initial": "A"
+      },
+      {
+        "id": 5,
+        "stars": 5,
+        "quote": "\"Managing multiple customer enquiries and workshop bookings is much easier with a dedicated garage management system. We particularly value having customer records, vehicle information, job statuses and follow-ups accessible in one place.\"",
+        "author": "Select Prestige",
+        "title": "Prestige Automotive Garage | United Kingdom",
+        "initial": "S"
+      },
+      {
+        "id": 6,
+        "stars": 5,
+        "quote": "\"The system offers a practical way to manage customer information, bookings and business records. We appreciate having a digital platform that brings important operational information together and helps reduce reliance on manual administration.\"",
+        "author": "Vogue Towing & Recovery",
+        "title": "Automotive Services | United Kingdom",
+        "initial": "V"
       }
     ]
   },

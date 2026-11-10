@@ -11,9 +11,10 @@ import EventNoteOutlinedIcon from "@mui/icons-material/EventNoteOutlined";
 import NotificationsActiveOutlinedIcon from "@mui/icons-material/NotificationsActiveOutlined";
 import FactCheckOutlinedIcon from "@mui/icons-material/FactCheckOutlined";
 import Inventory2OutlinedIcon from "@mui/icons-material/Inventory2Outlined";
+import MarkEmailReadOutlinedIcon from "@mui/icons-material/MarkEmailReadOutlined";
 
 const iconClass = "!text-[28px] !text-[#e8141c]";
-const icons = { customer: DisplaySettingsOutlinedIcon, vehicle: LocalParkingOutlinedIcon, booking: EventAvailableOutlinedIcon, job: MiscellaneousServicesOutlinedIcon, quote: FormatQuoteIcon, staff: WidgetsOutlinedIcon, reminder: NotificationsActiveOutlinedIcon, report: EventNoteOutlinedIcon, inspection: VisibilityOutlinedIcon, mot: FactCheckOutlinedIcon, inventory: Inventory2OutlinedIcon };
+const icons = { customer: DisplaySettingsOutlinedIcon, vehicle: LocalParkingOutlinedIcon, booking: EventAvailableOutlinedIcon, job: MiscellaneousServicesOutlinedIcon, quote: FormatQuoteIcon, staff: WidgetsOutlinedIcon, reminder: NotificationsActiveOutlinedIcon, report: EventNoteOutlinedIcon, inspection: VisibilityOutlinedIcon, mot: FactCheckOutlinedIcon, inventory: Inventory2OutlinedIcon, email: MarkEmailReadOutlinedIcon };
 const GarageNeedsFeatures = ({ data = garage.features }: { data?: typeof garage.features }) => {
   return (
     <section className="w-full bg-black py-12 md:py-16">

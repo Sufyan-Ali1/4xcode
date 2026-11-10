@@ -84,6 +84,12 @@
         "title": "Garage Inventory & Parts Management",
         "description": "Track spare parts, monitor stock levels and organise workshop supplies in one place. Our garage inventory management software connects parts usage with repair jobs, helping your team plan reorders and keep vehicle repairs moving.",
         "icon": "inventory"
+      },
+      {
+        "id": 12,
+        "title": "Automated Customer Email Follow-Ups",
+        "description": "Send automated email follow-ups to garage customers after enquiries, repair quotes and completed jobs. Our garage management software keeps customer communication organised, helping your auto repair workshop nurture leads, encourage repeat bookings and improve customer retention.",
+        "icon": "email"
       }
     ]
   },
@@ -264,7 +270,7 @@
     },
     {
       "q": "How does pricing work for your garage software plans?",
-      "a": "We offer three plans: Essential for smaller garages, Advanced for busier workshops needing inspections and reporting, and Enterprise with custom pricing for larger operations. Each plan includes different features, so you can choose the option that best matches your garage's needs."
+      "a": "Our garage management software has three monthly plans: Starter at £99/month, Professional at £175/month and Enterprise at £250/month. Professional includes everything in Starter, plus website integration, enquiry management and sales conversion reports. Enterprise includes everything in Professional, plus unlimited website integrations, inventory management, MOT reminders, a VRM tracker and advanced business analytics."
     },
     {
       "q": "How can my garage start using the Garage Management System?",
@@ -297,7 +303,7 @@
         "placeholder": "Select a date"
       },
       "message": {
-        "label": "Anything that would make the call useful?",
+        "label": "Project Details",
         "placeholder": "Tell us about your project..."
       }
     }

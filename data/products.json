@@ -388,42 +388,45 @@
   "description": "Choose the perfect plan for your business. No hidden fees, no surprises.",
   "plans": [
     {
-      "id": "essential",
-      "name": "Essential",
+      "id": "starter",
+      "name": "Starter",
       "currencySymbol": "£",
       "price": "99",
       "billingPeriod": "/month",
       "priceDescription": "Best for small garages getting started.",
       "featured": false,
       "features": [
-        "Job card management",
-        "Quotes and invoices",
-        "Booking management",
-        "Basic dashboard",
-        "Email support"
+        "Customer & Vehicle Management",
+        "Manual Quote Creation",
+        "Job Card Management",
+        "Invoice Management",
+        "Paid / Unpaid Tracking",
+        "Customer & Vehicle History",
+        "Basic Dashboard & Reports",
+        "User Management"
       ],
       "action": {
-        "label": "Essential",
+        "label": "Starter",
         "href": "/contact"
       }
     },
     {
-      "id": "advanced",
-      "name": "Advanced",
+      "id": "professional",
+      "name": "Professional",
       "currencySymbol": "£",
       "price": "175",
       "billingPeriod": "/month",
-      "priceDescription": "Best for growing automotive businesses.",
+      "priceDescription": "Everything in Starter, plus:",
       "featured": true,
       "features": [
-        "Everything in Essential",
-        "Enquiry management",
-        "Automated follow-up reminders",
-        "Calendar and booking management",
-        "Vehicle registration lookup (VRM)",
-        "Performance reports",
-        "Advanced dashboard",
-        "Priority support"
+        "1 Website Integration",
+        "Automatic Web Enquiry Management",
+        "Enquiry Status Tracking",
+        "Email Quotation Templates",
+        "Quote Acceptance & Archive",
+        "Team Enquiry Assignment",
+        "Advanced Follow-ups",
+        "Sales Conversion Reports"
       ],
       "action": {
         "label": "Most Popular",
@@ -436,19 +439,19 @@
       "currencySymbol": "£",
       "price": "250",
       "billingPeriod": "/month",
-      "priceDescription": "Complete garage management solution.",
+      "priceDescription": "Everything in Professional, plus:",
       "featured": false,
       "features": [
-        "Everything in Advanced",
-        "Full business management system",
-        "Advanced reporting and analytics",
-        "Reserved parking job cards",
-        "Quote and invoice management",
-        "Web enquiry integration",
-        "Customer follow-up automation",
-        "Advanced job status tracking",
-        "Dedicated onboarding",
-        "Premium support"
+        "Unlimited Website Integrations",
+        "Reserved Parking Management",
+        "Advanced Follow-up Management",
+        "Monthly Enquiry & Booking Calendar",
+        "Weekly, Monthly & Yearly Sales Reports",
+        "VAT Calculation & Reports",
+        "Inventory Management",
+        "MOT Reminders",
+        "VRM Tracker",
+        "Advanced Business Analytics"
       ],
       "action": {
         "label": "Complete Solution",

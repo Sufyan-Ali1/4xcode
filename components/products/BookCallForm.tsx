@@ -1,6 +1,9 @@
 "use client"
 import garage from "@/data/GarageManagementPage.json";
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
+import { submitContactForm } from "@/lib/contactFormApi";
+import { useRouter } from "next/navigation";
+import styles from "./BookCallForm.module.css";
 
 interface BookCallFormData {
   name: string;
@@ -21,10 +24,14 @@ const INITIAL_DATA: BookCallFormData = {
 const labelClass = "mb-2 block text-[10px] font-semibold uppercase tracking-wider text-zinc-500";
 
 const inputClass =
-  "h-11 w-full min-w-0 rounded-lg border border-white/5 bg-black/40 px-3.5 text-xs text-white placeholder:text-zinc-600 outline-none transition-colors duration-200 focus:border-[#f51d31]/40 sm:text-sm";
+  `${styles.input} h-11 w-full min-w-0 rounded-lg border border-white/5 bg-black/40 px-3.5 text-xs text-white placeholder:text-zinc-600 outline-none transition-colors duration-200 focus:border-[#f51d31]/40 sm:text-sm`;
 
 const BookCallForm = ({ data = garage.form }: { data?: typeof garage.form }) => {
+  const router = useRouter();
   const [formData, setFormData] = useState<BookCallFormData>(INITIAL_DATA);
+  const submitting = useRef(false);
+  const [pending, setPending] = useState(false);
+  const [error, setError] = useState("");
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -33,10 +40,40 @@ const BookCallForm = ({ data = garage.form }: { data?: typeof garage.form }) => 
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    alert(JSON.stringify(formData, null, 2));
-    setFormData(INITIAL_DATA);
+    if (submitting.current) return;
+    submitting.current = true;
+    setError("");
+    setPending(true);
+    const details = [
+      "Garage Management System enquiry",
+      formData.message.trim(),
+      formData.liveDate
+        ? `I want this project live on ${new Date(`${formData.liveDate}T12:00:00`).toLocaleDateString("en-US", { dateStyle: "long" })}.`
+        : "",
+    ].filter(Boolean).join("\n\n");
+
+    try {
+      const response = await submitContactForm({
+        name: formData.name.trim(),
+        email: formData.email.trim(),
+        number: formData.phone.trim(),
+        details,
+      });
+      if (!response.success) {
+        setError("We couldn’t send your enquiry. Please try again. Your details have been kept.");
+        return;
+      }
+      setFormData(INITIAL_DATA);
+      window.sessionStorage.setItem("form_submitted", "true");
+      router.push("/thank-you");
+    } catch {
+      setError("We couldn’t send your enquiry. Please try again. Your details have been kept.");
+    } finally {
+      submitting.current = false;
+      setPending(false);
+    }
   };
 
   return (
@@ -63,7 +100,8 @@ const BookCallForm = ({ data = garage.form }: { data?: typeof garage.form }) => 
           </p>
 
           {/* Fields */}
-          <div className="mt-6 grid grid-cols-1 gap-4 md:grid-cols-2">
+          <fieldset disabled={pending} className="mt-6 grid grid-cols-1 gap-4 md:grid-cols-2">
+            <legend className="sr-only">Your contact and project details</legend>
             <div>
               <label htmlFor="name" className={labelClass}>
                 {data.fields.name.label}
@@ -72,6 +110,9 @@ const BookCallForm = ({ data = garage.form }: { data?: typeof garage.form }) => 
                 id="name"
                 name="name"
                 type="text"
+                required
+                autoComplete="name"
+                pattern={".*\\S.*"}
                 value={formData.name}
                 onChange={handleChange}
                 placeholder={data.fields.name.placeholder}
@@ -87,6 +128,8 @@ const BookCallForm = ({ data = garage.form }: { data?: typeof garage.form }) => 
                 id="email"
                 name="email"
                 type="email"
+                required
+                autoComplete="email"
                 value={formData.email}
                 onChange={handleChange}
                 placeholder={data.fields.email.placeholder}
@@ -102,6 +145,9 @@ const BookCallForm = ({ data = garage.form }: { data?: typeof garage.form }) => 
                 id="phone"
                 name="phone"
                 type="tel"
+                required
+                autoComplete="tel"
+                pattern={".*\\S.*"}
                 value={formData.phone}
                 onChange={handleChange}
                 placeholder={data.fields.phone.placeholder}
@@ -116,13 +162,9 @@ const BookCallForm = ({ data = garage.form }: { data?: typeof garage.form }) => 
               <input
                 id="liveDate"
                 name="liveDate"
-                type="text"
+                type="date"
                 value={formData.liveDate}
                 onChange={handleChange}
-                onFocus={(e) => (e.target.type = "date")}
-                onBlur={(e) => {
-                  if (!e.target.value) e.target.type = "text";
-                }}
                 placeholder={data.fields.liveDate.placeholder}
                 className={`${inputClass} [color-scheme:dark]`}
               />
@@ -141,15 +183,17 @@ const BookCallForm = ({ data = garage.form }: { data?: typeof garage.form }) => 
                 className={`${inputClass} min-h-24 resize-none py-3`}
               />
             </div>
-          </div>
+          </fieldset>
 
           {/* Button */}
+          {error && <p role="alert" className="mt-6 text-sm text-red-300">{error}</p>}
           <div className="mt-6 flex md:justify-end">
             <button
               type="submit"
-              className="h-11 w-full cursor-pointer rounded-lg bg-[#f51d31] px-6 text-sm font-semibold text-white shadow-md transition-colors duration-200 hover:bg-[#ed1c20] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#f51d31] md:w-[200px]"
+              disabled={pending}
+              className="h-11 w-full cursor-pointer rounded-lg bg-[#f51d31] px-6 text-sm font-semibold text-white shadow-md transition-colors duration-200 hover:bg-[#ed1c20] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#f51d31] disabled:cursor-wait disabled:opacity-60 md:w-[200px]"
             >
-              {data.button}
+              {pending ? "Sending enquiry…" : data.button}
             </button>
           </div>
         </form>

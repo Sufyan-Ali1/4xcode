@@ -1,0 +1,10 @@
+.input {
+  color-scheme: dark;
+}
+
+/* Paint over the browser's autofill background, including focus and hover. */
+.input:is(:autofill, :-webkit-autofill) {
+  box-shadow: 0 0 0 1000px #090909 inset;
+  -webkit-text-fill-color: #fff;
+  caret-color: #fff;
+}

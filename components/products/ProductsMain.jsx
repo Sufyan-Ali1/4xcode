@@ -120,7 +120,10 @@ export default function Product({data}) {
 
         <div className="grid mt-10 grid-cols-1 gap-10 md:grid-cols-2">
           {data.items.map((product) => (
-            <Reveal key={product.href} className="min-w-0 h-full">
+            <Reveal
+              key={product.href}
+              className={`min-w-0 h-full ${data.items.length === 1 ? "md:col-span-2 md:w-[calc((100%-2.5rem)/2)] md:justify-self-center" : ""}`}
+            >
               <ProductCard product={product} actionLabel={data.cardAction} />
             </Reveal>
           ))}

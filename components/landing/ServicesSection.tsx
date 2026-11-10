@@ -57,7 +57,7 @@ export default function ServicesSection({ data = home.services }: { data?: typeo
               whileInView={{ opacity: 1, y: 0 }}
               viewport={revealViewport}
               transition={entranceTransition}
-              className="group flex flex-col rounded-[22px] overflow-hidden border border-transparent hover:border-[rgba(249,10,31,0.4)] transition-colors duration-200 bg-white/4 will-change-transform"
+              className="group flex flex-col rounded-[18px] overflow-hidden border border-white/5 hover:border-[rgba(249,10,31,0.35)] transition-colors duration-200 bg-white/4 will-change-transform"
             >
               <Link
                 href={service.href}

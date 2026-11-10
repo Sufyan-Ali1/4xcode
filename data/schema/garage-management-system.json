@@ -182,7 +182,7 @@
       "offers": [
         {
           "@type": "Offer",
-          "name": "Essential Plan",
+          "name": "Starter Plan",
           "description": "Best for small garages getting started.",
           "seller": {
             "@id": "https://www.4xcode.com/#organization"
@@ -199,8 +199,8 @@
         },
         {
           "@type": "Offer",
-          "name": "Advanced Plan",
-          "description": "Best for growing automotive businesses.",
+          "name": "Professional Plan",
+          "description": "Everything in Starter, plus:",
           "seller": {
             "@id": "https://www.4xcode.com/#organization"
           },
@@ -217,7 +217,7 @@
         {
           "@type": "Offer",
           "name": "Enterprise Plan",
-          "description": "Complete garage management solution.",
+          "description": "Everything in Professional, plus:",
           "seller": {
             "@id": "https://www.4xcode.com/#organization"
           },
@@ -281,7 +281,7 @@
           "name": "How does pricing work for your garage software plans?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "We offer three plans: Essential for smaller garages, Advanced for busier workshops needing inspections and reporting, and Enterprise with custom pricing for larger operations. Each plan includes different features, so you can choose the option that best matches your garage's needs."
+            "text": "We offer three plans: Starter at £99/month for smaller garages, Professional at £175/month for busier workshops needing inspections and reporting, and Enterprise at £250/month for larger operations. Each plan includes different features, so you can choose the option that best matches your garage's needs."
           }
         },
         {

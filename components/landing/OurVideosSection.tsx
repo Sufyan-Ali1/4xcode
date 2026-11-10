@@ -9,7 +9,7 @@ export interface VideoItem {
   tag: string;
   title: string;
   description: string;
-  duration: string;
+  duration?: string;
   thumbnail?: string;
   videoUrl?: string;
 }
@@ -215,10 +215,10 @@ export default function OurVideosSection({ data }: OurVideosSectionProps) {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent" />
 
                   {/* Duration */}
-                  <span className="absolute right-3 top-3 flex items-center gap-1 rounded-full border border-white/15 bg-black/75 px-2.5 py-1 text-[11px] font-medium text-white backdrop-blur">
+                  {video.duration && <span className="absolute right-3 top-3 flex items-center gap-1 rounded-full border border-white/15 bg-black/75 px-2.5 py-1 text-[11px] font-medium text-white backdrop-blur">
                     <AccessTimeRoundedIcon sx={{ fontSize: 13 }} />
                     {video.duration}
-                  </span>
+                  </span>}
 
                   {/* Play button */}
                   <span className="absolute left-1/2 top-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border-2 border-red-600 bg-black/50 text-white shadow-[0_0_22px_rgba(239,68,68,0.7),inset_0_0_14px_rgba(239,68,68,0.35)] backdrop-blur transition group-hover:scale-110 group-hover:bg-red-600">
